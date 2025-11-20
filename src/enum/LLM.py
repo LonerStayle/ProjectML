@@ -1,6 +1,6 @@
-from enum import Enum
+from enum import StrEnum
 
-class LLM(Enum):
+class LLM(StrEnum):
     GPT4_1 = "gpt-4.1-2025-04-14"
     GPT4_1_MINI = "gpt-4.1-mini-2025-04-14"
     GPT4_1_NANO = "gpt-4.1-nano-2025-04-14"
