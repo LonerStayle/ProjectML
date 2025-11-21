@@ -32,9 +32,10 @@ class DBRepository:
         self.store = None
         if embedding_model:
             self.store = PGVector(
-                connection_string=self.db_url,
+                embeddings=self._resolve_embedding(embedding_model),
                 collection_name=collection_name,
-                embedding_function=self._resolve_embedding(embedding_model),
+                connection=self.db_url,
+                use_jsonb=True,
             )
 
     def _resolve_embedding(self, model: EmbeddingModel):

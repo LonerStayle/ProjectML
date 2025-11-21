@@ -101,3 +101,54 @@ repo.delete_data(condition="name = :name", params={"name": "슬라임"})
 1. **JSON 데이터 수정 시**: `data` 컬럼은 JSON 형식이므로 문법(`{ "key": "value" }`)을 틀리지 않게 조심해야 합니다. 
 2. **초기화 주의**: `fill_test_data.py`는 실행할 때마다 기존 데이터를 **전부 삭제**하고 새로 넣습니다. 중요한 데이터가 있다면 백업해두거나 코드를 수정해서 사용하세요.
 
+---
+
+## 4. RAG (AI 검색) 기능 사용하기
+
+AI에게 질문을 던져서 DB에 저장된 문서(세계관, 설정 등)를 검색하는 기능입니다.
+
+### 4-1. 문서 저장 및 검색 테스트
+
+`src/test_rag.py` 스크립트를 사용하면 텍스트 파일을 DB에 벡터 데이터로 저장하고, 검색까지 한 번에 테스트할 수 있습니다.
+
+```bash
+uv run src/test_rag.py
+```
+
+### 4-2. 코드 작성 방법 (직접 구현 시)
+
+**1. 저장 (문서 -> DB)**
+```python
+from db.DBRepository import DBRepository
+from db.config import DBCollectionName
+from enums.EmbeddingModel import EmbeddingModel
+from langchain_community.document_loaders import TextLoader
+from langchain_text_splitters import CharacterTextSplitter
+
+# RAG용 리포지토리 생성 (임베딩 모델 필수)
+repo = DBRepository(
+    collection_name=DBCollectionName.WORLD_SCENARIO,
+    embedding_model=EmbeddingModel.TEXT_EMBEDDING_3_SMALL
+)
+
+# 텍스트 파일 읽기
+loader = TextLoader("src/data/world_setting.txt", encoding="utf-8")
+documents = loader.load()
+
+# 문서 쪼개기 (너무 길면 검색 정확도 하락)
+text_splitter = CharacterTextSplitter(chunk_size=500, chunk_overlap=50)
+docs = text_splitter.split_documents(documents)
+
+# 저장 (벡터 변환 자동)
+repo.add_documents(docs)
+```
+
+**2. 검색 (질문 -> 유사 문서)**
+```python
+# "던전 3층에 누가 있어?" 라고 질문
+query = "던전 3층에는 누가 살아?"
+results = repo.search(query, k=3) # 상위 3개 결과
+
+for doc in results:
+    print(doc.page_content)
+```
