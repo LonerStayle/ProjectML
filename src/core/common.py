@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import torch
 
 def get_project_root() -> Path:
     current_path = Path(__file__).resolve()
@@ -55,6 +56,14 @@ def find_files(base, patterns=("*",)):
     for p in patterns:
         files.extend(base.rglob(p))
     return sorted(files)
+
+def get_best_device():
+    if torch.cuda.is_available():
+        return torch.device("cuda")
+    elif torch.backends.mps.is_available():
+        return torch.device("mps")
+    else:
+        return torch.device("cpu")
 
 # 아래는 주피터 노트북에서 src 경로를 고정시키기위한 코드 
 # import os, sys
