@@ -1,22 +1,15 @@
 import json
-from typing import List, Optional, Any, Dict, Union
+from typing import List, Any, Dict
 from sqlalchemy import create_engine, text
 from langchain_postgres import PGVector
 from langchain_core.documents import Document
 from langchain_openai import OpenAIEmbeddings
 from langchain_huggingface import HuggingFaceEmbeddings
-
-# 로컬 모듈 임포트
 from db.config import CONNECTION_URL, DBCollectionName
 from enums.EmbeddingModel import EmbeddingModel
 
 class DBRepository:
-    """
-    데이터베이스 작업을 담당하는 통합 리포지토리 클래스입니다.
-    일반적인 CRUD(생성, 조회, 수정, 삭제) 작업과 RAG를 위한 벡터 검색을 모두 지원합니다.
-    """
-
-    def __init__(self, collection_name: DBCollectionName, embedding_model: Optional[EmbeddingModel] = None):
+    def __init__(self, collection_name: DBCollectionName, embedding_model: EmbeddingModel):
         """
         초기화 메서드
         :param collection_name: 작업할 테이블 이름 (DBCollectionName Enum 사용)
@@ -106,7 +99,7 @@ class DBRepository:
         """
         데이터를 수정합니다.
         :param update_values: 수정할 컬럼과 값 (예: {"name": "새이름"})
-        :param condition: 수정할 대상 조건 (예: "id = :id")
+        :param condition: 수정할 대상 조건 (예: "id = :id") 
         """
         set_clause = ", ".join([f"{key} = :{key}" for key in update_values.keys()])
         sql = f"UPDATE {self.collection_name} SET {set_clause} WHERE {condition}"
@@ -147,8 +140,28 @@ class DBRepository:
             raise ValueError("임베딩 모델이 설정되지 않았습니다.")
         self.store.add_documents(docs)
 
-    def search(self, query: str, k: int = 5) -> List[Document]:
-        """유사한 문서를 검색합니다."""
-        if not self.store:
-            raise ValueError("임베딩 모델이 설정되지 않았습니다.")
+    def search(self, query: str, k=5):
         return self.store.similarity_search(query, k=k)
+
+
+
+
+def resolve_embedding(model: EmbeddingModel):
+    """모델 Enum → 실제 Embedding 객체로 변환"""
+
+    # OpenAI 계열
+    if model in {
+        EmbeddingModel.TEXT_EMBEDDING_3_LARGE,
+        EmbeddingModel.TEXT_EMBEDDING_3_MEDIUM,
+        EmbeddingModel.TEXT_EMBEDDING_3_SMALL,
+    }:
+        return OpenAIEmbeddings(model=model.value)
+
+    # HuggingFace 계열
+    if model in {
+        EmbeddingModel.BGE_M3,
+        EmbeddingModel.BGE_UPSKYY_KOREAN,
+    }:
+        return HuggingFaceEmbeddings(model_name=model.value)
+
+    raise ValueError(f"Unknown embedding model: {model}")

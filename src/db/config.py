@@ -36,3 +36,4 @@ class DBCollectionName(StrEnum):
     WORLD_UNLOCK_STAGE = "world_scenario_unlock_stages"
     HEROINE_MEMORY_UNLOCK_STAGE = "heroine_memory_unlock_stages"
     ROMANCE_DOC = "romance_docs"
+
