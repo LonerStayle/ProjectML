@@ -17,10 +17,6 @@ class LLM(StrEnum):
     CLAUDE_3_HAIKU = "claude-3-haiku-20240307"
     
     # Gemini (Google)
-    GEMINI_1_5_PRO = "gemini-1.5-pro"
-    GEMINI_1_5_FLASH = "gemini-1.5-flash"
-    GEMINI_PRO = "gemini-pro"
-    GEMINI_ULTRA = "gemini-ultra"
     GEMINI_2_5_PRO            = "gemini-2.5-pro"
     GEMINI_2_5_FLASH          = "gemini-2.5-flash"
     GEMINI_2_5_FLASH_LITE     = "gemini-2.5-flash-lite"
