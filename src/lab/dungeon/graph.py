@@ -1,38 +1,27 @@
-"""
-LangGraph 메인 실행 파일
-던전 밸런싱 파이프라인을 LangGraph로 구성
-통신 프로토콜 스프레드시트 구조를 기반으로 작성
-"""
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, Optional
 from langgraph.graph import StateGraph, END
-from .state import DungeonState
-from .nodes import monster_balancing_node, event_planning_node, item_planning_node
-from .models import MonsterMetadata, StatData
-from core.common import get_project_root, write_json, get_today_str
-from db.DBRepository import DBRepository
-from db.config import DBCollectionName
-from enums.EmbeddingModel import EmbeddingModel
+from state import DungeonState
+from nodes import monster_balancing_node
+from models import MonsterMetadata, StatData
+# from core.common import get_project_root, write_json, get_today_str
+# from db.DBRepository import DBRepository
+# from db.config import DBCollectionName
 
 
 def build_dungeon_graph():
-    """
-    던전 밸런싱 그래프 빌드
-    
-    Flow: Start -> Monster Agent -> Event Agent -> Item Agent -> End
-    통신 프로토콜에 따라 각 Agent 간 데이터 전달
-    """
     workflow = StateGraph(DungeonState)
     
     # 노드 추가
     workflow.add_node("monster_balancing", monster_balancing_node)
-    workflow.add_node("event_planning", event_planning_node)
-    workflow.add_node("item_planning", item_planning_node)
+    # workflow.add_node("event_planning", event_planning_node)
+    # workflow.add_node("item_planning", item_planning_node)
     
     # 엣지 추가
     workflow.set_entry_point("monster_balancing")
-    workflow.add_edge("monster_balancing", "event_planning")
-    workflow.add_edge("event_planning", "item_planning")
-    workflow.add_edge("item_planning", END)
+    workflow.add_edge("monster_balancing", END)
+    # workflow.add_edge("monster_balancing", "event_planning")
+    # workflow.add_edge("event_planning", "item_planning")
+    # workflow.add_edge("item_planning", END)
     
     # 그래프 컴파일
     app = workflow.compile()
@@ -162,7 +151,7 @@ def create_mock_data(use_db: bool = True) -> Dict[str, Any]:
         monster_db = load_monster_db_from_db()
     
     if monster_db is None:
-        print("ℹ️ Mock 몬스터 데이터 사용")
+        print("Mock 몬스터 데이터 사용")
         monster_db = create_mock_monster_db()
     else:
         print(f"✓ DB에서 {len(monster_db)}종의 몬스터 데이터 로드 완료")
@@ -178,6 +167,7 @@ def create_mock_data(use_db: bool = True) -> Dict[str, Any]:
         "rooms": [],
         "difficulty_context": {},
         "event_rooms": None,
+        "event_data": None,
         "dungeon_data": None
     }
     
@@ -234,6 +224,18 @@ def main(use_db: bool = True):
         if room.event_type is not None:
             event_names = {0: "빈 이벤트", 1: "회복의 샘", 2: "상인", 3: "신비한 사건"}
             print(f"    이벤트 타입: {event_names[room.event_type]}")
+    
+    # Event Agent 상세 결과
+    if result.get('event_data'):
+        print("\n\n🎲 Event Agent 상세 결과:")
+        for event_data in result['event_data']:
+            print(f"\n  방 {event_data['room_id']} 이벤트:")
+            print(f"    이벤트 소스: {event_data['event_source_type']}")
+            print(f"    메인 시나리오: {event_data['scenario']['main_scenario']}")
+            print(f"    히로인 반응: {event_data['scenario']['heroine_reaction']}")
+            print(f"    상호작용 수: {len(event_data['interactions'])}")
+            for interaction in event_data['interactions']:
+                print(f"      - {interaction['text']} (반복 가능: {interaction['is_repeatable']})")
     
     # 최종 던전 데이터
     if result.get('dungeon_data'):
