@@ -1,6 +1,7 @@
 import json
 import os
 import random
+import re 
 from typing import List, Dict, Tuple, Any
 from langchain_openai import ChatOpenAI
 from models import MonsterMetadata, StatData, RoomData, MonsterSpawnData
@@ -28,22 +29,10 @@ class MonsterCompositionAgent:
         self.prompt_manager = PromptManager(DungeonPromptType.MONSTER_STRATEGY)
 
     def _initialize_llm(self, model_name: str):
-        """
-        모델 이름(Enum)에 따라 API Key와 Base URL을 설정하여 LLM 객체 생성
-        """
-        api_key = ""
-        base_url = None 
-
-        # GPT (OpenAI)
-        if "gpt" in model_name:
-            api_key = os.getenv("OPENAI_API_KEY")
-            base_url = None # OpenAI 기본값 사용
-
+        """LLM 모델 초기화"""
         return ChatOpenAI(
             model=model_name,
-            openai_api_key=api_key,
-            base_url=base_url,
-            temperature=0.7 # 창의성 조절 (0.0 ~ 1.0)
+            temperature=0.7
         )
 
     def _calculate_party_score(self) -> float:
@@ -112,8 +101,6 @@ class MonsterCompositionAgent:
         if candidates:
             for m in candidates:
                 weight = 1
-                # (확장성) 추후 몬스터 데이터에 tags가 있다면 아래 주석 해제
-                # if any(tag in m.tags for tag in preferred_tags): weight = 5 
                 weighted_pool.extend([m] * weight)
         else:
             # 조건에 맞는 몬스터가 없으면 Cost가 가장 낮은 3마리 반환 (최소한의 방어)
@@ -121,14 +108,9 @@ class MonsterCompositionAgent:
             
         return weighted_pool
 
-    def _generate_coordinate(self) -> Tuple[float, float]:
-        """
-        [좌표 생성] 0.1 ~ 0.9 사이의 랜덤 좌표 생성
-        벽(0.0, 1.0)에 끼이지 않도록 여유를 둠
-        """
-        x = random.uniform(0.1, 0.9)
-        y = random.uniform(0.1, 0.9)
-        return (round(x, 2), round(y, 2))
+    def _generate_coordinate(self) -> tuple:
+        """단순 랜덤 좌표 생성 (0.0 ~ 1.0)"""
+        return (round(random.random(), 2), round(random.random(), 2))
 
     def process_dungeon(self, dungeon_json: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]]:
         """
