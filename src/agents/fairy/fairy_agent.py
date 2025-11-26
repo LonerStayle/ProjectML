@@ -1,7 +1,6 @@
 from langchain.chat_models import init_chat_model
 from enums.LLM import LLM
 from agents.fairy.fairy_state import FairyIntentOutput, FairyState, FairyIntentType
-from langchain_core.messages import HumanMessage, AIMessage
 from langgraph.types import Command, interrupt
 from agents.fairy.temp_string import reverse_questions
 from prompts.promptmanager import PromptManager
@@ -84,7 +83,7 @@ def fairy_action(state: FairyState) -> Command:
 
         elif intent == FairyIntentType.INTERACTION_HANDLER:
             action_detail = create_interaction()
-
+            
         else:
             info = "SMALLTALK"
 
@@ -106,12 +105,10 @@ graph_builder = StateGraph(FairyState)
 
 graph_builder.add_node("analyze_intent", analyze_intent)
 graph_builder.add_node("fairy_action", fairy_action)
-
 graph_builder.add_edge(START, "analyze_intent")
-
 graph_builder.add_conditional_edges(
     "analyze_intent",      
-    check_condition,         
+    check_condition,
     {
         "retry": "analyze_intent",  
         "continue": "fairy_action"  
