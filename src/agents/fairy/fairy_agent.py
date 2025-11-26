@@ -7,12 +7,11 @@ from agents.fairy.temp_string import reverse_questions
 from prompts.promptmanager import PromptManager
 from prompts.prompt_type.fairy.FairyPromptType import FairyPromptType
 import random
-from agents.fairy.util import add_ai_message, add_human_message, str_to_bool,xml_block
+from agents.fairy.util import add_ai_message, add_human_message, str_to_bool
 import asyncio
 
 
 intent_llm = init_chat_model(model=LLM.GPT4_1_MINI,temperature=0)
-
 
 async def monster_rag():
     return "asd"
@@ -22,7 +21,6 @@ async def get_event_info():
 
 async def dungeon_navigator():
     return "dungeon_navi"
-
 
 async def create_interaction():
     return "뿌뿌뿌"
