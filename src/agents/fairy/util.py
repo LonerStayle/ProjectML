@@ -25,3 +25,4 @@ def str_to_bool(text):
         return True
     else:
         return False
+    
