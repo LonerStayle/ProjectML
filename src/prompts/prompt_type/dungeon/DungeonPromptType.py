@@ -10,9 +10,4 @@ class DungeonPromptType(Enum):
     MONSTER_BALANCING = str(BASE / "monster_balancing.yaml")
     MONSTER_STRATEGY = str(BASE / "monster_strategy.yaml")
     DUNGEON_SUB_EVENT = str(BASE / "dungeon_sub_event.yaml")
-
-    # EVENT_SCENARIO_GENERATION = str(BASE / "event_scenario_generation.yaml")
-    # EVENT_INTERACTION_GENERATION = str(BASE / "event_interaction_generation.yaml")
-    # EVENT_RESULT_GENERATION = str(BASE / "event_result_generation.yaml")
-    # EVENT_TEXT_MAPPING = str(BASE / "event_text_mapping.yaml")
-
+    DUNGEON_MAIN_EVENT_SELECTION = str(BASE / "dungeon_main_event_selection.yaml")

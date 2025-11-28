@@ -4,7 +4,7 @@ from agents.dungeon.monster.models import MonsterMetadata, StatData, RoomData, D
 
 class DungeonState(TypedDict):
     # input data
-    hero_stats: List[StatData] # 히로인 스탯 리스트
+    heroine_stats: List[StatData] # 히로인 스탯 리스트
     monster_db: Dict[int, MonsterMetadata] # 몬스터 DB
 
     # payload

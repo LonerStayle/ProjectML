@@ -54,13 +54,12 @@ class StatData:
     @property
     def combat_score(self) -> float:
         """
-        전투력 점수 계산 (단순 예시)
+        전투력 점수 계산 (intelligence 제외)
         """
-        offensive_score = (
-            (self.strength * 1.5) + (self.dexterity * 1.2) + (self.intelligence * 1.2)
-        )
+        offensive_score = (self.strength * 1.5) + (self.dexterity * 1.2)
         defensive_score = (self.hp * 0.1) + (self.defense * 1.0)
-        return offensive_score + defensive_score
+        luck_bonus = self.luck * 0.5
+        return offensive_score + defensive_score + luck_bonus
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "StatData":

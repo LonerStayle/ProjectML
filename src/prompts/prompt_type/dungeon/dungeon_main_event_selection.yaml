@@ -1,0 +1,19 @@
+DUNGEON_MAIN_EVENT_SELECTION:
+  name: dungeon_main_event_selection
+  prompt: |
+    당신은 던전 이벤트 선택 시스템입니다.
+    
+    주어진 조건에 맞는 이벤트를 선택하세요.
+    
+    <조건>
+    - 현재 층: {current_floor}
+    - 사용 가능한 이벤트: {available_events}
+    - 이전에 사용한 이벤트: {used_events}
+    </조건>
+    
+    가장 적합한 이벤트 하나를 선택하고, 그 이유를 간단히 설명하세요.
+  
+  input_variables:
+    - "current_floor"
+    - "available_events"
+    - "used_events"
