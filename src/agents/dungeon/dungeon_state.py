@@ -1,6 +1,6 @@
-from typing import TypedDict, Annotated, Dict, List, Any
+from typing import TypedDict, Annotated, Dict, List, Any, Optional
 from langgraph.graph.message import add_messages
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 
 # ===== Event Agent용 State =====
@@ -19,10 +19,40 @@ class DungeonEventState(TypedDict):
     final_answer: str
 
 
-class DungeonEventParser(BaseModel):
-    """Event Agent의 LLM 응답 파서"""
+class EventChoice(BaseModel):
+    """이벤트 선택지 모델"""
+    
+    model_config = ConfigDict(extra="forbid")
+    
+    action: str = Field(
+        description="선택지 텍스트 (명확하고 구체적인 행동)"
+    )
+    reward_id: Optional[str] = Field(
+        default=None,
+        description="보상 ID (event_rewards_penalties.py의 REWARDS에서 선택, 없으면 null)"
+    )
+    penalty_id: Optional[str] = Field(
+        default=None,
+        description="패널티 ID (event_rewards_penalties.py의 PENALTIES에서 선택, 없으면 null)"
+    )
 
-    sibal: str = Field(description="asd")
+
+class DungeonEventParser(BaseModel):
+    """Event Agent의 LLM 응답 파서 - 서브 이벤트 생성"""
+
+    model_config = ConfigDict(extra="forbid")
+
+    sub_event_narrative: str = Field(
+        description="선택된 메인 이벤트를 기반으로 히로인의 기억과 연결된 구체적인 서브 이벤트 내러티브. 세계관과 히로인의 과거를 반영하여 풍부하게 작성."
+    )
+    event_choices: List[EventChoice] = Field(
+        description="플레이어에게 제시할 선택지 목록 (2~4개). 선택지마다 보상 또는 패널티 중 하나만 있거나, 둘 다 있을 수 있음. 메인 이벤트와 연관된 보상/패널티를 선택해야 함.",
+        min_length=2,
+        max_length=4
+    )
+    expected_outcome: str = Field(
+        description="각 선택지별로 어떤 보상/패널티가 적용되는지, 그리고 그것이 게임 플레이에 어떤 영향을 미치는지 설명."
+    )
 
 
 

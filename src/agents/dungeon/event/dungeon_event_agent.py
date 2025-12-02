@@ -13,11 +13,26 @@ from langchain_core.messages import HumanMessage
 
 
 def heroine_memories_node(state: DungeonEventState) -> DungeonEventState:
+    """
+    히로인의 기억 데이터 로드
+    heroine_scenarios.py에서 heroine_id와 memory_progress에 맞는 기억을 필터링
+    """
+    from agents.dungeon.event.heroine_scenarios import HEROINE_SCENARIOS
+
     heroine_id = state["heroine_data"]["heroine_id"]
     memory_progress = state["heroine_data"]["memory_progress"]
 
-    repo = RDBRepository()
-    heroine_memories = repo.select_first_row(heroine_id, memory_progress)
+    # 해당 히로인의 해금된 기억들을 필터링 (memory_progress 이하)
+    heroine_memories = [
+        scenario
+        for scenario in HEROINE_SCENARIOS
+        if scenario["heroine_id"] == heroine_id
+        and scenario["memory_progress"] <= memory_progress
+    ]
+
+    print(f"[heroine_memories_node] 히로인 ID: {heroine_id}")
+    print(f"[heroine_memories_node] 기억 진척도: {memory_progress}")
+    print(f"[heroine_memories_node] 해금된 기억 개수: {len(heroine_memories)}")
 
     return {"heroine_memories": heroine_memories}
 
@@ -25,44 +40,62 @@ def heroine_memories_node(state: DungeonEventState) -> DungeonEventState:
 def selected_main_event_node(state: DungeonEventState) -> DungeonEventState:
     """
     메인 이벤트 선택 로직
-    1. DB에서 event_templates 목록 조회 (keyword 기반)
-    2. floor_range, heroine_requirement 필터링
-    3. used_events 중복 제거
-    4. 랜덤으로 최종 선택
+    1. main_event_scenarios.py에서 이벤트 목록 로드
+    2. used_events 중복 제거
+    3. 랜덤으로 최종 선택
+
+    Note: is_personal=True인 개별 이벤트는 모든 플레이어가 같이 경험하지만,
+          각 플레이어의 히로인 기억에 따라 다른 내러티브가 생성됨
     """
+    from agents.dungeon.event.main_event_scenarios import MAIN_EVENT_SCENARIOS
 
-    # DB에서 이벤트 목록 가져오기
-    repo = RDBRepository()
+    next_floor = state.get("next_floor", 1)
+    used_events = state.get("used_events", [])
 
-    # TODO: 실제 DB 쿼리로 교체 필요
-    # event_templates = repo.get_event_templates(floor=state["next_floor"])
-
-    # 임시: 하드코딩된 이벤트 목록
-    available_events = [
-        "검은 형상의 무언가",
-        "쓰러져있는 사람",
-        "제단속에 고여있는 물",
-        "미치광이 상인",
-        "미지의 기억",
-        "조여오는 죄책감(개별 이벤트)",
-        "8번 출구",
-        "심연을 숭배하는 자",
-        "xx 해야 탈출할 수 있는 방",
-        "떨쳐내기 힘든 유혹(개별 이벤트)"
+    # 이미 사용한 event_code 추출
+    used_event_codes = [
+        evt.get("event_code") for evt in used_events if "event_code" in evt
     ]
 
-    # used_events = state.get("used_events", [])
-    # available_events = [e for e in available_events if e not in used_events]
+    # 사용 가능한 이벤트 필터링 (중복 제외)
+    available_events = []
+    for event in MAIN_EVENT_SCENARIOS:
+        # 이미 사용한 이벤트 제외
+        if event["event_code"] in used_event_codes:
+            continue
+
+        available_events.append(event)
+
+    # 사용 가능한 이벤트가 없으면 모든 이벤트 풀에서 선택 (중복 허용)
+    if not available_events:
+        available_events = MAIN_EVENT_SCENARIOS
 
     # 랜덤 선택
     selected_event = random.choice(available_events)
 
-    print(f"[selected_main_event_node] 선택된 이벤트: {selected_event}")
+    # 선택된 이벤트의 전체 정보를 문자열로 포맷팅
+    event_description = f"""[{selected_event['title']}]
+Event Code: {selected_event['event_code']}
+Type: {'개별 이벤트' if selected_event['is_personal'] else '공통 이벤트'}
 
-    return {"selected_main_event": selected_event}
+{selected_event['scenario_text']}"""
+
+    print(f"[selected_main_event_node] 선택된 이벤트: {selected_event['title']}")
+    print(
+        f"[selected_main_event_node] 개별 이벤트 여부: {selected_event['is_personal']}"
+    )
+
+    return {"selected_main_event": event_description}
 
 
 def create_sub_event_node(state: DungeonEventState) -> DungeonEventState:
+    """
+    서브 이벤트 생성 로직
+    - 개별 이벤트(is_personal=True)의 경우: 히로인 기억에 맞춤화된 내러티브 생성
+    - 공통 이벤트(is_personal=False)의 경우: 일반적인 내러티브 생성
+
+    Note: 개별 이벤트는 보상/패널티는 동일하지만, 각 플레이어에게 다른 텍스트가 표시됨
+    """
     prompts = PromptManager(DungeonPromptType.DUNGEON_SUB_EVENT).get_prompt(
         heroine_data=state["heroine_data"],
         heroine_memories=state["heroine_memories"],
@@ -73,11 +106,30 @@ def create_sub_event_node(state: DungeonEventState) -> DungeonEventState:
 
     parser_llm = llm.with_structured_output(DungeonEventParser)
     response = parser_llm.invoke(prompts)
-    final_answer = state["selected_main_event"] + "\n\n----------" + response.sibal
+
+    # 서브 이벤트 결과 포맷팅
+    sub_event_result = f"""
+=== 서브 이벤트 내러티브 ===
+{response.sub_event_narrative}
+
+=== 선택지 ===
+{chr(10).join([f"{i+1}. {choice}" for i, choice in enumerate(response.event_choices)])}
+
+=== 예상 결과 ===
+{response.expected_outcome}
+"""
+
+    final_answer = (
+        f"=== 메인 이벤트 ===\n{state['selected_main_event']}\n\n"
+        f"=== 서브 이벤트 (히로인 특화) ===\n{sub_event_result}"
+    )
+
+    print(f"[create_sub_event_node] 서브 이벤트 생성 완료")
     print(response)
+
     return {
-        "messages": [HumanMessage(response.sibal)],
-        "sub_event": response.sibal,
+        "messages": [HumanMessage(sub_event_result)],
+        "sub_event": sub_event_result,
         "final_answer": final_answer,
     }
 
