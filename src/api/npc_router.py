@@ -230,7 +230,7 @@ async def heroine_chat(request: ChatRequest):
         
         # 상태 업데이트 (LLM 재호출 없이)
         result = await heroine_agent._update_state_after_response(
-            state, context, full_response, "neutral"
+            state, context, full_response, 0
         )
         
         # 최종 상태 전송
