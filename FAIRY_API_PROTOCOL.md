@@ -24,58 +24,43 @@
 
 ### 요청 방식 (Body)
 
-| Field | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| `dungeonPlayer` | Object | Yes | (통신 프로토콜 기준) 던전 플레이어의 실시간 상태 데이터 |
-| `question` | String | Yes | 사용자의 질문 (예: "현재 방의 불 좀 켜줘") |
-| `targetMonsterIds` | List[int] | No | 히로인 시야에 있는 몬스터 ID 목록 (기본값: `[]`) |
-| `nextRoomId` | Integer | Yes | 히로인이 이동해야 할 다음 방 ID |
+| Field              | Type      | Required | Description                            |
+| :----------------- | :-------- | :------- | :------------------------------------- |
+| `dungeonPlayer`    | Object    | Yes      | 던전 플레이어의 **실시간 상태 데이터**. 아래 필드를 포함합니다. |
+| ├── `playerId`     | Integer   | Yes      | 플레이어 고유 ID                             |
+| ├── `heroineId`    | Integer   | Yes      | 히로인의 고유 ID                             |
+| ├── `currRoomId`   | Integer   | Yes      | 현재 위치한 방 ID                            |
+| ├── `difficulty`   | Integer   | Yes      | 던전 난이도 (디폴트 = 0)                        |
+| ├── `hp`           | Integer   | Yes      | 현재 체력 (디폴트 = 250)                                  |
+| ├── `moveSpeed`    | Float     | Yes      | 이동 속도 배율 (디폴트 = 1.0)                              |
+| ├── `attackSpeed`  | Float     | Yes      | 공격 속도 배율 (디폴트 = 1.0)                              |
+| ├── `weaponId`     | Integer   | Yes      | 장착 중인 무기 ID                            |
+| └── `inventory`    | List[int] | Yes      | 인벤토리에 포함된 아이템 ID 목록                    |
+| `question`         | String    | Yes      | 사용자의 질문 (예: `"현재 방의 불좀 켜줘"`)           |
+| `targetMonsterIds` | List[int] | No       | 히로인 시야에 감지된 몬스터 ID 목록 (기본값: `[]`)      |
+| `nextRoomId`       | Integer   | Yes      | 히로인이 이동해야 할 다음 방 ID                    |
 
 ```json
 {
   "dungeonPlayer": {
-    "affection": 6,
-    "difficulty": 0,
+    "playerId": 1,
     "heroineId": 1,
+    "currRoomId": 1,
+    "difficulty": 0,
+    "hp": 250,
+    "moveSpeed": 1,
+    "attackSpeed": 1,
     "inventory": [
-      0,
       21,
       42
     ],
-    "playerId": 1,
-    "sanity": 90,
-    "scenarioLevel": 9,
-    "skills": {
-      "activeSkillId": 1,
-      "activeSkillLevel": 3,
-      "passiveSkillId": 7,
-      "passiveSkillLevel": 1
-    },
-    "stats": {
-      "attackSpeed": 1.85,
-      "autoAttackMultiplier": 2.12,
-      "cooldownReduction": 1.9,
-      "critChance": 46.77,
-      "dexterity": 16,
-      "hp": 343,
-      "intelligence": 1,
-      "moveSpeed": 1.8,
-      "skillDamageMultiplier": 2.05,
-      "strength": 10
-    },
-    "weapon": {
-      "attackPower": 55,
-      "modifier": {
-        "dexterity": 0.3,
-        "strength": 0.5
-      },
-      "rarity": 3,
-      "weaponType": 2
-    }
+    "weaponId": 0
   },
-  "question": "방에 불좀 켜줘",
-  "targetMonsterIds": [101, 102],
-  "nextRoomId": 6
+  "question": "현재 방의 불좀 켜줘",
+  "targetMonsterIds": [
+    0
+  ],
+  "nextRoomId": 1
 }
 ```
 
@@ -100,51 +85,12 @@
 
 | Field | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `dungeonPlayer` | Object | Yes | (통신 프로토콜 기준) 던전 플레이어의 실시간 상태 데이터 |
+| `inventory`    | List[int] | Yes      | 인벤토리에 포함된 아이템 ID 목록                    |
 | `question` | String | Yes | 사용자의 질문 |
 
 ```json
 {
-  "dungeonPlayer": {
-    "affection": 6,
-    "difficulty": 0,
-    "heroineId": 1,
-    "inventory": [
-      0,
-      21,
-      42
-    ],
-    "playerId": 1,
-    "sanity": 90,
-    "scenarioLevel": 9,
-    "skills": {
-      "activeSkillId": 1,
-      "activeSkillLevel": 3,
-      "passiveSkillId": 7,
-      "passiveSkillLevel": 1
-    },
-    "stats": {
-      "attackSpeed": 1.85,
-      "autoAttackMultiplier": 2.12,
-      "cooldownReduction": 1.9,
-      "critChance": 46.77,
-      "dexterity": 16,
-      "hp": 343,
-      "intelligence": 1,
-      "moveSpeed": 1.8,
-      "skillDamageMultiplier": 2.05,
-      "strength": 10
-    },
-    "weapon": {
-      "attackPower": 55,
-      "modifier": {
-        "dexterity": 0.3,
-        "strength": 0.5
-      },
-      "rarity": 3,
-      "weaponType": 2
-    }
-  },
+  "inventory": [21,42],
   "question": "여기 너무 어두워, 불 좀 켜줘"
 }
 ```
