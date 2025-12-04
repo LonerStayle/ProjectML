@@ -22,6 +22,9 @@ def heroine_memories_node(state: DungeonEventState) -> DungeonEventState:
     heroine_id = state["heroine_data"]["heroine_id"]
     memory_progress = state["heroine_data"]["memory_progress"]
 
+    # 타입 통일 (문자열 → 정수)
+    heroine_id = int(heroine_id) if isinstance(heroine_id, str) else heroine_id
+
     # 해당 히로인의 해금된 기억들을 필터링 (memory_progress 이하)
     heroine_memories = [
         scenario
@@ -73,19 +76,20 @@ def selected_main_event_node(state: DungeonEventState) -> DungeonEventState:
     # 랜덤 선택
     selected_event = random.choice(available_events)
 
-    # 선택된 이벤트의 전체 정보를 문자열로 포맷팅
-    event_description = f"""[{selected_event['title']}]
-Event Code: {selected_event['event_code']}
-Type: {'개별 이벤트' if selected_event['is_personal'] else '공통 이벤트'}
-
-{selected_event['scenario_text']}"""
+    # 선택된 이벤트를 구조화된 dict로 반환
+    event_data = {
+        "title": selected_event['title'],
+        "event_code": selected_event['event_code'],
+        "is_personal": selected_event['is_personal'],
+        "scenario_text": selected_event['scenario_text']
+    }
 
     print(f"[selected_main_event_node] 선택된 이벤트: {selected_event['title']}")
     print(
         f"[selected_main_event_node] 개별 이벤트 여부: {selected_event['is_personal']}"
     )
 
-    return {"selected_main_event": event_description}
+    return {"selected_main_event": event_data}
 
 
 def create_sub_event_node(state: DungeonEventState) -> DungeonEventState:
@@ -107,30 +111,39 @@ def create_sub_event_node(state: DungeonEventState) -> DungeonEventState:
     parser_llm = llm.with_structured_output(DungeonEventParser)
     response = parser_llm.invoke(prompts)
 
-    # 서브 이벤트 결과 포맷팅
-    sub_event_result = f"""
+    # 서브 이벤트를 구조화된 dict로 변환
+    sub_event_data = {
+        "narrative": response.sub_event_narrative,
+        "choices": [
+            {
+                "action": choice.action,
+                "reward_id": choice.reward_id,
+                "penalty_id": choice.penalty_id
+            }
+            for choice in response.event_choices
+        ],
+        "expected_outcome": response.expected_outcome
+    }
+
+    print(f"[create_sub_event_node] 서브 이벤트 생성 완료")
+    print(response)
+
+    # 하위 호환성을 위한 문자열 버전도 생성
+    sub_event_text = f"""
 === 서브 이벤트 내러티브 ===
 {response.sub_event_narrative}
 
 === 선택지 ===
-{chr(10).join([f"{i+1}. {choice}" for i, choice in enumerate(response.event_choices)])}
+{chr(10).join([f"{i+1}. action='{choice.action}' reward_id='{choice.reward_id}' penalty_id='{choice.penalty_id}'" for i, choice in enumerate(response.event_choices)])}
 
 === 예상 결과 ===
 {response.expected_outcome}
 """
 
-    final_answer = (
-        f"=== 메인 이벤트 ===\n{state['selected_main_event']}\n\n"
-        f"=== 서브 이벤트 (히로인 특화) ===\n{sub_event_result}"
-    )
-
-    print(f"[create_sub_event_node] 서브 이벤트 생성 완료")
-    print(response)
-
     return {
-        "messages": [HumanMessage(sub_event_result)],
-        "sub_event": sub_event_result,
-        "final_answer": final_answer,
+        "messages": [HumanMessage(sub_event_text)],
+        "sub_event": sub_event_data,
+        "final_answer": sub_event_data,
     }
 
 

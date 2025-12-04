@@ -10,14 +10,36 @@ from enums.EmbeddingModel import EmbeddingModel
 class RDBRepository:
     def __init__(self):
         self.db_url = CONNECTION_URL
-        self.engine = create_engine(self.db_url)
+        self.engine = create_engine(
+            self.db_url,
+            pool_pre_ping=True,  # 연결 유효성 사전 체크
+            pool_recycle=3600,  # 1시간마다 연결 재생성
+            pool_size=20,  # 연결 풀 크기 (증가)
+            max_overflow=30,  # 최대 오버플로우 (증가)
+            echo=False,  # SQL 쿼리 로깅 비활성화 (성능 개선)
+        )
 
-    def insert_dungeon(self, floor, raw_map):
+    def insert_dungeon(self, floor: int, raw_map: dict | str) -> int:
+        """
+        던전 생성
 
-        # raw_map에서 playerIds와 heroineIds 파싱
+        Args:
+            floor: 던전 층수 (1, 2, 3, ...)
+            raw_map: 던전 맵 원본 데이터 (dict 또는 JSON 문자열)
+
+        Returns:
+            생성된 던전의 ID
+
+        Note:
+            1층: raw_map과 balanced_map에 동일한 초기값 설정 (언리얼이 보낸 맵)
+            2층, 3층: balanced_map은 None으로 시작 (이전 층의 balance_dungeon() 후 자동 업데이트)
+        """
+        # raw_map에서 playerIds와 heroineIds 파싱 (정규화된 형태도 지원)
         raw_map_dict = raw_map if isinstance(raw_map, dict) else json.loads(raw_map)
-        player_ids = raw_map_dict.get("playerIds", [])
-        heroine_ids = raw_map_dict.get("heroineIds", [])
+        player_ids = raw_map_dict.get("player_ids") or raw_map_dict.get("playerIds", [])
+        heroine_ids = raw_map_dict.get("heroine_ids") or raw_map_dict.get(
+            "heroineIds", []
+        )
 
         player_with_heroine = []
         for i in range(0, 4):
@@ -38,13 +60,23 @@ class RDBRepository:
         """
 
         # JSON 데이터를 문자열로 변환
+        raw_map_json = (
+            json.dumps(raw_map) if isinstance(raw_map, (dict, list)) else raw_map
+        )
+
+        # 1층: balanced_map = raw_map (초기값 동일)
+        # 2층 이상: balanced_map = None (다음 층의 balance_dungeon() 후 자동 업데이트)
+        if floor == 1:
+            balanced_map_value = raw_map_json
+        else:
+            balanced_map_value = None
+
         params = {
             "floor": floor,
-            "raw_map": (
-                json.dumps(raw_map) if isinstance(raw_map, (dict, list)) else raw_map
-            ),
-            "balanced_map": None,
-            "summary_info": None,
+            "raw_map": raw_map_json,
+            "balanced_map": balanced_map_value,
+            "is_finishing": False,
+            "summary_info": "",
             "player1": player_with_heroine[0][0],
             "player2": player_with_heroine[1][0],
             "player3": player_with_heroine[2][0],
@@ -61,8 +93,16 @@ class RDBRepository:
             inserted_id = result.fetchone()[0]
             return inserted_id
 
-    def get_unfinished_dungeons(self, player_ids):
+    def get_unfinished_dungeons(self, player_ids: List[int]) -> Dict[str, Any] | None:
+        """
+        미완료 던전 조회
 
+        Args:
+            player_ids: 플레이어 ID 리스트
+
+        Returns:
+            미완료 던전 정보 (dict) 또는 None
+        """
         with self.engine.connect() as conn:
             rows = conn.execute(
                 text(
@@ -81,15 +121,111 @@ class RDBRepository:
             target = set(map(str, player_ids))
 
             for row in rows:
-                raw_map = json.loads(row._mapping["raw_map"])
-                row_players = set(map(str, raw_map.get("playerIds", [])))
+                raw_map_value = row._mapping["raw_map"]
+                raw_map = (
+                    json.loads(raw_map_value)
+                    if isinstance(raw_map_value, str)
+                    else raw_map_value
+                )
+                # playerIds와 player_ids 모두 체크 (정규화 여부와 무관하게)
+                row_players = set(
+                    map(str, raw_map.get("playerIds") or raw_map.get("player_ids", []))
+                )
 
                 if target.issubset(row_players):
                     return dict(row._mapping)
 
             return None
 
-    def balanced_dungeon(self, balanced_map, dungeon_id, summary_info):
+    def balanced_dungeon(
+        self,
+        balanced_map: dict | str,
+        dungeon_id: int,
+        agent_result: Dict[str, Any] | None = None,
+    ) -> None:
+        """
+        던전 밸런싱 업데이트 + summary_info 자동 생성
+
+        Args:
+            balanced_map: 밸런싱된 맵 데이터 (dict 또는 JSON 문자열)
+            dungeon_id: 던전 ID
+            agent_result: Super Dungeon Agent의 최종 결과 dict (선택사항)
+                - meta: {generated_at, dungeon_id, floor_count, total_rooms}
+                - events: {main_event, sub_event, event_room_index}
+                - monster_stats: {total_count, boss_count, normal_count, ...}
+                - difficulty_info: {combat_score, ai_multiplier, ...}
+        """
+        # Agent 결과에서 summary_info 생성
+        summary_info = ""
+        if agent_result:
+            events = agent_result.get("events", {})
+            monster_stats = agent_result.get("monster_stats", {})
+            difficulty_info = agent_result.get("difficulty_info", {})
+
+            # 맵 설명 생성
+            raw_map_value = None
+            with self.engine.connect() as conn:
+                result = conn.execute(
+                    text("SELECT raw_map FROM dungeon WHERE id = :id"),
+                    {"id": dungeon_id},
+                ).fetchone()
+                if result:
+                    raw_map_value = result[0]
+
+            raw_map = (
+                (
+                    json.loads(raw_map_value)
+                    if isinstance(raw_map_value, str)
+                    else raw_map_value
+                )
+                if raw_map_value
+                else {}
+            )
+
+            rooms_count = len(raw_map.get("rooms", []))
+            room_types = {}
+            for room in raw_map.get("rooms", []):
+                room_type = room.get("type", "unknown")
+                room_types[room_type] = room_types.get(room_type, 0) + 1
+
+            room_type_str = ", ".join(
+                [f"{k}실 {v}개" for k, v in sorted(room_types.items())]
+            )
+
+            # Summary 정보 구성
+            # 이벤트 정보 추출 (dict 형식)
+            main_event = events.get("main_event", {})
+            sub_event = events.get("sub_event", {})
+
+            main_event_title = (
+                main_event.get("title", "N/A")
+                if isinstance(main_event, dict)
+                else str(main_event)[:80]
+            )
+            sub_event_narrative = (
+                sub_event.get("narrative", "N/A")
+                if isinstance(sub_event, dict)
+                else str(sub_event)[:80]
+            )
+
+            summary_lines = [
+                f"[맵 구성]",
+                f"  - 총 방: {rooms_count}개 ({room_type_str})",
+                f"",
+                f"[몬스터 배치]",
+                f"  - 총 {monster_stats.get('total_count', 0)}마리 (보스: {monster_stats.get('boss_count', 0)}, 일반: {monster_stats.get('normal_count', 0)})",
+                f"  - 위협도 달성률: {monster_stats.get('achievement_rate', 0):.1f}%",
+                f"",
+                f"[난이도]",
+                f"  - 전투력: {difficulty_info.get('combat_score', 0):.2f}",
+                f"  - AI 배율: x{difficulty_info.get('ai_multiplier', 1.0):.2f}",
+                f"",
+                f"[이벤트]",
+                f"  - 주요: {main_event_title}",
+                f"  - 보조: {str(sub_event_narrative)[:80]}...",
+            ]
+            summary_info = "\n".join(summary_lines)
+
         sql = """
         UPDATE dungeon
         SET balanced_map = :balanced_map,
@@ -112,6 +248,15 @@ class RDBRepository:
             conn.commit()
 
     def is_finishing_dungeon(self, player_ids: List[int]) -> Dict[str, Any] | None:
+        """
+        현재 진행 중인 던전을 완료 처리
+
+        Args:
+            player_ids: 플레이어 ID 리스트
+
+        Returns:
+            완료 처리된 던전 정보 (dict) 또는 None
+        """
         with self.engine.connect() as conn:
             rows = conn.execute(
                 text(
@@ -130,24 +275,32 @@ class RDBRepository:
             target = set(map(str, player_ids))
 
             for row in rows:
-                raw_map = json.loads(row._mapping["raw_map"])
-                row_players = set(map(str, raw_map.get("playerIds", [])))
+                raw_map_value = row._mapping["raw_map"]
+                raw_map = (
+                    json.loads(raw_map_value)
+                    if isinstance(raw_map_value, str)
+                    else raw_map_value
+                )
+                # playerIds와 player_ids 모두 체크 (정규화 여부와 무관하게)
+                row_players = set(
+                    map(str, raw_map.get("playerIds") or raw_map.get("player_ids", []))
+                )
 
                 if target.issubset(row_players):
                     dungeon_id = row._mapping["id"]
 
-                    # update
+                    # 현재 던전을 완료 처리
                     conn.execute(
                         text("UPDATE dungeon SET is_finishing = TRUE WHERE id = :id"),
                         {"id": dungeon_id},
                     )
                     conn.commit()
 
-                    # updated row 반환
+                    # 완료 처리된 던전 조회
                     updated = conn.execute(
                         text("SELECT * FROM dungeon WHERE id = :id"), {"id": dungeon_id}
                     ).fetchone()
-
-                    return dict(updated._mapping)
+                    updated_dict = dict(updated._mapping)
+                    return updated_dict
 
             return None

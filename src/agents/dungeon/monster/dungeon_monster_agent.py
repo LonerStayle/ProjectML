@@ -27,7 +27,7 @@ def calculate_combat_score_node(state: DungeonMonsterState) -> DungeonMonsterSta
         - 단일 플레이어: 해당 플레이어의 전투력
         - 멀티 플레이어: 파티 평균 전투력
     """
-    heroine_stat = state["heroine_stat"]
+    heroine_stat = state.get("heroine_stat")
 
     if not heroine_stat:
         print("[calculate_combat_score_node] 히로인 스탯 없음, 기본값 100.0 사용")
@@ -37,7 +37,6 @@ def calculate_combat_score_node(state: DungeonMonsterState) -> DungeonMonsterSta
     is_party = isinstance(heroine_stat, list)
 
     if is_party:
-        # TODO: 멀티 플레이어 - 파티 전투력 계산
         stats_list = heroine_stat
         if not stats_list:
             return {"combat_score": 100.0}
@@ -86,32 +85,15 @@ def _calculate_single_combat_score(stat: StatData) -> float:
 
 
 def llm_strategy_node(state: DungeonMonsterState) -> DungeonMonsterState:
-    """
-    LLM에게 히로인 정보를 전달하고 밸런싱 전략을 받아오는 노드
-
-    LLM은 다음을 결정:
-    1. difficulty_multiplier: 난이도 배율 (0.5~2.0)
-    2. preferred_monster_types: 추천 몬스터 타입 리스트 [0: 일반, 1: 엘리트, 2: 보스]
-    3. reasoning: 전략 선택 이유
-    """
     combat_score = state["combat_score"]
     floor = state.get("floor", 1)
     heroine_stat = state["heroine_stat"]
     dungeon_player_data = state.get("dungeon_player_data", {})
 
-    # 디버그: 입력 데이터 확인
-    print(f"[llm_strategy_node DEBUG] combat_score: {combat_score}")
-    print(f"[llm_strategy_node DEBUG] heroine_stat type: {type(heroine_stat)}")
-    print(f"[llm_strategy_node DEBUG] heroine_stat: {heroine_stat}")
-    print(f"[llm_strategy_node DEBUG] dungeon_player_data: {dungeon_player_data}")
-
     # 멀티 플레이어 감지
     is_party = isinstance(heroine_stat, list)
 
     if is_party:
-        # TODO: 멀티 플레이어 - 대표 히로인 선택 로직 개선 가능
-        # 현재: 첫 번째 히로인 사용
-        # 개선안: 최고 전투력, 리더 역할 등 고려
         first_stat = heroine_stat[0]
         if isinstance(first_stat, dict):
             hero = StatData(**first_stat)
@@ -153,28 +135,15 @@ def llm_strategy_node(state: DungeonMonsterState) -> DungeonMonsterState:
 - 정신력: {sanity}
 """
 
-    # TODO: 멀티 플레이어 - 파티원별 상세 정보를 프롬프트에 추가 가능
-    # 예: 각 히로인의 역할(탱커/딜러/힐러), 시너지 효과 등
-
     try:
-        # 디버그: hero_summary 출력
-        print(f"[llm_strategy_node DEBUG] hero_summary:\n{hero_summary}")
-        
         # 프롬프트 생성
         prompts = PromptManager(DungeonPromptType.MONSTER_STRATEGY).get_prompt(
             hero_summary=hero_summary, floor=current_floor
         )
-        
-        # 디버그: 생성된 프롬프트 전체 출력
-        print(f"[llm_strategy_node DEBUG] prompts type: {type(prompts)}")
-        print(f"[llm_strategy_node DEBUG] prompts 내용:\n{prompts}\n")
-        
         # hero_summary가 프롬프트에 포함되었는지 확인
         if isinstance(prompts, str):
             if "hero_summary" in prompts or "{hero_summary}" in prompts:
                 print("[llm_strategy_node ERROR] 프롬프트에 hero_summary 치환 실패!")
-            elif "HP: 500" in prompts:
-                print("[llm_strategy_node DEBUG] ✅ hero_summary 정상 치환됨")
             else:
                 print("[llm_strategy_node WARNING] hero_summary 확인 불가")
 
@@ -189,10 +158,6 @@ def llm_strategy_node(state: DungeonMonsterState) -> DungeonMonsterState:
             "avoid_conditions": response.avoid_conditions,
             "reasoning": response.reasoning,
         }
-
-        print(f"[llm_strategy_node] 난이도 배율: {response.difficulty_multiplier:.2f}")
-        print(f"[llm_strategy_node] 추천 태그: {response.preferred_tags}")
-        print(f"[llm_strategy_node] 전략 이유: {response.reasoning}")
 
         return {"llm_strategy": strategy}
 
@@ -268,8 +233,6 @@ def select_monsters_node(state: DungeonMonsterState) -> DungeonMonsterState:
             boss_threat = boss_monsters[0].threat_level  # 첫 번째 보스 기준
             actual_threat += boss_threat
 
-    # 난이도 로그 생성
-    # TODO: 멀티 플레이어 - 파티 구성 정보 추가 가능
     difficulty_log = {
         "model_used": llm.model_name,
         "combat_score": combat_score,
@@ -316,15 +279,6 @@ def _select_monsters_by_strategy(
     monster_preferences: List[Dict[str, Any]] = None,
     avoid_conditions: List[str] = None,
 ) -> List[MonsterData]:
-    """
-    LLM 전략에 따라 몬스터를 선택
-
-    전략:
-    1. monster_preferences에 맞는 몬스터 필터링
-    2. avoid_conditions에 해당하는 몬스터 제외
-    3. 가중치에 따라 확률적 선택
-    4. 타겟 위협도에 도달할 때까지 반복
-    """
     # 일반 몬스터만 사용 (보스는 별도 처리)
     all_normal_monsters = [m for m in monster_db.values() if m.monster_type == 0]
 
@@ -494,7 +448,7 @@ def _place_monsters_in_rooms(
     import copy
 
     filled_dungeon = copy.deepcopy(dungeon_data)
-    
+
     # filled_dungeon의 rooms에서 room_id로 매칭하여 직접 수정
     rooms_by_id = {room["room_id"]: room for room in filled_dungeon["rooms"]}
 
@@ -509,23 +463,11 @@ def _place_monsters_in_rooms(
                 # 보스 몬스터 선택 (여러 개 있으면 랜덤)
                 boss = random.choice(boss_monsters)
 
-                boss_spawn_data = {
-                    "monster_id": boss.monster_id,
-                    "monster_name": boss.monster_name,
-                    "monster_type": boss.monster_type,
-                    "position": _generate_random_position(),
-                    "hp": boss.hp,
-                    "attack": boss.attack,
-                    "threat_level": boss.threat_level,
-                }
-
-                # filled_dungeon의 실제 room에 배치
+                # filled_dungeon의 실제 room에 배치 (monster_id만 저장)
                 room_id = boss_room_ref.get("room_id")
                 if room_id in rooms_by_id:
-                    rooms_by_id[room_id]["monsters"] = [boss_spawn_data]
-                    print(
-                        f"[보스방] 방 {room_id}: {boss.monster_name} 배치"
-                    )
+                    rooms_by_id[room_id]["monsters"] = [boss.monster_id]
+                    print(f"[보스방] 방 {room_id}: 몬스터 ID {boss.monster_id} 배치")
     else:
         print("[_place_monsters_in_rooms] 경고: 보스방이 없습니다")
 
@@ -558,17 +500,8 @@ def _place_monsters_in_rooms(
             monster = normal_monsters[monster_index]
             monster_index += 1
 
-            # 몬스터 배치 데이터 생성
-            spawn_data = {
-                "monster_id": monster.monster_id,
-                "monster_name": monster.monster_name,
-                "monster_type": monster.monster_type,
-                "position": _generate_random_position(),
-                "hp": monster.hp,
-                "attack": monster.attack,
-                "threat_level": monster.threat_level,
-            }
-            room_monsters.append(spawn_data)
+            # monster_id만 저장
+            room_monsters.append(monster.monster_id)
 
         # filled_dungeon의 실제 room에 배치
         room_id = combat_room_ref.get("room_id")
@@ -581,7 +514,8 @@ def _place_monsters_in_rooms(
 
 def _generate_random_position() -> Dict[str, float]:
     """방 내 랜덤 위치 생성"""
-    return {"x": random.uniform(-10, 10), "y": 0, "z": random.uniform(-10, 10)}
+    # 0.0 ~ 1.0 범위의 정규화된 좌표 반환 (언리얼 배치용)
+    return {"x": random.random(), "y": random.random(), "z": random.random()}
 
 
 # ===== LangGraph 구성 =====
