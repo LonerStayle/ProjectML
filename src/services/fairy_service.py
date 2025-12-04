@@ -13,8 +13,8 @@ dungeon_graph = dungeon_builder.compile(dungeon_memory)
 async def fairy_dungeon_talk(
     dungeon_player: DungeonPlayerData,
     question: str,
-    targetMonsterIds: List[int],
-    nextRoomId: int,
+    target_monster_ids: List[int],
+    next_room_ids: List[int],
 ) -> str:
     playerId = dungeon_player.playerId
     config = {
@@ -27,9 +27,9 @@ async def fairy_dungeon_talk(
         {
             "messages": [add_human_message(content=question)],
             "dungenon_player": dungeon_player,
-            "target_monster_ids": targetMonsterIds,
+            "target_monster_ids": target_monster_ids,
             "player_id": playerId,
-            "next_room_id": nextRoomId,
+            "next_room_ids": next_room_ids,
         },
         config=config,
     )

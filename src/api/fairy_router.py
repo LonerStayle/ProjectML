@@ -62,7 +62,7 @@ class TalkDungeonRequest(BaseModel):
         description="히로인 시야에 있는 몬스터들 (사실 1개면 됨, 혹시 몰라 리스트로 열어둠)",
     )
 
-    nextRoomId: int = Field(..., description="히로인이 이동해야할 다음방 ID", example=1)
+    nextRoomIds: List[int] = Field(..., description="히로인이 이동 가능한 방 ID 목록", example=1)
 
 
 class TalkGuildRequest(BaseModel):
@@ -142,10 +142,10 @@ async def talk_dungeon(request: TalkDungeonRequest):
 
     question = request.question
     target_monster_ids = request.targetMonsterIds
-    next_room_id = request.nextRoomId
+    next_room_ids = request.nextRoomIds
 
     result_text = await fairy_dungeon_talk(
-        player, question, target_monster_ids, next_room_id
+        player, question, target_monster_ids, next_room_ids
     )
     return TalkResponse(response_text=result_text)
 

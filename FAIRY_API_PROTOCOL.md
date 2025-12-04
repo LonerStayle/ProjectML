@@ -38,7 +38,7 @@
 | └── `inventory`    | List[int] | Yes      | 인벤토리에 포함된 아이템 ID 목록                    |
 | `question`         | String    | Yes      | 사용자의 질문 (예: `"현재 방의 불좀 켜줘"`)           |
 | `targetMonsterIds` | List[int] | No       | 히로인 시야에 감지된 몬스터 ID 목록 (기본값: `[]`)      |
-| `nextRoomId`       | Integer   | Yes      | 히로인이 이동해야 할 다음 방 ID                    |
+| `nextRoomIds`       | List[int]   | Yes      | 히로인이 이동 가능한 방 ID list                    |
 
 ```json
 {
