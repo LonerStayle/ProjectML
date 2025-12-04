@@ -34,10 +34,44 @@
 ```json
 {
   "dungeonPlayer": {
+    "affection": 6,
+    "difficulty": 0,
+    "heroineId": 1,
+    "inventory": [
+      0,
+      21,
+      42
+    ],
     "playerId": 1,
-    "hp": 100,
-    "currentRoomId": 5,
-    "status": "normal"
+    "sanity": 90,
+    "scenarioLevel": 9,
+    "skills": {
+      "activeSkillId": 1,
+      "activeSkillLevel": 3,
+      "passiveSkillId": 7,
+      "passiveSkillLevel": 1
+    },
+    "stats": {
+      "attackSpeed": 1.85,
+      "autoAttackMultiplier": 2.12,
+      "cooldownReduction": 1.9,
+      "critChance": 46.77,
+      "dexterity": 16,
+      "hp": 343,
+      "intelligence": 1,
+      "moveSpeed": 1.8,
+      "skillDamageMultiplier": 2.05,
+      "strength": 10
+    },
+    "weapon": {
+      "attackPower": 55,
+      "modifier": {
+        "dexterity": 0.3,
+        "strength": 0.5
+      },
+      "rarity": 3,
+      "weaponType": 2
+    }
   },
   "question": "방에 불좀 켜줘",
   "targetMonsterIds": [101, 102],
@@ -72,8 +106,44 @@
 ```json
 {
   "dungeonPlayer": {
+    "affection": 6,
+    "difficulty": 0,
+    "heroineId": 1,
+    "inventory": [
+      0,
+      21,
+      42
+    ],
     "playerId": 1,
-    "currentRoomId": 5
+    "sanity": 90,
+    "scenarioLevel": 9,
+    "skills": {
+      "activeSkillId": 1,
+      "activeSkillLevel": 3,
+      "passiveSkillId": 7,
+      "passiveSkillLevel": 1
+    },
+    "stats": {
+      "attackSpeed": 1.85,
+      "autoAttackMultiplier": 2.12,
+      "cooldownReduction": 1.9,
+      "critChance": 46.77,
+      "dexterity": 16,
+      "hp": 343,
+      "intelligence": 1,
+      "moveSpeed": 1.8,
+      "skillDamageMultiplier": 2.05,
+      "strength": 10
+    },
+    "weapon": {
+      "attackPower": 55,
+      "modifier": {
+        "dexterity": 0.3,
+        "strength": 0.5
+      },
+      "rarity": 3,
+      "weaponType": 2
+    }
   },
   "question": "여기 너무 어두워, 불 좀 켜줘"
 }

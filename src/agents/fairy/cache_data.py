@@ -118,6 +118,31 @@ reverse_questions = [
     "…진짜로? 그게 다야?",
 ]
 
+MONSTER_INFOS = [
+    {
+        "monsterId": 0,
+        "monsterType": 0,
+        "monsterName": "스켈레톤",
+        "hp": 300,
+        "speed": 350,
+        "attack": 10,
+        "attackSpeed": 1,
+        "attackRange": 100,
+        "staggerGage": 10
+    },
+    {
+        "monsterId": 1,
+        "monsterType": 0,
+        "monsterName": "슬라임",
+        "hp": 250,
+        "speed": 200,
+        "attack": 10,
+        "attackSpeed": 1,
+        "attackRange": 100,
+        "staggerGage": 5
+    }
+]
+
 HEROINE_SCENARIOS = [
     # =========================================================================
     # 레티아 (heroine_id=1)
