@@ -99,7 +99,7 @@
 
 | Field | Type | Description |
 | :--- | :--- | :--- |
-| `roomLight` | Boolean (Optional) | 방 밝기 조절 여부 (`true`: 켜기, `false`: 끄기, `null`: 행동 없음) |
+| `roomLight` | Integer | 방 밝기 조절 여부 (`0`: 행동 없음, `1`: 켜기, `2`: 끄기) |
 | `isCheckNextRoom` | Boolean | 다음 방 확인 필요 여부 (정령 행동 필요 없으면 `false`) |
 | `useItemId` | Integer (Optional) | 사용할 아이템의 ID (`null`: 사용 안 함) |
 

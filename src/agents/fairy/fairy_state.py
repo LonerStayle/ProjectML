@@ -59,7 +59,8 @@ class FairyInterationIntentOutput(BaseModel):
 
 class FairyInteractionState(MessagesState):
     inventory: List[int] = []
-    roomLight: Optional[bool] = None
+    # 0 은 미행동, 1은 불키기, 2은 불끄기
+    roomLight: int = 0
     isCheckNextRoom: bool = False
     useItemId: Optional[int] = None
     intent_types: List[FairyInterationIntentType]

@@ -90,10 +90,10 @@ class InteractionRequest(BaseModel):
 
 
 class InteractionResponse(BaseModel):
-    roomLight: Optional[bool] = Field(
+    roomLight: int = Field(
         ...,
-        description="방 밝기 On/Off 여부 (정령 행동 필요 없으면 Null)",
-        example=None,
+        description="방 밝기 On/Off 여부 (정령 행동 필요 없으면 :0 , 불키기: 1, 불끄기: 2)",
+        example=0,
     )
     isCheckNextRoom: bool = Field(
         ...,
