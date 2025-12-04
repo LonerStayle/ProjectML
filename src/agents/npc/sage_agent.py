@@ -21,6 +21,8 @@
 
 import json
 import yaml
+import asyncio
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import AsyncIterator, Dict, Any, Tuple
 from langchain.chat_models import init_chat_model
@@ -32,6 +34,7 @@ from agents.npc.base_npc_agent import BaseNPCAgent
 from agents.npc.emotion_mapper import sage_emotion_to_int
 from db.redis_manager import redis_manager
 from db.mem0_manager import mem0_manager
+from db.session_checkpoint_manager import session_checkpoint_manager
 from services.sage_scenario_service import sage_scenario_service
 
 
@@ -391,7 +394,13 @@ class SageAgent(BaseNPCAgent):
     "info_revealed": true 또는 false
 }"""
 
+        npc_id = state["npc_id"]
+        time_since_last_chat = self.get_time_since_last_chat(state["player_id"], npc_id)
+
         prompt = f"""당신은 대현자 사트라(Satra)입니다.
+
+[마지막 대화로부터 경과 시간]
+{time_since_last_chat}
 
 [현재 상태]
 - 시나리오 레벨(ScenarioLevel): {scenario_level}
@@ -467,6 +476,48 @@ class SageAgent(BaseNPCAgent):
                 {"role": "assistant", "content": response_text}
             )
 
+            # turn_count 업데이트
+            turn_count = session.get("turn_count", 0) + 1
+            session["turn_count"] = turn_count
+
+            # last_chat_at 업데이트
+            session["last_chat_at"] = datetime.now().isoformat()
+
+            # 요약 생성 조건 확인 (20턴 또는 1시간 경과)
+            last_summary_at = session.get("last_summary_at")
+            should_generate_summary = False
+
+            if turn_count >= 20:
+                should_generate_summary = True
+            elif last_summary_at:
+                last_summary_time = datetime.fromisoformat(last_summary_at)
+                if datetime.now() - last_summary_time > timedelta(hours=1):
+                    should_generate_summary = True
+            elif turn_count >= 10:
+                should_generate_summary = True
+
+            if should_generate_summary:
+                session["turn_count"] = 0
+                session["last_summary_at"] = datetime.now().isoformat()
+
+                conversations = []
+                for i in range(0, len(session["conversation_buffer"]), 2):
+                    if i + 1 < len(session["conversation_buffer"]):
+                        conversations.append(
+                            {
+                                "user": session["conversation_buffer"][i].get(
+                                    "content", ""
+                                ),
+                                "npc": session["conversation_buffer"][i + 1].get(
+                                    "content", ""
+                                ),
+                            }
+                        )
+
+                asyncio.create_task(
+                    self._generate_and_save_summary(player_id, npc_id, conversations)
+                )
+
             # 세션 저장
             redis_manager.save_session(player_id, npc_id, session)
 
@@ -481,6 +532,38 @@ class SageAgent(BaseNPCAgent):
             "emotion": emotion_int,
             "info_revealed": info_revealed,
         }
+
+    async def _generate_and_save_summary(
+        self, player_id: int, npc_id: int, conversations: list
+    ) -> None:
+        """백그라운드로 요약 생성 및 저장
+
+        Args:
+            player_id: 플레이어 ID
+            npc_id: NPC ID
+            conversations: 대화 목록
+        """
+        try:
+            summary_item = await session_checkpoint_manager.generate_summary(
+                player_id, npc_id, conversations
+            )
+
+            session = redis_manager.load_session(player_id, npc_id)
+            if session:
+                summary_list = session.get("summary_list", [])
+                summary_list.append(summary_item)
+
+                summary_list = session_checkpoint_manager.prune_summary_list(
+                    summary_list
+                )
+                session["summary_list"] = summary_list
+
+                redis_manager.save_session(player_id, npc_id, session)
+
+            session_checkpoint_manager.save_summary(player_id, npc_id, summary_item)
+
+        except Exception as e:
+            print(f"[ERROR] _generate_and_save_summary 실패: {e}")
 
     # ============================================
     # LangGraph 빌드 (비스트리밍용)
