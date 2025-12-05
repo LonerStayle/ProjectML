@@ -1,9 +1,9 @@
 import json
-from typing import List, Any, Dict
+from typing import List, Any, Dict, Optional
 from sqlalchemy import create_engine, text
 from db.config import CONNECTION_URL
 from enums.EmbeddingModel import EmbeddingModel
-
+from db.rdb_entity.DungeonRow import DungeonRow
 # 이때 summary_info는 그냥 던전 밸런싱 요약내용을 text로.
 
 
@@ -305,7 +305,7 @@ class RDBRepository:
 
             return None
         
-    def get_current_dungeon_by_player(self, player_id: int, heroine_id: int) -> Dict[str, Any] | None:
+    def get_current_dungeon_by_player(self, player_id: int, heroine_id: int) -> Optional[DungeonRow]:
         sql = """
         SELECT *
         FROM dungeon
@@ -330,4 +330,7 @@ class RDBRepository:
             if not row:
                 return None
 
-            return dict(row._mapping)
+            row_dict = dict(row._mapping)
+            return DungeonRow(**row_dict)
+        
+        
