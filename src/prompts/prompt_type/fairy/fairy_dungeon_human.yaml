@@ -1,9 +1,9 @@
 FAIRY_DUNGEON_HUMAN:
   name: FAIRY_DUNGEON_HUMAN
   prompt: |
-    <Abilities Used>
+    <Used Abilities>
     {use_intents}
-    </Abilities Used>
+    </Used Abilities>
 
     <Heroine Info>
     {dungenon_player}
@@ -13,21 +13,31 @@ FAIRY_DUNGEON_HUMAN:
     {info}
     </Current Situation>
 
-    While following all rules defined in the system prompt
-    and the information above,
-    answer the following user utterance **as Paimon, once only**.
+    <ANSWER EXAMPLE>
+    {ability_examples}
+    </ANSWER EXAMPLE>
 
-    - Follow the tone/character/length/ability rules exactly as defined in the system.
-    - The response must be a natural Korean dialogue sentence,
-      without JSON or any structured format.
-    
-    All responses must always be given in Korean.
-    
+    While following all of the above information and the system prompt rules,
+    answer the following user utterance once, as Paimon.
+
+    - Strictly follow the tone/length/ability rules defined in the system prompt.
+    - Use only the abilities included in <Used Abilities> when answering.
+    - If multiple abilities are given, reflect all of them in the answer.
+    - The answer must be plain natural Korean dialogue, without any JSON-like structure.
+    - Do not include Japanese-style kanji or Chinese characters in the response.
+    - Never use the word "heroine" in any answer.
+      You must always refer to the character by the **actual name** provided in <Heroine Info>.
+      - Example: "히로인" ✗ / "레티아" ✓ or "로코" ✓ or "루파메스" ✓
+
+    - When generating an answer, you must strongly follow the patterns shown in the <Response Examples> section.
+      These examples are not optional; they are **core guidelines** that define the required tone, logic, and response structure.
+
     [User Utterance]
     {question}
 
   input_variables:
     - "dungenon_player"
     - "use_intents"
+    - "ability_examples"
     - "info"
     - "question"

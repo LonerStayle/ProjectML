@@ -835,6 +835,7 @@ HEROINE_INFOS = [
     },
 ]
 
+
 GAME_SYSTEM_INFO = """
 # 게임 시스템 개요
 
@@ -956,3 +957,125 @@ GAME_SYSTEM_INFO = """
 하나의 순환 구조로 맞물린 **서브컬쳐형 로그라이크 RPG**의 형태가 완성됨.
 
 """
+
+# GAME_SYSTEM_INFO = """
+# # Overview of the Game System
+
+# This document summarizes the major gameplay mechanisms, including the dungeon-exploration loop, character controls,  
+# and interaction systems with Heroines and Sage NPCs.
+
+# ---
+
+# # 1. Core Game Loop
+
+# The game progresses through the following cyclical structure:
+
+# ## 1-1. Dungeon Exploration
+# - The player explores **roguelike-style dungeons**.
+# - During combat, the player uses skills, upgrades weapons and equipment, and engages in farming.
+
+# ## 1-2. Gaining EXP and Memory Shards
+# - Various resources and experience are collected during exploration.
+# - Combat results and player choices accumulate to generate **Memory Shards**.
+
+# ## 1-3. Counseling & Conversation (Consumes Memory Shards)
+# - Accumulated Memory Shards are used to counsel and converse with Heroines.
+# - This unlocks story progress and deepens relationships.
+
+# ## 1-4. Heroine Affection & Ability Growth
+# - Through counseling/conversation, the Heroine’s **Affection** increases.
+# - Upon reaching certain affection levels, skills/stats improve and unique traits are unlocked.
+
+# ## 1-5. Returning to Dungeon Exploration With a Strengthened Heroine
+# - The strengthened Heroine joins the player for further dungeon challenges.
+# - Through repetition, both character progression and narrative expand together.
+
+# ### ▶ Core Cycle Summary
+# **Dungeon Exploration → EXP & Memory Acquisition → Counseling/Conversation → Affection & Ability Growth → Dungeon Challenge Again**
+
+# ---
+
+# # 2. Guild and NPC Interaction Systems
+
+# ## 2-1. Guild System (Subculture-style Hub)
+# - The player interacts with various NPCs in natural language within the guild.
+# - The guild is not just a story hub; it is the core space for progression, unlocks, and relationship building.
+
+# ---
+
+# ## 2-2. Heroine Conversation (Counseling) System
+
+# ### ● Natural-Language Dialogue
+# - All conversations occur via **free-form natural language**, not predefined choices.
+# - Interacting within the guild initiates a counseling session with a specific Heroine.
+
+# ### ● Role
+# - Touching on sensitive past events (e.g., PTSD-related topics) may harm the relationship.
+# - Memory Shards are consumed to raise affection and help recover the Heroine’s past.
+# - Successful counseling provides tangible growth such as stat/skill upgrades.
+
+# ### ● Lost Memory Unlock Structure
+# - Each heroine has 3–4 core memories.
+# - They unlock at affection levels 2, 5, 8, and 10.
+# - Memories are presented as scenario-style sequences and can be revisited.
+
+# ---
+
+# ## 2-3. Sage Q&A (Lore Information) System
+
+# ### ● Natural-Language Q&A
+# - Interacting with the Sage NPC in the guild initiates a Q&A session.
+# - Players freely ask questions, and the Sage provides world/lore information.
+
+# ### ● Information Level System
+# - Important lore is initially vague or withheld.
+# - As the player progresses through dungeons, the **Sage Level** increases, revealing deeper information.
+# - There are 10 levels of information accessibility.
+
+# ### ● Examples
+# - True identity of the Sage: Required Level 4  
+# - True nature of the dungeon: Required Level 2  
+
+# ---
+
+# # 3. Character Controls
+
+# Below are the basic control methods for the player character.
+
+# | Key                  | Description                        |
+# |----------------------|------------------------------------|
+# | Keyboard W           | Move forward                       |
+# | Keyboard S           | Move backward                      |
+# | Keyboard A           | Move left                          |
+# | Keyboard D           | Move right                         |
+# | Left Mouse Button    | Basic attack                       |
+# | Right Mouse Button   | Dodge                              |
+# | Keyboard Spacebar    | Dodge                              |
+# | Keyboard Left Shift  | Run (toggle)                       |
+# | Keyboard Q           | Targeting                          |
+# | Keyboard E           | Weapon Skill                       |
+# | Keyboard R           | Class Skill                        |
+# | Keyboard F           | Interaction (events/items)         |
+# | Keyboard Tab         | Inventory                          |
+
+# ---
+
+# # 4. Natural Flow Between Systems
+
+# ### ● Character Controls  
+# → Provide the action and responsiveness needed for dungeon exploration.  
+
+# ### ● Dungeon Exploration  
+# → Grants resources (EXP / Memory Shards).  
+
+# ### ● Heroine Counseling & Sage Q&A  
+# → Consumes resources to unlock narrative, skills, and stats.  
+# → Enhances world understanding to access deeper content.  
+
+# ### ● Returning to Dungeon With a Strengthened Heroine  
+# → Improves combat efficiency and enables higher difficulty challenges.  
+
+# ### Ultimately, **Combat (Action)**, **Narrative (Dialogue)**, and **Growth (Unlocks)**  
+# interlock to form a **subculture-style roguelike RPG**.
+
+# """
