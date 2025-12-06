@@ -28,7 +28,7 @@ class FairyDungeonIntentType(StrEnum):
     EVENT_GUIDE = "EVENT_GUIDE"
     DUNGEON_NAVIGATOR = "DUNGEON_NAVIGATOR"
     INTERACTION_HANDLER = "INTERACTION_HANDLER"
-    GAME_SYSTEM_INFO = "GAME_SYSTEM_INFO"
+    USAGE_GUIDE = "USAGE_GUIDE"
     SMALLTALK = "SMALLTALK"
     UNKNOWN_INTENT = "UNKNOWN_INTENT"
 
@@ -43,7 +43,6 @@ class FairyDungeonState(MessagesState):
     target_monster_ids: List[int] = []
     player_id:Optional[int] = None
     next_room_ids: List[int] = []
-    is_multi_small_talk: bool = False
 
 class FairyInterationIntentType(StrEnum):
     INVENTORY_ITEM_USE = "INVENTORY_ITEM_USE"
