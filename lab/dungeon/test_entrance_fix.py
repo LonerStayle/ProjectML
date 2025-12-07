@@ -27,7 +27,7 @@ async def test_entrance_logic():
             },
             {
                 "roomId": 1,
-                "type": 2,  # Event Room
+                "type": 2,
                 "size": 8,
                 "neighbors": [2, 0],
                 "monsters": [],
@@ -38,12 +38,53 @@ async def test_entrance_logic():
                 "type": 1,
                 "size": 6,
                 "neighbors": [1, 4],
-                "monsters": [],  # Simplified
+                "monsters": [
+                    {
+                        "monsterId": 0,
+                        "posX": 0.071239590644836426,
+                        "posY": 0.49437010288238525,
+                    },
+                    {
+                        "monsterId": 0,
+                        "posX": 0.64459884166717529,
+                        "posY": 0.63561642169952393,
+                    },
+                    {
+                        "monsterId": 0,
+                        "posX": 0.3811793327331543,
+                        "posY": 0.9721304178237915,
+                    },
+                    {
+                        "monsterId": 0,
+                        "posX": 0.557853102684021,
+                        "posY": 0.66655290126800537,
+                    },
+                    {
+                        "monsterId": 0,
+                        "posX": 0.83782792091369629,
+                        "posY": 0.44205427169799805,
+                    },
+                    {
+                        "monsterId": 0,
+                        "posX": 0.83236396312713623,
+                        "posY": 0.7380518913269043,
+                    },
+                    {
+                        "monsterId": 0,
+                        "posX": 0.74639761447906494,
+                        "posY": 0.73493218421936035,
+                    },
+                    {
+                        "monsterId": 0,
+                        "posX": 0.44071531295776367,
+                        "posY": 0.50277876853942871,
+                    },
+                ],
                 "eventType": 0,
             },
             {
                 "roomId": 3,
-                "type": 2,  # Event Room
+                "type": 2,
                 "size": 8,
                 "neighbors": [4],
                 "monsters": [],
@@ -62,20 +103,20 @@ async def test_entrance_logic():
     }
 
     heroine_data = {
-        "playerId": 1,
-        "heroineId": 1,
+        "playerId": 0,
+        "heroineId": 0,
         "memoryProgress": 0,
         "heroineStat": {
-            "hp": 100,
-            "atk": 10,
-            "def": 10,
-            "spd": 10,
-            "strength": 10,
-            "dexterity": 10,
-            "intelligence": 10,
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spd": 0,
+            "strength": 0,
+            "dexterity": 0,
+            "intelligence": 0,
         },
         "heroineMemories": [],
-        "dungeonPlayerData": {"level": 1, "exp": 0},
+        "dungeonPlayerData": {"level": 0, "exp": 0},
     }
 
     print("Testing Entrance...")
@@ -84,7 +125,7 @@ async def test_entrance_logic():
             player_ids=[1],
             heroine_ids=[1],
             raw_map=raw_map,
-            # heroine_data=heroine_data,
+            heroine_data=heroine_data,
             used_events=[],
         )
 

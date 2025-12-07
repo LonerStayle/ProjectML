@@ -129,7 +129,7 @@ class DungeonService:
         player_ids: List[int],
         heroine_ids: List[int],
         raw_map: Dict[str, Any],
-        # heroine_data: Optional[Dict[str, Any]] = None, # 임시 제거
+        heroine_data: Optional[Dict[str, Any]] = None,
         used_events: Optional[List[Any]] = None,
     ) -> Dict[str, Any]:
         """
@@ -139,7 +139,7 @@ class DungeonService:
             player_ids: 플레이어 ID 리스트
             heroine_ids: 영웅 ID 리스트
             raw_map: Unreal에서 보낸 1층 raw_map (camelCase)
-            # heroine_data: 히로인 데이터 (선택) - 임시 제거
+            heroine_data: 히로인 데이터 (선택)
             used_events: 사용된 이벤트 리스트 (선택)
 
         Returns:
@@ -155,6 +155,23 @@ class DungeonService:
         normalized_raw_map = _normalize_room_keys(raw_map)
 
         first_player_id = player_ids[0] if player_ids else 0
+
+        # DB Cleanup: Player 0 (테스트 계정)의 이전 던전 세션 종료 처리
+        if first_player_id == 0:
+            try:
+                from sqlalchemy import text
+
+                with self.repo.engine.begin() as conn:
+                    conn.execute(
+                        text(
+                            "UPDATE dungeon SET is_finished = true WHERE player_id = 0 AND is_finished = false"
+                        )
+                    )
+                print(
+                    f"[Entrance] Player {first_player_id}의 이전 던전 세션을 모두 종료 처리했습니다."
+                )
+            except Exception as e:
+                print(f"[Entrance] DB Cleanup 실패: {e}")
 
         # 2층, 3층 placeholder
         placeholder_raw_map = {
@@ -184,20 +201,28 @@ class DungeonService:
 
         # 이벤트 생성 (이벤트 방이 있는 경우에만)
         events_list = []
-        
-        # 임시 더미 데이터 사용 (프로토타입용)
-        dummy_heroine_data = {
-            "heroine_id": 1,
-            "name": "플레이어",
-            "memory_progress": 0,
-            "heroineStat": {},
-            "heroineMemories": [],
-            "dungeonPlayerData": {}
-        }
-        
+
+        # 히로인 데이터 처리 (프로토타입용: 데이터가 없거나 비어있으면 더미 사용)
+        target_heroine_data = None
+        if heroine_data:
+            # 간단한 유효성 검사 (예: heroineId가 있는지 등)
+            target_heroine_data = _normalize_heroine_data(heroine_data)
+
+        if not target_heroine_data or not target_heroine_data.get("heroine_id"):
+            # 임시 더미 데이터 사용
+            target_heroine_data = {
+                "heroine_id": 1,
+                "name": "플레이어",
+                "memory_progress": 0,
+                "heroineStat": {},
+                "heroineMemories": [],
+                "dungeonPlayerData": {},
+            }
+
         # raw_map에서 이벤트 방 찾기
         event_rooms = [
-            room for room in normalized_raw_map.get("rooms", [])
+            room
+            for room in normalized_raw_map.get("rooms", [])
             if room.get("room_type") == "event" or room.get("event_type", 0) != 0
         ]
 
@@ -209,17 +234,17 @@ class DungeonService:
         for room in event_rooms:
             room_id = room.get("room_id")
             print(f"[Entrance] Room {room_id}에 대한 이벤트 생성 중...")
-            
+
             event_data = self._create_event_for_floor(
-                heroine_data=dummy_heroine_data, # 더미 데이터 전달
+                heroine_data=target_heroine_data,  # 처리된 데이터 전달
                 next_floor=1,
                 used_events=current_used_events,
-                room_id=room_id
+                room_id=room_id,
             )
-            
+
             if event_data:
                 events_list.append(event_data)
-                
+
                 # 생성된 이벤트를 used_events에 추가하여 다음 방에서 중복 방지
                 current_used_events.append(event_data)
 
@@ -608,9 +633,14 @@ class DungeonService:
 
                 main_event_data = generated_events.get("main_event", {})
 
+                # event_id 추출 (main_event_data에서)
+                event_id = 0
+                if isinstance(main_event_data, dict):
+                    event_id = main_event_data.get("event_id", 0)
+
                 next_floor_events = {
                     "room_id": generated_events.get("event_room_index", 0),
-                    "event_type": 0,
+                    "event_type": event_id,
                     "event_title": (
                         main_event_data.get("title", "")
                         if isinstance(main_event_data, dict)
@@ -908,7 +938,7 @@ class DungeonService:
             elif isinstance(event_data, dict):
                 if event_data.get("room_id") == room_id:
                     target_event = event_data
-            
+
             if not target_event:
                 return {
                     "success": False,
@@ -921,10 +951,10 @@ class DungeonService:
             from langchain_core.messages import HumanMessage, SystemMessage
 
             llm = init_chat_model(model=LLM.GPT5_MINI, temperature=0.7)
-            
+
             scenario_narrative = target_event.get("scenario_narrative", "")
             expected_outcome = target_event.get("expected_outcome", "")
-            
+
             prompt = f"""
 [상황]
 {scenario_narrative}
@@ -938,7 +968,7 @@ class DungeonService:
 위 상황에서 플레이어가 선택한 행동에 대한 결과를 2~3문장으로 묘사해줘. 
 플레이어에게 직접 이야기하듯이 서술해. (예: "당신은 ~했습니다. 그 결과...")
 """
-            
+
             response = llm.invoke([HumanMessage(content=prompt)])
             outcome = response.content
 
@@ -955,7 +985,11 @@ class DungeonService:
     # 7. 이벤트 생성 및 저장 헬퍼 메서드
     # ============================================================
     def _create_event_for_floor(
-        self, heroine_data: Dict[str, Any], next_floor: int, used_events: List[Any], room_id: int = 0
+        self,
+        heroine_data: Dict[str, Any],
+        next_floor: int,
+        used_events: List[Any],
+        room_id: int = 0,
     ) -> Optional[Dict[str, Any]]:
         """
         특정 층에 대한 이벤트 생성
@@ -1022,7 +1056,11 @@ class DungeonService:
             from sqlalchemy import text
 
             # 리스트인지 단일 객체인지 확인하여 JSON 변환
-            event_json_str = json.dumps(event_data) if isinstance(event_data, (dict, list)) else event_data
+            event_json_str = (
+                json.dumps(event_data)
+                if isinstance(event_data, (dict, list))
+                else event_data
+            )
 
             with self.repo.engine.connect() as conn:
                 conn.execute(

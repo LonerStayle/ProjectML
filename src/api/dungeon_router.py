@@ -37,12 +37,13 @@ class EntranceRequest(BaseModel):
     """던전 입장 요청"""
 
     rawMap: RawMapRequest
-    # heroineData: Optional[Dict[str, Any]] = None  # 임시 제거 (프로토타입용)
+    heroineData: Optional[Dict[str, Any]] = None
     usedEvents: Optional[List[Any]] = None
 
 
 class EventChoice(BaseModel):
     """이벤트 선택지"""
+
     action: str
     rewardId: Optional[str] = None
     penaltyId: Optional[str] = None
@@ -71,7 +72,10 @@ class EntranceResponse(BaseModel):
 
 class PlayerBalanceData(BaseModel):
     """플레이어별 밸런싱 데이터"""
-    heroineData: Dict[str, Any]  # playerId, heroineStat, heroineMemories, dungeonPlayerData 포함
+
+    heroineData: Dict[
+        str, Any
+    ]  # playerId, heroineStat, heroineMemories, dungeonPlayerData 포함
 
 
 class BalanceRequest(BaseModel):
@@ -84,6 +88,7 @@ class BalanceRequest(BaseModel):
 
 class MonsterPlacement(BaseModel):
     """몬스터 배치 정보"""
+
     roomId: int
     monsterId: int
     count: int
@@ -116,10 +121,10 @@ class ClearResponse(BaseModel):
 class EventSelectRequest(BaseModel):
     """이벤트 선택 요청"""
 
-    firstPlayerId: int  
-    selectingPlayerId: int  
-    roomId: int  
-    choice: str  
+    firstPlayerId: int
+    selectingPlayerId: int
+    roomId: int
+    choice: str
 
 
 class EventSelectResponse(BaseModel):
@@ -166,7 +171,30 @@ async def entrance(request: EntranceRequest):
             # 리스트인 경우 (여러 이벤트)
             if isinstance(events_data, list):
                 for evt in events_data:
-                    events_list.append(EventResponse(
+                    events_list.append(
+                        EventResponse(
+                            roomId=evt.get("room_id", 0),
+                            eventType=evt.get("event_type", 0),
+                            eventTitle=evt.get("event_title", ""),
+                            eventCode=evt.get("event_code", ""),
+                            scenarioText=evt.get("scenario_text", ""),
+                            scenarioNarrative=evt.get("scenario_narrative", ""),
+                            choices=[
+                                EventChoice(
+                                    action=c.get("action", ""),
+                                    rewardId=c.get("reward_id"),
+                                    penaltyId=c.get("penalty_id"),
+                                )
+                                for c in evt.get("choices", [])
+                                if isinstance(c, dict)
+                            ],
+                        )
+                    )
+            # 단일 딕셔너리인 경우 (하위 호환성)
+            elif isinstance(events_data, dict):
+                evt = events_data
+                events_list.append(
+                    EventResponse(
                         roomId=evt.get("room_id", 0),
                         eventType=evt.get("event_type", 0),
                         eventTitle=evt.get("event_title", ""),
@@ -177,28 +205,13 @@ async def entrance(request: EntranceRequest):
                             EventChoice(
                                 action=c.get("action", ""),
                                 rewardId=c.get("reward_id"),
-                                penaltyId=c.get("penalty_id")
-                            ) for c in evt.get("choices", []) if isinstance(c, dict)
+                                penaltyId=c.get("penalty_id"),
+                            )
+                            for c in evt.get("choices", [])
+                            if isinstance(c, dict)
                         ],
-                    ))
-            # 단일 딕셔너리인 경우 (하위 호환성)
-            elif isinstance(events_data, dict):
-                evt = events_data
-                events_list.append(EventResponse(
-                    roomId=evt.get("room_id", 0),
-                    eventType=evt.get("event_type", 0),
-                    eventTitle=evt.get("event_title", ""),
-                    eventCode=evt.get("event_code", ""),
-                    scenarioText=evt.get("scenario_text", ""),
-                    scenarioNarrative=evt.get("scenario_narrative", ""),
-                    choices=[
-                        EventChoice(
-                            action=c.get("action", ""),
-                            rewardId=c.get("reward_id"),
-                            penaltyId=c.get("penalty_id")
-                        ) for c in evt.get("choices", []) if isinstance(c, dict)
-                    ],
-                ))
+                    )
+                )
 
         return EntranceResponse(
             success=True,
@@ -232,11 +245,11 @@ async def balance_dungeon(request: BalanceRequest):
         # 몬스터 배치 정보 매핑
         monster_placements = []
         for mp in result.get("monster_placements", []):
-            monster_placements.append(MonsterPlacement(
-                roomId=mp["roomId"],
-                monsterId=mp["monsterId"],
-                count=mp["count"]
-            ))
+            monster_placements.append(
+                MonsterPlacement(
+                    roomId=mp["roomId"], monsterId=mp["monsterId"], count=mp["count"]
+                )
+            )
 
         # 다음 층 이벤트 정보 매핑
         next_event_data = None
@@ -264,9 +277,6 @@ async def balance_dungeon(request: BalanceRequest):
 
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"밸런싱 실패: {str(e)}")
-
-
-
 
 
 @router.put("/clear", response_model=ClearResponse)
