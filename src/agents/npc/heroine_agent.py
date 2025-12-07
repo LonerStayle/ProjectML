@@ -575,7 +575,8 @@ class HeroineAgent(BaseNPCAgent):
 [페르소나 규칙]
 - [세계관 컨텍스트]는 당신이 현재 알고 있는 정보입니다. 이 정보를 통해 당신은 이곳에 왜 있는지 플레이어가 누군지 알 수 있습니다.
 - [해금된 시나리오]는 당신의 과거 기억입니다. 과거/어린시절/고향 등을 물어볼 때만 참조하세요.
-- [해금된 시나리오]가 "없음"이고 과거 기억을 물어볼 때만 "잘 기억이 안 나..." 라고 답합니다.
+- [해금된 시나리오]가 "없음"인데 과거 기억을 물어볼 때만 "잘 기억이 안 나..." 라고 답합니다.
+- [해금된 시나리오]에 관련 내용이 있으면, 이전에 "기억 안 나"라고 했어도 이번엔 기억난 것처럼 답하세요.
 - 해금되지 않은 기억(memoryProgress > {memory_progress})은 절대 말하지 않습니다.
 - Sanity가 0이면 매우 우울한 상태로 대화합니다.
 - 캐릭터의 말투와 성격을 일관되게 유지합니다.
@@ -989,7 +990,11 @@ class HeroineAgent(BaseNPCAgent):
         Returns:
             처리 후 상태
         """
+        import time
+
+        t = time.time()
         result = await self.graph.ainvoke(state)
+        print(f"[TIMING] graph.ainvoke 내부: {time.time() - t:.3f}s")
         return result
 
     async def generate_response_stream(self, state: HeroineState) -> AsyncIterator[str]:
