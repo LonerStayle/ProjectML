@@ -39,7 +39,14 @@ async def get_monsters_info(target_monster_ids: List[int]):
 
 
 async def get_event_info(dungeon_row: DungeonRow, curr_room_id: int):
-    return dungeon_row.event
+    event = dungeon_row.event
+    if event is None: 
+        return "이벤트가 생성되지 않았습니다. 페이몬은 \"응? 확인된 이벤트는 아직 없어!\"라고 장난스럽게 답해주세요."
+
+    if event.room_id != curr_room_id:
+        return "이벤트방에 입장하지 않아서 정보를 확인할 수 없습니다. 페이몬은 \"아직은 아무일 없어보여! 무슨 사건이 일어날 때 말해!\" 라는식으로 장난스럽게 답해주세요."
+
+    return event
 
 
 async def dungeon_navigator(dungeon_row: DungeonRow, curr_room_id: int):
