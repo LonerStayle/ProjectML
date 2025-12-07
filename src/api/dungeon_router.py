@@ -37,8 +37,15 @@ class EntranceRequest(BaseModel):
     """던전 입장 요청"""
 
     rawMap: RawMapRequest
-    heroineData: Optional[Dict[str, Any]] = None
+    # heroineData: Optional[Dict[str, Any]] = None  # 임시 제거 (프로토타입용)
     usedEvents: Optional[List[Any]] = None
+
+
+class EventChoice(BaseModel):
+    """이벤트 선택지"""
+    action: str
+    rewardId: Optional[str] = None
+    penaltyId: Optional[str] = None
 
 
 class EventResponse(BaseModel):
@@ -50,6 +57,7 @@ class EventResponse(BaseModel):
     eventCode: str
     scenarioText: str
     scenarioNarrative: str
+    choices: List[EventChoice] = []
 
 
 class EntranceResponse(BaseModel):
@@ -147,23 +155,50 @@ async def entrance(request: EntranceRequest):
             player_ids=raw_map.get("player_ids") or raw_map.get("playerIds", []),
             heroine_ids=raw_map.get("heroine_ids") or raw_map.get("heroineIds", []),
             raw_map=raw_map,
-            heroine_data=request.heroineData,
+            # heroine_data=request.heroineData, # 임시 제거
             used_events=request.usedEvents or [],
         )
 
         # 이벤트 정보 매핑
         events_list = []
         if result.get("events"):
-            evt = result["events"]
-            events_data = EventResponse(
-                roomId=evt.get("room_id", 0),
-                eventType=evt.get("event_type", 0),
-                eventTitle=evt.get("event_title", ""),
-                eventCode=evt.get("event_code", ""),
-                scenarioText=evt.get("scenario_text", ""),
-                scenarioNarrative=evt.get("scenario_narrative", ""),
-            )
-            events_list.append(events_data)
+            events_data = result["events"]
+            # 리스트인 경우 (여러 이벤트)
+            if isinstance(events_data, list):
+                for evt in events_data:
+                    events_list.append(EventResponse(
+                        roomId=evt.get("room_id", 0),
+                        eventType=evt.get("event_type", 0),
+                        eventTitle=evt.get("event_title", ""),
+                        eventCode=evt.get("event_code", ""),
+                        scenarioText=evt.get("scenario_text", ""),
+                        scenarioNarrative=evt.get("scenario_narrative", ""),
+                        choices=[
+                            EventChoice(
+                                action=c.get("action", ""),
+                                rewardId=c.get("reward_id"),
+                                penaltyId=c.get("penalty_id")
+                            ) for c in evt.get("choices", []) if isinstance(c, dict)
+                        ],
+                    ))
+            # 단일 딕셔너리인 경우 (하위 호환성)
+            elif isinstance(events_data, dict):
+                evt = events_data
+                events_list.append(EventResponse(
+                    roomId=evt.get("room_id", 0),
+                    eventType=evt.get("event_type", 0),
+                    eventTitle=evt.get("event_title", ""),
+                    eventCode=evt.get("event_code", ""),
+                    scenarioText=evt.get("scenario_text", ""),
+                    scenarioNarrative=evt.get("scenario_narrative", ""),
+                    choices=[
+                        EventChoice(
+                            action=c.get("action", ""),
+                            rewardId=c.get("reward_id"),
+                            penaltyId=c.get("penalty_id")
+                        ) for c in evt.get("choices", []) if isinstance(c, dict)
+                    ],
+                ))
 
         return EntranceResponse(
             success=True,
