@@ -134,7 +134,10 @@ class EventSelectResponse(BaseModel):
     firstPlayerId: int
     selectingPlayerId: int
     roomId: int
-    outcome: str  # 결과 텍스트 (현재는 TEXT, 나중에 보상 타입과 ID로 변경)
+    outcome: str  # 결과 텍스트
+    rewardId: Optional[str] = None
+    penaltyId: Optional[str] = None
+    isUnexpected: bool = False
 
 
 # =============================================================================
@@ -326,6 +329,9 @@ async def select_event(request: EventSelectRequest):
             selectingPlayerId=request.selectingPlayerId,
             roomId=request.roomId,
             outcome=result.get("outcome", ""),
+            rewardId=result.get("rewardId"),
+            penaltyId=result.get("penaltyId"),
+            isUnexpected=result.get("isUnexpected", False),
         )
     except Exception as e:
         import traceback
