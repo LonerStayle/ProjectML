@@ -15,14 +15,16 @@ from agents.fairy.cache_data import GAME_SYSTEM_INFO
 
 
 fast_llm = init_chat_model(
-    model=LLM.GROK_4_FAST_NON_REASONING,
+    model=LLM.GROK_4_FAST_NON_REASONING, 
     model_provider="xai",
+    max_tokens = 120
 )
 
 reasoning_llm = init_chat_model(
-    model=LLM.GROK_4_FAST_REASONING, model_provider="xai", temperature=0.2
+    model=LLM.GROK_4_FAST_REASONING, 
+    model_provider="xai", 
+    max_tokens = 120
 )
-
 
 @tool
 def get_scenarios(config: RunnableConfig):
