@@ -646,11 +646,18 @@ class HeroineAgent(BaseNPCAgent):
         affection_delta = context.get("affection_delta", 0)
         sanity_delta = affection_delta if affection_delta > 0 else 0
 
+        print(
+            f"[DEBUG] _update_state: current affection={affection}, delta={affection_delta}"
+        )
+
         # 새 값 계산
         new_affection = max(0, min(100, affection + affection_delta))
         new_sanity = max(0, min(100, sanity + sanity_delta))
         new_memory_progress = calculate_memory_progress(
             new_affection, memory_progress, affection_delta
+        )
+        print(
+            f"[DEBUG] _update_state: new_affection={new_affection}, new_memory_progress={new_memory_progress}"
         )
 
         # Redis 세션 업데이트
@@ -847,6 +854,7 @@ class HeroineAgent(BaseNPCAgent):
         t = time.time()
         affection_delta, used_keyword = await self._analyze_keywords(state)
         print(f"[TIMING] 키워드 분석: {time.time() - t:.3f}s")
+        print(f"[DEBUG] affection_delta={affection_delta}, used_keyword={used_keyword}")
         return {"affection_delta": affection_delta, "used_liked_keyword": used_keyword}
 
     async def _router_node(self, state: HeroineState) -> dict:
@@ -963,6 +971,9 @@ class HeroineAgent(BaseNPCAgent):
             "affection_delta": state.get("affection_delta", 0),
             "used_liked_keyword": state.get("used_liked_keyword"),
         }
+        print(
+            f"[DEBUG] post_process - affection_delta from state: {context['affection_delta']}"
+        )
 
         result = await self._update_state_after_response(
             state,
@@ -971,6 +982,9 @@ class HeroineAgent(BaseNPCAgent):
             state.get("emotion", 0),
         )
 
+        print(
+            f"[DEBUG] post_process - result: affection={result['affection']}, memoryProgress={result['memoryProgress']}"
+        )
         print(f"[TIMING] 상태 업데이트: {time.time() - t:.3f}s")
         return {
             "affection": result["affection"],
