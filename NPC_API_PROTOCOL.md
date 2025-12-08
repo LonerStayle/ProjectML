@@ -105,7 +105,7 @@ data: 녕
 data: ...
 data: 별로야
 data: .
-data: {"type": "final", "affection": 50, "sanity": 85, "memoryProgress": 35, "emotion": "neutral"}
+data: {"type": "final", "affection": 50, "sanity": 85, "memoryProgress": 35, "emotion": 0}
 data: [DONE]
 ```
 
@@ -123,7 +123,7 @@ data: [DONE]
 | affection | int | 변경된 호감도 |
 | sanity | int | 변경된 정신력 |
 | memoryProgress | int | 변경된 기억 진척도 |
-| emotion | string | 현재 감정 |
+| emotion | int | 현재 감정 (0-6) |
 
 ---
 
@@ -146,7 +146,7 @@ data: [DONE]
 ```json
 {
     "text": "...별로야.",
-    "emotion": "neutral",
+    "emotion": 0,
     "affection": 50,
     "sanity": 85,
     "memoryProgress": 35
@@ -156,7 +156,7 @@ data: [DONE]
 | 필드 | 타입 | 설명 |
 |------|------|------|
 | text | string | NPC 응답 텍스트 |
-| emotion | string | 감정 상태 |
+| emotion | int | 감정 상태 (0-6) |
 | affection | int | 변경된 호감도 |
 | sanity | int | 변경된 정신력 |
 | memoryProgress | int | 변경된 기억 진척도 |
@@ -175,15 +175,17 @@ data: [DONE]
 
 ### 감정 종류 (emotion)
 
-| 값 | 설명 |
-|----|------|
-| neutral | 평온 |
-| happy | 기쁨 |
-| sad | 슬픔 |
-| angry | 분노 |
-| shy | 수줍음 |
-| fear | 두려움 |
-| trauma | 트라우마 |
+| 정수값 | 문자열 | 설명 |
+|--------|--------|------|
+| 0 | neutral | 평온 |
+| 1 | joy | 기쁨 |
+| 2 | fun | 재미 |
+| 3 | sorrow | 슬픔 |
+| 4 | angry | 분노 |
+| 5 | surprise | 놀람 |
+| 6 | mysterious | 신비로움 |
+
+> **참고**: API 응답에서 emotion은 **정수(int)**로 전달됩니다. 자세한 내용은 [EMOTION_MAPPING.md](EMOTION_MAPPING.md)를 참조하세요.
 
 ---
 
@@ -215,7 +217,7 @@ data: [DONE]
 data: 이
 data: 세계는
 data: ...
-data: {"type": "final", "scenarioLevel": 3, "emotion": "mysterious", "infoRevealed": true}
+data: {"type": "final", "scenarioLevel": 3, "emotion": 6, "infoRevealed": true}
 data: [DONE]
 ```
 
@@ -239,7 +241,7 @@ data: [DONE]
 ```json
 {
     "text": "이 세계는 디멘시움이라는 물질로 인해...",
-    "emotion": "mysterious",
+    "emotion": 6,
     "scenarioLevel": 3,
     "infoRevealed": true
 }
@@ -248,7 +250,7 @@ data: [DONE]
 | 필드 | 타입 | 설명 |
 |------|------|------|
 | text | string | NPC 응답 텍스트 |
-| emotion | string | 감정 상태 |
+| emotion | int | 감정 상태 (0-6) |
 | scenarioLevel | int | 현재 시나리오 레벨 |
 | infoRevealed | bool | 정보 공개 여부 |
 
@@ -256,14 +258,17 @@ data: [DONE]
 
 ### 대현자 감정 종류
 
-| 값 | 설명 |
-|----|------|
-| neutral | 평온 |
-| amused | 즐거움 |
-| mysterious | 신비로움 |
-| serious | 진지함 |
-| warm | 따뜻함 |
-| warning | 경고 |
+> **참고**: 대현자도 히로인과 동일한 통합 감정 매핑을 사용합니다.
+
+| 정수값 | 문자열 | 설명 |
+|--------|--------|------|
+| 0 | neutral | 평온 |
+| 1 | joy | 기쁨 |
+| 2 | fun | 재미 |
+| 3 | sorrow | 슬픔 |
+| 4 | angry | 분노 |
+| 5 | surprise | 놀람 |
+| 6 | mysterious | 신비로움 |
 
 ---
 
@@ -282,7 +287,7 @@ data: [DONE]
     "heroine1Id": 1,
     "heroine2Id": 2,
     "situation": "길드 휴게실에서 쉬는 중",
-    "turnCount": 5
+    "turnCount": 10
 }
 ```
 
@@ -291,7 +296,7 @@ data: [DONE]
 | heroine1Id | int | O | 첫 번째 히로인 ID |
 | heroine2Id | int | O | 두 번째 히로인 ID |
 | situation | string | X | 상황 설명 (없으면 자동 생성) |
-| turnCount | int | X | 대화 턴 수 (기본값 5) |
+| turnCount | int | X | 대화 턴 수 (기본값 10) |
 
 #### Response
 
@@ -306,13 +311,13 @@ data: [DONE]
             "speaker_id": 1,
             "speaker_name": "레티아",
             "text": "...뭐해.",
-            "emotion": "neutral"
+            "emotion": 0
         },
         {
             "speaker_id": 2,
             "speaker_name": "루파메스",
             "text": "아 심심해서 왔지~",
-            "emotion": "happy"
+            "emotion": 1
         }
     ],
     "importance_score": 5,
@@ -333,7 +338,7 @@ data: [DONE]
     "heroine1Id": 1,
     "heroine2Id": 2,
     "situation": null,
-    "turnCount": 5
+    "turnCount": 10
 }
 ```
 
@@ -341,7 +346,7 @@ data: [DONE]
 
 ```
 data: [레티아] (neutral) ...뭐해.
-data: [루파메스] (happy) 아 심심해서 왔지~
+data: [루파메스] (joy) 아 심심해서 왔지~
 data: ...
 data: [DONE]
 ```
@@ -573,9 +578,9 @@ POST /api/npc/guild/leave
 |------|--------|----------|--------------|----------|
 | 로그인 | POST | /api/npc/login | playerId, scenarioLevel, heroines[] | success, message |
 | 히로인 대화 (스트리밍) | POST | /api/npc/heroine/chat | playerId, heroineId, text | SSE 스트림 |
-| 히로인 대화 (비스트리밍) | POST | /api/npc/heroine/chat/sync | playerId, heroineId, text | text, emotion, affection, sanity, memoryProgress |
+| 히로인 대화 (비스트리밍) | POST | /api/npc/heroine/chat/sync | playerId, heroineId, text | text, emotion(int), affection, sanity, memoryProgress |
 | 대현자 대화 (스트리밍) | POST | /api/npc/sage/chat | playerId, text | SSE 스트림 |
-| 대현자 대화 (비스트리밍) | POST | /api/npc/sage/chat/sync | playerId, text | text, emotion, scenarioLevel, infoRevealed |
+| 대현자 대화 (비스트리밍) | POST | /api/npc/sage/chat/sync | playerId, text | text, emotion(int), scenarioLevel, infoRevealed |
 | 히로인간 대화 생성 | POST | /api/npc/heroine-conversation/generate | heroine1Id, heroine2Id, situation?, turnCount? | id, content, conversation[] |
 | 히로인간 대화 스트리밍 | POST | /api/npc/heroine-conversation/stream | heroine1Id, heroine2Id, situation?, turnCount? | SSE 스트림 |
 | 히로인간 대화 조회 | GET | /api/npc/heroine-conversation | heroine1_id?, heroine2_id?, limit? | conversations[] |

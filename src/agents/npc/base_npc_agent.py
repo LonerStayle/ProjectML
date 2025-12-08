@@ -373,7 +373,7 @@ def calculate_affection_change(
             recent_lower = [k.lower() for k in recent_used_keywords]
             
             if keyword.lower() not in recent_lower:
-                delta += 10
+                delta += 100
                 used_liked_keyword = keyword
             # 같은 키워드 반복시 호감도 상승 없음, 하지만 루프 종료
             break
@@ -381,7 +381,7 @@ def calculate_affection_change(
     # 트라우마 체크 (-10)
     for keyword in trauma_keywords:
         if keyword.lower() in message_lower:
-            delta -= 10
+            delta -= 100
             break
     
     # 연애 관련 (+5 / -5)
