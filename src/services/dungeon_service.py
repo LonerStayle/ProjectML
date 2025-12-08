@@ -981,19 +981,44 @@ class DungeonService:
 
             # 3. 해당 방의 이벤트 찾기
             target_event = None
+
+            # DEBUG: 이벤트 데이터 확인
+            print(
+                f"[DEBUG] select_event - dungeon_id: {dungeon_id}, target room_id: {room_id}"
+            )
+
             if isinstance(event_data, list):
                 for evt in event_data:
-                    if evt.get("room_id") == room_id:
+                    # 타입 안전 비교 (str 변환)
+                    # room_id(snake_case) 또는 roomId(camelCase) 모두 확인
+                    evt_room_id = evt.get("room_id")
+                    if evt_room_id is None:
+                        evt_room_id = evt.get("roomId")
+                    
+                    if str(evt_room_id) == str(room_id):
                         target_event = evt
                         break
             elif isinstance(event_data, dict):
-                if event_data.get("room_id") == room_id:
+                evt_room_id = event_data.get("room_id")
+                if evt_room_id is None:
+                    evt_room_id = event_data.get("roomId")
+                
+                if str(evt_room_id) == str(room_id):
                     target_event = event_data
 
             if not target_event:
+                # 디버깅을 위해 현재 로드된 이벤트들의 room_id 목록을 에러 메시지에 포함
+                loaded_room_ids = []
+                if isinstance(event_data, list):
+                    loaded_room_ids = [e.get("room_id") or e.get("roomId") for e in event_data]
+                elif isinstance(event_data, dict):
+                    loaded_room_ids = [event_data.get("room_id") or event_data.get("roomId")]
+
+                print(f"[ERROR] Event not found. Loaded room_ids: {loaded_room_ids}")
+
                 return {
                     "success": False,
-                    "error": f"Room {room_id}에 해당하는 이벤트를 찾을 수 없습니다",
+                    "error": f"Room {room_id}에 해당하는 이벤트를 찾을 수 없습니다 (Loaded: {loaded_room_ids})",
                 }
 
             # 4. 선택지에 따른 결과 도출 (LLM 사용)
@@ -1004,17 +1029,82 @@ class DungeonService:
             llm = init_chat_model(model=LLM.GPT5_MINI, temperature=0.7)
 
             scenario_narrative = target_event.get("scenario_narrative", "")
-            expected_outcome = target_event.get("expected_outcome", "")
+            choices = target_event.get("choices", [])
 
-            prompt = f"""
+            reward_id = None
+            penalty_id = None
+            matched_action = ""
+            is_unexpected = False
+
+            # 선택지가 있는 경우 분류 로직 수행
+            if choices:
+                options_text = ""
+                for idx, c in enumerate(choices):
+                    options_text += f"{idx}. {c.get('action', '')}\n"
+
+                classification_prompt = f"""
+[상황]
+{scenario_narrative}
+
+[가능한 선택지]
+{options_text}
+
+[플레이어 입력]
+{choice}
+
+플레이어의 입력이 위 [가능한 선택지] 중 어느 것과 가장 유사한지 판단해.
+1. 선택지와 의미가 유사하면 해당 번호(0, 1, 2...)를 반환해.
+2. 만약 선택지에 없는 돌발 행동이거나, 적대적인 행동, 혹은 전혀 다른 행동이라면 "UNEXPECTED"라고 반환해.
+
+오직 숫자 혹은 "UNEXPECTED" 만 출력해.
+"""
+                # 분류 실행
+                try:
+                    class_response = llm.invoke(
+                        [HumanMessage(content=classification_prompt)]
+                    )
+                    class_result = class_response.content.strip()
+                    print(f"[DEBUG] Event Classification Result: {class_result}")
+
+                    if class_result.isdigit():
+                        idx = int(class_result)
+                        if 0 <= idx < len(choices):
+                            selected = choices[idx]
+                            reward_id = selected.get("rewardId")
+                            penalty_id = selected.get("penaltyId")
+                            matched_action = selected.get("action")
+                        else:
+                            is_unexpected = True
+                    else:
+                        is_unexpected = True
+                except Exception as e:
+                    print(f"[ERROR] 분류 중 오류 발생: {e}")
+                    is_unexpected = True
+
+            # 결과 서술 생성
+            if is_unexpected:
+                # 돌발 행동에 대한 패널티 및 서술
+                penalty_id = "penalty_unexpected_action"  # 기본 패널티 ID 부여
+                prompt = f"""
+[상황]
+{scenario_narrative}
+
+[플레이어 돌발 행동]
+{choice}
+
+플레이어가 예상치 못한 행동을 했습니다. 
+이 행동은 상황에 맞지 않거나 위험한 행동일 수 있습니다.
+이에 대한 부정적인 결과나 당황스러운 상황을 2~3문장으로 묘사해줘.
+플레이어에게 직접 이야기하듯이 서술해.
+"""
+            else:
+                # 매칭된 행동에 대한 서술
+                prompt = f"""
 [상황]
 {scenario_narrative}
 
 [플레이어 선택]
-{choice}
-
-[예상 결과 힌트]
-{expected_outcome}
+{choice} (의도: {matched_action})
 
 위 상황에서 플레이어가 선택한 행동에 대한 결과를 2~3문장으로 묘사해줘. 
 플레이어에게 직접 이야기하듯이 서술해. (예: "당신은 ~했습니다. 그 결과...")
@@ -1023,7 +1113,13 @@ class DungeonService:
             response = llm.invoke([HumanMessage(content=prompt)])
             outcome = response.content
 
-            return {"success": True, "outcome": outcome}
+            return {
+                "success": True,
+                "outcome": outcome,
+                "rewardId": reward_id,
+                "penaltyId": penalty_id,
+                "isUnexpected": is_unexpected,
+            }
 
         except Exception as e:
             print(f"[ERROR] 이벤트 선택 처리 실패: {e}")
