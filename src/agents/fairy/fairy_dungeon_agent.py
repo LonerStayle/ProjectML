@@ -30,7 +30,7 @@ from agents.fairy.util import (
 
 intent_llm = get_groq_llm_lc(model=LLM.LLAMA_3_1_8B_INSTANT, max_token=43)
 action_llm = get_groq_llm_lc(max_token=80, temperature=0)
-small_talk_llm = init_chat_model(model=LLM.GROK_4_FAST_NON_REASONING)
+small_talk_llm = init_chat_model(model=LLM.GROK_4_FAST_NON_REASONING, max_tokens = 120)
 rdb_repository = RDBRepository()
 
 
@@ -70,7 +70,6 @@ async def dungeon_navigator(dungeon_row: DungeonRow, curr_room_id: int):
 
 
 async def create_interaction(inventory_ids):
-
     inventory_prompt = f"        <인벤토리 내의 아이템 설명>\n{get_inventory_items(inventory_ids)}\n        </인벤토리 내의 아이템 설명>"
     result = inventory_prompt
     return result
