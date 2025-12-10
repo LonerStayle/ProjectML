@@ -16,7 +16,7 @@
 
 저장 위치:
 - Redis: 세션 상태 (affection, sanity, memoryProgress, conversation_buffer)
-- Mem0: User-NPC 장기 기억 (대화 내용)
+- PostgreSQL (user_memories): User-NPC 장기 기억 (4요소 하이브리드 검색)
 """
 
 import json
@@ -37,7 +37,7 @@ from agents.npc.base_npc_agent import (
 )
 from agents.npc.emotion_mapper import heroine_emotion_to_int
 from db.redis_manager import redis_manager
-from db.mem0_manager import mem0_manager
+from db.user_memory_manager import user_memory_manager
 from db.agent_memory import agent_memory_manager
 from db.session_checkpoint_manager import session_checkpoint_manager
 from services.heroine_scenario_service import heroine_scenario_service
@@ -279,7 +279,7 @@ class HeroineAgent(BaseNPCAgent):
 
         사용자 메시지의 의도를 분류합니다:
         - general: 일반 대화
-        - memory_recall: 과거 대화/경험 질문 (Mem0 검색)
+        - memory_recall: 과거 대화/경험 질문 (User Memory 검색)
         - scenario_inquiry: 히로인 과거/비밀 질문 (시나리오 DB 검색)
 
         Args:
@@ -318,7 +318,7 @@ class HeroineAgent(BaseNPCAgent):
     async def _retrieve_memory(self, state: HeroineState) -> str:
         """기억 검색
 
-        1. Mem0에서 플레이어-NPC 대화 기억 검색 (항상)
+        1. User Memory에서 플레이어-NPC 대화 기억 검색 (4요소 하이브리드)
         2. 다른 히로인 이름 언급시 NPC-NPC 대화 검색
 
         Args:
@@ -333,8 +333,8 @@ class HeroineAgent(BaseNPCAgent):
 
         facts_parts = []
 
-        # 1. Mem0에서 플레이어-NPC 대화 기억 검색
-        user_memories = mem0_manager.search_memory(
+        # 1. User-NPC 장기 기억 검색 (4요소 하이브리드)
+        user_memories = user_memory_manager.search_memory_sync(
             player_id, npc_id, user_message, limit=3
         )
         if user_memories:
@@ -409,8 +409,8 @@ class HeroineAgent(BaseNPCAgent):
                 return latest_scenario["content"]
             return "해금된 시나리오 없음"
 
-        # 일반 시나리오 질문은 벡터 검색
-        scenarios = heroine_scenario_service.search_scenarios(
+        # 일반 시나리오 질문은 PGroonga + Vector 하이브리드 검색
+        scenarios = heroine_scenario_service.search_scenarios_pgroonga(
             query=user_message,
             heroine_id=npc_id,
             max_memory_progress=memory_progress,
@@ -477,7 +477,7 @@ class HeroineAgent(BaseNPCAgent):
         unlocked_scenarios = "없음"
 
         if intent == "memory_recall":
-            # 기억 회상 -> Mem0 + NPC간 기억 검색
+            # 기억 회상 -> User Memory + NPC간 기억 검색
             t3 = time.time()
             retrieved_facts = await self._retrieve_memory(state)
             print(f"[TIMING] 기억 검색: {time.time() - t3:.3f}s")
@@ -729,10 +729,12 @@ class HeroineAgent(BaseNPCAgent):
             # 세션 저장
             redis_manager.save_session(player_id, npc_id, session)
 
-        # Mem0에 대화 저장 (백그라운드)
+        # User Memory에 대화 저장 (백그라운드)
         user_msg = state["messages"][-1].content
         asyncio.create_task(
-            self._save_to_mem0_background(player_id, npc_id, user_msg, response_text)
+            self._save_to_user_memory_background(
+                player_id, npc_id, user_msg, response_text
+            )
         )
 
         return {
@@ -743,10 +745,12 @@ class HeroineAgent(BaseNPCAgent):
             "response_text": response_text,
         }
 
-    async def _save_to_mem0_background(
+    async def _save_to_user_memory_background(
         self, player_id: int, npc_id: int, user_msg: str, npc_response: str
     ) -> None:
-        """백그라운드로 Mem0에 대화 저장
+        """백그라운드로 User Memory에 대화 저장
+
+        LLM으로 fact 추출 후 저장
 
         Args:
             player_id: 플레이어 ID
@@ -755,11 +759,19 @@ class HeroineAgent(BaseNPCAgent):
             npc_response: NPC 응답
         """
         try:
-            mem0_manager.add_memory(
-                player_id, npc_id, f"플레이어: {user_msg}\n히로인: {npc_response}"
+            from db.user_memory_models import NPC_ID_TO_HEROINE
+
+            user_id = str(player_id)
+            heroine_id = NPC_ID_TO_HEROINE.get(npc_id, "letia")
+
+            await user_memory_manager.save_conversation(
+                user_id=user_id,
+                heroine_id=heroine_id,
+                user_message=user_msg,
+                npc_response=npc_response,
             )
         except Exception as e:
-            print(f"[ERROR] Mem0 저장 실패: {e}")
+            print(f"[ERROR] User Memory 저장 실패: {e}")
 
     async def _generate_and_save_summary(
         self, player_id: int, npc_id: int, conversations: list

@@ -1,0 +1,219 @@
+-- ============================================
+-- User-NPC 장기 기억 시스템
+-- PostgreSQL + pgvector + PGroonga 기반
+-- 
+-- Mem0 대체용 직접 구현
+-- 4요소 하이브리드 검색: 최신도 + 중요도 + 관련도 + 키워드
+-- ============================================
+
+-- 확장 활성화
+CREATE EXTENSION IF NOT EXISTS vector;
+CREATE EXTENSION IF NOT EXISTS pgroonga;
+
+-- 기존 테이블 삭제 (개발용)
+DROP TABLE IF EXISTS user_memories CASCADE;
+
+-- ============================================
+-- 메인 테이블
+-- ============================================
+CREATE TABLE user_memories (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id TEXT NOT NULL,              -- 플레이어 ID
+    heroine_id TEXT,                    -- 히로인 ID (letia, lupames, roco)
+    
+    -- Fact 메타데이터
+    speaker TEXT NOT NULL,              -- 발화자: 'user' | 'letia' | 'lupames' | 'roco'
+    subject TEXT NOT NULL,              -- 대상: 'user' | 'letia' | 'lupames' | 'roco' | 'world'
+    content TEXT NOT NULL,              -- 추출된 사실 내용
+    content_type TEXT DEFAULT 'fact',   -- 'preference' | 'trait' | 'event' | 'opinion' | 'personal'
+    
+    -- 검색용
+    embedding vector(1536),             -- OpenAI text-embedding-3-small
+    importance INT DEFAULT 5 CHECK (importance BETWEEN 1 AND 10),
+    
+    -- Bi-temporal 시간 관리
+    valid_at TIMESTAMPTZ DEFAULT NOW(),     -- 사실이 유효해진 시점
+    invalid_at TIMESTAMPTZ,                 -- 사실이 무효화된 시점 (NULL이면 현재 유효)
+    created_at TIMESTAMPTZ DEFAULT NOW(),   -- DB 레코드 생성 시점
+    updated_at TIMESTAMPTZ DEFAULT NOW()    -- DB 레코드 수정 시점
+);
+
+-- ============================================
+-- 인덱스
+-- ============================================
+
+-- 1. 세션 분리용 (user_id + heroine_id + invalid_at)
+CREATE INDEX idx_user_memory_session ON user_memories (user_id, heroine_id, invalid_at);
+
+-- 2. pgvector HNSW 인덱스 (코사인 유사도)
+CREATE INDEX idx_user_memory_vector ON user_memories 
+USING hnsw (embedding vector_cosine_ops)
+WITH (m = 16, ef_construction = 64); 
+-- ef_construction = 64 인덱스 구축 시 탐색할 이웃 노드의 수, 커지면 정확도 향상 but 인덱스 구축 시간 증가
+-- m = 16 각 노드가 연결할 최대 이웃 수, 커지면 정확도 향상 but 메모리 사용량 증가
+
+-- 3. PGroonga 전문검색 인덱스 (한국어 키워드 검색)
+CREATE INDEX idx_user_memory_pgroonga ON user_memories USING pgroonga (content);
+
+-- 4. speaker/subject 필터용
+CREATE INDEX idx_user_memory_speaker ON user_memories (speaker);
+CREATE INDEX idx_user_memory_subject ON user_memories (subject);
+
+-- 5. 시간순 조회용
+CREATE INDEX idx_user_memory_created ON user_memories (created_at DESC);
+
+-- ============================================
+-- 하이브리드 검색 함수 (4요소 스코어링)
+-- ============================================
+-- Score = (w_recency * Recency) + (w_importance * Importance) 
+--       + (w_relevance * Relevance) + (w_keyword * Keyword)
+
+CREATE OR REPLACE FUNCTION search_user_memories_hybrid(
+    p_user_id TEXT,
+    p_heroine_id TEXT,
+    p_query_text TEXT,                      -- 키워드 검색용
+    p_query_embedding vector(1536),         -- 벡터 검색용
+    p_top_k INTEGER DEFAULT 10,
+    p_w_recency FLOAT DEFAULT 0.15,
+    p_w_importance FLOAT DEFAULT 0.15,
+    p_w_relevance FLOAT DEFAULT 0.50,
+    p_w_keyword FLOAT DEFAULT 0.20,
+    p_decay_days FLOAT DEFAULT 30.0         -- 30일 기준 감쇠
+) RETURNS TABLE (
+    id UUID,
+    user_id TEXT,
+    heroine_id TEXT,
+    speaker TEXT,
+    subject TEXT,
+    content TEXT,
+    content_type TEXT,
+    importance INT,
+    created_at TIMESTAMPTZ,
+    recency_score FLOAT,
+    importance_score FLOAT,
+    relevance_score FLOAT,
+    keyword_score FLOAT,
+    final_score FLOAT
+)
+LANGUAGE plpgsql AS $$
+DECLARE
+    max_keyword_score FLOAT;
+BEGIN
+    -- 키워드 검색 최대 점수 계산 (정규화용)
+    SELECT MAX(pgroonga_score(tableoid, ctid))
+    INTO max_keyword_score
+    FROM user_memories m
+    WHERE m.user_id = p_user_id
+      AND m.heroine_id = p_heroine_id
+      AND m.invalid_at IS NULL
+      AND m.content &@~ p_query_text;
+    
+    -- 최대값이 없으면 1로 설정 (0 나누기 방지)
+    IF max_keyword_score IS NULL OR max_keyword_score = 0 THEN
+        max_keyword_score := 1.0;
+    END IF;
+
+    RETURN QUERY
+    WITH combined AS (
+        SELECT 
+            m.id,
+            m.user_id,
+            m.heroine_id,
+            m.speaker,
+            m.subject,
+            m.content,
+            m.content_type,
+            m.importance,
+            m.created_at,
+            -- Recency: 지수 감쇠 (30일 기준)
+            EXP(-EXTRACT(EPOCH FROM (NOW() - m.created_at)) / (p_decay_days * 86400)) AS recency,
+            -- Importance: 1~10 -> 0~1 정규화
+            m.importance::FLOAT / 10.0 AS importance_norm,
+            -- Relevance: 코사인 유사도 (1 - 거리)
+            1 - (m.embedding <=> p_query_embedding) AS relevance,
+            -- Keyword: PGroonga BM25 정규화
+            COALESCE(pgroonga_score(m.tableoid, m.ctid) / max_keyword_score, 0) AS keyword
+        FROM user_memories m
+        WHERE m.user_id = p_user_id
+          AND m.heroine_id = p_heroine_id
+          AND m.invalid_at IS NULL
+    )
+    SELECT 
+        c.id,
+        c.user_id,
+        c.heroine_id,
+        c.speaker,
+        c.subject,
+        c.content,
+        c.content_type,
+        c.importance,
+        c.created_at,
+        c.recency AS recency_score,
+        c.importance_norm AS importance_score,
+        c.relevance AS relevance_score,
+        c.keyword AS keyword_score,
+        (p_w_recency * c.recency + 
+         p_w_importance * c.importance_norm + 
+         p_w_relevance * c.relevance + 
+         p_w_keyword * c.keyword) AS final_score
+    FROM combined c
+    ORDER BY final_score DESC
+    LIMIT p_top_k;
+END;
+$$;
+
+-- ============================================
+-- 중복 검사 함수 (유사도 기반)
+-- ============================================
+CREATE OR REPLACE FUNCTION find_similar_memory(
+    p_user_id TEXT,
+    p_heroine_id TEXT,
+    p_embedding vector(1536),
+    p_threshold FLOAT DEFAULT 0.9          -- 90% 이상이면 중복
+) RETURNS TABLE (
+    id UUID,
+    content TEXT,
+    similarity FLOAT
+)
+LANGUAGE SQL AS $$
+    SELECT 
+        m.id,
+        m.content,
+        1 - (m.embedding <=> p_embedding) AS similarity
+    FROM user_memories m
+    WHERE m.user_id = p_user_id
+      AND m.heroine_id = p_heroine_id
+      AND m.invalid_at IS NULL
+      AND 1 - (m.embedding <=> p_embedding) >= p_threshold
+    ORDER BY similarity DESC
+    LIMIT 1;
+$$;
+
+-- ============================================
+-- 기억 무효화 함수 (충돌 처리용)
+-- ============================================
+CREATE OR REPLACE FUNCTION invalidate_memory(p_memory_id UUID)
+RETURNS VOID
+LANGUAGE SQL AS $$
+    UPDATE user_memories
+    SET invalid_at = NOW(),
+        updated_at = NOW()
+    WHERE id = p_memory_id;
+$$;
+
+-- ============================================
+-- updated_at 자동 갱신 트리거
+-- ============================================
+CREATE OR REPLACE FUNCTION update_updated_at()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = NOW();
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trigger_user_memories_updated_at
+    BEFORE UPDATE ON user_memories
+    FOR EACH ROW
+    EXECUTE FUNCTION update_updated_at();
+

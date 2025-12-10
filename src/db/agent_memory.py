@@ -6,7 +6,7 @@ PostgreSQL + pgvector 기반
 - npc_memory: NPC가 다른 NPC에 대해 가지는 개별 기억 (예: A가 B에 대해)
 - npc_conversation: NPC간 대화 내용
 
-User-NPC 대화는 Mem0에서 별도로 관리합니다 (mem0_manager.py 참고)
+User-NPC 대화는 user_memory_manager.py에서 별도로 관리합니다
 
 하이브리드 검색 공식:
 Score = (w_recency * Recency) + (w_importance * Importance) + (w_relevance * Relevance)

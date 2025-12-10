@@ -14,6 +14,10 @@
 4. [히로인간 대화](#4-히로인간-대화)
 5. [길드 시스템](#5-길드-시스템)
 6. [스트리밍 응답 처리](#6-스트리밍-응답-처리)
+7. [호출 흐름도](#7-호출-흐름도)
+8. [세션/디버그 API](#8-세션디버그-api)
+9. [에러 응답](#9-에러-응답)
+10. [프로토콜 요약표](#10-프로토콜-요약표)
 
 ---
 
@@ -52,6 +56,8 @@
 }
 ```
 
+**Request 필드:**
+
 | 필드 | 타입 | 설명 |
 |------|------|------|
 | playerId | int | 플레이어 고유 ID |
@@ -70,6 +76,13 @@
     "message": "세션 초기화 완료"
 }
 ```
+
+**Response 필드:**
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| success | bool | 성공 여부 |
+| message | string | 결과 메시지 |
 
 ---
 
@@ -90,6 +103,8 @@
     "text": "안녕, 오늘 기분이 어때?"
 }
 ```
+
+**Request 필드:**
 
 | 필드 | 타입 | 설명 |
 |------|------|------|
@@ -115,7 +130,7 @@ data: [DONE]
 | `data: {"type": "final", ...}` | 최종 상태 (JSON) |
 | `data: [DONE]` | 스트리밍 종료 |
 
-**최종 상태 필드:**
+**Response 필드 (최종 상태 JSON):**
 
 | 필드 | 타입 | 설명 |
 |------|------|------|
@@ -141,6 +156,14 @@ data: [DONE]
 }
 ```
 
+**Request 필드:**
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| playerId | int | 플레이어 ID |
+| heroineId | int | 대화할 히로인 ID |
+| text | string | 플레이어 메시지 |
+
 #### Response
 
 ```json
@@ -152,6 +175,8 @@ data: [DONE]
     "memoryProgress": 35
 }
 ```
+
+**Response 필드:**
 
 | 필드 | 타입 | 설명 |
 |------|------|------|
@@ -206,6 +231,8 @@ data: [DONE]
 }
 ```
 
+**Request 필드:**
+
 | 필드 | 타입 | 설명 |
 |------|------|------|
 | playerId | int | 플레이어 ID |
@@ -220,6 +247,15 @@ data: ...
 data: {"type": "final", "scenarioLevel": 3, "emotion": 6, "infoRevealed": true}
 data: [DONE]
 ```
+
+**Response 필드 (최종 상태 JSON):**
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| type | string | 항상 "final" |
+| scenarioLevel | int | 현재 시나리오 레벨 |
+| emotion | int | 감정 상태 (0-6) |
+| infoRevealed | bool | 정보 공개 여부 |
 
 ---
 
@@ -236,6 +272,13 @@ data: [DONE]
 }
 ```
 
+**Request 필드:**
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| playerId | int | 플레이어 ID |
+| text | string | 플레이어 메시지 |
+
 #### Response
 
 ```json
@@ -246,6 +289,8 @@ data: [DONE]
     "infoRevealed": true
 }
 ```
+
+**Response 필드:**
 
 | 필드 | 타입 | 설명 |
 |------|------|------|
@@ -291,6 +336,8 @@ data: [DONE]
 }
 ```
 
+**Request 필드:**
+
 | 필드 | 타입 | 필수 | 설명 |
 |------|------|------|------|
 | heroine1Id | int | O | 첫 번째 히로인 ID |
@@ -325,6 +372,22 @@ data: [DONE]
 }
 ```
 
+**Response 필드:**
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| id | string | 대화 고유 ID (UUID) |
+| heroine1_id | int | 첫 번째 히로인 ID |
+| heroine2_id | int | 두 번째 히로인 ID |
+| content | string | 대화 전체 텍스트 |
+| conversation | array | 대화 배열 |
+| conversation[].speaker_id | int | 발화자 히로인 ID |
+| conversation[].speaker_name | string | 발화자 이름 |
+| conversation[].text | string | 대사 내용 |
+| conversation[].emotion | int | 감정 (0-6) |
+| importance_score | int | 중요도 (1-10) |
+| timestamp | string | 생성 시각 (ISO 8601) |
+
 ---
 
 ### POST /api/npc/heroine-conversation/stream (스트리밍)
@@ -342,6 +405,15 @@ data: [DONE]
 }
 ```
 
+**Request 필드:**
+
+| 필드 | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| heroine1Id | int | O | 첫 번째 히로인 ID |
+| heroine2Id | int | O | 두 번째 히로인 ID |
+| situation | string | X | 상황 설명 (null이면 자동 생성) |
+| turnCount | int | X | 대화 턴 수 (기본값 10) |
+
 #### Response (SSE 스트리밍)
 
 ```
@@ -351,13 +423,22 @@ data: ...
 data: [DONE]
 ```
 
+**Response 형식:**
+
+| 이벤트 | 설명 |
+|--------|------|
+| `data: [이름] (감정) 대사` | 히로인 대사 (스트리밍) |
+| `data: [DONE]` | 스트리밍 종료 |
+
 ---
 
 ### GET /api/npc/heroine-conversation
 
 저장된 히로인간 대화 기록을 조회합니다.
 
-#### Query Parameters
+#### Request (Query Parameters)
+
+**Request 필드:**
 
 | 파라미터 | 타입 | 필수 | 설명 |
 |----------|------|------|------|
@@ -382,6 +463,18 @@ data: [DONE]
 }
 ```
 
+**Response 필드:**
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| conversations | array | 대화 기록 배열 |
+| conversations[].id | string | 대화 고유 ID (UUID) |
+| conversations[].agent_id | string | 에이전트 ID (conv_{작은ID}_{큰ID}) |
+| conversations[].content | string | 대화 전체 텍스트 |
+| conversations[].importance_score | int | 중요도 (1-10) |
+| conversations[].metadata | object | 메타데이터 (상황, 감정 등) |
+| conversations[].created_at | string | 생성 시각 (ISO 8601) |
+
 ---
 
 ## 5. 길드 시스템
@@ -400,6 +493,12 @@ User가 길드에 있는 동안 NPC들이 자동으로 대화합니다.
 }
 ```
 
+**Request 필드:**
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| playerId | int | 플레이어 ID |
+
 #### Response
 
 ```json
@@ -409,6 +508,14 @@ User가 길드에 있는 동안 NPC들이 자동으로 대화합니다.
     "activeConversation": null
 }
 ```
+
+**Response 필드:**
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| success | bool | 성공 여부 |
+| message | string | 결과 메시지 |
+| activeConversation | object/null | 현재 진행 중인 NPC 대화 (없으면 null) |
 
 ---
 
@@ -423,6 +530,12 @@ User가 길드에 있는 동안 NPC들이 자동으로 대화합니다.
     "playerId": 10001
 }
 ```
+
+**Request 필드:**
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| playerId | int | 플레이어 ID |
 
 #### Response
 
@@ -439,11 +552,31 @@ User가 길드에 있는 동안 NPC들이 자동으로 대화합니다.
 }
 ```
 
+**Response 필드:**
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| success | bool | 성공 여부 |
+| message | string | 결과 메시지 |
+| activeConversation | object/null | 퇴장 시 진행 중이던 NPC 대화 정보 |
+| activeConversation.active | bool | 대화 활성화 여부 |
+| activeConversation.npc1_id | int | 첫 번째 NPC ID |
+| activeConversation.npc2_id | int | 두 번째 NPC ID |
+| activeConversation.started_at | string | 대화 시작 시각 (ISO 8601) |
+
 ---
 
 ### GET /api/npc/guild/status/{player_id}
 
 길드 상태를 조회합니다.
+
+#### Request (Path Parameter)
+
+**Request 필드:**
+
+| 파라미터 | 타입 | 설명 |
+|----------|------|------|
+| player_id | int | 플레이어 ID |
 
 #### Response
 
@@ -459,6 +592,18 @@ User가 길드에 있는 동안 NPC들이 자동으로 대화합니다.
     "has_background_task": true
 }
 ```
+
+**Response 필드:**
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| in_guild | bool | 길드 내 존재 여부 |
+| active_conversation | object/null | 현재 진행 중인 NPC 대화 정보 |
+| active_conversation.active | bool | 대화 활성화 여부 |
+| active_conversation.npc1_id | int | 첫 번째 NPC ID |
+| active_conversation.npc2_id | int | 두 번째 NPC ID |
+| active_conversation.started_at | string | 대화 시작 시각 (ISO 8601) |
+| has_background_task | bool | 백그라운드 태스크 실행 여부 |
 
 ---
 
@@ -552,7 +697,167 @@ POST /api/npc/guild/leave
 
 ---
 
-## 8. 에러 응답
+## 8. 세션/디버그 API
+
+### GET /api/npc/session/{player_id}/{npc_id}
+
+NPC별 세션 정보를 조회합니다. (디버그용)
+
+#### Request (Path Parameters)
+
+**Request 필드:**
+
+| 파라미터 | 타입 | 설명 |
+|----------|------|------|
+| player_id | int | 플레이어 ID |
+| npc_id | int | NPC ID (0=대현자, 1=레티아, 2=루파메스, 3=로코) |
+
+#### Response (히로인 세션)
+
+```json
+{
+    "player_id": 10001,
+    "npc_id": 1,
+    "npc_type": "heroine",
+    "conversation_buffer": [
+        {"role": "user", "content": "안녕"},
+        {"role": "assistant", "content": "...뭐야."}
+    ],
+    "short_term_summary": "",
+    "summary_list": [],
+    "turn_count": 5,
+    "last_summary_at": null,
+    "recent_used_keywords": ["음식"],
+    "state": {
+        "affection": 50,
+        "sanity": 100,
+        "memoryProgress": 30,
+        "emotion": 0
+    },
+    "last_chat_at": "2025-01-15T10:30:00.000Z"
+}
+```
+
+**Response 필드 (히로인):**
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| player_id | int | 플레이어 ID |
+| npc_id | int | NPC ID |
+| npc_type | string | NPC 타입 ("heroine") |
+| conversation_buffer | array | 최근 대화 기록 (최대 20개) |
+| conversation_buffer[].role | string | 역할 ("user" 또는 "assistant") |
+| conversation_buffer[].content | string | 대화 내용 |
+| short_term_summary | string | 단기 요약 |
+| summary_list | array | 요약 목록 |
+| turn_count | int | 현재 대화 턴 수 |
+| last_summary_at | string/null | 마지막 요약 생성 시각 |
+| recent_used_keywords | array | 최근 5턴 내 사용된 좋아하는 키워드 |
+| state | object | 히로인 상태 |
+| state.affection | int | 호감도 (0-100) |
+| state.sanity | int | 정신력 (0-100) |
+| state.memoryProgress | int | 기억 진척도 (0-100) |
+| state.emotion | int | 현재 감정 (0-6) |
+| last_chat_at | string/null | 마지막 대화 시각 (ISO 8601) |
+
+#### Response (대현자 세션)
+
+```json
+{
+    "player_id": 10001,
+    "npc_id": 0,
+    "npc_type": "sage",
+    "conversation_buffer": [
+        {"role": "user", "content": "이 세계는 뭐야?"},
+        {"role": "assistant", "content": "흐음, 궁금한가..."}
+    ],
+    "short_term_summary": "",
+    "summary_list": [],
+    "turn_count": 3,
+    "last_summary_at": null,
+    "state": {
+        "scenarioLevel": 3,
+        "emotion": 0
+    },
+    "last_chat_at": "2025-01-15T10:30:00.000Z"
+}
+```
+
+**Response 필드 (대현자):**
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| player_id | int | 플레이어 ID |
+| npc_id | int | NPC ID (대현자는 0) |
+| npc_type | string | NPC 타입 ("sage") |
+| conversation_buffer | array | 최근 대화 기록 (최대 20개) |
+| short_term_summary | string | 단기 요약 |
+| summary_list | array | 요약 목록 |
+| turn_count | int | 현재 대화 턴 수 |
+| last_summary_at | string/null | 마지막 요약 생성 시각 |
+| state | object | 대현자 상태 |
+| state.scenarioLevel | int | 시나리오 레벨 (1-10) |
+| state.emotion | int | 현재 감정 (0-6) |
+| last_chat_at | string/null | 마지막 대화 시각 (ISO 8601) |
+
+---
+
+### GET /api/npc/npc-conversation/active/{player_id}
+
+현재 진행 중인 NPC간 대화를 조회합니다.
+
+#### Request (Path Parameter)
+
+**Request 필드:**
+
+| 파라미터 | 타입 | 설명 |
+|----------|------|------|
+| player_id | int | 플레이어 ID |
+
+#### Response (대화 진행 중)
+
+```json
+{
+    "active": true,
+    "conversation": {
+        "active": true,
+        "npc1_id": 1,
+        "npc2_id": 2,
+        "started_at": "2025-01-15T10:30:00.000Z"
+    }
+}
+```
+
+**Response 필드 (대화 진행 중):**
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| active | bool | 대화 활성화 여부 (true) |
+| conversation | object | 대화 정보 |
+| conversation.active | bool | 대화 활성화 여부 |
+| conversation.npc1_id | int | 첫 번째 NPC ID |
+| conversation.npc2_id | int | 두 번째 NPC ID |
+| conversation.started_at | string | 대화 시작 시각 (ISO 8601) |
+
+#### Response (대화 없음)
+
+```json
+{
+    "active": false,
+    "conversation": null
+}
+```
+
+**Response 필드 (대화 없음):**
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| active | bool | 대화 활성화 여부 (false) |
+| conversation | null | 대화 정보 없음 |
+
+---
+
+## 9. 에러 응답
 
 ### 404 Not Found
 
@@ -572,7 +877,7 @@ POST /api/npc/guild/leave
 
 ---
 
-## 9. 프로토콜 요약표
+## 10. 프로토콜 요약표
 
 | 기능 | Method | Endpoint | Request Body | Response |
 |------|--------|----------|--------------|----------|
@@ -587,5 +892,6 @@ POST /api/npc/guild/leave
 | 길드 진입 | POST | /api/npc/guild/enter | playerId | success, message |
 | 길드 퇴장 | POST | /api/npc/guild/leave | playerId | success, message, activeConversation |
 | 길드 상태 조회 | GET | /api/npc/guild/status/{player_id} | - | in_guild, active_conversation |
-| 세션 조회 | GET | /api/npc/session/{player_id}/{npc_id} | - | 세션 정보 |
+| 세션 조회 | GET | /api/npc/session/{player_id}/{npc_id} | - | 세션 정보 (상태, 대화 버퍼 등) |
+| NPC 대화 활성화 조회 | GET | /api/npc/npc-conversation/active/{player_id} | - | active, conversation |
 

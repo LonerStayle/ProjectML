@@ -7,4 +7,5 @@ __pycache__/
 .cursor/
 .cursorignore
 NPC_SYSTEM_MASTER.md
-NPC_SYSTEM_IMPLEMENTATION.md   
+NPC_SYSTEM_IMPLEMENTATION.md  
+src/db/mem0_manager.py 

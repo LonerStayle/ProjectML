@@ -33,7 +33,7 @@ from agents.npc.npc_state import SageState
 from agents.npc.base_npc_agent import BaseNPCAgent
 from agents.npc.emotion_mapper import sage_emotion_to_int
 from db.redis_manager import redis_manager
-from db.mem0_manager import mem0_manager
+from db.user_memory_manager import user_memory_manager
 from db.session_checkpoint_manager import session_checkpoint_manager
 from services.sage_scenario_service import sage_scenario_service
 from enums.LLM import LLM
@@ -548,10 +548,10 @@ class SageAgent(BaseNPCAgent):
             # 세션 저장
             redis_manager.save_session(player_id, npc_id, session)
 
-        # Mem0에 대화 저장 (백그라운드)
+        # User Memory에 대화 저장 (백그라운드)
         user_msg = state["messages"][-1].content
         asyncio.create_task(
-            self._save_to_mem0_background(player_id, npc_id, user_msg, response_text)
+            self._save_to_user_memory_background(player_id, npc_id, user_msg, response_text)
         )
 
         return {
@@ -560,10 +560,10 @@ class SageAgent(BaseNPCAgent):
             "info_revealed": info_revealed,
         }
 
-    async def _save_to_mem0_background(
+    async def _save_to_user_memory_background(
         self, player_id: int, npc_id: int, user_msg: str, npc_response: str
     ) -> None:
-        """백그라운드로 Mem0에 대화 저장
+        """백그라운드로 User Memory에 대화 저장
 
         Args:
             player_id: 플레이어 ID
@@ -572,11 +572,16 @@ class SageAgent(BaseNPCAgent):
             npc_response: NPC 응답
         """
         try:
-            mem0_manager.add_memory(
-                player_id, npc_id, f"플레이어: {user_msg}\n사트라: {npc_response}"
+            user_id = str(player_id)
+            # sage NPC는 heroine_id를 "sage"로 설정
+            await user_memory_manager.save_conversation(
+                user_id=user_id,
+                heroine_id="sage",
+                user_message=user_msg,
+                npc_response=npc_response,
             )
         except Exception as e:
-            print(f"[ERROR] Mem0 저장 실패: {e}")
+            print(f"[ERROR] User Memory 저장 실패: {e}")
 
     async def _generate_and_save_summary(
         self, player_id: int, npc_id: int, conversations: list
