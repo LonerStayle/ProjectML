@@ -13,10 +13,11 @@ from core.game_dto.StatData import StatData
 from core.game_dto.ItemData import ItemData
 from core.game_dto.WeaponData import WeaponData
 import random
-from core.common import get_inventory_items,get_inventory_item
+from core.common import get_inventory_items, get_inventory_item
 
 
 router = APIRouter(prefix="/api/fairy", tags=["Fairy"])
+
 
 class DungeonPlayerDto(BaseModel):
     playerId: int
@@ -61,7 +62,9 @@ class TalkDungeonRequest(BaseModel):
         description="히로인 시야에 있는 몬스터들 (사실 1개면 됨, 혹시 몰라 리스트로 열어둠)",
     )
 
-    nextRoomIds: List[int] = Field(..., description="히로인이 이동 가능한 방 ID 목록", example=1)
+    nextRoomIds: List[int] = Field(
+        ..., description="히로인이 이동 가능한 방 ID 목록", example=1
+    )
 
 
 class TalkGuildRequest(BaseModel):
@@ -83,7 +86,7 @@ class InteractionRequest(BaseModel):
     inventory: List[int] = Field(
         ...,
         description="인벤토리 아이템 id 목록",
-        example=[21,47],
+        example=[21, 47],
     )
     question: str = Field(..., description="사용자의 질문", example="현재 방 불좀 켜봐")
 
@@ -116,7 +119,7 @@ def dungeon_player_dto_to_state(player_dto: DungeonPlayerDto) -> DungeonPlayerSt
 
     weapon = None
     weaponId = player_dto.weaponId
-    item:Optional[ItemData] = get_inventory_item(weaponId)
+    item: Optional[ItemData] = get_inventory_item(weaponId)
     if item is not None:
         weapon = item.weapon
 
@@ -182,3 +185,10 @@ async def talk_guild(request: TalkGuildRequest):
         playerId, question, heroine_id, affection, memory_progress, sanity
     )
     return TalkResponse(response_text=result_text)
+
+
+from tests.fairy.BGM3_temp import get_collection
+@router.post("/test")
+async def test_bgm3():
+    get_collection()
+    return True
