@@ -1,6 +1,7 @@
 from pypdf import PdfReader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-pdf_path = "/Users/seobi/PythonProjects/ProjectML/src/tests/fairy/2501.03468v1.pdf"
+from core.common import get_src_path
+pdf_path = get_src_path() / "tests"/"fairy"/"2501.03468v1.pdf"
 
 def load_pdf(path):
     reader = PdfReader(path)
