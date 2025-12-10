@@ -26,17 +26,18 @@ from agents.fairy.util import (
     contains_hanja,
     replace_hanja_naively,
     get_human_few_shot_prompts,
+    describe_dungeon_row
 )
 
 intent_llm = get_groq_llm_lc(model=LLM.LLAMA_3_1_8B_INSTANT, max_token=43)
-action_llm = get_groq_llm_lc(max_token=80, temperature=0)
+# action_llm = get_groq_llm_lc(max_token=80, temperature=0)
+action_llm = init_chat_model(model=LLM.GROK_4_FAST_NON_REASONING, max_tokens = 80, temperature=0)
 small_talk_llm = init_chat_model(model=LLM.GROK_4_FAST_NON_REASONING, max_tokens = 120)
 rdb_repository = RDBRepository()
 
 
 async def get_monsters_info(target_monster_ids: List[int]):
     return find_monsters_info(target_monster_ids)
-
 
 async def get_event_info(dungeon_row: DungeonRow, curr_room_id: int):
     event = dungeon_row.event
@@ -46,15 +47,18 @@ async def get_event_info(dungeon_row: DungeonRow, curr_room_id: int):
     if event.room_id != curr_room_id:
         return "이벤트방에 입장하지 않아서 정보를 확인할 수 없습니다. 페이몬은 \"아직은 아무일 없어보여! 무슨 사건이 일어날 때 말해!\" 라는식으로 장난스럽게 답해주세요."
 
+    print("이벤트", event)
     return event
 
 
 async def dungeon_navigator(dungeon_row: DungeonRow, curr_room_id: int):
     summary_info = dungeon_row.summary_info
-    dungeon_json_prompt = dungeon_spec_prompt.format(
-        balanced_map_json=dungeon_row.balanced_map
-    )
-    dungeon_map_prompt = f"        <던전맵>\n{dungeon_json_prompt}\n        </던전맵>"
+    # dungeon_json_prompt = dungeon_spec_prompt.format(
+    #     balanced_map_json=dungeon_row.balanced_map
+    # )
+    dungeon_prompt = describe_dungeon_row(curr_room_id, dungeon_row.balanced_map, dungeon_row.floor)
+    print("디스크립션 던전",dungeon_prompt)
+    dungeon_map_prompt = f"        <던전맵>\n{dungeon_prompt}\n        </던전맵>"
     dungeon_summary_prompt = f"        <던전요약>\n{summary_info}\n        </던전요약>"
     dungeon_current_prompt = (
         f"        <현재 Room Id>\n{curr_room_id}\n        </현재 Room Id>"
@@ -128,6 +132,7 @@ async def fairy_action(state: FairyDungeonState):
         dungenon_player.playerId, dungenon_player.heroineId
     )
     print("던전 로우",dungeon_row)
+
     messages = state["messages"]
     INTENT_HANDLERS = {
         FairyDungeonIntentType.MONSTER_GUIDE: lambda: get_monsters_info(
@@ -226,3 +231,4 @@ graph_builder.add_conditional_edges(
     },
 )
 graph_builder.add_edge("fairy_action", END)
+graph_builder.compile()

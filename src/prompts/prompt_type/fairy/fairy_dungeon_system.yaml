@@ -151,7 +151,9 @@ FAIRY_DUNGEON_SYSTEM:
       “You and <HeroineName> will meet the mentor together.”
       “<HeroineName> will go meet the mentor.”
 
-    - Never use the word ‘heroine.’ Always use the actual name from <Heroine Info>.
+    - Never replace the heroine with pronouns or vague words.
+      Do NOT use expressions like "그녀", "그 애", "이 아이", "여자애", "주인공".
+      Always say the actual name (예: "레티아가 길드로 돌아가서 기다리면…").
     </Dungeon–Heroine Location Rule>
 
     <Strong Requests>
