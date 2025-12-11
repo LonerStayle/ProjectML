@@ -60,7 +60,6 @@ class EventResponse(BaseModel):
     scenarioText: str
     scenarioNarrative: str
     choices: List[EventChoice] = []
-    floor: int
 
 
 class EntranceResponse(BaseModel):
@@ -69,7 +68,6 @@ class EntranceResponse(BaseModel):
     success: bool
     message: str
     firstPlayerId: int
-    floorIds: List[int]
     events: Optional[List[EventResponse]] = None
 
 
@@ -104,7 +102,6 @@ class BalanceResponse(BaseModel):
     message: str
     firstPlayerId: int
     monsterPlacements: List[MonsterPlacement] = []
-    nextFloorEvent: Optional[EventResponse] = None
 
 
 class ClearRequest(BaseModel):
@@ -237,7 +234,6 @@ async def entrance(request: EntranceRequest):
             success=True,
             message="던전 입장 성공",
             firstPlayerId=result.get("first_player_id", 0),
-            floorIds=result.get("floor_ids", []),
             events=events_list if events_list else None,
         )
     except Exception as e:
@@ -290,7 +286,6 @@ async def balance_dungeon(request: BalanceRequest):
             message="던전 밸런싱 성공",
             firstPlayerId=request.firstPlayerId,
             monsterPlacements=monster_placements,
-            nextFloorEvent=next_event_data,
             agentResult=result.get("agent_result"),
         )
     except Exception as e:
