@@ -36,7 +36,7 @@ class RawMapRequest(BaseModel):
 class EntranceRequest(BaseModel):
     """던전 입장 요청"""
 
-    rawMap: RawMapRequest
+    rawMaps: List[RawMapRequest]  # 여러 층 raw_map 지원
     heroineData: Optional[Dict[str, Any]] = None
     usedEvents: Optional[List[Any]] = None
 
@@ -59,6 +59,7 @@ class EventResponse(BaseModel):
     scenarioText: str
     scenarioNarrative: str
     choices: List[EventChoice] = []
+    floor: int
 
 
 class EntranceResponse(BaseModel):
@@ -67,6 +68,7 @@ class EntranceResponse(BaseModel):
     success: bool
     message: str
     firstPlayerId: int
+    floorIds: List[int]
     events: Optional[List[EventResponse]] = None
 
 
@@ -150,28 +152,24 @@ async def entrance(request: EntranceRequest):
     try:
         service = get_dungeon_service()
 
-        # raw_map을 dict로 변환
-        raw_map = request.rawMap.model_dump()
-
-        # raw_map 정규화 (camelCase -> snake_case)
-        from services.dungeon_service import _normalize_room_keys
-
-        raw_map = _normalize_room_keys(raw_map)
+        # 여러 층 raw_map을 dict로 변환
+        raw_maps = [raw_map.model_dump() for raw_map in request.rawMaps]
 
         # 던전 입장
         result = service.entrance(
-            player_ids=raw_map.get("player_ids") or raw_map.get("playerIds", []),
-            heroine_ids=raw_map.get("heroine_ids") or raw_map.get("heroineIds", []),
-            raw_map=raw_map,
-            # heroine_data=request.heroineData, # 임시 제거
+            player_ids=raw_maps[0].get("player_ids")
+            or raw_maps[0].get("playerIds", []),
+            heroine_ids=raw_maps[0].get("heroine_ids")
+            or raw_maps[0].get("heroineIds", []),
+            raw_maps=raw_maps,
+            heroine_data=request.heroineData,
             used_events=request.usedEvents or [],
         )
 
-        # 이벤트 정보 매핑
+        # 이벤트 정보 매핑 (floor 구분 포함)
         events_list = []
         if result.get("events"):
             events_data = result["events"]
-            # 리스트인 경우 (여러 이벤트)
             if isinstance(events_data, list):
                 for evt in events_data:
                     events_list.append(
@@ -191,9 +189,9 @@ async def entrance(request: EntranceRequest):
                                 for c in evt.get("choices", [])
                                 if isinstance(c, dict)
                             ],
+                            floor=evt.get("floor", 1)
                         )
                     )
-            # 단일 딕셔너리인 경우 (하위 호환성)
             elif isinstance(events_data, dict):
                 evt = events_data
                 events_list.append(
@@ -213,6 +211,7 @@ async def entrance(request: EntranceRequest):
                             for c in evt.get("choices", [])
                             if isinstance(c, dict)
                         ],
+                        floor=evt.get("floor", 1)
                     )
                 )
 
@@ -220,6 +219,7 @@ async def entrance(request: EntranceRequest):
             success=True,
             message="던전 입장 성공",
             firstPlayerId=result.get("first_player_id", 0),
+            floorIds=result.get("floor_ids", []),
             events=events_list if events_list else None,
         )
     except Exception as e:

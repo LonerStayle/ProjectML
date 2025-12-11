@@ -128,17 +128,17 @@ class DungeonService:
         self,
         player_ids: List[int],
         heroine_ids: List[int],
-        raw_map: Dict[str, Any],
+        raw_maps: List[Dict[str, Any]],  # 여러 층 raw_map 지원
         heroine_data: Optional[Dict[str, Any]] = None,
         used_events: Optional[List[Any]] = None,
     ) -> Dict[str, Any]:
         """
-        던전 입장: 1층, 2층, 3층 모두 생성 및 이벤트 생성
+        던전 입장: 여러 층 raw_map을 받아 각 층 이벤트를 모두 생성
 
         Args:
             player_ids: 플레이어 ID 리스트
             heroine_ids: 영웅 ID 리스트
-            raw_map: Unreal에서 보낸 1층 raw_map (camelCase)
+            raw_maps: Unreal에서 보낸 각 층 raw_map 리스트
             heroine_data: 히로인 데이터 (선택)
             used_events: 사용된 이벤트 리스트 (선택)
 
@@ -146,25 +146,18 @@ class DungeonService:
             {
                 "first_player_id": int,
                 "events": List[dict],
-                "floor1_id": int,
-                "floor2_id": int,
-                "floor3_id": int,
+                "floor_ids": List[int],
             }
         """
-        # Unreal JSON 정규화 (camelCase -> snake_case)
-        normalized_raw_map = _normalize_room_keys(raw_map)
-
         first_player_id = player_ids[0] if player_ids else 0
 
         # DB Cleanup: 참가하는 모든 플레이어의 이전 (Host로 참여한) 던전 세션 종료 처리
         try:
             from sqlalchemy import text
 
-            # player_ids가 유효한지 확인
             cleanup_targets = player_ids if player_ids else []
             if first_player_id != 0 and first_player_id not in cleanup_targets:
                 cleanup_targets.append(first_player_id)
-
             if cleanup_targets:
                 with self.repo.engine.begin() as conn:
                     for pid in cleanup_targets:
@@ -180,43 +173,16 @@ class DungeonService:
         except Exception as e:
             print(f"[Entrance] DB Cleanup 실패: {e}")
 
-        # 2층, 3층 placeholder
-        placeholder_raw_map = {
-            "player_ids": normalized_raw_map.get("player_ids", []),
-            "heroine_ids": normalized_raw_map.get("heroine_ids", []),
-            "rooms": [],
-            "rewards": [],
-        }
-
-        # 트랜잭션 내에서 insert만 빠르게 처리
-        from sqlalchemy import text
-
-        try:
-            with self.repo.engine.begin() as conn:
-                floor1_id = self._insert_dungeon_in_transaction(
-                    conn, floor=1, raw_map=normalized_raw_map
-                )
-                floor2_id = self._insert_dungeon_in_transaction(
-                    conn, floor=2, raw_map=placeholder_raw_map
-                )
-                floor3_id = self._insert_dungeon_in_transaction(
-                    conn, floor=3, raw_map=placeholder_raw_map
-                )
-        except Exception as e:
-            print(f"[ERROR] entrance 트랜잭션 실패: {e}")
-            raise
-
-        # 이벤트 생성 (이벤트 방이 있는 경우에만)
+        # 각 층 raw_map 정규화 및 DB 저장
+        floor_ids = []
         events_list = []
+        current_used_events = list(used_events) if used_events else []
 
         # 히로인 데이터 처리 (프로토타입용: 데이터가 없거나 비어있으면 더미 사용)
         target_heroine_data = None
         if heroine_data:
-            # 간단한 유효성 검사 (예: heroineId가 있는지 등)
             target_heroine_data = _normalize_heroine_data(heroine_data)
-
         if not target_heroine_data or not target_heroine_data.get("heroine_id"):
-            # 임시 더미 데이터 사용
             target_heroine_data = {
                 "heroine_id": 1,
                 "name": "플레이어",
@@ -226,44 +192,47 @@ class DungeonService:
                 "dungeonPlayerData": {},
             }
 
-        # raw_map에서 이벤트 방 찾기
-        event_rooms = [
-            room
-            for room in normalized_raw_map.get("rooms", [])
-            if room.get("room_type") == "event" or room.get("event_type", 0) != 0
-        ]
+        from sqlalchemy import text
 
-        print(f"[Entrance] 발견된 이벤트 방 개수: {len(event_rooms)}")
+        try:
+            with self.repo.engine.begin() as conn:
+                for idx, raw_map in enumerate(raw_maps):
+                    normalized_raw_map = _normalize_room_keys(raw_map)
+                    floor_id = self._insert_dungeon_in_transaction(
+                        conn, floor=idx + 1, raw_map=normalized_raw_map
+                    )
+                    floor_ids.append(floor_id)
 
-        # 중복 방지를 위한 로컬 used_events 관리
-        current_used_events = list(used_events) if used_events else []
-
-        for room in event_rooms:
-            room_id = room.get("room_id")
-            print(f"[Entrance] Room {room_id}에 대한 이벤트 생성 중...")
-
-            event_data = self._create_event_for_floor(
-                heroine_data=target_heroine_data,  # 처리된 데이터 전달
-                next_floor=1,
-                used_events=current_used_events,
-                room_id=room_id,
-            )
-
-            if event_data:
-                events_list.append(event_data)
-
-                # 생성된 이벤트를 used_events에 추가하여 다음 방에서 중복 방지
-                current_used_events.append(event_data)
-
-        if events_list:
-            self._save_event_to_db(floor1_id, events_list)
+                    # 이벤트 생성 (이벤트 방이 있는 경우에만)
+                    event_rooms = [
+                        room
+                        for room in normalized_raw_map.get("rooms", [])
+                        if room.get("room_type") == "event"
+                        or room.get("event_type", 0) != 0
+                    ]
+                    print(f"[Entrance] {idx+1}층 이벤트 방 개수: {len(event_rooms)}")
+                    for room in event_rooms:
+                        room_id = room.get("room_id")
+                        print(f"[Entrance] Room {room_id}에 대한 이벤트 생성 중...")
+                        event_data = self._create_event_for_floor(
+                            heroine_data=target_heroine_data,
+                            next_floor=idx + 1,
+                            used_events=current_used_events,
+                            room_id=room_id,
+                        )
+                        if event_data:
+                            events_list.append(event_data)
+                            current_used_events.append(event_data)
+                    if event_rooms:
+                        self._save_event_to_db(floor_id, events_list)
+        except Exception as e:
+            print(f"[ERROR] entrance 트랜잭션 실패: {e}")
+            raise
 
         return {
             "first_player_id": first_player_id,
             "events": events_list,
-            "floor1_id": floor1_id,
-            "floor2_id": floor2_id,
-            "floor3_id": floor3_id,
+            "floor_ids": floor_ids,
         }
 
     def _insert_dungeon_in_transaction(
@@ -674,53 +643,27 @@ class DungeonService:
                 # sub_event가 dict가 아닐 수 있음 (문자열일 경우 처리)
                 sub_event_data = generated_events.get("sub_event", {})
                 scenario_narrative = ""
-                choices = []
-                expected_outcome = ""
+                floor_ids = []
+                events_list = []
+                current_used_events = list(used_events) if used_events else []
 
-                if isinstance(sub_event_data, dict):
-                    scenario_narrative = sub_event_data.get("narrative", "")
-                    choices = sub_event_data.get("choices", [])
-                    expected_outcome = sub_event_data.get("expected_outcome", "")
+                # 히로인 데이터 처리 (프로토타입용: 데이터가 없거나 비어있으면 더미 사용)
+                target_heroine_data = None
+                if heroine_data:
+                    target_heroine_data = heroine_data
+                if not target_heroine_data or not target_heroine_data.get("heroine_id"):
+                    target_heroine_data = {"heroine_id": 1, "memory_progress": 0}
 
-                main_event_data = generated_events.get("main_event", {})
+                from sqlalchemy import text
 
-                # event_id 추출 (main_event_data에서)
-                event_id = 0
-                if isinstance(main_event_data, dict):
-                    event_id = main_event_data.get("event_id", 0)
-
-                next_floor_events = {
-                    "room_id": generated_events.get("event_room_index", 0),
-                    "event_type": event_id,
-                    "event_title": (
-                        main_event_data.get("title", "")
-                        if isinstance(main_event_data, dict)
-                        else ""
-                    ),
-                    "event_code": (
-                        main_event_data.get("event_code", "")
-                        if isinstance(main_event_data, dict)
-                        else ""
-                    ),
-                    "scenario_text": (
-                        main_event_data.get("scenario_text", "")
-                        if isinstance(main_event_data, dict)
-                        else ""
-                    ),
-                    "scenario_narrative": scenario_narrative,
-                    "choices": choices,
-                    "expected_outcome": expected_outcome,
-                }
-
+                # DB 업데이트: 다음 층 정보 저장
                 conn.execute(
                     text(
                         "UPDATE dungeon SET raw_map = :raw_map, balanced_map = :balanced_map, event = :event, summary_info = :summary_info WHERE id = :id"
                     ),
                     {
                         "raw_map": json.dumps(next_floor_raw_map),  # 초기화된 맵
-                        "balanced_map": json.dumps(
-                            balanced_map_data
-                        ),  # 몬스터 배치된 맵
+                        "balanced_map": json.dumps(balanced_map_data),  # 몬스터 배치된 맵
                         "event": json.dumps(next_floor_events),
                         "summary_info": summary_info,
                         "id": next_floor_id,
@@ -994,7 +937,7 @@ class DungeonService:
                     evt_room_id = evt.get("room_id")
                     if evt_room_id is None:
                         evt_room_id = evt.get("roomId")
-                    
+
                     if str(evt_room_id) == str(room_id):
                         target_event = evt
                         break
@@ -1002,7 +945,7 @@ class DungeonService:
                 evt_room_id = event_data.get("room_id")
                 if evt_room_id is None:
                     evt_room_id = event_data.get("roomId")
-                
+
                 if str(evt_room_id) == str(room_id):
                     target_event = event_data
 
@@ -1010,9 +953,13 @@ class DungeonService:
                 # 디버깅을 위해 현재 로드된 이벤트들의 room_id 목록을 에러 메시지에 포함
                 loaded_room_ids = []
                 if isinstance(event_data, list):
-                    loaded_room_ids = [e.get("room_id") or e.get("roomId") for e in event_data]
+                    loaded_room_ids = [
+                        e.get("room_id") or e.get("roomId") for e in event_data
+                    ]
                 elif isinstance(event_data, dict):
-                    loaded_room_ids = [event_data.get("room_id") or event_data.get("roomId")]
+                    loaded_room_ids = [
+                        event_data.get("room_id") or event_data.get("roomId")
+                    ]
 
                 print(f"[ERROR] Event not found. Loaded room_ids: {loaded_room_ids}")
 
