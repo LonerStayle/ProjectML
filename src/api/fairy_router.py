@@ -186,7 +186,7 @@ async def talk_guild(request: TalkGuildRequest):
 
 from fastapi import UploadFile, File
 import os,time
-@round.post("/upload-wav")
+@router.post("/upload-wav")
 async def upload_wav(file: UploadFile = File(...)):
     start_time = time.time()
 
