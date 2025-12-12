@@ -1,6 +1,6 @@
 import json
 from typing import List, Any, Dict
-from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine
 from langchain_postgres import PGVector
 from langchain_core.documents import Document
 from langchain_openai import OpenAIEmbeddings
