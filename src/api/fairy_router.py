@@ -183,3 +183,24 @@ async def talk_guild(request: TalkGuildRequest):
         playerId, question, heroine_id, affection, memory_progress, sanity
     )
     return TalkResponse(response_text=result_text)
+
+from fastapi import UploadFile, File
+import os,time
+@round.post("/upload-wav")
+async def upload_wav(file: UploadFile = File(...)):
+    start_time = time.time()
+
+    # WAV 파일인지 최소 체크
+    if not file.filename.endswith(".wav"):
+        return {"error": "Only .wav files are allowed"}
+
+    contents = await file.read()
+
+    # (선택) 파일 저장
+    elapsed_ms = (time.time() - start_time) * 1000
+
+    return {
+        "filename": file.filename,
+        "size_bytes": len(contents),
+        "server_elapsed_ms": round(elapsed_ms, 2)
+    }
