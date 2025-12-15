@@ -124,13 +124,21 @@ class DungeonService:
         player_ids: List[int],
         heroine_ids: List[int],
         raw_maps: List[Dict[str, Any]],  # 여러 층 raw_map
-        heroine_data: Optional[Dict[str, Any]] = None,
+        heroine_data: Optional[List[Dict[str, Any]]] = None,
         used_events: Optional[List[Any]] = None,
     ) -> Dict[str, Any]:
         events_list = []
         floor_ids = []
         try:
             with self.repo.engine.begin() as conn:
+                # Normalize all heroine_data if list, else wrap as list
+                normalized_heroines = []
+                if heroine_data:
+                    if isinstance(heroine_data, list):
+                        for h in heroine_data:
+                            normalized_heroines.append(_normalize_heroine_data(h))
+                    else:
+                        normalized_heroines.append(_normalize_heroine_data(heroine_data))
                 for idx, raw_map in enumerate(raw_maps):
                     floor_num = idx + 1
                     if floor_num > 2:
@@ -172,7 +180,8 @@ class DungeonService:
                         or room.get("event_type", 0) != 0
                     ]
                     events_for_this_floor = []
-                    normalized_heroine_data = _normalize_heroine_data(heroine_data)
+                    # 여러 히로인 중 첫 번째만 사용 (확장 가능)
+                    normalized_heroine_data = normalized_heroines[0] if normalized_heroines else {}
                     for room in event_rooms:
                         room_id = room.get("room_id")
                         event_data = self._create_event_for_floor(
@@ -219,14 +228,13 @@ class DungeonService:
             "floor_ids": floor_ids,
             "events": events_list,
         }
-        self.repo = RDBRepository()
-
+        
     def next_floor_entrance(
         self,
         player_ids: List[int],
         heroine_ids: List[int],
         raw_map: Dict[str, Any],
-        heroine_data: Optional[Dict[str, Any]] = None,
+        heroine_data: Optional[List[Dict[str, Any]]] = None,
         used_events: Optional[List[Any]] = None,
     ) -> Dict[str, Any]:
         """
@@ -284,7 +292,15 @@ class DungeonService:
                 ]
                 print(f"[DEBUG] next_floor_entrance: event_rooms={event_rooms}")
                 events_for_this_floor = []
-                normalized_heroine_data = _normalize_heroine_data(heroine_data)
+                # 여러 히로인 중 첫 번째만 사용 (확장 가능)
+                normalized_heroines = []
+                if heroine_data:
+                    if isinstance(heroine_data, list):
+                        for h in heroine_data:
+                            normalized_heroines.append(_normalize_heroine_data(h))
+                    else:
+                        normalized_heroines.append(_normalize_heroine_data(heroine_data))
+                normalized_heroine_data = normalized_heroines[0] if normalized_heroines else {}
                 for room in event_rooms:
                     room_id = room.get("room_id")
                     event_data = self._create_event_for_floor(
@@ -577,9 +593,6 @@ class DungeonService:
         used_events: List[Any] = None,
     ) -> Dict[str, Any]:
         """
-        보스방 입장 시 Super Agent 실행하여 balanced_map 생성 및 저장
-        + 다음 층 이벤트 생성
-
         Args:
             first_player_id: 방장 ID (던전 식별용)
             player_data_list: 플레이어별 데이터 리스트 [{playerId, heroineData, heroineStat, ...}]
@@ -595,9 +608,6 @@ class DungeonService:
             }
         """
         try:
-            # Extract host data (first_player_id) for Agent input
-            # 현재 Super Agent는 단일 히로인 컨텍스트만 지원하므로 방장의 데이터를 사용
-            # player_data_list는 [{'heroineData': {...}}, ...] 형태
             host_data_wrapper = None
             for pd in player_data_list:
                 # pd가 dict인지 확인
@@ -674,12 +684,6 @@ class DungeonService:
                 print(
                     f"  - room {i}: type={room.get('room_type')}, monsters={monsters}"
                 )
-
-            # Super Agent 입력 State 구성
-            # 밸런싱 대상: 다음 층 (Next Floor)
-            # 현재 층(Floor 1)의 구조를 복사하여 다음 층(Floor 2)의 raw_map으로 사용
-            # 단, 몬스터 정보는 초기화된 상태여야 함
-
             # 다음 층 ID 조회
             next_floor = current_floor + 1
             next_floor_id = None
@@ -840,21 +844,6 @@ class DungeonService:
         heroine_data: Dict[str, Any],
         used_events: List[Any] = None,
     ) -> Dict[str, Any]:
-        """
-        다음 층 던전 정보 확인 및 이벤트 생성
-
-        Args:
-            first_player_id: 방장 ID
-            heroine_data: 히로인 정보
-            used_events: 사용된 이벤트 리스트
-
-        Returns:
-            {
-                "success": bool,
-                "next_floor_id": int,
-                "events": dict
-            }
-        """
         try:
             # 1. 현재 진행 중인 던전 찾기
             unfinished = self.repo.get_unfinished_dungeons(player_ids=[first_player_id])
@@ -1103,21 +1092,21 @@ class DungeonService:
                     options_text += f"{idx}. {c.get('action', '')}\n"
 
                 classification_prompt = f"""
-[상황]
-{scenario_narrative}
+                [상황]
+                {scenario_narrative}
 
-[가능한 선택지]
-{options_text}
+                [가능한 선택지]
+                {options_text}
 
-[플레이어 입력]
-{choice}
+                [플레이어 입력]
+                {choice}
 
-플레이어의 입력이 위 [가능한 선택지] 중 어느 것과 가장 유사한지 판단해.
-1. 선택지와 의미가 유사하면 해당 번호(0, 1, 2...)를 반환해.
-2. 만약 선택지에 없는 돌발 행동이거나, 적대적인 행동, 혹은 전혀 다른 행동이라면 "UNEXPECTED"라고 반환해.
+                플레이어의 입력이 위 [가능한 선택지] 중 어느 것과 가장 유사한지 판단해.
+                1. 선택지와 의미가 유사하면 해당 번호(0, 1, 2...)를 반환해.
+                2. 만약 선택지에 없는 돌발 행동이거나, 적대적인 행동, 혹은 전혀 다른 행동이라면 "UNEXPECTED"라고 반환해.
 
-오직 숫자 혹은 "UNEXPECTED" 만 출력해.
-"""
+                오직 숫자 혹은 "UNEXPECTED" 만 출력해.
+                """
                 # 분류 실행
                 try:
                     class_response = llm.invoke(
@@ -1146,29 +1135,29 @@ class DungeonService:
                 # 돌발 행동에 대한 패널티 및 서술
                 penalty_id = "penalty_unexpected_action"  # 기본 패널티 ID 부여
                 prompt = f"""
-[상황]
-{scenario_narrative}
+                [상황]
+                {scenario_narrative}
 
-[플레이어 돌발 행동]
-{choice}
+                [플레이어 돌발 행동]
+                {choice}
 
-플레이어가 예상치 못한 행동을 했습니다. 
-이 행동은 상황에 맞지 않거나 위험한 행동일 수 있습니다.
-이에 대한 부정적인 결과나 당황스러운 상황을 2~3문장으로 묘사해줘.
-플레이어에게 직접 이야기하듯이 서술해.
-"""
+                플레이어가 예상치 못한 행동을 했습니다. 
+                이 행동은 상황에 맞지 않거나 위험한 행동일 수 있습니다.
+                이에 대한 부정적인 결과나 당황스러운 상황을 2~3문장으로 묘사해줘.
+                플레이어에게 직접 이야기하듯이 서술해.
+                """
             else:
                 # 매칭된 행동에 대한 서술
                 prompt = f"""
-[상황]
-{scenario_narrative}
+                [상황]
+                {scenario_narrative}
 
-[플레이어 선택]
-{choice} (의도: {matched_action})
+                [플레이어 선택]
+                {choice} (의도: {matched_action})
 
-위 상황에서 플레이어가 선택한 행동에 대한 결과를 2~3문장으로 묘사해줘. 
-플레이어에게 직접 이야기하듯이 서술해. (예: "당신은 ~했습니다. 그 결과...")
-"""
+                위 상황에서 플레이어가 선택한 행동에 대한 결과를 2~3문장으로 묘사해줘. 
+                플레이어에게 직접 이야기하듯이 서술해. (예: "당신은 ~했습니다. 그 결과...")
+                """
 
             response = llm.invoke([HumanMessage(content=prompt)])
             outcome = response.content

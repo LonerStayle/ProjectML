@@ -38,7 +38,7 @@ class EntranceRequest(BaseModel):
     """던전 입장 요청"""
 
     rawMaps: List[RawMapRequest]  # 여러 층 raw_map 지원
-    heroineData: Optional[Dict[str, Any]] = None
+    heroineData: Optional[List[Dict[str, Any]]] = None
     usedEvents: Optional[List[Any]] = None
 
 
