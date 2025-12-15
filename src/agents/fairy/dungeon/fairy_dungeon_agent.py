@@ -138,8 +138,6 @@ async def fairy_action(state: FairyDungeonState):
     dungeon_row = rdb_repository.get_current_dungeon_by_player(
         dungenon_player.playerId, dungenon_player.heroineId
     )
-    print("던전 로우",dungeon_row)
-
     messages = state["messages"]
     INTENT_HANDLERS = {
         FairyDungeonIntentType.MONSTER_GUIDE: lambda: get_monsters_info(
@@ -197,7 +195,7 @@ async def fairy_action(state: FairyDungeonState):
         question=question,
     )
 
-    # print("check_prompt::", human_prompt)
+    print("총 질문", human_prompt)
 
     if intent_types[0] == FairyDungeonIntentType.SMALLTALK and len(intent_types) == 1:
         ai_answer = small_talk_llm.invoke(
