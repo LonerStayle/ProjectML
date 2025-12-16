@@ -129,7 +129,7 @@ class HeroineAgent(BaseNPCAgent):
         super().__init__(model_name)
 
         # 의도 분류용 LLM (temperature=0으로 일관된 분류)
-        self.intent_llm = init_chat_model(model=LLM.GROK_4_FAST_NON_REASONING, temperature=0)
+        self.intent_llm = init_chat_model(model=model_name, temperature=0)
 
         # LangGraph 빌드 (비스트리밍용)
         self.graph = self._build_graph()
