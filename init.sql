@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS romance_docs (
 -- 4. 세션 체크포인트 (Redis 백업용)
 CREATE TABLE IF NOT EXISTS session_checkpoints (
     id SERIAL PRIMARY KEY,
-    user_id INT NOT NULL,
+    player_id TEXT NOT NULL,
     npc_id INT NOT NULL,
     conversation JSONB,
     summary_list JSONB DEFAULT '[]'::jsonb,
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS session_checkpoints (
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
-CREATE INDEX IF NOT EXISTS idx_checkpoint_user_npc ON session_checkpoints(user_id, npc_id);
+CREATE INDEX IF NOT EXISTS idx_checkpoint_player_npc ON session_checkpoints(player_id, npc_id);
 CREATE INDEX IF NOT EXISTS idx_checkpoint_last_chat ON session_checkpoints(last_chat_at DESC);
 
 -- 5. 히로인 시나리오 (벡터 검색용 + BM25 검색용)

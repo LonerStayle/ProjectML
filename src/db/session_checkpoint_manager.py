@@ -31,7 +31,7 @@ class SessionCheckpointManager:
 
     def save_checkpoint_background(
         self,
-        user_id: int,
+        player_id: str,
         npc_id: int,
         user_message: str,
         npc_response: str,
@@ -43,7 +43,7 @@ class SessionCheckpointManager:
         conversation에 방금 한 대화만 저장합니다.
 
         Args:
-            user_id: 유저 ID
+            player_id: 플레이어 ID
             npc_id: NPC ID
             user_message: 유저 메시지
             npc_response: NPC 응답
@@ -54,8 +54,8 @@ class SessionCheckpointManager:
 
             sql = text(
                 """
-                INSERT INTO session_checkpoints (user_id, npc_id, conversation, state, last_chat_at)
-                VALUES (:user_id, :npc_id, :conversation, :state, NOW())
+                INSERT INTO session_checkpoints (player_id, npc_id, conversation, state, last_chat_at)
+                VALUES (:player_id, :npc_id, :conversation, :state, NOW())
             """
             )
 
@@ -63,7 +63,7 @@ class SessionCheckpointManager:
                 conn.execute(
                     sql,
                     {
-                        "user_id": user_id,
+                        "player_id": str(player_id),
                         "npc_id": npc_id,
                         "conversation": json.dumps(conversation, ensure_ascii=False),
                         "state": json.dumps(state, ensure_ascii=False),
@@ -75,14 +75,14 @@ class SessionCheckpointManager:
             print(f"[ERROR] save_checkpoint_background 실패: {e}")
 
     async def generate_summary(
-        self, user_id: int, npc_id: int, conversations: List[Dict[str, str]]
+        self, player_id: str, npc_id: int, conversations: List[Dict[str, str]]
     ) -> Dict[str, Any]:
         """LLM으로 요약 생성
 
         20턴 또는 1시간 경과시 호출됩니다.
 
         Args:
-            user_id: 유저 ID
+            player_id: 플레이어 ID
             npc_id: NPC ID
             conversations: 대화 목록
 
@@ -133,12 +133,12 @@ class SessionCheckpointManager:
             }
 
     def save_summary(
-        self, user_id: int, npc_id: int, summary_item: Dict[str, Any]
+        self, player_id: str, npc_id: int, summary_item: Dict[str, Any]
     ) -> None:
         """요약을 summary_list에 추가
 
         Args:
-            user_id: 유저 ID
+            player_id: 플레이어 ID
             npc_id: NPC ID
             summary_item: 요약 항목 (summary, importance, created_at)
         """
@@ -147,10 +147,10 @@ class SessionCheckpointManager:
                 """
                 UPDATE session_checkpoints
                 SET summary_list = summary_list || CAST(:summary_item AS jsonb)
-                WHERE user_id = :user_id AND npc_id = :npc_id
+                WHERE player_id = :player_id AND npc_id = :npc_id
                 AND id = (
                     SELECT id FROM session_checkpoints
-                    WHERE user_id = :user_id AND npc_id = :npc_id
+                    WHERE player_id = :player_id AND npc_id = :npc_id
                     ORDER BY created_at DESC
                     LIMIT 1
                 )
@@ -161,7 +161,7 @@ class SessionCheckpointManager:
                 conn.execute(
                     sql,
                     {
-                        "user_id": user_id,
+                        "player_id": str(player_id),
                         "npc_id": npc_id,
                         "summary_item": json.dumps([summary_item], ensure_ascii=False),
                     },
@@ -270,13 +270,13 @@ class SessionCheckpointManager:
             print(f"[ERROR] calculate_time_diff 실패: {e}")
             return "알 수 없음"
 
-    def load_checkpoints(self, user_id: int, npc_id: int) -> Dict[str, Any]:
+    def load_checkpoints(self, player_id: str, npc_id: int) -> Dict[str, Any]:
         """로그인시 checkpoint 로드
 
         최근 20개의 conversation과 summary_list를 로드합니다.
 
         Args:
-            user_id: 유저 ID
+            player_id: 플레이어 ID
             npc_id: NPC ID
 
         Returns:
@@ -287,14 +287,14 @@ class SessionCheckpointManager:
                 """
                 SELECT conversation, summary_list, state, last_chat_at
                 FROM session_checkpoints
-                 WHERE user_id = :user_id AND npc_id = :npc_id
+                 WHERE player_id = :player_id AND npc_id = :npc_id
                 ORDER BY created_at DESC
                 LIMIT 20
             """
             )
 
             with self.engine.connect() as conn:
-                result = conn.execute(sql, {"user_id": user_id, "npc_id": npc_id})
+                result = conn.execute(sql, {"player_id": str(player_id), "npc_id": npc_id})
                 rows = result.fetchall()
 
             if not rows:
@@ -333,11 +333,11 @@ class SessionCheckpointManager:
                 "last_chat_at": None,
             }
 
-    def get_last_chat_at(self, user_id: int, npc_id: int) -> Optional[str]:
+    def get_last_chat_at(self, player_id: str, npc_id: int) -> Optional[str]:
         """마지막 대화 시간 조회
 
         Args:
-            user_id: 유저 ID
+            player_id: 플레이어 ID
             npc_id: NPC ID
 
         Returns:
@@ -348,14 +348,14 @@ class SessionCheckpointManager:
                 """
                 SELECT last_chat_at
                 FROM session_checkpoints
-                WHERE user_id = :user_id AND npc_id = :npc_id
+                WHERE player_id = :player_id AND npc_id = :npc_id
                 ORDER BY created_at DESC
                 LIMIT 1
             """
             )
 
             with self.engine.connect() as conn:
-                result = conn.execute(sql, {"user_id": user_id, "npc_id": npc_id})
+                result = conn.execute(sql, {"player_id": str(player_id), "npc_id": npc_id})
                 row = result.fetchone()
 
             if row and row.last_chat_at:

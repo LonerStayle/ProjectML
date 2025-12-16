@@ -372,6 +372,7 @@
 │                              INPUT                                       │
 ├─────────────────────────────────────────────────────────────────────────┤
 │ {                                                                        │
+│   "playerId": "player_10001",                                            │
 │   "heroine1Id": 1,                                                       │
 │   "heroine2Id": 2,                                                       │
 │   "situation": null,    ← null이면 자동 생성                             │
@@ -426,21 +427,22 @@
                                     │
                                     ▼
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                    4단계: 통합 테이블에 저장 (agent_memories)             │
+│                    4단계: DB 저장 (npc_npc_checkpoints + memories)       │
 ├─────────────────────────────────────────────────────────────────────────┤
-│ 3개의 기억을 agent_memories 테이블에 저장:                               │
+│ 1. npc_npc_checkpoints (체크포인트 - 동기):                             │
+│    - player_id: "player_10001"                                          │
+│    - heroine_id_1: 1, heroine_id_2: 2  ← (min,max)로 정규화             │
+│    - conversation: 대화 전체 JSON 저장                                   │
+│    - turn_count: 10                                                      │
 │                                                                          │
-│ 1. NPC간 대화 (npc_conversation):                                       │
-│    agent_id: "conv_1_2", memory_type: "npc_conversation"                │
-│    content: "루파메스: 야, 레티아! 뭐해?...", importance: 5             │
+│ 2. npc_npc_memories (장기기억 - 백그라운드):                            │
+│    - LLM으로 중요 fact만 추출 (gpt-4o-mini)                             │
+│    - speaker_id, subject_id 포함                                        │
+│    - 4요소 하이브리드 검색 지원                                          │
 │                                                                          │
-│ 2. NPC 1이 NPC 2에 대한 기억:                                           │
-│    agent_id: "npc_1_about_2", memory_type: "npc_memory"                 │
-│    content: "루파메스와 대화함: 야, 레티아! 뭐해?..."                   │
-│                                                                          │
-│ 3. NPC 2가 NPC 1에 대한 기억:                                           │
-│    agent_id: "npc_2_about_1", memory_type: "npc_memory"                 │
-│    content: "레티아와 대화함: 야, 레티아! 뭐해?..."                     │
+│ 3. Redis 세션 저장 (동기):                                              │
+│    - Key: "npc_npc_session:{player_id}:{min_id}:{max_id}"               │
+│    - 최근 대화/인터럽트 처리용                                           │
 └───────────────────────────────────┬─────────────────────────────────────┘
                                     │
                                     ▼
@@ -449,16 +451,17 @@
 ├─────────────────────────────────────────────────────────────────────────┤
 │ {                                                                        │
 │   "id": "uuid-xxxx",                                                     │
-│   "agent_id": "conv_1_2",                                                │
-│   "memory_type": "npc_conversation",                                     │
-│   "content": "루파메스: 야, 레티아! 뭐해?\n레티아: ...보면 몰라요?",    │
+│   "player_id": "player_10001",                                           │
+│   "heroine_id_1": 1,                                                     │
+│   "heroine_id_2": 2,                                                     │
+│   "situation": "길드 휴게실에서 쉬는 중",                                │
 │   "conversation": [                                                      │
 │     {"speaker_id": 2, "speaker_name": "루파메스",                        │
 │      "text": "야, 레티아! 뭐해?", "emotion": 1},                         │
 │     {"speaker_id": 1, "speaker_name": "레티아",                          │
 │      "text": "...보면 몰라요? 검을 닦고 있잖아요.", "emotion": 0}        │
 │   ],                                                                     │
-│   "importance_score": 5,                                                 │
+│   "turn_count": 10,                                                      │
 │   "timestamp": "2025-11-28T12:00:00"                                     │
 │ }                                                                        │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -490,9 +493,9 @@
 │                                                                          │
 │  4단계: DB 저장 (_save_conversation_to_db)                               │
 │  ┌───────────────────────────────────────────────────────────────────┐  │
-│  │ - 스트리밍: 텍스트 → JSON 파싱 후 저장                             │  │
-│  │ - 비스트리밍: JSON 직접 저장                                       │  │
-│  │ - 동일한 테이블(agent_memories)에 저장                             │  │
+│  │ - 체크포인트: npc_npc_checkpoints (동기)                           │  │
+│  │ - 장기기억: npc_npc_memories (백그라운드, LLM fact 추출)           │  │
+│  │ - Redis 세션: npc_npc_session:{player_id}:{min}:{max}             │  │
 │  └───────────────────────────────────────────────────────────────────┘  │
 │                                                                          │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -505,6 +508,7 @@
 │                              INPUT                                       │
 ├─────────────────────────────────────────────────────────────────────────┤
 │ {                                                                        │
+│   "playerId": "player_10001",                                            │
 │   "heroine1Id": 1,                                                       │
 │   "heroine2Id": 2,                                                       │
 │   "situation": null,                                                     │
@@ -543,9 +547,12 @@
 │ 1. 텍스트 응답 → JSON으로 파싱 (_parse_streaming_response)              │
 │    "[레티아] (neutral) ...뭐해." → {"speaker_id": 1, "text": "...뭐해."}│
 │                                                                          │
-│ 2. agent_memories 테이블에 저장 (_save_conversation_to_db)              │
-│    - npc_conversation: 대화 전체                                        │
-│    - npc_memory: 각 히로인의 관점에서 상대방에 대한 기억                 │
+│ 2. npc_npc_checkpoints (체크포인트 - 동기)                              │
+│    - 대화 전체 JSON 저장                                                 │
+│                                                                          │
+│ 3. npc_npc_memories (장기기억 - 백그라운드)                             │
+│    - LLM으로 중요 fact만 추출 (gpt-4o-mini)                             │
+│    - 4요소 하이브리드 검색 지원                                          │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -681,9 +688,10 @@ agent_memories 테이블 컬럼 의미
 
 | 저장소 | 용도 | 데이터 종류 |
 |-------|------|-----------|
-| **Redis** | Hot Storage | 현재 세션 (대화 버퍼, 상태, 최근 키워드) |
+| **Redis** | Hot Storage | 현재 세션 (대화 버퍼, 상태, 최근 키워드, NPC-NPC 세션) |
 | **user_memories** | User-NPC 장기기억 | 플레이어-NPC 대화 (4요소 하이브리드 검색) |
-| **agent_memories** | NPC간 메모리 | NPC간 기억/대화 (하이브리드 스코어링) |
+| **npc_npc_checkpoints** | NPC-NPC 체크포인트 | 대화 전체 기록 (인터럽트용) |
+| **npc_npc_memories** | NPC-NPC 장기기억 | 중요 fact만 저장 (4요소 하이브리드 검색) |
 | **scenarios** | 시나리오 DB | 히로인/대현자 시나리오 (벡터 검색) |
 
 ### 저장소별 구조
@@ -691,8 +699,8 @@ agent_memories 테이블 컬럼 의미
 | 저장소 | 테이블/컬럼 | 용도 |
 |--------|------------|------|
 | **user_memories** | speaker, subject, content_type | User-NPC 대화 (★ 4요소 하이브리드) |
-| **agent_memories** | `npc_memory` | NPC A가 B에 대한 기억 |
-| **agent_memories** | `npc_conversation` | NPC간 대화 |
+| **npc_npc_checkpoints** | player_id, heroine_id_1, heroine_id_2 | NPC-NPC 대화 전체 기록 |
+| **npc_npc_memories** | speaker_id, subject_id, content_type | NPC-NPC 장기기억 (★ 4요소 하이브리드) |
 
 ### 검색 범위 (히로인 대화시)
 
@@ -703,10 +711,9 @@ User 질문 → 히로인 검색
               │      └── Score = Recency + Importance + Relevance + Keyword
               │      └── "플레이어가 음식을 좋아한다고 말함" (speaker, subject 포함)
               │
-              ├── 2. agent_memories 검색 (NPC간 기억)
-              │      └── 하이브리드 스코어링 적용
-              │      ├── npc_memory: "루파메스에 대한 기억..."
-              │      └── npc_conversation: "루파메스와 음식 이야기..."
+              ├── 2. npc_npc_memories 검색 (NPC간 기억) - 4요소 하이브리드
+              │      └── player_id + heroine_id_1/2 기준 검색
+              │      └── "루파메스와 음식에 대해 대화함" (speaker_id, subject_id 포함)
               │
               └── 3. heroine_scenarios (해금된 시나리오)
                      └── memoryProgress 기반 필터링
@@ -835,7 +842,7 @@ Score = (w_recency × Recency) + (w_importance × Importance) + (w_relevance × 
 ├─────────────────────────────────────────────────────────────────────────┤
 │ | 컬럼         | 타입          | 의미                                   │
 │ |--------------|---------------|----------------------------------------│
-│ | user_id      | TEXT          | 플레이어 ID                            │
+│ | player_id    | TEXT          | 플레이어 ID                            │
 │ | heroine_id   | TEXT          | 히로인 ID (letia, lupames, roco, sage) │
 │ | speaker      | TEXT          | 발화자 (user, letia, lupames, roco)    │
 │ | subject      | TEXT          | 대상 (user, letia, world 등)           │
@@ -860,49 +867,51 @@ Score = (w_recency × Recency) + (w_importance × Importance) + (w_relevance × 
 
 ---
 
-## 9. NPC간 메모리 하이브리드 스코어링
+## 9. NPC간 메모리 하이브리드 스코어링 (npc_npc_memories)
 
 ```
-Score = (w_recency * Recency) + (w_importance * Importance) + (w_relevance * Relevance)
+Score = (w_recency × Recency) + (w_importance × Importance) + (w_relevance × Relevance) + (w_keyword × Keyword)
 
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                        검색 쿼리                                         │
 ├─────────────────────────────────────────────────────────────────────────┤
-│ search_npc_memories(npc_id=1, query="음식")                             │
-│ → 레티아(ID=1)와 관련된 NPC간 기억 검색                                 │
-│                                                                          │
-│ 내부적으로 검색되는 agent_id 패턴:                                       │
-│ - conv_*_1 또는 conv_1_* (레티아 참여 대화)                             │
-│ - npc_1_about_* (레티아가 다른 NPC에 대해)                              │
-│ - npc_*_about_1 (다른 NPC가 레티아에 대해)                              │
+│ search_npc_npc_memories_hybrid(                                         │
+│   player_id="player_10001",                                             │
+│   heroine_id_1=1, heroine_id_2=2,   ← (min,max)로 정규화                │
+│   query="음식"                                                          │
+│ )                                                                        │
+│ → 레티아(1)-루파메스(2) 대화 중 관련 기억 검색                          │
 └───────────────────────────────────┬─────────────────────────────────────┘
                                     │
                                     ▼
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                        스코어 계산                                       │
+│                        스코어 계산 (4요소 하이브리드)                    │
 ├─────────────────────────────────────────────────────────────────────────┤
-│ 기억 1: (npc_conversation) "루파메스와 음식에 대해 대화함"              │
-│   - Recency: exp(-0.01 * 2h) = 0.98 (2시간 전)                         │
+│ 기억 1: "루파메스와 음식에 대해 대화함"                                 │
+│   - Recency: exp(-days/30) = 0.98 (2시간 전)                           │
 │   - Importance: 7/10 = 0.70                                            │
 │   - Relevance: cosine_similarity = 0.85                                │
-│   - Total: 0.98 + 0.70 + 0.85 = 2.53                                   │
+│   - Keyword: BM25 정규화 = 0.90                                         │
+│   - Total: 가중치 적용 합산                                             │
 │                                                                          │
-│ 기억 2: (npc_memory) "루파메스가 훈련하자고 함"                         │
-│   - Recency: exp(-0.01 * 48h) = 0.62 (2일 전)                          │
+│ 기억 2: "루파메스가 훈련하자고 함"                                      │
+│   - Recency: exp(-days/30) = 0.62 (2일 전)                             │
 │   - Importance: 5/10 = 0.50                                            │
 │   - Relevance: cosine_similarity = 0.30                                │
-│   - Total: 0.62 + 0.50 + 0.30 = 1.42                                   │
+│   - Keyword: BM25 정규화 = 0.20                                         │
+│   - Total: 가중치 적용 합산                                             │
 └─────────────────────────────────────────────────────────────────────────┘
                                     │
                                     ▼
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                        결과 (점수 내림차순)                              │
 ├─────────────────────────────────────────────────────────────────────────┤
-│ 1. "루파메스와 음식에 대해 대화함" [2.53] (npc_conversation)           │
-│ 2. "루파메스가 훈련하자고 함" [1.42] (npc_memory)                      │
+│ 1. "루파메스와 음식에 대해 대화함" (speaker_id=2, subject_id=1)        │
+│ 2. "루파메스가 훈련하자고 함" (speaker_id=2, subject_id=1)             │
 └─────────────────────────────────────────────────────────────────────────┘
 
-※ User-NPC 기억("플레이어가 음식을 좋아한다고 말함")은 user_memories 테이블에서 4요소 하이브리드 검색
+※ User-NPC 기억은 user_memories 테이블에서 4요소 하이브리드 검색
+※ NPC-NPC 장기기억은 LLM(gpt-4o-mini)으로 중요 fact만 추출하여 저장 (백그라운드)
 ```
 
 ---

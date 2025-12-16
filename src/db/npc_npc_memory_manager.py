@@ -19,6 +19,7 @@ from langchain_openai import OpenAIEmbeddings
 from langchain.chat_models import init_chat_model
 
 from db.config import CONNECTION_URL
+from src.enums.LLM import LLM
 
 
 def _normalize_pair(a: int, b: int) -> Tuple[int, int]:
@@ -38,7 +39,7 @@ class NpcNpcMemoryManager:
         self.embeddings = OpenAIEmbeddings(model=embedding_model)
 
         # 아주 단순한 fact 추출용 (필요 최소)
-        self.extract_llm = init_chat_model(model="gpt-4o-mini", temperature=0)
+        self.extract_llm = init_chat_model(model=LLM.GPT5_MINI)
 
     # ============================================
     # 체크포인트 저장/조회
@@ -46,7 +47,7 @@ class NpcNpcMemoryManager:
 
     def save_checkpoint(
         self,
-        user_id: int,
+        player_id: str,
         npc1_id: int,
         npc2_id: int,
         situation: Optional[str],
@@ -58,12 +59,12 @@ class NpcNpcMemoryManager:
         sql = text(
             """
             INSERT INTO npc_npc_checkpoints (
-                id, user_id, heroine_id_1, heroine_id_2,
+                id, player_id, heroine_id_1, heroine_id_2,
                 situation, conversation, turn_count, interrupted_turn,
                 created_at, updated_at, last_turn_at
             )
             VALUES (
-                :id, :user_id, :heroine_id_1, :heroine_id_2,
+                :id, :player_id, :heroine_id_1, :heroine_id_2,
                 :situation, CAST(:conversation AS jsonb), :turn_count, NULL,
                 NOW(), NOW(), NOW()
             )
@@ -75,7 +76,7 @@ class NpcNpcMemoryManager:
                 sql,
                 {
                     "id": checkpoint_id,
-                    "user_id": int(user_id),
+                    "player_id": str(player_id),
                     "heroine_id_1": heroine_id_1,
                     "heroine_id_2": heroine_id_2,
                     "situation": situation,
@@ -89,13 +90,13 @@ class NpcNpcMemoryManager:
 
     def get_checkpoints(
         self,
-        user_id: int,
+        player_id: str,
         npc1_id: Optional[int] = None,
         npc2_id: Optional[int] = None,
         limit: int = 10,
     ) -> List[Dict[str, Any]]:
         where_pair = ""
-        params: Dict[str, Any] = {"user_id": int(user_id), "limit": int(limit)}
+        params: Dict[str, Any] = {"player_id": str(player_id), "limit": int(limit)}
 
         if npc1_id is not None and npc2_id is not None:
             heroine_id_1, heroine_id_2 = _normalize_pair(npc1_id, npc2_id)
@@ -107,10 +108,10 @@ class NpcNpcMemoryManager:
 
         sql = text(
             f"""
-            SELECT id, user_id, heroine_id_1, heroine_id_2, situation,
+            SELECT id, player_id, heroine_id_1, heroine_id_2, situation,
                    conversation, turn_count, interrupted_turn, created_at
             FROM npc_npc_checkpoints
-            WHERE user_id = :user_id
+            WHERE player_id = :player_id
             {where_pair}
             ORDER BY created_at DESC
             LIMIT :limit
@@ -123,7 +124,7 @@ class NpcNpcMemoryManager:
                 results.append(
                     {
                         "id": str(row.id),
-                        "user_id": row.user_id,
+                        "player_id": row.player_id,
                         "heroine_id_1": row.heroine_id_1,
                         "heroine_id_2": row.heroine_id_2,
                         "situation": row.situation,
@@ -190,24 +191,78 @@ class NpcNpcMemoryManager:
     # 장기기억 저장/조회
     # ============================================
 
-    async def extract_facts(self, conversation_text: str) -> List[Dict[str, Any]]:
-        """대화에서 장기기억으로 남길 fact를 아주 단순하게 추출합니다."""
+    async def extract_facts(
+        self,
+        conversation: List[Dict[str, Any]],
+        npc1_id: int,
+        npc2_id: int,
+    ) -> List[Dict[str, Any]]:
+        """NPC-NPC 대화에서 장기기억으로 남길 fact를 추출합니다.
+
+        Args:
+            conversation: 대화 리스트 [{speaker_id, text}, ...]
+            npc1_id: 첫 번째 NPC ID
+            npc2_id: 두 번째 NPC ID
+
+        Returns:
+            추출된 fact 리스트
+        """
+        # 대화 텍스트로 변환
+        npc_names = {0: "사트라", 1: "레티아", 2: "루파메스", 3: "로코"}
+        name1 = npc_names.get(npc1_id, f"NPC_{npc1_id}")
+        name2 = npc_names.get(npc2_id, f"NPC_{npc2_id}")
+
+        conversation_text = ""
+        for msg in conversation:
+            speaker_id = msg.get("speaker_id")
+            text = msg.get("text", "")
+            speaker_name = npc_names.get(speaker_id, f"NPC_{speaker_id}")
+            conversation_text += f"{speaker_name}: {text}\n"
 
         prompt = f"""다음은 NPC 두 명의 대화입니다.
 
 [대화]
 {conversation_text}
 
-[요청]
-장기기억으로 저장할 만한 핵심 사실만 0~5개 추출하세요.
-너무 사소한 잡담은 제외하세요.
+[NPC 정보]
+- NPC_A: {name1} (ID: {npc1_id})
+- NPC_B: {name2} (ID: {npc2_id})
 
-[출력]
-반드시 JSON 배열로만 출력하세요.
-각 요소는 아래 키를 포함하세요:
-- content: 사실 내용 (짧게)
-- importance: 1~10 숫자
-"""
+[추출 기준]
+- NPC간 관계 변화 (친해짐, 갈등 등)
+- 중요한 정보 공유 (비밀, 과거 이야기)
+- 세계관에 대한 새로운 정보
+- 다른 NPC나 플레이어에 대한 평가
+- 사소한 잡담은 제외
+
+[speaker_id 값]
+- {npc1_id}: {name1}가 말한 내용
+- {npc2_id}: {name2}가 말한 내용
+
+[subject_id 값]
+- {npc1_id}: {name1}에 대한 사실
+- {npc2_id}: {name2}에 대한 사실
+- 0: 세계관에 대한 사실
+
+[content_type 값]
+- "preference": 선호도
+- "trait": 특성
+- "event": 이벤트/경험
+- "opinion": 평가/의견
+- "personal": 개인정보
+
+[중요도 기준]
+- 1-3: 사소한 정보
+- 4-6: 일반적인 정보
+- 7-8: 중요한 정보
+- 9-10: 매우 중요한 정보
+
+JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 반환하세요.
+예시:
+[
+    {{"speaker_id": {npc1_id}, "subject_id": {npc2_id}, "content_type": "opinion", "content": "{name2}를 믿을 수 있다고 생각함", "importance": 7}},
+    {{"speaker_id": {npc2_id}, "subject_id": 0, "content_type": "event", "content": "과거 전쟁에 대해 이야기함", "importance": 6}}
+]"""
 
         resp = await self.extract_llm.ainvoke(prompt)
         content = resp.content
@@ -219,6 +274,7 @@ class NpcNpcMemoryManager:
                 content = content.split("```")[1].split("```")[0]
             data = json.loads(content.strip())
         except Exception:
+            print("[WARN] extract_facts JSON 파싱 실패")
             data = []
 
         facts: List[Dict[str, Any]] = []
@@ -226,16 +282,120 @@ class NpcNpcMemoryManager:
             fact_content = item.get("content")
             if not fact_content:
                 continue
-            importance = item.get("importance")
+            speaker_id = item.get("speaker_id")
+            subject_id = item.get("subject_id")
+            content_type = item.get("content_type", "event")
+            importance = item.get("importance", 5)
             if not isinstance(importance, int):
                 importance = 5
-            facts.append({"content": fact_content, "importance": importance})
+            facts.append(
+                {
+                    "speaker_id": speaker_id,
+                    "subject_id": subject_id,
+                    "content_type": content_type,
+                    "content": fact_content,
+                    "importance": importance,
+                }
+            )
 
         return facts
 
+    async def save_conversation(
+        self,
+        player_id: str,
+        npc1_id: int,
+        npc2_id: int,
+        checkpoint_id: str,
+        situation: Optional[str],
+        conversation: List[Dict[str, Any]],
+    ) -> int:
+        """대화를 분석하여 중요 fact만 추출 후 저장
+
+        Args:
+            player_id: 플레이어 ID
+            npc1_id: 첫 번째 NPC ID
+            npc2_id: 두 번째 NPC ID
+            checkpoint_id: 체크포인트 ID
+            situation: 대화 상황
+            conversation: 대화 리스트
+
+        Returns:
+            저장된 fact 개수
+        """
+        heroine_id_1, heroine_id_2 = _normalize_pair(npc1_id, npc2_id)
+
+        # 1. LLM으로 중요 fact 추출
+        facts = await self.extract_facts(conversation, npc1_id, npc2_id)
+
+        if not facts:
+            return 0
+
+        # 2. 각 fact를 DB에 저장
+        inserted = 0
+        with self.engine.connect() as conn:
+            for idx, fact in enumerate(facts):
+                speaker_id = fact.get("speaker_id")
+                subject_id = fact.get("subject_id")
+                content = fact.get("content")
+                content_type = fact.get("content_type", "event")
+                importance = fact.get("importance", 5)
+
+                if speaker_id is None or content is None:
+                    continue
+
+                embed = self.embeddings.embed_query(str(content))
+
+                sql_insert = text(
+                    """
+                    INSERT INTO npc_npc_memories (
+                        conversation_id, turn_index,
+                        player_id, heroine_id_1, heroine_id_2,
+                        speaker_id, subject_id,
+                        content, content_type,
+                        embedding, importance,
+                        created_at,
+                        metadata
+                    )
+                    VALUES (
+                        :conversation_id, :turn_index,
+                        :player_id, :heroine_id_1, :heroine_id_2,
+                        :speaker_id, :subject_id,
+                        :content, :content_type,
+                        CAST(:embedding AS vector), :importance,
+                        NOW(),
+                        CAST(:metadata AS jsonb)
+                    )
+                    """
+                )
+
+                conn.execute(
+                    sql_insert,
+                    {
+                        "conversation_id": checkpoint_id,
+                        "turn_index": idx + 1,
+                        "player_id": str(player_id),
+                        "heroine_id_1": heroine_id_1,
+                        "heroine_id_2": heroine_id_2,
+                        "speaker_id": int(speaker_id),
+                        "subject_id": int(subject_id) if subject_id else 0,
+                        "content": str(content),
+                        "content_type": content_type,
+                        "embedding": str(embed),
+                        "importance": importance,
+                        "metadata": json.dumps(
+                            {"situation": situation}, ensure_ascii=False
+                        ),
+                    },
+                )
+                inserted += 1
+
+            conn.commit()
+
+        return inserted
+
     def save_turn_memories(
         self,
-        user_id: int,
+        player_id: str,
         npc1_id: int,
         npc2_id: int,
         checkpoint_id: str,
@@ -286,7 +446,7 @@ class NpcNpcMemoryManager:
                     """
                     INSERT INTO npc_npc_memories (
                         conversation_id, turn_index,
-                        user_id, heroine_id_1, heroine_id_2,
+                        player_id, heroine_id_1, heroine_id_2,
                         speaker_id, subject_id,
                         content, content_type,
                         embedding, importance,
@@ -295,7 +455,7 @@ class NpcNpcMemoryManager:
                     )
                     VALUES (
                         :conversation_id, :turn_index,
-                        :user_id, :heroine_id_1, :heroine_id_2,
+                        :player_id, :heroine_id_1, :heroine_id_2,
                         :speaker_id, :subject_id,
                         :content, :content_type,
                         CAST(:embedding AS vector), :importance,
@@ -310,7 +470,7 @@ class NpcNpcMemoryManager:
                     {
                         "conversation_id": checkpoint_id,
                         "turn_index": idx + 1,
-                        "user_id": int(user_id),
+                        "player_id": str(player_id),
                         "heroine_id_1": heroine_id_1,
                         "heroine_id_2": heroine_id_2,
                         "speaker_id": int(speaker_id),
@@ -357,7 +517,7 @@ class NpcNpcMemoryManager:
 
     def search_memories(
         self,
-        user_id: int,
+        player_id: str,
         npc1_id: int,
         npc2_id: int,
         query: str,
@@ -369,7 +529,7 @@ class NpcNpcMemoryManager:
         sql = text(
             """
             SELECT * FROM search_npc_npc_memories_hybrid(
-                :user_id,
+                :player_id,
                 :heroine_id_1,
                 :heroine_id_2,
                 :query_text,
@@ -384,7 +544,7 @@ class NpcNpcMemoryManager:
             for row in conn.execute(
                 sql,
                 {
-                    "user_id": int(user_id),
+                    "player_id": str(player_id),
                     "heroine_id_1": heroine_id_1,
                     "heroine_id_2": heroine_id_2,
                     "query_text": query,

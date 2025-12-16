@@ -334,7 +334,7 @@ class RDBRepository:
             return None
 
     def get_current_dungeon_by_player(
-        self, player_id: int, heroine_id: int
+        self, player_id: str, heroine_id: int
     ) -> DungeonRow | None:
         sql = """
         SELECT *
