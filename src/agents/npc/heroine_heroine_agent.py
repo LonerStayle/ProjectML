@@ -122,7 +122,7 @@ class HeroineHeroineAgent:
         """
         # 대화 생성용 LLM (temperature=0.8로 다양한 대화)
         self.llm = init_chat_model(model=model_name, temperature=1.0)
-        self.streaming_llm = init_chat_model(model=model_name, streaming=True)
+        self.streaming_llm = init_chat_model(model=model_name, temperature=1.0, streaming=True)
 
     # ============================================
     # 페르소나 및 관계 헬퍼 메서드
