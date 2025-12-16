@@ -25,7 +25,7 @@ CREATE TABLE npc_npc_checkpoints (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
 
     -- 플레이어별 분리 저장
-    user_id BIGINT NOT NULL,
+    player_id TEXT NOT NULL,
 
     -- (A,B) 쌍은 항상 (min,max)로 저장
     heroine_id_1 INT NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE npc_npc_checkpoints (
 );
 
 -- 조회/세션 분리용
-CREATE INDEX idx_npc_npc_checkpoints_pair ON npc_npc_checkpoints (user_id, heroine_id_1, heroine_id_2, created_at DESC);
+CREATE INDEX idx_npc_npc_checkpoints_pair ON npc_npc_checkpoints (player_id, heroine_id_1, heroine_id_2, created_at DESC);
 CREATE INDEX idx_npc_npc_checkpoints_created ON npc_npc_checkpoints (created_at DESC);
 
 -- ============================================
@@ -58,7 +58,7 @@ CREATE TABLE npc_npc_memories (
     turn_index INT NOT NULL,
 
     -- 플레이어별 분리 저장
-    user_id BIGINT NOT NULL,
+    player_id TEXT NOT NULL,
 
     -- (A,B) 쌍은 항상 (min,max)로 저장
     heroine_id_1 INT NOT NULL,
@@ -85,7 +85,7 @@ CREATE TABLE npc_npc_memories (
 CREATE INDEX idx_npc_npc_memories_conv_turn ON npc_npc_memories (conversation_id, turn_index);
 
 -- 세션 분리용
-CREATE INDEX idx_npc_npc_memories_pair ON npc_npc_memories (user_id, heroine_id_1, heroine_id_2, invalid_at);
+CREATE INDEX idx_npc_npc_memories_pair ON npc_npc_memories (player_id, heroine_id_1, heroine_id_2, invalid_at);
 
 -- 벡터 검색
 CREATE INDEX idx_npc_npc_memories_vector ON npc_npc_memories
@@ -127,7 +127,7 @@ CREATE TRIGGER trigger_npc_npc_memories_updated_at
 --       + (w_relevance * Relevance) + (w_keyword * Keyword)
 -- ============================================
 CREATE OR REPLACE FUNCTION search_npc_npc_memories_hybrid(
-    p_user_id BIGINT,
+    p_player_id TEXT,
     p_heroine_id_1 INT,
     p_heroine_id_2 INT,
     p_query_text TEXT,
@@ -142,7 +142,7 @@ CREATE OR REPLACE FUNCTION search_npc_npc_memories_hybrid(
     id UUID,
     conversation_id UUID,
     turn_index INT,
-    user_id BIGINT,
+    player_id TEXT,
     heroine_id_1 INT,
     heroine_id_2 INT,
     speaker_id INT,
@@ -164,7 +164,7 @@ BEGIN
     SELECT MAX(pgroonga_score(tableoid, ctid))
     INTO max_keyword_score
     FROM npc_npc_memories m
-    WHERE m.user_id = p_user_id
+    WHERE m.player_id = p_player_id
       AND m.heroine_id_1 = p_heroine_id_1
       AND m.heroine_id_2 = p_heroine_id_2
       AND m.invalid_at IS NULL
@@ -180,7 +180,7 @@ BEGIN
             m.id,
             m.conversation_id,
             m.turn_index,
-            m.user_id,
+            m.player_id,
             m.heroine_id_1,
             m.heroine_id_2,
             m.speaker_id,
@@ -194,7 +194,7 @@ BEGIN
             1 - (m.embedding <=> p_query_embedding) AS relevance,
             COALESCE(pgroonga_score(m.tableoid, m.ctid) / max_keyword_score, 0) AS keyword
         FROM npc_npc_memories m
-        WHERE m.user_id = p_user_id
+        WHERE m.player_id = p_player_id
           AND m.heroine_id_1 = p_heroine_id_1
           AND m.heroine_id_2 = p_heroine_id_2
           AND m.invalid_at IS NULL
@@ -203,7 +203,7 @@ BEGIN
         c.id,
         c.conversation_id,
         c.turn_index,
-        c.user_id,
+        c.player_id,
         c.heroine_id_1,
         c.heroine_id_2,
         c.speaker_id,

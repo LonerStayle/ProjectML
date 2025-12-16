@@ -293,6 +293,15 @@ JSON 배열로 출력하세요:
 
         prompt = f"""두 NPC 사이의 자연스러운 대화를 생성해주세요.
 
+[규칙]
+- 각 히로인의 성격과 말투를 일관되게 유지
+- 서로의 관계를 반영한 자연스러운 대화
+- [전용 정보]는 [상황]이 기억에 대해 물어보는 경우 사용(평소에는 참고하지 않음)
+- 다른 정보보다 [상황]을 가장 우선시하세요
+- {unlocked_rule}
+- 전용 정보는 해당 화자만 참고 (예: {name1}의 대사에는 "{name1}만 사용" 섹션만, {name2}도 동일)
+- 총 {turn_count}번의 대화 턴 (각 히로인이 번갈아 말함)
+
 [상황]
 {situation}
 
@@ -318,13 +327,6 @@ JSON 배열로 출력하세요:
 - 성격: {persona2.get('personality', {}).get('base', '')}
 - 말투: {honorific2}
 - {name1}에 대한 관계: {relationship2to1}
-
-[규칙]
-- 각 히로인의 성격과 말투를 일관되게 유지
-- 서로의 관계를 반영한 자연스러운 대화
-- {unlocked_rule}
-- 전용 정보는 해당 화자만 참고 (예: {name1}의 대사에는 "{name1}만 사용" 섹션만, {name2}도 동일)
-- 총 {turn_count}번의 대화 턴 (각 히로인이 번갈아 말함)
 
 {output_format}"""
 
@@ -393,7 +395,7 @@ JSON 배열로 출력하세요:
 
     def _save_conversation_to_db(
         self,
-        user_id: int,
+        player_id: str,
         heroine1_id: int,
         heroine2_id: int,
         conversation: List[Dict[str, Any]],
@@ -418,7 +420,7 @@ JSON 배열로 출력하세요:
         """
         # 1) 체크포인트 저장 (동기)
         checkpoint_id = npc_npc_memory_manager.save_checkpoint(
-            user_id=int(user_id),
+            player_id=str(player_id),
             npc1_id=heroine1_id,
             npc2_id=heroine2_id,
             situation=situation,
@@ -428,7 +430,7 @@ JSON 배열로 출력하세요:
         # 2) 장기기억 저장 (백그라운드)
         asyncio.create_task(
             self._save_to_npc_npc_memory_background(
-                user_id=int(user_id),
+                player_id=str(player_id),
                 npc1_id=heroine1_id,
                 npc2_id=heroine2_id,
                 checkpoint_id=checkpoint_id,
@@ -439,7 +441,7 @@ JSON 배열로 출력하세요:
 
         # 3) Redis에 NPC-NPC 세션 저장 (동기)
         session_data = {
-            "user_id": int(user_id),
+            "player_id": str(player_id),
             "npc1_id": heroine1_id,
             "npc2_id": heroine2_id,
             "conversation_id": checkpoint_id,
@@ -449,14 +451,14 @@ JSON 배열로 출력하세요:
             "interrupted_turn": None,
         }
         redis_manager.save_npc_npc_session(
-            int(user_id), heroine1_id, heroine2_id, session_data
+            str(player_id), heroine1_id, heroine2_id, session_data
         )
 
         return checkpoint_id
 
     async def _save_to_npc_npc_memory_background(
         self,
-        user_id: int,
+        player_id: str,
         npc1_id: int,
         npc2_id: int,
         checkpoint_id: str,
@@ -468,7 +470,7 @@ JSON 배열로 출력하세요:
         LLM으로 중요 fact 추출 후 저장
 
         Args:
-            user_id: 플레이어 ID
+            player_id: 플레이어 ID
             npc1_id: 첫 번째 NPC ID
             npc2_id: 두 번째 NPC ID
             checkpoint_id: 체크포인트 ID
@@ -477,7 +479,7 @@ JSON 배열로 출력하세요:
         """
         try:
             inserted = await npc_npc_memory_manager.save_conversation(
-                user_id=user_id,
+                player_id=player_id,
                 npc1_id=npc1_id,
                 npc2_id=npc2_id,
                 checkpoint_id=checkpoint_id,
@@ -494,7 +496,7 @@ JSON 배열로 출력하세요:
 
     async def generate_conversation(
         self,
-        user_id: Optional[int],
+        player_id: Optional[str],
         heroine1_id: int,
         heroine2_id: int,
         situation: str = None,
@@ -528,10 +530,10 @@ JSON 배열로 출력하세요:
         unlocked_1_text = "없음"
         unlocked_2_text = "없음"
 
-        if user_id is not None:
+        if player_id is not None:
             t = time.time()
-            session1 = redis_manager.load_session(int(user_id), heroine1_id) or {}
-            session2 = redis_manager.load_session(int(user_id), heroine2_id) or {}
+            session1 = redis_manager.load_session(str(player_id), heroine1_id) or {}
+            session2 = redis_manager.load_session(str(player_id), heroine2_id) or {}
             state1 = session1.get("state", {}) if isinstance(session1, dict) else {}
             state2 = session2.get("state", {}) if isinstance(session2, dict) else {}
             print(f"[TIMING] NPC-NPC Redis 세션 로드: {time.time() - t:.3f}s")
@@ -574,7 +576,7 @@ JSON 배열로 출력하세요:
 
             t = time.time()
             npc_npc_session = redis_manager.load_npc_npc_session(
-                int(user_id), heroine1_id, heroine2_id
+                str(player_id), heroine1_id, heroine2_id
             )
             if npc_npc_session:
                 recent_turns = npc_npc_session.get("conversation_buffer", [])[-10:]
@@ -633,7 +635,7 @@ JSON 배열로 출력하세요:
 
     async def generate_and_save_conversation(
         self,
-        user_id: int,
+        player_id: str,
         heroine1_id: int,
         heroine2_id: int,
         situation: str = None,
@@ -657,12 +659,12 @@ JSON 배열로 출력하세요:
 
         # 대화 생성
         conversation = await self.generate_conversation(
-            int(user_id), heroine1_id, heroine2_id, situation, turn_count
+            str(player_id), heroine1_id, heroine2_id, situation, turn_count
         )
 
         # DB에 저장
         conv_id = self._save_conversation_to_db(
-            int(user_id),
+            str(player_id),
             heroine1_id,
             heroine2_id,
             conversation,
@@ -688,7 +690,7 @@ JSON 배열로 출력하세요:
 
     async def generate_conversation_stream(
         self,
-        user_id: int,
+        player_id: str,
         heroine1_id: int,
         heroine2_id: int,
         situation: str = None,
@@ -725,8 +727,8 @@ JSON 배열로 출력하세요:
         unlocked_2_text = "없음"
 
         t = time.time()
-        session1 = redis_manager.load_session(int(user_id), heroine1_id) or {}
-        session2 = redis_manager.load_session(int(user_id), heroine2_id) or {}
+        session1 = redis_manager.load_session(str(player_id), heroine1_id) or {}
+        session2 = redis_manager.load_session(str(player_id), heroine2_id) or {}
         state1 = session1.get("state", {}) if isinstance(session1, dict) else {}
         state2 = session2.get("state", {}) if isinstance(session2, dict) else {}
         print(f"[TIMING] NPC-NPC(스트림) Redis 세션 로드: {time.time() - t:.3f}s")
@@ -763,7 +765,7 @@ JSON 배열로 출력하세요:
 
         t = time.time()
         npc_npc_session = redis_manager.load_npc_npc_session(
-            int(user_id), heroine1_id, heroine2_id
+            str(player_id), heroine1_id, heroine2_id
         )
         if npc_npc_session:
             recent_turns = npc_npc_session.get("conversation_buffer", [])[-10:]
@@ -805,7 +807,7 @@ JSON 배열로 출력하세요:
         if conversation:
             t = time.time()
             self._save_conversation_to_db(
-                int(user_id),
+                str(player_id),
                 heroine1_id,
                 heroine2_id,
                 conversation,
@@ -823,7 +825,7 @@ JSON 배열로 출력하세요:
 
     def get_conversations(
         self,
-        user_id: int,
+        player_id: str,
         heroine1_id: int = None,
         heroine2_id: int = None,
         limit: int = 10,
@@ -839,7 +841,7 @@ JSON 배열로 출력하세요:
             대화 목록
         """
         return npc_npc_memory_manager.get_checkpoints(
-            user_id=int(user_id),
+            player_id=str(player_id),
             npc1_id=heroine1_id,
             npc2_id=heroine2_id,
             limit=limit,
@@ -847,7 +849,7 @@ JSON 배열로 출력하세요:
 
     def interrupt_conversation(
         self,
-        user_id: int,
+        player_id: str,
         conversation_id: str,
         interrupted_turn: int,
         heroine1_id: int,
@@ -887,7 +889,7 @@ JSON 배열로 출력하세요:
 
         # 3) Redis 세션도 자르기
         redis_manager.truncate_npc_npc_session(
-            int(user_id), heroine1_id, heroine2_id, interrupted_turn
+            str(player_id), heroine1_id, heroine2_id, interrupted_turn
         )
 
         return {

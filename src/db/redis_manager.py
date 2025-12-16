@@ -10,7 +10,7 @@ Redis 키 구조:
 - session:{player_id}:{npc_id} - 대화 세션
 - guild:{player_id} - 길드 진입 상태
 - npc_conv:{player_id} - 진행 중인 NPC간 대화
-- npc_npc_session:{user_id}:{min_npc_id}:{max_npc_id} - NPC-NPC 세션(쌍 단위)
+- npc_npc_session:{player_id}:{min_npc_id}:{max_npc_id} - NPC-NPC 세션(쌍 단위)
 """
 
 import os
@@ -60,43 +60,45 @@ class RedisManager:
     # 키 생성 헬퍼 메서드
     # ============================================
 
-    def _get_session_key(self, player_id: int, npc_id: int) -> str:
+    def _get_session_key(self, player_id: str, npc_id: int) -> str:
         """대화 세션 키 생성
 
         형식: session:{player_id}:{npc_id}
         """
         return f"session:{player_id}:{npc_id}"
 
-    def _get_guild_key(self, player_id: int) -> str:
+    def _get_guild_key(self, player_id: str) -> str:
         """길드 상태 키 생성
 
         형식: guild:{player_id}
         """
         return f"guild:{player_id}"
 
-    def _get_npc_conversation_key(self, player_id: int) -> str:
+    def _get_npc_conversation_key(self, player_id: str) -> str:
         """진행 중인 NPC 대화 키 생성
 
         형식: npc_conv:{player_id}
         """
         return f"npc_conv:{player_id}"
 
-    def _get_npc_npc_session_key(self, user_id: int, npc1_id: int, npc2_id: int) -> str:
+    def _get_npc_npc_session_key(
+        self, player_id: str, npc1_id: int, npc2_id: int
+    ) -> str:
         """NPC-NPC 세션 키 생성
 
         (A,B) 쌍은 항상 (min,max)로 정규화합니다.
 
-        형식: npc_npc_session:{user_id}:{min_npc_id}:{max_npc_id}
+        형식: npc_npc_session:{player_id}:{min_npc_id}:{max_npc_id}
         """
         min_id = npc1_id if npc1_id < npc2_id else npc2_id
         max_id = npc2_id if npc1_id < npc2_id else npc1_id
-        return f"npc_npc_session:{user_id}:{min_id}:{max_id}"
+        return f"npc_npc_session:{player_id}:{min_id}:{max_id}"
 
     # ============================================
     # 세션 관리 메서드
     # ============================================
 
-    def load_session(self, player_id: int, npc_id: int) -> Optional[Dict[str, Any]]:
+    def load_session(self, player_id: str, npc_id: int) -> Optional[Dict[str, Any]]:
         """Redis에서 세션 로드
 
         Args:
@@ -114,7 +116,7 @@ class RedisManager:
         return None
 
     def save_session(
-        self, player_id: int, npc_id: int, session_data: Dict[str, Any]
+        self, player_id: str, npc_id: int, session_data: Dict[str, Any]
     ) -> None:
         """Redis에 세션 저장
 
@@ -134,7 +136,7 @@ class RedisManager:
         )
 
     def update_session(
-        self, player_id: int, npc_id: int, updates: Dict[str, Any]
+        self, player_id: str, npc_id: int, updates: Dict[str, Any]
     ) -> Dict[str, Any]:
         """세션 부분 업데이트
 
@@ -161,7 +163,7 @@ class RedisManager:
         self.save_session(player_id, npc_id, session)
         return session
 
-    def delete_session(self, player_id: int, npc_id: int) -> None:
+    def delete_session(self, player_id: str, npc_id: int) -> None:
         """세션 삭제
 
         Args:
@@ -171,7 +173,7 @@ class RedisManager:
         key = self._get_session_key(player_id, npc_id)
         self.client.delete(key)
 
-    def _create_empty_session(self, player_id: int, npc_id: int) -> Dict[str, Any]:
+    def _create_empty_session(self, player_id: str, npc_id: int) -> Dict[str, Any]:
         """빈 세션 생성 (기본값)
 
         Args:
@@ -218,7 +220,7 @@ class RedisManager:
         return datetime.now() - last_active_dt > timedelta(hours=hours)
 
     def add_conversation(
-        self, player_id: int, npc_id: int, role: str, content: str
+        self, player_id: str, npc_id: int, role: str, content: str
     ) -> None:
         """대화 내용 추가
 
@@ -248,7 +250,7 @@ class RedisManager:
     # 길드 상태 관리
     # ============================================
 
-    def enter_guild(self, player_id: int) -> None:
+    def enter_guild(self, player_id: str) -> None:
         """길드 진입 상태 설정
 
         플레이어가 길드에 들어왔을 때 호출합니다.
@@ -263,7 +265,7 @@ class RedisManager:
         guild_data = {"in_guild": True, "entered_at": datetime.now().isoformat()}
         self.client.set(key, json.dumps(guild_data))
 
-    def leave_guild(self, player_id: int) -> None:
+    def leave_guild(self, player_id: str) -> None:
         """길드 퇴장 상태 설정
 
         플레이어가 길드에서 나갔을 때 호출합니다.
@@ -278,7 +280,7 @@ class RedisManager:
         # 진행 중인 NPC 대화도 중단
         self.stop_npc_conversation(player_id)
 
-    def is_in_guild(self, player_id: int) -> bool:
+    def is_in_guild(self, player_id: str) -> bool:
         """길드 내 여부 확인
 
         Args:
@@ -301,7 +303,7 @@ class RedisManager:
     # ============================================
 
     def start_npc_conversation(
-        self, player_id: int, npc1_id: int, npc2_id: int
+        self, player_id: str, npc1_id: int, npc2_id: int
     ) -> None:
         """NPC간 대화 시작 등록
 
@@ -323,7 +325,7 @@ class RedisManager:
         }
         self.client.set(key, json.dumps(conv_data))
 
-    def stop_npc_conversation(self, player_id: int) -> Optional[Dict[str, Any]]:
+    def stop_npc_conversation(self, player_id: str) -> Optional[Dict[str, Any]]:
         """NPC간 대화 중단
 
         Args:
@@ -344,7 +346,7 @@ class RedisManager:
             return json.loads(data)
         return None
 
-    def get_active_npc_conversation(self, player_id: int) -> Optional[Dict[str, Any]]:
+    def get_active_npc_conversation(self, player_id: str) -> Optional[Dict[str, Any]]:
         """현재 진행 중인 NPC 대화 정보 조회
 
         Args:
@@ -360,7 +362,7 @@ class RedisManager:
             return json.loads(data)
         return None
 
-    def is_heroine_in_conversation(self, player_id: int, heroine_id: int) -> bool:
+    def is_heroine_in_conversation(self, player_id: str, heroine_id: int) -> bool:
         """특정 히로인이 NPC 대화 중인지 확인
 
         User가 히로인에게 말 걸기 전에 확인합니다.
@@ -386,48 +388,48 @@ class RedisManager:
     # ============================================
 
     def load_npc_npc_session(
-        self, user_id: int, npc1_id: int, npc2_id: int
+        self, player_id: str, npc1_id: int, npc2_id: int
     ) -> Optional[Dict[str, Any]]:
         """NPC-NPC 세션 로드
 
         Args:
-            user_id: 유저 ID
+            player_id: 플레이어 ID
             npc1_id: 첫 번째 NPC ID
             npc2_id: 두 번째 NPC ID
 
         Returns:
             세션 딕셔너리 또는 None
         """
-        key = self._get_npc_npc_session_key(user_id, npc1_id, npc2_id)
+        key = self._get_npc_npc_session_key(player_id, npc1_id, npc2_id)
         data = self.client.get(key)
         if data:
             return json.loads(data)
         return None
 
     def save_npc_npc_session(
-        self, user_id: int, npc1_id: int, npc2_id: int, session_data: Dict[str, Any]
+        self, player_id: str, npc1_id: int, npc2_id: int, session_data: Dict[str, Any]
     ) -> None:
         """NPC-NPC 세션 저장
 
         Args:
-            user_id: 유저 ID
+            player_id: 플레이어 ID
             npc1_id: 첫 번째 NPC ID
             npc2_id: 두 번째 NPC ID
             session_data: 저장할 세션 데이터
         """
-        key = self._get_npc_npc_session_key(user_id, npc1_id, npc2_id)
+        key = self._get_npc_npc_session_key(player_id, npc1_id, npc2_id)
         session_data["last_active_at"] = datetime.now().isoformat()
         self.client.setex(
             key, SESSION_TTL, json.dumps(session_data, ensure_ascii=False)
         )
 
     def truncate_npc_npc_session(
-        self, user_id: int, npc1_id: int, npc2_id: int, interrupted_turn: int
+        self, player_id: str, npc1_id: int, npc2_id: int, interrupted_turn: int
     ) -> Optional[Dict[str, Any]]:
         """NPC-NPC 세션을 interrupted_turn 까지만 남기고 자르기
 
         Args:
-            user_id: 유저 ID
+            player_id: 플레이어 ID
             npc1_id: 첫 번째 NPC ID
             npc2_id: 두 번째 NPC ID
             interrupted_turn: 유효 턴 (이 턴까지)
@@ -435,7 +437,7 @@ class RedisManager:
         Returns:
             잘린 세션 또는 None
         """
-        session = self.load_npc_npc_session(user_id, npc1_id, npc2_id)
+        session = self.load_npc_npc_session(player_id, npc1_id, npc2_id)
         if session is None:
             return None
 
@@ -444,7 +446,7 @@ class RedisManager:
         session["interrupted_turn"] = interrupted_turn
         session["turn_count"] = len(session.get("conversation_buffer", []))
 
-        self.save_npc_npc_session(user_id, npc1_id, npc2_id, session)
+        self.save_npc_npc_session(player_id, npc1_id, npc2_id, session)
         return session
 
 

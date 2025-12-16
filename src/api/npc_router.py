@@ -43,7 +43,7 @@ class HeroineData(BaseModel):
 
 
 class LoginRequest(BaseModel):
-    playerId: int
+    playerId: str
     scenarioLevel: int
     heroines: List[HeroineData]
 
@@ -54,7 +54,7 @@ class LoginResponse(BaseModel):
 
 
 class ChatRequest(BaseModel):
-    playerId: int
+    playerId: str
     heroineId: int
     text: str
 
@@ -68,7 +68,7 @@ class ChatResponse(BaseModel):
 
 
 class SageChatRequest(BaseModel):
-    playerId: int
+    playerId: str
     text: str
 
 
@@ -80,7 +80,7 @@ class SageChatResponse(BaseModel):
 
 
 class HeroineConversationRequest(BaseModel):
-    userId: int
+    playerId: str
     heroine1Id: int
     heroine2Id: int
     situation: Optional[str] = None
@@ -88,7 +88,7 @@ class HeroineConversationRequest(BaseModel):
 
 
 class ConversationInterruptRequest(BaseModel):
-    userId: int
+    playerId: str
     conversationId: str
     interruptedTurn: int
     heroine1Id: int
@@ -96,7 +96,7 @@ class ConversationInterruptRequest(BaseModel):
 
 
 class GuildRequest(BaseModel):
-    playerId: int
+    playerId: str
 
 
 class GuildResponse(BaseModel):
@@ -110,7 +110,7 @@ class GuildResponse(BaseModel):
 # ============================================
 
 
-async def background_npc_conversation_loop(player_id: int):
+async def background_npc_conversation_loop(player_id: str):
     """백그라운드에서 주기적으로 NPC간 대화 생성"""
     heroine_ids = [1, 2, 3]
 
@@ -518,7 +518,7 @@ async def generate_heroine_conversation(request: HeroineConversationRequest):
 
     t = time.time()
     result = await heroine_heroine_agent.generate_and_save_conversation(
-        user_id=request.userId,
+        player_id=request.playerId,
         heroine1_id=request.heroine1Id,
         heroine2_id=request.heroine2Id,
         situation=request.situation,
@@ -542,7 +542,7 @@ async def generate_heroine_conversation_stream(request: HeroineConversationReque
     async def generate():
         api_start = time.time()
         async for chunk in heroine_heroine_agent.generate_conversation_stream(
-            user_id=request.userId,
+            player_id=request.playerId,
             heroine1_id=request.heroine1Id,
             heroine2_id=request.heroine2Id,
             situation=request.situation,
@@ -563,14 +563,14 @@ async def generate_heroine_conversation_stream(request: HeroineConversationReque
 
 @router.get("/heroine-conversation")
 async def get_heroine_conversations(
-    user_id: int,
+    player_id: str,
     heroine1_id: Optional[int] = None,
     heroine2_id: Optional[int] = None,
     limit: int = 10,
 ):
     """히로인간 대화 기록 조회"""
     conversations = heroine_heroine_agent.get_conversations(
-        user_id=user_id,
+        player_id=player_id,
         heroine1_id=heroine1_id,
         heroine2_id=heroine2_id,
         limit=limit,
@@ -589,7 +589,7 @@ async def interrupt_heroine_conversation(request: ConversationInterruptRequest):
     → 1,2,3턴 대화만 유지, 4턴 이후는 삭제
     """
     result = heroine_heroine_agent.interrupt_conversation(
-        user_id=request.userId,
+        player_id=request.playerId,
         conversation_id=request.conversationId,
         interrupted_turn=request.interruptedTurn,
         heroine1_id=request.heroine1Id,
@@ -649,7 +649,7 @@ async def leave_guild(request: GuildRequest):
 
 
 @router.get("/guild/status/{player_id}")
-async def get_guild_status(player_id: int):
+async def get_guild_status(player_id: str):
     """길드 상태 조회"""
     return {
         "in_guild": redis_manager.is_in_guild(player_id),
@@ -664,7 +664,7 @@ async def get_guild_status(player_id: int):
 
 
 @router.get("/session/{player_id}/{npc_id}")
-async def get_session(player_id: int, npc_id: int):
+async def get_session(player_id: str, npc_id: int):
     """세션 정보 조회 (디버그용)"""
     session = redis_manager.load_session(player_id, npc_id)
     if session is None:
@@ -673,7 +673,7 @@ async def get_session(player_id: int, npc_id: int):
 
 
 @router.get("/npc-conversation/active/{player_id}")
-async def get_active_npc_conversation(player_id: int):
+async def get_active_npc_conversation(player_id: str):
     """현재 진행 중인 NPC 대화 조회"""
     conv = redis_manager.get_active_npc_conversation(player_id)
     if conv is None:

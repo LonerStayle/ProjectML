@@ -329,6 +329,7 @@ data: [DONE]
 
 ```json
 {
+    "playerId": "player_10001",
     "heroine1Id": 1,
     "heroine2Id": 2,
     "situation": "길드 휴게실에서 쉬는 중",
@@ -340,6 +341,7 @@ data: [DONE]
 
 | 필드 | 타입 | 필수 | 설명 |
 |------|------|------|------|
+| playerId | string | O | 플레이어 ID |
 | heroine1Id | int | O | 첫 번째 히로인 ID |
 | heroine2Id | int | O | 두 번째 히로인 ID |
 | situation | string | X | 상황 설명 (없으면 자동 생성) |
@@ -398,6 +400,7 @@ data: [DONE]
 
 ```json
 {
+    "playerId": "player_10001",
     "heroine1Id": 1,
     "heroine2Id": 2,
     "situation": null,
@@ -409,6 +412,7 @@ data: [DONE]
 
 | 필드 | 타입 | 필수 | 설명 |
 |------|------|------|------|
+| playerId | string | O | 플레이어 ID |
 | heroine1Id | int | O | 첫 번째 히로인 ID |
 | heroine2Id | int | O | 두 번째 히로인 ID |
 | situation | string | X | 상황 설명 (null이면 자동 생성) |
@@ -442,6 +446,7 @@ data: [DONE]
 
 | 파라미터 | 타입 | 필수 | 설명 |
 |----------|------|------|------|
+| player_id | string | O | 플레이어 ID |
 | heroine1_id | int | X | 첫 번째 히로인 ID |
 | heroine2_id | int | X | 두 번째 히로인 ID |
 | limit | int | X | 최대 조회 수 (기본값 10) |
@@ -487,6 +492,7 @@ NPC-NPC 대화 인터럽트 처리. **유저가 NPC 대화 중간에 끊고 들�
 
 ```json
 {
+    "playerId": "player_10001",
     "conversationId": "uuid-string",
     "interruptedTurn": 3,
     "heroine1Id": 1,
@@ -498,6 +504,7 @@ NPC-NPC 대화 인터럽트 처리. **유저가 NPC 대화 중간에 끊고 들�
 
 | 필드 | 타입 | 필수 | 설명 |
 |------|------|------|------|
+| playerId | string | O | 플레이어 ID |
 | conversationId | string | O | 대화 ID (UUID) |
 | interruptedTurn | int | O | 유저가 끊은 턴 (이 턴까지만 유효) |
 | heroine1Id | int | O | 첫 번째 히로인 ID |
@@ -1008,10 +1015,10 @@ NPC별 세션 정보를 조회합니다. (디버그용)
 | 히로인 대화 (비스트리밍) | POST | /api/npc/heroine/chat/sync | playerId, heroineId, text | text, emotion(int), affection, sanity, memoryProgress |
 | 대현자 대화 (스트리밍) | POST | /api/npc/sage/chat | playerId, text | SSE 스트림 |
 | 대현자 대화 (비스트리밍) | POST | /api/npc/sage/chat/sync | playerId, text | text, emotion(int), scenarioLevel, infoRevealed |
-| 히로인간 대화 생성 | POST | /api/npc/heroine-conversation/generate | heroine1Id, heroine2Id, situation?, turnCount? | id, content, conversation[] |
-| 히로인간 대화 스트리밍 | POST | /api/npc/heroine-conversation/stream | heroine1Id, heroine2Id, situation?, turnCount? | SSE 스트림 |
-| 히로인간 대화 조회 | GET | /api/npc/heroine-conversation | heroine1_id?, heroine2_id?, limit? | conversations[] |
-| 히로인간 대화 인터럽트 | POST | /api/npc/heroine-conversation/interrupt | conversationId, interruptedTurn, heroine1Id, heroine2Id | success, message, interrupted_turn |
+| 히로인간 대화 생성 | POST | /api/npc/heroine-conversation/generate | playerId, heroine1Id, heroine2Id, situation?, turnCount? | id, content, conversation[] |
+| 히로인간 대화 스트리밍 | POST | /api/npc/heroine-conversation/stream | playerId, heroine1Id, heroine2Id, situation?, turnCount? | SSE 스트림 |
+| 히로인간 대화 조회 | GET | /api/npc/heroine-conversation | player_id, heroine1_id?, heroine2_id?, limit? | conversations[] |
+| 히로인간 대화 인터럽트 | POST | /api/npc/heroine-conversation/interrupt | playerId, conversationId, interruptedTurn, heroine1Id, heroine2Id | success, message, interrupted_turn |
 | 길드 진입 | POST | /api/npc/guild/enter | playerId | success, message |
 | 길드 퇴장 | POST | /api/npc/guild/leave | playerId | success, message, activeConversation |
 | 길드 상태 조회 | GET | /api/npc/guild/status/{player_id} | - | in_guild, active_conversation |

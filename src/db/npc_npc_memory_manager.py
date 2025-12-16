@@ -46,7 +46,7 @@ class NpcNpcMemoryManager:
 
     def save_checkpoint(
         self,
-        user_id: int,
+        player_id: str,
         npc1_id: int,
         npc2_id: int,
         situation: Optional[str],
@@ -58,12 +58,12 @@ class NpcNpcMemoryManager:
         sql = text(
             """
             INSERT INTO npc_npc_checkpoints (
-                id, user_id, heroine_id_1, heroine_id_2,
+                id, player_id, heroine_id_1, heroine_id_2,
                 situation, conversation, turn_count, interrupted_turn,
                 created_at, updated_at, last_turn_at
             )
             VALUES (
-                :id, :user_id, :heroine_id_1, :heroine_id_2,
+                :id, :player_id, :heroine_id_1, :heroine_id_2,
                 :situation, CAST(:conversation AS jsonb), :turn_count, NULL,
                 NOW(), NOW(), NOW()
             )
@@ -75,7 +75,7 @@ class NpcNpcMemoryManager:
                 sql,
                 {
                     "id": checkpoint_id,
-                    "user_id": int(user_id),
+                    "player_id": str(player_id),
                     "heroine_id_1": heroine_id_1,
                     "heroine_id_2": heroine_id_2,
                     "situation": situation,
@@ -89,13 +89,13 @@ class NpcNpcMemoryManager:
 
     def get_checkpoints(
         self,
-        user_id: int,
+        player_id: str,
         npc1_id: Optional[int] = None,
         npc2_id: Optional[int] = None,
         limit: int = 10,
     ) -> List[Dict[str, Any]]:
         where_pair = ""
-        params: Dict[str, Any] = {"user_id": int(user_id), "limit": int(limit)}
+        params: Dict[str, Any] = {"player_id": str(player_id), "limit": int(limit)}
 
         if npc1_id is not None and npc2_id is not None:
             heroine_id_1, heroine_id_2 = _normalize_pair(npc1_id, npc2_id)
@@ -107,10 +107,10 @@ class NpcNpcMemoryManager:
 
         sql = text(
             f"""
-            SELECT id, user_id, heroine_id_1, heroine_id_2, situation,
+            SELECT id, player_id, heroine_id_1, heroine_id_2, situation,
                    conversation, turn_count, interrupted_turn, created_at
             FROM npc_npc_checkpoints
-            WHERE user_id = :user_id
+            WHERE player_id = :player_id
             {where_pair}
             ORDER BY created_at DESC
             LIMIT :limit
@@ -123,7 +123,7 @@ class NpcNpcMemoryManager:
                 results.append(
                     {
                         "id": str(row.id),
-                        "user_id": row.user_id,
+                        "player_id": row.player_id,
                         "heroine_id_1": row.heroine_id_1,
                         "heroine_id_2": row.heroine_id_2,
                         "situation": row.situation,
@@ -301,7 +301,7 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
 
     async def save_conversation(
         self,
-        user_id: int,
+        player_id: str,
         npc1_id: int,
         npc2_id: int,
         checkpoint_id: str,
@@ -311,7 +311,7 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
         """대화를 분석하여 중요 fact만 추출 후 저장
 
         Args:
-            user_id: 플레이어 ID
+            player_id: 플레이어 ID
             npc1_id: 첫 번째 NPC ID
             npc2_id: 두 번째 NPC ID
             checkpoint_id: 체크포인트 ID
@@ -348,7 +348,7 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
                     """
                     INSERT INTO npc_npc_memories (
                         conversation_id, turn_index,
-                        user_id, heroine_id_1, heroine_id_2,
+                        player_id, heroine_id_1, heroine_id_2,
                         speaker_id, subject_id,
                         content, content_type,
                         embedding, importance,
@@ -357,7 +357,7 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
                     )
                     VALUES (
                         :conversation_id, :turn_index,
-                        :user_id, :heroine_id_1, :heroine_id_2,
+                        :player_id, :heroine_id_1, :heroine_id_2,
                         :speaker_id, :subject_id,
                         :content, :content_type,
                         CAST(:embedding AS vector), :importance,
@@ -372,7 +372,7 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
                     {
                         "conversation_id": checkpoint_id,
                         "turn_index": idx + 1,
-                        "user_id": int(user_id),
+                        "player_id": str(player_id),
                         "heroine_id_1": heroine_id_1,
                         "heroine_id_2": heroine_id_2,
                         "speaker_id": int(speaker_id),
@@ -394,7 +394,7 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
 
     def save_turn_memories(
         self,
-        user_id: int,
+        player_id: str,
         npc1_id: int,
         npc2_id: int,
         checkpoint_id: str,
@@ -445,7 +445,7 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
                     """
                     INSERT INTO npc_npc_memories (
                         conversation_id, turn_index,
-                        user_id, heroine_id_1, heroine_id_2,
+                        player_id, heroine_id_1, heroine_id_2,
                         speaker_id, subject_id,
                         content, content_type,
                         embedding, importance,
@@ -454,7 +454,7 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
                     )
                     VALUES (
                         :conversation_id, :turn_index,
-                        :user_id, :heroine_id_1, :heroine_id_2,
+                        :player_id, :heroine_id_1, :heroine_id_2,
                         :speaker_id, :subject_id,
                         :content, :content_type,
                         CAST(:embedding AS vector), :importance,
@@ -469,7 +469,7 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
                     {
                         "conversation_id": checkpoint_id,
                         "turn_index": idx + 1,
-                        "user_id": int(user_id),
+                        "player_id": str(player_id),
                         "heroine_id_1": heroine_id_1,
                         "heroine_id_2": heroine_id_2,
                         "speaker_id": int(speaker_id),
@@ -516,7 +516,7 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
 
     def search_memories(
         self,
-        user_id: int,
+        player_id: str,
         npc1_id: int,
         npc2_id: int,
         query: str,
@@ -528,7 +528,7 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
         sql = text(
             """
             SELECT * FROM search_npc_npc_memories_hybrid(
-                :user_id,
+                :player_id,
                 :heroine_id_1,
                 :heroine_id_2,
                 :query_text,
@@ -543,7 +543,7 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
             for row in conn.execute(
                 sql,
                 {
-                    "user_id": int(user_id),
+                    "player_id": str(player_id),
                     "heroine_id_1": heroine_id_1,
                     "heroine_id_2": heroine_id_2,
                     "query_text": query,
