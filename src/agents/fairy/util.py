@@ -145,6 +145,133 @@ def get_human_few_shot_prompts(use_intents: Iterable[FairyDungeonIntentType]) ->
 
 
 from typing import Any, Dict
+# def describe_dungeon_row(
+#     curr_room_id: int,
+#     balanced_map: Dict[str, Any],
+#     floor: int,
+# ) -> str:
+#     rooms = balanced_map.get("rooms", [])
+#     curr = next(r for r in rooms if r.get("room_id") == curr_room_id)
+#     room_type_map = {
+#         "empty": "아무것도 없는 빈 방",
+#         "monster": "전투가 일어나는 방",
+#         "event": "특별한 일이 일어나는 이벤트 방",
+#         "treasure": "보물이 있는 방",
+#         "boss": "보스가 기다리고 있는 방",
+#     }
+
+#     room_type_short = {
+#         "empty": "빈 방",
+#         "monster": "전투 방",
+#         "event": "이벤트 방",
+#         "treasure": "보물 방",
+#         "boss": "보스 방",
+#     }
+
+#     room_type = curr.get("room_type", "unknown")
+#     room_type_ko = room_type_map.get(room_type, "정체를 알 수 없는 방")
+
+#     neighbor_ids = curr.get("neighbors", []) or []
+#     neighbor_rooms = [r for r in rooms if r.get("room_id") in neighbor_ids]
+
+#     if not neighbor_rooms:
+#         move_text = "현재 방에서 이어진 다른 방 정보는 따로 정의되어 있지 않습니다."
+#     else:
+#         lines: list[str] = []
+#         for nr in neighbor_rooms:
+#             n_type = nr.get("room_type", "unknown")
+#             n_type_ko = room_type_short.get(n_type, "정체를 알 수 없는 방")
+#             size = nr.get("size")
+#             # 몬스터 수는 전투/보스 방에서만 힌트로 넣어줌
+#             monsters = nr.get("monsters") or []
+#             monster_hint = ""
+#             if n_type in ("monster", "boss") and monsters:
+#                 monster_hint = f", 몬스터 {len(monsters)}마리 배치"
+#             lines.append(f"- {n_type_ko} (크기 {size}{monster_hint})")
+#         move_text = "\n".join(lines)
+
+#     total_rooms = len(rooms)
+#     type_counts = {"empty": 0, "monster": 0, "event": 0, "boss": 0}
+#     for room in rooms:
+#         t = room.get("room_type")
+#         if t in type_counts:
+#             type_counts[t] += 1
+
+#     dungeon_lines: list[str] = []
+#     dungeon_lines.append(
+#         "이 정보는 현재 던전의 전체 구조(방의 종류, 연결 관계, 배치된 몬스터)를 이해하기 위한 데이터입니다."
+#     )
+#     dungeon_lines.append("")
+#     dungeon_lines.append(f"- 현재 던전 층수: {floor}층")
+#     dungeon_lines.append(f"- 총 방 개수: {total_rooms}")
+#     dungeon_lines.append(
+#         "- 방 타입별 개수: 빈 방 {empty}개, 전투 방 {monster}개, "
+#         "이벤트 방 {event}개, 보스 방 {boss}개".format(**type_counts)
+#     )
+
+#     dungeon_lines.append("")
+#     dungeon_lines.append("[현재 방]")
+#     dungeon_lines.append(f"- 방 종류: {room_type_ko}")
+#     dungeon_lines.append(f"- 방 크기(size): {curr.get('size')}")
+
+#     dungeon_lines.append("")
+#     dungeon_lines.append("[현재 방에서 이어진 방들]")
+#     if not neighbor_rooms:
+#         dungeon_lines.append("- 정의된 연결 방이 없습니다.")
+#     else:
+#         dungeon_lines.append(move_text)
+
+#     dungeon_lines.append("")
+#     dungeon_lines.append("[전체 방 구조 개요]")
+#     dungeon_lines.append(
+#         "아래 정보는 각 방이 어떤 종류이며, 어떤 종류의 방들과 연결되어 있는지를 요약한 것입니다."
+#     )
+#     # 같은 타입의 방이 여러 개 있을 수 있으니, "어떤/또 다른"으로 구분
+#     seen_count: Dict[str, int] = {"empty": 0, "monster": 0, "event": 0,"treasure": 0, "boss": 0}
+
+#     for room in rooms:
+#         r_type = room.get("room_type", "unknown")
+#         if r_type not in room_type_short:
+#             continue
+
+#         seen_count[r_type] += 1
+#         base_name = room_type_short[r_type]
+
+#         if seen_count[r_type] == 1:
+#             name = f"어떤 {base_name}"
+#         else:
+#             name = f"또 다른 {base_name}"
+
+#         size = room.get("size")
+#         n_ids = room.get("neighbors", []) or []
+#         n_rooms = [rr for rr in rooms if rr.get("room_id") in n_ids]
+
+#         # 이 방에 배치된 몬스터 힌트 (전투/보스 방만)
+#         monsters = room.get("monsters") or []
+#         monster_hint = ""
+#         if r_type in ("monster", "boss") and monsters:
+#             monster_hint = f", 몬스터 {len(monsters)}마리 배치"
+
+#         if not n_rooms:
+#             line = f"- {name} (크기 {size}{monster_hint})은(는) 다른 방과의 연결 정보가 없습니다."
+#         else:
+#             neighbor_types = []
+#             for nr in n_rooms:
+#                 nt = nr.get("room_type", "unknown")
+#                 if nt in room_type_short:
+#                     neighbor_types.append(room_type_short[nt])
+#             # 중복 제거
+#             neighbor_types = list(dict.fromkeys(neighbor_types))
+#             neighbor_text = ", ".join(neighbor_types)
+#             line = (
+#                 f"- {name} (크기 {size}{monster_hint})은(는) "
+#                 f"{neighbor_text}과(와) 연결되어 있습니다."
+#             )
+
+#         dungeon_lines.append(line)
+
+#     return "\n".join(dungeon_lines)
+
 def describe_dungeon_row(
     curr_room_id: int,
     balanced_map: Dict[str, Any],
@@ -152,42 +279,46 @@ def describe_dungeon_row(
 ) -> str:
     rooms = balanced_map.get("rooms", [])
     curr = next(r for r in rooms if r.get("room_id") == curr_room_id)
+
     room_type_map = {
-        "empty": "아무것도 없는 빈 방",
-        "monster": "전투가 일어나는 방",
-        "event": "특별한 일이 일어나는 이벤트 방",
-        "treasure": "보물이 있는 방",
-        "boss": "보스가 기다리고 있는 방",
+        "empty": "an empty room with nothing inside",
+        "monster": "a room where combat occurs",
+        "event": "an event room where something special happens",
+        "treasure": "a room containing treasure",
+        "boss": "a room where a boss awaits",
     }
 
     room_type_short = {
-        "empty": "빈 방",
-        "monster": "전투 방",
-        "event": "이벤트 방",
-        "treasure": "보물 방",
-        "boss": "보스 방",
+        "empty": "Empty Room",
+        "monster": "Combat Room",
+        "event": "Event Room",
+        "treasure": "Treasure Room",
+        "boss": "Boss Room",
     }
 
     room_type = curr.get("room_type", "unknown")
-    room_type_ko = room_type_map.get(room_type, "정체를 알 수 없는 방")
+    room_type_en = room_type_map.get(room_type, "a room of unknown nature")
 
     neighbor_ids = curr.get("neighbors", []) or []
     neighbor_rooms = [r for r in rooms if r.get("room_id") in neighbor_ids]
 
     if not neighbor_rooms:
-        move_text = "현재 방에서 이어진 다른 방 정보는 따로 정의되어 있지 않습니다."
+        move_text = "There is no defined information about rooms connected to the current room."
     else:
         lines: list[str] = []
         for nr in neighbor_rooms:
             n_type = nr.get("room_type", "unknown")
-            n_type_ko = room_type_short.get(n_type, "정체를 알 수 없는 방")
+            n_type_en = room_type_short.get(n_type, "Unknown Room")
             size = nr.get("size")
-            # 몬스터 수는 전투/보스 방에서만 힌트로 넣어줌
+
+            # Monster count hint only for combat/boss rooms
             monsters = nr.get("monsters") or []
             monster_hint = ""
             if n_type in ("monster", "boss") and monsters:
-                monster_hint = f", 몬스터 {len(monsters)}마리 배치"
-            lines.append(f"- {n_type_ko} (크기 {size}{monster_hint})")
+                monster_hint = f", {len(monsters)} monster(s) deployed"
+
+            lines.append(f"- {n_type_en} (size {size}{monster_hint})")
+
         move_text = "\n".join(lines)
 
     total_rooms = len(rooms)
@@ -198,37 +329,46 @@ def describe_dungeon_row(
             type_counts[t] += 1
 
     dungeon_lines: list[str] = []
-    dungeon_lines.append("<Dungeon Guide Spec>")
     dungeon_lines.append(
-        "이 정보는 현재 던전의 전체 구조(방의 종류, 연결 관계, 배치된 몬스터)를 이해하기 위한 데이터입니다."
+        "This information describes the overall structure of the dungeon, "
+        "including room types, connections, and monster placements."
     )
     dungeon_lines.append("")
-    dungeon_lines.append(f"- 현재 던전 층수: {floor}층")
-    dungeon_lines.append(f"- 총 방 개수: {total_rooms}")
+    dungeon_lines.append(f"- Current dungeon floor: Floor {floor}")
+    dungeon_lines.append(f"- Total number of rooms: {total_rooms}")
     dungeon_lines.append(
-        "- 방 타입별 개수: 빈 방 {empty}개, 전투 방 {monster}개, "
-        "이벤트 방 {event}개, 보스 방 {boss}개".format(**type_counts)
+        "- Room type counts: "
+        "Empty Rooms {empty}, Combat Rooms {monster}, "
+        "Event Rooms {event}, Boss Rooms {boss}".format(**type_counts)
     )
 
     dungeon_lines.append("")
-    dungeon_lines.append("[현재 방]")
-    dungeon_lines.append(f"- 방 종류: {room_type_ko}")
-    dungeon_lines.append(f"- 방 크기(size): {curr.get('size')}")
+    dungeon_lines.append("[Current Room]")
+    dungeon_lines.append(f"- Room type: {room_type_en}")
+    dungeon_lines.append(f"- Room size: {curr.get('size')}")
 
     dungeon_lines.append("")
-    dungeon_lines.append("[현재 방에서 이어진 방들]")
+    dungeon_lines.append("[Rooms Connected to the Current Room]")
     if not neighbor_rooms:
-        dungeon_lines.append("- 정의된 연결 방이 없습니다.")
+        dungeon_lines.append("- No connected rooms are defined.")
     else:
         dungeon_lines.append(move_text)
 
     dungeon_lines.append("")
-    dungeon_lines.append("[전체 방 구조 개요]")
+    dungeon_lines.append("[Overall Room Structure Summary]")
     dungeon_lines.append(
-        "아래 정보는 각 방이 어떤 종류이며, 어떤 종류의 방들과 연결되어 있는지를 요약한 것입니다."
+        "The following information summarizes each room, its type, "
+        "and what kinds of rooms it is connected to."
     )
-    # 같은 타입의 방이 여러 개 있을 수 있으니, "어떤/또 다른"으로 구분
-    seen_count: Dict[str, int] = {"empty": 0, "monster": 0, "event": 0,"treasure": 0, "boss": 0}
+
+    # Multiple rooms of the same type may exist, so distinguish them
+    seen_count: Dict[str, int] = {
+        "empty": 0,
+        "monster": 0,
+        "event": 0,
+        "treasure": 0,
+        "boss": 0,
+    }
 
     for room in rooms:
         r_type = room.get("room_type", "unknown")
@@ -239,34 +379,38 @@ def describe_dungeon_row(
         base_name = room_type_short[r_type]
 
         if seen_count[r_type] == 1:
-            name = f"어떤 {base_name}"
+            name = f"One {base_name}"
         else:
-            name = f"또 다른 {base_name}"
+            name = f"Another {base_name}"
 
         size = room.get("size")
         n_ids = room.get("neighbors", []) or []
         n_rooms = [rr for rr in rooms if rr.get("room_id") in n_ids]
 
-        # 이 방에 배치된 몬스터 힌트 (전투/보스 방만)
+        # Monster hint for combat/boss rooms only
         monsters = room.get("monsters") or []
         monster_hint = ""
         if r_type in ("monster", "boss") and monsters:
-            monster_hint = f", 몬스터 {len(monsters)}마리 배치"
+            monster_hint = f", {len(monsters)} monster(s) deployed"
 
         if not n_rooms:
-            line = f"- {name} (크기 {size}{monster_hint})은(는) 다른 방과의 연결 정보가 없습니다."
+            line = (
+                f"- {name} (size {size}{monster_hint}) has no defined connections to other rooms."
+            )
         else:
             neighbor_types = []
             for nr in n_rooms:
                 nt = nr.get("room_type", "unknown")
                 if nt in room_type_short:
                     neighbor_types.append(room_type_short[nt])
-            # 중복 제거
+
+            # Remove duplicates while preserving order
             neighbor_types = list(dict.fromkeys(neighbor_types))
             neighbor_text = ", ".join(neighbor_types)
+
             line = (
-                f"- {name} (크기 {size}{monster_hint})은(는) "
-                f"{neighbor_text}과(와) 연결되어 있습니다."
+                f"- {name} (size {size}{monster_hint}) is connected to "
+                f"{neighbor_text}."
             )
 
         dungeon_lines.append(line)

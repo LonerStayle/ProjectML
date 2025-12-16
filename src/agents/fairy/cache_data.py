@@ -926,246 +926,244 @@ HEROINE_INFOS = [
 ]
 
 
-GAME_SYSTEM_INFO = """
-# 게임 시스템 개요
-
-본 문서는 던전 탐사 중심의 게임 플레이 루프, 캐릭터 조작 방안,  
-그리고 히로인·현자 NPC와의 상호작용 시스템을 포함한 주요 게임 메커니즘을 정리한 내용입니다.
-
----
-
-# 1. 게임 핵심 순환 구조
-
-게임은 다음과 같은 순환 구조를 기반으로 진행됩니다.
-
-## 1-1. 던전 탐사
-- 플레이어는 **로그라이크 방식의 던전**을 탐험합니다.
-- 전투를 통해 스킬을 사용하고, 무기 및 장비를 강화하며 파밍을 진행합니다.
-
-## 1-2. 경험치 및 기억의 조각 획득
-- 탐험 과정에서 다양한 자원을 수집하고 경험치를 획득합니다.
-- 전투와 선택 결과가 누적되어 **기억의 조각**이 생성됩니다.
-
-## 1-3. 상담 및 대화 (기억의 조각 소비)
-- 축적한 기억의 조각을 사용하여 히로인과 상담 및 대화를 진행합니다.
-- 이를 통해 스토리가 해금되고 관계가 진전됩니다.
-
-## 1-4. 히로인의 호감도 및 능력 강화
-- 상담·대화를 통해 히로인의 **호감도**가 상승합니다.
-- 특정 호감도에 도달하면 스킬·스탯 강화, 고유 특징 해금 등의 효과가 적용됩니다.
-
-## 1-5. 강화된 상태로 다시 던전 탐사
-- 성장한 히로인과 함께 다시 던전에 도전합니다.
-- 이 과정을 반복하며 캐릭터와 서사가 함께 확장됩니다.
-
-### ▶ 순환 구조 요약
-**던전 탐사 → 경험치·기억 획득 → 상담·대화 → 호감도·능력 강화 → 다시 던전 도전**
-
----
-
-# 2. 길드 및 NPC 상호작용 시스템
-
-## 2-1. 길드 시스템 (서브컬처 기반 허브)
-- 플레이어는 길드에서 다양한 NPC와 자연어 기반 상호작용을 진행합니다.
-- 길드는 단순 스토리 허브가 아니라, 성장·해금·관계 구축의 핵심 공간입니다.
-
----
-
-## 2-2. 히로인 대화(상담) 시스템
-
-### ● 자연어 기반 대화
-- 선택지가 아닌 **자연어 대화**로 진행됩니다.
-- 상호작용 키를 누르면 길드 내 특정 히로인과 상담 시작.
-
-### ● 역할
-- PTSD 등 민감한 과거를 건드리면 관계가 악화될 수 있음.
-- 기억의 조각을 소비하여 호감도를 올리고 과거를 되찾도록 돕는 구조.
-- 상담 성공 시 스탯/스킬 강화 등 실질적 성장이 제공됨.
-
-### ● 잃어버린 기억 해금 구조
-- 기본 3~4개의 기억으로 구성.
-- 호감도 2, 5, 8, 10 단계에서 순차 해금.
-- 기억은 시나리오·연출 형식으로 제공되며 다시보기 가능.
-
----
-
-## 2-3. 현자 Q&A(세계관 정보) 시스템
-
-### ● 자연어 기반 Q&A
-- 길드 내 현자 NPC에게 상호작용 키를 누르면 시작.
-- 플레이어가 자유롭게 질문하면 세계관·스토리 정보를 제공.
-
-### ● 정보 레벨 시스템
-- 중요 설정은 초반엔 모호하게 답변하거나 거부.
-- 던전 플레이 시 “현자 레벨”이 상승하며 더 깊은 정보를 공개.
-- 총 10단계의 공개 레벨로 구성.
-
-### ● 예시
-- 현자의 정체: 필요 레벨 4  
-- 던전의 정체: 필요 레벨 2  
-
----
-
-# 3. 캐릭터 조작
-
-아래는 플레이어 캐릭터의 기본 조작 방식입니다.
-
-| 키                  | 내용                           |
-|---------------------|--------------------------------|
-| Keyboard W          | 앞으로 이동                    |
-| Keyboard S          | 뒤로 이동                      |
-| Keyboard A          | 왼쪽으로 이동                  |
-| Keyboard D          | 오른쪽으로 이동                |
-| Left Mouse Button   | 기본 공격                      |
-| Right Mouse Button  | 회피                           |
-| Keyboard Spacebar   | 회피                           |
-| Keyboard Left Shift | 달리기 (토글)                  |
-| Keyboard Q          | 타게팅                          |
-| Keyboard E          | 무기 스킬                      |
-| Keyboard R          | 직업 고유 스킬               |
-| Keyboard F          | 상호작용 (이벤트/아이템 획득) |
-| Keyboard Tab        | 인벤토리                       |
-
----
-
-# 4. 시스템 간 자연스러운 흐름
-
-### ● 캐릭터 조작  
-→ 던전 탐사의 액션성과 조작감을 제공.  
-
-### ● 던전 탐사  
-→ 자원(경험치/기억의 조각)을 획득.  
-
-### ● 히로인 상담 및 현자 Q&A  
-→ 자원을 사용하여 서사·스킬·스탯을 해금.  
-→ 세계관 이해도도 증가해 더 깊은 컨텐츠를 경험.  
-
-### ● 성장한 히로인과 함께 다시 던전  
-→ 전투 효율 상승, 더 높은 난이도 도전 가능.  
-
-### 결국 **전투(액션)·서사(대화)·성장(해금)**이  
-하나의 순환 구조로 맞물린 **서브컬쳐형 로그라이크 RPG**의 형태가 완성됨.
-
-"""
-
 # GAME_SYSTEM_INFO = """
-# # Overview of the Game System
+# # 게임 시스템 개요
 
-# This document summarizes the major gameplay mechanisms, including the dungeon-exploration loop, character controls,  
-# and interaction systems with Heroines and Sage NPCs.
-
-# ---
-
-# # 1. Core Game Loop
-
-# The game progresses through the following cyclical structure:
-
-# ## 1-1. Dungeon Exploration
-# - The player explores **roguelike-style dungeons**.
-# - During combat, the player uses skills, upgrades weapons and equipment, and engages in farming.
-
-# ## 1-2. Gaining EXP and Memory Shards
-# - Various resources and experience are collected during exploration.
-# - Combat results and player choices accumulate to generate **Memory Shards**.
-
-# ## 1-3. Counseling & Conversation (Consumes Memory Shards)
-# - Accumulated Memory Shards are used to counsel and converse with Heroines.
-# - This unlocks story progress and deepens relationships.
-
-# ## 1-4. Heroine Affection & Ability Growth
-# - Through counseling/conversation, the Heroine’s **Affection** increases.
-# - Upon reaching certain affection levels, skills/stats improve and unique traits are unlocked.
-
-# ## 1-5. Returning to Dungeon Exploration With a Strengthened Heroine
-# - The strengthened Heroine joins the player for further dungeon challenges.
-# - Through repetition, both character progression and narrative expand together.
-
-# ### ▶ Core Cycle Summary
-# **Dungeon Exploration → EXP & Memory Acquisition → Counseling/Conversation → Affection & Ability Growth → Dungeon Challenge Again**
+# 본 문서는 던전 탐사 중심의 게임 플레이 루프, 캐릭터 조작 방안,  
+# 그리고 히로인·현자 NPC와의 상호작용 시스템을 포함한 주요 게임 메커니즘을 정리한 내용입니다.
 
 # ---
 
-# # 2. Guild and NPC Interaction Systems
+# # 1. 게임 핵심 순환 구조
 
-# ## 2-1. Guild System (Subculture-style Hub)
-# - The player interacts with various NPCs in natural language within the guild.
-# - The guild is not just a story hub; it is the core space for progression, unlocks, and relationship building.
+# 게임은 다음과 같은 순환 구조를 기반으로 진행됩니다.
 
-# ---
+# ## 1-1. 던전 탐사
+# - 플레이어는 **로그라이크 방식의 던전**을 탐험합니다.
+# - 전투를 통해 스킬을 사용하고, 무기 및 장비를 강화하며 파밍을 진행합니다.
 
-# ## 2-2. Heroine Conversation (Counseling) System
+# ## 1-2. 경험치 및 기억의 조각 획득
+# - 탐험 과정에서 다양한 자원을 수집하고 경험치를 획득합니다.
+# - 전투와 선택 결과가 누적되어 **기억의 조각**이 생성됩니다.
 
-# ### ● Natural-Language Dialogue
-# - All conversations occur via **free-form natural language**, not predefined choices.
-# - Interacting within the guild initiates a counseling session with a specific Heroine.
+# ## 1-3. 상담 및 대화 (기억의 조각 소비)
+# - 축적한 기억의 조각을 사용하여 히로인과 상담 및 대화를 진행합니다.
+# - 이를 통해 스토리가 해금되고 관계가 진전됩니다.
 
-# ### ● Role
-# - Touching on sensitive past events (e.g., PTSD-related topics) may harm the relationship.
-# - Memory Shards are consumed to raise affection and help recover the Heroine’s past.
-# - Successful counseling provides tangible growth such as stat/skill upgrades.
+# ## 1-4. 히로인의 호감도 및 능력 강화
+# - 상담·대화를 통해 히로인의 **호감도**가 상승합니다.
+# - 특정 호감도에 도달하면 스킬·스탯 강화, 고유 특징 해금 등의 효과가 적용됩니다.
 
-# ### ● Lost Memory Unlock Structure
-# - Each heroine has 3–4 core memories.
-# - They unlock at affection levels 2, 5, 8, and 10.
-# - Memories are presented as scenario-style sequences and can be revisited.
+# ## 1-5. 강화된 상태로 다시 던전 탐사
+# - 성장한 히로인과 함께 다시 던전에 도전합니다.
+# - 이 과정을 반복하며 캐릭터와 서사가 함께 확장됩니다.
 
-# ---
-
-# ## 2-3. Sage Q&A (Lore Information) System
-
-# ### ● Natural-Language Q&A
-# - Interacting with the Sage NPC in the guild initiates a Q&A session.
-# - Players freely ask questions, and the Sage provides world/lore information.
-
-# ### ● Information Level System
-# - Important lore is initially vague or withheld.
-# - As the player progresses through dungeons, the **Sage Level** increases, revealing deeper information.
-# - There are 10 levels of information accessibility.
-
-# ### ● Examples
-# - True identity of the Sage: Required Level 4  
-# - True nature of the dungeon: Required Level 2  
+# ### ▶ 순환 구조 요약
+# **던전 탐사 → 경험치·기억 획득 → 상담·대화 → 호감도·능력 강화 → 다시 던전 도전**
 
 # ---
 
-# # 3. Character Controls
+# # 2. 길드 및 NPC 상호작용 시스템
 
-# Below are the basic control methods for the player character.
-
-# | Key                  | Description                        |
-# |----------------------|------------------------------------|
-# | Keyboard W           | Move forward                       |
-# | Keyboard S           | Move backward                      |
-# | Keyboard A           | Move left                          |
-# | Keyboard D           | Move right                         |
-# | Left Mouse Button    | Basic attack                       |
-# | Right Mouse Button   | Dodge                              |
-# | Keyboard Spacebar    | Dodge                              |
-# | Keyboard Left Shift  | Run (toggle)                       |
-# | Keyboard Q           | Targeting                          |
-# | Keyboard E           | Weapon Skill                       |
-# | Keyboard R           | Class Skill                        |
-# | Keyboard F           | Interaction (events/items)         |
-# | Keyboard Tab         | Inventory                          |
+# ## 2-1. 길드 시스템 (서브컬처 기반 허브)
+# - 플레이어는 길드에서 다양한 NPC와 자연어 기반 상호작용을 진행합니다.
+# - 길드는 단순 스토리 허브가 아니라, 성장·해금·관계 구축의 핵심 공간입니다.
 
 # ---
 
-# # 4. Natural Flow Between Systems
+# ## 2-2. 히로인 대화(상담) 시스템
 
-# ### ● Character Controls  
-# → Provide the action and responsiveness needed for dungeon exploration.  
+# ### ● 자연어 기반 대화
+# - 선택지가 아닌 **자연어 대화**로 진행됩니다.
+# - 상호작용 키를 누르면 길드 내 특정 히로인과 상담 시작.
 
-# ### ● Dungeon Exploration  
-# → Grants resources (EXP / Memory Shards).  
+# ### ● 역할
+# - PTSD 등 민감한 과거를 건드리면 관계가 악화될 수 있음.
+# - 기억의 조각을 소비하여 호감도를 올리고 과거를 되찾도록 돕는 구조.
+# - 상담 성공 시 스탯/스킬 강화 등 실질적 성장이 제공됨.
 
-# ### ● Heroine Counseling & Sage Q&A  
-# → Consumes resources to unlock narrative, skills, and stats.  
-# → Enhances world understanding to access deeper content.  
+# ### ● 잃어버린 기억 해금 구조
+# - 기본 3~4개의 기억으로 구성.
+# - 호감도 2, 5, 8, 10 단계에서 순차 해금.
+# - 기억은 시나리오·연출 형식으로 제공되며 다시보기 가능.
 
-# ### ● Returning to Dungeon With a Strengthened Heroine  
-# → Improves combat efficiency and enables higher difficulty challenges.  
+# ---
 
-# ### Ultimately, **Combat (Action)**, **Narrative (Dialogue)**, and **Growth (Unlocks)**  
-# interlock to form a **subculture-style roguelike RPG**.
+# ## 2-3. 현자 Q&A(세계관 정보) 시스템
+
+# ### ● 자연어 기반 Q&A
+# - 길드 내 현자 NPC에게 상호작용 키를 누르면 시작.
+# - 플레이어가 자유롭게 질문하면 세계관·스토리 정보를 제공.
+
+# ### ● 정보 레벨 시스템
+# - 중요 설정은 초반엔 모호하게 답변하거나 거부.
+# - 던전 플레이 시 “현자 레벨”이 상승하며 더 깊은 정보를 공개.
+# - 총 10단계의 공개 레벨로 구성.
+
+# ### ● 예시
+# - 현자의 정체: 필요 레벨 4  
+# - 던전의 정체: 필요 레벨 2  
+
+# ---
+
+# # 3. 캐릭터 조작
+
+# 아래는 플레이어 캐릭터의 기본 조작 방식입니다.
+
+# | 키                  | 내용                           |
+# |---------------------|--------------------------------|
+# | Keyboard W          | 앞으로 이동                    |
+# | Keyboard S          | 뒤로 이동                      |
+# | Keyboard A          | 왼쪽으로 이동                  |
+# | Keyboard D          | 오른쪽으로 이동                |
+# | Left Mouse Button   | 기본 공격                      |
+# | Right Mouse Button  | 회피                           |
+# | Keyboard Spacebar   | 회피                           |
+# | Keyboard Left Shift | 달리기 (토글)                  |
+# | Keyboard Q          | 타게팅                          |
+# | Keyboard E          | 무기 스킬                      |
+# | Keyboard R          | 직업 고유 스킬               |
+# | Keyboard F          | 상호작용 (이벤트/아이템 획득) |
+# | Keyboard Tab        | 인벤토리                       |
+
+# ---
+
+# # 4. 시스템 간 자연스러운 흐름
+
+# ### ● 캐릭터 조작  
+# → 던전 탐사의 액션성과 조작감을 제공.  
+
+# ### ● 던전 탐사  
+# → 자원(경험치/기억의 조각)을 획득.  
+
+# ### ● 히로인 상담 및 현자 Q&A  
+# → 자원을 사용하여 서사·스킬·스탯을 해금.  
+# → 세계관 이해도도 증가해 더 깊은 컨텐츠를 경험.  
+
+# ### ● 성장한 히로인과 함께 다시 던전  
+# → 전투 효율 상승, 더 높은 난이도 도전 가능.  
+
+# ### 결국 **전투(액션)·서사(대화)·성장(해금)**이  
+# 하나의 순환 구조로 맞물린 **서브컬쳐형 로그라이크 RPG**의 형태가 완성됨.
 
 # """
+GAME_SYSTEM_INFO = """
+# Game System Overview
+
+This document summarizes the core game mechanics, including the dungeon-exploration-focused gameplay loop, character controls, and interaction systems with heroines and the 현자 NPC.
+
+---
+
+# 1. Core Gameplay Loop
+
+The game progresses through the following repeating cycle.
+
+## 1-1. Dungeon Exploration
+- The player explores **roguelike-style dungeons**.
+- Through combat, the player uses skills, strengthens weapons and equipment, and engages in farming.
+
+## 1-2. Gaining Experience and 기억의 조각
+- During exploration, the player collects various resources and gains experience.
+- Combat results and player choices accumulate, generating **기억의 조각**.
+
+## 1-3. Counseling and Dialogue (Consumption of 기억의 조각)
+- The player uses accumulated 기억의 조각 to engage in counseling and dialogue with heroines.
+- Through these interactions, story content is unlocked and relationships progress.
+
+## 1-4. Heroine Affection and Ability Enhancement
+- Counseling and dialogue increase the heroine’s **affection level**.
+- Upon reaching certain affection thresholds, effects such as skill upgrades, stat increases, and unique trait unlocks are applied.
+
+## 1-5. Returning to the Dungeon in a Strengthened State
+- The player challenges the dungeon again alongside a more developed heroine.
+- By repeating this process, both character growth and narrative progression expand together.
+
+### ▶ Gameplay Loop Summary
+**Dungeon Exploration → Experience & 기억 Accumulation → Counseling & Dialogue → Affection & Ability Growth → Return to Dungeon**
+
+---
+
+# 2. Guild and NPC Interaction Systems
+
+## 2-1. Guild System (Subculture-Style Hub)
+- Within the guild, the player engages in natural-language interactions with various NPCs.
+- The guild is not merely a story hub, but a core space for growth, unlocks, and relationship building.
+
+---
+
+## 2-2. Heroine Counseling (Dialogue) System
+
+### ● Natural-Language Conversations
+- Progresses through **free-form natural-language dialogue**, not preset choices.
+- Pressing the interaction key starts a counseling session with a specific heroine in the guild.
+
+### ● Roles and Structure
+- Touching on sensitive past experiences (such as PTSD) may negatively affect the relationship.
+- 기억의 조각 are consumed to increase affection and help heroines recover their lost memories.
+- Successful counseling provides tangible growth, such as stat or skill enhancements.
+
+### ● Lost Memory Unlock Structure
+- Each heroine has 3–4 core memories.
+- Memories are unlocked sequentially at affection levels 2, 5, 8, and 10.
+- Memories are presented as scenario-based or cinematic sequences and can be replayed.
+
+---
+
+## 2-3. 현자 Q&A (World Lore) System
+
+### ● Natural-Language Q&A
+- Interaction begins by pressing the interaction key with the 현자 NPC in the guild.
+- The player can freely ask questions and receive explanations about the world and story.
+
+### ● Information Level System
+- Important lore is answered vaguely or withheld in the early stages.
+- As dungeon play progresses, the player’s “현자 level” increases, revealing deeper information.
+- The system consists of 10 total disclosure levels.
+
+### ● Examples
+- Identity of the 현자: Required level 4  
+- Nature of the dungeon: Required level 2  
+
+---
+
+# 3. Character Controls
+
+Below are the basic controls for the player character.
+
+| Key                  | Action                          |
+|----------------------|----------------------------------|
+| Keyboard W           | Move forward                     |
+| Keyboard S           | Move backward                    |
+| Keyboard A           | Move left                        |
+| Keyboard D           | Move right                       |
+| Left Mouse Button    | Basic attack                     |
+| Right Mouse Button   | Dodge                            |
+| Keyboard Spacebar    | Dodge                            |
+| Keyboard Left Shift  | Run (toggle)                     |
+| Keyboard Q           | Targeting                        |
+| Keyboard E           | Weapon skill                     |
+| Keyboard R           | '고유' skill             |
+| Keyboard F           | Interact (events / item pickup)  |
+| Keyboard Tab         | Inventory                        |
+
+---
+
+# 4. Natural System Flow
+
+### ● Character Controls  
+→ Provide action-oriented combat and responsive gameplay.  
+
+### ● Dungeon Exploration  
+→ Acquire resources (experience and 기억의 조각).  
+
+### ● Heroine Counseling & 현자 Q&A  
+→ Consume resources to unlock story content, skills, and stats.  
+→ Increase world understanding to access deeper content.  
+
+### ● Return to the Dungeon with a Stronger Heroine  
+→ Improved combat efficiency and access to higher difficulty challenges.  
+
+### Ultimately, **Combat (Action) · Narrative (Dialogue) · Growth (Unlocks)**  
+are woven into a single repeating loop, completing the structure of a  
+**subculture-style roguelike RPG**.
+"""

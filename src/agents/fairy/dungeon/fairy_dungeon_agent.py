@@ -21,34 +21,41 @@ from langchain.chat_models import init_chat_model
 from typing import List
 from db.RDBRepository import RDBRepository
 from db.rdb_entity.DungeonRow import DungeonRow
-from agents.fairy.dynamic_prompt import dungeon_spec_prompt, item_spec_prompt,monster_spec_prompt
+from agents.fairy.dynamic_prompt import (
+    dungeon_spec_prompt,
+    item_spec_prompt,
+    monster_spec_prompt,
+)
 from agents.fairy.util import (
     contains_hanja,
     replace_hanja_naively,
     get_human_few_shot_prompts,
-    describe_dungeon_row
+    describe_dungeon_row,
 )
 from agents.fairy.dungeon.fairy_dungeon_model_logics import FairyDungeonIntentModel
+
 intent_llm = get_groq_llm_lc(model=LLM.LLAMA_3_1_8B_INSTANT, max_token=43)
 # action_llm = get_groq_llm_lc(max_token=80, temperature=0)
-action_llm = init_chat_model(model=LLM.GROK_4_FAST_NON_REASONING, max_tokens = 80, temperature=0)
-small_talk_llm = init_chat_model(model=LLM.GROK_4_FAST_NON_REASONING, max_tokens = 120)
+action_llm = init_chat_model(model=LLM.GROK_4_FAST_NON_REASONING, max_tokens=80, temperature=0)
+small_talk_llm = init_chat_model(model=LLM.GROK_4_FAST_NON_REASONING, max_tokens=120)
 rdb_repository = RDBRepository()
 intent_model = FairyDungeonIntentModel()
 
+
 async def get_monsters_info(target_monster_ids: List[int]):
     monster_prompt = monster_spec_prompt.format(
-        monster_infos_json = find_monsters_info(target_monster_ids)
+        monster_infos_json=find_monsters_info(target_monster_ids)
     )
     return monster_prompt
 
+
 async def get_event_info(dungeon_row: DungeonRow, curr_room_id: int):
     event = dungeon_row.event
-    if event is None: 
-        return "이벤트가 생성되지 않았습니다. 페이몬은 \"응? 확인된 이벤트는 아직 없어!\"라고 장난스럽게 답해주세요."
+    if event is None:
+        return '이벤트가 생성되지 않았습니다. 페이몬은 "응? 확인된 이벤트는 아직 없어!"라고 장난스럽게 답해주세요.'
 
     if event.room_id != curr_room_id:
-        return "이벤트방에 입장하지 않아서 정보를 확인할 수 없습니다. 페이몬은 \"아직은 아무일 없어보여! 무슨 사건이 일어날 때 말해!\" 라는식으로 장난스럽게 답해주세요."
+        return '이벤트방에 입장하지 않아서 정보를 확인할 수 없습니다. 페이몬은 "아직은 아무일 없어보여! 무슨 사건이 일어날 때 말해!" 라는식으로 장난스럽게 답해주세요.'
 
     print("이벤트", event)
     return event
@@ -56,15 +63,24 @@ async def get_event_info(dungeon_row: DungeonRow, curr_room_id: int):
 
 async def dungeon_navigator(dungeon_row: DungeonRow, curr_room_id: int):
     summary_info = dungeon_row.summary_info
-    # dungeon_json_prompt = dungeon_spec_prompt.format(
-    #     balanced_map_json=dungeon_row.balanced_map
+    dungeon_prompt = describe_dungeon_row(
+        curr_room_id, dungeon_row.balanced_map, dungeon_row.floor
+    )
+    # dungeon_map_prompt = f"        <던전맵>\n{dungeon_prompt}\n        </던전맵>"
+    # dungeon_summary_prompt = f"        <던전요약>\n{summary_info}\n        </던전요약>"
+    # dungeon_current_prompt = (
+    #     f"        <현재 Room Id>\n{curr_room_id}\n        </현재 Room Id>"
     # )
-    dungeon_prompt = describe_dungeon_row(curr_room_id, dungeon_row.balanced_map, dungeon_row.floor)
-    print("디스크립션 던전",dungeon_prompt)
-    dungeon_map_prompt = f"        <던전맵>\n{dungeon_prompt}\n        </던전맵>"
-    dungeon_summary_prompt = f"        <던전요약>\n{summary_info}\n        </던전요약>"
+    dungeon_map_prompt = (
+        f"        <DUNGEON_MAP>\n" f"{dungeon_prompt}\n" f"        </DUNGEON_MAP>"
+    )
+
+    dungeon_summary_prompt = (
+        f"        <DUNGEON_SUMMARY>\n" f"{summary_info}\n" f"        </DUNGEON_SUMMARY>"
+    )
+
     dungeon_current_prompt = (
-        f"        <현재 Room Id>\n{curr_room_id}\n        </현재 Room Id>"
+        f"        <CURRENT_ROOM_ID>\n" f"{curr_room_id}\n" f"        </CURRENT_ROOM_ID>"
     )
     total_prompt = (
         dungeon_map_prompt
@@ -77,10 +93,11 @@ async def dungeon_navigator(dungeon_row: DungeonRow, curr_room_id: int):
 
 
 async def create_interaction(inventory_ids):
-    item_prompt = item_spec_prompt.format(
-        items_json = get_inventory_items(inventory_ids)
+    item_prompt = item_spec_prompt.format(items_json=get_inventory_items(inventory_ids))
+    # inventory_prompt = f"        <인벤토리 내의 아이템 설명>\n{item_prompt}\n        </인벤토리 내의 아이템 설명>"
+    inventory_prompt = (
+        f"        <INVENTORY_ITEMS>\n" f"{item_prompt}\n" f"        </INVENTORY_ITEMS>"
     )
-    inventory_prompt = f"        <인벤토리 내의 아이템 설명>\n{item_prompt}\n        </인벤토리 내의 아이템 설명>"
     result = inventory_prompt
     return result
 
@@ -96,7 +113,7 @@ async def _clarify_intent(query) -> FairyDungeonIntentOutput:
     parser_llm = intent_llm.with_structured_output(FairyDungeonIntentOutput)
     intent_output: FairyDungeonIntentOutput = await parser_llm.ainvoke(messages)
     # raw_labels, _ = intent_model.predict(query)
-    # enum_list = FairyDungeonIntentModel.parse_intents_to_enum(raw_labels)    
+    # enum_list = FairyDungeonIntentModel.parse_intents_to_enum(raw_labels)
     # intent_output: FairyDungeonIntentOutput = FairyDungeonIntentOutput(intents=enum_list)
     # print("전체 의도::", intent_output)
     return intent_output
@@ -124,7 +141,7 @@ async def analyze_intent(state: FairyDungeonState):
     latency = time.perf_counter() - start
     return {
         "intent_types": clarify_intent_type.intents,
-        "latency_analyze_intent": latency
+        "latency_analyze_intent": latency,
     }
 
 
@@ -161,12 +178,19 @@ async def fairy_action(state: FairyDungeonState):
         FairyDungeonIntentType.USAGE_GUIDE: get_system_info,
     }
 
+    # INTENT_LABELS = {
+    #     FairyDungeonIntentType.MONSTER_GUIDE: "몬스터 정보",
+    #     FairyDungeonIntentType.EVENT_GUIDE: "이벤트",
+    #     FairyDungeonIntentType.DUNGEON_NAVIGATOR: "던전 안내",
+    #     FairyDungeonIntentType.INTERACTION_HANDLER: "상호작용",
+    #     FairyDungeonIntentType.USAGE_GUIDE: "사용 방법·조작 안내",
+    # }
     INTENT_LABELS = {
-        FairyDungeonIntentType.MONSTER_GUIDE: "몬스터 정보",
-        FairyDungeonIntentType.EVENT_GUIDE: "이벤트",
-        FairyDungeonIntentType.DUNGEON_NAVIGATOR: "던전 안내",
-        FairyDungeonIntentType.INTERACTION_HANDLER: "상호작용",
-        FairyDungeonIntentType.USAGE_GUIDE: "사용 방법·조작 안내",
+        FairyDungeonIntentType.MONSTER_GUIDE: "MONSTER_GUIDE",
+        FairyDungeonIntentType.EVENT_GUIDE: "EVENT_GUIDE",
+        FairyDungeonIntentType.DUNGEON_NAVIGATOR: "DUNGEON_NAVIGATOR",
+        FairyDungeonIntentType.INTERACTION_HANDLER: "INTERACTION_HANDLER",
+        FairyDungeonIntentType.USAGE_GUIDE: "USAGE_GUIDE",
     }
 
     handlers = [INTENT_HANDLERS[i]() for i in intent_types if i in INTENT_HANDLERS]
@@ -224,7 +248,7 @@ async def fairy_action(state: FairyDungeonState):
         "messages": [
             add_ai_message(content=ai_answer.content, intent_types=intent_types)
         ],
-        "latency_fairy_action": latency
+        "latency_fairy_action": latency,
     }
 
 
