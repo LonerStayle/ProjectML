@@ -43,7 +43,7 @@ class HeroineData(BaseModel):
 
 
 class LoginRequest(BaseModel):
-    playerId: int
+    playerId: str
     scenarioLevel: int
     heroines: List[HeroineData]
 
@@ -54,7 +54,7 @@ class LoginResponse(BaseModel):
 
 
 class ChatRequest(BaseModel):
-    playerId: int
+    playerId: str
     heroineId: int
     text: str
 
@@ -68,7 +68,7 @@ class ChatResponse(BaseModel):
 
 
 class SageChatRequest(BaseModel):
-    playerId: int
+    playerId: str
     text: str
 
 
@@ -80,6 +80,7 @@ class SageChatResponse(BaseModel):
 
 
 class HeroineConversationRequest(BaseModel):
+    playerId: str
     heroine1Id: int
     heroine2Id: int
     situation: Optional[str] = None
@@ -87,6 +88,7 @@ class HeroineConversationRequest(BaseModel):
 
 
 class ConversationInterruptRequest(BaseModel):
+    playerId: str
     conversationId: str
     interruptedTurn: int
     heroine1Id: int
@@ -94,7 +96,7 @@ class ConversationInterruptRequest(BaseModel):
 
 
 class GuildRequest(BaseModel):
-    playerId: int
+    playerId: str
 
 
 class GuildResponse(BaseModel):
@@ -108,7 +110,7 @@ class GuildResponse(BaseModel):
 # ============================================
 
 
-async def background_npc_conversation_loop(player_id: int):
+async def background_npc_conversation_loop(player_id: str):
     """백그라운드에서 주기적으로 NPC간 대화 생성"""
     heroine_ids = [1, 2, 3]
 
@@ -124,7 +126,10 @@ async def background_npc_conversation_loop(player_id: int):
 
             try:
                 await heroine_heroine_agent.generate_and_save_conversation(
-                    heroine1_id=npc1_id, heroine2_id=npc2_id, turn_count=10
+                    user_id=player_id,
+                    heroine1_id=npc1_id,
+                    heroine2_id=npc2_id,
+                    turn_count=10,
                 )
             except Exception as e:
                 print(f"Background NPC conversation error: {e}")
@@ -507,11 +512,21 @@ async def sage_chat_sync(request: SageChatRequest, background_tasks: BackgroundT
 @router.post("/heroine-conversation/generate")
 async def generate_heroine_conversation(request: HeroineConversationRequest):
     """히로인간 대화 생성 (비스트리밍)"""
+    import time
+
+    api_start = time.time()
+
+    t = time.time()
     result = await heroine_heroine_agent.generate_and_save_conversation(
+        player_id=request.playerId,
         heroine1_id=request.heroine1Id,
         heroine2_id=request.heroine2Id,
         situation=request.situation,
         turn_count=request.turnCount or 10,
+    )
+    print(f"[TIMING] heroine_conversation_generate agent 처리: {time.time() - t:.3f}s")
+    print(
+        f"[TIMING] === API 총 소요시간 (heroine_conversation_generate): {time.time() - api_start:.3f}s ==="
     )
     return result
 
@@ -522,9 +537,12 @@ async def generate_heroine_conversation_stream(request: HeroineConversationReque
 
     비스트리밍과 동일하게 DB에 저장
     """
+    import time
 
     async def generate():
+        api_start = time.time()
         async for chunk in heroine_heroine_agent.generate_conversation_stream(
+            player_id=request.playerId,
             heroine1_id=request.heroine1Id,
             heroine2_id=request.heroine2Id,
             situation=request.situation,
@@ -532,6 +550,9 @@ async def generate_heroine_conversation_stream(request: HeroineConversationReque
         ):
             yield f"data: {chunk}\n\n"
         yield "data: [DONE]\n\n"
+        print(
+            f"[TIMING] === API 총 소요시간 (heroine_conversation_stream): {time.time() - api_start:.3f}s ==="
+        )
 
     return StreamingResponse(
         generate(),
@@ -542,13 +563,17 @@ async def generate_heroine_conversation_stream(request: HeroineConversationReque
 
 @router.get("/heroine-conversation")
 async def get_heroine_conversations(
+    player_id: str,
     heroine1_id: Optional[int] = None,
     heroine2_id: Optional[int] = None,
     limit: int = 10,
 ):
     """히로인간 대화 기록 조회"""
     conversations = heroine_heroine_agent.get_conversations(
-        heroine1_id=heroine1_id, heroine2_id=heroine2_id, limit=limit
+        player_id=player_id,
+        heroine1_id=heroine1_id,
+        heroine2_id=heroine2_id,
+        limit=limit,
     )
     return {"conversations": conversations}
 
@@ -556,18 +581,19 @@ async def get_heroine_conversations(
 @router.post("/heroine-conversation/interrupt")
 async def interrupt_heroine_conversation(request: ConversationInterruptRequest):
     """NPC-NPC 대화 인터럽트 처리
-    
+
     유저가 NPC 대화 중간에 끊고 들어왔을 때 호출합니다.
     interruptedTurn 이후의 대화는 NPC가 모르는 것으로 처리됩니다.
-    
+
     예: 10턴 대화 중 3턴에서 끊기면 interruptedTurn=3
     → 1,2,3턴 대화만 유지, 4턴 이후는 삭제
     """
     result = heroine_heroine_agent.interrupt_conversation(
+        player_id=request.playerId,
         conversation_id=request.conversationId,
         interrupted_turn=request.interruptedTurn,
         heroine1_id=request.heroine1Id,
-        heroine2_id=request.heroine2Id
+        heroine2_id=request.heroine2Id,
     )
     return result
 
@@ -623,7 +649,7 @@ async def leave_guild(request: GuildRequest):
 
 
 @router.get("/guild/status/{player_id}")
-async def get_guild_status(player_id: int):
+async def get_guild_status(player_id: str):
     """길드 상태 조회"""
     return {
         "in_guild": redis_manager.is_in_guild(player_id),
@@ -638,7 +664,7 @@ async def get_guild_status(player_id: int):
 
 
 @router.get("/session/{player_id}/{npc_id}")
-async def get_session(player_id: int, npc_id: int):
+async def get_session(player_id: str, npc_id: int):
     """세션 정보 조회 (디버그용)"""
     session = redis_manager.load_session(player_id, npc_id)
     if session is None:
@@ -647,7 +673,7 @@ async def get_session(player_id: int, npc_id: int):
 
 
 @router.get("/npc-conversation/active/{player_id}")
-async def get_active_npc_conversation(player_id: int):
+async def get_active_npc_conversation(player_id: str):
     """현재 진행 중인 NPC 대화 조회"""
     conv = redis_manager.get_active_npc_conversation(player_id)
     if conv is None:

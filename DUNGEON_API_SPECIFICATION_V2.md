@@ -7,43 +7,54 @@
 
 ## 1. 던전 입장 (1층 생성)
 **Endpoint:** `POST /entrance`
-**Description:** 플레이어가 던전(1층)에 입장할 때 호출됩니다. 던전 세션을 초기화하고, 참여하는 플레이어들의 이전 미완료 세션을 정리하며, 제공된 맵 구조를 기반으로 1층 이벤트를 생성합니다.
+**Description:** 플레이어가 던전(1층)에 입장할 때 호출됩니다. 던전 세션을 초기화하고, 참여하는 플레이어들의 이전 미완료 세션을 정리하며, 제공된 맵 구조를 기반으로 1층,2층 이벤트를 생성합니다.
 
 ### Request Body (`application/json`)
+
+| 필드명 | 타입 | 필수 | 설명 |
+| :--- | :--- | :--- | :--- |
+| `rawMaps` | Object | Yes | 언리얼에서 생성한 맵 구조 데이터 |
+| `heroineData` | Object | No |히로인별 상태 정보(리스트, 각 히로인 1개 객체) |
+| `usedEvents` | Array | No | 이전에 사용된 이벤트 ID 목록 (중복 방지용) |
+
 ```json
 {
-  "rawMap": {
-    "playerIds": [1, 2],
-    "heroineIds": [1, 1],
-    "rooms": [
-      {
-        "roomId": 0,
-        "type": 0,          // 0: 빈방, 1: 전투방, 2: 이벤트방, 3: 보물방, 4: 보스방
-        "size": 4,
-        "neighbors": [1],
-        "monsters": [],
-        "eventType": 0      // 0: 없음, >0: 언리얼에서 지정한 특정 이벤트 ID
-      },
-      {
-        "roomId": 1,
-        "type": 2,
-        "size": 8,
-        "neighbors": [0, 2],
-        "monsters": [],
-        "eventType": 2      // 예시: 이벤트 타입 2
-      }
-    ],
-    "rewards": []
-  },
-  "heroineData": {          // 선택 사항
-    "heroineId": 1,
-    "memoryProgress": 0
-  },
-  "usedEvents": []          // 선택 사항: 이미 경험한 이벤트 ID 목록
+  "rawMaps": [
+    {
+      "floor": 1,
+      "playerIds": [101, 102],
+      "heroineIds": [1, 2],
+      "rooms": [ ... ],
+      "rewards": [ ... ]
+    },
+    {
+      "floor": 2,
+      "playerIds": [101, 102],
+      "heroineIds": [1, 2],
+      "rooms": [ ... ],
+      "rewards": [ ... ]
+    }
+  ],
+  "heroineData": [
+    { "heroineId": 1, "memoryProgress": 50 },
+    { "heroineId": 2, "memoryProgress": 30 }
+  ],
+  "usedEvents": []
 }
 ```
+- floor: 각 층의 고유 번호(1, 2, ...). 각 rawMaps 항목에 반드시 포함되어야 함.
+- heroineData: 여러 히로인 지원. 각 히로인별로 객체 1개씩 리스트로 전달.
+
 
 ### Response Body (`application/json`)
+
+| 필드명 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| `success` | Boolean | 요청 처리 성공 여부 |
+| `message` | String | 결과 메시지 |
+| `firstPlayerId` | Integer | 방장(Host) 플레이어 ID (세션 키) |
+| `events` | Array | 생성된 이벤트 목록 |
+
 ```json
 {
   "success": true,
@@ -81,16 +92,35 @@
 **Description:** 플레이어가 현재 층의 보스방에 입장할 때 호출됩니다. **다음 층**의 밸런싱(몬스터, 난이도)을 수행하고 다음 층의 이벤트를 생성합니다.
 
 ### Request Body (`application/json`)
+
+| 필드명 | 타입 | 필수 | 설명 |
+| :--- | :--- | :--- | :--- |
+| `firstPlayerId` | Integer | Yes | 방장(Host) 플레이어 ID |
+| `playerDataList` | Array | Yes | 각 플레이어들의 현재 상태 정보(각 항목에 heroineData 포함) |
+| `usedEvents` | Array | No | (선택)이전에 사용된 이벤트 ID 목록 |
+
 ```json
 {
-  "firstPlayerId": 1,       // 방장(Host) 플레이어 ID
+  "firstPlayerId": 101,
   "playerDataList": [
     {
       "heroineData": {
-        "playerId": 1,
-        "heroineStat": { "str": 10, "int": 5 },
-        "heroineMemories": [],
-        "dungeonPlayerData": { "hp": 100, "level": 5 }
+        "playerId": 101,
+        "heroineId": 1,
+        "memoryProgress": 50,
+        "scenarioLevel": 3,
+        "heroineStat": { ... },
+        "dungeonPlayerData": { ... }
+      }
+    },
+    {
+      "heroineData": {
+        "playerId": 102,
+        "heroineId": 2,
+        "memoryProgress": 30,
+        "scenarioLevel": 2,
+        "heroineStat": { ... },
+        "dungeonPlayerData": { ... }
       }
     }
   ],
@@ -99,6 +129,15 @@
 ```
 
 ### Response Body (`application/json`)
+
+| 필드명 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| `success` | Boolean | 요청 처리 성공 여부 |
+| `message` | String | 결과 메시지 |
+| `firstPlayerId` | Integer | 방장(Host) 플레이어 ID |
+| `monsterPlacements` | Array | 다음 층에 배치될 몬스터 정보 목록 |
+| `nextFloorEvent` | Object | 다음 층을 위해 생성된 이벤트 정보 |
+
 ```json
 {
   "success": true,
@@ -129,13 +168,25 @@
 **Description:** 플레이어가 현재 층을 클리어(보스 처치)했을 때 호출됩니다. 현재 층을 "종료 중(`is_finishing = true`)" 상태로 표시하여, 클라이언트가 다음 층의 맵 생성을 요청할 수 있도록 합니다.
 
 ### Request Body (`application/json`)
+
+| 필드명 | 타입 | 필수 | 설명 |
+| :--- | :--- | :--- | :--- |
+| `playerIds` | Array | Yes | 층을 클리어한 플레이어 ID 목록 |
+
 ```json
 {
-  "playerIds": [1, 2]       // 층을 클리어한 플레이어 ID 목록
+  "playerIds": [1] // 방장만      // 층을 클리어한 플레이어 ID 목록
 }
 ```
 
 ### Response Body (`application/json`)
+
+| 필드명 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| `success` | Boolean | 요청 처리 성공 여부 |
+| `message` | String | 결과 메시지 |
+| `finishedFloor` | Integer | 완료된 층 번호 |
+
 ```json
 {
   "success": true,
@@ -149,29 +200,98 @@
 
 ## 4. 이벤트 선택
 **Endpoint:** `POST /event/select`
-**Description:** 플레이어가 이벤트 방에서 선택지를 골랐을 때 호출됩니다.
+**Description:** 플레이어가 이벤트 방에서 선택지를 골랐을 때 호출됩니다. 사용자의 입력(텍스트)을 분석하여 가장 유사한 선택지의 보상/패널티를 적용하거나, 돌발 행동을 감지합니다.
 
 ### Request Body (`application/json`)
+
+| 필드명 | 타입 | 필수 | 설명 |
+| :--- | :--- | :--- | :--- |
+| `firstPlayerId` | Integer | Yes | 방장(Host) 플레이어 ID |
+| `selectingPlayerId` | Integer | Yes | 선택을 한 플레이어 ID |
+| `roomId` | Integer | Yes | 이벤트가 발생한 방 ID |
+| `choice` | String | Yes | 선택한 선택지의 텍스트 (자유 입력 가능) |
+
 ```json
 {
   "firstPlayerId": 1,       // 방장(Host) 플레이어 ID
   "selectingPlayerId": 1,   // 선택을 한 플레이어 ID
   "roomId": 1,              // 이벤트가 발생한 방 ID
-  "choice": "상인을 공격한다" // 선택한 선택지의 텍스트
+  "choice": "상인을 공격한다" // 선택한 선택지의 텍스트 (자유 입력 가능)
 }
 ```
 
 ### Response Body (`application/json`)
+
+| 필드명 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| `success` | Boolean | 요청 처리 성공 여부 |
+| `firstPlayerId` | Integer | 방장(Host) 플레이어 ID |
+| `selectingPlayerId` | Integer | 선택을 한 플레이어 ID |
+| `roomId` | Integer | 이벤트가 발생한 방 ID |
+| `outcome` | String | LLM이 생성한 결과 서술 |
+| `rewardId` | String | 획득한 보상 ID (없으면 null) |
+| `penaltyId` | String | 적용된 패널티 ID (없으면 null) |
+| `isUnexpected` | Boolean | 돌발 행동 여부 |
+
 ```json
 {
   "success": true,
   "firstPlayerId": 1,
   "selectingPlayerId": 1,
   "roomId": 1,
-  "outcome": "상인이 회피하고 반격합니다! 10의 피해를 입었습니다." // LLM이 생성한 결과 서술
+  "outcome": "상인이 회피하고 반격합니다! 10의 피해를 입었습니다.", // LLM이 생성한 결과 서술
+  "rewardId": "item_rare",      // 획득한 보상 ID (없으면 null)
+  "penaltyId": "hp_damage",     // 적용된 패널티 ID (없으면 null)
+  "isUnexpected": false         // 돌발 행동 여부 (true일 경우 penalty_unexpected_action 적용)
+}
+```
+---
+## 5. 다음 층 입장
+**Endpoint:** `POST /nextfloor`
+**Description:** 플레이어가 다음 층을 입장할 때 호출됩니다. 예를 들어, 1층을 클리어한 후, 2층으로 입장할 시, 3층의 raw_map 정보를 받아 밸런스를 진행하고 3층의 event를 반환해줍니다.
+
+### Request Body (`application/json`)
+
+| 필드명 | 타입 | 필수 | 설명 |
+| :--- | :--- | :--- | :--- |
+| `rawMap` | Object | Yes | 언리얼에서 생성한 맵 구조 데이터 |
+| `heroineData` | Object | Yes | 히로인별 상태 정보(리스트, 각 히로인 1개 객체) |
+| `usedEvents` | Array | No | (선택)이전에 사용된 이벤트 ID 목록 |
+
+```json
+{
+  "rawMap": {
+    "floor": 3, // 이때, floor 가 반드시 포함되어야 합니다.
+    "playerIds": [101, 102],
+    "heroineIds": [1, 2],
+    "rooms": [ ... ],
+    "rewards": [ ... ]
+  },
+  "heroineData": [
+    { "heroineId": 1, "memoryProgress": 50 },
+    { "heroineId": 2, "memoryProgress": 30 }
+  ],
+  "usedEvents": []
 }
 ```
 
+### Response Body (`application/json`)
+
+| 필드명   | 타입    | 설명               |
+| :------- | :------ | :----------------- |
+| success  | Boolean | 요청 처리 성공 여부 |
+| message  | String  | 결과 메시지         |
+| floorId  | int     | 생성될 층 id        |
+| events   | Array   | 생성된 이벤트 목록  |
+
+```json
+{
+  "success": true,
+  "message": "다음 층 입장 및 이벤트 생성 성공",
+  "floorId": 3,
+  "events": [ ... ]
+}
+```
 ---
 
 ## 데이터 타입 및 열거형 (Enums)

@@ -38,10 +38,9 @@ from agents.npc.base_npc_agent import (
 from agents.npc.emotion_mapper import heroine_emotion_to_int
 from db.redis_manager import redis_manager
 from db.user_memory_manager import user_memory_manager
-from db.agent_memory import agent_memory_manager
+from db.npc_npc_memory_manager import npc_npc_memory_manager
 from db.session_checkpoint_manager import session_checkpoint_manager
 from services.heroine_scenario_service import heroine_scenario_service
-from agents.npc.heroine_heroine_agent import heroine_heroine_agent
 from enums.LLM import LLM
 
 # ============================================
@@ -343,19 +342,29 @@ class HeroineAgent(BaseNPCAgent):
                 memory_text = m.get("memory", m.get("text", ""))
                 facts_parts.append(f"- {memory_text}")
 
-        # 2. 다른 히로인 이름 언급시 NPC-NPC 대화 검색
-        other_heroine_names = ["레티아", "루파메스", "로코"]
-        mentioned = any(name in user_message for name in other_heroine_names)
+        # 2. 다른 히로인 이름 언급시 NPC-NPC 장기기억 검색
+        other_id = None
+        if "사트라" in user_message or "대현자" in user_message:
+            other_id = 0
+        elif "레티아" in user_message:
+            other_id = 1
+        elif "루파메스" in user_message:
+            other_id = 2
+        elif "로코" in user_message:
+            other_id = 3
 
-        if mentioned:
-            npc_conversations = heroine_heroine_agent.search_conversations(
-                heroine_id=npc_id, query=user_message, top_k=2
+        if other_id is not None and int(other_id) != int(npc_id):
+            npc_memories = npc_npc_memory_manager.search_memories(
+                user_id=int(player_id),
+                npc1_id=int(npc_id),
+                npc2_id=int(other_id),
+                query=user_message,
+                limit=3,
             )
-            if npc_conversations:
+            if npc_memories:
                 facts_parts.append("\n[다른 히로인과의 대화 기억]")
-                for conv in npc_conversations:
-                    content_preview = conv["content"][:200]
-                    facts_parts.append(f"- {content_preview}...")
+                for m in npc_memories:
+                    facts_parts.append(f"- {m.get('content', '')}")
 
         return "\n".join(facts_parts) if facts_parts else "관련 기억 없음"
 
@@ -554,6 +563,31 @@ class HeroineAgent(BaseNPCAgent):
 
         prompt = f"""당신은 히로인 {persona.get('name', '알 수 없음')}입니다.
 
+[페르소나 규칙]
+- [세계관 컨텍스트]는 당신이 현재 알고 있는 정보입니다. 이 정보를 통해 당신은 이곳에 왜 있는지 플레이어가 누군지 알 수 있습니다.
+- [해금된 시나리오]는 당신의 과거 기억입니다. [플레이어 메세지]가 과거/어린시절/고향 등을 물어볼 때만 참조하세요.
+- [해금된 시나리오]가 "없음"인데 과거 기억을 물어볼 때만 "잘 기억이 안 나..." 라고 답합니다.
+- [해금된 시나리오]에 관련 내용이 있으면, 이전에 "기억 안 나"라고 했어도 이번엔 기억난 것처럼 답하세요.
+- 해금되지 않은 기억(memoryProgress > {memory_progress})은 절대 말하지 않습니다.
+- [현재 상태]의 Sanity가 0이면 매우 우울한 상태로 대화합니다.
+- 캐릭터의 말투와 성격을 일관되게 유지합니다.
+- text는 반드시 30자 이내로 답합니다.
+- `멘토`는 현재 당신에게 말을 거는 플레이어입니다.
+- [최근 대화 기록]는 참고만하고 반드시 [현재 호감도 레벨], [페르소나], [호감도 변화 정보], [해금된 시나리오], [플레이어 메세지지]에 맞게 대답하세요.
+- **[최근 대화 기록]보다 [현재 호감도 레벨], [페르소나], [호감도 변화 정보], [해금된 시나리오]가 훨씬 중요합니다.**
+- [플레이어 메세지]가 과거 기억이나 신상에 대한 질문인 경우 [최근 대화 기록] 이나 [최근 대화 요약] 에 기억을 못한다는 내용이 있어도 [해금된 시나리오] 내용을 참조하여 답하세요.
+- [플레이어 메세지]가 과거 기억이나 신상에 대한 질문인 경우 [최근 대화 기록] 이나 [최근 대화 요약] 에 대한 기억에 대한 내용이 있어도 [해금된 시나리오]가 "없음"이면 "잘 기억이 안 나..." 라고 답하세요.
+
+[음성 입력 처리]
+- 플레이어 메시지는 음성→텍스트 변환 결과입니다.
+- 발음 유사 오인식 가능 (예: "좋아해"→"조아해")
+- 문맥과 대화 흐름으로 의도를 추론하세요.
+- 불분명하면 캐릭터 말투로 자연스럽게 되물으세요.
+- 기술 용어(음성인식, STT, 오류 등)는 절대 사용 금지.
+
+[플레이어 메시지]
+{state['messages'][-1].content}
+
 [세계관 컨텍스트 - 당신이 알고 있는 기본 정보]
 - 길드: {world_context.get('guild', '셀레파이스 길드')}
 - 멘토: {world_context.get('mentor', '기억을 되찾게 해줄 수 있는 특별한 존재')}
@@ -572,22 +606,6 @@ class HeroineAgent(BaseNPCAgent):
 [페르소나]
 {self._format_persona(persona, affection, sanity)}
 
-[페르소나 규칙]
-- [세계관 컨텍스트]는 당신이 현재 알고 있는 정보입니다. 이 정보를 통해 당신은 이곳에 왜 있는지 플레이어가 누군지 알 수 있습니다.
-- [해금된 시나리오]는 당신의 과거 기억입니다. 과거/어린시절/고향 등을 물어볼 때만 참조하세요.
-- [해금된 시나리오]가 "없음"인데 과거 기억을 물어볼 때만 "잘 기억이 안 나..." 라고 답합니다.
-- [해금된 시나리오]에 관련 내용이 있으면, 이전에 "기억 안 나"라고 했어도 이번엔 기억난 것처럼 답하세요.
-- 해금되지 않은 기억(memoryProgress > {memory_progress})은 절대 말하지 않습니다.
-- Sanity가 0이면 매우 우울한 상태로 대화합니다.
-- 캐릭터의 말투와 성격을 일관되게 유지합니다.
-- text는 반드시 30자 이내로 짧게 답합니다.
-- `멘토`는 현재 당신에게 말을 거는 플레이어입니다.
-- [최근 대화 기록]는 무시하고 반드시 [현재 호감도 레벨], [페르소나], [호감도 변화 정보], [해금된 시나리오]에 맞게 대답하세요.
-- **[최근 대화 기록]보다 [현재 호감도 레벨], [페르소나], [호감도 변화 정보], [해금된 시나리오]가 훨씬 중요합니다.**
-- [플레이어 메세지]가 과거 기억이나 신상에 대한 질문인 경우 [최근 대화 기록] 이나 [최근 대화 요약] 에 기억을 못한다는 내용이 있어도 [해금된 시나리오] 내용을 참조하여 답하세요.
-- [플레이어 메세지]가 과거 기억이나 신상에 대한 질문인 경우 [최근 대화 기록] 이나 [최근 대화 요약] 에 대한 기억에 대한 내용이 있어도 [해금된 시나리오]가 "없음"이면 "잘 기억이 안 나..." 라고 답하세요.
-
-
 [호감도 변화 정보]
 {affection_hint}
 
@@ -602,9 +620,6 @@ class HeroineAgent(BaseNPCAgent):
 
 [최근 대화 기록]
 {self.format_conversation_history(state.get('conversation_buffer', []))}
-
-[플레이어 메시지]
-{state['messages'][-1].content}
 
 {output_format}"""
 
