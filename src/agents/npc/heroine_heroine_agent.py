@@ -39,7 +39,11 @@ from services.heroine_scenario_service import heroine_scenario_service
 
 # 페르소나 YAML 파일 경로
 PERSONA_PATH = (
-    Path(__file__).parent.parent.parent / "data" / "persona" / "heroine_persona.yaml"
+    Path(__file__).parent.parent.parent
+    / "prompts"
+    / "prompt_type"
+    / "npc"
+    / "heroine_persona.yaml"
 )
 
 

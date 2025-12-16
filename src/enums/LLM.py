@@ -18,11 +18,11 @@ class LLM(StrEnum):
     CLAUDE_3_SONNET = "claude-3-sonnet-20240229"
     CLAUDE_3_HAIKU = "claude-3-haiku-20240307"
 
-    # Gemini (Google)
-    GEMINI_2_5_PRO = "gemini-2.5-pro"
-    GEMINI_2_5_FLASH = "gemini-2.5-flash"
-    GEMINI_2_5_FLASH_LITE = "gemini-2.5-flash-lite"
-    GEMINI_3_PRO_PREVIEW = "gemini-3-pro-preview"
+    # Gemini (Google AI Studio - API Key 방식)
+    GEMINI_2_5_PRO = "google-genai:gemini-2.5-pro"
+    GEMINI_2_5_FLASH = "google-genai:gemini-2.5-flash"
+    GEMINI_2_5_FLASH_LITE = "google-genai:gemini-2.5-flash-lite"
+    GEMINI_3_PRO_PREVIEW = "google-genai:gemini-3-pro-preview"
 
     # Grok (xAI)
     # Grok 3 계열

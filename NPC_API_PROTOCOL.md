@@ -31,7 +31,7 @@
 
 ```json
 {
-    "playerId": 10001,
+    "playerId": "10001",
     "scenarioLevel": 3,
     "heroines": [
         {
@@ -60,7 +60,7 @@
 
 | 필드 | 타입 | 설명 |
 |------|------|------|
-| playerId | int | 플레이어 고유 ID |
+| playerId | string | 플레이어 고유 ID |
 | scenarioLevel | int | 현재 시나리오 레벨 (1-10) |
 | heroines | array | 히로인들의 상태 배열 |
 | heroines[].heroineId | int | 히로인 ID (1=레티아, 2=루파메스, 3=로코) |
@@ -98,7 +98,7 @@
 
 ```json
 {
-    "playerId": 10001,
+    "playerId": "10001",
     "heroineId": 1,
     "text": "안녕, 오늘 기분이 어때?"
 }
@@ -108,7 +108,7 @@
 
 | 필드 | 타입 | 설명 |
 |------|------|------|
-| playerId | int | 플레이어 ID |
+| playerId | string | 플레이어 ID |
 | heroineId | int | 대화할 히로인 ID |
 | text | string | 플레이어 메시지 |
 
@@ -150,7 +150,7 @@ data: [DONE]
 
 ```json
 {
-    "playerId": 10001,
+    "playerId": "10001",
     "heroineId": 1,
     "text": "안녕, 오늘 기분이 어때?"
 }
@@ -160,7 +160,7 @@ data: [DONE]
 
 | 필드 | 타입 | 설명 |
 |------|------|------|
-| playerId | int | 플레이어 ID |
+| playerId | string | 플레이어 ID |
 | heroineId | int | 대화할 히로인 ID |
 | text | string | 플레이어 메시지 |
 
@@ -226,7 +226,7 @@ data: [DONE]
 
 ```json
 {
-    "playerId": 10001,
+    "playerId": "10001",
     "text": "이 세계에 대해 알려줘"
 }
 ```
@@ -235,7 +235,7 @@ data: [DONE]
 
 | 필드 | 타입 | 설명 |
 |------|------|------|
-| playerId | int | 플레이어 ID |
+| playerId | string | 플레이어 ID |
 | text | string | 플레이어 메시지 |
 
 #### Response (SSE 스트리밍)
@@ -267,7 +267,7 @@ data: [DONE]
 
 ```json
 {
-    "playerId": 10001,
+    "playerId": "10001",
     "text": "이 세계에 대해 알려줘"
 }
 ```
@@ -276,7 +276,7 @@ data: [DONE]
 
 | 필드 | 타입 | 설명 |
 |------|------|------|
-| playerId | int | 플레이어 ID |
+| playerId | string | 플레이어 ID |
 | text | string | 플레이어 메시지 |
 
 #### Response
@@ -574,7 +574,7 @@ User가 길드에 있는 동안 NPC들이 자동으로 대화합니다.
 
 ```json
 {
-    "playerId": 10001
+    "playerId": "10001"
 }
 ```
 
@@ -582,7 +582,7 @@ User가 길드에 있는 동안 NPC들이 자동으로 대화합니다.
 
 | 필드 | 타입 | 설명 |
 |------|------|------|
-| playerId | int | 플레이어 ID |
+| playerId | string | 플레이어 ID |
 
 #### Response
 
@@ -612,7 +612,7 @@ User가 길드에 있는 동안 NPC들이 자동으로 대화합니다.
 
 ```json
 {
-    "playerId": 10001
+    "playerId": "10001"
 }
 ```
 
@@ -620,7 +620,7 @@ User가 길드에 있는 동안 NPC들이 자동으로 대화합니다.
 
 | 필드 | 타입 | 설명 |
 |------|------|------|
-| playerId | int | 플레이어 ID |
+| playerId | string | 플레이어 ID |
 
 #### Response
 
@@ -661,7 +661,7 @@ User가 길드에 있는 동안 NPC들이 자동으로 대화합니다.
 
 | 파라미터 | 타입 | 설명 |
 |----------|------|------|
-| player_id | int | 플레이어 ID |
+| player_id | string | 플레이어 ID |
 
 #### Response
 
@@ -838,7 +838,7 @@ NPC별 세션 정보를 조회합니다. (디버그용)
 
 | 파라미터 | 타입 | 설명 |
 |----------|------|------|
-| player_id | int | 플레이어 ID |
+| player_id | string | 플레이어 ID |
 | npc_id | int | NPC ID (0=대현자, 1=레티아, 2=루파메스, 3=로코) |
 
 #### Response (히로인 세션)
@@ -871,7 +871,7 @@ NPC별 세션 정보를 조회합니다. (디버그용)
 
 | 필드 | 타입 | 설명 |
 |------|------|------|
-| player_id | int | 플레이어 ID |
+| player_id | string | 플레이어 ID |
 | npc_id | int | NPC ID |
 | npc_type | string | NPC 타입 ("heroine") |
 | conversation_buffer | array | 최근 대화 기록 (최대 20개) |
@@ -916,7 +916,7 @@ NPC별 세션 정보를 조회합니다. (디버그용)
 
 | 필드 | 타입 | 설명 |
 |------|------|------|
-| player_id | int | 플레이어 ID |
+| player_id | string | 플레이어 ID |
 | npc_id | int | NPC ID (대현자는 0) |
 | npc_type | string | NPC 타입 ("sage") |
 | conversation_buffer | array | 최근 대화 기록 (최대 20개) |
@@ -941,7 +941,7 @@ NPC별 세션 정보를 조회합니다. (디버그용)
 
 | 파라미터 | 타입 | 설명 |
 |----------|------|------|
-| player_id | int | 플레이어 ID |
+| player_id | string | 플레이어 ID |
 
 #### Response (대화 진행 중)
 
