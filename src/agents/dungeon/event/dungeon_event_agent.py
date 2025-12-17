@@ -3,7 +3,7 @@ from enums.LLM import LLM
 from agents.dungeon.dungeon_state import DungeonEventParser
 import random
 
-llm = init_chat_model(model=LLM.GPT4_1_MINI, temperature=0.5)
+llm = init_chat_model(model=LLM.GROK_4_FAST_NON_REASONING, temperature=0.5)
 
 from prompts.promptmanager import PromptManager
 from prompts.prompt_type.dungeon.DungeonPromptType import DungeonPromptType
