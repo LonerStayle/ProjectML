@@ -295,12 +295,10 @@
     "text": "지도에 문 표시가 안 보여",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "이동 경로 추천 좀",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "이동 경로 추천 좀",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "열쇠방 먼저 갈까?",
     "label": "DUNGEON_NAVIGATOR"
@@ -329,12 +327,10 @@
     "text": "이 길로 가면 되돌아 못 해?",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "중간 세이브 지점 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "중간 세이브 지점 있어?",
+    "label": "None"
+  },
   {
     "text": "다음 방 몹 강해?",
     "label": "None"
@@ -651,12 +647,10 @@
     "text": "여기서 뭐가 튀어나와",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 약점도 알려주고 길도 찍어줘",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "보스 약점도 알려주고 길도 찍어줘",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "패턴 설명해주고 힐템 써도 돼?",
     "label": "None"
@@ -665,12 +659,10 @@
     "text": "퍼즐 순서 말해주고 함정도 체크해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 방 어디고 보상 조건도 알려줘",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "다음 방 어디고 보상 조건도 알려줘",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "불 켜고 인벤에 열쇠 있나 봐줘",
     "label": "None"
@@ -743,12 +735,10 @@
     "text": "독 해제템 필요해? 인벤에 있는지도",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 방 몹 세고 약점도 뭐야?",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "다음 방 몹 세고 약점도 뭐야?",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "불 꺼서 레이저 보이게 하고 길도 알려",
     "label": "DUNGEON_NAVIGATOR"
@@ -757,12 +747,10 @@
     "text": "타일 순서 알려주고 실패 원인도 말해",
     "label": "None"
   },
-  [
-    {
-      "text": "포탈 두 개 중 추천이랑 이유도 짧게",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "포탈 두 개 중 추천이랑 이유도 짧게",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "보스 소환몹 순서랑 원거리 유리한지",
     "label": "None"
@@ -784,11 +772,11 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄷㅈㅂ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD;;",
     "label": "None"
   },
   {
@@ -796,7 +784,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;///;;;..\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";;;///;;;..",
     "label": "None"
   },
   {
@@ -1039,42 +1027,34 @@
     "text": "다음 방 어디로 가",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "분기 길 뭐가 맞냐",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "분기 길 뭐가 맞냐",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "나 길 잃었는데 지도 좀",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "이 층 특징 뭐 있냐",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "이 층 특징 뭐 있냐",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "우회로 있냐, 막혔는데",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "되돌아가면 뭐 날아가?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "되돌아가면 뭐 날아가?",
+    "label": "None"
+  },
   {
     "text": "비밀길 어디 숨어있어",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "포탈 둘 중 뭐 타",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "포탈 둘 중 뭐 타",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "이 문 맞는 방향이냐",
     "label": "DUNGEON_NAVIGATOR"
@@ -1107,22 +1087,18 @@
     "text": "사다리 안 보이는데 어디냐",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "숨겨진 방 있으면 말해",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "숨겨진 방 있으면 말해",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "길 막힌 이유 뭐야",
     "label": "None"
   },
-  [
-    {
-      "text": "이 층에서 못 돌아가?",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "이 층에서 못 돌아가?",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "불 좀 켜, 너무 어둡다",
     "label": "None"
@@ -1163,12 +1139,10 @@
     "text": "자동줍기 켜져있냐 확인",
     "label": "None"
   },
-  [
-    {
-      "text": "지도 핀 찍어줘",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "지도 핀 찍어줘",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "부활템 남았는지 봐",
     "label": "None"
@@ -1185,12 +1159,10 @@
     "text": "장비 세팅 바꾸고 들어가자",
     "label": "None"
   },
-  [
-    {
-      "text": "필요한 아이템 뭐 챙겨야 돼",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "필요한 아이템 뭐 챙겨야 돼",
+    "label": "None"
+  },
   {
     "text": "은신 모드 켜줘",
     "label": "None"
@@ -1319,22 +1291,18 @@
     "text": "이 보스 얼굴 보기 싫다",
     "label": "None"
   },
-  [
-    {
-      "text": "나 지금 손 꼬였어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "나 지금 손 꼬였어",
+    "label": "None"
+  },
   {
     "text": "이거 깰 수 있긴 하냐",
     "label": "None"
   },
-  [
-    {
-      "text": "그만 떠들고 길 알려줘",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "그만 떠들고 길 알려줘",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "와 이 방 분위기 개무섭네",
     "label": "None"
@@ -1431,12 +1399,10 @@
     "text": "문 조건이랑 열쇠 써도 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 분기 뭐고 비밀길도",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "다음 분기 뭐고 비밀길도",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "스킬 왜 안 나가, 해결해줘",
     "label": "None"
@@ -1457,12 +1423,10 @@
     "text": "장비 내구도랑 회복템 체크",
     "label": "None"
   },
-  [
-    {
-      "text": "미니맵 표식 뜻이랑 방향",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "미니맵 표식 뜻이랑 방향",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "퍼즐 힌트 UI 어디고 답도",
     "label": "None"
@@ -1532,15 +1496,15 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㅂㅈㄷ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD123;;",
     "label": "None"
   },
   {
@@ -1579,12 +1543,10 @@
     "text": "이 문양 맞추는 기준 뭐야",
     "label": "None"
   },
-  [
-    {
-      "text": "여기서 오른쪽 가면 뭐 나와",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "여기서 오른쪽 가면 뭐 나와",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "포탈 타면 되돌아올 수 있냐",
     "label": "DUNGEON_NAVIGATOR"
@@ -1609,12 +1571,10 @@
     "text": "보스 약점 속성이랑 내 장비 맞춰줘",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 답이랑 다음 길까지 안내해",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "퍼즐 답이랑 다음 길까지 안내해",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "함정 위치 말하고 불도 켜줘",
     "label": "None"
@@ -1639,12 +1599,10 @@
     "text": "장치 안 켜지는데 조건이랑 순서",
     "label": "None"
   },
-  [
-    {
-      "text": "분기 길 뭐 타고 우회로도 봐",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "분기 길 뭐 타고 우회로도 봐",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "레이저 피하는 법이랑 버튼 위치",
     "label": "None"
@@ -1777,12 +1735,10 @@
     "text": "그로기 때 뭐부터 때려야 돼",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 풀 때 힌트 또 안 뜨냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "퍼즐 풀 때 힌트 또 안 뜨냐",
+    "label": "None"
+  },
   {
     "text": "이 레버 다시 당기면 리셋됨?",
     "label": "None"
@@ -2131,12 +2087,10 @@
     "text": "보스방까지 얼마나 남았어요?",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "분기에서 안전한 루트요?",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "분기에서 안전한 루트요?",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "열쇠 방이 어디쯤이에요?",
     "label": "DUNGEON_NAVIGATOR"
@@ -2546,15 +2500,15 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㅂㅈㄷ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd123;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd123;;;",
     "label": "None"
   },
   {
@@ -2617,12 +2571,10 @@
     "text": "레버 조건 확인하고 문도 열어줘요.",
     "label": "None"
   },
-  [
-    {
-      "text": "토치 몇 개 켜고 어디로 가요?",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "토치 몇 개 켜고 어디로 가요?",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "퍼즐 힌트랑 실패 원인요.",
     "label": "None"
@@ -2999,12 +2951,10 @@
     "text": "분기점에서 어디 선택해?",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "지름길 있으면 안내해",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "지름길 있으면 안내해",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "층 구조 특징 간단히 말해",
     "label": "DUNGEON_NAVIGATOR"
@@ -3037,22 +2987,18 @@
     "text": "다음 방 몹 타입 뭐야",
     "label": "None"
   },
-  [
-    {
-      "text": "여기서 체크포인트 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기서 체크포인트 있어?",
+    "label": "None"
+  },
   {
     "text": "지도 켜면 어디로 향해?",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "연결된 통로 몇 개야",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "연결된 통로 몇 개야",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "층 이동 포탈 위치 알려",
     "label": "DUNGEON_NAVIGATOR"
@@ -3069,12 +3015,10 @@
     "text": "보물상자 쪽으로 가도 돼?",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "함정 없는 안전루트 안내",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "함정 없는 안전루트 안내",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "불 좀 켜줘",
     "label": "None"
@@ -3163,12 +3107,10 @@
     "text": "이 던전 보상 뭐 줘?",
     "label": "None"
   },
-  [
-    {
-      "text": "UI에 빨간표시 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "UI에 빨간표시 뭐야",
+    "label": "None"
+  },
   {
     "text": "왜 상호작용이 안 돼?",
     "label": "None"
@@ -3385,12 +3327,10 @@
     "text": "바닥 문양 순서랑 시간제한 팁도 줘",
     "label": "None"
   },
-  [
-    {
-      "text": "포탈 위치랑 다음 층 특징도 말해",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "포탈 위치랑 다음 층 특징도 말해",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "무기 속성 바꾸고 상태이상도 확인",
     "label": "None"
@@ -3504,11 +3444,11 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅂㅈㄷㄱ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㅂㅈㄷㄱ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD123;;;",
     "label": "None"
   },
   {
@@ -3520,7 +3460,7 @@
     "label": "None"
   },
   {
-    "text": "zxcnm,./;';[]",
+    "text": "zxcnm,./;';]",
     "label": "None"
   },
   {
@@ -3791,12 +3731,10 @@
     "text": "되돌아가면 리셋 돼?",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "비밀길 있나 체크해줘",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "비밀길 있나 체크해줘",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "보스방까지 얼마나 남음",
     "label": "DUNGEON_NAVIGATOR"
@@ -3809,12 +3747,10 @@
     "text": "지름길 어디 숨었어",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "길 안내랑 함정도 같이",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "길 안내랑 함정도 같이",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "다음방 알려주고 보스도 대비",
     "label": "DUNGEON_NAVIGATOR"
@@ -3875,12 +3811,10 @@
     "text": "저기 문 열 열쇠 어디서?",
     "label": "None"
   },
-  [
-    {
-      "text": "길 알려주고 장치도 챙겨",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "길 알려주고 장치도 챙겨",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "되돌아가도 보상 안 사라져?",
     "label": "None"
@@ -4061,22 +3995,18 @@
     "text": "자동저장 돼? 지금 불안",
     "label": "None"
   },
-  [
-    {
-      "text": "이 던전 제한시간 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 던전 제한시간 있어?",
+    "label": "None"
+  },
   {
     "text": "보스 잡으면 바로 나가져?",
     "label": "None"
   },
-  [
-    {
-      "text": "매칭은 여기서 돼?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "매칭은 여기서 돼?",
+    "label": "None"
+  },
   {
     "text": "재도전 버튼 어디있냐",
     "label": "None"
@@ -4210,15 +4140,15 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdfqwezx;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdfqwezx;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁㄴㅇㄹ;;ㅂㅈㄷㄱ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁㄴㅇㄹ;;ㅂㅈㄷㄱ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizxvvv\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizxvvv",
     "label": "None"
   },
   {
@@ -4238,7 +4168,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdjkl;;qpoi\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdjkl;;qpoi",
     "label": "None"
   },
   {
@@ -4246,7 +4176,7 @@
     "label": "None"
   },
   {
-    "text": "plm,./;;[]{}",
+    "text": "plm,./;;]{}",
     "label": "None"
   },
   {
@@ -4277,12 +4207,10 @@
     "text": "조작키랑 UI 위치 같이 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "보상 뭐고 다음방 어디야",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "보상 뭐고 다음방 어디야",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "함정 피하고 지름길도 찾아",
     "label": "DUNGEON_NAVIGATOR"
@@ -4483,12 +4411,10 @@
     "text": "나 뇌정지 왔으니 안내해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "저 보스 약점 뭐야?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "저 보스 약점 뭐야?",
+    "label": "None"
+  },
   {
     "text": "패턴 시작 신호가 뭐지?",
     "label": "None"
@@ -4889,12 +4815,10 @@
     "text": "페이몬, 빨리 좀 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "와, 이 패턴 너무 길다",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "와, 이 패턴 너무 길다",
+    "label": "None"
+  },
   {
     "text": "잠깐만, 숨 돌릴 시간 좀",
     "label": "None"
@@ -4911,12 +4835,10 @@
     "text": "여기서 실수하면 바로 끝이야?",
     "label": "None"
   },
-  [
-    {
-      "text": "내가 길치라 설명 자세히",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "내가 길치라 설명 자세히",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "뭔가 수상한 소리 들리는데",
     "label": "None"
@@ -5033,22 +4955,18 @@
     "text": "타겟 고정 풀고 회피 키도",
     "label": "None"
   },
-  [
-    {
-      "text": "지금 안전해? 다음 층 특징도",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "지금 안전해? 다음 층 특징도",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "함정 피하는 법과 장치 위치",
     "label": "None"
   },
-  [
-    {
-      "text": "보스방까지 남은 방 수랑 기믹",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "보스방까지 남은 방 수랑 기믹",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "이 방 클리어 조건과 몹 우선",
     "label": "None"
@@ -5250,19 +5168,19 @@
     "label": "DUNGEON_NAVIGATOR"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄷㅈㅂ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd0987\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd0987",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;;;..,,;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";;;;;..,,;;",
     "label": "None"
   },
   {
@@ -5529,12 +5447,10 @@
     "text": "아까 방으로 되돌아갈 수 있어?",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "엘리베이터 어디서 타?",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "엘리베이터 어디서 타?",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "위층 입구가 안 보여",
     "label": "DUNGEON_NAVIGATOR"
@@ -5671,12 +5587,10 @@
     "text": "상태창에 이상한 아이콘 뭐야",
     "label": "None"
   },
-  [
-    {
-      "text": "키 설정 어디서 바꿔?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "키 설정 어디서 바꿔?",
+    "label": "None"
+  },
   {
     "text": "왜 공격이 안 나가냐",
     "label": "None"
@@ -5818,15 +5732,15 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;lkj;;;qwe\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;lkj;;;qwe",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅈㄷㄱㅌ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㅈㄷㄱㅌ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;;;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;;;;;",
     "label": "None"
   },
   {
@@ -5897,12 +5811,10 @@
     "text": "보상 조건이랑 제한시간 있는지 확인해",
     "label": "None"
   },
-  [
-    {
-      "text": "상호작용 키 뭐고 왜 안 되는지도 봐줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상호작용 키 뭐고 왜 안 되는지도 봐줘",
+    "label": "None"
+  },
   {
     "text": "분기길 추천하고 숨겨진 방도 찾아줘",
     "label": "DUNGEON_NAVIGATOR"
@@ -5943,12 +5855,10 @@
     "text": "이벤트 카운트 왜 안 오르고 해결은?",
     "label": "None"
   },
-  [
-    {
-      "text": "출구가 어딘지랑 이 길 맞는지 확인",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "출구가 어딘지랑 이 길 맞는지 확인",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "원소폭발 쿨 보고 지금 딜각도 봐줘",
     "label": "None"
@@ -5985,12 +5895,10 @@
     "text": "저 몹 감전 면역인지랑 어떤 원소가 좋아?",
     "label": "None"
   },
-  [
-    {
-      "text": "불 좀 켜고 숨은 장치 위치도 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "불 좀 켜고 숨은 장치 위치도 알려줘",
+    "label": "None"
+  },
   {
     "text": "바닥 문양 퍼즐이랑 함정까지 같이 설명",
     "label": "None"
@@ -6075,12 +5983,10 @@
     "text": "폭탄 장치 안전거리랑 던져도 되는지",
     "label": "None"
   },
-  [
-    {
-      "text": "상호작용이 안 떠 버그인지 조건인지 봐줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상호작용이 안 떠 버그인지 조건인지 봐줘",
+    "label": "None"
+  },
   {
     "text": "파티 규칙이랑 부활 제한 같이 설명해줘",
     "label": "None"
@@ -6145,12 +6051,10 @@
     "text": "이 방 퍼즐 리셋되면 순서 다시 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "내 위치랑 다음 층 위험요소 같이 말해줘",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "내 위치랑 다음 층 위험요소 같이 말해줘",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "카메라 감도 조절하고 자동조준도 꺼줘",
     "label": "None"
@@ -6459,12 +6363,10 @@
     "text": "이 길 돌아가면 시간 낭비야?",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "이 방 끝나면 바로 보스야?",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "이 방 끝나면 바로 보스야?",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "문 두 개 중에 안전한 쪽?",
     "label": "DUNGEON_NAVIGATOR"
@@ -6889,22 +6791,18 @@
     "text": "퍼즐 순서랑 실패 이유 같이 말해",
     "label": "None"
   },
-  [
-    {
-      "text": "힐템 써주고 인벤도 확인해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "힐템 써주고 인벤도 확인해줘",
+    "label": "None"
+  },
   {
     "text": "약점 뭐고 대응 준비물도 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "길 안내해주고 보상 조건도 봐줘",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "길 안내해주고 보상 조건도 봐줘",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "장비 추천하고 디버프도 체크해",
     "label": "None"
@@ -7206,19 +7104,19 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅈㄷㄹ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㅈㄷㄹ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD123",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;..;;..;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";;;..;;..;;;",
     "label": "None"
   },
   {
@@ -7242,11 +7140,11 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qazwsxedcrfvtg\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qazwsxedcrfvtg",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..,,;;:://\\\\\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "..,,;;:://\\\\",
     "label": "None"
   },
   {
@@ -7669,12 +7567,10 @@
     "text": "왜 이렇게 빡세게 나오냐",
     "label": "None"
   },
-  [
-    {
-      "text": "나 지금 손 꼬였어 잠깐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "나 지금 손 꼬였어 잠깐",
+    "label": "None"
+  },
   {
     "text": "방금 거 완전 억까 아니냐",
     "label": "None"
@@ -7683,12 +7579,10 @@
     "text": "또 함정이야? 지겹다 진짜",
     "label": "None"
   },
-  [
-    {
-      "text": "이거 쉬운 길 없나",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "이거 쉬운 길 없나",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "나 길치라 너만 믿는다",
     "label": "None"
@@ -7738,15 +7632,15 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁㄴㅇㄹㅂㅈㄷㅅ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁㄴㅇㄹㅂㅈㄷㅅ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd123;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd123;;;",
     "label": "None"
   },
   {
@@ -7769,12 +7663,10 @@
     "text": "패턴 알려줘, 그리고 회피 포인트",
     "label": "None"
   },
-  [
-    {
-      "text": "이 퍼즐 순서랑 실패 이유 같이",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 퍼즐 순서랑 실패 이유 같이",
+    "label": "None"
+  },
   {
     "text": "다음 방 어디고 함정도 있나",
     "label": "DUNGEON_NAVIGATOR"
@@ -7915,12 +7807,10 @@
     "text": "부활 횟수랑 체크포인트 위치",
     "label": "None"
   },
-  [
-    {
-      "text": "스킵 루트 있나, 위험도도",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "스킵 루트 있나, 위험도도",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "여기 내려가면 뭐 나와, 보스야?",
     "label": "DUNGEON_NAVIGATOR"
@@ -8125,12 +8015,10 @@
     "text": "보스 페이즈 전환 신호 뭐야",
     "label": "None"
   },
-  [
-    {
-      "text": "폭발 구슬 처리 순서 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "폭발 구슬 처리 순서 알려줘",
+    "label": "None"
+  },
   {
     "text": "독장판 지속시간 얼마나",
     "label": "None"
@@ -8227,12 +8115,10 @@
     "text": "거울 퍼즐 각도 좀",
     "label": "None"
   },
-  [
-    {
-      "text": "밟는 타일 순서 힌트 줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "밟는 타일 순서 힌트 줘",
+    "label": "None"
+  },
   {
     "text": "레이저 끊는 방법",
     "label": "None"
@@ -8257,12 +8143,10 @@
     "text": "회전 톱날 주기 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "감지 장판 피하는 루트",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "감지 장판 피하는 루트",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "이 기둥 다 켜야 열림?",
     "label": "None"
@@ -8319,12 +8203,10 @@
     "text": "이 층 특징 뭐 있음",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "다음 포탈 색깔 뭐 타",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "다음 포탈 색깔 뭐 타",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "왼쪽 문 열고 가도 됨?",
     "label": "DUNGEON_NAVIGATOR"
@@ -8649,12 +8531,10 @@
     "text": "또 장판이냐 짜증",
     "label": "None"
   },
-  [
-    {
-      "text": "지금 너무 빡센데",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지금 너무 빡센데",
+    "label": "None"
+  },
   {
     "text": "페이몬 빨리 말해",
     "label": "None"
@@ -8663,12 +8543,10 @@
     "text": "나 지금 멘붕",
     "label": "None"
   },
-  [
-    {
-      "text": "여기 뭐가 이렇게 많아",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기 뭐가 이렇게 많아",
+    "label": "None"
+  },
   {
     "text": "이거 설마 함정이지",
     "label": "None"
@@ -8681,22 +8559,18 @@
     "text": "시간 끌면 더 나오냐",
     "label": "None"
   },
-  [
-    {
-      "text": "나만 길 헤맨 거냐",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "나만 길 헤맨 거냐",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "이거 누가 설계했냐",
     "label": "None"
   },
-  [
-    {
-      "text": "보상 구리면 접는다",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보상 구리면 접는다",
+    "label": "None"
+  },
   {
     "text": "잠깐만 숨 좀 돌리자",
     "label": "None"
@@ -8765,22 +8639,18 @@
     "text": "손 미끄러졌다",
     "label": "None"
   },
-  [
-    {
-      "text": "이거 맞게 하고 있는 거냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이거 맞게 하고 있는 거냐",
+    "label": "None"
+  },
   {
     "text": "아무튼 살려봐",
     "label": "None"
   },
-  [
-    {
-      "text": "몬스터 약점도 알려주고 길도 찍어줘",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "몬스터 약점도 알려주고 길도 찍어줘",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "퍼즐 순서랑 실패 원인 같이 말해",
     "label": "None"
@@ -8898,19 +8768,19 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizxvc\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizxvc",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄷㅈ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;...;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";;;...;;;",
     "label": "None"
   },
   {
@@ -8957,12 +8827,10 @@
     "text": "함정 데미지 줄이고 회복도 바로",
     "label": "None"
   },
-  [
-    {
-      "text": "드랍 뭐 나오는지랑 상자 열 조건",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "드랍 뭐 나오는지랑 상자 열 조건",
+    "label": "None"
+  },
   {
     "text": "지금 근딜 위험한지랑 회피키 점검",
     "label": "None"
@@ -9007,12 +8875,10 @@
     "text": "튜토리얼 다시 보는 법이랑 조작키",
     "label": "None"
   },
-  [
-    {
-      "text": "분기 선택 전에 함정 여부 확인",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "분기 선택 전에 함정 여부 확인",
+    "label": "None"
+  },
   {
     "text": "딜 넣는 타이밍이랑 무적 시간",
     "label": "None"
@@ -9233,12 +9099,10 @@
     "text": "아래층 내려가는 계단 어디",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "분기에서 뭐 선택해야 좋아?",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "분기에서 뭐 선택해야 좋아?",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "비밀방 들어가는 길 있어?",
     "label": "DUNGEON_NAVIGATOR"
@@ -9331,12 +9195,10 @@
     "text": "자동줍기 켜져 있어? 확인",
     "label": "None"
   },
-  [
-    {
-      "text": "현재 디버프 뭐 걸렸는지 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "현재 디버프 뭐 걸렸는지 알려줘",
+    "label": "None"
+  },
   {
     "text": "부활템 남은 개수 체크해줘",
     "label": "None"
@@ -9349,12 +9211,10 @@
     "text": "파티 버프 지금 쓰는 게 맞아?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 문 조사 좀 해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 문 조사 좀 해줘",
+    "label": "None"
+  },
   {
     "text": "보물상자 표시 좀 해줘",
     "label": "None"
@@ -9507,22 +9367,20 @@
     "text": "이거 숨겨진 거 있는 느낌인데",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㄱ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd1290\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄷㅈㄱ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;;;;:::\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd1290",
+    "label": "None"
+  },
+  {
+    "text": ";;;;;;:::",
     "label": "None"
   },
   {
@@ -9534,7 +9392,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"zxcnm,./<<\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "zxcnm,./<<",
     "label": "None"
   },
   {
@@ -9709,12 +9567,10 @@
     "text": "버프 범위 표시랑 파티 버프 지금 쓰자",
     "label": "None"
   },
-  [
-    {
-      "text": "채팅 줄바꿈 키랑 맵 여는 설정 위치",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "채팅 줄바꿈 키랑 맵 여는 설정 위치",
+    "label": "None"
+  },
   {
     "text": "제한시간 몇 분이고 재도전 보상 줄어?",
     "label": "None"
@@ -9735,12 +9591,10 @@
     "text": "문 안 열려 뭐 놓쳤어? 스위치도 찾아",
     "label": "None"
   },
-  [
-    {
-      "text": "길이 반복되는데 출구 방향이랑 장치 위치",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "길이 반복되는데 출구 방향이랑 장치 위치",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "장비 바꾸고 상태이상 내성도 챙겨줘",
     "label": "None"
@@ -9813,12 +9667,10 @@
     "text": "보상 규칙 보고 지금 빠르게 밀자",
     "label": "None"
   },
-  [
-    {
-      "text": "지금 도망 가능해? 루트랑 포탈 안내",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "지금 도망 가능해? 루트랑 포탈 안내",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "아프다, 회복약 쓰고 장비도 바꿔줘",
     "label": "None"
@@ -9879,12 +9731,10 @@
     "text": "튜토 다시 보고 조작키도 정리해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "미니맵 표시가 안 떠, 설정이랑 길 안내",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "미니맵 표시가 안 떠, 설정이랑 길 안내",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "원소 바꾸고 스킬 쿨도 체크해줘",
     "label": "None"
@@ -9993,12 +9843,10 @@
     "text": "이거 사기야, 공략 핵심만 요약해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "급함, 다음방 입구랑 함정만 먼저",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "급함, 다음방 입구랑 함정만 먼저",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "지금 뭐부터 해야 돼? 퍼즐이랑 루트",
     "label": "None"
@@ -10291,12 +10139,10 @@
     "text": "색깔 구슬 순서가 뭐야",
     "label": "None"
   },
-  [
-    {
-      "text": "레이저 피하는 루트 알려줘",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "레이저 피하는 루트 알려줘",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "압력판 동시에 밟아야 함?",
     "label": "None"
@@ -10349,12 +10195,10 @@
     "text": "길 잃음, 다음방 어디임",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "왼쪽 오른쪽 분기 뭐가 맞음",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "왼쪽 오른쪽 분기 뭐가 맞음",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "지금 층 특징 뭐임?",
     "label": "DUNGEON_NAVIGATOR"
@@ -10403,12 +10247,10 @@
     "text": "맵 핀 좀 찍어줘",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 방 몹 강함? 준비할거",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 방 몹 강함? 준비할거",
+    "label": "None"
+  },
   {
     "text": "보급 상자 위치 어디임",
     "label": "None"
@@ -10705,12 +10547,10 @@
     "text": "지금 한숨만 나옴",
     "label": "None"
   },
-  [
-    {
-      "text": "다음은 제발 쉬운거",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음은 제발 쉬운거",
+    "label": "None"
+  },
   {
     "text": "갑자기 음악 왜 큼",
     "label": "None"
@@ -10771,12 +10611,10 @@
     "text": "보스 즉사기랑 대비템 뭐",
     "label": "None"
   },
-  [
-    {
-      "text": "분기 추천하고 보급 위치도",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "분기 추천하고 보급 위치도",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "장치 조건 설명하고 작동도",
     "label": "None"
@@ -10801,12 +10639,10 @@
     "text": "레버 순서랑 문 안열림 원인",
     "label": "None"
   },
-  [
-    {
-      "text": "상태이상 확인하고 해제해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상태이상 확인하고 해제해줘",
+    "label": "None"
+  },
   {
     "text": "카운터 타이밍이랑 회피 키",
     "label": "None"
@@ -10863,12 +10699,10 @@
     "text": "이벤트 타이머 조건이랑 멈추는법",
     "label": "None"
   },
-  [
-    {
-      "text": "맵 길 잃음, 현재 위치 찍어",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "맵 길 잃음, 현재 위치 찍어",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "장판 의미랑 안전지대 알려",
     "label": "None"
@@ -10898,15 +10732,15 @@
     "label": "DUNGEON_NAVIGATOR"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx@@##\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx@@##",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄷㅈ",
     "label": "None"
   },
   {
@@ -11193,12 +11027,10 @@
     "text": "아래로 내려가는 통로 어디",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "숨겨진 방 있으면 말해",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "숨겨진 방 있으면 말해",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "막다른길 같은데 맞아?",
     "label": "DUNGEON_NAVIGATOR"
@@ -11207,12 +11039,10 @@
     "text": "이쪽 가면 보스 직행이냐",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "체크포인트 어디 있음",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "체크포인트 어디 있음",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "지름길 있으면 알려줘",
     "label": "DUNGEON_NAVIGATOR"
@@ -11245,12 +11075,10 @@
     "text": "포탈 어디 숨겨놨냐",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "출구까지 얼마나 남음",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "출구까지 얼마나 남음",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "바람길 타면 어디로 감",
     "label": "DUNGEON_NAVIGATOR"
@@ -11563,12 +11391,10 @@
     "text": "야, 뒤에서 뭐 온다",
     "label": "None"
   },
-  [
-    {
-      "text": "그만 떠들고 안내나 해",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "그만 떠들고 안내나 해",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "이 방 공기부터 불길하다",
     "label": "None"
@@ -11590,7 +11416,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123!!\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD123!!",
     "label": "None"
   },
   {
@@ -11606,15 +11432,13 @@
     "label": "None"
   },
   {
-    "text": "zxcnm,./[]=-",
+    "text": "zxcnm,./]=-",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 약점이랑 패턴 둘 다 말해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 점이랑 패턴 둘 다 말해",
+    "label": "None"
+  },
   {
     "text": "퍼즐 순서 알려주고 함정도 체크해",
     "label": "None"
@@ -11915,12 +11739,10 @@
     "text": "장치 전기 흐르는 법이랑 버튼 순서",
     "label": "None"
   },
-  [
-    {
-      "text": "문 두 개 중 정답이랑 보스 직행 여부",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "문 두 개 중 정답이랑 보스 직행 여부",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "체력 낮다, 힐템 쓰고 안전지대도",
     "label": "None"
@@ -12157,12 +11979,10 @@
     "text": "계단 위로? 아래로?",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "우회로 있으면 알려줘",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "우회로 있으면 알려줘",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "여기서 체크포인트 어디야",
     "label": "DUNGEON_NAVIGATOR"
@@ -12271,12 +12091,10 @@
     "text": "버튼 눌러줘, 내가 못 찾겠음",
     "label": "None"
   },
-  [
-    {
-      "text": "맵 핀 찍어줘, 어디로 가?",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "맵 핀 찍어줘, 어디로 가?",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "이 장치 꺼줘, 함정 계속 터짐",
     "label": "None"
@@ -12381,12 +12199,10 @@
     "text": "야 이거 너무 빡세다",
     "label": "None"
   },
-  [
-    {
-      "text": "나 길 또 헤맸다 ㅋㅋ",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "나 길 또 헤맸다 ㅋㅋ",
+    "label": "None"
+  },
   {
     "text": "이거 설마 함정 무한이야?",
     "label": "None"
@@ -12407,12 +12223,10 @@
     "text": "빨리빨리 좀 도와줘",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 분위기 왜 이럼",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 분위기 왜 이럼",
+    "label": "None"
+  },
   {
     "text": "여기서 한 번 쉬면 안 돼?",
     "label": "None"
@@ -12446,15 +12260,15 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄴㅈㄷㄱ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄴㅈㄷㄱ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD;;;",
     "label": "None"
   },
   {
@@ -12481,12 +12295,10 @@
     "text": "이 퍼즐 순서랑 실패 원인 같이 말해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 방 어디로 가고 함정도 알려줘",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "다음 방 어디로 가고 함정도 알려줘",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "인벤 확인해주고 해제약 있으면 쓰자",
     "label": "None"
@@ -12527,12 +12339,10 @@
     "text": "스킬이 왜 안 써져, 쿨이랑 디버프 확인",
     "label": "None"
   },
-  [
-    {
-      "text": "이 층 특징 뭐야, 다음 방 힐포도 있어?",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "이 층 특징 뭐야, 다음 방 힐포도 있어?",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "퍼즐 리셋 가능해? 그리고 순서도 다시",
     "label": "None"
@@ -12653,12 +12463,10 @@
     "text": "문 잠겼는데 다른 길이랑 조건도 체크",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "힐 아끼는 게 맞나, 다음 방 힐포 있냐",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "힐 아끼는 게 맞나, 다음 방 힐포 있냐",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "스킬 쿨 확인해주고 딜 타이밍도 콜해줘",
     "label": "None"
@@ -13007,12 +12815,10 @@
     "text": "미니맵 안 떠, 출구 어딤",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "지름길 있으면 바로 말해",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "지름길 있으면 바로 말해",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "이 층 특징 뭐냐 함정 많아?",
     "label": "DUNGEON_NAVIGATOR"
@@ -13306,19 +13112,17 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄴㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄴㅂㅈㄷ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123!!\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD123!!",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;...;;;:::\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": ";;;...;;;:::",
+    "label": "None"
+  },
   {
     "text": "뷁궭뛟쀍",
     "label": "None"
@@ -13431,12 +13235,10 @@
     "text": "엘리베이터 위치랑 체크포인트",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "숨길 통로 있나, 샛길 보상도",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "숨길 통로 있나, 샛길 보상도",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "장치 반응 없는데 상호작용 키",
     "label": "None"
@@ -13457,12 +13259,10 @@
     "text": "룬석 어디 끼우고 몇 개 필요",
     "label": "None"
   },
-  [
-    {
-      "text": "폭탄통 어디 던지고 문 열리는지",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "폭탄통 어디 던지고 문 열리는지",
+    "label": "None"
+  },
   {
     "text": "보스 돌진 모션이랑 피하는 각",
     "label": "None"
@@ -13507,12 +13307,10 @@
     "text": "문 뒤에 뭐 있고 들어가도 됨?",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "지름길 있나, 보스방까지 거리",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "지름길 있나, 보스방까지 거리",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "상자 열쇠 있나, 숨은 스위치도",
     "label": "None"
@@ -13573,12 +13371,10 @@
     "text": "지금 뭐부터 잡고 패턴은 뭐 조심",
     "label": "None"
   },
-  [
-    {
-      "text": "분기 왼쪽이냐 오른쪽이냐, 이유도",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "분기 왼쪽이냐 오른쪽이냐, 이유도",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "기어 방향이랑 맞추는 순서 알려",
     "label": "None"
@@ -13603,12 +13399,10 @@
     "text": "맵 위층 계단 어디고 내려가면 뭐임",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "버그면 재도전 어디서, 리셋 조건도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "버그면 재도전 어디서, 리셋 조건도",
+    "label": "None"
+  },
   {
     "text": "장비 추천하고 약점 속성도 맞춰",
     "label": "None"
@@ -13649,12 +13443,10 @@
     "text": "숨통 좀 틔워, 안전한 자리 어딤",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "길 안내랑 함정 위치 동시에 찍어",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "길 안내랑 함정 위치 동시에 찍어",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "이 방 몹 속성 뭐고 약점은 뭔데",
     "label": "None"
@@ -13783,12 +13575,10 @@
     "text": "상자 먹고 나가도 되냐",
     "label": "None"
   },
-  [
-    {
-      "text": "지금 경로가 맞긴 한 거냐",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "지금 경로가 맞긴 한 거냐",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "보스 잡으면 바로 끝남?",
     "label": "None"
@@ -13797,12 +13587,10 @@
     "text": "이 층에서 회복 포인트 있어?",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "왜 스킬이 봉인됐어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "왜 스킬이 봉인됐어",
+    "label": "None"
+  },
   {
     "text": "버프가 안 먹히는 이유",
     "label": "None"
@@ -14055,12 +13843,10 @@
     "text": "내가 길 잃었나? 돌아가야 돼?",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "다음 층 가는 포탈 어디있어",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "다음 층 가는 포탈 어디있어",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "맵에 표시 좀 해줘, 답답",
     "label": "DUNGEON_NAVIGATOR"
@@ -14113,12 +13899,10 @@
     "text": "중간 체크포인트 어디였지",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "여기서 다음 방까지 얼마나 남음",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "여기서 다음 방까지 얼마나 남음",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "불 좀 켜, 시야 개구려",
     "label": "None"
@@ -14332,15 +14116,15 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;qwepoizx\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;;qwepoizx",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄴㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄴㅂㅈㄷ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;;;lkj;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";;;;;lkj;;;",
     "label": "None"
   },
   {
@@ -14655,12 +14439,10 @@
     "text": "보스 약점 맞춰서 장비도 바꾸자",
     "label": "None"
   },
-  [
-    {
-      "text": "패턴 요약해주고 회피 타이밍도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "패턴 요약해주고 회피 타이밍도",
+    "label": "None"
+  },
   {
     "text": "포탈 어디고 보스방 맞는지 확인",
     "label": "DUNGEON_NAVIGATOR"
@@ -14921,12 +14703,10 @@
     "text": "길 안내 말고 지름길 좀",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "출구가 위냐 아래냐, 헷갈려",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "출구가 위냐 아래냐, 헷갈려",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "상호작용 오브젝트가 뭐였더라",
     "label": "None"
@@ -15639,12 +15419,10 @@
     "text": "약점 알려주고 불도 켜봐",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 순서 말해, 함정도 꺼",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "퍼즐 순서 말해, 함정도 꺼",
+    "label": "None"
+  },
   {
     "text": "다음 방 어디야, 미니맵도 봐",
     "label": "DUNGEON_NAVIGATOR"
@@ -15738,11 +15516,11 @@
     "label": "DUNGEON_NAVIGATOR"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;lkj;;;qwe\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;;lkj;;;qwe",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂㅅ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄷㅈㅂㅅ",
     "label": "None"
   },
   {
@@ -15750,7 +15528,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;;;:::::;;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";;;;;:::::;;;;",
     "label": "None"
   },
   {
@@ -15770,7 +15548,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..,,;;//\\\\--==\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "..,,;;//\\\\--==",
     "label": "None"
   },
   {
@@ -16242,15 +16020,15 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;;",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㅂㅈㄷ",
     "label": "None"
   },
   {
@@ -16365,12 +16143,10 @@
     "text": "보스 힐 끊는 법, 우선순위도",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 클리어 조건, 다음 길도 알려",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "이 방 클리어 조건, 다음 길도 알려",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "비밀통로 있나 스캔하고 상자길도",
     "label": "DUNGEON_NAVIGATOR"
@@ -16391,12 +16167,10 @@
     "text": "부활 제한 있나, 부활템 몇 개 남음",
     "label": "None"
   },
-  [
-    {
-      "text": "UI 경고 뜻이랑 디버프 아이콘 설명",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "UI 경고 뜻이랑 디버프 아이콘 설명",
+    "label": "None"
+  },
   {
     "text": "보스방 맞는지, 준비물도 체크해",
     "label": "None"
@@ -16449,12 +16223,10 @@
     "text": "딜 안 박힘, 내성 확인하고 속성 추천",
     "label": "None"
   },
-  [
-    {
-      "text": "룬 석판 뭐부터, 그리고 숨은 스위치",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "룬 석판 뭐부터, 그리고 숨은 스위치",
+    "label": "None"
+  },
   {
     "text": "보스 돌진 멈추는 타이밍, 카운터도",
     "label": "None"
@@ -16475,12 +16247,10 @@
     "text": "이상한 소리 원인, 함정 여부 체크",
     "label": "None"
   },
-  [
-    {
-      "text": "엘리베이터 위치랑 체크포인트 확인",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "엘리베이터 위치랑 체크포인트 확인",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "바람장치 방향 맞춰주고 문양도 봐",
     "label": "None"
@@ -16509,12 +16279,10 @@
     "text": "불 꺼도 되나, 시야 확보 방법도",
     "label": "None"
   },
-  [
-    {
-      "text": "포션 낭비인지, 다음 페이즈도 예측",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "포션 낭비인지, 다음 페이즈도 예측",
+    "label": "None"
+  },
   {
     "text": "함정 감지하고 안전 루트로 안내해",
     "label": "DUNGEON_NAVIGATOR"
@@ -16616,19 +16384,17 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..,,;;:://\\\\\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "..,,;;:://\\\\",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅈㄷㅁㄴㅇㅂㅅㅁ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅈㄷㅁㄴㅇㅂㅅㅁ",
     "label": "None"
   },
-  [
-    {
-      "text": "페이몬 저 보스 약점 뭐임?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "페이몬 저 보스 약점 뭐임?",
+    "label": "None"
+  },
   {
     "text": "저 몹 패턴 뭐 조심해야됨",
     "label": "None"
@@ -16969,18 +16735,16 @@
     "text": "여기서 잠깐 쉬면 안됨?",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄴㅂㅈ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄴㅂㅈ",
+    "label": "None"
+  },
+  {
+    "text": "asdasdASD;;;",
     "label": "None"
   },
   {
@@ -17111,12 +16875,10 @@
     "text": "장치 전원 넣고 문도 열어줘",
     "label": "None"
   },
-  [
-    {
-      "text": "층 몇층인지랑 포탈 위치도",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "층 몇층인지랑 포탈 위치도",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "상자 잠금 풀고 보상도 알려줘",
     "label": "None"
@@ -17349,12 +17111,10 @@
     "text": "대쉬 안나가는데 상태이상 걸림?",
     "label": "None"
   },
-  [
-    {
-      "text": "페이몬 나 또 헤맸다 길좀 찍어",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "페이몬 나 또 헤맸다 길좀 찍어",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "이 방 너무 어두워 불켜고 함정도",
     "label": "None"
@@ -17568,11 +17328,11 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..,,;;//\\\\||\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "..,,;;//\\\\||\"",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"QWErty123!@#\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "QWErty123!@#\"",
     "label": "None"
   },
   {
@@ -17919,12 +17679,10 @@
     "text": "왼쪽길 맞아 오른쪽맞아",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "길 잃었는데 지도 찍어줘",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "길 잃었는데 지도 찍어줘",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "여기 위층 가는 계단 어딨냐",
     "label": "DUNGEON_NAVIGATOR"
@@ -17977,12 +17735,10 @@
     "text": "중간보스 방을 건너뛰어도됨?",
     "label": "None"
   },
-  [
-    {
-      "text": "지금 몇층인지 알려줘",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "지금 몇층인지 알려줘",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "세이브 포인트 어디있어",
     "label": "DUNGEON_NAVIGATOR"
@@ -18352,15 +18108,15 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅂㅈㄷㄱ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㅂㅈㄷㄱ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd123123\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd123123",
     "label": "None"
   },
   {
@@ -18575,12 +18331,10 @@
     "text": "미니맵 표시 왜안떠 옵션 어디있어",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "이 방 끝임? 다음길이랑 체크포인트도",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "이 방 끝임? 다음길이랑 체크포인트도",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "보스 힐 끊어야됨? 그리고 실드물약",
     "label": "None"
@@ -18837,12 +18591,10 @@
     "text": "함정 발동 조건 뭐냐, 페이몬",
     "label": "None"
   },
-  [
-    {
-      "text": "이 통로 어디로 가는 길이냐",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "이 통로 어디로 가는 길이냐",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "다음 방 입구가 안 보여, 어딨냐",
     "label": "DUNGEON_NAVIGATOR"
@@ -18871,12 +18623,10 @@
     "text": "숨은 통로 같은 거 있냐 여기",
     "label": "DUNGEON_NAVIGATOR"
   },
-  [
-    {
-      "text": "이 갈림길, 보상 더 좋은 쪽 어디",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "이 갈림길, 보상 더 좋은 쪽 어디",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "왜 자꾸 같은 방으로 돌아오냐",
     "label": "DUNGEON_NAVIGATOR"
@@ -19069,12 +18819,10 @@
     "text": "왜 문이 안 열려, 버그냐",
     "label": "None"
   },
-  [
-    {
-      "text": "이벤트 진행도가 어디 떠?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이벤트 진행도가 어디 떠?",
+    "label": "None"
+  },
   {
     "text": "아 씨, 또 맞았네",
     "label": "None"
@@ -19155,18 +18903,16 @@
     "text": "페이몬 너 믿는다, 이번만",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;qweq\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;;qweq",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄷㅈㅂ",
+    "label": "None"
+  },
+  {
+    "text": "qwepoizx;;;",
     "label": "None"
   },
   {
@@ -19174,7 +18920,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";lkj;;;..,,\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";lkj;;;..,,",
     "label": "None"
   },
   {
@@ -19507,12 +19253,10 @@
     "text": "퍼즐 순서 틀렸나, 리셋 방법 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 클리어하면 바로 보스냐, 대비",
-      "label": "DUNGEON_NAVIGATOR"
-    }
-  ],
+  {
+    "text": "이 방 클리어하면 바로 보스냐, 대비",
+    "label": "DUNGEON_NAVIGATOR"
+  },
   {
     "text": "다음 구역 속성 바뀌면 무기 바꿔라",
     "label": "None"
@@ -19690,7 +19434,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"poiuytrewq\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "poiuytrewq",
     "label": "None"
   },
   {
@@ -19698,7 +19442,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..;;--==++\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "..;;--==++",
     "label": "None"
   },
   {
@@ -19789,12 +19533,10 @@
     "text": "보스 분노 게이지 있냐, 어디서 봄",
     "label": "None"
   },
-  [
-    {
-      "text": "상자 열면 몹 나오냐, 함정이냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상자 열면 몹 나오냐, 함정이냐",
+    "label": "None"
+  },
   {
     "text": "기둥 불 다 켰는데 왜 안 됨, 추가 조건?",
     "label": "None"

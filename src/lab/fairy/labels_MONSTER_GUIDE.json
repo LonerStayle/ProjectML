@@ -7,12 +7,10 @@
     "text": "패턴 언제부터 변해?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이 몹 실드 깨는 법 알려줘",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 몹 실드 깨는 법 알려줘",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "보스 광역 피하는 타이밍 좀",
     "label": "MONSTER_GUIDE"
@@ -29,12 +27,10 @@
     "text": "분신 나올 때 뭐부터 잡아?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 2페 진입 조건 뭐임",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 2페 진입 조건 뭐임",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "저 몹 속성 뭐야?",
     "label": "MONSTER_GUIDE"
@@ -83,12 +79,10 @@
     "text": "스턴 면역 타이밍 알려줘",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이 패턴 실패하면 즉사야?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 패턴 실패하면 즉사야?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "보스 소환몹 처리 순서?",
     "label": "MONSTER_GUIDE"
@@ -101,18 +95,14 @@
     "text": "저거 반사 데미지 있어?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "공략용 준비물 뭐 챙겨?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "보스 분노 상태 기준 뭐야",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "공략용 준비물 뭐 챙겨?",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "보스 분노 상태 기준 뭐야",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "빙결 걸리면 풀 방법 있어?",
     "label": "None"
@@ -133,12 +123,10 @@
     "text": "이 레버 순서 뭐야?",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 힌트 좀 줘봐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "퍼즐 힌트 좀 줘봐",
+    "label": "None"
+  },
   {
     "text": "장치가 안 켜지는데 왜지",
     "label": "None"
@@ -283,12 +271,10 @@
     "text": "계단 아래로 내려가면 뭐 나와",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 클리어 조건이 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 클리어 조건이 뭐야",
+    "label": "None"
+  },
   {
     "text": "다음 구역 특징 좀 알려줘",
     "label": "None"
@@ -305,12 +291,10 @@
     "text": "지도에 문 표시가 안 보여",
     "label": "None"
   },
-  [
-    {
-      "text": "이동 경로 추천 좀",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이동 경로 추천 좀",
+    "label": "None"
+  },
   {
     "text": "열쇠방 먼저 갈까?",
     "label": "None"
@@ -343,34 +327,26 @@
     "text": "중간 세이브 지점 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 방 몹 강해?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 방 몹 강해?",
+    "label": "None"
+  },
   {
     "text": "우회로 있나 확인해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "지름길 여는 레버 어디",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "현재 위치 핑 찍어줘",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "문이 세 개인데 추천은?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지름길 여는 레버 어디",
+    "label": "None"
+  },
+  {
+    "text": "현재 위치 핑 찍어줘",
+    "label": "None"
+  },
+  {
+    "text": "문이 세 개인데 추천은?",
+    "label": "None"
+  },
   {
     "text": "불 좀 켜줘",
     "label": "None"
@@ -383,12 +359,10 @@
     "text": "힐 아이템 지금 써도 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "버프 음식 뭐 먹을까",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "버프 음식 뭐 먹을까",
+    "label": "None"
+  },
   {
     "text": "내 인벤에 열쇠 있나 봐줘",
     "label": "None"
@@ -429,12 +403,10 @@
     "text": "스태미나 회복템 써줘",
     "label": "None"
   },
-  [
-    {
-      "text": "필드에 함정 표시 좀 해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "필드에 함정 표시 좀 해줘",
+    "label": "None"
+  },
   {
     "text": "내 HP 몇 퍼 남음?",
     "label": "None"
@@ -459,12 +431,10 @@
     "text": "자동줍기 켜졌는지 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "내 쿨타임 긴 스킬 뭐였지",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "내 쿨타임 긴 스킬 뭐였지",
+    "label": "None"
+  },
   {
     "text": "파티 버프 지금 쓰자",
     "label": "None"
@@ -509,12 +479,10 @@
     "text": "이 방 보상 조건 따로 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "죽으면 페널티 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "죽으면 페널티 있어?",
+    "label": "None"
+  },
   {
     "text": "튜토리얼 다시 볼 수 있어?",
     "label": "None"
@@ -591,18 +559,14 @@
     "text": "페이몬 빨리 말해봐",
     "label": "None"
   },
-  [
-    {
-      "text": "나 지금 멘붕이야",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "여기 분위기 쎄한데",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "나 지금 멘붕이야",
+    "label": "None"
+  },
+  {
+    "text": "여기 분위기 쎄한데",
+    "label": "None"
+  },
   {
     "text": "또 길 잃겠네 나",
     "label": "None"
@@ -615,12 +579,10 @@
     "text": "이거 설마 낚시지?",
     "label": "None"
   },
-  [
-    {
-      "text": "나 왜 자꾸 미끄러져",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "나 왜 자꾸 미끄러져",
+    "label": "None"
+  },
   {
     "text": "지금 타이밍 맞지?",
     "label": "None"
@@ -637,12 +599,10 @@
     "text": "이거 깨면 뭐 주냐",
     "label": "None"
   },
-  [
-    {
-      "text": "그만 튀어나와라 좀",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "그만 튀어나와라 좀",
+    "label": "None"
+  },
   {
     "text": "나한테만 때리냐?",
     "label": "None"
@@ -671,12 +631,10 @@
     "text": "하나만 더 남았지?",
     "label": "None"
   },
-  [
-    {
-      "text": "나 지금 손 꼬인다",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "나 지금 손 꼬인다",
+    "label": "None"
+  },
   {
     "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"이거 맞아? 확신해?\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
     "label": "None"
@@ -705,12 +663,10 @@
     "text": "불 켜고 인벤에 열쇠 있나 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 2페 대비템이랑 회피팁 줘",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 2페 대비템이랑 회피팁 줘",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "문 안 열리는데 조건이랑 위치 알려줘",
     "label": "None"
@@ -755,12 +711,10 @@
     "text": "스킬 왜 불가야, 쿨도 같이 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "지름길 레버 위치랑 되돌아 가능 여부",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지름길 레버 위치랑 되돌아 가능 여부",
+    "label": "None"
+  },
   {
     "text": "퍼즐 리셋 가능해? 그리고 시간 제한도",
     "label": "None"
@@ -793,12 +747,10 @@
     "text": "포탈 두 개 중 추천이랑 이유도 짧게",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 소환몹 순서랑 원거리 유리한지",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 소환몹 순서랑 원거리 유리한지",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "스태미나템 써주고 내구도도 확인해줘",
     "label": "None"
@@ -811,24 +763,18 @@
     "text": "출구 어디고 숨은 통로도 있나 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;lkj;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;lkj;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "뷁궭ퟍ궭",
     "label": "None"
@@ -837,18 +783,14 @@
     "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;///;;;..\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
     "label": "None"
   },
-  [
-    {
-      "text": "rtyuiozxcmv",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "ㅋㅌㅊㅍㅈㄱ",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "rtyuiozxcmv",
+    "label": "None"
+  },
+  {
+    "text": "ㅋㅌㅊㅍㅈㄱ",
+    "label": "None"
+  },
   {
     "text": "보스 분노 기준이랑 즉사 패턴도 알려",
     "label": "MONSTER_GUIDE"
@@ -877,12 +819,10 @@
     "text": "함정 표시해주고 불도 켜줘",
     "label": "None"
   },
-  [
-    {
-      "text": "이벤트 조건 맞췄는지랑 남은 거 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이벤트 조건 맞췄는지랑 남은 거 알려줘",
+    "label": "None"
+  },
   {
     "text": "분기점 선택 추천하고 되돌아 가능해?",
     "label": "None"
@@ -891,12 +831,10 @@
     "text": "보스 회복 끊는 법이랑 실드 타이밍도",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "상자 잠금 조건이랑 드랍 옵션도 알려",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상자 잠금 조건이랑 드랍 옵션도 알려",
+    "label": "None"
+  },
   {
     "text": "대시 키 알려주고 회피 타이밍도 같이",
     "label": "None"
@@ -929,32 +867,26 @@
     "text": "패턴 뭐야, 피할 타이밍 알려줘",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이 몹 실드 어떻게 깨냐",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 몹 실드 어떻게 깨냐",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "보스 2페 언제 넘어가냐",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "광역기 전조 뭐로 봐?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "광역기 전조 뭐로 봐?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "저 몬스터 상태이상 먹혀?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이 보스 원킬기 조건 뭐임",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 보스 원킬기 조건 뭐임",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "딜타임 언제 열리냐",
     "label": "None"
@@ -967,12 +899,10 @@
     "text": "이거 무슨 속성 들고 와야 돼",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 분신 진짜 구분법 있어?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 분신 진짜 구분법 있어?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "구슬 소환하면 뭐부터 깨?",
     "label": "None"
@@ -1009,12 +939,10 @@
     "text": "지금 뭐 준비하고 들어가냐",
     "label": "None"
   },
-  [
-    {
-      "text": "이 퍼즐 순서 뭐냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 퍼즐 순서 뭐냐",
+    "label": "None"
+  },
   {
     "text": "장치 스위치 왜 안 켜져",
     "label": "None"
@@ -1043,12 +971,10 @@
     "text": "불꽃 횃불 몇 개 켜야 돼",
     "label": "None"
   },
-  [
-    {
-      "text": "시간제한 이벤트 어케 해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "시간제한 이벤트 어케 해",
+    "label": "None"
+  },
   {
     "text": "이거 숨은 버튼 어디있냐",
     "label": "None"
@@ -1069,24 +995,18 @@
     "text": "이 방 독가스 끄는 법",
     "label": "None"
   },
-  [
-    {
-      "text": "함정판 밟으면 바로 죽냐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "문 잠겼는데 조건 뭐임",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이 기둥 깨는 순서 있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "함정판 밟으면 바로 죽냐",
+    "label": "None"
+  },
+  {
+    "text": "문 잠겼는데 조건 뭐임",
+    "label": "None"
+  },
+  {
+    "text": "이 기둥 깨는 순서 있냐",
+    "label": "None"
+  },
   {
     "text": "퍼즐 리셋 됐는데 왜냐",
     "label": "None"
@@ -1111,12 +1031,10 @@
     "text": "나 길 잃었는데 지도 좀",
     "label": "None"
   },
-  [
-    {
-      "text": "이 층 특징 뭐 있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 층 특징 뭐 있냐",
+    "label": "None"
+  },
   {
     "text": "우회로 있냐, 막혔는데",
     "label": "None"
@@ -1133,22 +1051,18 @@
     "text": "포탈 둘 중 뭐 타",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"이 문 맞는 방향이냐\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"이 문 맞는 방향이냐\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "계단 위로야 아래야",
     "label": "None"
   },
-  [
-    {
-      "text": "체크포인트 어디 있음",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "체크포인트 어디 있음",
+    "label": "None"
+  },
   {
     "text": "보스방까지 얼마나 남음",
     "label": "None"
@@ -1213,12 +1127,10 @@
     "text": "방어구 내구도 좀 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"원소 조합 바꿔줘\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"원소 조합 바꿔줘\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "자동줍기 켜져있냐 확인",
     "label": "None"
@@ -1243,12 +1155,10 @@
     "text": "장비 세팅 바꾸고 들어가자",
     "label": "None"
   },
-  [
-    {
-      "text": "필요한 아이템 뭐 챙겨야 돼",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "필요한 아이템 뭐 챙겨야 돼",
+    "label": "None"
+  },
   {
     "text": "은신 모드 켜줘",
     "label": "None"
@@ -1277,12 +1187,10 @@
     "text": "점프 두 번 되는 규칙 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "보상 상자 조건 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보상 상자 조건 뭐야",
+    "label": "None"
+  },
   {
     "text": "UI에 빨간 표식 뭐냐",
     "label": "None"
@@ -1383,12 +1291,10 @@
     "text": "나 지금 손 꼬였어",
     "label": "None"
   },
-  [
-    {
-      "text": "이거 깰 수 있긴 하냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이거 깰 수 있긴 하냐",
+    "label": "None"
+  },
   {
     "text": "그만 떠들고 길 알려줘",
     "label": "None"
@@ -1401,12 +1307,10 @@
     "text": "내가 뭘 잘못했냐 지금",
     "label": "None"
   },
-  [
-    {
-      "text": "아니 왜 나만 찍어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "아니 왜 나만 찍어",
+    "label": "None"
+  },
   {
     "text": "다음에 이런 던전 오지 말자",
     "label": "None"
@@ -1423,12 +1327,10 @@
     "text": "지금 내 선택 맞는 거지?",
     "label": "None"
   },
-  [
-    {
-      "text": "나 지금 너무 급하다",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "나 지금 너무 급하다",
+    "label": "None"
+  },
   {
     "text": "보스랑 퍼즐 같이 오네 어휴",
     "label": "None"
@@ -1465,12 +1367,10 @@
     "text": "조작키 알려주고 감도도 조절",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 딜타임이랑 안전지대",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 딜타임이랑 안전지대",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "준비물 뭐고 장비도 추천해",
     "label": "MONSTER_GUIDE"
@@ -1495,12 +1395,10 @@
     "text": "문 조건이랑 열쇠 써도 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 분기 뭐고 비밀길도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 분기 뭐고 비밀길도",
+    "label": "None"
+  },
   {
     "text": "스킬 왜 안 나가, 해결해줘",
     "label": "None"
@@ -1525,32 +1423,26 @@
     "text": "미니맵 표식 뜻이랑 방향",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 힌트 UI 어디고 답도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "퍼즐 힌트 UI 어디고 답도",
+    "label": "None"
+  },
   {
     "text": "보스 원킬기 조건이랑 대응",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "분신 구분하고 쫄 처리도",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "분신 구분하고 쫄 처리도",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "레이저 타이밍이랑 스위치",
     "label": "None"
   },
-  [
-    {
-      "text": "포탈 뭐 타고 다음층 특징",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "포탈 뭐 타고 다음층 특징",
+    "label": "None"
+  },
   {
     "text": "은신 켜고 함정도 피해줘",
     "label": "None"
@@ -1571,12 +1463,10 @@
     "text": "독가스 끄고 불도 켜",
     "label": "None"
   },
-  [
-    {
-      "text": "광역기 전조랑 회피키 같이",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "광역기 전조랑 회피키 같이",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "보상 상자 조건이랑 위치",
     "label": "None"
@@ -1601,46 +1491,34 @@
     "text": "장치 전기 넣는 법이랑 순서",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "ㅋㅌㅊㅍㅁㄴㅇ",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "ㅋㅌㅊㅍㅁㄴㅇ",
+    "label": "None"
+  },
   {
     "text": "뷁궭뫍쀍",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;;;/////\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "zxcnm,./;;poi",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;;;/////\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "zxcnm,./;;poi",
+    "label": "None"
+  },
   {
     "text": "보스 시작 전에 버프 뭐 챙겨",
     "label": "MONSTER_GUIDE"
@@ -1685,12 +1563,10 @@
     "text": "야 빨리, 보스 패턴 시작함",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 약점 속성이랑 내 장비 맞춰줘",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 약점 속성이랑 내 장비 맞춰줘",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "퍼즐 답이랑 다음 길까지 안내해",
     "label": "None"
@@ -1723,12 +1599,10 @@
     "text": "분기 길 뭐 타고 우회로도 봐",
     "label": "None"
   },
-  [
-    {
-      "text": "레이저 피하는 법이랑 버튼 위치",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "레이저 피하는 법이랑 버튼 위치",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "보스 원킬기 대비로 준비물 알려줘",
     "label": "MONSTER_GUIDE"
@@ -1785,12 +1659,10 @@
     "text": "보스방 문 앞에서 뭐 해야 돼",
     "label": "None"
   },
-  [
-    {
-      "text": "장판 색 바뀌면 뭐 의미냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "장판 색 바뀌면 뭐 의미냐",
+    "label": "None"
+  },
   {
     "text": "저 몹 공격 끊는 타이밍",
     "label": "MONSTER_GUIDE"
@@ -1823,12 +1695,10 @@
     "text": "이거 파괴물 부숴야 진행돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "스킬 연계 뭐가 제일 세냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "스킬 연계 뭐가 제일 세냐",
+    "label": "None"
+  },
   {
     "text": "방패몹 뒤로 돌아도 막음?",
     "label": "MONSTER_GUIDE"
@@ -1849,12 +1719,10 @@
     "text": "설정에서 자동달리기 켜는 법",
     "label": "None"
   },
-  [
-    {
-      "text": "여기서 왼쪽 벽 뚫리는 거 아냐?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기서 왼쪽 벽 뚫리는 거 아냐?",
+    "label": "None"
+  },
   {
     "text": "이 보스 그로기 조건 뭐냐",
     "label": "MONSTER_GUIDE"
@@ -1863,12 +1731,10 @@
     "text": "그로기 때 뭐부터 때려야 돼",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "퍼즐 풀 때 힌트 또 안 뜨냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "퍼즐 풀 때 힌트 또 안 뜨냐",
+    "label": "None"
+  },
   {
     "text": "이 레버 다시 당기면 리셋됨?",
     "label": "None"
@@ -1877,12 +1743,10 @@
     "text": "바닥에 있는 룬 읽는 법",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 어그로 끊는 방법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 어그로 끊는 방법",
+    "label": "None"
+  },
   {
     "text": "나 지금 피 부족, 힐 우선",
     "label": "None"
@@ -1911,12 +1775,10 @@
     "text": "여기 돌아가면 퍼즐 초기화냐",
     "label": "None"
   },
-  [
-    {
-      "text": "야 마지막으로 하나만, 길 어디냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "야 마지막으로 하나만, 길 어디냐",
+    "label": "None"
+  },
   {
     "text": "저 보스 약점이 뭐예요?",
     "label": "MONSTER_GUIDE"
@@ -1937,12 +1799,10 @@
     "text": "이 보스 방어 깎는 법 있나요?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "분신 나올 때 우선순위요?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "분신 나올 때 우선순위요?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "잡몹 무시해도 되나요?",
     "label": "None"
@@ -1999,12 +1859,10 @@
     "text": "이 보스는 근접이 위험해요?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "원거리로만 해야 하나요?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "원거리로만 해야 하나요?",
+    "label": "None"
+  },
   {
     "text": "이 몹 약점 부위가 어디예요?",
     "label": "MONSTER_GUIDE"
@@ -2065,12 +1923,10 @@
     "text": "감전 면역 준비물 뭐예요?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이 방 이벤트 해결법 뭐예요?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 이벤트 해결법 뭐예요?",
+    "label": "None"
+  },
   {
     "text": "스위치 누르는 순서요?",
     "label": "None"
@@ -2143,12 +1999,10 @@
     "text": "압력판 두 개 동시에 밟아야 해요?",
     "label": "None"
   },
-  [
-    {
-      "text": "문양 맞추는 힌트 어디 있어요?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "문양 맞추는 힌트 어디 있어요?",
+    "label": "None"
+  },
   {
     "text": "이 방 정화 조건이 뭐예요?",
     "label": "None"
@@ -2221,12 +2075,10 @@
     "text": "지도에 표시 안 되는데 길 있어요?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 층 특징이 뭐예요?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 층 특징이 뭐예요?",
+    "label": "None"
+  },
   {
     "text": "보스방까지 얼마나 남았어요?",
     "label": "None"
@@ -2343,12 +2195,10 @@
     "text": "상태창 확인 좀 해주세요.",
     "label": "None"
   },
-  [
-    {
-      "text": "인벤에 열쇠 있는지 봐줘요.",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "인벤에 열쇠 있는지 봐줘요.",
+    "label": "None"
+  },
   {
     "text": "장비 내구도 확인해줘요.",
     "label": "None"
@@ -2477,12 +2327,10 @@
     "text": "죽으면 진행도 초기화돼요?",
     "label": "None"
   },
-  [
-    {
-      "text": "상자 리셋 조건이 뭐예요?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상자 리셋 조건이 뭐예요?",
+    "label": "None"
+  },
   {
     "text": "난이도 변경 지금 가능해요?",
     "label": "None"
@@ -2531,12 +2379,10 @@
     "text": "단축키 슬롯 늘릴 수 있나요?",
     "label": "None"
   },
-  [
-    {
-      "text": "시스템 메시지 무슨 뜻이에요?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "시스템 메시지 무슨 뜻이에요?",
+    "label": "None"
+  },
   {
     "text": "지금 너무 빡센데요.",
     "label": "None"
@@ -2577,12 +2423,10 @@
     "text": "조용히 좀 해주세요, 집중돼요.",
     "label": "None"
   },
-  [
-    {
-      "text": "아까 말한 거 다시 말해줘요.",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "아까 말한 거 다시 말해줘요.",
+    "label": "None"
+  },
   {
     "text": "지금 뭐부터 해야 해요?",
     "label": "None"
@@ -2643,34 +2487,26 @@
     "text": "다음은 쉬운 거 맞죠?",
     "label": "None"
   },
-  [
-    {
-      "text": "가짜문 또 있으면 화나요.",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "가짜문 또 있으면 화나요.",
+    "label": "None"
+  },
   {
     "text": "여기 공략 누가 만들었어요?",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd123;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd123;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "뷁궭췍퉑",
     "label": "None"
@@ -2679,12 +2515,10 @@
     "text": ";l;l;;o0o9",
     "label": "None"
   },
-  [
-    {
-      "text": "ㅋㅌㅊㅍㅈㄱ",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "ㅋㅌㅊㅍㅈㄱ",
+    "label": "None"
+  },
   {
     "text": "보스 약점 알려주고 힐도요.",
     "label": "MONSTER_GUIDE"
@@ -2709,12 +2543,10 @@
     "text": "소환몹 처리랑 보스 딜각요.",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "즉사 패턴 전조랑 회피법요.",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "즉사 패턴 전조랑 회피법요.",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "분노 조건이랑 해제법 알려줘요.",
     "label": "MONSTER_GUIDE"
@@ -2755,12 +2587,10 @@
     "text": "숨겨진 벽 찾고 상자 조건도요.",
     "label": "None"
   },
-  [
-    {
-      "text": "수정 옮길 곳이랑 색 규칙요.",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "수정 옮길 곳이랑 색 규칙요.",
+    "label": "None"
+  },
   {
     "text": "다음 방 어디고, 길 표시도요.",
     "label": "None"
@@ -2949,22 +2779,18 @@
     "text": "저 보스 약점 뭐야?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "패턴 어떻게 피하냐 알려줘",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "패턴 어떻게 피하냐 알려줘",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이 몹 방어깎 필요해?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 2페 조건 뭔지 봐줘",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 2페 조건 뭔지 봐줘",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "지금 어떤 준비물 챙겨야 돼?",
     "label": "None"
@@ -2973,12 +2799,10 @@
     "text": "이 몬스터 실드 어떻게 깨?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "광역기 타이밍 언제야?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "광역기 타이밍 언제야?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "잡몹 우선순위 정해줘",
     "label": "MONSTER_GUIDE"
@@ -2999,18 +2823,14 @@
     "text": "이 보스 원킬기 전조 뭐야",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "내 캐릭 조합 괜찮은지 봐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "원소 반응 뭐가 잘 먹혀?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "내 캐릭 조합 괜찮은지 봐",
+    "label": "None"
+  },
+  {
+    "text": "원소 반응 뭐가 잘 먹혀?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이 몹 뒤잡이 가능해?",
     "label": "MONSTER_GUIDE"
@@ -3043,12 +2863,10 @@
     "text": "퍼즐 실패 이유 뭔지 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "함정 해제 방법 바로 말해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "함정 해제 방법 바로 말해",
+    "label": "None"
+  },
   {
     "text": "이벤트 조건 충족했나 확인",
     "label": "None"
@@ -3065,12 +2883,10 @@
     "text": "폭발 트랩 피하는 루트 줘",
     "label": "None"
   },
-  [
-    {
-      "text": "이 문 왜 안 열려?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 문 왜 안 열려?",
+    "label": "None"
+  },
   {
     "text": "불꽃 토템 켜는 법 뭐야",
     "label": "None"
@@ -3103,12 +2919,10 @@
     "text": "레이저 방향 어디로 맞춰?",
     "label": "None"
   },
-  [
-    {
-      "text": "바람기둥 활성 조건 뭐지",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "바람기둥 활성 조건 뭐지",
+    "label": "None"
+  },
   {
     "text": "발판 안 올라가는데 왜야",
     "label": "None"
@@ -3133,18 +2947,14 @@
     "text": "분기점에서 어디 선택해?",
     "label": "None"
   },
-  [
-    {
-      "text": "지름길 있으면 안내해",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "층 구조 특징 간단히 말해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지름길 있으면 안내해",
+    "label": "None"
+  },
+  {
+    "text": "층 구조 특징 간단히 말해",
+    "label": "None"
+  },
   {
     "text": "보스방 가는 문 찾는 중",
     "label": "None"
@@ -3169,12 +2979,10 @@
     "text": "이 길 막혔는데 우회로 줘",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 방 몹 타입 뭐야",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "다음 방 몹 타입 뭐야",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "여기서 체크포인트 있어?",
     "label": "None"
@@ -3231,12 +3039,10 @@
     "text": "버프 음식 먹을 타이밍 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "원소 스킬 쿨 확인해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "원소 스킬 쿨 확인해줘",
+    "label": "None"
+  },
   {
     "text": "상태창에서 저주 걸렸나 봐줘",
     "label": "None"
@@ -3301,12 +3107,10 @@
     "text": "UI에 빨간표시 뭐야",
     "label": "None"
   },
-  [
-    {
-      "text": "왜 상호작용이 안 돼?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "왜 상호작용이 안 돼?",
+    "label": "None"
+  },
   {
     "text": "파티 매칭 규칙 설명해",
     "label": "None"
@@ -3375,12 +3179,10 @@
     "text": "아니 갑자기 왜 세졌냐",
     "label": "None"
   },
-  [
-    {
-      "text": "빨리빨리 좀 도와줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "빨리빨리 좀 도와줘",
+    "label": "None"
+  },
   {
     "text": "나 지금 멘붕이야",
     "label": "None"
@@ -3401,12 +3203,10 @@
     "text": "진짜 한 방 맞으면 끝이네",
     "label": "None"
   },
-  [
-    {
-      "text": "여기 공기 왜 무거워",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기 공기 왜 무거워",
+    "label": "None"
+  },
   {
     "text": "나 방금 뭐에 맞았어?",
     "label": "None"
@@ -3455,12 +3255,10 @@
     "text": "이거 또 트릭이지?",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 약점 알려주고 회피 타이밍도 말해",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 약점 알려주고 회피 타이밍도 말해",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "퍼즐 순서 알려주고 함정 위치도 찍어",
     "label": "None"
@@ -3537,12 +3335,10 @@
     "text": "회피 키랑 조준 설정도 같이 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 그로기 조건이랑 카운터 타이밍 줘",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 그로기 조건이랑 카운터 타이밍 줘",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "불 켜고 숨은 스위치도 찾아줘",
     "label": "None"
@@ -3559,12 +3355,10 @@
     "text": "맵 표시 왜 안 떠, 설정도 확인해",
     "label": "None"
   },
-  [
-    {
-      "text": "이 몹 실드 깨는 법이랑 약점도",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 몹 실드 깨는 법이랑 약점도",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "장치 전원 위치랑 작동 순서 알려",
     "label": "None"
@@ -3641,22 +3435,18 @@
     "text": "스킬 설명 어디서 봐, 튜토도 같이",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅂㅈㄷㄱ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "뷁궭ퟍ쟎꿻",
     "label": "None"
@@ -3665,38 +3455,30 @@
     "text": ";;;//..,.,;;",
     "label": "None"
   },
-  [
-    {
-      "text": "zxcnm,./;';[]",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "ㅋㅌㅊㅍㄴㄷㅅㅈ",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "zxcnm,./;';]",
+    "label": "None"
+  },
+  {
+    "text": "ㅋㅌㅊㅍㄴㄷㅅㅈ",
+    "label": "None"
+  },
   {
     "text": "페이몬, 저 몹 약점 뭐야?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 패턴 좀 콕 집어줘",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 패턴 좀 콕 집어줘",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이 보스 광역 언제 와?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "저 방패몹 어떻게 깨?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "저 방패몹 어떻게 깨?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "페이몬, 회피 타이밍 알려줘",
     "label": "MONSTER_GUIDE"
@@ -3749,22 +3531,18 @@
     "text": "저 몹 방깎 가능해?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 분신 구분법 있냐",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 분신 구분법 있냐",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "그 즉사기 막는 법 있어?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이 보스는 근접 위험해?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 보스는 근접 위험해?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "약점 알려줘, 함정도 조심?",
     "label": "MONSTER_GUIDE"
@@ -3817,22 +3595,18 @@
     "text": "이 룬은 어디 맞춰?",
     "label": "None"
   },
-  [
-    {
-      "text": "함정 발판 뭐 밟아야 돼",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "함정 발판 뭐 밟아야 돼",
+    "label": "None"
+  },
   {
     "text": "왜 퍼즐 실패 뜨지?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 기믹 조건 뭐임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 기믹 조건 뭐임",
+    "label": "None"
+  },
   {
     "text": "불꽃 토템 켜는 법 알려줘",
     "label": "None"
@@ -3861,18 +3635,14 @@
     "text": "함정 끄고 다음 방도 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "순서 알려주고 실패 원인도",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "조건 뭐고 조작은 뭐 눌러?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "순서 알려주고 실패 원인도",
+    "label": "None"
+  },
+  {
+    "text": "조건 뭐고 조작은 뭐 눌러?",
+    "label": "None"
+  },
   {
     "text": "이 벽에 문양 맞추는 거야?",
     "label": "None"
@@ -3909,12 +3679,10 @@
     "text": "장치 켜고 몹도 같이 오네?",
     "label": "None"
   },
-  [
-    {
-      "text": "조건 맞췄는데 왜 안 열려",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "조건 맞췄는데 왜 안 열려",
+    "label": "None"
+  },
   {
     "text": "페이몬, 이거 뭐부터 해야 돼",
     "label": "None"
@@ -3951,12 +3719,10 @@
     "text": "여기서 위층 어케 가",
     "label": "None"
   },
-  [
-    {
-      "text": "맵에 분기 몇 개야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "맵에 분기 몇 개야",
+    "label": "None"
+  },
   {
     "text": "되돌아가면 리셋 돼?",
     "label": "None"
@@ -3997,18 +3763,14 @@
     "text": "숨은 길 찾고 상자도 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "여기 맞게 온 거 맞지?",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "지도 핑 찍어줘 페이몬",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기 맞게 온 거 맞지?",
+    "label": "None"
+  },
+  {
+    "text": "지도 핑 찍어줘 페이몬",
+    "label": "None"
+  },
   {
     "text": "계단이 안 보여 어디야",
     "label": "None"
@@ -4105,12 +3867,10 @@
     "text": "불 켜고 길도 안내해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "힐템 쓰고 보스 패턴도",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "힐템 쓰고 보스 패턴도",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "장비 바꾸고 약점도 알려줘",
     "label": "MONSTER_GUIDE"
@@ -4199,12 +3959,10 @@
     "text": "왜 문이 상호작용 안 떠",
     "label": "None"
   },
-  [
-    {
-      "text": "시스템 설명이랑 조작도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "시스템 설명이랑 조작도",
+    "label": "None"
+  },
   {
     "text": "키 설정 알려주고 맵도 열어",
     "label": "None"
@@ -4221,12 +3979,10 @@
     "text": "왜 안됨인지 보고 해결도",
     "label": "None"
   },
-  [
-    {
-      "text": "페이몬, 설정 어디서 바꿔",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "페이몬, 설정 어디서 바꿔",
+    "label": "None"
+  },
   {
     "text": "잠깐, 핑은 어떻게 찍어?",
     "label": "None"
@@ -4235,12 +3991,10 @@
     "text": "자동저장 돼? 지금 불안",
     "label": "None"
   },
-  [
-    {
-      "text": "이 던전 제한시간 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 던전 제한시간 있어?",
+    "label": "None"
+  },
   {
     "text": "보스 잡으면 바로 나가져?",
     "label": "None"
@@ -4261,12 +4015,10 @@
     "text": "이건 점프가 안 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "카메라 고정 푸는 법 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "카메라 고정 푸는 법 알려줘",
+    "label": "None"
+  },
   {
     "text": "조작 꼬였는데 초기화 가능?",
     "label": "None"
@@ -4275,24 +4027,18 @@
     "text": "보상 받고 길도 바로 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "규칙 설명하고 함정도 주의",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "왜 안됨인지랑 해결 순서",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "페이몬, 나 지금 멘붕",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "규칙 설명하고 함정도 주의",
+    "label": "None"
+  },
+  {
+    "text": "왜 안됨인지랑 해결 순서",
+    "label": "None"
+  },
+  {
+    "text": "페이몬, 나 지금 멘붕",
+    "label": "None"
+  },
   {
     "text": "아 또 맞았어 아파",
     "label": "None"
@@ -4321,12 +4067,10 @@
     "text": "이 던전 누가 설계했냐",
     "label": "None"
   },
-  [
-    {
-      "text": "여기 분위기 쫄리는데",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기 분위기 쫄리는데",
+    "label": "None"
+  },
   {
     "text": "페이몬, 웃긴 소리 하지마",
     "label": "None"
@@ -4367,12 +4111,10 @@
     "text": "무서워, 불 켜고 안내해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "손풀고 싶은데 몹 정보도",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "손풀고 싶은데 몹 정보도",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "페이몬, 시간 없어 얼른",
     "label": "None"
@@ -4393,12 +4135,10 @@
     "text": "페이몬, 또 까먹었냐",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdfqwezx;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdfqwezx;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁㄴㅇㄹ;;ㅂㅈㄷㄱ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
     "label": "None"
@@ -4423,24 +4163,20 @@
     "text": "ㅋㅌㅊㅍㄹㄷㅈ",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdjkl;;qpoi\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdjkl;;qpoi\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅈㄹㄱㅎㅁㅂ;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
     "label": "None"
   },
-  [
-    {
-      "text": "plm,./;;[]{}",
-      "label": "None"
-    }
-  ],
   {
-    "text": "이 방 몹이랑 퍼즐 같이 와?",
+    "text": "plm,./;;]{}",
+    "label": "None"
+  },
+  {
+    "text": "이 방 몹이 퍼즐 같이 와?",
     "label": "None"
   },
   {
@@ -4455,12 +4191,10 @@
     "text": "보스 패턴, 회피, 힐 순서?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "장치 순서랑 문 여는 조건",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "장치 순서랑 문 여는 조건",
+    "label": "None"
+  },
   {
     "text": "인벤 열고 열쇠 있나 봐줘",
     "label": "None"
@@ -4469,12 +4203,10 @@
     "text": "조작키랑 UI 위치 같이 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "보상 뭐고 다음방 어디야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보상 뭐고 다음방 어디야",
+    "label": "None"
+  },
   {
     "text": "함정 피하고 지름길도 찾아",
     "label": "None"
@@ -4483,12 +4215,10 @@
     "text": "패턴 끝나면 딜타임 체크",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이벤트 조건이랑 실패 이유",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이벤트 조건이랑 실패 이유",
+    "label": "None"
+  },
   {
     "text": "불 켜고 스위치도 눌러줘",
     "label": "None"
@@ -4557,18 +4287,14 @@
     "text": "여기서 체크포인트 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "페이몬, 이거 클리어 각이냐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "나 지금 너무 어지러워",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "페이몬, 이거 클리어 각이냐",
+    "label": "None"
+  },
+  {
+    "text": "나 지금 너무 어지러워",
+    "label": "None"
+  },
   {
     "text": "이 던전 끝나면 간식 줘",
     "label": "None"
@@ -4605,12 +4331,10 @@
     "text": "퍼즐 힌트는 어디서 봐?",
     "label": "None"
   },
-  [
-    {
-      "text": "레버 하나가 잠겼는데 이유?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "레버 하나가 잠겼는데 이유?",
+    "label": "None"
+  },
   {
     "text": "이 장치 시간제한 있냐",
     "label": "None"
@@ -4675,12 +4399,10 @@
     "text": "인벤 정리 좀 도와줘라",
     "label": "None"
   },
-  [
-    {
-      "text": "페이몬, 힌트 짧게! 핵심만",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "페이몬, 힌트 짧게! 핵심만",
+    "label": "None"
+  },
   {
     "text": "나 뇌정지 왔으니 안내해줘",
     "label": "None"
@@ -4705,12 +4427,10 @@
     "text": "보스 페이즈 전환 언제야?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이 몬스터 속성 뭔지 확인해줘",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 몬스터 속성 뭔지 확인해줘",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "잡몹 우선순위가 어떻게 돼?",
     "label": "None"
@@ -4739,12 +4459,10 @@
     "text": "이 몹 실드 조건이 뭐지?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 즉사기 조건 알려줘",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 즉사기 조건 알려줘",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "저 독 장판은 어떻게 막아?",
     "label": "None"
@@ -4757,12 +4475,10 @@
     "text": "저 돌진은 피할 각이 없어",
     "label": "None"
   },
-  [
-    {
-      "text": "카운터 가능한 패턴 뭐야?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "카운터 가능한 패턴 뭐야?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "보스 분노 타이밍 알려줘",
     "label": "MONSTER_GUIDE"
@@ -4787,12 +4503,10 @@
     "text": "레버가 안 내려가는데 왜지?",
     "label": "None"
   },
-  [
-    {
-      "text": "룬 맞추는 규칙 설명해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "룬 맞추는 규칙 설명해줘",
+    "label": "None"
+  },
   {
     "text": "바닥 타일 순서가 있나?",
     "label": "None"
@@ -4813,12 +4527,10 @@
     "text": "불꽃 기둥 멈추는 법 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "바람 장치 방향 어디로?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "바람 장치 방향 어디로?",
+    "label": "None"
+  },
   {
     "text": "물 수위 퍼즐 힌트 좀",
     "label": "None"
@@ -4899,12 +4611,10 @@
     "text": "다음 층 특징이 뭐야?",
     "label": "None"
   },
-  [
-    {
-      "text": "체크포인트 위치 좀 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "체크포인트 위치 좀 알려줘",
+    "label": "None"
+  },
   {
     "text": "지름길 열려면 뭘 해야 해?",
     "label": "None"
@@ -4957,12 +4667,10 @@
     "text": "저항 장신구로 바꿔줘",
     "label": "None"
   },
-  [
-    {
-      "text": "상태이상 걸렸는지 확인해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상태이상 걸렸는지 확인해줘",
+    "label": "None"
+  },
   {
     "text": "버프 지속시간 체크해줘",
     "label": "None"
@@ -4999,18 +4707,14 @@
     "text": "방어 태세로 전환해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "타겟 고정 풀어줘",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "필요한 준비물 목록 좀",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "타겟 고정 풀어줘",
+    "label": "None"
+  },
+  {
+    "text": "필요한 준비물 목록 좀",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "키 설정 어디서 바꿔?",
     "label": "None"
@@ -5027,12 +4731,10 @@
     "text": "쿨타임 표시가 안 떠",
     "label": "None"
   },
-  [
-    {
-      "text": "보상 조건이 뭐야?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보상 조건이 뭐야?",
+    "label": "None"
+  },
   {
     "text": "여기 부활 제한 있어?",
     "label": "None"
@@ -5165,12 +4867,10 @@
     "text": "나 지금 방향감각이 사라졌어",
     "label": "None"
   },
-  [
-    {
-      "text": "페이몬, 거짓말이면 안 돼",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "페이몬, 거짓말이면 안 돼",
+    "label": "None"
+  },
   {
     "text": "이거 진짜 마지막 방이야?",
     "label": "None"
@@ -5179,12 +4879,10 @@
     "text": "보스 약점이랑 준비물 알려줘",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "패턴 설명하고 안전지점도",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "패턴 설명하고 안전지점도",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "저 몹 대응법이랑 길 안내",
     "label": "MONSTER_GUIDE"
@@ -5221,12 +4919,10 @@
     "text": "레버 순서랑 실패 원인 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "레이저 각도랑 진행 방향도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "레이저 각도랑 진행 방향도",
+    "label": "None"
+  },
   {
     "text": "압력판 조건이랑 문 여는 법",
     "label": "None"
@@ -5251,12 +4947,10 @@
     "text": "보상 조건과 재입장 패널티",
     "label": "None"
   },
-  [
-    {
-      "text": "타겟 고정 풀고 회피 키도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "타겟 고정 풀고 회피 키도",
+    "label": "None"
+  },
   {
     "text": "지금 안전해? 다음 층 특징도",
     "label": "None"
@@ -5269,28 +4963,22 @@
     "text": "보스방까지 남은 방 수랑 기믹",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 클리어 조건과 몹 우선",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 클리어 조건과 몹 우선",
+    "label": "None"
+  },
   {
     "text": "부활 제한 있는지와 포션 수",
     "label": "None"
   },
-  [
-    {
-      "text": "카운터 패턴이랑 각 잡는 법",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "독 장판 막고 힐 타이밍도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "카운터 패턴이랑 각 잡는 법",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "독 장판 막고 힐 타이밍도",
+    "label": "None"
+  },
   {
     "text": "실드 조건이랑 디버프 면역",
     "label": "MONSTER_GUIDE"
@@ -5327,12 +5015,10 @@
     "text": "미니맵 확대랑 방향 표시 방법",
     "label": "None"
   },
-  [
-    {
-      "text": "상호작용 키 먹통, 해결도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상호작용 키 먹통, 해결도",
+    "label": "None"
+  },
   {
     "text": "카메라 문제랑 타겟 전환도",
     "label": "None"
@@ -5373,12 +5059,10 @@
     "text": "즉사기 피하려면 뭘 준비해?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "그랩 패턴 피하고 딜 구간도",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "그랩 패턴 피하고 딜 구간도",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "분기에서 안전 루트랑 보상 루트",
     "label": "None"
@@ -5415,12 +5099,10 @@
     "text": "함정 감지하고 해제 장치까지",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 약점 속성이랑 면역도",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 약점 속성이랑 면역도",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "페이즈 전환 때 뭐부터 막아?",
     "label": "MONSTER_GUIDE"
@@ -5449,12 +5131,10 @@
     "text": "문 열쇠 쓰고 다음 방도 안내",
     "label": "None"
   },
-  [
-    {
-      "text": "장비 저항으로 바꾸고 디버프도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "장비 저항으로 바꾸고 디버프도",
+    "label": "None"
+  },
   {
     "text": "타겟 고정 풀고 카메라도 조정",
     "label": "None"
@@ -5479,34 +5159,26 @@
     "text": "여기 안전구간이면 불부터 꺼줘",
     "label": "None"
   },
-  [
-    {
-      "text": "보스방 맞아? 준비물하고 규칙도",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스방 맞아? 준비물하고 규칙도",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd0987\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;;;..,,;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd0987\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;;;..,,;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "뷁궭ퟍ쟎",
     "label": "None"
@@ -5515,12 +5187,10 @@
     "text": "zmxncvqwer",
     "label": "None"
   },
-  [
-    {
-      "text": "ㅋㅌㅊㅍㄴㅁㄹ",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "ㅋㅌㅊㅍㄴㅁㄹ",
+    "label": "None"
+  },
   {
     "text": "보스 패턴, 시작 모션이 뭐야?",
     "label": "MONSTER_GUIDE"
@@ -5593,12 +5263,10 @@
     "text": "페이몬, 힌트만 살짝 줘",
     "label": "None"
   },
-  [
-    {
-      "text": "이 패턴은 소리로 구분돼?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 패턴은 소리로 구분돼?",
+    "label": "None"
+  },
   {
     "text": "페이몬 저 몹 약점 뭐야?",
     "label": "MONSTER_GUIDE"
@@ -5647,12 +5315,10 @@
     "text": "저 몹 뒤잡 해야 돼?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "패턴 끊는 방법 있냐",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "패턴 끊는 방법 있냐",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "막타 타이밍 언제가 안전해?",
     "label": "MONSTER_GUIDE"
@@ -5717,12 +5383,10 @@
     "text": "불꽃 함정 타이밍 어떻게 피해",
     "label": "None"
   },
-  [
-    {
-      "text": "문이 안 열리는데 조건 뭐임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "문이 안 열리는데 조건 뭐임",
+    "label": "None"
+  },
   {
     "text": "이 스위치 왜 먹통이야",
     "label": "None"
@@ -5779,12 +5443,10 @@
     "text": "아까 방으로 되돌아갈 수 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "엘리베이터 어디서 타?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "엘리베이터 어디서 타?",
+    "label": "None"
+  },
   {
     "text": "위층 입구가 안 보여",
     "label": "None"
@@ -5945,12 +5607,10 @@
     "text": "튜토리얼 다시 볼 수 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "파티 버프 규칙 설명해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "파티 버프 규칙 설명해줘",
+    "label": "None"
+  },
   {
     "text": "원소반응 데미지 공식 있어?",
     "label": "None"
@@ -5959,12 +5619,10 @@
     "text": "스킬 우선순위 뭐로 찍어?",
     "label": "None"
   },
-  [
-    {
-      "text": "UI에 빨간 점 왜 안 사라져",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "UI에 빨간 점 왜 안 사라져",
+    "label": "None"
+  },
   {
     "text": "자동조준 끄는 법 알려줘",
     "label": "None"
@@ -5977,12 +5635,10 @@
     "text": "왜 문 상호작용이 안 떠?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 던전 제한시간 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 던전 제한시간 있어?",
+    "label": "None"
+  },
   {
     "text": "부활 횟수 제한 몇 번이야",
     "label": "None"
@@ -6007,12 +5663,10 @@
     "text": "야야야 지금 너무 아픈데",
     "label": "None"
   },
-  [
-    {
-      "text": "빨리빨리 힌트 좀 줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "빨리빨리 힌트 좀 줘",
+    "label": "None"
+  },
   {
     "text": "나 멘탈 나갈 거 같아",
     "label": "None"
@@ -6073,18 +5727,14 @@
     "text": "보스 눈빛 개무서워",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;lkj;;;qwe\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅈㄷㄱㅌ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;lkj;;;qwe\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅈㄷㄱㅌ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;;;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
     "label": "None"
@@ -6093,24 +5743,18 @@
     "text": "뷁궭ퟍퟍㄳㄱ",
     "label": "None"
   },
-  [
-    {
-      "text": "ㅋㅌㅊㅍㅈㄹㅇ",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "zmxncv;;l;;pp",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";.;.;.;,,\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "ㅋㅌㅊㅍㅈㄹㅇ",
+    "label": "None"
+  },
+  {
+    "text": "zmxncv;;l;;pp",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";.;.;.;,,\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "보스 약점이랑 패턴 둘 다 알려줘",
     "label": "MONSTER_GUIDE"
@@ -6139,18 +5783,14 @@
     "text": "길 잃었어 지도 핀 찍고 설명해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 2페 신호랑 피하는 법 알려줘",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "이 문 조건 뭐고 스위치 위치도 찾아줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 2페 신호랑 피하는 법 알려줘",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "이 문 조건 뭐고 스위치 위치도 찾아줘",
+    "label": "None"
+  },
   {
     "text": "힐템 쓰는 타이밍이랑 회피 키도 알려줘",
     "label": "None"
@@ -6271,12 +5911,10 @@
     "text": "인벤에 해독제랑 버프 음식 있는지 확인",
     "label": "None"
   },
-  [
-    {
-      "text": "UI 빨간 점 이유랑 보상 받는 법 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "UI 빨간 점 이유랑 보상 받는 법 알려줘",
+    "label": "None"
+  },
   {
     "text": "스킬 우선순위랑 원소반응 팁 같이 줘",
     "label": "None"
@@ -6329,32 +5967,26 @@
     "text": "퍼즐 시간제한 팁이랑 순서 한 번에",
     "label": "None"
   },
-  [
-    {
-      "text": "문 뒤가 보스방인지랑 준비물도 알려줘",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "문 뒤가 보스방인지랑 준비물도 알려줘",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "숨겨진 방 입구랑 막다른길 여부 확인",
     "label": "None"
   },
-  [
-    {
-      "text": "폭탄 장치 안전거리랑 던져도 되는지",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "폭탄 장치 안전거리랑 던져도 되는지",
+    "label": "None"
+  },
   {
     "text": "상호작용이 안 떠 버그인지 조건인지 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "파티 규칙이랑 부활 제한 같이 설명해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "파티 규칙이랑 부활 제한 같이 설명해줘",
+    "label": "None"
+  },
   {
     "text": "자동줍기 상태랑 필요한 아이템 체크해줘",
     "label": "None"
@@ -6367,12 +5999,10 @@
     "text": "지름길 열쇠 어디고 돌아가는 길도 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 패턴 순서랑 2페 전환까지 정리해",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 패턴 순서랑 2페 전환까지 정리해",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이벤트 실패 원인하고 다시 시작 방법 알려줘",
     "label": "None"
@@ -6401,12 +6031,10 @@
     "text": "스위치 먹통 이유랑 장치 조건 같이 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 한방기 피하고 방패 깨는 법도",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 한방기 피하고 방패 깨는 법도",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "포탈 타기 전에 체크포인트 있나 확인",
     "label": "None"
@@ -6443,12 +6071,10 @@
     "text": "저거 광역기 피하는 법 알려줘",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 2페 넘어가는 조건 뭐임",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 2페 넘어가는 조건 뭐임",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이 방 몬스터 우선순위 있어?",
     "label": "None"
@@ -6533,28 +6159,22 @@
     "text": "저 몹은 원소반응 안 먹어?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 장판 색 바뀌는 이유?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 장판 색 바뀌는 이유?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이 몹은 헤드샷 같은 거 있어?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "실드몹은 어떤 속성으로 뚫어?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "보스 약점 노출 조건 좀",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "실드몹은 어떤 속성으로 뚫어?",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "보스 약점 노출 조건 좀",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이 퍼즐 순서 뭐였지…",
     "label": "None"
@@ -6619,12 +6239,10 @@
     "text": "함정 작동 조건이 뭔데",
     "label": "None"
   },
-  [
-    {
-      "text": "색깔 맞추기, 기준이 뭐임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "색깔 맞추기, 기준이 뭐임",
+    "label": "None"
+  },
   {
     "text": "이 스위치 두 번 눌러야 돼?",
     "label": "None"
@@ -6689,12 +6307,10 @@
     "text": "여기서 위로 가는 길 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "지도에 표시 안 뜨는데 출구 어디",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지도에 표시 안 뜨는데 출구 어디",
+    "label": "None"
+  },
   {
     "text": "이 층 특징 뭐임, 함정 많아?",
     "label": "None"
@@ -6719,22 +6335,18 @@
     "text": "숨겨진 통로 있나 확인해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "체크포인트는 어디야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "체크포인트는 어디야",
+    "label": "None"
+  },
   {
     "text": "보스방 가는 길 맞지…?",
     "label": "None"
   },
-  [
-    {
-      "text": "여기 미니맵이 너무 구려",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기 미니맵이 너무 구려",
+    "label": "None"
+  },
   {
     "text": "아래층 내려가는 입구 어디",
     "label": "None"
@@ -6843,12 +6455,10 @@
     "text": "이 무기 강화해도 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "방어구 저항 뭐 끼고 있지?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "방어구 저항 뭐 끼고 있지?",
+    "label": "None"
+  },
   {
     "text": "파티 버프 켜져 있는지 봐줘",
     "label": "None"
@@ -6957,12 +6567,10 @@
     "text": "쿨타임 표시가 어디에 떠?",
     "label": "None"
   },
-  [
-    {
-      "text": "맵 핑 찍는 방법 좀",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "맵 핑 찍는 방법 좀",
+    "label": "None"
+  },
   {
     "text": "자동줍기 설정 있어?",
     "label": "None"
@@ -7035,18 +6643,14 @@
     "text": "미니맵 회전 고정 가능?",
     "label": "None"
   },
-  [
-    {
-      "text": "아이템 퀵슬롯 설정 어떻게 해",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이 문은 키가 필요한 거야?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "아이템 퀵슬롯 설정 어떻게 해",
+    "label": "None"
+  },
+  {
+    "text": "이 문은 키가 필요한 거야?",
+    "label": "None"
+  },
   {
     "text": "이속 느려졌는데 시스템 버그?",
     "label": "None"
@@ -7147,12 +6751,10 @@
     "text": "대충 때려도 되면 좋겠다",
     "label": "None"
   },
-  [
-    {
-      "text": "여기 공기 답답하다",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기 공기 답답하다",
+    "label": "None"
+  },
   {
     "text": "마지막 방이면 좋겠다",
     "label": "None"
@@ -7205,12 +6807,10 @@
     "text": "이 장치 조건이랑 레버 순서 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 돌진 피하는 법이랑 타이밍",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 돌진 피하는 법이랑 타이밍",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "출구 찾고 숨은방 있나 확인",
     "label": "None"
@@ -7239,40 +6839,30 @@
     "text": "퍼즐 힌트 주고 리셋도 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 층 특징이랑 보스 준비물 뭐야",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "상호작용 안 돼, 조건이랑 해결법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 층 특징이랑 보스 준비물 뭐야",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "상호작용 안 돼, 조건이랑 해결법",
+    "label": "None"
+  },
   {
     "text": "분기에서 보상방 어디고 안전한 문?",
     "label": "None"
   },
-  [
-    {
-      "text": "해독 필요해? 그리고 힐도 해줘",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "실드몹 뚫는 속성이랑 장비 바꿀까",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "레이저 피할 자리랑 발판 규칙 알려",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "해독 필요해? 그리고 힐도 해줘",
+    "label": "None"
+  },
+  {
+    "text": "실드몹 뚫는 속성이랑 장비 바꿀까",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "레이저 피할 자리랑 발판 규칙 알려",
+    "label": "None"
+  },
   {
     "text": "남은 열쇠랑 부활템 수량 같이 봐줘",
     "label": "None"
@@ -7313,22 +6903,18 @@
     "text": "미니맵 고정 가능? 그리고 길도 안내",
     "label": "None"
   },
-  [
-    {
-      "text": "보상 어디서 받고 저장은 언제 돼",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보상 어디서 받고 저장은 언제 돼",
+    "label": "None"
+  },
   {
     "text": "이벤트 스킵 되나, 실패 원인도",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 분신 구분이랑 우선 타겟 정해줘",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 분신 구분이랑 우선 타겟 정해줘",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "폭발 필요해? 그리고 폭탄 수량도 알려",
     "label": "MONSTER_GUIDE"
@@ -7349,12 +6935,10 @@
     "text": "바닥 함정 조건이랑 해제 방법 한 번에",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 포탈 위치랑 미니맵 왜 이래",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 포탈 위치랑 미니맵 왜 이래",
+    "label": "None"
+  },
   {
     "text": "장비 프리셋 바꾸고 공격 버프 확인",
     "label": "None"
@@ -7379,18 +6963,14 @@
     "text": "퍼즐 음표 순서랑 입력 기준 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "디버프 몇 개고 빙결 풀 방법도",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "원거리몹 먼저? 그리고 안전 타이밍",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "디버프 몇 개고 빙결 풀 방법도",
+    "label": "None"
+  },
+  {
+    "text": "원거리몹 먼저? 그리고 안전 타이밍",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "레이저랑 함정창 타이밍 둘 다 알려",
     "label": "MONSTER_GUIDE"
@@ -7479,12 +7059,10 @@
     "text": "보스 분노때 대응이랑 딜타임 같이",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "맵 핑 찍고 다음 방 분기 설명해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "맵 핑 찍고 다음 방 분기 설명해줘",
+    "label": "None"
+  },
   {
     "text": "자동줍기 있나, 그리고 보상 조건도",
     "label": "None"
@@ -7501,12 +7079,10 @@
     "text": "폭탄통 왜 안 돼, 조건이랑 방법 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "바람기둥 타는 법이랑 길도 맞춰줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "바람기둥 타는 법이랑 길도 맞춰줘",
+    "label": "None"
+  },
   {
     "text": "레이저 자리 잡고 불도 켜줘",
     "label": "None"
@@ -7519,54 +7095,42 @@
     "text": "카메라 감도 바꾸고 락온도 켜고 싶어",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 약점이랑 원소반응 먹는지까지",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 약점이랑 원소반응 먹는지까지",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅈㄷㄹ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;..;;..;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅈㄷㄹ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;..;;..;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "뷁궭ퟍퟍ",
     "label": "None"
   },
-  [
-    {
-      "text": "ㅋㅌㅊㅍㅈㄱ",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "ㅋㅌㅊㅍㅈㄱ",
+    "label": "None"
+  },
   {
     "text": "zmxncv0987",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";lkj;;;opiu\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";lkj;;;opiu\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "ㅈㄹㄱㅂㅅㄴㄷㄱ",
     "label": "None"
@@ -7575,12 +7139,10 @@
     "text": "qazwsxedcrfvtg",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..,,;;:://\\\\\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..,,;;:://\\\\\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "plmoknijbuhvyg",
     "label": "None"
@@ -7597,12 +7159,10 @@
     "text": "광역 피하는 타이밍 언제야?",
     "label": "None"
   },
-  [
-    {
-      "text": "실드 깨려면 뭐 들고가?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "실드 깨려면 뭐 들고가?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "보스 2페 넘어가는 조건 뭐임",
     "label": "MONSTER_GUIDE"
@@ -7615,12 +7175,10 @@
     "text": "이 몹 속성 저항 뭐가 높아?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "분신 나오면 먼저 뭐 잡아?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "분신 나오면 먼저 뭐 잡아?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "바닥 장판 왜 계속 터져?",
     "label": "None"
@@ -7645,12 +7203,10 @@
     "text": "저 보스 소환수 처리 순서",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이 방 몹 리젠 조건이 뭐야",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 방 몹 리젠 조건이 뭐야",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "보스 광폭화 막는 법 있어?",
     "label": "MONSTER_GUIDE"
@@ -7675,12 +7231,10 @@
     "text": "함정 발동 조건이 뭐야?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 퍼즐 순서 좀 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 퍼즐 순서 좀 알려줘",
+    "label": "None"
+  },
   {
     "text": "레버 당기는 순서 있지?",
     "label": "None"
@@ -7721,12 +7275,10 @@
     "text": "이 수정들 먼저 깨야 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "시간제한 퍼즐 팁 좀",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "시간제한 퍼즐 팁 좀",
+    "label": "None"
+  },
   {
     "text": "톱날 함정 멈추는 레버 어디",
     "label": "None"
@@ -7751,12 +7303,10 @@
     "text": "전기 기둥 연결 방법 좀",
     "label": "None"
   },
-  [
-    {
-      "text": "이 퍼즐 힌트 한 줄만 줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 퍼즐 힌트 한 줄만 줘",
+    "label": "None"
+  },
   {
     "text": "다음 방 어디로 가야 돼?",
     "label": "None"
@@ -7869,12 +7419,10 @@
     "text": "무기 원소 바꿔야 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "방어구 세트 효과 켜져있나",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "방어구 세트 효과 켜져있나",
+    "label": "None"
+  },
   {
     "text": "자동줍기 켜져있는지 봐줘",
     "label": "None"
@@ -7887,22 +7435,18 @@
     "text": "폭탄 아이템 어디다 써?",
     "label": "None"
   },
-  [
-    {
-      "text": "스킬 쿨 남은 거 체크해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "스킬 쿨 남은 거 체크해줘",
+    "label": "None"
+  },
   {
     "text": "맵 핑 찍어줄 수 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "내 체력바 왜 회색이야 확인",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "내 체력바 왜 회색이야 확인",
+    "label": "None"
+  },
   {
     "text": "상태이상 뭐 걸린 거야?",
     "label": "None"
@@ -7931,12 +7475,10 @@
     "text": "회피 무적 프레임 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "왜 스킬이 안 나가냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "왜 스킬이 안 나가냐",
+    "label": "None"
+  },
   {
     "text": "궁극기 게이지 빨리 채우는 법",
     "label": "None"
@@ -7985,24 +7527,18 @@
     "text": "맵 열기 단축키가 뭐지",
     "label": "None"
   },
-  [
-    {
-      "text": "아이템 퀵슬롯 등록 어케해",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이 버프 지속시간 어디서 봐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "던전 규칙 중에 시간제한 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "아이템 퀵슬롯 등록 어케해",
+    "label": "None"
+  },
+  {
+    "text": "이 버프 지속시간 어디서 봐",
+    "label": "None"
+  },
+  {
+    "text": "던전 규칙 중에 시간제한 있어?",
+    "label": "None"
+  },
   {
     "text": "이거 매칭 보상 따로 줘?",
     "label": "None"
@@ -8039,18 +7575,14 @@
     "text": "또 함정이야? 지겹다 진짜",
     "label": "None"
   },
-  [
-    {
-      "text": "이거 쉬운 길 없나",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "나 길치라 너만 믿는다",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이거 쉬운 길 없나",
+    "label": "None"
+  },
+  {
+    "text": "나 길치라 너만 믿는다",
+    "label": "None"
+  },
   {
     "text": "페이몬, 이번엔 너가 해봐",
     "label": "None"
@@ -8095,22 +7627,18 @@
     "text": "아 또 미끄러져, 미치겠네",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁㄴㅇㄹㅂㅈㄷㅅ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd123;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd123;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "뷁궭훍궑",
     "label": "None"
@@ -8127,18 +7655,14 @@
     "text": "보스 약점도 알려주고 힐 타이밍도",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "패턴 알려줘, 그리고 회피 포인트",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "이 퍼즐 순서랑 실패 이유 같이",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "패턴 알려줘, 그리고 회피 포인트",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "이 퍼즐 순서랑 실패 이유 같이",
+    "label": "None"
+  },
   {
     "text": "다음 방 어디고 함정도 있나",
     "label": "None"
@@ -8167,12 +7691,10 @@
     "text": "포션 써도 돼? 상태이상도 체크",
     "label": "None"
   },
-  [
-    {
-      "text": "문 조건 뭐고 레버 위치도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "문 조건 뭐고 레버 위치도",
+    "label": "None"
+  },
   {
     "text": "이 방 스위치 어디, 순서도",
     "label": "None"
@@ -8193,12 +7715,10 @@
     "text": "되돌아가도 돼? 진행 꼬임도",
     "label": "None"
   },
-  [
-    {
-      "text": "지도 봐주고 지름길 있나",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지도 봐주고 지름길 있나",
+    "label": "None"
+  },
   {
     "text": "대시 키랑 회피 무적도 알려줘",
     "label": "None"
@@ -8211,12 +7731,10 @@
     "text": "보상 뭐 나와, 시간제한도 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "UI 빨간표시 뭐고 미션 왜 멈춤",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "UI 빨간표시 뭐고 미션 왜 멈춤",
+    "label": "None"
+  },
   {
     "text": "폭탄 어디 쓰고 문도 열 수 있어?",
     "label": "None"
@@ -8257,12 +7775,10 @@
     "text": "면역 구간 있나, 딜 멈춰야 돼?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "장판 터지는 이유랑 안전지대",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "장판 터지는 이유랑 안전지대",
+    "label": "None"
+  },
   {
     "text": "소환수 먼저 뭐 잡고 회복 끊어?",
     "label": "MONSTER_GUIDE"
@@ -8287,12 +7803,10 @@
     "text": "부활 횟수랑 체크포인트 위치",
     "label": "None"
   },
-  [
-    {
-      "text": "스킵 루트 있나, 위험도도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "스킵 루트 있나, 위험도도",
+    "label": "None"
+  },
   {
     "text": "여기 내려가면 뭐 나와, 보스야?",
     "label": "MONSTER_GUIDE"
@@ -8313,12 +7827,10 @@
     "text": "상자 먹어도 돼? 패널티도",
     "label": "None"
   },
-  [
-    {
-      "text": "파티원 죽으면 리셋돼? 규칙도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "파티원 죽으면 리셋돼? 규칙도",
+    "label": "None"
+  },
   {
     "text": "핑 튀는데 설정 손볼 거 있어?",
     "label": "None"
@@ -8351,12 +7863,10 @@
     "text": "장치에 아이템 넣는지, 뭐 넣어?",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 2페 조건이랑 광역 회피",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 2페 조건이랑 광역 회피",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "돌진 끊고 그로기까지 연결법",
     "label": "MONSTER_GUIDE"
@@ -8385,12 +7895,10 @@
     "text": "여기서 우회로랑 비밀상자 위치",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 저항 뭐고 약점 속성도",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 저항 뭐고 약점 속성도",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "딜 타임 언제, 힐은 언제 써?",
     "label": "None"
@@ -8427,18 +7935,14 @@
     "text": "패턴 뭐부터 나오냐",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이 몹 실드 어떻게 깨",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "광폭 조건이 뭐임",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 몹 실드 어떻게 깨",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "광폭 조건이 뭐임",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "회피 타이밍 언제야",
     "label": "MONSTER_GUIDE"
@@ -8447,12 +7951,10 @@
     "text": "바닥 장판 피하는 법 좀",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이 보스 즉사기 있냐",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 보스 즉사기 있냐",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "페이몬, 지금 딜 넣어도 됨?",
     "label": "None"
@@ -8493,12 +7995,10 @@
     "text": "이 몹 공중 떠있을 때 어케 침",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 뒤잡 가능해?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 뒤잡 가능해?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "방어 버프 언제 켜짐",
     "label": "None"
@@ -8571,12 +8071,10 @@
     "text": "장치가 안 켜지는데 왜",
     "label": "None"
   },
-  [
-    {
-      "text": "함정 발동 조건 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "함정 발동 조건 알려줘",
+    "label": "None"
+  },
   {
     "text": "이벤트 실패 원인 뭐임",
     "label": "None"
@@ -8585,12 +8083,10 @@
     "text": "불꽃 토치 몇 개 켜야 돼",
     "label": "None"
   },
-  [
-    {
-      "text": "수정 위치 어디로 옮김",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "수정 위치 어디로 옮김",
+    "label": "None"
+  },
   {
     "text": "바람 장치 방향 맞추는 법",
     "label": "None"
@@ -8619,12 +8115,10 @@
     "text": "밟는 타일 순서 힌트 줘",
     "label": "None"
   },
-  [
-    {
-      "text": "레이저 끊는 방법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "레이저 끊는 방법",
+    "label": "None"
+  },
   {
     "text": "폭탄통 어디에 놓아",
     "label": "None"
@@ -8653,22 +8147,18 @@
     "text": "이 기둥 다 켜야 열림?",
     "label": "None"
   },
-  [
-    {
-      "text": "벽 문양 맞추는 법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "벽 문양 맞추는 법",
+    "label": "None"
+  },
   {
     "text": "분기 스위치 뭐가 맞아",
     "label": "None"
   },
-  [
-    {
-      "text": "시간제한 이벤트 어떻게",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "시간제한 이벤트 어떻게",
+    "label": "None"
+  },
   {
     "text": "이 퍼즐 힌트 어디서 봄",
     "label": "None"
@@ -8705,12 +8195,10 @@
     "text": "아래로 내려가는 계단 어딨지",
     "label": "None"
   },
-  [
-    {
-      "text": "이 층 특징 뭐 있음",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 층 특징 뭐 있음",
+    "label": "None"
+  },
   {
     "text": "다음 포탈 색깔 뭐 타",
     "label": "None"
@@ -8727,12 +8215,10 @@
     "text": "보스방까지 몇 방 남음",
     "label": "None"
   },
-  [
-    {
-      "text": "지름길 있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지름길 있냐",
+    "label": "None"
+  },
   {
     "text": "막다른길인데 뭐 놓침?",
     "label": "None"
@@ -8757,12 +8243,10 @@
     "text": "다음 구역 위험 요소 뭐",
     "label": "None"
   },
-  [
-    {
-      "text": "문 두 개 중 뭐가 쉬움",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "문 두 개 중 뭐가 쉬움",
+    "label": "None"
+  },
   {
     "text": "보상방 어디로 가야 나옴",
     "label": "None"
@@ -8783,12 +8267,10 @@
     "text": "포탈이 사라졌는데 어디감",
     "label": "None"
   },
-  [
-    {
-      "text": "지도 확대 어떻게 해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지도 확대 어떻게 해",
+    "label": "None"
+  },
   {
     "text": "이 방에서 출구가 안 보여",
     "label": "None"
@@ -8821,12 +8303,10 @@
     "text": "회복약 하나 써줘",
     "label": "None"
   },
-  [
-    {
-      "text": "버프 아이템 뭐 쓰면 좋음",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "버프 아이템 뭐 쓰면 좋음",
+    "label": "None"
+  },
   {
     "text": "장비 세팅 바꿔야 함?",
     "label": "None"
@@ -8843,12 +8323,10 @@
     "text": "스태미나 얼마나 남았지",
     "label": "None"
   },
-  [
-    {
-      "text": "원소 에너지 확인해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "원소 에너지 확인해줘",
+    "label": "None"
+  },
   {
     "text": "내 방어구 내구도 봐줘",
     "label": "None"
@@ -8877,22 +8355,18 @@
     "text": "함정 해제 도구 써줘",
     "label": "None"
   },
-  [
-    {
-      "text": "키 하나 있나 찾아봐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "키 하나 있나 찾아봐",
+    "label": "None"
+  },
   {
     "text": "상자 열어도 됨?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 문 상호작용 눌러줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 문 상호작용 눌러줘",
+    "label": "None"
+  },
   {
     "text": "조명 켜고 주변 좀 봐줘",
     "label": "None"
@@ -8913,12 +8387,10 @@
     "text": "장비 프리셋 2로 바꿔",
     "label": "None"
   },
-  [
-    {
-      "text": "원소 바꿔야 돼?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "원소 바꿔야 돼?",
+    "label": "None"
+  },
   {
     "text": "지금 다이아 써도 됨?",
     "label": "None"
@@ -8939,12 +8411,10 @@
     "text": "회피키가 안 먹는데",
     "label": "None"
   },
-  [
-    {
-      "text": "상호작용 키 뭐였지",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상호작용 키 뭐였지",
+    "label": "None"
+  },
   {
     "text": "맵 핑 찍는 기능 있어?",
     "label": "None"
@@ -8957,12 +8427,10 @@
     "text": "죽으면 진행도 날아가?",
     "label": "None"
   },
-  [
-    {
-      "text": "보상 상자 조건 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보상 상자 조건 뭐야",
+    "label": "None"
+  },
   {
     "text": "시간 제한 있나",
     "label": "None"
@@ -8979,18 +8447,14 @@
     "text": "왜 데미지가 안 들어가",
     "label": "None"
   },
-  [
-    {
-      "text": "무적 시간 언제까지야",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "상태이상 면역 규칙 뭐임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "무적 시간 언제까지야",
+    "label": "None"
+  },
+  {
+    "text": "상태이상 면역 규칙 뭐임",
+    "label": "None"
+  },
   {
     "text": "원소 반응 안 터지는데",
     "label": "None"
@@ -9019,22 +8483,18 @@
     "text": "핑 소리만 끄고 싶다",
     "label": "None"
   },
-  [
-    {
-      "text": "이거 매칭으로도 됨?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이거 매칭으로도 됨?",
+    "label": "None"
+  },
   {
     "text": "중간 저장 있냐",
     "label": "None"
   },
-  [
-    {
-      "text": "재도전 버튼 어디",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "재도전 버튼 어디",
+    "label": "None"
+  },
   {
     "text": "왜 문이 잠금 표시야",
     "label": "None"
@@ -9063,12 +8523,10 @@
     "text": "아 개아프네",
     "label": "None"
   },
-  [
-    {
-      "text": "또 장판이냐 짜증",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "또 장판이냐 짜증",
+    "label": "None"
+  },
   {
     "text": "지금 너무 빡센데",
     "label": "None"
@@ -9077,18 +8535,14 @@
     "text": "페이몬 빨리 말해",
     "label": "None"
   },
-  [
-    {
-      "text": "나 지금 멘붕",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "여기 뭐가 이렇게 많아",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "나 지금 멘붕",
+    "label": "None"
+  },
+  {
+    "text": "여기 뭐가 이렇게 많아",
+    "label": "None"
+  },
   {
     "text": "이거 설마 함정이지",
     "label": "None"
@@ -9109,12 +8563,10 @@
     "text": "이거 누가 설계했냐",
     "label": "None"
   },
-  [
-    {
-      "text": "보상 구리면 접는다",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보상 구리면 접는다",
+    "label": "None"
+  },
   {
     "text": "잠깐만 숨 좀 돌리자",
     "label": "None"
@@ -9155,12 +8607,10 @@
     "text": "이 패턴 진짜 양심없다",
     "label": "None"
   },
-  [
-    {
-      "text": "나 컨트롤 망했음",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "나 컨트롤 망했음",
+    "label": "None"
+  },
   {
     "text": "어그로 왜 나한테만",
     "label": "None"
@@ -9185,12 +8635,10 @@
     "text": "손 미끄러졌다",
     "label": "None"
   },
-  [
-    {
-      "text": "이거 맞게 하고 있는 거냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이거 맞게 하고 있는 거냐",
+    "label": "None"
+  },
   {
     "text": "아무튼 살려봐",
     "label": "None"
@@ -9203,18 +8651,14 @@
     "text": "퍼즐 순서랑 실패 원인 같이 말해",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 패턴 설명하고 회복약 써줘",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "다음 방 어디고 함정도 체크해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 패턴 설명하고 회복약 써줘",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "다음 방 어디고 함정도 체크해줘",
+    "label": "None"
+  },
   {
     "text": "장비 바꾸고 디버프 뭐인지 봐줘",
     "label": "None"
@@ -9235,12 +8679,10 @@
     "text": "약점 속성 말해주고 포션 뭐 먹을지",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "그로기 타이밍이랑 카운터도 알려줘",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "그로기 타이밍이랑 카운터도 알려줘",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "숨은 통로 찾고 상자 조건도 확인",
     "label": "None"
@@ -9281,18 +8723,14 @@
     "text": "시간 제한 있나 보고 빨리 가야 함?",
     "label": "None"
   },
-  [
-    {
-      "text": "장치 안 켜지는 이유랑 조작키 뭐야",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "보스 즉사기 있나, 회피 타이밍도",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "장치 안 켜지는 이유랑 조작키 뭐야",
+    "label": "None"
+  },
+  {
+    "text": "보스 즉사기 있나, 회피 타이밍도",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "분기 두 개 뭐가 쉬운지랑 보상",
     "label": "None"
@@ -9333,18 +8771,14 @@
     "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizxvc\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;...;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;...;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "뷁궭뛟쀍",
     "label": "None"
@@ -9353,22 +8787,18 @@
     "text": "ㅋㅌㅊㅍㅈㅅ",
     "label": "None"
   },
-  [
-    {
-      "text": "zxcmnvvb12",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "zxcmnvvb12",
+    "label": "None"
+  },
   {
     "text": "보스방 몇 방 남았고 준비물 뭐 챙겨",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "장판 피하는 법이랑 안전지대 위치",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "장판 피하는 법이랑 안전지대 위치",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "문 잠긴 이유랑 열쇠 위치 같이",
     "label": "None"
@@ -9393,12 +8823,10 @@
     "text": "함정 데미지 줄이고 회복도 바로",
     "label": "None"
   },
-  [
-    {
-      "text": "드랍 뭐 나오는지랑 상자 열 조건",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "드랍 뭐 나오는지랑 상자 열 조건",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "지금 근딜 위험한지랑 회피키 점검",
     "label": "None"
@@ -9427,12 +8855,10 @@
     "text": "레버 당기고 불도 같이 켜줘",
     "label": "None"
   },
-  [
-    {
-      "text": "폭발 구슬 처리하고 분신 구분도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "폭발 구슬 처리하고 분신 구분도",
+    "label": "None"
+  },
   {
     "text": "포탈 사라진 이유랑 돌아가는 법",
     "label": "None"
@@ -9609,12 +9035,10 @@
     "text": "레이저 장치 끄는 법 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 기믹 핵심이 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 기믹 핵심이 뭐야",
+    "label": "None"
+  },
   {
     "text": "함정 감지할 방법 있어?",
     "label": "None"
@@ -9659,12 +9083,10 @@
     "text": "길 잃었는데 체크포인트 어디",
     "label": "None"
   },
-  [
-    {
-      "text": "보스방 가는 문이 몇 개야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스방 가는 문이 몇 개야",
+    "label": "None"
+  },
   {
     "text": "여기 되돌아가면 초기화돼?",
     "label": "None"
@@ -9757,12 +9179,10 @@
     "text": "여기 함정 해제 도구 써줘",
     "label": "None"
   },
-  [
-    {
-      "text": "원소 바꿔야 돼? 바꿔줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "원소 바꿔야 돼? 바꿔줘",
+    "label": "None"
+  },
   {
     "text": "방 안 불 좀 꺼봐",
     "label": "None"
@@ -9775,12 +9195,10 @@
     "text": "현재 디버프 뭐 걸렸는지 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "부활템 남은 개수 체크해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "부활템 남은 개수 체크해줘",
+    "label": "None"
+  },
   {
     "text": "물약 단축키 슬롯 비었나 봐줘",
     "label": "None"
@@ -9829,12 +9247,10 @@
     "text": "기믹 성공 조건이 점수야 시간?",
     "label": "None"
   },
-  [
-    {
-      "text": "회피 쿨타임 표시 어디서 봐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "회피 쿨타임 표시 어디서 봐",
+    "label": "None"
+  },
   {
     "text": "이거 튜토리얼 다시 볼 수 있어?",
     "label": "None"
@@ -9843,12 +9259,10 @@
     "text": "파티원 버프 범위 표시돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "보상 상자 등급은 뭐로 갈려",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보상 상자 등급은 뭐로 갈려",
+    "label": "None"
+  },
   {
     "text": "왜 맵이 안 열려 설정 어디",
     "label": "None"
@@ -9877,12 +9291,10 @@
     "text": "이 던전 제한시간 몇 분이야",
     "label": "None"
   },
-  [
-    {
-      "text": "여기 너무 아프다",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기 너무 아프다",
+    "label": "None"
+  },
   {
     "text": "와 이거 사기패턴 아님?",
     "label": "None"
@@ -9907,12 +9319,10 @@
     "text": "왜 나만 계속 맞아",
     "label": "None"
   },
-  [
-    {
-      "text": "여기 분위기 쎄하다",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기 분위기 쎄하다",
+    "label": "None"
+  },
   {
     "text": "지금 도망치는 게 맞지?",
     "label": "None"
@@ -9953,56 +9363,42 @@
     "text": "이거 숨겨진 거 있는 느낌인데",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㄱ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㄱ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd1290\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;;;;:::\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;;;;:::\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "뷁궭뛟쮏",
     "label": "None"
   },
-  [
-    {
-      "text": "ㅋㅌㅊㅍㅈㅎ",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "zxcnm,./<<",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "보스 약점 알려주고 회복약 써줘",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "패턴 설명하고 안전지대도 찍어줘",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "ㅋㅌㅊㅍㅈㅎ",
+    "label": "None"
+  },
+  {
+    "text": "zxcnm,./<<",
+    "label": "None"
+  },
+  {
+    "text": "보스 약점 알려주고 회복약 써줘",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "패턴 설명하고 안전지대도 찍어줘",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이 퍼즐 순서랑 실패 이유 같이 봐줘",
     "label": "None"
@@ -10039,42 +9435,34 @@
     "text": "맵 분기 뭐가 유리한지랑 보스 준비",
     "label": "None"
   },
-  [
-    {
-      "text": "이 몹 대응법이랑 내성 뭐 챙겨?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 몹 대응법이랑 내성 뭐 챙겨?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "소환몹 먼저인지랑 무적 조건 알려",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "장판 패턴 전조랑 피할 위치 말해",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "장판 패턴 전조랑 피할 위치 말해",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "길 막혔는데 다른 루트랑 비밀방 봐",
     "label": "None"
   },
-  [
-    {
-      "text": "포탈 뭐 타야 돼? 되돌아가면 초기화?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "포탈 뭐 타야 돼? 되돌아가면 초기화?",
+    "label": "None"
+  },
   {
     "text": "상호작용 키 알려주고 문도 조사해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "오토타겟 끄고 타겟 고정도 해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "오토타겟 끄고 타겟 고정도 해줘",
+    "label": "None"
+  },
   {
     "text": "부활 횟수랑 부활템 개수 같이 알려",
     "label": "None"
@@ -10099,12 +9487,10 @@
     "text": "물 채우는 순서랑 장치 조건 같이",
     "label": "None"
   },
-  [
-    {
-      "text": "보스방 문 몇 개야? 정답 루트도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스방 문 몇 개야? 정답 루트도",
+    "label": "None"
+  },
   {
     "text": "다음 안전지대 어디고 돌진도 어떻게 피해",
     "label": "None"
@@ -10129,12 +9515,10 @@
     "text": "함정 감지법이랑 해제 도구도 써줘",
     "label": "None"
   },
-  [
-    {
-      "text": "원소 바꿔야 돼? 약점 속성도 같이",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "원소 바꿔야 돼? 약점 속성도 같이",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "브레이크 빨리하는 법이랑 딜 타임 언제",
     "label": "MONSTER_GUIDE"
@@ -10147,22 +9531,18 @@
     "text": "흡혈 패턴 끊고 회복 금지 디버프 풀어",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "분신 구분법이랑 무적 풀리는 조건",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "분신 구분법이랑 무적 풀리는 조건",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이 층 특징이랑 보스 바로 나와? 확인",
     "label": "None"
   },
-  [
-    {
-      "text": "엘리베이터 키 어디서 얻고 문도 열어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "엘리베이터 키 어디서 얻고 문도 열어",
+    "label": "None"
+  },
   {
     "text": "환풍구 루트 맞아? 함정도 있나",
     "label": "None"
@@ -10183,12 +9563,10 @@
     "text": "버프 범위 표시랑 파티 버프 지금 쓰자",
     "label": "None"
   },
-  [
-    {
-      "text": "채팅 줄바꿈 키랑 맵 여는 설정 위치",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "채팅 줄바꿈 키랑 맵 여는 설정 위치",
+    "label": "None"
+  },
   {
     "text": "제한시간 몇 분이고 재도전 보상 줄어?",
     "label": "None"
@@ -10225,12 +9603,10 @@
     "text": "스태미나 느린 이유랑 회복 방법도 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "피격 경직 면역 상태랑 적용 타이밍",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "피격 경직 면역 상태랑 적용 타이밍",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "UI 붉은 표식 뜻이랑 디버프 목록",
     "label": "None"
@@ -10255,12 +9631,10 @@
     "text": "근접 터지는 패턴 있나? 거리 유지도 알려",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "소환몹 처리 순서랑 안전지대 위치",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "소환몹 처리 순서랑 안전지대 위치",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "돌진 전조랑 회피 타이밍 동시에 말해",
     "label": "MONSTER_GUIDE"
@@ -10273,12 +9647,10 @@
     "text": "이 방 기믹 풀고 다음방 입구도 찍어",
     "label": "None"
   },
-  [
-    {
-      "text": "함정 화살 루트랑 체크포인트도 알려",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "함정 화살 루트랑 체크포인트도 알려",
+    "label": "None"
+  },
   {
     "text": "퍼즐 실패했는데 이유랑 재시도 조건",
     "label": "None"
@@ -10295,12 +9667,10 @@
     "text": "지금 도망 가능해? 루트랑 포탈 안내",
     "label": "None"
   },
-  [
-    {
-      "text": "아프다, 회복약 쓰고 장비도 바꿔줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "아프다, 회복약 쓰고 장비도 바꿔줘",
+    "label": "None"
+  },
   {
     "text": "길 잃음, 지도 열고 위치 핑도 찍어",
     "label": "None"
@@ -10309,12 +9679,10 @@
     "text": "헛스윙나가, 타겟 고정하고 설정도 봐",
     "label": "None"
   },
-  [
-    {
-      "text": "문 앞 끼임, 상호작용 키랑 탈출법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "문 앞 끼임, 상호작용 키랑 탈출법",
+    "label": "None"
+  },
   {
     "text": "장치 돌리는 각도랑 발판 순서 같이",
     "label": "None"
@@ -10331,12 +9699,10 @@
     "text": "상태이상 잘 먹는 거랑 해독제 사용",
     "label": "None"
   },
-  [
-    {
-      "text": "브레이크 게이지 어디서 보고 빨리 깨",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "브레이크 게이지 어디서 보고 빨리 깨",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "재도전 규칙이랑 부활 제한 같이 확인",
     "label": "None"
@@ -10393,12 +9759,10 @@
     "text": "원거리면 위험, 그럼 근접 대응도 알려",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "여기 보스 페이즈 수랑 패턴 요약",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "여기 보스 페이즈 수랑 패턴 요약",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "함정 해제 도구 쓰고 인벤도 정리해줘",
     "label": "None"
@@ -10411,12 +9775,10 @@
     "text": "보상 상자 등급 올리려면 뭐 해야 돼",
     "label": "None"
   },
-  [
-    {
-      "text": "이 몹 뒤잡 딜이랑 안전 포지션",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 몹 뒤잡 딜이랑 안전 포지션",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "시간 제한 빡센데 지름길이랑 퍼즐 팁",
     "label": "None"
@@ -10449,12 +9811,10 @@
     "text": "오토타겟 때문에 빗나감, 끄는 법",
     "label": "None"
   },
-  [
-    {
-      "text": "파티 버프 범위랑 적용 조건 설명해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "파티 버프 범위랑 적용 조건 설명해줘",
+    "label": "None"
+  },
   {
     "text": "상호작용이 안됨, 잠금 해제 조건 뭐야",
     "label": "None"
@@ -10495,12 +9855,10 @@
     "text": "폭탄통 굴리고 장치도 켜야 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 전에 체크포인트 저장 가능해?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 전에 체크포인트 저장 가능해?",
+    "label": "None"
+  },
   {
     "text": "이벤트 조건 충족했는지 확인해줘",
     "label": "None"
@@ -10601,12 +9959,10 @@
     "text": "저 몹 약점 속성 뭐임?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 패턴 1페 설명해줘",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 패턴 1페 설명해줘",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이 몬스터 실드 어떻게 깸?",
     "label": "MONSTER_GUIDE"
@@ -10639,12 +9995,10 @@
     "text": "돌진 패턴 대응법 알려줘",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "약점 노출 조건이 뭐임?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "약점 노출 조건이 뭐임?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "보스 딜타임 언제 열림?",
     "label": "MONSTER_GUIDE"
@@ -10653,28 +10007,22 @@
     "text": "보스 체력 잠김 이유 뭐임?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이 몹 잡으면 뭐 떨어짐?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "이 보스는 원거리 위험함?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 몹 잡으면 뭐 떨어짐?",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "이 보스는 원거리 위험함?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "페이즈 전환 신호 뭐임?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "즉사기 조건 있나?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "즉사기 조건 있나?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "장판 색 의미가 뭐야?",
     "label": "None"
@@ -10691,12 +10039,10 @@
     "text": "보스 약점이 머리임?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "패턴 끊는 방법 있나?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "패턴 끊는 방법 있나?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "광폭화 시간 남음?",
     "label": "None"
@@ -10749,12 +10095,10 @@
     "text": "함정 해제 방법 뭐임?",
     "label": "None"
   },
-  [
-    {
-      "text": "바닥 타일 규칙 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "바닥 타일 규칙 알려줘",
+    "label": "None"
+  },
   {
     "text": "이벤트 실패 원인 뭐야?",
     "label": "None"
@@ -10799,18 +10143,14 @@
     "text": "압력판 동시에 밟아야 함?",
     "label": "None"
   },
-  [
-    {
-      "text": "기믹 초기화 어떻게 함",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "물 수위 올리는 방법 뭐임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "기믹 초기화 어떻게 함",
+    "label": "None"
+  },
+  {
+    "text": "물 수위 올리는 방법 뭐임",
+    "label": "None"
+  },
   {
     "text": "타이머 멈추는 조건 있어?",
     "label": "None"
@@ -10819,12 +10159,10 @@
     "text": "이 방 함정 트리거 위치",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 힌트 어디 있음?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "퍼즐 힌트 어디 있음?",
+    "label": "None"
+  },
   {
     "text": "기둥 맞추는 기준이 뭐야",
     "label": "None"
@@ -10865,18 +10203,14 @@
     "text": "보스방 가는 길 어디로?",
     "label": "None"
   },
-  [
-    {
-      "text": "숨겨진 방 입구 있나?",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "미니맵에 목표 표시해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "숨겨진 방 입구 있나?",
+    "label": "None"
+  },
+  {
+    "text": "미니맵에 목표 표시해줘",
+    "label": "None"
+  },
   {
     "text": "되돌아가야 됨? 어디로",
     "label": "None"
@@ -10913,12 +10247,10 @@
     "text": "다음 방 몹 강함? 준비할거",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보급 상자 위치 어디임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보급 상자 위치 어디임",
+    "label": "None"
+  },
   {
     "text": "이 구간 돌아가면 손해임?",
     "label": "None"
@@ -10927,12 +10259,10 @@
     "text": "비밀 통로 조건 뭐임",
     "label": "None"
   },
-  [
-    {
-      "text": "층 전환 트리거 어디야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "층 전환 트리거 어디야",
+    "label": "None"
+  },
   {
     "text": "막다른길인데 뭐 놓쳤음?",
     "label": "None"
@@ -10997,12 +10327,10 @@
     "text": "방패 꺼내야 함?",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"원소 변환 해줘\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"원소 변환 해줘\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "폭탄 하나 써도 됨?",
     "label": "None"
@@ -11043,12 +10371,10 @@
     "text": "스태미나 회복템 사용해",
     "label": "None"
   },
-  [
-    {
-      "text": "방 진입 전에 세이브 가능?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "방 진입 전에 세이브 가능?",
+    "label": "None"
+  },
   {
     "text": "이 장치 조사해줘",
     "label": "None"
@@ -11077,12 +10403,10 @@
     "text": "쿨타임 UI 어디서 봄",
     "label": "None"
   },
-  [
-    {
-      "text": "보상 조건 뭐임?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보상 조건 뭐임?",
+    "label": "None"
+  },
   {
     "text": "여기 제한시간 있음?",
     "label": "None"
@@ -11107,12 +10431,10 @@
     "text": "자동조준 끄는 법 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "미니맵 확대 키 뭐임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "미니맵 확대 키 뭐임",
+    "label": "None"
+  },
   {
     "text": "왜 문이 상호작용 안됨",
     "label": "None"
@@ -11149,12 +10471,10 @@
     "text": "핑 찍는 키 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "재접속하면 진행 저장됨?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "재접속하면 진행 저장됨?",
+    "label": "None"
+  },
   {
     "text": "시점 고정 해제 방법",
     "label": "None"
@@ -11175,18 +10495,14 @@
     "text": "또 장판임? 귀찮음",
     "label": "None"
   },
-  [
-    {
-      "text": "속도 좀 빨리",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "여기 분위기 별로임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "속도 좀 빨리",
+    "label": "None"
+  },
+  {
+    "text": "여기 분위기 별로임",
+    "label": "None"
+  },
   {
     "text": "나 지금 길 완전 헷갈림",
     "label": "None"
@@ -11227,22 +10543,18 @@
     "text": "지금 한숨만 나옴",
     "label": "None"
   },
-  [
-    {
-      "text": "다음은 제발 쉬운거",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음은 제발 쉬운거",
+    "label": "None"
+  },
   {
     "text": "갑자기 음악 왜 큼",
     "label": "None"
   },
-  [
-    {
-      "text": "이거 맞게 하는중 맞지?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이거 맞게 하는중 맞지?",
+    "label": "None"
+  },
   {
     "text": "나 지금 손 꼬임",
     "label": "None"
@@ -11291,22 +10603,18 @@
     "text": "장비 바꾸고 회복템 써줘",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 즉사기랑 대비템 뭐",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 즉사기랑 대비템 뭐",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "분기 추천하고 보급 위치도",
     "label": "None"
   },
-  [
-    {
-      "text": "장치 조건 설명하고 작동도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "장치 조건 설명하고 작동도",
+    "label": "None"
+  },
   {
     "text": "스킬 안나감 이유랑 해결",
     "label": "None"
@@ -11331,12 +10639,10 @@
     "text": "상태이상 확인하고 해제해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "카운터 타이밍이랑 회피 키",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "카운터 타이밍이랑 회피 키",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "보상 조건이랑 제한시간 알려",
     "label": "None"
@@ -11369,18 +10675,14 @@
     "text": "퍼즐 힌트 위치랑 정답 순서",
     "label": "None"
   },
-  [
-    {
-      "text": "문 상호작용 안됨 이유랑 조건",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "딜 넣으면 안되는 구간이랑 신호",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "문 상호작용 안됨 이유랑 조건",
+    "label": "None"
+  },
+  {
+    "text": "딜 넣으면 안되는 구간이랑 신호",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "스위치 반응 원인 찾고 켜줘",
     "label": "None"
@@ -11397,28 +10699,22 @@
     "text": "맵 길 잃음, 현재 위치 찍어",
     "label": "None"
   },
-  [
-    {
-      "text": "장판 의미랑 안전지대 알려",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "장판 의미랑 안전지대 알려",
+    "label": "None"
+  },
   {
     "text": "무기 내구도 보고 교체 추천",
     "label": "None"
   },
-  [
-    {
-      "text": "드롭 뭐뜨는지랑 우선순위 알려",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "대시 키랑 스태미나 관리법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "드롭 뭐뜨는지랑 우선순위 알려",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "대시 키랑 스태미나 관리법",
+    "label": "None"
+  },
   {
     "text": "폭탄 배치하고 레이저 루트도",
     "label": "None"
@@ -11431,52 +10727,42 @@
     "text": "지름길 여는법이랑 되돌아갈지",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx@@##\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "뷁궭뛟ퟆ",
     "label": "None"
   },
-  [
-    {
-      "text": ";';;:;:;;",
-      "label": "None"
-    }
-  ],
+  {
+    "text": ";';;:;:;;",
+    "label": "None"
+  },
   {
     "text": "zxcvbnm<>??//",
     "label": "None"
   },
-  [
-    {
-      "text": "ㅋㅌㅊㅍㄴㅂㄹ",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "ㅋㅌㅊㅍㄴㅂㄹ",
+    "label": "None"
+  },
   {
     "text": "야 페이몬, 저 보스 약점 뭐냐",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "패턴 좀 빨리 말해봐",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "패턴 좀 빨리 말해봐",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이놈 잡는 공략 있냐",
     "label": "MONSTER_GUIDE"
@@ -11485,22 +10771,18 @@
     "text": "돌진 피하는 타이밍 언제야",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 2페 조건 뭐임",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 2페 조건 뭐임",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "저 몹 실드 깨는 법 알려",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "상태이상 뭐 걸면 잘 들어가",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "상태이상 뭐 걸면 잘 들어가",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "저거 회복하는 거 끊을 수 있냐",
     "label": "MONSTER_GUIDE"
@@ -11517,22 +10799,18 @@
     "text": "이 보스 원거리면 되냐",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "근접하면 바로 죽냐 이거",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "근접하면 바로 죽냐 이거",
+    "label": "None"
+  },
   {
     "text": "방어 올려야 돼? 아니면 딜?",
     "label": "None"
   },
-  [
-    {
-      "text": "대미지 안 들어가는데 이유 뭐냐",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "대미지 안 들어가는데 이유 뭐냐",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "저 몹 속성 뭐야",
     "label": "MONSTER_GUIDE"
@@ -11569,12 +10847,10 @@
     "text": "카운터 타이밍 있냐",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이 몹 무적 언제 풀려",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 몹 무적 언제 풀려",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "저거 쉴드 색 바뀌는 뜻 뭐임",
     "label": "MONSTER_GUIDE"
@@ -11639,18 +10915,14 @@
     "text": "불꽃 토템 켜는 순서 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "물 수위 올리는 법 있냐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "룬 글자 맞추는 규칙 뭐임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "물 수위 올리는 법 있냐",
+    "label": "None"
+  },
+  {
+    "text": "룬 글자 맞추는 규칙 뭐임",
+    "label": "None"
+  },
   {
     "text": "이 퍼즐 힌트 어디 있어",
     "label": "None"
@@ -11723,12 +10995,10 @@
     "text": "페이몬, 길 어디로 가냐",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 방 입구가 어딨냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 방 입구가 어딨냐",
+    "label": "None"
+  },
   {
     "text": "분기점 뭐가 정답이야",
     "label": "None"
@@ -11741,12 +11011,10 @@
     "text": "내가 길 잃은 거 맞지",
     "label": "None"
   },
-  [
-    {
-      "text": "지도에 표시 좀 해봐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지도에 표시 좀 해봐",
+    "label": "None"
+  },
   {
     "text": "위층 가는 길 있냐",
     "label": "None"
@@ -11767,18 +11035,14 @@
     "text": "이쪽 가면 보스 직행이냐",
     "label": "None"
   },
-  [
-    {
-      "text": "체크포인트 어디 있음",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "지름길 있으면 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "체크포인트 어디 있음",
+    "label": "None"
+  },
+  {
+    "text": "지름길 있으면 알려줘",
+    "label": "None"
+  },
   {
     "text": "문 두 개 중 뭐가 맞아",
     "label": "None"
@@ -11811,12 +11075,10 @@
     "text": "출구까지 얼마나 남음",
     "label": "None"
   },
-  [
-    {
-      "text": "바람길 타면 어디로 감",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "바람길 타면 어디로 감",
+    "label": "None"
+  },
   {
     "text": "물길 따라가면 맞는 거냐",
     "label": "None"
@@ -11825,18 +11087,14 @@
     "text": "왼쪽 길 보상 있냐",
     "label": "None"
   },
-  [
-    {
-      "text": "오른쪽 길은 함정 많아?",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "내 위치 지금 몇 구역이냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "오른쪽 길은 함정 많아?",
+    "label": "None"
+  },
+  {
+    "text": "내 위치 지금 몇 구역이냐",
+    "label": "None"
+  },
   {
     "text": "페이몬, 미니맵 왜 안 떠",
     "label": "None"
@@ -11961,22 +11219,18 @@
     "text": "대쉬 쿨타임 있는 거냐",
     "label": "None"
   },
-  [
-    {
-      "text": "이 던전 규칙 뭐임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 던전 규칙 뭐임",
+    "label": "None"
+  },
   {
     "text": "보상 조건 충족했냐",
     "label": "None"
   },
-  [
-    {
-      "text": "상자 보상 차이 있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상자 보상 차이 있냐",
+    "label": "None"
+  },
   {
     "text": "UI에 표시된 게 뭐야",
     "label": "None"
@@ -12001,12 +11255,10 @@
     "text": "시간 제한 있는 던전이야?",
     "label": "None"
   },
-  [
-    {
-      "text": "맵 핑 어떻게 찍어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "맵 핑 어떻게 찍어",
+    "label": "None"
+  },
   {
     "text": "자동조준 끄는 법 알려",
     "label": "None"
@@ -12055,12 +11307,10 @@
     "text": "아 진짜 딜 왜 이따구냐",
     "label": "None"
   },
-  [
-    {
-      "text": "페이몬 너 뭐하냐, 빨리",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "페이몬 너 뭐하냐, 빨리",
+    "label": "None"
+  },
   {
     "text": "잠깐, 나 지금 손 꼬였어",
     "label": "None"
@@ -12097,12 +11347,10 @@
     "text": "나 지금 빡침 게이지 풀",
     "label": "None"
   },
-  [
-    {
-      "text": "페이몬 말 느리다, 핵답답",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "페이몬 말 느리다, 핵답답",
+    "label": "None"
+  },
   {
     "text": "이거 맞는 길이긴 하냐",
     "label": "None"
@@ -12119,18 +11367,14 @@
     "text": "나 실수하면 니 탓이다",
     "label": "None"
   },
-  [
-    {
-      "text": "오케이 오케이, 다음 뭐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "아까부터 느낌이 쎄한데",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "오케이 오케이, 다음 뭐",
+    "label": "None"
+  },
+  {
+    "text": "아까부터 느낌이 쎄한데",
+    "label": "None"
+  },
   {
     "text": "너 또 대충 알지?",
     "label": "None"
@@ -12159,18 +11403,14 @@
     "text": "야, 시간 끌지 말고 답",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;lkj;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂㅊ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;lkj;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂㅊ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123!!\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
     "label": "None"
@@ -12183,20 +11423,16 @@
     "text": "뷁궭쀍쮉쨹",
     "label": "None"
   },
-  [
-    {
-      "text": "ㅋㅌㅊㅍㅈㅅㄷ",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "zxcnm,./[]=-",
-      "label": "None"
-    }
-  ],
   {
-    "text": "보스 약점이랑 패턴 둘 다 말해",
+    "text": "ㅋㅌㅊㅍㅈㅅㄷ",
+    "label": "None"
+  },
+  {
+    "text": "zxcnm,./]=-",
+    "label": "None"
+  },
+  {
+    "text": "보스 약점랑 패턴 둘 다 말해",
     "label": "MONSTER_GUIDE"
   },
   {
@@ -12215,22 +11451,18 @@
     "text": "이 문 왜 안 열림? 조건도 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 즉사기 전조랑 피하는 자리",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 즉사기 전조랑 피하는 자리",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "레버 당기고 다음 방 위치도 찍어",
     "label": "None"
   },
-  [
-    {
-      "text": "장비 뭐로 바꾸고 물약도 써",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "장비 뭐로 바꾸고 물약도 써",
+    "label": "None"
+  },
   {
     "text": "맵 핑 찍고 지름길 있나 찾아봐",
     "label": "None"
@@ -12287,12 +11519,10 @@
     "text": "장판 뭐 피해야 하고 안전지대",
     "label": "None"
   },
-  [
-    {
-      "text": "소환몹 우선? 그리고 궁 언제 써",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "소환몹 우선? 그리고 궁 언제 써",
+    "label": "None"
+  },
   {
     "text": "레이저 루트랑 바닥 버튼 개수",
     "label": "None"
@@ -12301,22 +11531,18 @@
     "text": "포탈 위치랑 숨겨진 방도 찾아",
     "label": "None"
   },
-  [
-    {
-      "text": "부활 제한 몇 번이고 죽으면 어디로",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "부활 제한 몇 번이고 죽으면 어디로",
+    "label": "None"
+  },
   {
     "text": "탄약 확인하고 부족하면 아이템 써",
     "label": "None"
   },
-  [
-    {
-      "text": "미션 목표 어디서 보고 규칙도 말해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "미션 목표 어디서 보고 규칙도 말해",
+    "label": "None"
+  },
   {
     "text": "상호작용 왜 안됨? 거리랑 키도",
     "label": "None"
@@ -12365,12 +11591,10 @@
     "text": "딜이 안 들어가는데 원인하고 해결",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 궁 스킵 가능? 그리고 컷신도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 궁 스킵 가능? 그리고 컷신도",
+    "label": "None"
+  },
   {
     "text": "파티 버프 적용 확인하고 UI도 봐",
     "label": "None"
@@ -12379,18 +11603,14 @@
     "text": "지름길 있으면 찍고 체크포도 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "불꽃 토템 순서랑 물 수위 기믹",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "인벤 꽉 찼는지 보고 상자도 판단해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "불꽃 토템 순서랑 물 수위 기믹",
+    "label": "None"
+  },
+  {
+    "text": "인벤 꽉 찼는지 보고 상자도 판단해",
+    "label": "None"
+  },
   {
     "text": "오른쪽 길 함정 많아? 그리고 출구까지",
     "label": "None"
@@ -12407,12 +11627,10 @@
     "text": "해독제 있나 보고 상태이상도 알려",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "문양 퍼즐 규칙이랑 정답 대충",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "문양 퍼즐 규칙이랑 정답 대충",
+    "label": "None"
+  },
   {
     "text": "보스 원거리 괜찮냐, 장비도 추천",
     "label": "MONSTER_GUIDE"
@@ -12437,12 +11655,10 @@
     "text": "상호작용 버튼 회색 이유랑 조건",
     "label": "None"
   },
-  [
-    {
-      "text": "바람기둥 타이밍이랑 다음 방 입구",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "바람기둥 타이밍이랑 다음 방 입구",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "포션 자동사용 켜고 힐템도 바로 써",
     "label": "None"
@@ -12455,12 +11671,10 @@
     "text": "길 잃었는데 되돌아가야 함? 지도도",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 즉사기 막는 법이랑 전조",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 즉사기 막는 법이랑 전조",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "보상 조건 충족했나, 상자 차이도",
     "label": "None"
@@ -12521,12 +11735,10 @@
     "text": "장치 전기 흐르는 법이랑 버튼 순서",
     "label": "None"
   },
-  [
-    {
-      "text": "문 두 개 중 정답이랑 보스 직행 여부",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "문 두 개 중 정답이랑 보스 직행 여부",
+    "label": "None"
+  },
   {
     "text": "체력 낮다, 힐템 쓰고 안전지대도",
     "label": "None"
@@ -12551,24 +11763,18 @@
     "text": "패턴 뭐부터 나와, 피할 타이밍 알려줘",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이 몹 실드 깨려면 뭐 써?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "광역기 언제 오냐, 대비 뭐 챙겨?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "보스 분신 구분법 있어?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 몹 실드 깨려면 뭐 써?",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "광역기 언제 오냐, 대비 뭐 챙겨?",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "보스 분신 구분법 있어?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "저거 돌진 막는 방법 좀",
     "label": "MONSTER_GUIDE"
@@ -12585,12 +11791,10 @@
     "text": "저 몹 뒤잡하면 더 아파?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 피 반 되면 뭐 바뀜?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 피 반 되면 뭐 바뀜?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "저거 소환몹부터 잡아?",
     "label": "MONSTER_GUIDE"
@@ -12599,12 +11803,10 @@
     "text": "약점 속성 뭐인지 찍어줘",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 장판 색깔 의미가 뭐야?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 장판 색깔 의미가 뭐야?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "패턴 끊는 스킬 있어?",
     "label": "MONSTER_GUIDE"
@@ -12765,12 +11967,10 @@
     "text": "비밀통로 있나 확인해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "이 층 특징 뭐야, 뭐 조심함?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 층 특징 뭐야, 뭐 조심함?",
+    "label": "None"
+  },
   {
     "text": "계단 위로? 아래로?",
     "label": "None"
@@ -12795,12 +11995,10 @@
     "text": "보급상자 있는 쪽 어디?",
     "label": "None"
   },
-  [
-    {
-      "text": "미니맵에 표시 안 뜨는데 출구 어딤",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "미니맵에 표시 안 뜨는데 출구 어딤",
+    "label": "None"
+  },
   {
     "text": "이 방 끝났는지 확인해줘",
     "label": "None"
@@ -12841,12 +12039,10 @@
     "text": "힐템 하나 써도 돼? 지금 써?",
     "label": "None"
   },
-  [
-    {
-      "text": "버프 음식 먹을까 말까",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "버프 음식 먹을까 말까",
+    "label": "None"
+  },
   {
     "text": "내 인벤에 해제약 있나 봐줘",
     "label": "None"
@@ -12903,22 +12099,18 @@
     "text": "내가 지금 들고 있는 무기 맞아?",
     "label": "None"
   },
-  [
-    {
-      "text": "조작키 뭐였지, 회피가 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "조작키 뭐였지, 회피가 뭐야",
+    "label": "None"
+  },
   {
     "text": "상호작용 키가 안 먹는데 왜임",
     "label": "None"
   },
-  [
-    {
-      "text": "보상 조건 뭐야, 별 3개 어케 받음",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보상 조건 뭐야, 별 3개 어케 받음",
+    "label": "None"
+  },
   {
     "text": "UI에 빨간 표시 저거 뭐 의미함",
     "label": "None"
@@ -12955,12 +12147,10 @@
     "text": "잠금온도 있어? 타겟 고정 키 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "이 모드 실패하면 뭐 잃어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 모드 실패하면 뭐 잃어?",
+    "label": "None"
+  },
   {
     "text": "체력바 옆 아이콘 설명 좀",
     "label": "None"
@@ -12989,12 +12179,10 @@
     "text": "난이도 바꾸면 보상 줄어?",
     "label": "None"
   },
-  [
-    {
-      "text": "와 이거 개아프네",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "와 이거 개아프네",
+    "label": "None"
+  },
   {
     "text": "잠깐만 숨 돌리자",
     "label": "None"
@@ -13067,34 +12255,26 @@
     "text": "이쯤에서 보상 주면 안 되냐",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄴㅈㄷㄱ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄴㅈㄷㄱ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "뷁궭챀ퟟ",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;/..,mnbv\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;/..,mnbv\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "ㅋㅌㅊㅍㅈㅅㄹ",
     "label": "None"
@@ -13123,12 +12303,10 @@
     "text": "장비 뭘로 바꾸고 버프도 먹을까?",
     "label": "None"
   },
-  [
-    {
-      "text": "문 왜 안 열려? 조건이랑 스위치 위치",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "문 왜 안 열려? 조건이랑 스위치 위치",
+    "label": "None"
+  },
   {
     "text": "이 몹 대응 알려주고 잡몹부터 잡아?",
     "label": "MONSTER_GUIDE"
@@ -13181,12 +12359,10 @@
     "text": "맵 핀 찍어주고 보스방 빠른 길 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "저 몹 실드 깨는 법이랑 약점 속성",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "저 몹 실드 깨는 법이랑 약점 속성",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "장판 의미랑 딜 넣는 구간 같이 설명",
     "label": "None"
@@ -13239,12 +12415,10 @@
     "text": "대시가 안 돼, 설정이랑 키도 확인",
     "label": "None"
   },
-  [
-    {
-      "text": "보스방 들어가기 전 준비물 뭐고 버프도?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스방 들어가기 전 준비물 뭐고 버프도?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "그림 퍼즐 힌트랑 정답 순서 둘 다",
     "label": "None"
@@ -13325,12 +12499,10 @@
     "text": "맵에서 분기 조건이랑 비밀통로 위치",
     "label": "None"
   },
-  [
-    {
-      "text": "해제약 있으면 쓰고 장비도 저항으로 바꿔",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "해제약 있으면 쓰고 장비도 저항으로 바꿔",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "보스 2페 가면 뭐 바뀌고 대비는 뭐해?",
     "label": "MONSTER_GUIDE"
@@ -13367,12 +12539,10 @@
     "text": "경보 왜 울려, 내가 뭘 건드렸는지 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "색깔 기둥 순서랑 문 열리는 조건",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "색깔 기둥 순서랑 문 열리는 조건",
+    "label": "None"
+  },
   {
     "text": "이 방 위험한 패턴 뭐고 안전 루트는 어디",
     "label": "None"
@@ -13445,12 +12615,10 @@
     "text": "퍼즐 풀고 나서 뭐 해야 돼, 조건 확인해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "이 층 특징이랑 주의할 함정 패턴 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 층 특징이랑 주의할 함정 패턴 알려줘",
+    "label": "None"
+  },
   {
     "text": "잡몹 우선순위랑 보스 딜 타이밍 같이 콜",
     "label": "MONSTER_GUIDE"
@@ -13475,12 +12643,10 @@
     "text": "패턴 언제 바뀌는지 빨리 말해",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이놈 광폭화 조건 뭐임",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이놈 광폭화 조건 뭐임",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "보스 장판 피하는 타이밍 알려줘",
     "label": "MONSTER_GUIDE"
@@ -13541,12 +12707,10 @@
     "text": "저 몹 분신 진짜 구분됨?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 무적 풀리는 타이밍",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 무적 풀리는 타이밍",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이거 파괴해야 하는 거 맞지?",
     "label": "None"
@@ -13579,28 +12743,22 @@
     "text": "불길 장판 끄는 방법 있냐",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 문 왜 안 열려",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 문 왜 안 열려",
+    "label": "None"
+  },
   {
     "text": "바닥 스위치 몇 개 밟아?",
     "label": "None"
   },
-  [
-    {
-      "text": "기믹 타이밍 놓치면 끝이냐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "퍼즐 힌트 좀 던져봐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "기믹 타이밍 놓치면 끝이냐",
+    "label": "None"
+  },
+  {
+    "text": "퍼즐 힌트 좀 던져봐",
+    "label": "None"
+  },
   {
     "text": "저 장치 반응 안 하는데",
     "label": "None"
@@ -13625,12 +12783,10 @@
     "text": "물 채우는 순서가 따로 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "기어 맞추는 방향 뭐냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "기어 맞추는 방향 뭐냐",
+    "label": "None"
+  },
   {
     "text": "이거 시간 제한 있냐",
     "label": "None"
@@ -13639,40 +12795,30 @@
     "text": "왜 리셋됐어 조건 뭐야",
     "label": "None"
   },
-  [
-    {
-      "text": "야 길 어디로 가야 돼",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "야 길 어디로 가야 돼",
+    "label": "None"
+  },
   {
     "text": "다음 방 분기 뭐가 안전함",
     "label": "None"
   },
-  [
-    {
-      "text": "여기 돌아가면 손해냐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "미니맵 안 떠, 출구 어딤",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "지름길 있으면 바로 말해",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이 층 특징 뭐냐 함정 많아?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기 돌아가면 손해냐",
+    "label": "None"
+  },
+  {
+    "text": "미니맵 안 떠, 출구 어딤",
+    "label": "None"
+  },
+  {
+    "text": "지름길 있으면 바로 말해",
+    "label": "None"
+  },
+  {
+    "text": "이 층 특징 뭐냐 함정 많아?",
+    "label": "None"
+  },
   {
     "text": "보스방까지 얼마나 남음",
     "label": "None"
@@ -13689,18 +12835,14 @@
     "text": "길 잃었는데 표식 찍어봐",
     "label": "None"
   },
-  [
-    {
-      "text": "엘리베이터 어디서 타",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"이 문 뒤에 뭐 있음\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "엘리베이터 어디서 타",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"이 문 뒤에 뭐 있음\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "체크포인트 지나쳤냐",
     "label": "None"
@@ -13757,12 +12899,10 @@
     "text": "폭탄 하나 써서 열어봐",
     "label": "None"
   },
-  [
-    {
-      "text": "원소 스킬 쿨 확인해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "원소 스킬 쿨 확인해줘",
+    "label": "None"
+  },
   {
     "text": "내 체력 상태 한 번 봐",
     "label": "None"
@@ -13783,12 +12923,10 @@
     "text": "방패 켜고 들어가라 했지?",
     "label": "None"
   },
-  [
-    {
-      "text": "부활템 남았는지 확인",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "부활템 남았는지 확인",
+    "label": "None"
+  },
   {
     "text": "이 키 아이템 어디서 씀",
     "label": "None"
@@ -13797,12 +12935,10 @@
     "text": "토치 꺼, 함정 뜨잖아",
     "label": "None"
   },
-  [
-    {
-      "text": "원소 공명 맞춰서 바꿔줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "원소 공명 맞춰서 바꿔줘",
+    "label": "None"
+  },
   {
     "text": "보물상자 열쇠 있냐 내거",
     "label": "None"
@@ -13823,12 +12959,10 @@
     "text": "회피 판정이 왜 안 나와",
     "label": "None"
   },
-  [
-    {
-      "text": "이 던전 보상 뭐가 나옴",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 던전 보상 뭐가 나옴",
+    "label": "None"
+  },
   {
     "text": "UI에 표시 안 뜨는데 왜",
     "label": "None"
@@ -13845,24 +12979,18 @@
     "text": "이건 상호작용 키 뭐야",
     "label": "None"
   },
-  [
-    {
-      "text": "왜 문 열기 옵션이 안 떠",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "부활 제한 규칙 설명해봐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "파티 바꾸는 메뉴 어디",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "왜 문 열기 옵션이 안 떠",
+    "label": "None"
+  },
+  {
+    "text": "부활 제한 규칙 설명해봐",
+    "label": "None"
+  },
+  {
+    "text": "파티 바꾸는 메뉴 어디",
+    "label": "None"
+  },
   {
     "text": "자동조준 끄는 설정 있냐",
     "label": "None"
@@ -13875,34 +13003,26 @@
     "text": "카메라 왜 이따위로 흔들려",
     "label": "None"
   },
-  [
-    {
-      "text": "대화 넘기기 키 뭐냐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "체력바 색 바뀐 이유",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "피해면역 뜨면 뭘 해야 됨",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "대화 넘기기 키 뭐냐",
+    "label": "None"
+  },
+  {
+    "text": "체력바 색 바뀐 이유",
+    "label": "None"
+  },
+  {
+    "text": "피해면역 뜨면 뭘 해야 됨",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "보상 상자 왜 잠김",
     "label": "None"
   },
-  [
-    {
-      "text": "난이도 조절 지금 가능해?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "난이도 조절 지금 가능해?",
+    "label": "None"
+  },
   {
     "text": "이거 재도전 버튼 어디",
     "label": "None"
@@ -13983,38 +13103,30 @@
     "text": "입구로 돌아가야 하나",
     "label": "None"
   },
-  [
-    {
-      "text": "qwepoizx;;lkj;;;",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄴㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "qwepoizx;;lkj;;;",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄴㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123!!\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;...;;;:::\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;...;;;:::\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "뷁궭뛟쀍",
     "label": "None"
   },
-  [
-    {
-      "text": "ㅋㅌㅊㅍㅈㅁㄴ",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "ㅋㅌㅊㅍㅈㅁㄴ",
+    "label": "None"
+  },
   {
     "text": "보스 약점 말하고 길도 찍어",
     "label": "MONSTER_GUIDE"
@@ -14047,12 +13159,10 @@
     "text": "장비 바꿀지 말지 추천해봐",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 즉사기랑 대응 위치 말해",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 즉사기랑 대응 위치 말해",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이벤트 실패 이유랑 재도전법",
     "label": "None"
@@ -14069,12 +13179,10 @@
     "text": "맵 분기 뭐가 덜 위험한지",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 힌트 주고 시간제한도 말해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "퍼즐 힌트 주고 시간제한도 말해",
+    "label": "None"
+  },
   {
     "text": "이 문 왜 안 열려, 조건 뭐냐",
     "label": "None"
@@ -14151,18 +13259,14 @@
     "text": "폭탄통 어디 던지고 문 열리는지",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 돌진 모션이랑 피하는 각",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "광폭화 조건이랑 끊는 방법",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 돌진 모션이랑 피하는 각",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "광폭화 조건이랑 끊는 방법",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "즉사기 뭐였고 해독제 필요함?",
     "label": "MONSTER_GUIDE"
@@ -14195,12 +13299,10 @@
     "text": "장판 끄는 법이랑 안전지대 위치",
     "label": "None"
   },
-  [
-    {
-      "text": "문 뒤에 뭐 있고 들어가도 됨?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "문 뒤에 뭐 있고 들어가도 됨?",
+    "label": "None"
+  },
   {
     "text": "지름길 있나, 보스방까지 거리",
     "label": "None"
@@ -14241,12 +13343,10 @@
     "text": "보스 무적 풀리면 어디서 딜 넣어",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "우회로 있나, 닫힌 문 다시 여는 법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "우회로 있나, 닫힌 문 다시 여는 법",
+    "label": "None"
+  },
   {
     "text": "이벤트 조건 뭐고 실패하면 뭐 잃어",
     "label": "None"
@@ -14267,12 +13367,10 @@
     "text": "지금 뭐부터 잡고 패턴은 뭐 조심",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "분기 왼쪽이냐 오른쪽이냐, 이유도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "분기 왼쪽이냐 오른쪽이냐, 이유도",
+    "label": "None"
+  },
   {
     "text": "기어 방향이랑 맞추는 순서 알려",
     "label": "None"
@@ -14297,12 +13395,10 @@
     "text": "맵 위층 계단 어디고 내려가면 뭐임",
     "label": "None"
   },
-  [
-    {
-      "text": "버그면 재도전 어디서, 리셋 조건도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "버그면 재도전 어디서, 리셋 조건도",
+    "label": "None"
+  },
   {
     "text": "장비 추천하고 약점 속성도 맞춰",
     "label": "MONSTER_GUIDE"
@@ -14319,12 +13415,10 @@
     "text": "퍼즐 풀리면 뭐 열려, 보상도 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "이 문 옵션 안 떠, 조건이랑 키",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 문 옵션 안 떠, 조건이랑 키",
+    "label": "None"
+  },
   {
     "text": "장치 3개 뭐부터, 실패 원인도",
     "label": "None"
@@ -14333,12 +13427,10 @@
     "text": "폭탄 써야 돼? 인벤에 남았는지",
     "label": "None"
   },
-  [
-    {
-      "text": "힐 언제 쓰고 즉사기 어떻게 피함",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "힐 언제 쓰고 즉사기 어떻게 피함",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "소환몹 끊고 본체 딜 타이밍 말해",
     "label": "MONSTER_GUIDE"
@@ -14351,22 +13443,18 @@
     "text": "길 안내랑 함정 위치 동시에 찍어",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 몹 속성 뭐고 약점은 뭔데",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 방 몹 속성 뭐고 약점은 뭔데",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "패턴 바뀌면 신호 뭐고 대응은",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "다음 방 특징이랑 기믹 먼저 설명",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 방 특징이랑 기믹 먼저 설명",
+    "label": "None"
+  },
   {
     "text": "상태이상 걸렸나 확인하고 해독제",
     "label": "None"
@@ -14399,12 +13487,10 @@
     "text": "체력 위험한데 힐템이랑 부활템",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 층 가기 전에 체크포인트 있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 층 가기 전에 체크포인트 있냐",
+    "label": "None"
+  },
   {
     "text": "샛길 보상 있으면 가고, 아니면 말아",
     "label": "None"
@@ -14425,12 +13511,10 @@
     "text": "아오 또 죽겠네, 대처법 빨리",
     "label": "None"
   },
-  [
-    {
-      "text": "페이몬, 쓸데말고 핵심만",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "페이몬, 쓸데말고 핵심만",
+    "label": "None"
+  },
   {
     "text": "이거 왜 이렇게 어렵게 만듦",
     "label": "None"
@@ -14439,12 +13523,10 @@
     "text": "나 지금 손 꼬였어, 도움 줘",
     "label": "None"
   },
-  [
-    {
-      "text": "여기서 뭐 누르면 진행됨",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기서 뭐 누르면 진행됨",
+    "label": "None"
+  },
   {
     "text": "이 방 클리어 조건이 뭐냐",
     "label": "None"
@@ -14485,12 +13567,10 @@
     "text": "여기 다시 오면 리젠됨?",
     "label": "None"
   },
-  [
-    {
-      "text": "상자 먹고 나가도 되냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상자 먹고 나가도 되냐",
+    "label": "None"
+  },
   {
     "text": "지금 경로가 맞긴 한 거냐",
     "label": "None"
@@ -14531,12 +13611,10 @@
     "text": "이거 물리로 때리면 안 돼?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "원소 반응 뭐 써야 편해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "원소 반응 뭐 써야 편해",
+    "label": "None"
+  },
   {
     "text": "저 몹 잡으면 열쇠 떨어짐?",
     "label": "None"
@@ -14549,12 +13627,10 @@
     "text": "하필 여기서 렉 걸리네 방법 없어?",
     "label": "None"
   },
-  [
-    {
-      "text": "설정에서 그래픽 낮추는 데 어디",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "설정에서 그래픽 낮추는 데 어디",
+    "label": "None"
+  },
   {
     "text": "키 리매핑 가능함?",
     "label": "None"
@@ -14595,12 +13671,10 @@
     "text": "저 몹 왜 안 죽어? 속성 뭐임",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 2페 넘어가는 조건 뭐야",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 2페 넘어가는 조건 뭐야",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "광폭화 타이밍 언제야, 빡치네",
     "label": "MONSTER_GUIDE"
@@ -14721,12 +13795,10 @@
     "text": "발판 색 순서 기억해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "감지 레이저 어디로 피해",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "감지 레이저 어디로 피해",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "물 수위 퍼즐 뭐부터 만져",
     "label": "None"
@@ -14795,38 +13867,30 @@
     "text": "우측 통로 막혔는데 우회로?",
     "label": "None"
   },
-  [
-    {
-      "text": "여기 안전지대 어디야",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "엘리베이터 버튼 어디 있어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기 안전지대 어디야",
+    "label": "None"
+  },
+  {
+    "text": "엘리베이터 버튼 어디 있어",
+    "label": "None"
+  },
   {
     "text": "미니맵 왜 안 뜨냐, 길좀",
     "label": "None"
   },
-  [
-    {
-      "text": "함정방 건너는 루트 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "함정방 건너는 루트 알려줘",
+    "label": "None"
+  },
   {
     "text": "저 문 뒤가 보스방 맞아?",
     "label": "None"
   },
-  [
-    {
-      "text": "스킵 가능한 길 있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "스킵 가능한 길 있냐",
+    "label": "None"
+  },
   {
     "text": "중간 체크포인트 어디였지",
     "label": "None"
@@ -14863,12 +13927,10 @@
     "text": "버프 음식 지금 먹을까?",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"원소 바꾸자, 뭐가 맞냐\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"원소 바꾸자, 뭐가 맞냐\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "활 꺼내, 저거 멀리 있잖아",
     "label": "None"
@@ -15001,12 +14063,10 @@
     "text": "손이 꼬여서 다 죽겠네",
     "label": "None"
   },
-  [
-    {
-      "text": "야 이거 너무 사기 아니냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "야 이거 너무 사기 아니냐",
+    "label": "None"
+  },
   {
     "text": "나 지금 멘탈 나감, 도와줘",
     "label": "None"
@@ -15039,12 +14099,10 @@
     "text": "괜히 들어왔나, 후회된다",
     "label": "None"
   },
-  [
-    {
-      "text": "여기서 죽으면 처음부터야?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기서 죽으면 처음부터야?",
+    "label": "None"
+  },
   {
     "text": "빨리 판단해줘, 나 바빠",
     "label": "None"
@@ -15053,24 +14111,18 @@
     "text": "뭐가 이렇게 안 풀리냐",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;qwepoizx\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄴㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": ";;;;;lkj;;;",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;qwepoizx\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄴㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": ";;;;;lkj;;;",
+    "label": "None"
+  },
   {
     "text": "qazwsxEDC123!@#",
     "label": "None"
@@ -15079,24 +14131,18 @@
     "text": "뷁궭ퟻ퟼",
     "label": "None"
   },
-  [
-    {
-      "text": "ㅋㅌㅊㅍㅌㅊ",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "보스 약점이랑 패턴 같이 말해",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "퍼즐 순서랑 레버 위치 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "ㅋㅌㅊㅍㅌㅊ",
+    "label": "None"
+  },
+  {
+    "text": "보스 약점이랑 패턴 같이 말해",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "퍼즐 순서랑 레버 위치 알려줘",
+    "label": "None"
+  },
   {
     "text": "길 좀 찍고 함정도 조심하라 해",
     "label": "None"
@@ -15121,18 +14167,14 @@
     "text": "다음 방 어디고 보스방 맞는지",
     "label": "None"
   },
-  [
-    {
-      "text": "스위치 조건 알려주고 문도 열어",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "패턴 피하는 법이랑 회피키 뭐냐",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "스위치 조건 알려주고 문도 열어",
+    "label": "None"
+  },
+  {
+    "text": "패턴 피하는 법이랑 회피키 뭐냐",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "맵 길 안내하고 체크포인트도",
     "label": "None"
@@ -15161,12 +14203,10 @@
     "text": "보상 조건 뭐고 왜 안 열리는지",
     "label": "None"
   },
-  [
-    {
-      "text": "UI 경고 뜻이랑 해결법 말해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "UI 경고 뜻이랑 해결법 말해",
+    "label": "None"
+  },
   {
     "text": "원소 바꾸고 상태이상도 확인해",
     "label": "None"
@@ -15199,12 +14239,10 @@
     "text": "대쉬키랑 회피 판정 팁 같이",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 광폭화 언제고 힐 타이밍",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 광폭화 언제고 힐 타이밍",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "소환몹 처리 순서랑 스킬쿨 확인",
     "label": "MONSTER_GUIDE"
@@ -15249,12 +14287,10 @@
     "text": "방패몹 공략이랑 실드 깨는 법",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "상태이상 뭐 먹히는지랑 약점",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "상태이상 뭐 먹히는지랑 약점",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "미로 루트랑 되돌아가면 꼬이나",
     "label": "None"
@@ -15283,12 +14319,10 @@
     "text": "저 몹 피흡 막고 디버프도 풀어",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 2페 조건이랑 장판 횟수",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 2페 조건이랑 장판 횟수",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "활 꺼내고 멀리 장치도 쏴줘",
     "label": "None"
@@ -15337,22 +14371,18 @@
     "text": "타이머 퍼즐 빨리 하고 길도 안내",
     "label": "None"
   },
-  [
-    {
-      "text": "문 안 열리는 조건이랑 레버 위치",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "문 안 열리는 조건이랑 레버 위치",
+    "label": "None"
+  },
   {
     "text": "레이저 피해가면서 상호작용 해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "여기 안전지대랑 보스방 위치",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기 안전지대랑 보스방 위치",
+    "label": "None"
+  },
   {
     "text": "광폭화 전에 힐하고 방패도 갈아",
     "label": "None"
@@ -15405,12 +14435,10 @@
     "text": "보스 약점 맞춰서 장비도 바꾸자",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "패턴 요약해주고 회피 타이밍도",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "패턴 요약해주고 회피 타이밍도",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "포탈 어디고 보스방 맞는지 확인",
     "label": "None"
@@ -15443,18 +14471,14 @@
     "text": "보상 뭐 나오는지랑 규칙도 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "페이몬, 말 줄이고 핵심만 말해",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "여기서 죽으면 어디서 부활이야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "페이몬, 말 줄이고 핵심만 말해",
+    "label": "None"
+  },
+  {
+    "text": "여기서 죽으면 어디서 부활이야",
+    "label": "None"
+  },
   {
     "text": "아니 이거 진짜 억까 아님?",
     "label": "None"
@@ -15543,38 +14567,30 @@
     "text": "여기 발판 밟는 횟수 제한 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "맵에 아이콘 의미가 뭐냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "맵에 아이콘 의미가 뭐냐",
+    "label": "None"
+  },
   {
     "text": "이거 상호작용 거리 왜 이렇게 짧아",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 패턴 랜덤이야 고정이야",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "저 몹 속박 거는 패턴 예고 있냐",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 패턴 랜덤이야 고정이야",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "저 몹 속박 거는 패턴 예고 있냐",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "보스 무적 풀리는 조건 뭐임",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "실드 색깔별 대응 다르냐",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "실드 색깔별 대응 다르냐",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이벤트 다시 시도 가능해?",
     "label": "None"
@@ -15599,18 +14615,14 @@
     "text": "버프 지속시간 어디서 봐",
     "label": "None"
   },
-  [
-    {
-      "text": "인벤 꽉 찼는데 버리기 뭐가 나음",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "장비 바꾸면 패널티 있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "인벤 꽉 찼는데 버리기 뭐가 나음",
+    "label": "None"
+  },
+  {
+    "text": "장비 바꾸면 패널티 있냐",
+    "label": "None"
+  },
   {
     "text": "아이템 쿨타임 공유돼?",
     "label": "None"
@@ -15635,12 +14647,10 @@
     "text": "a9s8d7f6j5k4",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;:;;:;:;;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;:;;:;:;;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "ㅈㄷㄱㅁㅈㄷㄱㅁ",
     "label": "None"
@@ -15673,18 +14683,14 @@
     "text": "지금 파밍하고 가야 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 방 몹 속성 뭐 나와, 대비",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "보스 패턴 중 즉사기 뭐냐",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "다음 방 몹 속성 뭐 나와, 대비",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "보스 패턴 중 즉사기 뭐냐",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "저 함정 데미지 고정이냐",
     "label": "None"
@@ -15713,12 +14719,10 @@
     "text": "야 보스 약점, 퍼즐, 길 한꺼번에",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "인벤 확인하고 불 켜고 길도 찍어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "인벤 확인하고 불 켜고 길도 찍어",
+    "label": "None"
+  },
   {
     "text": "패턴 설명하고 회피키도 다시 알려",
     "label": "MONSTER_GUIDE"
@@ -15747,12 +14751,10 @@
     "text": "장치 순서 알려주고 실패 원인도",
     "label": "None"
   },
-  [
-    {
-      "text": "보스전 준비물 뭐고 버프 뭐 먹어",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스전 준비물 뭐고 버프 뭐 먹어",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "미니맵 키랑 핀 찍는 법 같이",
     "label": "None"
@@ -15761,12 +14763,10 @@
     "text": "저 반사몹인지 보고 원소도 바꿔",
     "label": "None"
   },
-  [
-    {
-      "text": "소환몹 처리하고 본체 패턴도 체크",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "소환몹 처리하고 본체 패턴도 체크",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "길 잃었으니 우회로랑 안전지대",
     "label": "None"
@@ -15867,22 +14867,18 @@
     "text": "저거 잡몹 무한리젠임?",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 잡기 전에 물약 필요?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 잡기 전에 물약 필요?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "페이몬, 딜 타임 언제 주냐",
     "label": "None"
   },
-  [
-    {
-      "text": "이 보스 기절 조건 뭐야?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 보스 기절 조건 뭐야?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "저 몹 반사 있는 거 맞지?",
     "label": "MONSTER_GUIDE"
@@ -16023,12 +15019,10 @@
     "text": "퍼즐 풀면 뭐가 열리냐고",
     "label": "None"
   },
-  [
-    {
-      "text": "여기 길 어디로 가야 돼?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기 길 어디로 가야 돼?",
+    "label": "None"
+  },
   {
     "text": "다음 방 분기 뭐가 더 쉬움?",
     "label": "None"
@@ -16069,28 +15063,22 @@
     "text": "이 방 특징 뭐냐, 함정 있음?",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 층은 속성 제한 있냐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "페이몬, 출구 표지 어디냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 층은 속성 제한 있냐",
+    "label": "None"
+  },
+  {
+    "text": "페이몬, 출구 표지 어디냐",
+    "label": "None"
+  },
   {
     "text": "여기 미니맵 왜 안 뜨냐",
     "label": "None"
   },
-  [
-    {
-      "text": "이 문 뒤에 뭐 나와, 위험함?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 문 뒤에 뭐 나와, 위험함?",
+    "label": "None"
+  },
   {
     "text": "길 막는 장벽 해제 조건 뭐야",
     "label": "None"
@@ -16183,12 +15171,10 @@
     "text": "내 HP 몇 퍼야, 대충 말해",
     "label": "None"
   },
-  [
-    {
-      "text": "스태미나 얼마나 남았냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "스태미나 얼마나 남았냐",
+    "label": "None"
+  },
   {
     "text": "페이몬, 이 장비 내구도 봐라",
     "label": "None"
@@ -16197,12 +15183,10 @@
     "text": "지금 원소 공명 바꿔야 함?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 들어가기 전에 저장 가능?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 들어가기 전에 저장 가능?",
+    "label": "None"
+  },
   {
     "text": "상자 열어도 돼? 함정임?",
     "label": "None"
@@ -16299,18 +15283,14 @@
     "text": "이벤트 타이머 어디 표시됨?",
     "label": "None"
   },
-  [
-    {
-      "text": "파티원 핑은 어떻게 찍냐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "카메라 고정 푸는 법 좀",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "파티원 핑은 어떻게 찍냐",
+    "label": "None"
+  },
+  {
+    "text": "카메라 고정 푸는 법 좀",
+    "label": "None"
+  },
   {
     "text": "이 문 상호작용 범위 왜 이래",
     "label": "None"
@@ -16379,12 +15359,10 @@
     "text": "내 손이 문제지, 게임 탓 아님",
     "label": "None"
   },
-  [
-    {
-      "text": "여기서 죽으면 다시 처음이냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기서 죽으면 다시 처음이냐",
+    "label": "None"
+  },
   {
     "text": "좀 조용히 해, 집중한다",
     "label": "None"
@@ -16437,22 +15415,18 @@
     "text": "약점 알려주고 불도 켜봐",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "퍼즐 순서 말해, 함정도 꺼",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "퍼즐 순서 말해, 함정도 꺼",
+    "label": "None"
+  },
   {
     "text": "다음 방 어디야, 미니맵도 봐",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 패턴 설명하고 물약 추천",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 패턴 설명하고 물약 추천",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "레버 순서랑 출구 위치 같이",
     "label": "None"
@@ -16465,18 +15439,14 @@
     "text": "장비 바꾸고 버프도 써줘",
     "label": "None"
   },
-  [
-    {
-      "text": "길 잃음 해결하고 퍼즐 힌트도",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "보상 조건 알려, 그리고 문 열어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "길 잃음 해결하고 퍼즐 힌트도",
+    "label": "None"
+  },
+  {
+    "text": "보상 조건 알려, 그리고 문 열어",
+    "label": "None"
+  },
   {
     "text": "함정 타이밍 재고 불도 꺼",
     "label": "None"
@@ -16501,18 +15471,14 @@
     "text": "UI에서 목표 찾고 키도 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "실드몹 파훼랑 딜 타임도 콕",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "다음 층 규칙이랑 추천 파티도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "실드몹 파훼랑 딜 타임도 콕",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "다음 층 규칙이랑 추천 파티도",
+    "label": "None"
+  },
   {
     "text": "장치 조건 확인하고 리셋도 해",
     "label": "None"
@@ -16533,12 +15499,10 @@
     "text": "분기 추천하고 되돌아갈 길도",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 즉사기 피하고 안전지대도",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 즉사기 피하고 안전지대도",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "카메라 풀고 상호작용 왜 안됨?",
     "label": "None"
@@ -16547,24 +15511,18 @@
     "text": "길 막힌 장벽 조건이랑 우회로",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;lkj;;;qwe\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂㅅ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizxvnm,./\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;lkj;;;qwe\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂㅅ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizxvnm,./\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;;;:::::;;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
     "label": "None"
@@ -16573,28 +15531,22 @@
     "text": "뷁궭ퟋퟍ쀍",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅋㅌㅊㅍㄴㅇㄹ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅋㅌㅊㅍㄴㅇㄹ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "zxcmnqowei123",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"l;kjhgfdsapoiu\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..,,;;//\\\\--==\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"l;kjhgfdsapoiu\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..,,;;//\\\\--==\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "ㅈㄷㄱㅁㄴㅂㅅㅊ",
     "label": "None"
@@ -16611,22 +15563,18 @@
     "text": "이 몹 실드 깨는 방법 있냐",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "다음 페이즈 대비 뭐 챙겨야 돼",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "다음 페이즈 대비 뭐 챙겨야 돼",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "광역 피할 타이밍 좀 찍어봐",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 분신 진짜 구분법 있냐",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 분신 진짜 구분법 있냐",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이놈 빙결 내성 있어?",
     "label": "MONSTER_GUIDE"
@@ -16639,12 +15587,10 @@
     "text": "저거 돌진 언제 멈춰?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "기절 면역인지 확인해줘",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "기절 면역인지 확인해줘",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "약점 속성 뭐냐, 맞춰갈게",
     "label": "MONSTER_GUIDE"
@@ -16721,12 +15667,10 @@
     "text": "타이머 이벤트 팁 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "문 안 열리는데 조건 뭐냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "문 안 열리는데 조건 뭐냐",
+    "label": "None"
+  },
   {
     "text": "장치 전원 어디서 올려",
     "label": "None"
@@ -16747,12 +15691,10 @@
     "text": "숨겨진 스위치 또 있지?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 폭탄은 어디에 써",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 폭탄은 어디에 써",
+    "label": "None"
+  },
   {
     "text": "함정 바닥 안전구역 있냐",
     "label": "None"
@@ -16821,18 +15763,14 @@
     "text": "다음 방 몹 타입 뭐 나와",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "엘리베이터 어디서 타",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이 문 뒤가 바로 보스냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "엘리베이터 어디서 타",
+    "label": "None"
+  },
+  {
+    "text": "이 문 뒤가 바로 보스냐",
+    "label": "None"
+  },
   {
     "text": "상자 있는 길이 어디야",
     "label": "None"
@@ -16873,12 +15811,10 @@
     "text": "인벤 꽉 찼는지 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "버프 음식 뭐 먹는 게 낫냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "버프 음식 뭐 먹는 게 낫냐",
+    "label": "None"
+  },
   {
     "text": "방어구 바꾸는 게 맞아?",
     "label": "None"
@@ -16931,18 +15867,14 @@
     "text": "회피 키가 뭐였더라",
     "label": "None"
   },
-  [
-    {
-      "text": "궁 키 눌러도 왜 안 나가",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이 던전 보상 뭐 줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "궁 키 눌러도 왜 안 나가",
+    "label": "None"
+  },
+  {
+    "text": "이 던전 보상 뭐 줘",
+    "label": "None"
+  },
   {
     "text": "부활 제한 규칙 있음?",
     "label": "None"
@@ -16955,12 +15887,10 @@
     "text": "튜토리얼 다시 보는 법 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "파티 버프 적용되는 조건 뭐냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "파티 버프 적용되는 조건 뭐냐",
+    "label": "None"
+  },
   {
     "text": "체력바 색이 왜 저래",
     "label": "None"
@@ -16969,22 +15899,18 @@
     "text": "잠금 타겟 해제 키 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "카메라가 미친 듯 흔들려",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "카메라가 미친 듯 흔들려",
+    "label": "None"
+  },
   {
     "text": "이 스킬이 왜 봉인됨",
     "label": "None"
   },
-  [
-    {
-      "text": "장비 프리셋 바꾸는 메뉴 어디",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "장비 프리셋 바꾸는 메뉴 어디",
+    "label": "None"
+  },
   {
     "text": "미니맵 확대 어떻게 해",
     "label": "None"
@@ -17081,60 +16007,46 @@
     "text": "여기서 죽으면 욕 나온다",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"대충 말하지 말고 확실히\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"대충 말하지 말고 확실히\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "내 운빨 어디 갔냐",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "뷁궭ퟍퟍ",
     "label": "None"
   },
-  [
-    {
-      "text": "ㅋㅌㅊㅍㅌㅊ",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "ㅋㅌㅊㅍㅌㅊ",
+    "label": "None"
+  },
   {
     "text": ";';;;,./",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 약점이랑 패턴, 한 번에",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "다음 방 길 알려주고 함정도 봐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 약점이랑 패턴, 한 번에",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "다음 방 길 알려주고 함정도 봐",
+    "label": "None"
+  },
   {
     "text": "이 퍼즐 순서랑 실패 이유 말해",
     "label": "None"
@@ -17191,12 +16103,10 @@
     "text": "함정 위치랑 안전구역, 찍어줘",
     "label": "None"
   },
-  [
-    {
-      "text": "포탈 둘 중 어디, 보상도 뭐 줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "포탈 둘 중 어디, 보상도 뭐 줘",
+    "label": "None"
+  },
   {
     "text": "문 안 열림, 조건이랑 스위치 위치",
     "label": "None"
@@ -17205,12 +16115,10 @@
     "text": "타이머 이벤트 팁이랑 순서 정리",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 분신 구분법, 딜타임도",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 분신 구분법, 딜타임도",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "카운터 구간이랑 패턴 변화 같이",
     "label": "MONSTER_GUIDE"
@@ -17267,12 +16175,10 @@
     "text": "물 수위 퍼즐 맞추고 문까지 열어",
     "label": "None"
   },
-  [
-    {
-      "text": "발판 순서랑 오답 패널티 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "발판 순서랑 오답 패널티 뭐야",
+    "label": "None"
+  },
   {
     "text": "장비 프리셋 어디서 바꿔, 빨리",
     "label": "None"
@@ -17289,12 +16195,10 @@
     "text": "보스 방어버프 지우고 약점도 맞춰",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "다음 층 특징이랑 함정 많나 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 층 특징이랑 함정 많나 알려줘",
+    "label": "None"
+  },
   {
     "text": "조준 보정 끄고, 조작 키도 정리",
     "label": "None"
@@ -17319,18 +16223,14 @@
     "text": "룬 석판 뭐부터, 그리고 숨은 스위치",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 돌진 멈추는 타이밍, 카운터도",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "잡몹 우선순위랑 버프 음식 추천",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 돌진 멈추는 타이밍, 카운터도",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "잡몹 우선순위랑 버프 음식 추천",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "체력바 색 왜 저래, 상태도 같이 봐",
     "label": "None"
@@ -17339,12 +16239,10 @@
     "text": "미니맵 빈칸 뭐고, 거기 가는 길",
     "label": "None"
   },
-  [
-    {
-      "text": "이상한 소리 원인, 함정 여부 체크",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이상한 소리 원인, 함정 여부 체크",
+    "label": "None"
+  },
   {
     "text": "엘리베이터 위치랑 체크포인트 확인",
     "label": "None"
@@ -17365,12 +16263,10 @@
     "text": "이벤트 실패 이유랑 재시도 조건 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "분기 선택 전에 보스냐 상자냐, 판단",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "분기 선택 전에 보스냐 상자냐, 판단",
+    "label": "None"
+  },
   {
     "text": "스태미나 남은 거랑 회피 타이밍 같이",
     "label": "MONSTER_GUIDE"
@@ -17379,12 +16275,10 @@
     "text": "불 꺼도 되나, 시야 확보 방법도",
     "label": "None"
   },
-  [
-    {
-      "text": "포션 낭비인지, 다음 페이즈도 예측",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "포션 낭비인지, 다음 페이즈도 예측",
+    "label": "None"
+  },
   {
     "text": "함정 감지하고 안전 루트로 안내해",
     "label": "None"
@@ -17401,12 +16295,10 @@
     "text": "타겟이 자꾸 바뀜, 잠금 설정도 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "튜토리얼 어디서 다시, 규칙도 요약",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "튜토리얼 어디서 다시, 규칙도 요약",
+    "label": "None"
+  },
   {
     "text": "파티 버프 조건이랑 적용 여부 확인",
     "label": "None"
@@ -17443,12 +16335,10 @@
     "text": "분신 패턴 오면 누구 먼저 잡아?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "실드 깨는 법이랑 추천 스킬 조합",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "실드 깨는 법이랑 추천 스킬 조합",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이 퍼즐 끝나면 보상 뭐, 그리고 출구",
     "label": "None"
@@ -17457,12 +16347,10 @@
     "text": "왜 안됨? 조건과 조작 둘 다 말해",
     "label": "None"
   },
-  [
-    {
-      "text": "기절 면역인지 보고, CC 대안도",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "기절 면역인지 보고, CC 대안도",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "출혈 풀고 회복, 다음 장판도 대비",
     "label": "None"
@@ -17491,12 +16379,10 @@
     "text": "plmoknijbhuv",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..,,;;:://\\\\\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..,,;;:://\\\\\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "ㅈㄷㅁㄴㅇㅂㅅㅁ",
     "label": "None"
@@ -17513,12 +16399,10 @@
     "text": "이 보스 2페 언제 넘어감?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "방금 그 돌진 어케 피함",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "방금 그 돌진 어케 피함",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "독걸렸는데 해제템 필요함?",
     "label": "None"
@@ -17531,12 +16415,10 @@
     "text": "이 몹 실드 깨는법 있냐",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 분노때 딜 넣어도됨?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 분노때 딜 넣어도됨?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "저놈 소환몹부터 잡아야해?",
     "label": "MONSTER_GUIDE"
@@ -17545,12 +16427,10 @@
     "text": "광역기 나오기 전에 신호 있음?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이 보스 원소반응 뭐가 잘먹혀",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 보스 원소반응 뭐가 잘먹혀",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "저 몹 머리 약점 맞음?",
     "label": "MONSTER_GUIDE"
@@ -17595,12 +16475,10 @@
     "text": "룬 돌리는 방향 맞아?",
     "label": "None"
   },
-  [
-    {
-      "text": "바닥 문양 밟는 순서 있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "바닥 문양 밟는 순서 있냐",
+    "label": "None"
+  },
   {
     "text": "여기 기믹 실패원인 뭐임",
     "label": "None"
@@ -17701,12 +16579,10 @@
     "text": "장비 바꿔야되나 확인좀",
     "label": "None"
   },
-  [
-    {
-      "text": "버프 음식 뭐 먹는게좋아",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "버프 음식 뭐 먹는게좋아",
+    "label": "None"
+  },
   {
     "text": "원소 저항포션 써볼까",
     "label": "None"
@@ -17775,12 +16651,10 @@
     "text": "왜 상호작용이 안뜸",
     "label": "None"
   },
-  [
-    {
-      "text": "스태미나 회복 느린데 왜이럼",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "스태미나 회복 느린데 왜이럼",
+    "label": "None"
+  },
   {
     "text": "튜토리얼 다시 볼수있어?",
     "label": "None"
@@ -17789,12 +16663,10 @@
     "text": "자동조준 설정 어디서함",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 패턴 알림 끌수있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 패턴 알림 끌수있냐",
+    "label": "None"
+  },
   {
     "text": "보상 상자 못열어 왜그럼",
     "label": "None"
@@ -17827,12 +16699,10 @@
     "text": "나 길치라 또 헤맴",
     "label": "None"
   },
-  [
-    {
-      "text": "진짜 여기 너무 어둡다",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "진짜 여기 너무 어둡다",
+    "label": "None"
+  },
   {
     "text": "보스 또 도망가면 빡침",
     "label": "None"
@@ -17865,34 +16735,26 @@
     "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄴㅂㅈ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄴㅂㅈ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "뷁궭뛟꽒",
     "label": "None"
   },
-  [
-    {
-      "text": ";';;,,..//",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "ㅋㅌㅊㅍㄴㅈㄷ",
-      "label": "None"
-    }
-  ],
+  {
+    "text": ";';;,,..//",
+    "label": "None"
+  },
+  {
+    "text": "ㅋㅌㅊㅍㄴㅈㄷ",
+    "label": "None"
+  },
   {
     "text": "보스 약점이랑 패턴 둘다 알려줘",
     "label": "MONSTER_GUIDE"
@@ -17941,12 +16803,10 @@
     "text": "퍼즐 다풀면 다음층 바로감?",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 2페 패턴이랑 피하는법",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 2페 패턴이랑 피하는법",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "함정 해제하고 길도 안내해줘",
     "label": "None"
@@ -17955,28 +16815,22 @@
     "text": "지도 안보이는데 핀 찍어줘",
     "label": "None"
   },
-  [
-    {
-      "text": "이벤트 조건 확인하고 스위치도",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "저 몹 실드 깨는법이랑 약점",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이벤트 조건 확인하고 스위치도",
+    "label": "None"
+  },
+  {
+    "text": "저 몹 실드 깨는법이랑 약점",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "불기둥 순서랑 레버 위치 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "문 잠긴거 이유랑 열쇠 어디",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "문 잠긴거 이유랑 열쇠 어디",
+    "label": "None"
+  },
   {
     "text": "스킬쿨 확인하고 궁 타이밍 봐",
     "label": "None"
@@ -17985,12 +16839,10 @@
     "text": "다음방 특징이랑 보스 준비물",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "UI 빨간표시 뭐고 디버프임?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "UI 빨간표시 뭐고 디버프임?",
+    "label": "None"
+  },
   {
     "text": "대쉬 왜안됨이랑 스태미나 체크",
     "label": "None"
@@ -18003,12 +16855,10 @@
     "text": "숨은 스위치 찾고 함정도 조심",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 힐 막는법이랑 소환몹 우선?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 힐 막는법이랑 소환몹 우선?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "오른쪽가면 뭐나오고 보스방 맞아?",
     "label": "None"
@@ -18029,22 +16879,18 @@
     "text": "상자 잠금 풀고 보상도 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "튜토 다시보고 설정에서 조준도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "튜토 다시보고 설정에서 조준도",
+    "label": "None"
+  },
   {
     "text": "저 몹 얼리면 되나 패턴도 알려",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "바닥 문양 순서랑 밟으면 뭐됨",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "바닥 문양 순서랑 밟으면 뭐됨",
+    "label": "None"
+  },
   {
     "text": "불 끄고 트랩 멈추는지 확인",
     "label": "None"
@@ -18061,22 +16907,18 @@
     "text": "레버 두개 뭐부터고 실패하면?",
     "label": "None"
   },
-  [
-    {
-      "text": "원소반응 뭐가좋고 저항포션도",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "원소반응 뭐가좋고 저항포션도",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "보스 돌진 신호랑 회피법 알려",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이 방 막다른지 숨길도 있나",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 막다른지 숨길도 있나",
+    "label": "None"
+  },
   {
     "text": "문양 퍼즐 조건이랑 장치키 뭐",
     "label": "None"
@@ -18097,12 +16939,10 @@
     "text": "보스 분노때 딜하고 빠져야함?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "함정 화살 타이밍이랑 지나가는법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "함정 화살 타이밍이랑 지나가는법",
+    "label": "None"
+  },
   {
     "text": "지도 표시 왜없고 길 안내해줘",
     "label": "None"
@@ -18127,12 +16967,10 @@
     "text": "다음층 가기전 준비물 체크해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "저 몹 머리약점 맞나 그리고 대응",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "저 몹 머리약점 맞나 그리고 대응",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "숨길입구 찾고 다음방도 찍어줘",
     "label": "None"
@@ -18157,12 +16995,10 @@
     "text": "장비 바꾸고 상태이상 있는지 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "이 던전 주간제한인지 보상도 알려",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 던전 주간제한인지 보상도 알려",
+    "label": "None"
+  },
   {
     "text": "함정 해제 가능하면 해주고 진행",
     "label": "None"
@@ -18171,12 +17007,10 @@
     "text": "레버 당기고 문 열리면 어디로",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 패턴 끊는타이밍이랑 딜각",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 패턴 끊는타이밍이랑 딜각",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이거 점프키랑 대쉬키 다시 알려",
     "label": "None"
@@ -18189,12 +17023,10 @@
     "text": "저항포션 쓰고 힐템도 아껴야됨?",
     "label": "None"
   },
-  [
-    {
-      "text": "지금 위치가 어딘지랑 보스방 거리",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지금 위치가 어딘지랑 보스방 거리",
+    "label": "None"
+  },
   {
     "text": "다음방 함정있음? 그리고 지도핀",
     "label": "None"
@@ -18203,12 +17035,10 @@
     "text": "장치 작동하고 불기둥도 점화해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "상자 열쇠 어디고 퍼즐도 같이",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상자 열쇠 어디고 퍼즐도 같이",
+    "label": "None"
+  },
   {
     "text": "이 몹 실드중에 반응 뭐쓰면됨?",
     "label": "MONSTER_GUIDE"
@@ -18257,12 +17087,10 @@
     "text": "여기 퍼즐 순서 틀리면 리셋됨?",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 약점 원소랑 무기타입 뭐가좋아",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 약점 원소랑 무기타입 뭐가좋아",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "트랩 멈추는 타이밍이랑 지나가자",
     "label": "None"
@@ -18279,12 +17107,10 @@
     "text": "대쉬 안나가는데 상태이상 걸림?",
     "label": "None"
   },
-  [
-    {
-      "text": "페이몬 나 또 헤맸다 길좀 찍어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "페이몬 나 또 헤맸다 길좀 찍어",
+    "label": "None"
+  },
   {
     "text": "이 방 너무 어두워 불켜고 함정도",
     "label": "None"
@@ -18297,12 +17123,10 @@
     "text": "이거 상호작용키 누르는데도 안됨 뭐임",
     "label": "None"
   },
-  [
-    {
-      "text": "준비물 뭐챙기고 인벤 공간도 확인",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "준비물 뭐챙기고 인벤 공간도 확인",
+    "label": "None"
+  },
   {
     "text": "여기 막다른길이면 되돌아갈까 길찾아줘",
     "label": "None"
@@ -18319,12 +17143,10 @@
     "text": "페이몬 빨리 다음층 포탈 찾고 핀찍어",
     "label": "None"
   },
-  [
-    {
-      "text": "이벤트 왜실패했는지랑 조건 다시",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이벤트 왜실패했는지랑 조건 다시",
+    "label": "None"
+  },
   {
     "text": "보스 패턴 너무빠른데 대응법이랑 회피",
     "label": "MONSTER_GUIDE"
@@ -18429,12 +17251,10 @@
     "text": "저 몹 날아다니면 원거리 필요함?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 방어 올리면 뭘로 깸",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 방어 올리면 뭘로 깸",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "패턴 중에 반격 타이밍 있냐",
     "label": "MONSTER_GUIDE"
@@ -18499,24 +17319,18 @@
     "text": "이번방 몹 너무 많다 진짜",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"xczvbnm;;;qaqw\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..,,;;//\\\\||\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"QWErty123!@#\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"xczvbnm;;;qaqw\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..,,;;//\\\\||\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"QWErty123!@#\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "ㅂㅈㄷㄱㅅㅁㄴㅇ",
     "label": "None"
@@ -18553,12 +17367,10 @@
     "text": "UI 경고 뭐냐랑 왜 딜 안들어가",
     "label": "None"
   },
-  [
-    {
-      "text": "조작키 다시 알려주고 상호작용도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "조작키 다시 알려주고 상호작용도",
+    "label": "None"
+  },
   {
     "text": "보스 사라짐 패턴이랑 대응 알려줘",
     "label": "MONSTER_GUIDE"
@@ -18587,22 +17399,18 @@
     "text": "내 상태이상 뭐고 해제템도 써줘",
     "label": "None"
   },
-  [
-    {
-      "text": "인벤 꽉찼는데 뭐 버리면됨?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "인벤 꽉찼는데 뭐 버리면됨?",
+    "label": "None"
+  },
   {
     "text": "보스 면역이면 어떤 원소로 바꿈?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "패턴 반격 타이밍이랑 딜 넣는법",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "패턴 반격 타이밍이랑 딜 넣는법",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "숨길 벽 부술수있나 그리고 길맞아?",
     "label": "None"
@@ -18663,12 +17471,10 @@
     "text": "약점 노출 언제 나와?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이 보스 뒤잡 가능함?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "이 보스 뒤잡 가능함?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "패턴 끊는 스킬 있어?",
     "label": "MONSTER_GUIDE"
@@ -18681,12 +17487,10 @@
     "text": "보스 힐하는거 끊어야돼?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "광폭 들어가면 뭐 조심?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "광폭 들어가면 뭐 조심?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "잡몹 리젠 조건 뭐임",
     "label": "None"
@@ -18695,12 +17499,10 @@
     "text": "이 방 몹 다잡아야 열려?",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 준비물 뭐 챙겨가",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 준비물 뭐 챙겨가",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "내 저항 뭐 맞춰야해?",
     "label": "None"
@@ -18733,12 +17535,10 @@
     "text": "잡몹 우선순위 뭐로가",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 방패 언제 내려가",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 방패 언제 내려가",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이 장치 작동 순서 뭐야",
     "label": "None"
@@ -18763,18 +17563,14 @@
     "text": "이벤트 실패 이유 뭐지",
     "label": "None"
   },
-  [
-    {
-      "text": "불꽃 토템 어떻게 끄냐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "물길 막힌거 푸는법좀",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "불꽃 토템 어떻게 끄냐",
+    "label": "None"
+  },
+  {
+    "text": "물길 막힌거 푸는법좀",
+    "label": "None"
+  },
   {
     "text": "이 기믹 시간제한 있어?",
     "label": "None"
@@ -18847,12 +17643,10 @@
     "text": "물위 발판 사라지는거 왜그래",
     "label": "None"
   },
-  [
-    {
-      "text": "기어 맞추는거 기준 뭐임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "기어 맞추는거 기준 뭐임",
+    "label": "None"
+  },
   {
     "text": "이 룬문자 해석 필요해?",
     "label": "None"
@@ -18877,12 +17671,10 @@
     "text": "다음방 어디로 가야됨",
     "label": "None"
   },
-  [
-    {
-      "text": "왼쪽길 맞아 오른쪽맞아",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "왼쪽길 맞아 오른쪽맞아",
+    "label": "None"
+  },
   {
     "text": "길 잃었는데 지도 찍어줘",
     "label": "None"
@@ -18927,12 +17719,10 @@
     "text": "다음 포탈 몇시방향이야",
     "label": "None"
   },
-  [
-    {
-      "text": "엘베 같은거 어디 타",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "엘베 같은거 어디 타",
+    "label": "None"
+  },
   {
     "text": "이 길로 가면 바로 보스야?",
     "label": "None"
@@ -18945,12 +17735,10 @@
     "text": "지금 몇층인지 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "세이브 포인트 어디있어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "세이브 포인트 어디있어",
+    "label": "None"
+  },
   {
     "text": "출구 반대쪽인가?",
     "label": "None"
@@ -19003,12 +17791,10 @@
     "text": "해독약 하나 먹어야됨?",
     "label": "None"
   },
-  [
-    {
-      "text": "장비 뭐로 바꾸는게 나아",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "장비 뭐로 바꾸는게 나아",
+    "label": "None"
+  },
   {
     "text": "내 버프 남은시간 봐줘",
     "label": "None"
@@ -19025,12 +17811,10 @@
     "text": "궁 한번 써도 괜찮아?",
     "label": "None"
   },
-  [
-    {
-      "text": "스태미나 회복 음식 먹을까",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "스태미나 회복 음식 먹을까",
+    "label": "None"
+  },
   {
     "text": "상태이상 뭐 걸린거야 나",
     "label": "None"
@@ -19051,12 +17835,10 @@
     "text": "자동줍기 켜져있나 확인",
     "label": "None"
   },
-  [
-    {
-      "text": "지도에 핀 좀 찍어줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지도에 핀 좀 찍어줘",
+    "label": "None"
+  },
   {
     "text": "내 피 너무 낮은데 회복해줘",
     "label": "None"
@@ -19101,12 +17883,10 @@
     "text": "어그로 나한테 온거같아 확인",
     "label": "None"
   },
-  [
-    {
-      "text": "키 설정 어디서 바꿔",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "키 설정 어디서 바꿔",
+    "label": "None"
+  },
   {
     "text": "이 기믹 조작키 뭐임",
     "label": "None"
@@ -19115,22 +17895,18 @@
     "text": "왜 상호작용이 안돼",
     "label": "None"
   },
-  [
-    {
-      "text": "보상 상자 조건이 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보상 상자 조건이 뭐야",
+    "label": "None"
+  },
   {
     "text": "부활 제한 몇번까지야",
     "label": "None"
   },
-  [
-    {
-      "text": "이 던전 규칙 설명좀",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 던전 규칙 설명좀",
+    "label": "None"
+  },
   {
     "text": "튜토리얼 다시 볼수있어?",
     "label": "None"
@@ -19139,24 +17915,18 @@
     "text": "스킵 버튼 어디있냐",
     "label": "None"
   },
-  [
-    {
-      "text": "미니맵 확대키가 뭐더라",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "파티원 순간이동 되나",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "핑 찍는 기능 어케써",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "미니맵 확대키가 뭐더라",
+    "label": "None"
+  },
+  {
+    "text": "파티원 순간이동 되나",
+    "label": "None"
+  },
+  {
+    "text": "핑 찍는 기능 어케써",
+    "label": "None"
+  },
   {
     "text": "자동공격 설정있음?",
     "label": "None"
@@ -19225,12 +17995,10 @@
     "text": "와 나 또 맞았네",
     "label": "None"
   },
-  [
-    {
-      "text": "아 이거 너무 빡센데",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "아 이거 너무 빡센데",
+    "label": "None"
+  },
   {
     "text": "잠깐만 숨좀 고르자",
     "label": "None"
@@ -19267,12 +18035,10 @@
     "text": "보스 얼굴보기 싫다 진짜",
     "label": "None"
   },
-  [
-    {
-      "text": "여기서 죽으면 개억울함",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기서 죽으면 개억울함",
+    "label": "None"
+  },
   {
     "text": "페이몬 믿어도 되냐",
     "label": "None"
@@ -19317,22 +18083,18 @@
     "text": "그만 좀 튀어나와라",
     "label": "None"
   },
-  [
-    {
-      "text": "페이몬 너가 해봐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "페이몬 너가 해봐",
+    "label": "None"
+  },
   {
     "text": "아 이거 뭔소리야",
     "label": "None"
   },
-  [
-    {
-      "text": "지금 나 잘하고있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지금 나 잘하고있냐",
+    "label": "None"
+  },
   {
     "text": "이거 컨트롤 말이되냐",
     "label": "None"
@@ -19349,34 +18111,26 @@
     "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅂㅈㄷㄱ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd123123\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;..;;.;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd123123\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;..;;.;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "뷁궭뫍쀍",
     "label": "None"
   },
-  [
-    {
-      "text": "ㅋㅌㅊㅍㅈㄹㄴ",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "zmxncbvpoi",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "ㅋㅌㅊㅍㅈㄹㄴ",
+    "label": "None"
+  },
+  {
+    "text": "zmxncbvpoi",
+    "label": "None"
+  },
   {
     "text": "보스 약점 알려주고 회복도해줘",
     "label": "MONSTER_GUIDE"
@@ -19401,22 +18155,18 @@
     "text": "보스 패턴 알려줘 그리고 불좀켜",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "길 안내해주고 숨은통로도 찾아",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "길 안내해주고 숨은통로도 찾아",
+    "label": "None"
+  },
   {
     "text": "이 장치 푸는법이랑 조건 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 돌진 타이밍이랑 회피키 알려",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 돌진 타이밍이랑 회피키 알려",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "상태이상 뭐고 해독약 써도돼?",
     "label": "None"
@@ -19461,12 +18211,10 @@
     "text": "장판 규칙이랑 안전지대 위치 말해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "이벤트 시작조건이랑 순서 한번 정리",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이벤트 시작조건이랑 순서 한번 정리",
+    "label": "None"
+  },
   {
     "text": "왜 데미지 안나와 약점속성 뭐임",
     "label": "MONSTER_GUIDE"
@@ -19483,12 +18231,10 @@
     "text": "폭탄통 어디 던지고 문 어디로가",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 광역 언제오고 어떻게 피함",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 광역 언제오고 어떻게 피함",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "레버 어디고 되돌아가도 됨?",
     "label": "None"
@@ -19585,12 +18331,10 @@
     "text": "이 방 끝임? 다음길이랑 체크포인트도",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 힐 끊어야됨? 그리고 실드물약",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 힐 끊어야됨? 그리고 실드물약",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "분기점 선택 뭐가 좋고 보물방 위치",
     "label": "None"
@@ -19643,22 +18387,18 @@
     "text": "길 헷갈림 지도 핀찍고 방향도 콜해",
     "label": "None"
   },
-  [
-    {
-      "text": "이 기믹 시간제한이랑 안전하게 푸는법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 기믹 시간제한이랑 안전하게 푸는법",
+    "label": "None"
+  },
   {
     "text": "보상 상자 조건이랑 난이도 변경 가능?",
     "label": "None"
   },
-  [
-    {
-      "text": "바닥 꺼짐 규칙이랑 지나가는 타이밍",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "바닥 꺼짐 규칙이랑 지나가는 타이밍",
+    "label": "None"
+  },
   {
     "text": "중간보스 건너뛰면 뭐 손해인지도",
     "label": "None"
@@ -19703,22 +18443,18 @@
     "text": "이 보스 2페 진입 조건 뭐야?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "방금 찍은 장판 뭐로 피함?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "방금 찍은 장판 뭐로 피함?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "저 몹 실드 빨리 깨는 법 있냐",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "보스 분신 진짜는 어떻게 구분해?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 분신 진짜는 어떻게 구분해?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "이 몹 경직 잘 먹이냐?",
     "label": "MONSTER_GUIDE"
@@ -19775,12 +18511,10 @@
     "text": "보스 피 회복하는 거 막아봐",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "이 방 함정 해제 순서 뭐냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 함정 해제 순서 뭐냐",
+    "label": "None"
+  },
   {
     "text": "스위치 3개 뭐부터 눌러?",
     "label": "None"
@@ -19929,12 +18663,10 @@
     "text": "페이몬, 불 좀 켜라 여기 어둡다",
     "label": "None"
   },
-  [
-    {
-      "text": "힐 아이템 지금 써도 되냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "힐 아이템 지금 써도 되냐",
+    "label": "None"
+  },
   {
     "text": "폭탄 던져서 벽 부숴봐",
     "label": "None"
@@ -19943,18 +18675,14 @@
     "text": "내 인벤에 해독제 있나 확인해",
     "label": "None"
   },
-  [
-    {
-      "text": "장비 세팅 뭐로 바꾸는 게 낫냐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "버프 음식 뭐 먹을까 추천해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "장비 세팅 뭐로 바꾸는 게 낫냐",
+    "label": "None"
+  },
+  {
+    "text": "버프 음식 뭐 먹을까 추천해",
+    "label": "None"
+  },
   {
     "text": "스킬 쿨 남은 거 체크해줘",
     "label": "None"
@@ -19963,12 +18691,10 @@
     "text": "지금 물약 자동사용 꺼줘",
     "label": "None"
   },
-  [
-    {
-      "text": "무기 원소 바꿔라, 급하다",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "무기 원소 바꿔라, 급하다",
+    "label": "None"
+  },
   {
     "text": "내 상태이상 뭐 걸렸는지 봐줘",
     "label": "None"
@@ -20021,12 +18747,10 @@
     "text": "왜 스킬이 안 나가, 쿨임?",
     "label": "None"
   },
-  [
-    {
-      "text": "회피 무적 프레임 있긴 하냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "회피 무적 프레임 있긴 하냐",
+    "label": "None"
+  },
   {
     "text": "지금 UI에 디버프 아이콘 뭐야",
     "label": "None"
@@ -20055,18 +18779,14 @@
     "text": "락온 푸는 키가 뭐냐",
     "label": "None"
   },
-  [
-    {
-      "text": "피격 경직 줄이는 옵션 있냐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이 던전 규칙, 시간 제한 있음?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "피격 경직 줄이는 옵션 있냐",
+    "label": "None"
+  },
+  {
+    "text": "이 던전 규칙, 시간 제한 있음?",
+    "label": "None"
+  },
   {
     "text": "경험치 손실 있냐 죽으면",
     "label": "None"
@@ -20079,12 +18799,10 @@
     "text": "튜토리얼 다시 보는 법 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "상태창 어디서 열어, 페이몬",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상태창 어디서 열어, 페이몬",
+    "label": "None"
+  },
   {
     "text": "핑 찍는 기능 있냐 여기",
     "label": "None"
@@ -20133,18 +18851,14 @@
     "text": "잠깐만, 숨 좀 돌리자",
     "label": "None"
   },
-  [
-    {
-      "text": "아니 왜 나만 터지냐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이거 깨라고 만든 거 맞냐?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "아니 왜 나만 터지냐",
+    "label": "None"
+  },
+  {
+    "text": "이거 깨라고 만든 거 맞냐?",
+    "label": "None"
+  },
   {
     "text": "페이몬, 제발 헛소리 말고",
     "label": "None"
@@ -20153,12 +18867,10 @@
     "text": "지금 가면 죽겠지? 솔직히",
     "label": "None"
   },
-  [
-    {
-      "text": "내 운빨 어디 갔냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "내 운빨 어디 갔냐",
+    "label": "None"
+  },
   {
     "text": "또 길막이네, 진짜",
     "label": "None"
@@ -20171,12 +18883,10 @@
     "text": "나 지금 빡친다, 진짜로",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 공기 왜 이리 무겁냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 공기 왜 이리 무겁냐",
+    "label": "None"
+  },
   {
     "text": "한 번만 더 터지면 접는다",
     "label": "None"
@@ -20189,34 +18899,26 @@
     "text": "페이몬 너 믿는다, 이번만",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;qweq\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;qweq\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "뷁궭뷁궭",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";lkj;;;..,,\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";lkj;;;..,,\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "ㅋㅌㅊㅍㅈㄷㄴ",
     "label": "None"
@@ -20225,12 +18927,10 @@
     "text": "보스 약점 뭐고, 힐도 써라",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "패턴 알려줘, 회피 타이밍도",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "패턴 알려줘, 회피 타이밍도",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "잡몹 우선순위랑 길도 찍어",
     "label": "None"
@@ -20239,12 +18939,10 @@
     "text": "보스 광폭 언제고 물약 남았냐",
     "label": "None"
   },
-  [
-    {
-      "text": "독 걸렸다, 해독제 있나 봐줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "독 걸렸다, 해독제 있나 봐줘",
+    "label": "None"
+  },
   {
     "text": "문 잠김, 열쇠 위치랑 함정도",
     "label": "None"
@@ -20261,12 +18959,10 @@
     "text": "레이저 타이밍이랑 안전지대 봐",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "포탈 어디로 감, 보스방 맞냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "포탈 어디로 감, 보스방 맞냐",
+    "label": "None"
+  },
   {
     "text": "갈림길 보상 쪽이랑 출구 알려",
     "label": "None"
@@ -20315,28 +19011,22 @@
     "text": "즉사기 전조랑 대응법 둘 다",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "실드 깨는 법이랑 추천 원소",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "분신 구분법이랑 딜 넣는 창",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "실드 깨는 법이랑 추천 원소",
+    "label": "MONSTER_GUIDE"
+  },
+  {
+    "text": "분신 구분법이랑 딜 넣는 창",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "잡기 패턴 피하는 법이랑 거리",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "힐 끊는 법이랑 디버프 해제",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "힐 끊는 법이랑 디버프 해제",
+    "label": "None"
+  },
   {
     "text": "함정 감지 쓰고, 안전 루트 잡아",
     "label": "None"
@@ -20361,12 +19051,10 @@
     "text": "경보 울리면 뭐됨, 피해야 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "포탈 타기 전에 저장 가능해?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "포탈 타기 전에 저장 가능해?",
+    "label": "None"
+  },
   {
     "text": "이벤트 힌트 어디서 보고, 순서도",
     "label": "None"
@@ -20375,18 +19063,14 @@
     "text": "상호작용 키 뭔데, 왜 먹통이냐",
     "label": "None"
   },
-  [
-    {
-      "text": "UI 디버프 뭐고, 해제 방법도",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "경험치 손실 있나, 죽으면 뭐됨",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "UI 디버프 뭐고, 해제 방법도",
+    "label": "None"
+  },
+  {
+    "text": "경험치 손실 있나, 죽으면 뭐됨",
+    "label": "None"
+  },
   {
     "text": "튜토리얼 다시 보고, 조작도 정리",
     "label": "None"
@@ -20395,22 +19079,18 @@
     "text": "다음 층 속성 뭐고, 준비물 추천",
     "label": "None"
   },
-  [
-    {
-      "text": "보스방까지 몇 칸, 중간보스 있음?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스방까지 몇 칸, 중간보스 있음?",
+    "label": "None"
+  },
   {
     "text": "숨은 통로 있나, 상자도 있냐",
     "label": "None"
   },
-  [
-    {
-      "text": "문 두 개 중 안전한 쪽, 근거도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "문 두 개 중 안전한 쪽, 근거도",
+    "label": "None"
+  },
   {
     "text": "되돌아가면 손해냐, 보상 남았냐",
     "label": "None"
@@ -20451,12 +19131,10 @@
     "text": "아까 왜 터짐, 실수 포인트 짚어",
     "label": "None"
   },
-  [
-    {
-      "text": "여기 공기 쎄다, 위험몹 뭐 나와",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "여기 공기 쎄다, 위험몹 뭐 나와",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "접기 전에 한 판만, 해결책 줘",
     "label": "None"
@@ -20493,22 +19171,18 @@
     "text": "카운트 끝나면 터지냐, 멈출 수 있냐",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 뒤돌기 패턴이랑 딜 위치",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 뒤돌기 패턴이랑 딜 위치",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "원거리 끊고, 소환수부터 자르자",
     "label": "None"
   },
-  [
-    {
-      "text": "방어깎 타이밍이랑 광폭 컷 방법",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "방어깎 타이밍이랑 광폭 컷 방법",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "감전 스택 뭐됨, 해제 수단 있어?",
     "label": "MONSTER_GUIDE"
@@ -20533,12 +19207,10 @@
     "text": "미니맵 확대 키랑 현재 층 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "보상 상자 조건 충족했나, 확인해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보상 상자 조건 충족했나, 확인해",
+    "label": "None"
+  },
   {
     "text": "인벤 정리 좀, 쓸만한 거 골라봐",
     "label": "None"
@@ -20575,18 +19247,14 @@
     "text": "퍼즐 순서 틀렸나, 리셋 방법 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 클리어하면 바로 보스냐, 대비",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "다음 구역 속성 바뀌면 무기 바꿔라",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 클리어하면 바로 보스냐, 대비",
+    "label": "None"
+  },
+  {
+    "text": "다음 구역 속성 바뀌면 무기 바꿔라",
+    "label": "None"
+  },
   {
     "text": "잡몹 많다, 광역 추천하고 키도 알려",
     "label": "MONSTER_GUIDE"
@@ -20595,12 +19263,10 @@
     "text": "락온이 안 걸림, 조건이랑 거리",
     "label": "None"
   },
-  [
-    {
-      "text": "회피 무적 있으면 타이밍 숫자로",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "회피 무적 있으면 타이밍 숫자로",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "상호작용 키 충돌난다, 설정 어디서",
     "label": "None"
@@ -20629,22 +19295,18 @@
     "text": "지금 어디냐, 출구랑 보상방 둘 다",
     "label": "None"
   },
-  [
-    {
-      "text": "페이몬, 쓸데없이 말 말고 핵심만",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "페이몬, 쓸데없이 말 말고 핵심만",
+    "label": "None"
+  },
   {
     "text": "나 지금 손 꼬인다, 조작 다시 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "이거 깨면 뭐 주냐, 보상 미리 봐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이거 깨면 뭐 주냐, 보상 미리 봐",
+    "label": "None"
+  },
   {
     "text": "시간제면 서두르자, 남은 시간 확인",
     "label": "None"
@@ -20705,12 +19367,10 @@
     "text": "불 꺼라, 레이저 안 보이게 해보자",
     "label": "None"
   },
-  [
-    {
-      "text": "힐템 아껴야 돼? 다음 보스 빡셈?",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "힐템 아껴야 돼? 다음 보스 빡셈?",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "상태이상 뭐냐, 아이콘 설명해봐",
     "label": "None"
@@ -20723,22 +19383,18 @@
     "text": "버프 음식 지금 먹고, 효과 시간 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "스킬 쿨 줄이는 옵션 있냐, 어디서",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "스킬 쿨 줄이는 옵션 있냐, 어디서",
+    "label": "None"
+  },
   {
     "text": "UI가 가려, 미니맵 위치 바꿀 수 있냐",
     "label": "None"
   },
-  [
-    {
-      "text": "보상 상자 등급 올리는 조건 뭐냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보상 상자 등급 올리는 조건 뭐냐",
+    "label": "None"
+  },
   {
     "text": "튜토리얼 또 뜨면 끌 수 있냐",
     "label": "None"
@@ -20767,28 +19423,22 @@
     "text": "내 운빨 망했다, 그래도 길은 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "zxcnm,./;;;",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"poiuytrewq\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "zxcnm,./;;;",
+    "label": "None"
+  },
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"poiuytrewq\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "ㅈㄷㄱㅁㅊㄴㅂㅅ",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..;;--==++\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..;;--==++\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "보스 공략 한 줄로, 핵심만 말해",
     "label": "MONSTER_GUIDE"
@@ -20809,12 +19459,10 @@
     "text": "키 설정 어디서, 대시를 바꾸고 싶다",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 함정 종류 뭐고, 안전구간 어딨냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 함정 종류 뭐고, 안전구간 어딨냐",
+    "label": "None"
+  },
   {
     "text": "다음방 몹 속성 뭐냐, 원소 바꿔야지",
     "label": "MONSTER_GUIDE"
@@ -20827,12 +19475,10 @@
     "text": "보스 힐 끊는 타이밍, 지금이냐?",
     "label": "MONSTER_GUIDE"
   },
-  [
-    {
-      "text": "독 해제 없으면 그냥 버텨도 되냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "독 해제 없으면 그냥 버텨도 되냐",
+    "label": "None"
+  },
   {
     "text": "갈림길에서 중간보스 피하는 쪽 골라",
     "label": "None"
@@ -20877,12 +19523,10 @@
     "text": "장판 피하다가 벽에 끼임, 탈출법 있냐",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 분노 게이지 있냐, 어디서 봄",
-      "label": "MONSTER_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 분노 게이지 있냐, 어디서 봄",
+    "label": "MONSTER_GUIDE"
+  },
   {
     "text": "상자 열면 몹 나오냐, 함정이냐",
     "label": "None"

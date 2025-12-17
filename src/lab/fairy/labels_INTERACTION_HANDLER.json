@@ -3,12 +3,10 @@
     "text": "이 보스 약점 뭐야?",
     "label": "None"
   },
-  [
-    {
-      "text": "패턴 언제부터 변해?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "패턴 언제부터 변해?",
+    "label": "None"
+  },
   {
     "text": "이 몹 실드 깨는 법 알려줘",
     "label": "None"
@@ -17,12 +15,10 @@
     "text": "보스 광역 피하는 타이밍 좀",
     "label": "None"
   },
-  [
-    {
-      "text": "독 걸리는데 해제템 필요해?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "독 걸리는데 해제템 필요해?",
+    "label": "None"
+  },
   {
     "text": "저 몹은 근접하면 위험해?",
     "label": "None"
@@ -31,18 +27,14 @@
     "text": "분신 나올 때 뭐부터 잡아?",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 2페 진입 조건 뭐임",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "저 몹 속성 뭐야?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 2페 진입 조건 뭐임",
+    "label": "None"
+  },
+  {
+    "text": "저 몹 속성 뭐야?",
+    "label": "None"
+  },
   {
     "text": "출혈 대처 어떻게 해?",
     "label": "None"
@@ -67,12 +59,10 @@
     "text": "저 몹 잡으면 뭐 떨어져?",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 돌진 예고 모션 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 돌진 예고 모션 뭐야",
+    "label": "None"
+  },
   {
     "text": "잡몹 먼저 정리할까?",
     "label": "None"

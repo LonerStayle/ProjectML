@@ -17,8 +17,6 @@ from core.common import get_inventory_items, get_inventory_item
 
 
 router = APIRouter(prefix="/api/fairy", tags=["Fairy"])
-
-
 class DungeonPlayerDto(BaseModel):
     playerId: str
     heroineId: int
@@ -181,7 +179,7 @@ async def talk_guild(request: TalkGuildRequest):
 
 
 from fastapi import UploadFile, File
-import os, time
+import time
 
 
 @router.post("/upload-wav")

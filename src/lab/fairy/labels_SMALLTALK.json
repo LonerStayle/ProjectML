@@ -772,7 +772,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD;;",
     "label": "None"
   },
   {
@@ -1059,12 +1059,10 @@
     "text": "계단 위로야 아래야",
     "label": "None"
   },
-  [
-    {
-      "text": "체크포인트 어디 있음",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "체크포인트 어디 있음",
+    "label": "None"
+  },
   {
     "text": "보스방까지 얼마나 남음",
     "label": "None"
@@ -1502,7 +1500,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD123;;",
     "label": "None"
   },
   {
@@ -1685,12 +1683,10 @@
     "text": "여기 숨은 상자 있냐",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 클리어 조건이 뭐임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 클리어 조건이 뭐임",
+    "label": "None"
+  },
   {
     "text": "다음 층 올라가는 스위치 어디",
     "label": "None"
@@ -2508,7 +2504,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd123;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd123;;;",
     "label": "None"
   },
   {
@@ -2807,12 +2803,10 @@
     "text": "광역기 타이밍 언제야?",
     "label": "None"
   },
-  [
-    {
-      "text": "잡몹 우선순위 정해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "잡몹 우선순위 정해줘",
+    "label": "None"
+  },
   {
     "text": "상태이상 뭐 조심해야 해?",
     "label": "None"
@@ -2845,12 +2839,10 @@
     "text": "보스 그로기 언제 와?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 몹 리젠 조건 뭔데",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 몹 리젠 조건 뭔데",
+    "label": "None"
+  },
   {
     "text": "보스 돌진 범위 얼마나 돼?",
     "label": "None"
@@ -3452,7 +3444,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD123;;;",
     "label": "None"
   },
   {
@@ -3464,7 +3456,7 @@
     "label": "None"
   },
   {
-    "text": "zxcnm,./;';[]",
+    "text": "zxcnm,./;';]",
     "label": "None"
   },
   {
@@ -4144,7 +4136,7 @@
     "label": "SMALLTALK"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdfqwezx;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdfqwezx;lkj",
     "label": "None"
   },
   {
@@ -4172,7 +4164,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdjkl;;qpoi\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdjkl;;qpoi",
     "label": "None"
   },
   {
@@ -4180,7 +4172,7 @@
     "label": "None"
   },
   {
-    "text": "plm,./;;[]{}",
+    "text": "plm,./;;]{}",
     "label": "None"
   },
   {
@@ -4887,12 +4879,10 @@
     "text": "보스 약점이랑 준비물 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "패턴 설명하고 안전지점도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "패턴 설명하고 안전지점도",
+    "label": "None"
+  },
   {
     "text": "저 몹 대응법이랑 길 안내",
     "label": "None"
@@ -5182,7 +5172,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd0987\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd0987",
     "label": "None"
   },
   {
@@ -5738,7 +5728,7 @@
     "label": "SMALLTALK"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;lkj;;;qwe\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;lkj;;;qwe",
     "label": "None"
   },
   {
@@ -6249,12 +6239,10 @@
     "text": "함정 작동 조건이 뭔데",
     "label": "None"
   },
-  [
-    {
-      "text": "색깔 맞추기, 기준이 뭐임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "색깔 맞추기, 기준이 뭐임",
+    "label": "None"
+  },
   {
     "text": "이 스위치 두 번 눌러야 돼?",
     "label": "None"
@@ -7047,12 +7035,10 @@
     "text": "이속 느려졌어, 디버프랑 시스템 이유",
     "label": "None"
   },
-  [
-    {
-      "text": "문 상호작용 표시 안 떠, 해결과 조건",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "문 상호작용 표시 안 떠, 해결과 조건",
+    "label": "None"
+  },
   {
     "text": "시간제한 퍼즐 동선이랑 실패 이유",
     "label": "None"
@@ -7118,11 +7104,11 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅈㄷㄹ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㅈㄷㄹ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD123",
     "label": "None"
   },
   {
@@ -7642,7 +7628,7 @@
     "label": "SMALLTALK"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;lkj",
     "label": "None"
   },
   {
@@ -7650,7 +7636,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd123;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd123;;;",
     "label": "None"
   },
   {
@@ -8097,20 +8083,18 @@
     "text": "불꽃 토치 몇 개 켜야 돼",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만",
-      "label": "None"
-    },
-    {
-      "text": "- 형식: {\"text\":\"수정 위치 어디로 옮김\", \"label\":\"<TARGET_LABEL 또는 None>\"}",
-      "label": "None"
-    },
-    {
-      "text": "- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "- 출력은 JSON 객체 1개만",
+    "label": "None"
+  },
+  {
+    "text": "- 형식: {\"text\":\"수정 위치 어디로 옮김\", \"label\":\"<TARGET_LABEL 또는 None>\"}",
+    "label": "None"
+  },
+  {
+    "text": "- text는 입력을 그대로 복사(수정 금지)",
+    "label": "None"
+  },
   {
     "text": "바람 장치 방향 맞추는 법",
     "label": "None"
@@ -8788,7 +8772,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;;lkj",
     "label": "None"
   },
   {
@@ -8800,7 +8784,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;...;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";;;...;;;",
     "label": "None"
   },
   {
@@ -9307,12 +9291,10 @@
     "text": "오토타겟 끄는 옵션 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "채팅창 줄바꿈 키 뭐였지",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "채팅창 줄바꿈 키 뭐였지",
+    "label": "None"
+  },
   {
     "text": "이 던전 제한시간 몇 분이야",
     "label": "None"
@@ -9398,7 +9380,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd1290\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd1290",
     "label": "None"
   },
   {
@@ -10754,7 +10736,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;;;lkj",
     "label": "None"
   },
   {
@@ -10785,12 +10767,10 @@
     "text": "야 페이몬, 저 보스 약점 뭐냐",
     "label": "None"
   },
-  [
-    {
-      "text": "패턴 좀 빨리 말해봐",
-      "label": "SMALLTALK"
-    }
-  ],
+  {
+    "text": "패턴 좀 빨리 말해봐",
+    "label": "SMALLTALK"
+  },
   {
     "text": "이놈 잡는 공략 있냐",
     "label": "None"
@@ -11440,7 +11420,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123!!\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD123!!",
     "label": "None"
   },
   {
@@ -11456,7 +11436,7 @@
     "label": "None"
   },
   {
-    "text": "zxcnm,./[]=-",
+    "text": "zxcnm,./]=-",
     "label": "None"
   },
   {
@@ -12288,11 +12268,11 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄴㅈㄷㄱ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄴㅈㄷㄱ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD;;;",
     "label": "None"
   },
   {
@@ -12515,12 +12495,10 @@
     "text": "이 모드 실패 페널티랑 부활 제한도 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 버튼 반응 없는데 조건이랑 순서 뭐냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "퍼즐 버튼 반응 없는데 조건이랑 순서 뭐냐",
+    "label": "None"
+  },
   {
     "text": "그로기 만들려면 뭐 부수고 언제 딜해?",
     "label": "None"
@@ -12569,18 +12547,14 @@
     "text": "경보 왜 울려, 내가 뭘 건드렸는지 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "색깔 기둥 순서랑 문 열리는 조건",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이 방 위험한 패턴 뭐고 안전 루트는 어디",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "색깔 기둥 순서랑 문 열리는 조건",
+    "label": "None"
+  },
+  {
+    "text": "이 방 위험한 패턴 뭐고 안전 루트는 어디",
+    "label": "None"
+  },
   {
     "text": "장비 지금 맞는지랑 내 디버프도 확인",
     "label": "None"
@@ -12609,12 +12583,10 @@
     "text": "문 열고 나면 돌아와도 돼? 그리고 체크포도",
     "label": "None"
   },
-  [
-    {
-      "text": "저항 올리는 곳이랑 적용됐는지 확인법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "저항 올리는 곳이랑 적용됐는지 확인법",
+    "label": "None"
+  },
   {
     "text": "여기 우회로 타면 보급상자도 먹을 수 있어?",
     "label": "None"
@@ -12651,12 +12623,10 @@
     "text": "퍼즐 풀고 나서 뭐 해야 돼, 조건 확인해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "이 층 특징이랑 주의할 함정 패턴 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 층 특징이랑 주의할 함정 패턴 알려줘",
+    "label": "None"
+  },
   {
     "text": "잡몹 우선순위랑 보스 딜 타이밍 같이 콜",
     "label": "None"
@@ -12878,7 +12848,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"이 문 뒤에 뭐 있음\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "이 문 뒤에 뭐 있음",
     "label": "None"
   },
   {
@@ -13150,11 +13120,11 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123!!\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD123!!",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;...;;;:::\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";;;...;;;:::",
     "label": "None"
   },
   {
@@ -13565,12 +13535,10 @@
     "text": "여기서 뭐 누르면 진행됨",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 클리어 조건이 뭐냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 클리어 조건이 뭐냐",
+    "label": "None"
+  },
   {
     "text": "보스전 들어가도 되냐 지금",
     "label": "None"
@@ -13703,12 +13671,10 @@
     "text": "야 페이몬, 저 보스 약점 뭐냐",
     "label": "None"
   },
-  [
-    {
-      "text": "패턴 좀 말해줘, 또 뭐 날아오냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "패턴 좀 말해줘, 또 뭐 날아오냐",
+    "label": "None"
+  },
   {
     "text": "저 몹 왜 안 죽어? 속성 뭐임",
     "label": "None"
@@ -14154,7 +14120,7 @@
     "label": "SMALLTALK"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;qwepoizx\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;;qwepoizx",
     "label": "None"
   },
   {
@@ -14213,12 +14179,10 @@
     "text": "스위치 조건 알려주고 문도 열어",
     "label": "None"
   },
-  [
-    {
-      "text": "패턴 피하는 법이랑 회피키 뭐냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "패턴 피하는 법이랑 회피키 뭐냐",
+    "label": "None"
+  },
   {
     "text": "맵 길 안내하고 체크포인트도",
     "label": "None"
@@ -15556,7 +15520,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;lkj;;;qwe\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;;lkj;;;qwe",
     "label": "None"
   },
   {
@@ -15588,7 +15552,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..,,;;//\\\\--==\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "..,,;;//\\\\--==",
     "label": "None"
   },
   {
@@ -16051,22 +16015,20 @@
     "text": "여기서 죽으면 욕 나온다",
     "label": "SMALLTALK"
   },
-  [
-    {
-      "text": "대충 말하지 말고 확실히",
-      "label": "SMALLTALK"
-    }
-  ],
+  {
+    "text": "대충 말하지 말고 확실히",
+    "label": "SMALLTALK"
+  },
   {
     "text": "내 운빨 어디 갔냐",
     "label": "SMALLTALK"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;;",
     "label": "None"
   },
   {
@@ -16786,7 +16748,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD;;;",
     "label": "None"
   },
   {
@@ -18158,7 +18120,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd123123\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd123123",
     "label": "None"
   },
   {
@@ -18673,12 +18635,10 @@
     "text": "왜 자꾸 같은 방으로 돌아오냐",
     "label": "None"
   },
-  [
-    {
-      "text": "문 두 개 중 함정 없는 쪽 찍어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "문 두 개 중 함정 없는 쪽 찍어",
+    "label": "None"
+  },
   {
     "text": "지금 위치가 몇 층이냐?",
     "label": "None"
@@ -18948,7 +18908,7 @@
     "label": "SMALLTALK"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;qweq\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;;qweq",
     "label": "None"
   },
   {
@@ -18956,7 +18916,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;;",
     "label": "None"
   },
   {

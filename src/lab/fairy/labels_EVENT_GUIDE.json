@@ -7,12 +7,10 @@
     "text": "패턴 언제부터 변해?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 몹 실드 깨는 법 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 몹 실드 깨는 법 알려줘",
+    "label": "None"
+  },
   {
     "text": "보스 광역 피하는 타이밍 좀",
     "label": "None"
@@ -37,24 +35,18 @@
     "text": "저 몹 속성 뭐야?",
     "label": "None"
   },
-  [
-    {
-      "text": "출혈 대처 어떻게 해?",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "기절 패턴 막는 법 있어?",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "보스 회복 끊는 방법 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "출혈 대처 어떻게 해?",
+    "label": "None"
+  },
+  {
+    "text": "기절 패턴 막는 법 있어?",
+    "label": "None"
+  },
+  {
+    "text": "보스 회복 끊는 방법 뭐야",
+    "label": "None"
+  },
   {
     "text": "이거 보호막 언제 내려가?",
     "label": "None"
@@ -79,12 +71,10 @@
     "text": "이 보스는 원거리 유리해?",
     "label": "None"
   },
-  [
-    {
-      "text": "감전 저항 올려야 돼?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "감전 저항 올려야 돼?",
+    "label": "None"
+  },
   {
     "text": "스턴 면역 타이밍 알려줘",
     "label": "None"
@@ -117,22 +107,18 @@
     "text": "빙결 걸리면 풀 방법 있어?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이 몹 잡는 팁 한줄만",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 몹 잡는 팁 한줄만",
+    "label": "None"
+  },
   {
     "text": "보스 장판 겹치면 어케해",
     "label": "None"
   },
-  [
-    {
-      "text": "저거 카운터 가능해?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "저거 카운터 가능해?",
+    "label": "None"
+  },
   {
     "text": "이 레버 순서 뭐야?",
     "label": "EVENT_GUIDE"
@@ -149,22 +135,18 @@
     "text": "바닥 함정 피하는 법 알려줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이벤트 조건 뭐 맞춰야 돼",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이벤트 조건 뭐 맞춰야 돼",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "문이 안 열려, 뭐 놓쳤지?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "기둥 돌리는 방향 있어?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "기둥 돌리는 방향 있어?",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "불꽃 토치 몇 개 켜야 돼",
     "label": "EVENT_GUIDE"
@@ -185,12 +167,10 @@
     "text": "바람 장치 타이밍 맞춰야 해?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "폭탄통 어디다 써?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "폭탄통 어디다 써?",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이 돌판 밟는 순서 알려줘",
     "label": "EVENT_GUIDE"
@@ -215,12 +195,10 @@
     "text": "장치 두 개 동시에 켜야 함?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "레이저 끊는 방법 있어?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "레이저 끊는 방법 있어?",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이 문양 맞는지 확인해줘",
     "label": "None"
@@ -253,12 +231,10 @@
     "text": "이 조명 다 켜야 열려?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "퍼즐 다시 리셋 가능해?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "퍼즐 다시 리셋 가능해?",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "다음 방 어디로 가야 돼?",
     "label": "None"
@@ -307,12 +283,10 @@
     "text": "길 잃었어, 출구 어딨어",
     "label": "None"
   },
-  [
-    {
-      "text": "체크포인트 어디였지",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "체크포인트 어디였지",
+    "label": "None"
+  },
   {
     "text": "지도에 문 표시가 안 보여",
     "label": "None"
@@ -349,18 +323,14 @@
     "text": "이 길로 가면 되돌아 못 해?",
     "label": "None"
   },
-  [
-    {
-      "text": "중간 세이브 지점 있어?",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "다음 방 몹 강해?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "중간 세이브 지점 있어?",
+    "label": "None"
+  },
+  {
+    "text": "다음 방 몹 강해?",
+    "label": "None"
+  },
   {
     "text": "우회로 있나 확인해줘",
     "label": "None"
@@ -469,12 +439,10 @@
     "text": "파티 버프 지금 쓰자",
     "label": "None"
   },
-  [
-    {
-      "text": "문 열기 전에 함정 체크해줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "문 열기 전에 함정 체크해줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이 키가 안 먹어, 왜지",
     "label": "None"
@@ -519,22 +487,18 @@
     "text": "튜토리얼 다시 볼 수 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "보스전 제한시간 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스전 제한시간 있어?",
+    "label": "None"
+  },
   {
     "text": "부활은 몇 번까지 가능해",
     "label": "None"
   },
-  [
-    {
-      "text": "파티원 핑은 어디서 찍어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "파티원 핑은 어디서 찍어",
+    "label": "None"
+  },
   {
     "text": "카메라 고정 푸는 법",
     "label": "None"
@@ -679,12 +643,10 @@
     "text": "여기서 뭐가 튀어나와",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 약점도 알려주고 길도 찍어줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 약점도 알려주고 길도 찍어줘",
+    "label": "None"
+  },
   {
     "text": "패턴 설명해주고 힐템 써도 돼?",
     "label": "None"
@@ -709,12 +671,10 @@
     "text": "문 안 열리는데 조건이랑 위치 알려줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이 몹 속성이랑 약점 부위 같이 말해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 몹 속성이랑 약점 부위 같이 말해",
+    "label": "None"
+  },
   {
     "text": "레이저 끊는 법이랑 스위치 순서 알려",
     "label": "EVENT_GUIDE"
@@ -731,12 +691,10 @@
     "text": "함정 해제하고 다음 분기 추천해줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "보스 장판 피하고 딜타임도 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 장판 피하고 딜타임도 알려줘",
+    "label": "None"
+  },
   {
     "text": "미니맵 확대법이랑 핑 찍는 법 알려",
     "label": "None"
@@ -753,18 +711,14 @@
     "text": "스킬 왜 불가야, 쿨도 같이 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "지름길 레버 위치랑 되돌아 가능 여부",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "퍼즐 리셋 가능해? 그리고 시간 제한도",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "지름길 레버 위치랑 되돌아 가능 여부",
+    "label": "None"
+  },
+  {
+    "text": "퍼즐 리셋 가능해? 그리고 시간 제한도",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "보상 상자 조건이랑 열쇠 소모 여부",
     "label": "EVENT_GUIDE"
@@ -781,18 +735,14 @@
     "text": "다음 방 몹 세고 약점도 뭐야?",
     "label": "None"
   },
-  [
-    {
-      "text": "불 꺼서 레이저 보이게 하고 길도 알려",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "타일 순서 알려주고 실패 원인도 말해",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "불 꺼서 레이저 보이게 하고 길도 알려",
+    "label": "None"
+  },
+  {
+    "text": "타일 순서 알려주고 실패 원인도 말해",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "포탈 두 개 중 추천이랑 이유도 짧게",
     "label": "None"
@@ -814,15 +764,15 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;lkj;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;lkj;;;",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄷㅈㅂ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD;;",
     "label": "None"
   },
   {
@@ -830,7 +780,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;///;;;..\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";;;///;;;..",
     "label": "None"
   },
   {
@@ -849,12 +799,10 @@
     "text": "지도 회전 고정법이랑 카메라 고정도 풀어",
     "label": "None"
   },
-  [
-    {
-      "text": "문양 맞는지 확인하고 장치도 켜줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "문양 맞는지 확인하고 장치도 켜줘",
+    "label": "None"
+  },
   {
     "text": "엘리베이터 위치랑 체크포인트도 알려줘",
     "label": "None"
@@ -867,12 +815,10 @@
     "text": "보스방 가는 길이랑 준비물 같이 말해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "함정 표시해주고 불도 켜줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "함정 표시해주고 불도 켜줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이벤트 조건 맞췄는지랑 남은 거 알려줘",
     "label": "None"
@@ -889,12 +835,10 @@
     "text": "상자 잠금 조건이랑 드랍 옵션도 알려",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "대시 키 알려주고 회피 타이밍도 같이",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "대시 키 알려주고 회피 타이밍도 같이",
+    "label": "None"
+  },
   {
     "text": "파괴해야 할 오브 뭐고 어디부터 부숴?",
     "label": "EVENT_GUIDE"
@@ -931,12 +875,10 @@
     "text": "보스 2페 언제 넘어가냐",
     "label": "None"
   },
-  [
-    {
-      "text": "광역기 전조 뭐로 봐?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "광역기 전조 뭐로 봐?",
+    "label": "None"
+  },
   {
     "text": "저 몬스터 상태이상 먹혀?",
     "label": "None"
@@ -1025,12 +967,10 @@
     "text": "바닥 문양 맞추는 법 좀",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "불꽃 횃불 몇 개 켜야 돼",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "불꽃 횃불 몇 개 켜야 돼",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "시간제한 이벤트 어케 해",
     "label": "EVENT_GUIDE"
@@ -1059,12 +999,10 @@
     "text": "함정판 밟으면 바로 죽냐",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "문 잠겼는데 조건 뭐임",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "문 잠겼는데 조건 뭐임",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이 기둥 깨는 순서 있냐",
     "label": "EVENT_GUIDE"
@@ -1093,34 +1031,26 @@
     "text": "나 길 잃었는데 지도 좀",
     "label": "None"
   },
-  [
-    {
-      "text": "이 층 특징 뭐 있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 층 특징 뭐 있냐",
+    "label": "None"
+  },
   {
     "text": "우회로 있냐, 막혔는데",
     "label": "None"
   },
-  [
-    {
-      "text": "되돌아가면 뭐 날아가?",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "비밀길 어디 숨어있어",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "포탈 둘 중 뭐 타",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "되돌아가면 뭐 날아가?",
+    "label": "None"
+  },
+  {
+    "text": "비밀길 어디 숨어있어",
+    "label": "None"
+  },
+  {
+    "text": "포탈 둘 중 뭐 타",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이 문 맞는 방향이냐",
     "label": "None"
@@ -1129,12 +1059,10 @@
     "text": "계단 위로야 아래야",
     "label": "None"
   },
-  [
-    {
-      "text": "체크포인트 어디 있음",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "체크포인트 어디 있음",
+    "label": "None"
+  },
   {
     "text": "보스방까지 얼마나 남음",
     "label": "None"
@@ -1143,12 +1071,10 @@
     "text": "왼쪽 길 끝에 뭐 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "여기서 점프 가능한 곳 있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기서 점프 가능한 곳 있냐",
+    "label": "None"
+  },
   {
     "text": "미니맵에 표식 뭐 뜻함",
     "label": "None"
@@ -1157,12 +1083,10 @@
     "text": "사다리 안 보이는데 어디냐",
     "label": "None"
   },
-  [
-    {
-      "text": "숨겨진 방 있으면 말해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "숨겨진 방 있으면 말해",
+    "label": "None"
+  },
   {
     "text": "길 막힌 이유 뭐야",
     "label": "None"
@@ -1355,12 +1279,10 @@
     "text": "또 함정이냐 짜증나",
     "label": "None"
   },
-  [
-    {
-      "text": "야 나 혼자 두지 마",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "야 나 혼자 두지 마",
+    "label": "None"
+  },
   {
     "text": "이 보스 얼굴 보기 싫다",
     "label": "None"
@@ -1413,12 +1335,10 @@
     "text": "보스랑 퍼즐 같이 오네 어휴",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 약점도 말하고 길도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 약점도 말하고 길도",
+    "label": "None"
+  },
   {
     "text": "패턴 알려주고 힐템도 써",
     "label": "None"
@@ -1435,12 +1355,10 @@
     "text": "불 켜고 인벤도 확인해",
     "label": "None"
   },
-  [
-    {
-      "text": "장치 조건 알려주고 문도 열어",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "장치 조건 알려주고 문도 열어",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "보상 조건이랑 UI 표식 설명",
     "label": "None"
@@ -1465,18 +1383,14 @@
     "text": "길 잃었어, 지도 핀 찍어",
     "label": "None"
   },
-  [
-    {
-      "text": "디버프 뭐고 해제법도 말해",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "쫄부터 잡아? 패턴도 정리",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "디버프 뭐고 해제법도 말해",
+    "label": "None"
+  },
+  {
+    "text": "쫄부터 잡아? 패턴도 정리",
+    "label": "None"
+  },
   {
     "text": "문 조건이랑 열쇠 써도 돼?",
     "label": "EVENT_GUIDE"
@@ -1485,12 +1399,10 @@
     "text": "다음 분기 뭐고 비밀길도",
     "label": "None"
   },
-  [
-    {
-      "text": "스킬 왜 안 나가, 해결해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "스킬 왜 안 나가, 해결해줘",
+    "label": "None"
+  },
   {
     "text": "부활템 남았나, 패널티도",
     "label": "None"
@@ -1507,12 +1419,10 @@
     "text": "장비 내구도랑 회복템 체크",
     "label": "None"
   },
-  [
-    {
-      "text": "미니맵 표식 뜻이랑 방향",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "미니맵 표식 뜻이랑 방향",
+    "label": "None"
+  },
   {
     "text": "퍼즐 힌트 UI 어디고 답도",
     "label": "EVENT_GUIDE"
@@ -1521,18 +1431,14 @@
     "text": "보스 원킬기 조건이랑 대응",
     "label": "None"
   },
-  [
-    {
-      "text": "분신 구분하고 쫄 처리도",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "레이저 타이밍이랑 스위치",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "분신 구분하고 쫄 처리도",
+    "label": "None"
+  },
+  {
+    "text": "레이저 타이밍이랑 스위치",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "포탈 뭐 타고 다음층 특징",
     "label": "None"
@@ -1557,12 +1463,10 @@
     "text": "독가스 끄고 불도 켜",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "광역기 전조랑 회피키 같이",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "광역기 전조랑 회피키 같이",
+    "label": "None"
+  },
   {
     "text": "보상 상자 조건이랑 위치",
     "label": "None"
@@ -1575,12 +1479,10 @@
     "text": "체크포인트 어디고 되돌아가도 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 층에서 보스방까지 거리랑 길",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 층에서 보스방까지 거리랑 길",
+    "label": "None"
+  },
   {
     "text": "상태이상 확인하고 해제 아이템 써",
     "label": "None"
@@ -1590,15 +1492,15 @@
     "label": "EVENT_GUIDE"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㅂㅈㄷ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD123;;",
     "label": "None"
   },
   {
@@ -1669,12 +1571,10 @@
     "text": "퍼즐 답이랑 다음 길까지 안내해",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "함정 위치 말하고 불도 켜줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "함정 위치 말하고 불도 켜줘",
+    "label": "None"
+  },
   {
     "text": "조작키 정리하고 UI 표식도 설명",
     "label": "None"
@@ -1715,12 +1615,10 @@
     "text": "이벤트 실패 이유랑 재도전 방법",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "문 잠김 조건이랑 열쇠 사용 타이밍",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "문 잠김 조건이랑 열쇠 사용 타이밍",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "미니맵 확대키랑 현재 위치 알려줘",
     "label": "None"
@@ -1729,18 +1627,14 @@
     "text": "체크포인트 찍고 되돌아가도 되는지",
     "label": "None"
   },
-  [
-    {
-      "text": "독가스 끄는 장치랑 안전지대 같이",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "쫄 우선순위랑 딜타임 둘 다",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "독가스 끄는 장치랑 안전지대 같이",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "쫄 우선순위랑 딜타임 둘 다",
+    "label": "None"
+  },
   {
     "text": "아 이거 진짜 너무 빡세다",
     "label": "None"
@@ -1781,12 +1675,10 @@
     "text": "보상 덜 받는 조건 있음?",
     "label": "None"
   },
-  [
-    {
-      "text": "왜 내가 느려졌냐, 원인 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "왜 내가 느려졌냐, 원인 뭐야",
+    "label": "None"
+  },
   {
     "text": "여기 숨은 상자 있냐",
     "label": "None"
@@ -1831,12 +1723,10 @@
     "text": "여기서 왼쪽 벽 뚫리는 거 아냐?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 보스 그로기 조건 뭐냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 보스 그로기 조건 뭐냐",
+    "label": "None"
+  },
   {
     "text": "그로기 때 뭐부터 때려야 돼",
     "label": "None"
@@ -1869,12 +1759,10 @@
     "text": "사다리 타는 키가 뭐야",
     "label": "None"
   },
-  [
-    {
-      "text": "왜 상자 열었는데 텅 비어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "왜 상자 열었는데 텅 비어",
+    "label": "None"
+  },
   {
     "text": "이 포탈 쿨타임 있냐",
     "label": "None"
@@ -1911,32 +1799,26 @@
     "text": "이 보스 방어 깎는 법 있나요?",
     "label": "None"
   },
-  [
-    {
-      "text": "분신 나올 때 우선순위요?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "분신 나올 때 우선순위요?",
+    "label": "None"
+  },
   {
     "text": "잡몹 무시해도 되나요?",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 실드 깨는 조건이요?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 실드 깨는 조건이요?",
+    "label": "None"
+  },
   {
     "text": "지금 회피 타이밍 알려줘요.",
     "label": "None"
   },
-  [
-    {
-      "text": "딜 넣는 안전 구간이요?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "딜 넣는 안전 구간이요?",
+    "label": "None"
+  },
   {
     "text": "이 패턴은 막아야 하나요?",
     "label": "None"
@@ -1981,12 +1863,10 @@
     "text": "원거리로만 해야 하나요?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 몹 약점 부위가 어디예요?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 몹 약점 부위가 어디예요?",
+    "label": "None"
+  },
   {
     "text": "머리 때리면 더 들어가요?",
     "label": "None"
@@ -2007,12 +1887,10 @@
     "text": "이 공격은 점프로 피하나요?",
     "label": "None"
   },
-  [
-    {
-      "text": "바닥 장판 색 의미가 뭐예요?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "바닥 장판 색 의미가 뭐예요?",
+    "label": "None"
+  },
   {
     "text": "패턴 순서 고정인가요?",
     "label": "None"
@@ -2225,12 +2103,10 @@
     "text": "여기서 위로 올라가야 해요?",
     "label": "None"
   },
-  [
-    {
-      "text": "숨겨진 통로가 있나요?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "숨겨진 통로가 있나요?",
+    "label": "None"
+  },
   {
     "text": "낭떠러지 아래 내려가도 돼요?",
     "label": "None"
@@ -2579,12 +2455,10 @@
     "text": "이거 낚시죠? 속지 않아요.",
     "label": "None"
   },
-  [
-    {
-      "text": "시간 없어요, 빠르게요.",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "시간 없어요, 빠르게요.",
+    "label": "None"
+  },
   {
     "text": "저 방 들어가면 망하나요?",
     "label": "None"
@@ -2622,19 +2496,17 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㅂㅈㄷ",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd123;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "asdasd123;;;",
+    "label": "None"
+  },
   {
     "text": "뷁궭췍퉑",
     "label": "None"
@@ -2651,22 +2523,18 @@
     "text": "보스 약점 알려주고 힐도요.",
     "label": "None"
   },
-  [
-    {
-      "text": "패턴 설명이랑 대응법 부탁요.",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "패턴 설명이랑 대응법 부탁요.",
+    "label": "None"
+  },
   {
     "text": "광역기 피하는 법과 타이밍요.",
     "label": "None"
   },
-  [
-    {
-      "text": "약점 부위랑 파괴 순서요.",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "약점 부위랑 파괴 순서요.",
+    "label": "None"
+  },
   {
     "text": "기절 넣는 법, 그리고 안전자리요.",
     "label": "EVENT_GUIDE"
@@ -2703,12 +2571,10 @@
     "text": "토치 몇 개 켜고 어디로 가요?",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 힌트랑 실패 원인요.",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "퍼즐 힌트랑 실패 원인요.",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "장치 충전법이랑 스위치 위치요.",
     "label": "EVENT_GUIDE"
@@ -2745,12 +2611,10 @@
     "text": "체크포인트 어디고, 함정방 맞나요?",
     "label": "None"
   },
-  [
-    {
-      "text": "상층 가는 법이랑 지름길요.",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상층 가는 법이랑 지름길요.",
+    "label": "None"
+  },
   {
     "text": "문 안 열려요, 열쇠 위치도요.",
     "label": "EVENT_GUIDE"
@@ -2775,12 +2639,10 @@
     "text": "포션 쿨 확인하고 힐도 부탁요.",
     "label": "None"
   },
-  [
-    {
-      "text": "상자 열기 전 함정 체크도요.",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "상자 열기 전 함정 체크도요.",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "스킬 세팅 조언이랑 키 설정요.",
     "label": "None"
@@ -2901,12 +2763,10 @@
     "text": "상태이상 걸려요, 면역 준비물요.",
     "label": "None"
   },
-  [
-    {
-      "text": "감전 면역 챙기고 길도 알려줘요.",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "감전 면역 챙기고 길도 알려줘요.",
+    "label": "None"
+  },
   {
     "text": "바닥 장판 의미랑 피하는 법요.",
     "label": "EVENT_GUIDE"
@@ -2919,12 +2779,10 @@
     "text": "저 보스 약점 뭐야?",
     "label": "None"
   },
-  [
-    {
-      "text": "패턴 어떻게 피하냐 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "패턴 어떻게 피하냐 알려줘",
+    "label": "None"
+  },
   {
     "text": "이 몹 방어깎 필요해?",
     "label": "None"
@@ -2945,12 +2803,10 @@
     "text": "광역기 타이밍 언제야?",
     "label": "None"
   },
-  [
-    {
-      "text": "잡몹 우선순위 정해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "잡몹 우선순위 정해줘",
+    "label": "None"
+  },
   {
     "text": "상태이상 뭐 조심해야 해?",
     "label": "None"
@@ -2971,12 +2827,10 @@
     "text": "내 캐릭 조합 괜찮은지 봐",
     "label": "None"
   },
-  [
-    {
-      "text": "원소 반응 뭐가 잘 먹혀?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "원소 반응 뭐가 잘 먹혀?",
+    "label": "None"
+  },
   {
     "text": "이 몹 뒤잡이 가능해?",
     "label": "None"
@@ -2985,12 +2839,10 @@
     "text": "보스 그로기 언제 와?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 몹 리젠 조건 뭔데",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 몹 리젠 조건 뭔데",
+    "label": "None"
+  },
   {
     "text": "보스 돌진 범위 얼마나 돼?",
     "label": "None"
@@ -3007,22 +2859,18 @@
     "text": "이 장치 작동 순서 뭐야?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "퍼즐 실패 이유 뭔지 알려",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "퍼즐 실패 이유 뭔지 알려",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "함정 해제 방법 바로 말해",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이벤트 조건 충족했나 확인",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이벤트 조건 충족했나 확인",
+    "label": "None"
+  },
   {
     "text": "레버는 어떤 순서로 당겨?",
     "label": "EVENT_GUIDE"
@@ -3047,12 +2895,10 @@
     "text": "물 수위 내리는 방법 알려",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "시간제한 퍼즐 팁 줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "시간제한 퍼즐 팁 줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이 장치 전원 어디 있어?",
     "label": "None"
@@ -3073,12 +2919,10 @@
     "text": "레이저 방향 어디로 맞춰?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "바람기둥 활성 조건 뭐지",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "바람기둥 활성 조건 뭐지",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "발판 안 올라가는데 왜야",
     "label": "EVENT_GUIDE"
@@ -3107,12 +2951,10 @@
     "text": "지름길 있으면 안내해",
     "label": "None"
   },
-  [
-    {
-      "text": "층 구조 특징 간단히 말해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "층 구조 특징 간단히 말해",
+    "label": "None"
+  },
   {
     "text": "보스방 가는 문 찾는 중",
     "label": "None"
@@ -3121,12 +2963,10 @@
     "text": "맵에 표시 안 뜨는데 위치?",
     "label": "None"
   },
-  [
-    {
-      "text": "되돌아가야 해? 체크해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "되돌아가야 해? 체크해줘",
+    "label": "None"
+  },
   {
     "text": "비밀방 입구 어디 있냐",
     "label": "None"
@@ -3155,12 +2995,10 @@
     "text": "연결된 통로 몇 개야",
     "label": "None"
   },
-  [
-    {
-      "text": "층 이동 포탈 위치 알려",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "층 이동 포탈 위치 알려",
+    "label": "None"
+  },
   {
     "text": "이 방 끝에 문 두 개 뭐야",
     "label": "None"
@@ -3173,12 +3011,10 @@
     "text": "보물상자 쪽으로 가도 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "함정 없는 안전루트 안내",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "함정 없는 안전루트 안내",
+    "label": "None"
+  },
   {
     "text": "불 좀 켜줘",
     "label": "None"
@@ -3235,12 +3071,10 @@
     "text": "스태미나 남은 거 확인해",
     "label": "None"
   },
-  [
-    {
-      "text": "궁 쓸지 말지 판단해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "궁 쓸지 말지 판단해줘",
+    "label": "None"
+  },
   {
     "text": "무기 속성 교체해줘",
     "label": "None"
@@ -3285,18 +3119,14 @@
     "text": "이벤트 진행도 어디서 봐?",
     "label": "None"
   },
-  [
-    {
-      "text": "자동공격 설정 있냐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "지도 확대 축소 키 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "자동공격 설정 있냐",
+    "label": "None"
+  },
+  {
+    "text": "지도 확대 축소 키 뭐야",
+    "label": "None"
+  },
   {
     "text": "핀 찍는 기능 어떻게 써?",
     "label": "None"
@@ -3305,12 +3135,10 @@
     "text": "튜토리얼 다시 볼 수 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "쿨타임 표시 켜는 법 알려",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "쿨타임 표시 켜는 법 알려",
+    "label": "None"
+  },
   {
     "text": "보스 체력바 색 의미 뭐야",
     "label": "None"
@@ -3319,12 +3147,10 @@
     "text": "데미지 로그 어디서 봐?",
     "label": "None"
   },
-  [
-    {
-      "text": "알림 끄는 설정 위치 알려",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "알림 끄는 설정 위치 알려",
+    "label": "None"
+  },
   {
     "text": "채팅창 안 떠, 왜 이래",
     "label": "None"
@@ -3429,18 +3255,14 @@
     "text": "이거 또 트릭이지?",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 약점 알려주고 회피 타이밍도 말해",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "퍼즐 순서 알려주고 함정 위치도 찍어",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 약점 알려주고 회피 타이밍도 말해",
+    "label": "None"
+  },
+  {
+    "text": "퍼즐 순서 알려주고 함정 위치도 찍어",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "다음 방 어디고, 체크포인트도 확인",
     "label": "None"
@@ -3457,12 +3279,10 @@
     "text": "보스 패턴 보고 대응법이랑 준비물 말해",
     "label": "None"
   },
-  [
-    {
-      "text": "레버 순서랑 문 여는 조건 같이 알려",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "레버 순서랑 문 여는 조건 같이 알려",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "길 안내하고 비밀방 입구도 찾아줘",
     "label": "None"
@@ -3475,22 +3295,18 @@
     "text": "왜 상호작용 안 돼, 버그인지도 봐",
     "label": "None"
   },
-  [
-    {
-      "text": "잡몹 우선순위랑 반응 추천도 해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "잡몹 우선순위랑 반응 추천도 해줘",
+    "label": "None"
+  },
   {
     "text": "레이저 맞추는 법이랑 실패 원인도 말해",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "분기점 선택하고 안전루트도 안내해",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "분기점 선택하고 안전루트도 안내해",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "궁 쓸지 판단하고 쿨도 확인해",
     "label": "None"
@@ -3503,48 +3319,38 @@
     "text": "보스 원킬기 전조랑 피하는 위치 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "바닥 문양 순서랑 시간제한 팁도 줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "바닥 문양 순서랑 시간제한 팁도 줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "포탈 위치랑 다음 층 특징도 말해",
     "label": "None"
   },
-  [
-    {
-      "text": "무기 속성 바꾸고 상태이상도 확인",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "무기 속성 바꾸고 상태이상도 확인",
+    "label": "None"
+  },
   {
     "text": "회피 키랑 조준 설정도 같이 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 그로기 조건이랑 카운터 타이밍 줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 그로기 조건이랑 카운터 타이밍 줘",
+    "label": "None"
+  },
   {
     "text": "불 켜고 숨은 스위치도 찾아줘",
     "label": "None"
   },
-  [
-    {
-      "text": "길 잃었어, 현재 위치랑 출구 알려",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "부활템 남았나 보고 힐 타이밍도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "길 잃었어, 현재 위치랑 출구 알려",
+    "label": "None"
+  },
+  {
+    "text": "부활템 남았나 보고 힐 타이밍도",
+    "label": "None"
+  },
   {
     "text": "맵 표시 왜 안 떠, 설정도 확인해",
     "label": "None"
@@ -3617,12 +3423,10 @@
     "text": "발판 왜 안 돼, 조건이랑 순서도",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "포션 단축키 알려주고 자동줍기도 확인",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "포션 단축키 알려주고 자동줍기도 확인",
+    "label": "None"
+  },
   {
     "text": "함정 없는 루트랑 체크포인트도 안내",
     "label": "None"
@@ -3636,11 +3440,11 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅂㅈㄷㄱ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㅂㅈㄷㄱ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD123;;;",
     "label": "None"
   },
   {
@@ -3648,19 +3452,17 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;//..,.,;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";;;//..,.,;;",
     "label": "None"
   },
   {
-    "text": "zxcnm,./;';[]",
+    "text": "zxcnm,./;';]",
     "label": "None"
   },
-  [
-    {
-      "text": "ㅋㅌㅊㅍㄴㄷㅅㅈ",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "ㅋㅌㅊㅍㄷㅅㅈ",
+    "label": "None"
+  },
   {
     "text": "페이몬, 저 몹 약점 뭐야?",
     "label": "None"
@@ -3673,12 +3475,10 @@
     "text": "이 보스 광역 언제 와?",
     "label": "None"
   },
-  [
-    {
-      "text": "저 방패몹 어떻게 깨?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "저 방패몹 어떻게 깨?",
+    "label": "None"
+  },
   {
     "text": "페이몬, 회피 타이밍 알려줘",
     "label": "None"
@@ -3715,12 +3515,10 @@
     "text": "패턴 설명해주고 힐템 체크",
     "label": "None"
   },
-  [
-    {
-      "text": "약점 알려주고 장비도 바꿔줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "약점 알려주고 장비도 바꿔줘",
+    "label": "None"
+  },
   {
     "text": "지금 보스 뭐 조심해야 돼?",
     "label": "None"
@@ -3749,12 +3547,10 @@
     "text": "약점 알려줘, 함정도 조심?",
     "label": "None"
   },
-  [
-    {
-      "text": "공략 말해주고 버프 뭐 챙겨",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "공략 말해주고 버프 뭐 챙겨",
+    "label": "None"
+  },
   {
     "text": "보스 패턴 보고 아이템도 써줘",
     "label": "None"
@@ -3779,12 +3575,10 @@
     "text": "보스 실드 깰 원소 추천",
     "label": "None"
   },
-  [
-    {
-      "text": "페이몬, 카운터 각 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "페이몬, 카운터 각 알려줘",
+    "label": "None"
+  },
   {
     "text": "이 몹 잡으면 뭐 나와?",
     "label": "None"
@@ -3809,12 +3603,10 @@
     "text": "왜 퍼즐 실패 뜨지?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이 방 기믹 조건 뭐임",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이 방 기믹 조건 뭐임",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "불꽃 토템 켜는 법 알려줘",
     "label": "EVENT_GUIDE"
@@ -3823,22 +3615,18 @@
     "text": "물 수위 조절 어케 해?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "페이몬, 장치가 안 움직여",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "페이몬, 장치가 안 움직여",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이 스위치 두 개 동시야?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "퍼즐이랑 길도 같이 봐줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "퍼즐이랑 길도 같이 봐줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "장치 해법, 그리고 보상 뭐야",
     "label": "EVENT_GUIDE"
@@ -3939,38 +3727,30 @@
     "text": "되돌아가면 리셋 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "비밀길 있나 체크해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "비밀길 있나 체크해줘",
+    "label": "None"
+  },
   {
     "text": "보스방까지 얼마나 남음",
     "label": "None"
   },
-  [
-    {
-      "text": "이 층 특징 뭐 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 층 특징 뭐 있어?",
+    "label": "None"
+  },
   {
     "text": "지름길 어디 숨었어",
     "label": "None"
   },
-  [
-    {
-      "text": "길 안내랑 함정도 같이",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "다음방 알려주고 보스도 대비",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "길 안내랑 함정도 같이",
+    "label": "None"
+  },
+  {
+    "text": "다음방 알려주고 보스도 대비",
+    "label": "None"
+  },
   {
     "text": "분기 설명해주고 퍼즐도 힌트",
     "label": "EVENT_GUIDE"
@@ -3995,12 +3775,10 @@
     "text": "계단이 안 보여 어디야",
     "label": "None"
   },
-  [
-    {
-      "text": "포탈 어디에 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "포탈 어디에 있어?",
+    "label": "None"
+  },
   {
     "text": "이 문 잠겨있는데 우회로?",
     "label": "None"
@@ -4029,12 +3807,10 @@
     "text": "저기 문 열 열쇠 어디서?",
     "label": "None"
   },
-  [
-    {
-      "text": "길 알려주고 장치도 챙겨",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "길 알려주고 장치도 챙겨",
+    "label": "None"
+  },
   {
     "text": "되돌아가도 보상 안 사라져?",
     "label": "None"
@@ -4083,28 +3859,22 @@
     "text": "스태미나 관리 좀 도와줘",
     "label": "None"
   },
-  [
-    {
-      "text": "궁 좀 아껴? 바로 써?",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "불 켜고 길도 안내해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "궁 좀 아껴? 바로 써?",
+    "label": "None"
+  },
+  {
+    "text": "불 켜고 길도 안내해줘",
+    "label": "None"
+  },
   {
     "text": "힐템 쓰고 보스 패턴도",
     "label": "None"
   },
-  [
-    {
-      "text": "장비 바꾸고 약점도 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "장비 바꾸고 약점도 알려줘",
+    "label": "None"
+  },
   {
     "text": "인벤 확인하고 열쇠도 찾아",
     "label": "None"
@@ -4149,12 +3919,10 @@
     "text": "페이몬, 숨 좀 돌리자",
     "label": "None"
   },
-  [
-    {
-      "text": "폭탄 같은 거 있으면 써줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "폭탄 같은 거 있으면 써줘",
+    "label": "None"
+  },
   {
     "text": "이거 상호작용 키 뭐야",
     "label": "None"
@@ -4207,12 +3975,10 @@
     "text": "UI 위치랑 인벤 확인까지",
     "label": "None"
   },
-  [
-    {
-      "text": "왜 안됨인지 보고 해결도",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "왜 안됨인지 보고 해결도",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "페이몬, 설정 어디서 바꿔",
     "label": "None"
@@ -4261,22 +4027,18 @@
     "text": "보상 받고 길도 바로 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "규칙 설명하고 함정도 주의",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "규칙 설명하고 함정도 주의",
+    "label": "None"
+  },
   {
     "text": "왜 안됨인지랑 해결 순서",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "페이몬, 나 지금 멘붕",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "페이몬, 나 지금 멘붕",
+    "label": "None"
+  },
   {
     "text": "아 또 맞았어 아파",
     "label": "None"
@@ -4329,22 +4091,18 @@
     "text": "재촉 좀 할게, 빨리 힌트",
     "label": "None"
   },
-  [
-    {
-      "text": "의심되는 상자 있지 않냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "의심되는 상자 있지 않냐",
+    "label": "None"
+  },
   {
     "text": "페이몬, 이거 트롤이지?",
     "label": "None"
   },
-  [
-    {
-      "text": "잡담 말고 공략도 같이",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "잡담 말고 공략도 같이",
+    "label": "None"
+  },
   {
     "text": "나 짜증, 근데 길은 어디",
     "label": "None"
@@ -4353,18 +4111,14 @@
     "text": "무서워, 불 켜고 안내해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "손풀고 싶은데 몹 정보도",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "페이몬, 시간 없어 얼른",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "손풀고 싶은데 몹 정보도",
+    "label": "None"
+  },
+  {
+    "text": "페이몬, 시간 없어 얼른",
+    "label": "None"
+  },
   {
     "text": "이거 내가 못하는 게 맞지?",
     "label": "None"
@@ -4382,19 +4136,19 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdfqwezx;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdfqwezx;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁㄴㅇㄹ;;ㅂㅈㄷㄱ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁㄴㅇㄹ;;ㅂㅈㄷㄱ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizxvvv\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizxvvv",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;::;:;;;;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";;;::;:;;;;;;",
     "label": "None"
   },
   {
@@ -4402,7 +4156,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"zmxncvb123!!\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "zmxncvb123!!",
     "label": "None"
   },
   {
@@ -4410,7 +4164,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdjkl;;qpoi\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdjkl;;qpoi",
     "label": "None"
   },
   {
@@ -4418,7 +4172,7 @@
     "label": "None"
   },
   {
-    "text": "plm,./;;[]{}",
+    "text": "plm,./;;]{}",
     "label": "None"
   },
   {
@@ -4437,12 +4191,10 @@
     "text": "보스 패턴, 회피, 힐 순서?",
     "label": "None"
   },
-  [
-    {
-      "text": "장치 순서랑 문 여는 조건",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "장치 순서랑 문 여는 조건",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "인벤 열고 열쇠 있나 봐줘",
     "label": "None"
@@ -4463,48 +4215,38 @@
     "text": "패턴 끝나면 딜타임 체크",
     "label": "None"
   },
-  [
-    {
-      "text": "이벤트 조건이랑 실패 이유",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이벤트 조건이랑 실패 이유",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "불 켜고 스위치도 눌러줘",
     "label": "None"
   },
-  [
-    {
-      "text": "장비 바꾸고 버프도 먹자",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "장비 바꾸고 버프도 먹자",
+    "label": "None"
+  },
   {
     "text": "맵 분기랑 보스방 거리",
     "label": "None"
   },
-  [
-    {
-      "text": "되돌아가도 퍼즐 유지돼?",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "보스 실드랑 추천 원소 둘 다",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "되돌아가도 퍼즐 유지돼?",
+    "label": "None"
+  },
+  {
+    "text": "보스 실드랑 추천 원소 둘 다",
+    "label": "None"
+  },
   {
     "text": "이 문 왜 안열림, 해결 뭐야",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "상태이상 뭐 걸림, 해제해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상태이상 뭐 걸림, 해제해줘",
+    "label": "None"
+  },
   {
     "text": "스킬 왜 안나가, 키 뭐지",
     "label": "None"
@@ -4529,12 +4271,10 @@
     "text": "보스 전 준비물 뭐 챙겨?",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 풀면 몹 추가로 나와?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "퍼즐 풀면 몹 추가로 나와?",
+    "label": "None"
+  },
   {
     "text": "함정 밟았나? 어디서 터짐",
     "label": "EVENT_GUIDE"
@@ -4579,12 +4319,10 @@
     "text": "스태미나 회복 빠른 방법?",
     "label": "None"
   },
-  [
-    {
-      "text": "궁 게이지 채우는 팁 줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "궁 게이지 채우는 팁 줘",
+    "label": "None"
+  },
   {
     "text": "상자 먹는 조건 있는 던전이야?",
     "label": "None"
@@ -4597,12 +4335,10 @@
     "text": "레버 하나가 잠겼는데 이유?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이 장치 시간제한 있냐",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이 장치 시간제한 있냐",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "보스 체력 몇 줄 남았어?",
     "label": "None"
@@ -4663,12 +4399,10 @@
     "text": "인벤 정리 좀 도와줘라",
     "label": "None"
   },
-  [
-    {
-      "text": "페이몬, 힌트 짧게! 핵심만",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "페이몬, 힌트 짧게! 핵심만",
+    "label": "None"
+  },
   {
     "text": "나 뇌정지 왔으니 안내해줘",
     "label": "None"
@@ -4677,12 +4411,10 @@
     "text": "저 보스 약점 뭐야?",
     "label": "None"
   },
-  [
-    {
-      "text": "패턴 시작 신호가 뭐지?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "패턴 시작 신호가 뭐지?",
+    "label": "None"
+  },
   {
     "text": "이 몹 방어 깎는 법 있어?",
     "label": "None"
@@ -4755,18 +4487,14 @@
     "text": "약점 노출 언제 생겨?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 퍼즐 순서가 어떻게 돼?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "장치 작동 조건 좀 알려줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이 퍼즐 순서가 어떻게 돼?",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "장치 작동 조건 좀 알려줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이벤트 실패 원인이 뭐야?",
     "label": "EVENT_GUIDE"
@@ -4787,12 +4515,10 @@
     "text": "함정 감지 방법 있어?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이 문이 안 열리는 조건 뭐야?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이 문이 안 열리는 조건 뭐야?",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "상자 열려면 뭐부터 해야 돼?",
     "label": "EVENT_GUIDE"
@@ -4873,12 +4599,10 @@
     "text": "되돌아가도 진행 꼬이지 않아?",
     "label": "None"
   },
-  [
-    {
-      "text": "숨겨진 통로가 있는 느낌인데",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "숨겨진 통로가 있는 느낌인데",
+    "label": "None"
+  },
   {
     "text": "오른쪽 문이 막혔어, 대안은?",
     "label": "EVENT_GUIDE"
@@ -5067,12 +4791,10 @@
     "text": "미니맵 확대는 어떻게 해?",
     "label": "None"
   },
-  [
-    {
-      "text": "음성 안내 끄는 옵션 있나",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "음성 안내 끄는 옵션 있나",
+    "label": "None"
+  },
   {
     "text": "여기 좀 빡세네, 방법 있어?",
     "label": "None"
@@ -5105,12 +4827,10 @@
     "text": "지금 타이밍 놓쳤지?",
     "label": "None"
   },
-  [
-    {
-      "text": "여기서 실수하면 바로 끝이야?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기서 실수하면 바로 끝이야?",
+    "label": "None"
+  },
   {
     "text": "내가 길치라 설명 자세히",
     "label": "None"
@@ -5159,22 +4879,18 @@
     "text": "보스 약점이랑 준비물 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "패턴 설명하고 안전지점도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "패턴 설명하고 안전지점도",
+    "label": "None"
+  },
   {
     "text": "저 몹 대응법이랑 길 안내",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 푸는 법이랑 함정 위치",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "퍼즐 푸는 법이랑 함정 위치",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "다음 방 어디고 장치도 봐줘",
     "label": "None"
@@ -5191,12 +4907,10 @@
     "text": "포션 쓰고 상태이상도 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 페이즈랑 즉사기 조건",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 페이즈랑 즉사기 조건",
+    "label": "None"
+  },
   {
     "text": "분신 구분법이랑 딜 타이밍",
     "label": "None"
@@ -5209,18 +4923,14 @@
     "text": "레이저 각도랑 진행 방향도",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "압력판 조건이랑 문 여는 법",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "지름길 여는 법과 체크포인트",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "압력판 조건이랑 문 여는 법",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "지름길 여는 법과 체크포인트",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "길 잃었어, 포탈 맞는지 봐",
     "label": "None"
@@ -5241,34 +4951,26 @@
     "text": "타겟 고정 풀고 회피 키도",
     "label": "None"
   },
-  [
-    {
-      "text": "지금 안전해? 다음 층 특징도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지금 안전해? 다음 층 특징도",
+    "label": "None"
+  },
   {
     "text": "함정 피하는 법과 장치 위치",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "보스방까지 남은 방 수랑 기믹",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이 방 클리어 조건과 몹 우선",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "부활 제한 있는지와 포션 수",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스방까지 남은 방 수랑 기믹",
+    "label": "None"
+  },
+  {
+    "text": "이 방 클리어 조건과 몹 우선",
+    "label": "None"
+  },
+  {
+    "text": "부활 제한 있는지와 포션 수",
+    "label": "None"
+  },
   {
     "text": "카운터 패턴이랑 각 잡는 법",
     "label": "None"
@@ -5281,12 +4983,10 @@
     "text": "실드 조건이랑 디버프 면역",
     "label": "None"
   },
-  [
-    {
-      "text": "돌진 대처랑 안전지대 위치",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "돌진 대처랑 안전지대 위치",
+    "label": "None"
+  },
   {
     "text": "타일 순서랑 리셋 조건까지",
     "label": "EVENT_GUIDE"
@@ -5299,12 +4999,10 @@
     "text": "폭탄 순서랑 실패하면 뭐 돼?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "상자 조건과 숨통로 여부",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "상자 조건과 숨통로 여부",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "오른쪽 문 왜 막혀? 대안도",
     "label": "EVENT_GUIDE"
@@ -5317,24 +5015,18 @@
     "text": "미니맵 확대랑 방향 표시 방법",
     "label": "None"
   },
-  [
-    {
-      "text": "상호작용 키 먹통, 해결도",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "카메라 문제랑 타겟 전환도",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "난이도 차이랑 보상 차이",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상호작용 키 먹통, 해결도",
+    "label": "None"
+  },
+  {
+    "text": "카메라 문제랑 타겟 전환도",
+    "label": "None"
+  },
+  {
+    "text": "난이도 차이랑 보상 차이",
+    "label": "None"
+  },
   {
     "text": "장비 잠금 어디고 세팅 추천도",
     "label": "None"
@@ -5359,22 +5051,18 @@
     "text": "쉴드몹 깨고 다음 길도 안내",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 분노 타이밍과 대응",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 분노 타이밍과 대응",
+    "label": "None"
+  },
   {
     "text": "즉사기 피하려면 뭘 준비해?",
     "label": "None"
   },
-  [
-    {
-      "text": "그랩 패턴 피하고 딜 구간도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "그랩 패턴 피하고 딜 구간도",
+    "label": "None"
+  },
   {
     "text": "분기에서 안전 루트랑 보상 루트",
     "label": "None"
@@ -5395,12 +5083,10 @@
     "text": "레버 안 돼, 조건과 위치도",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "룬 규칙이랑 정답 힌트만",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "룬 규칙이랑 정답 힌트만",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "레이저 반사하고 문 여는 순서",
     "label": "EVENT_GUIDE"
@@ -5445,12 +5131,10 @@
     "text": "문 열쇠 쓰고 다음 방도 안내",
     "label": "None"
   },
-  [
-    {
-      "text": "장비 저항으로 바꾸고 디버프도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "장비 저항으로 바꾸고 디버프도",
+    "label": "None"
+  },
   {
     "text": "타겟 고정 풀고 카메라도 조정",
     "label": "None"
@@ -5463,42 +5147,36 @@
     "text": "저 몹 우선 잡고 퍼즐도 진행?",
     "label": "None"
   },
-  [
-    {
-      "text": "기믹 많네, 핵심만 요약해줘",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이벤트 또 실패, 원인 두 개만",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "기믹 많네, 핵심만 요약해줘",
+    "label": "None"
+  },
+  {
+    "text": "이벤트 또 실패, 원인 두 개만",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "여기 안전구간이면 불부터 꺼줘",
     "label": "None"
   },
-  [
-    {
-      "text": "보스방 맞아? 준비물하고 규칙도",
-      "label": "None"
-    }
-  ],
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "보스방 맞아? 준비물하고 규칙도",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd0987\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄷㅈㅂ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;;;..,,;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd0987",
+    "label": "None"
+  },
+  {
+    "text": ";;;;;..,,;;",
     "label": "None"
   },
   {
@@ -5506,19 +5184,17 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"zmxncvqwer\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "zmxncvqwer",
     "label": "None"
   },
   {
     "text": "ㅋㅌㅊㅍㄴㅁㄹ",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 패턴, 시작 모션이 뭐야?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 패턴, 시작 모션이 뭐야?",
+    "label": "None"
+  },
   {
     "text": "저 몹이 소환하는 거부터 끊어?",
     "label": "None"
@@ -5531,12 +5207,10 @@
     "text": "퍼즐 먼저고 전투는 나중이야?",
     "label": "None"
   },
-  [
-    {
-      "text": "여기 함정은 점프로 넘겨?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "여기 함정은 점프로 넘겨?",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "다음 방에 힐 포인트 있어?",
     "label": "None"
@@ -5569,12 +5243,10 @@
     "text": "기믹 실패해도 재도전 돼?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이 포탈, 숨겨진 방으로 가?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 포탈, 숨겨진 방으로 가?",
+    "label": "None"
+  },
   {
     "text": "장비 내구도 지금 괜찮아?",
     "label": "None"
@@ -5619,12 +5291,10 @@
     "text": "지금 디버프 뭐에 걸린 거야?",
     "label": "None"
   },
-  [
-    {
-      "text": "쫄몹 무한 소환 조건 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "쫄몹 무한 소환 조건 뭐야",
+    "label": "None"
+  },
   {
     "text": "보스 분노 상태 막는 법 알려줘",
     "label": "None"
@@ -5685,12 +5355,10 @@
     "text": "퍼즐 순서 좀 빨리 말해줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "장치 작동 조건 뭐임",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "장치 작동 조건 뭐임",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이벤트 실패 이유가 뭐야",
     "label": "EVENT_GUIDE"
@@ -5707,12 +5375,10 @@
     "text": "이 룬 어디부터 밟아?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "시간제한 퍼즐 팁 있어?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "시간제한 퍼즐 팁 있어?",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "불꽃 함정 타이밍 어떻게 피해",
     "label": "EVENT_GUIDE"
@@ -5729,18 +5395,14 @@
     "text": "저 기믹 활성화는 뭘로 해?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "회전 기둥 방향 맞춰야 돼?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "숨은 장치 위치 보여줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "회전 기둥 방향 맞춰야 돼?",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "숨은 장치 위치 보여줘",
+    "label": "None"
+  },
   {
     "text": "레이저 함정 끄는 법 알려줘",
     "label": "EVENT_GUIDE"
@@ -5749,12 +5411,10 @@
     "text": "이 방 퍼즐 리셋됨?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "석상 돌리는 각도 힌트 줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "석상 돌리는 각도 힌트 줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "페이몬, 이건 내가 뭘 놓쳤지?",
     "label": "None"
@@ -5763,12 +5423,10 @@
     "text": "상자 열려면 뭐부터 해야 돼",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "폭탄 장치 안전거리 얼마야",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "폭탄 장치 안전거리 얼마야",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "다음 방 어디로 가야 돼?",
     "label": "None"
@@ -5777,12 +5435,10 @@
     "text": "분기길 뭐가 정답이야",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "길 잃었어 미니맵 체크해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "길 잃었어 미니맵 체크해줘",
+    "label": "None"
+  },
   {
     "text": "아까 방으로 되돌아갈 수 있어?",
     "label": "None"
@@ -5815,12 +5471,10 @@
     "text": "여기 막다른길 같은데",
     "label": "None"
   },
-  [
-    {
-      "text": "지도에 표시된 점 어디야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지도에 표시된 점 어디야",
+    "label": "None"
+  },
   {
     "text": "다음 층 특징 뭐 조심해?",
     "label": "None"
@@ -5845,12 +5499,10 @@
     "text": "페이몬 나 지금 어디쯤이야",
     "label": "None"
   },
-  [
-    {
-      "text": "출구 방향 한 번만 찍어줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "출구 방향 한 번만 찍어줘",
+    "label": "None"
+  },
   {
     "text": "이 길 맞으면 몹 더 나와?",
     "label": "None"
@@ -5943,12 +5595,10 @@
     "text": "회피가 가끔 씹히는 이유 뭐임",
     "label": "None"
   },
-  [
-    {
-      "text": "이 기믹 상호작용 키 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 기믹 상호작용 키 뭐야",
+    "label": "None"
+  },
   {
     "text": "보상 조건이 뭐였지?",
     "label": "None"
@@ -6009,18 +5659,14 @@
     "text": "아 미쳤다 또 맞았어",
     "label": "None"
   },
-  [
-    {
-      "text": "야야야 지금 너무 아픈데",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "빨리빨리 힌트 좀 줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "야야야 지금 너무 아픈데",
+    "label": "None"
+  },
+  {
+    "text": "빨리빨리 힌트 좀 줘",
+    "label": "None"
+  },
   {
     "text": "나 멘탈 나갈 거 같아",
     "label": "None"
@@ -6082,15 +5728,15 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;lkj;;;qwe\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;lkj;;;qwe",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅈㄷㄱㅌ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㅈㄷㄱㅌ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;;;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;;;;;",
     "label": "None"
   },
   {
@@ -6106,7 +5752,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";.;.;.;,,\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";.;.;.;,,",
     "label": "None"
   },
   {
@@ -6117,18 +5763,14 @@
     "text": "회복약 쓰고 다음 길도 찍어줘",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 순서랑 실패 원인 같이 봐줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "함정 끄고 출구 방향도 알려줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "퍼즐 순서랑 실패 원인 같이 봐줘",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "함정 끄고 출구 방향도 알려줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이 몹 대응법이랑 준비물 뭐 챙겨?",
     "label": "None"
@@ -6137,12 +5779,10 @@
     "text": "장비 바꾸고 내 상태 이상도 확인해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "길 잃었어 지도 핀 찍고 설명해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "길 잃었어 지도 핀 찍고 설명해줘",
+    "label": "None"
+  },
   {
     "text": "보스 2페 신호랑 피하는 법 알려줘",
     "label": "None"
@@ -6151,12 +5791,10 @@
     "text": "이 문 조건 뭐고 스위치 위치도 찾아줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "힐템 쓰는 타이밍이랑 회피 키도 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "힐템 쓰는 타이밍이랑 회피 키도 알려줘",
+    "label": "None"
+  },
   {
     "text": "다음 방 몹 조합이랑 공략 한 번에",
     "label": "None"
@@ -6169,18 +5807,14 @@
     "text": "보상 조건이랑 제한시간 있는지 확인해",
     "label": "None"
   },
-  [
-    {
-      "text": "상호작용 키 뭐고 왜 안 되는지도 봐줘",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "분기길 추천하고 숨겨진 방도 찾아줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상호작용 키 뭐고 왜 안 되는지도 봐줘",
+    "label": "None"
+  },
+  {
+    "text": "분기길 추천하고 숨겨진 방도 찾아줘",
+    "label": "None"
+  },
   {
     "text": "디버프 원인하고 해독제 있나 체크해줘",
     "label": "None"
@@ -6209,22 +5843,18 @@
     "text": "자동조준 끄고 카메라 감도도 맞춰줘",
     "label": "None"
   },
-  [
-    {
-      "text": "몹 뒤잡 각이랑 광역 피하는 타이밍",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "몹 뒤잡 각이랑 광역 피하는 타이밍",
+    "label": "None"
+  },
   {
     "text": "이벤트 카운트 왜 안 오르고 해결은?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "출구가 어딘지랑 이 길 맞는지 확인",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "출구가 어딘지랑 이 길 맞는지 확인",
+    "label": "None"
+  },
   {
     "text": "원소폭발 쿨 보고 지금 딜각도 봐줘",
     "label": "None"
@@ -6245,12 +5875,10 @@
     "text": "내 HP 쉴드 확인하고 힐도 써줘",
     "label": "None"
   },
-  [
-    {
-      "text": "지도에 표시된 점이랑 다음 층 특징",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지도에 표시된 점이랑 다음 층 특징",
+    "label": "None"
+  },
   {
     "text": "회피 씹힘 이유랑 설정 바꿀 곳 알려줘",
     "label": "None"
@@ -6271,12 +5899,10 @@
     "text": "바닥 문양 퍼즐이랑 함정까지 같이 설명",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "보스 체력 회복 막고 쫄 소환도 끊어줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 체력 회복 막고 쫄 소환도 끊어줘",
+    "label": "None"
+  },
   {
     "text": "이 통로 맞는지 보고 포탈도 타야 돼?",
     "label": "None"
@@ -6285,24 +5911,18 @@
     "text": "인벤에 해독제랑 버프 음식 있는지 확인",
     "label": "None"
   },
-  [
-    {
-      "text": "UI 빨간 점 이유랑 보상 받는 법 알려줘",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "스킬 우선순위랑 원소반응 팁 같이 줘",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "엘리베이터 위치랑 위층 입구도 찾아줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "UI 빨간 점 이유랑 보상 받는 법 알려줘",
+    "label": "None"
+  },
+  {
+    "text": "스킬 우선순위랑 원소반응 팁 같이 줘",
+    "label": "None"
+  },
+  {
+    "text": "엘리베이터 위치랑 위층 입구도 찾아줘",
+    "label": "None"
+  },
   {
     "text": "석상 각도 힌트랑 룬 밟는 순서 알려줘",
     "label": "EVENT_GUIDE"
@@ -6311,12 +5931,10 @@
     "text": "레이저 함정 피하면서 상자 조건도 봐줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "막타 안전 타이밍이랑 분노 막는 법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "막타 안전 타이밍이랑 분노 막는 법",
+    "label": "None"
+  },
   {
     "text": "다음 방 어디고 체크포인트도 찍혀?",
     "label": "None"
@@ -6345,28 +5963,22 @@
     "text": "보스 저항 확인하고 무기 교체 추천해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 시간제한 팁이랑 순서 한 번에",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "문 뒤가 보스방인지랑 준비물도 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "퍼즐 시간제한 팁이랑 순서 한 번에",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "문 뒤가 보스방인지랑 준비물도 알려줘",
+    "label": "None"
+  },
   {
     "text": "숨겨진 방 입구랑 막다른길 여부 확인",
     "label": "None"
   },
-  [
-    {
-      "text": "폭탄 장치 안전거리랑 던져도 되는지",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "폭탄 장치 안전거리랑 던져도 되는지",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "상호작용이 안 떠 버그인지 조건인지 봐줘",
     "label": "None"
@@ -6375,12 +5987,10 @@
     "text": "파티 규칙이랑 부활 제한 같이 설명해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "자동줍기 상태랑 필요한 아이템 체크해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "자동줍기 상태랑 필요한 아이템 체크해줘",
+    "label": "None"
+  },
   {
     "text": "회전 기둥 방향 맞추고 함정도 꺼줘",
     "label": "EVENT_GUIDE"
@@ -6409,12 +6019,10 @@
     "text": "힐템 쓰고 디버프도 지울 수 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "불꽃 함정 피하는 타이밍이랑 안전 루트",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "불꽃 함정 피하는 타이밍이랑 안전 루트",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "튜토리얼 다시 보고 키 설정도 바꿔야 돼?",
     "label": "None"
@@ -6423,22 +6031,18 @@
     "text": "스위치 먹통 이유랑 장치 조건 같이 봐줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "보스 한방기 피하고 방패 깨는 법도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 한방기 피하고 방패 깨는 법도",
+    "label": "None"
+  },
   {
     "text": "포탈 타기 전에 체크포인트 있나 확인",
     "label": "None"
   },
-  [
-    {
-      "text": "상태창 아이콘 뭐고 해제 방법도 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상태창 아이콘 뭐고 해제 방법도 알려줘",
+    "label": "None"
+  },
   {
     "text": "이 방 퍼즐 리셋되면 순서 다시 알려줘",
     "label": "EVENT_GUIDE"
@@ -6643,12 +6247,10 @@
     "text": "이 스위치 두 번 눌러야 돼?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "시간제한 퍼즐, 동선 추천해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "시간제한 퍼즐, 동선 추천해줘",
+    "label": "None"
+  },
   {
     "text": "물 수위 조절 어디서 해?",
     "label": "EVENT_GUIDE"
@@ -6685,18 +6287,14 @@
     "text": "바위 막혔는데 폭발 필요?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "기믹 몹 잡아야 해제돼?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "퍼즐 리셋은 어떻게 해",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "기믹 몹 잡아야 해제돼?",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "퍼즐 리셋은 어떻게 해",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "다음 방 어디로 가야 돼?",
     "label": "None"
@@ -6721,12 +6319,10 @@
     "text": "아까 방으로 되돌아가도 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "엘리베이터 같은 거 어디 있어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "엘리베이터 같은 거 어디 있어",
+    "label": "None"
+  },
   {
     "text": "왼쪽 문이 맞아? 헷갈려",
     "label": "None"
@@ -6795,12 +6391,10 @@
     "text": "이 구역은 숨은 방 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "출구 표시 왜 안 보이지",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "출구 표시 왜 안 보이지",
+    "label": "None"
+  },
   {
     "text": "이 계단 올라가면 뭐 나와?",
     "label": "None"
@@ -6833,12 +6427,10 @@
     "text": "힐 아이템 하나 써줘",
     "label": "None"
   },
-  [
-    {
-      "text": "버프 음식 뭐 먹는 게 나아?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "버프 음식 뭐 먹는 게 나아?",
+    "label": "None"
+  },
   {
     "text": "내 인벤 꽉 찼는지 봐줘",
     "label": "None"
@@ -6919,12 +6511,10 @@
     "text": "다음 방 가기 전에 회복할까",
     "label": "None"
   },
-  [
-    {
-      "text": "이 버프 끄는 법 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 버프 끄는 법 있어?",
+    "label": "None"
+  },
   {
     "text": "장비 프리셋으로 바꿔줘",
     "label": "None"
@@ -7025,12 +6615,10 @@
     "text": "타겟 전환 키가 뭐야",
     "label": "None"
   },
-  [
-    {
-      "text": "알림이 너무 떠, 끄는 법?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "알림이 너무 떠, 끄는 법?",
+    "label": "None"
+  },
   {
     "text": "이 구간 저장은 언제 돼?",
     "label": "None"
@@ -7191,12 +6779,10 @@
     "text": "저 보스 패턴 알려주고 불 켜줘",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 방 어디고 함정도 봐줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 방 어디고 함정도 봐줘",
+    "label": "None"
+  },
   {
     "text": "퍼즐 순서랑 실패 이유 같이 말해",
     "label": "EVENT_GUIDE"
@@ -7205,18 +6791,14 @@
     "text": "힐템 써주고 인벤도 확인해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "약점 뭐고 대응 준비물도 알려줘",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "길 안내해주고 보상 조건도 봐줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "약점 뭐고 대응 준비물도 알려줘",
+    "label": "None"
+  },
+  {
+    "text": "길 안내해주고 보상 조건도 봐줘",
+    "label": "None"
+  },
   {
     "text": "장비 추천하고 디버프도 체크해",
     "label": "None"
@@ -7225,12 +6807,10 @@
     "text": "이 장치 조건이랑 레버 순서 알려",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "보스 돌진 피하는 법이랑 타이밍",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 돌진 피하는 법이랑 타이밍",
+    "label": "None"
+  },
   {
     "text": "출구 찾고 숨은방 있나 확인",
     "label": "None"
@@ -7259,22 +6839,18 @@
     "text": "퍼즐 힌트 주고 리셋도 알려줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "다음 층 특징이랑 보스 준비물 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 층 특징이랑 보스 준비물 뭐야",
+    "label": "None"
+  },
   {
     "text": "상호작용 안 돼, 조건이랑 해결법",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "분기에서 보상방 어디고 안전한 문?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "분기에서 보상방 어디고 안전한 문?",
+    "label": "None"
+  },
   {
     "text": "해독 필요해? 그리고 힐도 해줘",
     "label": "None"
@@ -7291,12 +6867,10 @@
     "text": "남은 열쇠랑 부활템 수량 같이 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 2페 조건이랑 즉사기 전조 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 2페 조건이랑 즉사기 전조 뭐야",
+    "label": "None"
+  },
   {
     "text": "길 잃었어, 현재 위치랑 출구 좀",
     "label": "None"
@@ -7313,12 +6887,10 @@
     "text": "문 안 열려, 퍼즐 조건이랑 스위치 위치",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "장판 패턴이랑 안전딜 타이밍 둘 다",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "장판 패턴이랑 안전딜 타이밍 둘 다",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "버프 음식 추천하고 저항 셋팅도 봐줘",
     "label": "None"
@@ -7339,12 +6911,10 @@
     "text": "이벤트 스킵 되나, 실패 원인도",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "보스 분신 구분이랑 우선 타겟 정해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 분신 구분이랑 우선 타겟 정해줘",
+    "label": "None"
+  },
   {
     "text": "폭발 필요해? 그리고 폭탄 수량도 알려",
     "label": "EVENT_GUIDE"
@@ -7393,18 +6963,14 @@
     "text": "퍼즐 음표 순서랑 입력 기준 알려줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "디버프 몇 개고 빙결 풀 방법도",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "원거리몹 먼저? 그리고 안전 타이밍",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "디버프 몇 개고 빙결 풀 방법도",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "원거리몹 먼저? 그리고 안전 타이밍",
+    "label": "None"
+  },
   {
     "text": "레이저랑 함정창 타이밍 둘 다 알려",
     "label": "EVENT_GUIDE"
@@ -7417,12 +6983,10 @@
     "text": "보스 체력 잠금 이유랑 해제 조건",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "수위 조절 어디서 하고 문 조건도 뭐야",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "수위 조절 어디서 하고 문 조건도 뭐야",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "스위치 두 번? 장치 충전도 어디서",
     "label": "EVENT_GUIDE"
@@ -7435,12 +6999,10 @@
     "text": "출혈 막는 법이랑 해독템 있나 확인",
     "label": "None"
   },
-  [
-    {
-      "text": "길 돌아가면 손해야? 보상방도 체크",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "길 돌아가면 손해야? 보상방도 체크",
+    "label": "None"
+  },
   {
     "text": "지금 HP랑 스태미나 회복템 있나 봐",
     "label": "None"
@@ -7485,32 +7047,26 @@
     "text": "장판 색 바뀜 이유랑 안전지대도",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "미니보스 공략이랑 필요한 저항 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "미니보스 공략이랑 필요한 저항 뭐야",
+    "label": "None"
+  },
   {
     "text": "내 방어구 저항 뭐고 바꿔야 해?",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 분노때 대응이랑 딜타임 같이",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 분노때 대응이랑 딜타임 같이",
+    "label": "None"
+  },
   {
     "text": "맵 핑 찍고 다음 방 분기 설명해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "자동줍기 있나, 그리고 보상 조건도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "자동줍기 있나, 그리고 보상 조건도",
+    "label": "None"
+  },
   {
     "text": "부활 제한이랑 부활템 남은지도",
     "label": "None"
@@ -7535,30 +7091,28 @@
     "text": "잠금 문 키 필요해? 열쇠 수량도",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "카메라 감도 바꾸고 락온도 켜고 싶어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "카메라 감도 바꾸고 락온도 켜고 싶어",
+    "label": "None"
+  },
   {
     "text": "보스 약점이랑 원소반응 먹는지까지",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅈㄷㄹ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㅈㄷㄹ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD123",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;..;;..;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";;;..;;..;;;",
     "label": "None"
   },
   {
@@ -7574,7 +7128,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";lkj;;;opiu\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";lkj;;;opiu",
     "label": "None"
   },
   {
@@ -7582,7 +7136,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qazwsxedcrfvtg\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qazwsxedcrfvtg",
     "label": "None"
   },
   {
@@ -7621,12 +7175,10 @@
     "text": "이 몹 속성 저항 뭐가 높아?",
     "label": "None"
   },
-  [
-    {
-      "text": "분신 나오면 먼저 뭐 잡아?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "분신 나오면 먼저 뭐 잡아?",
+    "label": "None"
+  },
   {
     "text": "바닥 장판 왜 계속 터져?",
     "label": "EVENT_GUIDE"
@@ -7639,22 +7191,18 @@
     "text": "이 몹 면역 구간 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "카운터 가능한 패턴 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "카운터 가능한 패턴 알려줘",
+    "label": "None"
+  },
   {
     "text": "기절 걸리는 타이밍 있나?",
     "label": "None"
   },
-  [
-    {
-      "text": "저 보스 소환수 처리 순서",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "저 보스 소환수 처리 순서",
+    "label": "None"
+  },
   {
     "text": "이 방 몹 리젠 조건이 뭐야",
     "label": "None"
@@ -7667,12 +7215,10 @@
     "text": "저거 회복하는 거 끊어야 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "약점 속성 하나만 찍어줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "약점 속성 하나만 찍어줘",
+    "label": "None"
+  },
   {
     "text": "이 보스 추천 파티 구성이?",
     "label": "None"
@@ -7685,12 +7231,10 @@
     "text": "함정 발동 조건이 뭐야?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이 퍼즐 순서 좀 알려줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이 퍼즐 순서 좀 알려줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "레버 당기는 순서 있지?",
     "label": "EVENT_GUIDE"
@@ -7699,12 +7243,10 @@
     "text": "장치가 반응 안하는 이유 뭐야",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이 방 바닥 스위치 어디있어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 바닥 스위치 어디있어",
+    "label": "None"
+  },
   {
     "text": "불꽃 토템 끄는 방법 뭐임",
     "label": "EVENT_GUIDE"
@@ -7761,12 +7303,10 @@
     "text": "전기 기둥 연결 방법 좀",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이 퍼즐 힌트 한 줄만 줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이 퍼즐 힌트 한 줄만 줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "다음 방 어디로 가야 돼?",
     "label": "None"
@@ -7803,12 +7343,10 @@
     "text": "미니맵에 표시가 안 떠 왜",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 출구 두 개 차이 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 출구 두 개 차이 뭐야",
+    "label": "None"
+  },
   {
     "text": "보스방 가는 길 맞아?",
     "label": "None"
@@ -7877,12 +7415,10 @@
     "text": "장비 내구도 상태 확인해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "무기 원소 바꿔야 돼?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "무기 원소 바꿔야 돼?",
+    "label": "None"
+  },
   {
     "text": "방어구 세트 효과 켜져있나",
     "label": "None"
@@ -7927,12 +7463,10 @@
     "text": "장치에 아이템 넣어야 해?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이거 상호작용 좀 대신 확인",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이거 상호작용 좀 대신 확인",
+    "label": "None"
+  },
   {
     "text": "대시 키가 뭐였지?",
     "label": "None"
@@ -7977,18 +7511,14 @@
     "text": "핑이 튀는데 서버 문제야?",
     "label": "None"
   },
-  [
-    {
-      "text": "왜 미션 진행도가 안 차?",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "자동전투 여기선 막힘?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "왜 미션 진행도가 안 차?",
+    "label": "None"
+  },
+  {
+    "text": "자동전투 여기선 막힘?",
+    "label": "None"
+  },
   {
     "text": "알림 끄는 설정 어디있어",
     "label": "None"
@@ -8098,15 +7628,15 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁㄴㅇㄹㅂㅈㄷㅅ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁㄴㅇㄹㅂㅈㄷㅅ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd123;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd123;;;",
     "label": "None"
   },
   {
@@ -8137,12 +7667,10 @@
     "text": "다음 방 어디고 함정도 있나",
     "label": "None"
   },
-  [
-    {
-      "text": "길 좀 찍어주고 상자 조건도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "길 좀 찍어주고 상자 조건도",
+    "label": "None"
+  },
   {
     "text": "장치 반응 왜 없고 키 뭐야",
     "label": "EVENT_GUIDE"
@@ -8207,12 +7735,10 @@
     "text": "UI 빨간표시 뭐고 미션 왜 멈춤",
     "label": "None"
   },
-  [
-    {
-      "text": "폭탄 어디 쓰고 문도 열 수 있어?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "폭탄 어디 쓰고 문도 열 수 있어?",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "버프 음식 먹고 바로 들어가도 돼?",
     "label": "None"
@@ -8237,12 +7763,10 @@
     "text": "보스방 맞아? 준비물도 체크",
     "label": "None"
   },
-  [
-    {
-      "text": "추천 파티랑 공략 한 줄로",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "추천 파티랑 공략 한 줄로",
+    "label": "None"
+  },
   {
     "text": "카운터 패턴이랑 끊는 스킬 뭐",
     "label": "None"
@@ -8287,12 +7811,10 @@
     "text": "여기 내려가면 뭐 나와, 보스야?",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 힌트 주고 장치 키도",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "퍼즐 힌트 주고 장치 키도",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "함정 발동 조건이랑 멈추는 법",
     "label": "EVENT_GUIDE"
@@ -8321,12 +7843,10 @@
     "text": "지금 저항 물약 먹고 길도 안내",
     "label": "None"
   },
-  [
-    {
-      "text": "맵 열기 키랑 핑 찍는 법도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "맵 열기 키랑 핑 찍는 법도",
+    "label": "None"
+  },
   {
     "text": "스킬 게이지 채우고 궁 타이밍도",
     "label": "None"
@@ -8343,18 +7863,14 @@
     "text": "장치에 아이템 넣는지, 뭐 넣어?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "보스 2페 조건이랑 광역 회피",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "돌진 끊고 그로기까지 연결법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 2페 조건이랑 광역 회피",
+    "label": "None"
+  },
+  {
+    "text": "돌진 끊고 그로기까지 연결법",
+    "label": "None"
+  },
   {
     "text": "이벤트 왜 실패, 내가 뭘 놓침?",
     "label": "EVENT_GUIDE"
@@ -8371,12 +7887,10 @@
     "text": "미션 진행 안 차, 트리거 뭐야",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "자동전투 막혀? 수동 팁도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "자동전투 막혀? 수동 팁도",
+    "label": "None"
+  },
   {
     "text": "여기서 우회로랑 비밀상자 위치",
     "label": "None"
@@ -8389,12 +7903,10 @@
     "text": "딜 타임 언제, 힐은 언제 써?",
     "label": "None"
   },
-  [
-    {
-      "text": "분신 패턴이랑 안전지대 같이",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "분신 패턴이랑 안전지대 같이",
+    "label": "None"
+  },
   {
     "text": "체력바 회색 이유랑 해제법",
     "label": "None"
@@ -8415,34 +7927,26 @@
     "text": "보스방 가는 길 맞는지 지도 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "저 보스 약점 뭐야?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "저 보스 약점 뭐야?",
+    "label": "None"
+  },
   {
     "text": "패턴 뭐부터 나오냐",
     "label": "None"
   },
-  [
-    {
-      "text": "이 몹 실드 어떻게 깨",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "광폭 조건이 뭐임",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "회피 타이밍 언제야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 몹 실드 어떻게 깨",
+    "label": "None"
+  },
+  {
+    "text": "광폭 조건이 뭐임",
+    "label": "None"
+  },
+  {
+    "text": "회피 타이밍 언제야",
+    "label": "None"
+  },
   {
     "text": "바닥 장판 피하는 법 좀",
     "label": "EVENT_GUIDE"
@@ -8463,22 +7967,18 @@
     "text": "잡몹 우선순위 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "분신 진짜 구분법 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "분신 진짜 구분법 있어?",
+    "label": "None"
+  },
   {
     "text": "기절 면역이야 얘?",
     "label": "None"
   },
-  [
-    {
-      "text": "쫄 소환 끊는 방법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "쫄 소환 끊는 방법",
+    "label": "None"
+  },
   {
     "text": "힐 줄어드는 디버프 뭐냐",
     "label": "None"
@@ -8491,12 +7991,10 @@
     "text": "카운터 가능한 패턴임?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 몹 공중 떠있을 때 어케 침",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 몹 공중 떠있을 때 어케 침",
+    "label": "None"
+  },
   {
     "text": "보스 뒤잡 가능해?",
     "label": "None"
@@ -8557,18 +8055,14 @@
     "text": "레버 3개 뭐부터 당김",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "퍼즐 조건 안 맞는 이유",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "이 룬석 어떻게 맞춰",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "퍼즐 조건 안 맞는 이유",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "이 룬석 어떻게 맞춰",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "바닥 문양 순서 기억 안 나",
     "label": "EVENT_GUIDE"
@@ -8590,7 +8084,7 @@
     "label": "EVENT_GUIDE"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"수정 위치 어디로 옮김\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "수정 위치 어디로 옮김",
     "label": "None"
   },
   {
@@ -8645,12 +8139,10 @@
     "text": "회전 톱날 주기 알려줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "감지 장판 피하는 루트",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "감지 장판 피하는 루트",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이 기둥 다 켜야 열림?",
     "label": "EVENT_GUIDE"
@@ -8691,12 +8183,10 @@
     "text": "길 잃었는데 되돌아가야 함?",
     "label": "None"
   },
-  [
-    {
-      "text": "숨은 통로 어디 있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "숨은 통로 어디 있냐",
+    "label": "None"
+  },
   {
     "text": "위층 가는 길 있어?",
     "label": "None"
@@ -8709,32 +8199,26 @@
     "text": "이 층 특징 뭐 있음",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 포탈 색깔 뭐 타",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "다음 포탈 색깔 뭐 타",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "왼쪽 문 열고 가도 됨?",
     "label": "None"
   },
-  [
-    {
-      "text": "체크포인트 어디야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "체크포인트 어디야",
+    "label": "None"
+  },
   {
     "text": "보스방까지 몇 방 남음",
     "label": "None"
   },
-  [
-    {
-      "text": "지름길 있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지름길 있냐",
+    "label": "None"
+  },
   {
     "text": "막다른길인데 뭐 놓침?",
     "label": "EVENT_GUIDE"
@@ -8747,22 +8231,18 @@
     "text": "지도 표시가 안 맞는데",
     "label": "None"
   },
-  [
-    {
-      "text": "비밀방 조건 있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "비밀방 조건 있냐",
+    "label": "None"
+  },
   {
     "text": "이쪽으로 가면 스킵됨?",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 구역 위험 요소 뭐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 구역 위험 요소 뭐",
+    "label": "None"
+  },
   {
     "text": "문 두 개 중 뭐가 쉬움",
     "label": "EVENT_GUIDE"
@@ -8775,12 +8255,10 @@
     "text": "계단 위에 뭐 있음?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 통로 왜 막혀있지",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 통로 왜 막혀있지",
+    "label": "None"
+  },
   {
     "text": "바람길 타는 방향 맞음?",
     "label": "None"
@@ -8797,18 +8275,14 @@
     "text": "이 방에서 출구가 안 보여",
     "label": "None"
   },
-  [
-    {
-      "text": "앞방 몹 종류 뭐 나옴",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "여기서 오른쪽 꺾어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "앞방 몹 종류 뭐 나옴",
+    "label": "None"
+  },
+  {
+    "text": "여기서 오른쪽 꺾어?",
+    "label": "None"
+  },
   {
     "text": "반대길로 가면 뭐 나옴",
     "label": "None"
@@ -8837,12 +8311,10 @@
     "text": "장비 세팅 바꿔야 함?",
     "label": "None"
   },
-  [
-    {
-      "text": "내 인벤에 키 아이템 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "내 인벤에 키 아이템 있어?",
+    "label": "None"
+  },
   {
     "text": "상태창에서 디버프 뭐임",
     "label": "None"
@@ -8871,12 +8343,10 @@
     "text": "스킬 쿨 확인 좀",
     "label": "None"
   },
-  [
-    {
-      "text": "궁 게이지 꽉 찼냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "궁 게이지 꽉 찼냐",
+    "label": "None"
+  },
   {
     "text": "저항 포션 지금 먹어?",
     "label": "None"
@@ -8885,12 +8355,10 @@
     "text": "함정 해제 도구 써줘",
     "label": "None"
   },
-  [
-    {
-      "text": "키 하나 있나 찾아봐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "키 하나 있나 찾아봐",
+    "label": "None"
+  },
   {
     "text": "상자 열어도 됨?",
     "label": "None"
@@ -8899,18 +8367,14 @@
     "text": "이 문 상호작용 눌러줘",
     "label": "None"
   },
-  [
-    {
-      "text": "조명 켜고 주변 좀 봐줘",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "내 체력 위험한지 체크",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "조명 켜고 주변 좀 봐줘",
+    "label": "None"
+  },
+  {
+    "text": "내 체력 위험한지 체크",
+    "label": "None"
+  },
   {
     "text": "파티 버프 걸려있음?",
     "label": "None"
@@ -8967,12 +8431,10 @@
     "text": "보상 상자 조건 뭐야",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "시간 제한 있나",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "시간 제한 있나",
+    "label": "None"
+  },
   {
     "text": "이 던전 난이도 변경 가능?",
     "label": "None"
@@ -9025,12 +8487,10 @@
     "text": "이거 매칭으로도 됨?",
     "label": "None"
   },
-  [
-    {
-      "text": "중간 저장 있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "중간 저장 있냐",
+    "label": "None"
+  },
   {
     "text": "재도전 버튼 어디",
     "label": "None"
@@ -9059,12 +8519,10 @@
     "text": "드랍률 표시 어디 봄",
     "label": "None"
   },
-  [
-    {
-      "text": "아 개아프네",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "아 개아프네",
+    "label": "None"
+  },
   {
     "text": "또 장판이냐 짜증",
     "label": "None"
@@ -9133,12 +8591,10 @@
     "text": "이거 고의로 어렵게 했네",
     "label": "None"
   },
-  [
-    {
-      "text": "빨리 끝내자",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "빨리 끝내자",
+    "label": "None"
+  },
   {
     "text": "한 번만 더 하면 됨",
     "label": "None"
@@ -9187,40 +8643,30 @@
     "text": "아무튼 살려봐",
     "label": "None"
   },
-  [
-    {
-      "text": "몬스터 약점도 알려주고 길도 찍어줘",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "퍼즐 순서랑 실패 원인 같이 말해",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "보스 패턴 설명하고 회복약 써줘",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "다음 방 어디고 함정도 체크해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "몬스터 약점도 알려주고 길도 찍어줘",
+    "label": "None"
+  },
+  {
+    "text": "퍼즐 순서랑 실패 원인 같이 말해",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "보스 패턴 설명하고 회복약 써줘",
+    "label": "None"
+  },
+  {
+    "text": "다음 방 어디고 함정도 체크해줘",
+    "label": "None"
+  },
   {
     "text": "장비 바꾸고 디버프 뭐인지 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "레버 순서 알려주고 문도 열어줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "레버 순서 알려주고 문도 열어줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "미니맵 확대하고 출구 방향 말해",
     "label": "None"
@@ -9233,12 +8679,10 @@
     "text": "약점 속성 말해주고 포션 뭐 먹을지",
     "label": "None"
   },
-  [
-    {
-      "text": "그로기 타이밍이랑 카운터도 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "그로기 타이밍이랑 카운터도 알려줘",
+    "label": "None"
+  },
   {
     "text": "숨은 통로 찾고 상자 조건도 확인",
     "label": "EVENT_GUIDE"
@@ -9255,12 +8699,10 @@
     "text": "보상 조건이랑 부활 횟수도 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "인벤에 열쇠 있나 보고 다음 길도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "인벤에 열쇠 있나 보고 다음 길도",
+    "label": "None"
+  },
   {
     "text": "불 켜고 주변 스위치도 찾아줘",
     "label": "None"
@@ -9277,22 +8719,18 @@
     "text": "포탈 뭐 타야 돼, 그리고 몹 뭐 나옴",
     "label": "None"
   },
-  [
-    {
-      "text": "시간 제한 있나 보고 빨리 가야 함?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "시간 제한 있나 보고 빨리 가야 함?",
+    "label": "None"
+  },
   {
     "text": "장치 안 켜지는 이유랑 조작키 뭐야",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "보스 즉사기 있나, 회피 타이밍도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 즉사기 있나, 회피 타이밍도",
+    "label": "None"
+  },
   {
     "text": "분기 두 개 뭐가 쉬운지랑 보상",
     "label": "EVENT_GUIDE"
@@ -9321,38 +8759,34 @@
     "text": "이벤트 리셋되나, 되돌아가도 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "어그로 끄는 법이랑 쫄 처리법",
-      "label": "None"
-    }
-  ],
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "어그로 끄는 법이랑 쫄 처리법",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizxvc\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizxvc",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;...;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄷㅈ",
+    "label": "None"
+  },
+  {
+    "text": ";;;...;;;",
     "label": "None"
   },
   {
     "text": "뷁궭뛟쀍",
     "label": "None"
   },
-  [
-    {
-      "text": "ㅋㅌㅊㅍㅈㅅ",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "ㅋㅌㅊㅍㅈㅅ",
+    "label": "None"
+  },
   {
     "text": "zxcmnvvb12",
     "label": "None"
@@ -9373,12 +8807,10 @@
     "text": "원소 반응 왜 안 터지고 해결해줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "위층 가는 길이랑 지름길 있나",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "위층 가는 길이랑 지름길 있나",
+    "label": "None"
+  },
   {
     "text": "퍼즐 맞췄는데 왜 실패인지 확인",
     "label": "EVENT_GUIDE"
@@ -9387,12 +8819,10 @@
     "text": "카메라 흔들림 끄고 UI도 정리",
     "label": "None"
   },
-  [
-    {
-      "text": "함정 데미지 줄이고 회복도 바로",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "함정 데미지 줄이고 회복도 바로",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "드랍 뭐 나오는지랑 상자 열 조건",
     "label": "EVENT_GUIDE"
@@ -9413,54 +8843,42 @@
     "text": "중간 저장 있나, 죽으면 어디부터?",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 구역 특징이랑 보스 페이즈 힌트",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 구역 특징이랑 보스 페이즈 힌트",
+    "label": "None"
+  },
   {
     "text": "독 디버프 뭐고 해제 도구 써줘",
     "label": "None"
   },
-  [
-    {
-      "text": "레버 당기고 불도 같이 켜줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "레버 당기고 불도 같이 켜줘",
+    "label": "None"
+  },
   {
     "text": "폭발 구슬 처리하고 분신 구분도",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "포탈 사라진 이유랑 돌아가는 법",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "상호작용 안 뜨는 원인과 해결",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "포탈 사라진 이유랑 돌아가는 법",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "상호작용 안 뜨는 원인과 해결",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "튜토리얼 다시 보는 법이랑 조작키",
     "label": "None"
   },
-  [
-    {
-      "text": "분기 선택 전에 함정 여부 확인",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "딜 넣는 타이밍이랑 무적 시간",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "분기 선택 전에 함정 여부 확인",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "딜 넣는 타이밍이랑 무적 시간",
+    "label": "None"
+  },
   {
     "text": "보상방 가는 길이랑 지름길 위치",
     "label": "None"
@@ -9469,12 +8887,10 @@
     "text": "상태이상 면역 규칙이랑 내성 정보",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 출구 찾고 퍼즐도 같이",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이 방 출구 찾고 퍼즐도 같이",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "미니맵 안 뜨는데 설정 어디야",
     "label": "None"
@@ -9487,12 +8903,10 @@
     "text": "이 문양 퍼즐 각도랑 순서 알려줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "체크포인트 위치랑 재도전 버튼",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "체크포인트 위치랑 재도전 버튼",
+    "label": "None"
+  },
   {
     "text": "저 보스 약점 속성 뭐야?",
     "label": "None"
@@ -9505,22 +8919,18 @@
     "text": "광폭화 조건이 뭐였지?",
     "label": "None"
   },
-  [
-    {
-      "text": "돌진 피하는 타이밍 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "돌진 피하는 타이밍 알려줘",
+    "label": "None"
+  },
   {
     "text": "잡몹 실드 빨리 까는 법 있어?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 보스 분신 구분법 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 보스 분신 구분법 있어?",
+    "label": "None"
+  },
   {
     "text": "상태이상 뭐가 제일 잘 먹혀?",
     "label": "None"
@@ -9529,12 +8939,10 @@
     "text": "보스가 바닥 깔면 어디로 가?",
     "label": "None"
   },
-  [
-    {
-      "text": "회복 금지 디버프 어떻게 풀어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "회복 금지 디버프 어떻게 풀어?",
+    "label": "None"
+  },
   {
     "text": "여기 보스는 원거리 위험해?",
     "label": "None"
@@ -9547,18 +8955,14 @@
     "text": "브레이크 게이지 빨리 채워줘",
     "label": "None"
   },
-  [
-    {
-      "text": "돌덩이 던지는 패턴 전조 뭐야",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이 몹 뒤잡으면 딜 더 들어가?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "돌덩이 던지는 패턴 전조 뭐야",
+    "label": "None"
+  },
+  {
+    "text": "이 몹 뒤잡으면 딜 더 들어가?",
+    "label": "None"
+  },
   {
     "text": "흡혈 패턴 끊는 방법 있어?",
     "label": "None"
@@ -9607,12 +9011,10 @@
     "text": "이벤트 실패 원인 뭐였지?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "큐브 위치가 어디로 움직여?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "큐브 위치가 어디로 움직여?",
+    "label": "None"
+  },
   {
     "text": "시간 제한 퍼즐 요령 알려줘",
     "label": "EVENT_GUIDE"
@@ -9621,12 +9023,10 @@
     "text": "물 채우는 장치 순서 헷갈려",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "문이 안 열려, 뭐 놓쳤어?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "문이 안 열려, 뭐 놓쳤어?",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "발판 퍼즐 밟는 순서 좀",
     "label": "EVENT_GUIDE"
@@ -9707,12 +9107,10 @@
     "text": "미니맵에 X표가 뭔 뜻이야",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 끝나면 바로 보스야?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 끝나면 바로 보스야?",
+    "label": "None"
+  },
   {
     "text": "엘리베이터 키는 어디서 얻어",
     "label": "None"
@@ -9769,12 +9167,10 @@
     "text": "스킬 쿨 돌아왔는지 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "문 열쇠 사용해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "문 열쇠 사용해줘",
+    "label": "None"
+  },
   {
     "text": "상자 열어도 되는 거지?",
     "label": "None"
@@ -9791,12 +9187,10 @@
     "text": "방 안 불 좀 꺼봐",
     "label": "None"
   },
-  [
-    {
-      "text": "자동줍기 켜져 있어? 확인",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "자동줍기 켜져 있어? 확인",
+    "label": "None"
+  },
   {
     "text": "현재 디버프 뭐 걸렸는지 알려줘",
     "label": "None"
@@ -9813,12 +9207,10 @@
     "text": "파티 버프 지금 쓰는 게 맞아?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 문 조사 좀 해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 문 조사 좀 해줘",
+    "label": "None"
+  },
   {
     "text": "보물상자 표시 좀 해줘",
     "label": "None"
@@ -9923,12 +9315,10 @@
     "text": "이거 내가 뭘 잘못했냐",
     "label": "None"
   },
-  [
-    {
-      "text": "왜 나만 계속 맞아",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "왜 나만 계속 맞아",
+    "label": "None"
+  },
   {
     "text": "여기 분위기 쎄하다",
     "label": "None"
@@ -9974,19 +9364,19 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㄱ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄷㅈㄱ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd1290\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd1290",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;;;;:::\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";;;;;;:::",
     "label": "None"
   },
   {
@@ -10001,24 +9391,18 @@
     "text": "zxcnm,./<<",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 약점 알려주고 회복약 써줘",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "패턴 설명하고 안전지대도 찍어줘",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이 퍼즐 순서랑 실패 이유 같이 봐줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 약점 알려주고 회복약 써줘",
+    "label": "None"
+  },
+  {
+    "text": "패턴 설명하고 안전지대도 찍어줘",
+    "label": "None"
+  },
+  {
+    "text": "이 퍼즐 순서랑 실패 이유 같이 봐줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "다음방 어디로 가고 함정도 확인해",
     "label": "None"
@@ -10031,12 +9415,10 @@
     "text": "키 설정 어디서 보는지랑 왜 안돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "보상 규칙 알려주고 제한시간도 확인",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보상 규칙 알려주고 제한시간도 확인",
+    "label": "None"
+  },
   {
     "text": "인벤 해독제 확인하고 바로 써줘",
     "label": "None"
@@ -10049,12 +9431,10 @@
     "text": "스위치 눌러주고 레버 순서도 체크",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "맵 분기 뭐가 유리한지랑 보스 준비",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "맵 분기 뭐가 유리한지랑 보스 준비",
+    "label": "None"
+  },
   {
     "text": "이 몹 대응법이랑 내성 뭐 챙겨?",
     "label": "None"
@@ -10063,12 +9443,10 @@
     "text": "소환몹 먼저인지랑 무적 조건 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "장판 패턴 전조랑 피할 위치 말해",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "장판 패턴 전조랑 피할 위치 말해",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "길 막혔는데 다른 루트랑 비밀방 봐",
     "label": "None"
@@ -10077,28 +9455,22 @@
     "text": "포탈 뭐 타야 돼? 되돌아가면 초기화?",
     "label": "None"
   },
-  [
-    {
-      "text": "상호작용 키 알려주고 문도 조사해줘",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "오토타겟 끄고 타겟 고정도 해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상호작용 키 알려주고 문도 조사해줘",
+    "label": "None"
+  },
+  {
+    "text": "오토타겟 끄고 타겟 고정도 해줘",
+    "label": "None"
+  },
   {
     "text": "부활 횟수랑 부활템 개수 같이 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "스킬 막힌 이유랑 디버프도 확인해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "스킬 막힌 이유랑 디버프도 확인해",
+    "label": "None"
+  },
   {
     "text": "레이저 장치 끄고 발판 순서도 말해",
     "label": "EVENT_GUIDE"
@@ -10111,12 +9483,10 @@
     "text": "큐브 이동 규칙이랑 시간 제한 팁 줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "물 채우는 순서랑 장치 조건 같이",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "물 채우는 순서랑 장치 조건 같이",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "보스방 문 몇 개야? 정답 루트도",
     "label": "EVENT_GUIDE"
@@ -10125,12 +9495,10 @@
     "text": "다음 안전지대 어디고 돌진도 어떻게 피해",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "회피 판정이랑 가드 타이밍 둘 다 알려",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "회피 판정이랑 가드 타이밍 둘 다 알려",
+    "label": "None"
+  },
   {
     "text": "보상 상자 등급 기준이랑 점수 조건",
     "label": "None"
@@ -10155,12 +9523,10 @@
     "text": "브레이크 빨리하는 법이랑 딜 타임 언제",
     "label": "None"
   },
-  [
-    {
-      "text": "광폭화 조건이랑 끊는 방법 같이 말해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "광폭화 조건이랑 끊는 방법 같이 말해",
+    "label": "None"
+  },
   {
     "text": "흡혈 패턴 끊고 회복 금지 디버프 풀어",
     "label": "None"
@@ -10181,18 +9547,14 @@
     "text": "환풍구 루트 맞아? 함정도 있나",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "체크포인트 어디고 죽으면 뭐 잃는지",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "자동줍기 켜졌나 보고 보물도 표시해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "체크포인트 어디고 죽으면 뭐 잃는지",
+    "label": "None"
+  },
+  {
+    "text": "자동줍기 켜졌나 보고 보물도 표시해",
+    "label": "None"
+  },
   {
     "text": "단축키 슬롯 확인하고 물약도 채워줘",
     "label": "None"
@@ -10201,12 +9563,10 @@
     "text": "버프 범위 표시랑 파티 버프 지금 쓰자",
     "label": "None"
   },
-  [
-    {
-      "text": "채팅 줄바꿈 키랑 맵 여는 설정 위치",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "채팅 줄바꿈 키랑 맵 여는 설정 위치",
+    "label": "None"
+  },
   {
     "text": "제한시간 몇 분이고 재도전 보상 줄어?",
     "label": "None"
@@ -10219,22 +9579,18 @@
     "text": "퍼즐 3개 다 해야 돼? 순서도 부탁",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "폭탄통 어디 굴리고 레버도 눌러야 해?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "폭탄통 어디 굴리고 레버도 눌러야 해?",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "문 안 열려 뭐 놓쳤어? 스위치도 찾아",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "길이 반복되는데 출구 방향이랑 장치 위치",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "길이 반복되는데 출구 방향이랑 장치 위치",
+    "label": "None"
+  },
   {
     "text": "장비 바꾸고 상태이상 내성도 챙겨줘",
     "label": "None"
@@ -10251,12 +9607,10 @@
     "text": "피격 경직 면역 상태랑 적용 타이밍",
     "label": "None"
   },
-  [
-    {
-      "text": "UI 붉은 표식 뜻이랑 디버프 목록",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "UI 붉은 표식 뜻이랑 디버프 목록",
+    "label": "None"
+  },
   {
     "text": "타이밍 맞춰 종 치고 레이저도 꺼줘",
     "label": "None"
@@ -10273,18 +9627,14 @@
     "text": "보스 원거리 위험해? 그럼 세팅 바꿔줘",
     "label": "None"
   },
-  [
-    {
-      "text": "근접 터지는 패턴 있나? 거리 유지도 알려",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "소환몹 처리 순서랑 안전지대 위치",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "근접 터지는 패턴 있나? 거리 유지도 알려",
+    "label": "None"
+  },
+  {
+    "text": "소환몹 처리 순서랑 안전지대 위치",
+    "label": "None"
+  },
   {
     "text": "돌진 전조랑 회피 타이밍 동시에 말해",
     "label": "None"
@@ -10293,12 +9643,10 @@
     "text": "장판 색 의미랑 다음 행동 뭐야",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이 방 기믹 풀고 다음방 입구도 찍어",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이 방 기믹 풀고 다음방 입구도 찍어",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "함정 화살 루트랑 체크포인트도 알려",
     "label": "EVENT_GUIDE"
@@ -10315,12 +9663,10 @@
     "text": "보상 규칙 보고 지금 빠르게 밀자",
     "label": "None"
   },
-  [
-    {
-      "text": "지금 도망 가능해? 루트랑 포탈 안내",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지금 도망 가능해? 루트랑 포탈 안내",
+    "label": "None"
+  },
   {
     "text": "아프다, 회복약 쓰고 장비도 바꿔줘",
     "label": "None"
@@ -10333,12 +9679,10 @@
     "text": "헛스윙나가, 타겟 고정하고 설정도 봐",
     "label": "None"
   },
-  [
-    {
-      "text": "문 앞 끼임, 상호작용 키랑 탈출법",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "문 앞 끼임, 상호작용 키랑 탈출법",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "장치 돌리는 각도랑 발판 순서 같이",
     "label": "EVENT_GUIDE"
@@ -10371,12 +9715,10 @@
     "text": "상자 열면 함정 터져? 안전 확인해줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "다음 층 내려가고 되돌아감 초기화도 물어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 층 내려가고 되돌아감 초기화도 물어",
+    "label": "None"
+  },
   {
     "text": "포탈 두 개 목적지랑 보스방 연결 확인",
     "label": "None"
@@ -10397,12 +9739,10 @@
     "text": "불 켜고 숨겨진 스위치도 찾아줘",
     "label": "None"
   },
-  [
-    {
-      "text": "레이저 끄고 문 여는 조건까지 한 번에",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "레이저 끄고 문 여는 조건까지 한 번에",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "큐브 퍼즐 풀고 실패 조건도 같이 알려",
     "label": "EVENT_GUIDE"
@@ -10415,18 +9755,14 @@
     "text": "무적 풀리면 딜타임? 타이밍도 말해",
     "label": "None"
   },
-  [
-    {
-      "text": "원거리면 위험, 그럼 근접 대응도 알려",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "여기 보스 페이즈 수랑 패턴 요약",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "원거리면 위험, 그럼 근접 대응도 알려",
+    "label": "None"
+  },
+  {
+    "text": "여기 보스 페이즈 수랑 패턴 요약",
+    "label": "None"
+  },
   {
     "text": "함정 해제 도구 쓰고 인벤도 정리해줘",
     "label": "EVENT_GUIDE"
@@ -10451,12 +9787,10 @@
     "text": "스위치가 몇 개야? 위치랑 순서도",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "길 막힘, 환풍구 위치랑 올라가는 법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "길 막힘, 환풍구 위치랑 올라가는 법",
+    "label": "None"
+  },
   {
     "text": "엘리베이터 키 없는데 어디서 파밍해",
     "label": "None"
@@ -10465,12 +9799,10 @@
     "text": "이 방 끝나고 보스면 버프 타이밍 잡자",
     "label": "None"
   },
-  [
-    {
-      "text": "대시 키랑 회피 쿨 표시 같이 알려",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "대시 키랑 회피 쿨 표시 같이 알려",
+    "label": "None"
+  },
   {
     "text": "가드 판정이랑 패턴 전조 같이 체크",
     "label": "None"
@@ -10507,18 +9839,14 @@
     "text": "이거 사기야, 공략 핵심만 요약해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "급함, 다음방 입구랑 함정만 먼저",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "지금 뭐부터 해야 돼? 퍼즐이랑 루트",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "급함, 다음방 입구랑 함정만 먼저",
+    "label": "None"
+  },
+  {
+    "text": "지금 뭐부터 해야 돼? 퍼즐이랑 루트",
+    "label": "None"
+  },
   {
     "text": "타이밍 맞춰야 돼? 종이랑 레버 같이",
     "label": "EVENT_GUIDE"
@@ -10547,12 +9875,10 @@
     "text": "보스 소환몹 나오면 우선순위 정해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "분기 선택 잘못했나, 되돌리기 가능?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "분기 선택 잘못했나, 되돌리기 가능?",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "비밀방 놓쳤나, 다시 가는 길 알려줘",
     "label": "None"
@@ -10569,12 +9895,10 @@
     "text": "레이저 맞으면 즉사야? 회피법도",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "함정 화살 연속인데 타이밍 좀",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "함정 화살 연속인데 타이밍 좀",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "보스 돌진 후 딜타임 얼마나 돼?",
     "label": "None"
@@ -10659,12 +9983,10 @@
     "text": "이상상태 면역 있나 확인",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 소환몹부터 잡아?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 소환몹부터 잡아?",
+    "label": "None"
+  },
   {
     "text": "카운터 타이밍 언제임?",
     "label": "None"
@@ -10701,12 +10023,10 @@
     "text": "즉사기 조건 있나?",
     "label": "None"
   },
-  [
-    {
-      "text": "장판 색 의미가 뭐야?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "장판 색 의미가 뭐야?",
+    "label": "None"
+  },
   {
     "text": "이 몹 속박 거는 법 있어?",
     "label": "None"
@@ -10743,12 +10063,10 @@
     "text": "이 몹 불속 저항 높음?",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 뒤잡 안전함?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 뒤잡 안전함?",
+    "label": "None"
+  },
   {
     "text": "회전베기 범위 어디까지?",
     "label": "None"
@@ -10761,12 +10079,10 @@
     "text": "이 방 퍼즐 순서 뭐임?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "장치 작동 조건 알려줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "장치 작동 조건 알려줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "레버 당기는 순서 있어?",
     "label": "EVENT_GUIDE"
@@ -10831,12 +10147,10 @@
     "text": "기믹 초기화 어떻게 함",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "물 수위 올리는 방법 뭐임",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "물 수위 올리는 방법 뭐임",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "타이머 멈추는 조건 있어?",
     "label": "EVENT_GUIDE"
@@ -10845,12 +10159,10 @@
     "text": "이 방 함정 트리거 위치",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "퍼즐 힌트 어디 있음?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "퍼즐 힌트 어디 있음?",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "기둥 맞추는 기준이 뭐야",
     "label": "EVENT_GUIDE"
@@ -10863,12 +10175,10 @@
     "text": "이 장치 전원 어디서 켬",
     "label": "None"
   },
-  [
-    {
-      "text": "폭탄 배치 위치 추천해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "폭탄 배치 위치 추천해줘",
+    "label": "None"
+  },
   {
     "text": "돌판 밀어서 어디 맞춰?",
     "label": "EVENT_GUIDE"
@@ -10877,12 +10187,10 @@
     "text": "실패하면 리셋됨?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "길 잃음, 다음방 어디임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "길 잃음, 다음방 어디임",
+    "label": "None"
+  },
   {
     "text": "왼쪽 오른쪽 분기 뭐가 맞음",
     "label": "EVENT_GUIDE"
@@ -10899,22 +10207,18 @@
     "text": "숨겨진 방 입구 있나?",
     "label": "None"
   },
-  [
-    {
-      "text": "미니맵에 목표 표시해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "미니맵에 목표 표시해줘",
+    "label": "None"
+  },
   {
     "text": "되돌아가야 됨? 어디로",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 체크포인트 어디야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 체크포인트 어디야",
+    "label": "None"
+  },
   {
     "text": "이 길 막혔는데 우회로?",
     "label": "None"
@@ -10923,12 +10227,10 @@
     "text": "엘리베이터 위치 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "포탈 두 개 중 어디 타?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "포탈 두 개 중 어디 타?",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "여기서 아래로 내려가도 됨?",
     "label": "None"
@@ -10941,18 +10243,14 @@
     "text": "맵 핀 좀 찍어줘",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 방 몹 강함? 준비할거",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "보급 상자 위치 어디임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 방 몹 강함? 준비할거",
+    "label": "None"
+  },
+  {
+    "text": "보급 상자 위치 어디임",
+    "label": "None"
+  },
   {
     "text": "이 구간 돌아가면 손해임?",
     "label": "None"
@@ -10977,18 +10275,14 @@
     "text": "이 문으로 가면 보스임?",
     "label": "None"
   },
-  [
-    {
-      "text": "중간방 스킵 가능함?",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "다음 구역 속성 기믹 있음?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "중간방 스킵 가능함?",
+    "label": "None"
+  },
+  {
+    "text": "다음 구역 속성 기믹 있음?",
+    "label": "None"
+  },
   {
     "text": "오브젝트 부숴야 길 열림?",
     "label": "EVENT_GUIDE"
@@ -11081,18 +10375,14 @@
     "text": "방 진입 전에 세이브 가능?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 장치 조사해줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "열쇠 사용해서 문 열어줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 장치 조사해줘",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "열쇠 사용해서 문 열어줘",
+    "label": "None"
+  },
   {
     "text": "대시 키가 뭐임?",
     "label": "None"
@@ -11169,12 +10459,10 @@
     "text": "난이도 바꾸면 보상 바뀜?",
     "label": "None"
   },
-  [
-    {
-      "text": "패링 판정 프레임 있음?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "패링 판정 프레임 있음?",
+    "label": "None"
+  },
   {
     "text": "드롭 로그 어디서 확인",
     "label": "None"
@@ -11187,12 +10475,10 @@
     "text": "재접속하면 진행 저장됨?",
     "label": "None"
   },
-  [
-    {
-      "text": "시점 고정 해제 방법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "시점 고정 해제 방법",
+    "label": "None"
+  },
   {
     "text": "이거 왜 데미지 0뜸?",
     "label": "None"
@@ -11201,12 +10487,10 @@
     "text": "방금 내 입력 씹힘 이유",
     "label": "None"
   },
-  [
-    {
-      "text": "지금 너무 아픔",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지금 너무 아픔",
+    "label": "None"
+  },
   {
     "text": "또 장판임? 귀찮음",
     "label": "None"
@@ -11323,12 +10607,10 @@
     "text": "보스 즉사기랑 대비템 뭐",
     "label": "None"
   },
-  [
-    {
-      "text": "분기 추천하고 보급 위치도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "분기 추천하고 보급 위치도",
+    "label": "None"
+  },
   {
     "text": "장치 조건 설명하고 작동도",
     "label": "EVENT_GUIDE"
@@ -11349,12 +10631,10 @@
     "text": "함정 위치랑 해제법 같이",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "레버 순서랑 문 안열림 원인",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "레버 순서랑 문 안열림 원인",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "상태이상 확인하고 해제해줘",
     "label": "None"
@@ -11379,12 +10659,10 @@
     "text": "미니맵 확대하고 핀 찍어줘",
     "label": "None"
   },
-  [
-    {
-      "text": "자동조준 끄고 타겟 고정 풀어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "자동조준 끄고 타겟 고정 풀어",
+    "label": "None"
+  },
   {
     "text": "회복템 남은거랑 부활템 체크",
     "label": "None"
@@ -11393,22 +10671,18 @@
     "text": "다음 층 특징이랑 준비물 뭐",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 힌트 위치랑 정답 순서",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "퍼즐 힌트 위치랑 정답 순서",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "문 상호작용 안됨 이유랑 조건",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "딜 넣으면 안되는 구간이랑 신호",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "딜 넣으면 안되는 구간이랑 신호",
+    "label": "None"
+  },
   {
     "text": "스위치 반응 원인 찾고 켜줘",
     "label": "EVENT_GUIDE"
@@ -11445,28 +10719,24 @@
     "text": "폭탄 배치하고 레이저 루트도",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "숨겨진 방 조건이랑 입구 위치",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "지름길 여는법이랑 되돌아갈지",
-      "label": "EVENT_GUIDE"
-    }
-  ],
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "숨겨진 방 조건이랑 입구 위치",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx@@##\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "지름길 여는법이랑 되돌아갈지",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "asdasd;;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx@@##",
+    "label": "None"
+  },
+  {
+    "text": "ㅁ기ㅏㄹㄷㅈ",
     "label": "None"
   },
   {
@@ -11474,19 +10744,17 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";';;:;:;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";';;:;:;;",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"zxcvbnm<>??//\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "zxcvbnm<>??//",
     "label": "None"
   },
-  [
-    {
-      "text": "ㅋㅌㅊㅍㄴㅂㄹ",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "ㅋㅌㅊㅍㄴㅂㄹ",
+    "label": "None"
+  },
   {
     "text": "야 페이몬, 저 보스 약점 뭐냐",
     "label": "None"
@@ -11563,12 +10831,10 @@
     "text": "분신 진짜는 어떻게 구분해",
     "label": "None"
   },
-  [
-    {
-      "text": "그로기 띄우는 조건 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "그로기 띄우는 조건 뭐야",
+    "label": "None"
+  },
   {
     "text": "보스 궁 피하는 자리 알려",
     "label": "None"
@@ -11577,18 +10843,14 @@
     "text": "지금 막페야? 더 남았냐",
     "label": "None"
   },
-  [
-    {
-      "text": "카운터 타이밍 있냐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이 몹 무적 언제 풀려",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "카운터 타이밍 있냐",
+    "label": "None"
+  },
+  {
+    "text": "이 몹 무적 언제 풀려",
+    "label": "None"
+  },
   {
     "text": "저거 쉴드 색 바뀌는 뜻 뭐임",
     "label": "None"
@@ -11729,12 +10991,10 @@
     "text": "시계바늘 맞추는 거 맞냐",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "페이몬, 길 어디로 가냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "페이몬, 길 어디로 가냐",
+    "label": "None"
+  },
   {
     "text": "다음 방 입구가 어딨냐",
     "label": "None"
@@ -11751,12 +11011,10 @@
     "text": "내가 길 잃은 거 맞지",
     "label": "None"
   },
-  [
-    {
-      "text": "지도에 표시 좀 해봐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지도에 표시 좀 해봐",
+    "label": "None"
+  },
   {
     "text": "위층 가는 길 있냐",
     "label": "None"
@@ -11765,12 +11023,10 @@
     "text": "아래로 내려가는 통로 어디",
     "label": "None"
   },
-  [
-    {
-      "text": "숨겨진 방 있으면 말해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "숨겨진 방 있으면 말해",
+    "label": "None"
+  },
   {
     "text": "막다른길 같은데 맞아?",
     "label": "None"
@@ -11779,12 +11035,10 @@
     "text": "이쪽 가면 보스 직행이냐",
     "label": "None"
   },
-  [
-    {
-      "text": "체크포인트 어디 있음",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "체크포인트 어디 있음",
+    "label": "None"
+  },
   {
     "text": "지름길 있으면 알려줘",
     "label": "None"
@@ -11793,12 +11047,10 @@
     "text": "문 두 개 중 뭐가 맞아",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "여기서 좌우 뭐가 안전함",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "여기서 좌우 뭐가 안전함",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이 방 특징 뭐냐, 함정 있음?",
     "label": "None"
@@ -11967,12 +11219,10 @@
     "text": "대쉬 쿨타임 있는 거냐",
     "label": "None"
   },
-  [
-    {
-      "text": "이 던전 규칙 뭐임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 던전 규칙 뭐임",
+    "label": "None"
+  },
   {
     "text": "보상 조건 충족했냐",
     "label": "None"
@@ -12141,12 +11391,10 @@
     "text": "그만 떠들고 안내나 해",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 공기부터 불길하다",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 공기부터 불길하다",
+    "label": "None"
+  },
   {
     "text": "나 지금 집중중이니까 짧게",
     "label": "None"
@@ -12156,23 +11404,21 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;lkj;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;lkj;;;",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂㅊ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄷㅈㅂㅊ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123!!\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD123!!",
     "label": "None"
   },
-  [
-    {
-      "text": ";;;;;;/////\\\\",
-      "label": "None"
-    }
-  ],
+  {
+    "text": ";;;;;;/////\\\\",
+    "label": "None"
+  },
   {
     "text": "뷁궭쀍쮉쨹",
     "label": "None"
@@ -12182,7 +11428,7 @@
     "label": "None"
   },
   {
-    "text": "zxcnm,./[]=-",
+    "text": "zxcnm,./]=-",
     "label": "None"
   },
   {
@@ -12193,12 +11439,10 @@
     "text": "퍼즐 순서 알려주고 함정도 체크해",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "길 어디로 가는지랑 보상도 봐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "길 어디로 가는지랑 보상도 봐",
+    "label": "None"
+  },
   {
     "text": "불 켜고 인벤 열쇠도 확인해",
     "label": "None"
@@ -12211,12 +11455,10 @@
     "text": "보스 즉사기 전조랑 피하는 자리",
     "label": "None"
   },
-  [
-    {
-      "text": "레버 당기고 다음 방 위치도 찍어",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "레버 당기고 다음 방 위치도 찍어",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "장비 뭐로 바꾸고 물약도 써",
     "label": "None"
@@ -12253,12 +11495,10 @@
     "text": "퍼즐 힌트 어디고 실패 원인도",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "불 꺼주고 카메라 흔들림도 줄여",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "불 꺼주고 카메라 흔들림도 줄여",
+    "label": "None"
+  },
   {
     "text": "스킬 바꾸고 원소 조합도 추천해",
     "label": "None"
@@ -12275,12 +11515,10 @@
     "text": "회피 키 뭐고 대쉬 쿨도 있냐",
     "label": "None"
   },
-  [
-    {
-      "text": "장판 뭐 피해야 하고 안전지대",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "장판 뭐 피해야 하고 안전지대",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "소환몹 우선? 그리고 궁 언제 써",
     "label": "None"
@@ -12301,28 +11539,22 @@
     "text": "탄약 확인하고 부족하면 아이템 써",
     "label": "None"
   },
-  [
-    {
-      "text": "미션 목표 어디서 보고 규칙도 말해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "미션 목표 어디서 보고 규칙도 말해",
+    "label": "None"
+  },
   {
     "text": "상호작용 왜 안됨? 거리랑 키도",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 속성이랑 약점 속성 둘 다",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이벤트 조건 뭐고 시간제한 있냐",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 속성이랑 약점 속성 둘 다",
+    "label": "None"
+  },
+  {
+    "text": "이벤트 조건 뭐고 시간제한 있냐",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "좌우 갈림길 안전한 쪽이랑 보상",
     "label": "None"
@@ -12351,12 +11583,10 @@
     "text": "스태미나 회복템 써도 됨? 길도 안내",
     "label": "None"
   },
-  [
-    {
-      "text": "레버 맞게 했는지랑 문이 왜 잠김",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "레버 맞게 했는지랑 문이 왜 잠김",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "딜이 안 들어가는데 원인하고 해결",
     "label": "None"
@@ -12373,12 +11603,10 @@
     "text": "지름길 있으면 찍고 체크포도 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "불꽃 토템 순서랑 물 수위 기믹",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "불꽃 토템 순서랑 물 수위 기믹",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "인벤 꽉 찼는지 보고 상자도 판단해",
     "label": "None"
@@ -12411,34 +11639,26 @@
     "text": "장판 밟으면 뭐됨? 그리고 피하는 법",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "분신 구분법이랑 소환몹 처리순서",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "분신 구분법이랑 소환몹 처리순서",
+    "label": "None"
+  },
   {
     "text": "저거 회복 끊고 실드도 깨는 법",
     "label": "None"
   },
-  [
-    {
-      "text": "도망 루트랑 안전지대 위치 말해",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "상호작용 버튼 회색 이유랑 조건",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "바람기둥 타이밍이랑 다음 방 입구",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "도망 루트랑 안전지대 위치 말해",
+    "label": "None"
+  },
+  {
+    "text": "상호작용 버튼 회색 이유랑 조건",
+    "label": "None"
+  },
+  {
+    "text": "바람기둥 타이밍이랑 다음 방 입구",
+    "label": "None"
+  },
   {
     "text": "포션 자동사용 켜고 힐템도 바로 써",
     "label": "None"
@@ -12447,12 +11667,10 @@
     "text": "이 방 뭐부터? 퍼즐이랑 함정 같이",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "길 잃었는데 되돌아가야 함? 지도도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "길 잃었는데 되돌아가야 함? 지도도",
+    "label": "None"
+  },
   {
     "text": "보스 즉사기 막는 법이랑 전조",
     "label": "None"
@@ -12461,12 +11679,10 @@
     "text": "보상 조건 충족했나, 상자 차이도",
     "label": "None"
   },
-  [
-    {
-      "text": "이 기믹 멈춘 거 버그냐, 리셋도",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이 기믹 멈춘 거 버그냐, 리셋도",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "좌표 찍고 숨은 통로 있나 찾아봐",
     "label": "None"
@@ -12475,12 +11691,10 @@
     "text": "무기 내구도랑 방어 올릴지 판단해",
     "label": "None"
   },
-  [
-    {
-      "text": "키 설정 어디서, 회피랑 대쉬 둘 다",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "키 설정 어디서, 회피랑 대쉬 둘 다",
+    "label": "None"
+  },
   {
     "text": "종 몇 번 쳐야 하고 실패 원인도",
     "label": "EVENT_GUIDE"
@@ -12489,12 +11703,10 @@
     "text": "막페 맞냐, 남았으면 패턴 요약해",
     "label": "None"
   },
-  [
-    {
-      "text": "문 앞 장애물 치우고 레버도 당겨",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "문 앞 장애물 치우고 레버도 당겨",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이벤트 끝나면 뭐 줌? 그리고 시간도",
     "label": "None"
@@ -12559,12 +11771,10 @@
     "text": "광역기 언제 오냐, 대비 뭐 챙겨?",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 분신 구분법 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 분신 구분법 있어?",
+    "label": "None"
+  },
   {
     "text": "저거 돌진 막는 방법 좀",
     "label": "EVENT_GUIDE"
@@ -12593,12 +11803,10 @@
     "text": "약점 속성 뭐인지 찍어줘",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 장판 색깔 의미가 뭐야?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 장판 색깔 의미가 뭐야?",
+    "label": "None"
+  },
   {
     "text": "패턴 끊는 스킬 있어?",
     "label": "None"
@@ -12651,12 +11859,10 @@
     "text": "이거 퍼즐 순서 뭐야?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "장치 누르는 순서 알려줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "장치 누르는 순서 알려줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이벤트 조건이 뭐임, 왜 실패해?",
     "label": "EVENT_GUIDE"
@@ -12681,12 +11887,10 @@
     "text": "얼음 퍼즐 맞추는 법 좀",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "룬 조각 어디다 끼워?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "룬 조각 어디다 끼워?",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "저 버튼 눌러도 반응 없는데",
     "label": "EVENT_GUIDE"
@@ -12695,12 +11899,10 @@
     "text": "타이머 이벤트 팁 있어?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "그림 맞추는 퍼즐 힌트 줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "그림 맞추는 퍼즐 힌트 줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "저거 회전판 몇 번 돌려?",
     "label": "EVENT_GUIDE"
@@ -12769,24 +11971,18 @@
     "text": "이 층 특징 뭐야, 뭐 조심함?",
     "label": "None"
   },
-  [
-    {
-      "text": "계단 위로? 아래로?",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "우회로 있으면 알려줘",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "여기서 체크포인트 어디야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "계단 위로? 아래로?",
+    "label": "None"
+  },
+  {
+    "text": "우회로 있으면 알려줘",
+    "label": "None"
+  },
+  {
+    "text": "여기서 체크포인트 어디야",
+    "label": "None"
+  },
   {
     "text": "문 열고 나면 돌아올 수 있음?",
     "label": "None"
@@ -12811,12 +12007,10 @@
     "text": "숨은 방 입구가 어디쯤이야",
     "label": "None"
   },
-  [
-    {
-      "text": "분기 조건 있어? 뭐 하면 열려",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "분기 조건 있어? 뭐 하면 열려",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "길 막혔는데 내가 뭘 놓쳤냐",
     "label": "None"
@@ -12857,12 +12051,10 @@
     "text": "장비 지금 걸로 맞아? 확인해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "저항 세팅으로 바꿔야 돼?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "저항 세팅으로 바꿔야 돼?",
+    "label": "None"
+  },
   {
     "text": "폭탄 아이템 지금 써도 됨?",
     "label": "None"
@@ -12907,18 +12099,14 @@
     "text": "내가 지금 들고 있는 무기 맞아?",
     "label": "None"
   },
-  [
-    {
-      "text": "조작키 뭐였지, 회피가 뭐야",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "상호작용 키가 안 먹는데 왜임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "조작키 뭐였지, 회피가 뭐야",
+    "label": "None"
+  },
+  {
+    "text": "상호작용 키가 안 먹는데 왜임",
+    "label": "None"
+  },
   {
     "text": "보상 조건 뭐야, 별 3개 어케 받음",
     "label": "EVENT_GUIDE"
@@ -13055,12 +12243,10 @@
     "text": "이거 누가 만들었냐",
     "label": "None"
   },
-  [
-    {
-      "text": "나 지금 집중력 0임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "나 지금 집중력 0임",
+    "label": "None"
+  },
   {
     "text": "페이몬 너만 믿는다",
     "label": "None"
@@ -13070,29 +12256,25 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;lkj",
     "label": "None"
   },
   {
     "text": "ㅁ기ㅏㄹㄴㅈㄷㄱ",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "asdasdASD;;;",
+    "label": "None"
+  },
   {
     "text": "뷁궭챀ퟟ",
     "label": "None"
   },
-  [
-    {
-      "text": ";;;/..,mnbv",
-      "label": "None"
-    }
-  ],
+  {
+    "text": ";;;/..,mnbv",
+    "label": "None"
+  },
   {
     "text": "ㅋㅌㅊㅍㅈㅅㄹ",
     "label": "None"
@@ -13101,44 +12283,34 @@
     "text": "보스 약점도 알려주고 힐템 써도 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "패턴 설명해주고 회피 타이밍도 찍어줘",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이 퍼즐 순서랑 실패 원인 같이 말해줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "다음 방 어디로 가고 함정도 알려줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "패턴 설명해주고 회피 타이밍도 찍어줘",
+    "label": "None"
+  },
+  {
+    "text": "이 퍼즐 순서랑 실패 원인 같이 말해줘",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "다음 방 어디로 가고 함정도 알려줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "인벤 확인해주고 해제약 있으면 쓰자",
     "label": "None"
   },
-  [
-    {
-      "text": "장비 뭘로 바꾸고 버프도 먹을까?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "장비 뭘로 바꾸고 버프도 먹을까?",
+    "label": "None"
+  },
   {
     "text": "문 왜 안 열려? 조건이랑 스위치 위치",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이 몹 대응 알려주고 잡몹부터 잡아?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 몹 대응 알려주고 잡몹부터 잡아?",
+    "label": "None"
+  },
   {
     "text": "보스 즉사기 전조랑 대비템 뭐 챙김?",
     "label": "None"
@@ -13151,12 +12323,10 @@
     "text": "장치 꺼야 돼? 그리고 불도 켜줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "회피키 뭐고 타겟고정도 어떻게 해?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "회피키 뭐고 타겟고정도 어떻게 해?",
+    "label": "None"
+  },
   {
     "text": "보상 조건이랑 드랍 방식 같이 알려줘",
     "label": "None"
@@ -13165,12 +12335,10 @@
     "text": "스킬이 왜 안 써져, 쿨이랑 디버프 확인",
     "label": "None"
   },
-  [
-    {
-      "text": "이 층 특징 뭐야, 다음 방 힐포도 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 층 특징 뭐야, 다음 방 힐포도 있어?",
+    "label": "None"
+  },
   {
     "text": "퍼즐 리셋 가능해? 그리고 순서도 다시",
     "label": "EVENT_GUIDE"
@@ -13219,12 +12387,10 @@
     "text": "파티 룰 뭐야, 보상 분배도 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "문양 퍼즐 기준이랑 숨은 스위치도 찾아줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "문양 퍼즐 기준이랑 숨은 스위치도 찾아줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "보스 반사 언제고 대응 스킬도 있냐",
     "label": "None"
@@ -13233,12 +12399,10 @@
     "text": "길 막혔는데 놓친 조건이랑 되돌아가는 길",
     "label": "None"
   },
-  [
-    {
-      "text": "이벤트 타이머 팁이랑 실패 이유 같이",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이벤트 타이머 팁이랑 실패 이유 같이",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "상태이상 뭐 걸렸는지 보고 해제도 해줘",
     "label": "None"
@@ -13255,28 +12419,22 @@
     "text": "보스방 들어가기 전 준비물 뭐고 버프도?",
     "label": "None"
   },
-  [
-    {
-      "text": "그림 퍼즐 힌트랑 정답 순서 둘 다",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "숨은 방 있나 보고 체크포인트도 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "그림 퍼즐 힌트랑 정답 순서 둘 다",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "숨은 방 있나 보고 체크포인트도 알려줘",
+    "label": "None"
+  },
   {
     "text": "우회로 있나, 그리고 보급상자 위치도",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 돌진 막는 법이랑 근접 위험 패턴",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 돌진 막는 법이랑 근접 위험 패턴",
+    "label": "None"
+  },
   {
     "text": "타겟 고정 키랑 UI 아이콘 설명 같이",
     "label": "None"
@@ -13289,24 +12447,18 @@
     "text": "회피로 버틸지 방어 올릴지 추천 좀",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 분신 구분이랑 소환몹 처리 순서",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "빛 반사 각도랑 레버 순서 같이 알려줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "문 잠겼는데 다른 길이랑 조건도 체크",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "보스 분신 구분이랑 소환몹 처리 순서",
+    "label": "None"
+  },
+  {
+    "text": "빛 반사 각도랑 레버 순서 같이 알려줘",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "문 잠겼는데 다른 길이랑 조건도 체크",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "힐 아끼는 게 맞나, 다음 방 힐포 있냐",
     "label": "None"
@@ -13319,12 +12471,10 @@
     "text": "드랍이 고정인지랑 별3 조건도 같이",
     "label": "None"
   },
-  [
-    {
-      "text": "바람 장치 어디로 가고 함정 피하는 법도",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "바람 장치 어디로 가고 함정 피하는 법도",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "보스 장판 색 의미랑 안전지대 위치",
     "label": "EVENT_GUIDE"
@@ -13357,12 +12507,10 @@
     "text": "보스 2페 가면 뭐 바뀌고 대비는 뭐해?",
     "label": "None"
   },
-  [
-    {
-      "text": "함정 스위치 어디고 불도 좀 밝혀줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "함정 스위치 어디고 불도 좀 밝혀줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "상호작용 키가 안 먹어, 뭐 설정 문제야?",
     "label": "None"
@@ -13375,22 +12523,18 @@
     "text": "회전판 몇 번이고 실패하면 리셋 되냐",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "출구 어딘지랑 보스방 맞는지 확인해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "출구 어딘지랑 보스방 맞는지 확인해줘",
+    "label": "None"
+  },
   {
     "text": "지금 폭탄 써서 실드 깰까, 타이밍 콜",
     "label": "None"
   },
-  [
-    {
-      "text": "파티에서 누가 먼저 가야 돼, 역할도 정해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "파티에서 누가 먼저 가야 돼, 역할도 정해줘",
+    "label": "None"
+  },
   {
     "text": "경보 왜 울려, 내가 뭘 건드렸는지 봐줘",
     "label": "EVENT_GUIDE"
@@ -13399,12 +12543,10 @@
     "text": "색깔 기둥 순서랑 문 열리는 조건",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이 방 위험한 패턴 뭐고 안전 루트는 어디",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 위험한 패턴 뭐고 안전 루트는 어디",
+    "label": "None"
+  },
   {
     "text": "장비 지금 맞는지랑 내 디버프도 확인",
     "label": "None"
@@ -13465,24 +12607,18 @@
     "text": "다음 방 힐포 있나 보고 없으면 물약 써도 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "분기길인데 보스방이랑 비밀방 둘 다 체크",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "퍼즐 풀고 나서 뭐 해야 돼, 조건 확인해줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "이 층 특징이랑 주의할 함정 패턴 알려줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "분기길인데 보스방이랑 비밀방 둘 다 체크",
+    "label": "None"
+  },
+  {
+    "text": "퍼즐 풀고 나서 뭐 해야 돼, 조건 확인해줘",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "이 층 특징이랑 주의할 함정 패턴 알려줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "잡몹 우선순위랑 보스 딜 타이밍 같이 콜",
     "label": "None"
@@ -13563,12 +12699,10 @@
     "text": "방금 즉사기 뭐였냐",
     "label": "None"
   },
-  [
-    {
-      "text": "왜 자꾸 끌려가냐 대처법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "왜 자꾸 끌려가냐 대처법",
+    "label": "None"
+  },
   {
     "text": "저 몹 분신 진짜 구분됨?",
     "label": "None"
@@ -13589,12 +12723,10 @@
     "text": "장치 3개 중 뭐부터 눌러",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "함정 해제 조건 빨리",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "함정 해제 조건 빨리",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이벤트 실패 원인 뭐임",
     "label": "EVENT_GUIDE"
@@ -13679,18 +12811,14 @@
     "text": "미니맵 안 떠, 출구 어딤",
     "label": "None"
   },
-  [
-    {
-      "text": "지름길 있으면 바로 말해",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이 층 특징 뭐냐 함정 많아?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지름길 있으면 바로 말해",
+    "label": "None"
+  },
+  {
+    "text": "이 층 특징 뭐냐 함정 많아?",
+    "label": "None"
+  },
   {
     "text": "보스방까지 얼마나 남음",
     "label": "None"
@@ -13699,12 +12827,10 @@
     "text": "왼쪽 오른쪽 뭐가 정답",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "여기 숨길 통로 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기 숨길 통로 있어?",
+    "label": "None"
+  },
   {
     "text": "길 잃었는데 표식 찍어봐",
     "label": "None"
@@ -13929,12 +13055,10 @@
     "text": "내가 뭘 잘못한 거냐",
     "label": "None"
   },
-  [
-    {
-      "text": "그만 떠들고 해결책 줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "그만 떠들고 해결책 줘",
+    "label": "None"
+  },
   {
     "text": "또 미궁이야? 지겹다",
     "label": "None"
@@ -13947,12 +13071,10 @@
     "text": "페이몬, 제대로 보고 말해",
     "label": "None"
   },
-  [
-    {
-      "text": "이거 깨라고 만든 거 맞냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이거 깨라고 만든 거 맞냐",
+    "label": "None"
+  },
   {
     "text": "나 지금 멘탈 나가는데",
     "label": "None"
@@ -13986,15 +13108,15 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄴㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄴㅂㅈㄷ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD123!!\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasdASD123!!",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;...;;;:::\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";;;...;;;:::",
     "label": "None"
   },
   {
@@ -14005,12 +13127,10 @@
     "text": "ㅋㅌㅊㅍㅈㅁㄴ",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 약점 말하고 길도 찍어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 약점 말하고 길도 찍어",
+    "label": "None"
+  },
   {
     "text": "패턴 알려주고 힐템도 확인",
     "label": "None"
@@ -14023,22 +13143,18 @@
     "text": "다음 방 어디고 준비물 뭐야",
     "label": "None"
   },
-  [
-    {
-      "text": "장치 조건 말해, 문도 열어봐",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "장치 조건 말해, 문도 열어봐",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "길 잃었어, 출구랑 보상 뭐임",
     "label": "None"
   },
-  [
-    {
-      "text": "불 켜고 스위치도 찾아줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "불 켜고 스위치도 찾아줘",
+    "label": "None"
+  },
   {
     "text": "장비 바꿀지 말지 추천해봐",
     "label": "None"
@@ -14051,12 +13167,10 @@
     "text": "이벤트 실패 이유랑 재도전법",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "조작키 알려주고 설정도 찾아",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "조작키 알려주고 설정도 찾아",
+    "label": "None"
+  },
   {
     "text": "인벤에 해독제 있나 확인해줘",
     "label": "None"
@@ -14077,22 +13191,18 @@
     "text": "보상 뭐 나오고 상자 왜 잠김",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "무적 타이밍이랑 딜 넣는 구간",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "무적 타이밍이랑 딜 넣는 구간",
+    "label": "None"
+  },
   {
     "text": "함정 피하는 루트랑 스위치 위치",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "레버 순서 말하고 불도 꺼줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "레버 순서 말하고 불도 꺼줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "다음 층 특징이랑 보스 준비물",
     "label": "None"
@@ -14105,22 +13215,18 @@
     "text": "분신 구분법이랑 우선순위",
     "label": "None"
   },
-  [
-    {
-      "text": "회피 왜 안 돼, 판정 설명해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "회피 왜 안 돼, 판정 설명해",
+    "label": "None"
+  },
   {
     "text": "체력 상태랑 부활템 남은 거",
     "label": "None"
   },
-  [
-    {
-      "text": "원소 공명 맞추고 음식 뭐 먹지",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "원소 공명 맞추고 음식 뭐 먹지",
+    "label": "None"
+  },
   {
     "text": "엘리베이터 위치랑 체크포인트",
     "label": "None"
@@ -14129,12 +13235,10 @@
     "text": "숨길 통로 있나, 샛길 보상도",
     "label": "None"
   },
-  [
-    {
-      "text": "장치 반응 없는데 상호작용 키",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "장치 반응 없는데 상호작용 키",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "기믹 타이밍하고 실패하면 리셋?",
     "label": "EVENT_GUIDE"
@@ -14151,22 +13255,18 @@
     "text": "룬석 어디 끼우고 몇 개 필요",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "폭탄통 어디 던지고 문 열리는지",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "폭탄통 어디 던지고 문 열리는지",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "보스 돌진 모션이랑 피하는 각",
     "label": "None"
   },
-  [
-    {
-      "text": "광폭화 조건이랑 끊는 방법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "광폭화 조건이랑 끊는 방법",
+    "label": "None"
+  },
   {
     "text": "즉사기 뭐였고 해독제 필요함?",
     "label": "None"
@@ -14207,12 +13307,10 @@
     "text": "지름길 있나, 보스방까지 거리",
     "label": "None"
   },
-  [
-    {
-      "text": "상자 열쇠 있나, 숨은 스위치도",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "상자 열쇠 있나, 숨은 스위치도",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "스태미나 회복템 있고 지금 써?",
     "label": "None"
@@ -14229,12 +13327,10 @@
     "text": "이 층 함정 많냐, 토치 켜도 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 각도 맞추는 법과 힌트 로그",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "퍼즐 각도 맞추는 법과 힌트 로그",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "레버 당기면 뭐 열리고 되돌림 됨?",
     "label": "EVENT_GUIDE"
@@ -14271,12 +13367,10 @@
     "text": "지금 뭐부터 잡고 패턴은 뭐 조심",
     "label": "None"
   },
-  [
-    {
-      "text": "분기 왼쪽이냐 오른쪽이냐, 이유도",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "분기 왼쪽이냐 오른쪽이냐, 이유도",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "기어 방향이랑 맞추는 순서 알려",
     "label": "EVENT_GUIDE"
@@ -14333,12 +13427,10 @@
     "text": "폭탄 써야 돼? 인벤에 남았는지",
     "label": "None"
   },
-  [
-    {
-      "text": "힐 언제 쓰고 즉사기 어떻게 피함",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "힐 언제 쓰고 즉사기 어떻게 피함",
+    "label": "None"
+  },
   {
     "text": "소환몹 끊고 본체 딜 타이밍 말해",
     "label": "None"
@@ -14347,12 +13439,10 @@
     "text": "숨통 좀 틔워, 안전한 자리 어딤",
     "label": "None"
   },
-  [
-    {
-      "text": "길 안내랑 함정 위치 동시에 찍어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "길 안내랑 함정 위치 동시에 찍어",
+    "label": "None"
+  },
   {
     "text": "이 방 몹 속성 뭐고 약점은 뭔데",
     "label": "None"
@@ -14361,12 +13451,10 @@
     "text": "패턴 바뀌면 신호 뭐고 대응은",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 방 특징이랑 기믹 먼저 설명",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 방 특징이랑 기믹 먼저 설명",
+    "label": "None"
+  },
   {
     "text": "상태이상 걸렸나 확인하고 해독제",
     "label": "None"
@@ -14415,12 +13503,10 @@
     "text": "조작 헷갈려, 회피랑 달리기 키",
     "label": "None"
   },
-  [
-    {
-      "text": "난이도 올리면 보상 늘어? 규칙도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "난이도 올리면 보상 늘어? 규칙도",
+    "label": "None"
+  },
   {
     "text": "아오 또 죽겠네, 대처법 빨리",
     "label": "None"
@@ -14437,12 +13523,10 @@
     "text": "나 지금 손 꼬였어, 도움 줘",
     "label": "None"
   },
-  [
-    {
-      "text": "여기서 뭐 누르면 진행됨",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "여기서 뭐 누르면 진행됨",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이 방 클리어 조건이 뭐냐",
     "label": "EVENT_GUIDE"
@@ -14507,12 +13591,10 @@
     "text": "버프가 안 먹히는 이유",
     "label": "None"
   },
-  [
-    {
-      "text": "이벤트 조건 충족했는지 확인",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이벤트 조건 충족했는지 확인",
+    "label": "None"
+  },
   {
     "text": "장치 옆 표식 의미가 뭐야",
     "label": "None"
@@ -14549,12 +13631,10 @@
     "text": "설정에서 그래픽 낮추는 데 어디",
     "label": "None"
   },
-  [
-    {
-      "text": "키 리매핑 가능함?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "키 리매핑 가능함?",
+    "label": "None"
+  },
   {
     "text": "미션 로그 어디서 확인",
     "label": "None"
@@ -14591,12 +13671,10 @@
     "text": "저 몹 왜 안 죽어? 속성 뭐임",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 2페 넘어가는 조건 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 2페 넘어가는 조건 뭐야",
+    "label": "None"
+  },
   {
     "text": "광폭화 타이밍 언제야, 빡치네",
     "label": "None"
@@ -14605,12 +13683,10 @@
     "text": "저 방패몹 어떻게 깨? 짜증나",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 돌진 피하는 법 빨리",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 돌진 피하는 법 빨리",
+    "label": "None"
+  },
   {
     "text": "저 몹 실드 깰 준비물 뭐 필요해",
     "label": "None"
@@ -14631,12 +13707,10 @@
     "text": "패턴 끊는 타이밍 좀 찍어줘",
     "label": "None"
   },
-  [
-    {
-      "text": "원거리 먼저 처리해야 돼?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "원거리 먼저 처리해야 돼?",
+    "label": "None"
+  },
   {
     "text": "약점 노출 언제 나와, 답답해",
     "label": "None"
@@ -14657,12 +13731,10 @@
     "text": "보스 잡기 전에 뭐 챙겨야 돼",
     "label": "None"
   },
-  [
-    {
-      "text": "상태이상 뭐가 먹혀? 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상태이상 뭐가 먹혀? 알려줘",
+    "label": "None"
+  },
   {
     "text": "저 몹 폭발 카운트 있냐",
     "label": "None"
@@ -14687,18 +13759,14 @@
     "text": "이벤트 실패 원인 뭐였어?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "기믹 깨는 순서 빨리 말해",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "룬 맞추는 법 뭐냐, 짜증",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "기믹 깨는 순서 빨리 말해",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "룬 맞추는 법 뭐냐, 짜증",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "스위치 두 개 동시? 혼자 어케",
     "label": "EVENT_GUIDE"
@@ -14707,12 +13775,10 @@
     "text": "이 문 왜 안 열려, 조건 뭐임",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "바람 장치 방향 어떻게 맞춰",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "바람 장치 방향 어떻게 맞춰",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "불기둥 함정 꺼줘, 아 뜨거",
     "label": "EVENT_GUIDE"
@@ -14781,12 +13847,10 @@
     "text": "맵에 표시 좀 해줘, 답답",
     "label": "None"
   },
-  [
-    {
-      "text": "숨겨진 길 있어? 벽 부숴?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "숨겨진 길 있어? 벽 부숴?",
+    "label": "None"
+  },
   {
     "text": "사다리 어디로 타, 안 보여",
     "label": "None"
@@ -14847,12 +13911,10 @@
     "text": "힐템 하나 써도 돼? 확인해",
     "label": "None"
   },
-  [
-    {
-      "text": "장비 바꿔야 돼? 뭐로 가",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "장비 바꿔야 돼? 뭐로 가",
+    "label": "None"
+  },
   {
     "text": "인벤에 해제템 있나 봐줘",
     "label": "None"
@@ -14969,12 +14031,10 @@
     "text": "강화 효과 적용됐는지 확인해줘",
     "label": "None"
   },
-  [
-    {
-      "text": "스킵키 있냐, 컷신 짜증",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "스킵키 있냐, 컷신 짜증",
+    "label": "None"
+  },
   {
     "text": "재도전 버튼 어디 있어",
     "label": "None"
@@ -15019,12 +14079,10 @@
     "text": "보스 표정 봐, 개재수없어",
     "label": "None"
   },
-  [
-    {
-      "text": "이게 난이도 맞냐, 진짜",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이게 난이도 맞냐, 진짜",
+    "label": "None"
+  },
   {
     "text": "아니 왜 나만 타겟이야",
     "label": "None"
@@ -15054,7 +14112,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;qwepoizx\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;;qwepoizx",
     "label": "None"
   },
   {
@@ -15085,12 +14143,10 @@
     "text": "퍼즐 순서랑 레버 위치 알려줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "길 좀 찍고 함정도 조심하라 해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "길 좀 찍고 함정도 조심하라 해",
+    "label": "None"
+  },
   {
     "text": "불 켜고 출구 방향도 말해",
     "label": "None"
@@ -15111,12 +14167,10 @@
     "text": "다음 방 어디고 보스방 맞는지",
     "label": "None"
   },
-  [
-    {
-      "text": "스위치 조건 알려주고 문도 열어",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "스위치 조건 알려주고 문도 열어",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "패턴 피하는 법이랑 회피키 뭐냐",
     "label": "None"
@@ -15125,68 +14179,54 @@
     "text": "맵 길 안내하고 체크포인트도",
     "label": "None"
   },
-  [
-    {
-      "text": "함정 끄는 법이랑 퍼즐 순서",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "함정 끄는 법이랑 퍼즐 순서",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "약점 속성 말고 준비물도 뭐야",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 분신 구분이랑 타겟 잡아줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 분신 구분이랑 타겟 잡아줘",
+    "label": "None"
+  },
   {
     "text": "장판 타이밍 알려주고 방패 껴",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "출구 핀 찍고 되돌아가도 되는지",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "출구 핀 찍고 되돌아가도 되는지",
+    "label": "None"
+  },
   {
     "text": "보상 조건 뭐고 왜 안 열리는지",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "UI 경고 뜻이랑 해결법 말해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "UI 경고 뜻이랑 해결법 말해",
+    "label": "None"
+  },
   {
     "text": "원소 바꾸고 상태이상도 확인해",
     "label": "None"
   },
-  [
-    {
-      "text": "타이머 퍼즐 제한이랑 실패 원인",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "타이머 퍼즐 제한이랑 실패 원인",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "레버 당기고 불기둥도 꺼줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "길 잃었는데 우회로랑 안전지대",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "상호작용 안 되는 이유랑 버튼",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "길 잃었는데 우회로랑 안전지대",
+    "label": "None"
+  },
+  {
+    "text": "상호작용 안 되는 이유랑 버튼",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "부활템 남은지 보고 규칙도 알려",
     "label": "None"
@@ -15195,12 +14235,10 @@
     "text": "숨길길 있나 보고 벽도 조사해",
     "label": "None"
   },
-  [
-    {
-      "text": "대쉬키랑 회피 판정 팁 같이",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "대쉬키랑 회피 판정 팁 같이",
+    "label": "None"
+  },
   {
     "text": "보스 광폭화 언제고 힐 타이밍",
     "label": "None"
@@ -15217,12 +14255,10 @@
     "text": "맵 왜 안 뜨는지랑 설정 위치",
     "label": "None"
   },
-  [
-    {
-      "text": "엘리베이터 버튼 찾고 다음 층도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "엘리베이터 버튼 찾고 다음 층도",
+    "label": "None"
+  },
   {
     "text": "장치 방향 맞추고 출구도 찾아",
     "label": "EVENT_GUIDE"
@@ -15243,12 +14279,10 @@
     "text": "기둥 밀기랑 함정 리셋 조건",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "보스 돌진 대응이랑 반사 여부",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 돌진 대응이랑 반사 여부",
+    "label": "None"
+  },
   {
     "text": "방패몹 공략이랑 실드 깨는 법",
     "label": "None"
@@ -15261,12 +14295,10 @@
     "text": "미로 루트랑 되돌아가면 꼬이나",
     "label": "None"
   },
-  [
-    {
-      "text": "체크포인트 위치랑 남은 방 수",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "체크포인트 위치랑 남은 방 수",
+    "label": "None"
+  },
   {
     "text": "횃불 쓰고 상자 잠금도 풀어",
     "label": "None"
@@ -15275,12 +14307,10 @@
     "text": "자동줍기 확인하고 떨어진 거 줍",
     "label": "None"
   },
-  [
-    {
-      "text": "잠금온 설정 바꾸고 타겟 고정해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "잠금온 설정 바꾸고 타겟 고정해",
+    "label": "None"
+  },
   {
     "text": "매칭 왜 안 잡히는지랑 재도전",
     "label": "None"
@@ -15289,12 +14319,10 @@
     "text": "저 몹 피흡 막고 디버프도 풀어",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 2페 조건이랑 장판 횟수",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 2페 조건이랑 장판 횟수",
+    "label": "None"
+  },
   {
     "text": "활 꺼내고 멀리 장치도 쏴줘",
     "label": "None"
@@ -15307,12 +14335,10 @@
     "text": "불 좀 끄고 함정방 루트 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "포탈 위치랑 분기 뭐가 이득인지",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "포탈 위치랑 분기 뭐가 이득인지",
+    "label": "None"
+  },
   {
     "text": "상태창 확인하고 경고 뜬 것도 봐",
     "label": "None"
@@ -15321,12 +14347,10 @@
     "text": "준비물 뭐 챙기고 버프 음식도",
     "label": "None"
   },
-  [
-    {
-      "text": "튜토리얼 어디서 보고 조작도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "튜토리얼 어디서 보고 조작도",
+    "label": "None"
+  },
   {
     "text": "보상 상자 열고 다음 방도 찍어",
     "label": "None"
@@ -15347,12 +14371,10 @@
     "text": "타이머 퍼즐 빨리 하고 길도 안내",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "문 안 열리는 조건이랑 레버 위치",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "문 안 열리는 조건이랑 레버 위치",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "레이저 피해가면서 상호작용 해줘",
     "label": "EVENT_GUIDE"
@@ -15401,12 +14423,10 @@
     "text": "UI에서 버프 확인하고 디버프도",
     "label": "None"
   },
-  [
-    {
-      "text": "스위치 동시인지 보고 혼자 방법",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "스위치 동시인지 보고 혼자 방법",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "기믹 순서랑 실패 원인 다시 정리",
     "label": "EVENT_GUIDE"
@@ -15431,24 +14451,18 @@
     "text": "불 켜고 레버 당길 순서도 말해",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "길 안내하면서 함정 위치도 찍어",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "인벤 봐서 힐템 쓰고 버프도",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "대쉬키 알려주고 점프 타이밍도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "길 안내하면서 함정 위치도 찍어",
+    "label": "None"
+  },
+  {
+    "text": "인벤 봐서 힐템 쓰고 버프도",
+    "label": "None"
+  },
+  {
+    "text": "대쉬키 알려주고 점프 타이밍도",
+    "label": "None"
+  },
   {
     "text": "상호작용 왜 안 되냐고, 조건도",
     "label": "EVENT_GUIDE"
@@ -15493,12 +14507,10 @@
     "text": "장치 만지면 몹 더 나오냐",
     "label": "None"
   },
-  [
-    {
-      "text": "함정 밟으면 리트해야 돼?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "함정 밟으면 리트해야 돼?",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이 방 몹 무한리젠이야?",
     "label": "None"
@@ -15511,18 +14523,14 @@
     "text": "보스 컷신 끝나면 바로 장판 깔려?",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 풀면 뭐 열려, 길 맞아?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "다음 방 특수 기믹 있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "퍼즐 풀면 뭐 열려, 길 맞아?",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "다음 방 특수 기믹 있냐",
+    "label": "None"
+  },
   {
     "text": "여기 휴식 포인트 없냐, 빡세네",
     "label": "None"
@@ -15547,12 +14555,10 @@
     "text": "문 열리면 바로 함정 터지냐",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "상자 열면 경보 울려?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "상자 열면 경보 울려?",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이 장치 부수면 진행돼?",
     "label": "EVENT_GUIDE"
@@ -15638,7 +14644,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"a9s8d7f6j5k4\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "a9s8d7f6j5k4",
     "label": "None"
   },
   {
@@ -15650,21 +14656,17 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"xXzvPpLq!!??\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "xXzvPpLq!!??",
     "label": "None"
   },
-  [
-    {
-      "text": "ㄹㅇ 저 몹 너무 빡세다, 방법 없냐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "여기서 뭘 먼저 해야 되는지 말해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "ㄹㅇ 저 몹 너무 빡세다, 방법 없냐",
+    "label": "None"
+  },
+  {
+    "text": "여기서 뭘 먼저 해야 되는지 말해",
+    "label": "None"
+  },
   {
     "text": "퍼즐 힌트 어디에 적혀있어?",
     "label": "EVENT_GUIDE"
@@ -15677,12 +14679,10 @@
     "text": "보스전에 포션 미리 먹을까",
     "label": "None"
   },
-  [
-    {
-      "text": "지금 파밍하고 가야 돼?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지금 파밍하고 가야 돼?",
+    "label": "None"
+  },
   {
     "text": "다음 방 몹 속성 뭐 나와, 대비",
     "label": "None"
@@ -15715,12 +14715,10 @@
     "text": "페이몬, 나 좀 살려봐 진짜",
     "label": "None"
   },
-  [
-    {
-      "text": "야 보스 약점, 퍼즐, 길 한꺼번에",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "야 보스 약점, 퍼즐, 길 한꺼번에",
+    "label": "None"
+  },
   {
     "text": "인벤 확인하고 불 켜고 길도 찍어",
     "label": "None"
@@ -15737,12 +14735,10 @@
     "text": "보상 조건 확인하고 문 여는 법도",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "다음 방 어디고 몹 속성도 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 방 어디고 몹 속성도 알려줘",
+    "label": "None"
+  },
   {
     "text": "상태이상 확인하고 해제템 있나 봐",
     "label": "None"
@@ -15751,22 +14747,18 @@
     "text": "포탈 찾고 체크포인트도 같이 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "장치 순서 알려주고 실패 원인도",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "장치 순서 알려주고 실패 원인도",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "보스전 준비물 뭐고 버프 뭐 먹어",
     "label": "None"
   },
-  [
-    {
-      "text": "미니맵 키랑 핀 찍는 법 같이",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "미니맵 키랑 핀 찍는 법 같이",
+    "label": "None"
+  },
   {
     "text": "저 반사몹인지 보고 원소도 바꿔",
     "label": "None"
@@ -15803,12 +14795,10 @@
     "text": "활로 장치 쏘고 불도 켜줘",
     "label": "None"
   },
-  [
-    {
-      "text": "상자 열기 전에 함정 있는지 확인",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "상자 열기 전에 함정 있는지 확인",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "페이몬, 저거 약점 뭐냐?",
     "label": "None"
@@ -15853,12 +14843,10 @@
     "text": "보스 장판 안전지대 어디냐?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 몹 힐 끊는 방법 있냐?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 몹 힐 끊는 방법 있냐?",
+    "label": "None"
+  },
   {
     "text": "저 보스 약점 노출 타이밍 언제?",
     "label": "None"
@@ -15903,12 +14891,10 @@
     "text": "이거 약점 맞추면 뭐 변함?",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 패턴 순서 대충 읊어봐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 패턴 순서 대충 읊어봐",
+    "label": "None"
+  },
   {
     "text": "저거 즉사기 피하는 법 뭐임",
     "label": "EVENT_GUIDE"
@@ -16101,12 +15087,10 @@
     "text": "저쪽으로 가면 루트 꼬임?",
     "label": "None"
   },
-  [
-    {
-      "text": "지름길 있으면 바로 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지름길 있으면 바로 알려줘",
+    "label": "None"
+  },
   {
     "text": "체크포인트 어디 찍히냐",
     "label": "None"
@@ -16123,12 +15107,10 @@
     "text": "페이몬, 내 위치 핑 찍어줘",
     "label": "None"
   },
-  [
-    {
-      "text": "숨겨진 상자 방 어디냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "숨겨진 상자 방 어디냐",
+    "label": "None"
+  },
   {
     "text": "이 포탈 둘 중 뭐 타야 돼",
     "label": "EVENT_GUIDE"
@@ -16245,12 +15227,10 @@
     "text": "보상 상자 조건 뭐야, 또 숨김?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "UI에서 목표 어디 보냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "UI에서 목표 어디 보냐",
+    "label": "None"
+  },
   {
     "text": "튜토리얼 스킵했더니 뭐 하래",
     "label": "None"
@@ -16291,12 +15271,10 @@
     "text": "페이몬, 퀘스트 로그 열어봐",
     "label": "None"
   },
-  [
-    {
-      "text": "왜 점프가 안 되는데, 버그?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "왜 점프가 안 되는데, 버그?",
+    "label": "None"
+  },
   {
     "text": "원소 반응 설명 다시 해줘",
     "label": "None"
@@ -16405,12 +15383,10 @@
     "text": "지금 웃을 상황 아니거든",
     "label": "None"
   },
-  [
-    {
-      "text": "아무거나 해봐, 난 모르겠다",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "아무거나 해봐, 난 모르겠다",
+    "label": "None"
+  },
   {
     "text": "이거 숨겨둔 거 티 너무 나",
     "label": "None"
@@ -16439,12 +15415,10 @@
     "text": "약점 알려주고 불도 켜봐",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 순서 말해, 함정도 꺼",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "퍼즐 순서 말해, 함정도 꺼",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "다음 방 어디야, 미니맵도 봐",
     "label": "None"
@@ -16497,18 +15471,14 @@
     "text": "UI에서 목표 찾고 키도 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "실드몹 파훼랑 딜 타임도 콕",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "다음 층 규칙이랑 추천 파티도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "실드몹 파훼랑 딜 타임도 콕",
+    "label": "None"
+  },
+  {
+    "text": "다음 층 규칙이랑 추천 파티도",
+    "label": "None"
+  },
   {
     "text": "장치 조건 확인하고 리셋도 해",
     "label": "EVENT_GUIDE"
@@ -16537,26 +15507,24 @@
     "text": "카메라 풀고 상호작용 왜 안됨?",
     "label": "None"
   },
-  [
-    {
-      "text": "길 막힌 장벽 조건이랑 우회로",
-      "label": "None"
-    }
-  ],
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;lkj;;;qwe\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "길 막힌 장벽 조건이랑 우회로",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂㅅ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;;lkj;;;qwe",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizxvnm,./\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄷㅈㅂㅅ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";;;;;:::::;;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizxvnm,./",
+    "label": "None"
+  },
+  {
+    "text": ";;;;;:::::;;;;",
     "label": "None"
   },
   {
@@ -16572,11 +15540,11 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"l;kjhgfdsapoiu\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "l;kjhgfdsapoiu",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..,,;;//\\\\--==\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "..,,;;//\\\\--==",
     "label": "None"
   },
   {
@@ -16663,18 +15631,14 @@
     "text": "딜타임 언제 주냐, 대충 말해",
     "label": "None"
   },
-  [
-    {
-      "text": "이 장치 순서 뭐였지, 알려줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "퍼즐 조건 뭐야, 왜 안 풀림",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이 장치 순서 뭐였지, 알려줘",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "퍼즐 조건 뭐야, 왜 안 풀림",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "레버 당기는 순서 체크해",
     "label": "EVENT_GUIDE"
@@ -16703,18 +15667,14 @@
     "text": "타이머 이벤트 팁 있어?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "문 안 열리는데 조건 뭐냐",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "장치 전원 어디서 올려",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "문 안 열리는데 조건 뭐냐",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "장치 전원 어디서 올려",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "물 수위 퍼즐 어떻게 맞춰",
     "label": "EVENT_GUIDE"
@@ -16747,12 +15707,10 @@
     "text": "이거 상호작용 왜 안 돼",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "문양 3개 중 뭐가 정답이야",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "문양 3개 중 뭐가 정답이야",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "다음 방 어디로 가, 또 길막이냐",
     "label": "None"
@@ -16813,12 +15771,10 @@
     "text": "이 문 뒤가 바로 보스냐",
     "label": "None"
   },
-  [
-    {
-      "text": "상자 있는 길이 어디야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "상자 있는 길이 어디야",
+    "label": "None"
+  },
   {
     "text": "지도에 빈칸, 거기 뭐 있냐",
     "label": "None"
@@ -16827,12 +15783,10 @@
     "text": "여기서 오른쪽 가면 뭐 나와",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 클리어 조건 뭐냐",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이 방 클리어 조건 뭐냐",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "불 좀 켜, 안 보인다",
     "label": "None"
@@ -16901,12 +15855,10 @@
     "text": "정령 시야로 주변 좀 스캔",
     "label": "None"
   },
-  [
-    {
-      "text": "여기 상호작용 가능한 거 찾아",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기 상호작용 가능한 거 찾아",
+    "label": "None"
+  },
   {
     "text": "조준 보정 좀 끄는 법 뭐야",
     "label": "None"
@@ -16923,12 +15875,10 @@
     "text": "이 던전 보상 뭐 줘",
     "label": "None"
   },
-  [
-    {
-      "text": "부활 제한 규칙 있음?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "부활 제한 규칙 있음?",
+    "label": "None"
+  },
   {
     "text": "UI에 경고 뜨는데 뭐야",
     "label": "None"
@@ -16945,12 +15895,10 @@
     "text": "체력바 색이 왜 저래",
     "label": "None"
   },
-  [
-    {
-      "text": "잠금 타겟 해제 키 알려줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "잠금 타겟 해제 키 알려줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "카메라가 미친 듯 흔들려",
     "label": "None"
@@ -17068,43 +16016,37 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;;",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅂㅈㄷ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㅂㅈㄷ",
     "label": "None"
   },
   {
     "text": "뷁궭ퟍퟍ",
     "label": "None"
   },
-  [
-    {
-      "text": "ㅋㅌㅊㅍㅌㅊ",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "ㅋㅌㅊㅍㅌㅊ",
+    "label": "None"
+  },
   {
     "text": ";';;;,./",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 약점이랑 패턴, 한 번에",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "다음 방 길 알려주고 함정도 봐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 약점이랑 패턴, 한 번에",
+    "label": "None"
+  },
+  {
+    "text": "다음 방 길 알려주고 함정도 봐",
+    "label": "None"
+  },
   {
     "text": "이 퍼즐 순서랑 실패 이유 말해",
     "label": "EVENT_GUIDE"
@@ -17117,46 +16059,34 @@
     "text": "불 켜고 상호작용 포인트 찾아",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 즉사기 전조, 회피 타이밍",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "좌우 분기 뭐가 보스길이야, 빨리",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 즉사기 전조, 회피 타이밍",
+    "label": "None"
+  },
+  {
+    "text": "좌우 분기 뭐가 보스길이야, 빨리",
+    "label": "None"
+  },
   {
     "text": "장비 바꿀까, 내성도 같이 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "이 장치 조건 뭐고, 문도 열어줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "레버 순서 알려주고 레이저도 꺼",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "보스 광폭 조건이랑 대비템 뭐냐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "길 잃음, 미니맵 확대법도 같이",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 장치 조건 뭐고, 문도 열어줘",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "레버 순서 알려주고 레이저도 꺼",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "보스 광폭 조건이랑 대비템 뭐냐",
+    "label": "None"
+  },
+  {
+    "text": "길 잃음, 미니맵 확대법도 같이",
+    "label": "None"
+  },
   {
     "text": "이 스킬 왜 봉인됨, 규칙 알려줘",
     "label": "None"
@@ -17173,12 +16103,10 @@
     "text": "함정 위치랑 안전구역, 찍어줘",
     "label": "None"
   },
-  [
-    {
-      "text": "포탈 둘 중 어디, 보상도 뭐 줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "포탈 둘 중 어디, 보상도 뭐 줘",
+    "label": "None"
+  },
   {
     "text": "문 안 열림, 조건이랑 스위치 위치",
     "label": "EVENT_GUIDE"
@@ -17187,18 +16115,14 @@
     "text": "타이머 이벤트 팁이랑 순서 정리",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "보스 분신 구분법, 딜타임도",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "카운터 구간이랑 패턴 변화 같이",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 분신 구분법, 딜타임도",
+    "label": "None"
+  },
+  {
+    "text": "카운터 구간이랑 패턴 변화 같이",
+    "label": "None"
+  },
   {
     "text": "회피 키랑 잠금 타겟 해제 키 뭐임",
     "label": "None"
@@ -17211,50 +16135,38 @@
     "text": "스킬 쿨 확인하고 버프 뭐 켤지",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 힐 끊는 법, 우선순위도",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이 방 클리어 조건, 다음 길도 알려",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "비밀통로 있나 스캔하고 상자길도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 힐 끊는 법, 우선순위도",
+    "label": "None"
+  },
+  {
+    "text": "이 방 클리어 조건, 다음 길도 알려",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "비밀통로 있나 스캔하고 상자길도",
+    "label": "None"
+  },
   {
     "text": "장치 전원 올리고 불도 같이 켜",
     "label": "None"
   },
-  [
-    {
-      "text": "레이저 스위치 어디, 밟으면 뭐 됨",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "레이저 스위치 어디, 밟으면 뭐 됨",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "즉사기 피하는 방향이랑 타이밍",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "부활 제한 있나, 부활템 몇 개 남음",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "UI 경고 뜻이랑 디버프 아이콘 설명",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "부활 제한 있나, 부활템 몇 개 남음",
+    "label": "None"
+  },
+  {
+    "text": "UI 경고 뜻이랑 디버프 아이콘 설명",
+    "label": "None"
+  },
   {
     "text": "보스방 맞는지, 준비물도 체크해",
     "label": "None"
@@ -17283,12 +16195,10 @@
     "text": "보스 방어버프 지우고 약점도 맞춰",
     "label": "None"
   },
-  [
-    {
-      "text": "다음 층 특징이랑 함정 많나 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음 층 특징이랑 함정 많나 알려줘",
+    "label": "None"
+  },
   {
     "text": "조준 보정 끄고, 조작 키도 정리",
     "label": "None"
@@ -17309,12 +16219,10 @@
     "text": "딜 안 박힘, 내성 확인하고 속성 추천",
     "label": "None"
   },
-  [
-    {
-      "text": "룬 석판 뭐부터, 그리고 숨은 스위치",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "룬 석판 뭐부터, 그리고 숨은 스위치",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "보스 돌진 멈추는 타이밍, 카운터도",
     "label": "None"
@@ -17327,18 +16235,14 @@
     "text": "체력바 색 왜 저래, 상태도 같이 봐",
     "label": "None"
   },
-  [
-    {
-      "text": "미니맵 빈칸 뭐고, 거기 가는 길",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이상한 소리 원인, 함정 여부 체크",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "미니맵 빈칸 뭐고, 거기 가는 길",
+    "label": "None"
+  },
+  {
+    "text": "이상한 소리 원인, 함정 여부 체크",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "엘리베이터 위치랑 체크포인트 확인",
     "label": "None"
@@ -17355,44 +16259,34 @@
     "text": "드랍률 어디서 보고, 보상 뭐가 핵심",
     "label": "None"
   },
-  [
-    {
-      "text": "이벤트 실패 이유랑 재시도 조건 알려",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "분기 선택 전에 보스냐 상자냐, 판단",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이벤트 실패 이유랑 재시도 조건 알려",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "분기 선택 전에 보스냐 상자냐, 판단",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "스태미나 남은 거랑 회피 타이밍 같이",
     "label": "None"
   },
-  [
-    {
-      "text": "불 꺼도 되나, 시야 확보 방법도",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "포션 낭비인지, 다음 페이즈도 예측",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "불 꺼도 되나, 시야 확보 방법도",
+    "label": "None"
+  },
+  {
+    "text": "포션 낭비인지, 다음 페이즈도 예측",
+    "label": "None"
+  },
   {
     "text": "함정 감지하고 안전 루트로 안내해",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "보스 광폭 전에 딜타임 언제, 준비물도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 광폭 전에 딜타임 언제, 준비물도",
+    "label": "None"
+  },
   {
     "text": "장치 순서 헷갈림, 한 번에 정리해줘",
     "label": "EVENT_GUIDE"
@@ -17417,12 +16311,10 @@
     "text": "길막 풀고 다음 방까지 길 안내",
     "label": "None"
   },
-  [
-    {
-      "text": "레버 당기고 레이저 끊고 타이머도",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "레버 당기고 레이저 끊고 타이머도",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "보스 즉사기 오면 뭐부터 해야 돼",
     "label": "None"
@@ -17431,28 +16323,22 @@
     "text": "내구도 확인하고 수리 필요하면 말해",
     "label": "None"
   },
-  [
-    {
-      "text": "상자 있는 길로 가고, 함정은 피해줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "상자 있는 길로 가고, 함정은 피해줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "여기서 우회로 찾고 포탈도 비교해",
     "label": "None"
   },
-  [
-    {
-      "text": "분신 패턴 오면 누구 먼저 잡아?",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "실드 깨는 법이랑 추천 스킬 조합",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "분신 패턴 오면 누구 먼저 잡아?",
+    "label": "None"
+  },
+  {
+    "text": "실드 깨는 법이랑 추천 스킬 조합",
+    "label": "None"
+  },
   {
     "text": "이 퍼즐 끝나면 보상 뭐, 그리고 출구",
     "label": "None"
@@ -17478,7 +16364,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"rtyuio;;,.///\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "rtyuio;;,.///",
     "label": "None"
   },
   {
@@ -17494,7 +16380,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..,,;;::\\\\\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "..,,;;::\\\\",
     "label": "None"
   },
   {
@@ -17525,12 +16411,10 @@
     "text": "여기 보스 잡기전 준비물 뭐챙겨",
     "label": "None"
   },
-  [
-    {
-      "text": "이 몹 실드 깨는법 있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 몹 실드 깨는법 있냐",
+    "label": "None"
+  },
   {
     "text": "보스 분노때 딜 넣어도됨?",
     "label": "None"
@@ -17623,12 +16507,10 @@
     "text": "이 방 트랩 해제 가능함?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "다음방 어디로 가야됨",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음방 어디로 가야됨",
+    "label": "None"
+  },
   {
     "text": "갈림길인데 오른쪽 맞음?",
     "label": "None"
@@ -17657,12 +16539,10 @@
     "text": "이 던전 몇층까지야",
     "label": "None"
   },
-  [
-    {
-      "text": "보스방 가는 길 좀 찍어줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스방 가는 길 좀 찍어줘",
+    "label": "None"
+  },
   {
     "text": "문이 잠겨서 길이 막힘",
     "label": "None"
@@ -17763,12 +16643,10 @@
     "text": "이 던전 보상 주간제한임?",
     "label": "None"
   },
-  [
-    {
-      "text": "장치 작동키 F 맞냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "장치 작동키 F 맞냐",
+    "label": "None"
+  },
   {
     "text": "왜 상호작용이 안뜸",
     "label": "None"
@@ -17805,12 +16683,10 @@
     "text": "아 또 떨어짐 내 실수네",
     "label": "None"
   },
-  [
-    {
-      "text": "와 저 몹 딜 뭐임 미쳤네",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "와 저 몹 딜 뭐임 미쳤네",
+    "label": "None"
+  },
   {
     "text": "빨리좀 페이몬 시간없다",
     "label": "None"
@@ -17823,12 +16699,10 @@
     "text": "나 길치라 또 헤맴",
     "label": "None"
   },
-  [
-    {
-      "text": "진짜 여기 너무 어둡다",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "진짜 여기 너무 어둡다",
+    "label": "None"
+  },
   {
     "text": "보스 또 도망가면 빡침",
     "label": "None"
@@ -17858,19 +16732,17 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄴㅂㅈ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄴㅂㅈ",
     "label": "None"
   },
-  [
-    {
-      "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasdASD;;;\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "asdasdASD;;;",
+    "label": "None"
+  },
   {
     "text": "뷁궭뛟꽒",
     "label": "None"
@@ -17919,12 +16791,10 @@
     "text": "지금 HP 봐주고 힐도 써줘",
     "label": "None"
   },
-  [
-    {
-      "text": "조작키 뭐고 상호작용 왜안떠",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "조작키 뭐고 상호작용 왜안떠",
+    "label": "None"
+  },
   {
     "text": "보상 뭐나오고 주간제한 있냐",
     "label": "None"
@@ -17945,12 +16815,10 @@
     "text": "지도 안보이는데 핀 찍어줘",
     "label": "None"
   },
-  [
-    {
-      "text": "이벤트 조건 확인하고 스위치도",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이벤트 조건 확인하고 스위치도",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "저 몹 실드 깨는법이랑 약점",
     "label": "None"
@@ -17967,12 +16835,10 @@
     "text": "스킬쿨 확인하고 궁 타이밍 봐",
     "label": "None"
   },
-  [
-    {
-      "text": "다음방 특징이랑 보스 준비물",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음방 특징이랑 보스 준비물",
+    "label": "None"
+  },
   {
     "text": "UI 빨간표시 뭐고 디버프임?",
     "label": "None"
@@ -17985,12 +16851,10 @@
     "text": "퍼즐 타이밍 감이랑 판정 알려",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "숨은 스위치 찾고 함정도 조심",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "숨은 스위치 찾고 함정도 조심",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "보스 힐 막는법이랑 소환몹 우선?",
     "label": "None"
@@ -18015,22 +16879,18 @@
     "text": "상자 잠금 풀고 보상도 알려줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "튜토 다시보고 설정에서 조준도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "튜토 다시보고 설정에서 조준도",
+    "label": "None"
+  },
   {
     "text": "저 몹 얼리면 되나 패턴도 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "바닥 문양 순서랑 밟으면 뭐됨",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "바닥 문양 순서랑 밟으면 뭐됨",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "불 끄고 트랩 멈추는지 확인",
     "label": "None"
@@ -18047,18 +16907,14 @@
     "text": "레버 두개 뭐부터고 실패하면?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "원소반응 뭐가좋고 저항포션도",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "보스 돌진 신호랑 회피법 알려",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "원소반응 뭐가좋고 저항포션도",
+    "label": "None"
+  },
+  {
+    "text": "보스 돌진 신호랑 회피법 알려",
+    "label": "None"
+  },
   {
     "text": "이 방 막다른지 숨길도 있나",
     "label": "None"
@@ -18087,12 +16943,10 @@
     "text": "함정 화살 타이밍이랑 지나가는법",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "지도 표시 왜없고 길 안내해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지도 표시 왜없고 길 안내해줘",
+    "label": "None"
+  },
   {
     "text": "보상상자 왜안열리고 조건 뭔데",
     "label": "EVENT_GUIDE"
@@ -18109,12 +16963,10 @@
     "text": "보스방 앞 장치 어케켜고 순서",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "다음층 가기전 준비물 체크해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음층 가기전 준비물 체크해줘",
+    "label": "None"
+  },
   {
     "text": "저 몹 머리약점 맞나 그리고 대응",
     "label": "None"
@@ -18175,12 +17027,10 @@
     "text": "지금 위치가 어딘지랑 보스방 거리",
     "label": "None"
   },
-  [
-    {
-      "text": "다음방 함정있음? 그리고 지도핀",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음방 함정있음? 그리고 지도핀",
+    "label": "None"
+  },
   {
     "text": "장치 작동하고 불기둥도 점화해줘",
     "label": "None"
@@ -18197,12 +17047,10 @@
     "text": "보스 2페 넘어가면 패턴 바뀜?",
     "label": "None"
   },
-  [
-    {
-      "text": "길 분기 뭐가 안전하고 보상은?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "길 분기 뭐가 안전하고 보상은?",
+    "label": "None"
+  },
   {
     "text": "페이몬 내 쿨이랑 HP 둘다 봐줘",
     "label": "None"
@@ -18251,12 +17099,10 @@
     "text": "보상 상자 까고 나서 어디로 가",
     "label": "None"
   },
-  [
-    {
-      "text": "조작 설정 어디서 바꾸는지랑 자동조준",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "조작 설정 어디서 바꾸는지랑 자동조준",
+    "label": "None"
+  },
   {
     "text": "대쉬 안나가는데 상태이상 걸림?",
     "label": "None"
@@ -18285,12 +17131,10 @@
     "text": "여기 막다른길이면 되돌아갈까 길찾아줘",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 장치 전원부터? 그리고 순서",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "퍼즐 장치 전원부터? 그리고 순서",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "보스 힐하는거 막고 약점도 찌르자",
     "label": "None"
@@ -18299,12 +17143,10 @@
     "text": "페이몬 빨리 다음층 포탈 찾고 핀찍어",
     "label": "None"
   },
-  [
-    {
-      "text": "이벤트 왜실패했는지랑 조건 다시",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이벤트 왜실패했는지랑 조건 다시",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "보스 패턴 너무빠른데 대응법이랑 회피",
     "label": "None"
@@ -18341,12 +17183,10 @@
     "text": "보상 제한 있으면 지금 더돌지 말지",
     "label": "None"
   },
-  [
-    {
-      "text": "이 퍼즐 문양 밟는거 몇개인지랑 순서",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이 퍼즐 문양 밟는거 몇개인지랑 순서",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "다음방 몹 종류랑 준비원소 뭐가좋아",
     "label": "None"
@@ -18355,32 +17195,26 @@
     "text": "조작키 헷갈려 점프랑 상호작용 다시",
     "label": "None"
   },
-  [
-    {
-      "text": "UI 경고 뭐냐 그리고 디버프 해제",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "UI 경고 뭐냐 그리고 디버프 해제",
+    "label": "None"
+  },
   {
     "text": "보스 광역 전에 신호오면 어디로 피함?",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 풀다가 리셋됨 원인하고 해결",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "퍼즐 풀다가 리셋됨 원인하고 해결",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "불 켜고 스위치 위치도 같이 찾아줘",
     "label": "None"
   },
-  [
-    {
-      "text": "페이몬 이거 진짜 빡세다 공략좀",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "페이몬 이거 진짜 빡세다 공략좀",
+    "label": "None"
+  },
   {
     "text": "보스 패턴 좀만 더 천천히 알수없냐",
     "label": "None"
@@ -18401,18 +17235,14 @@
     "text": "함정 밟으면 즉사냐 조심해야돼?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "갈림길에서 왼쪽가면 퍼즐이냐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "숨길 같은데 벽 부술수있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "갈림길에서 왼쪽가면 퍼즐이냐",
+    "label": "None"
+  },
+  {
+    "text": "숨길 같은데 벽 부술수있어?",
+    "label": "None"
+  },
   {
     "text": "물바닥인데 감전 조심해야됨?",
     "label": "None"
@@ -18437,12 +17267,10 @@
     "text": "레버 돌아가버리는데 버그야?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "다음층 가는 포탈 아직 잠김?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "다음층 가는 포탈 아직 잠김?",
+    "label": "None"
+  },
   {
     "text": "내 캐릭 상태이상 뭐걸림 지금",
     "label": "None"
@@ -18463,18 +17291,14 @@
     "text": "보스가 갑자기 사라짐 뭐패턴이야",
     "label": "None"
   },
-  [
-    {
-      "text": "여기 체크포인트 있냐",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "시간제한 이벤트임?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "여기 체크포인트 있냐",
+    "label": "None"
+  },
+  {
+    "text": "시간제한 이벤트임?",
+    "label": "None"
+  },
   {
     "text": "이 기믹 실패하면 다시 첨부터?",
     "label": "EVENT_GUIDE"
@@ -18496,19 +17320,19 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"xczvbnm;;;qaqw\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "xczvbnm;;;qaqw",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..,,;;//\\\\||\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "..,,;;//\\\\||",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"QWErty123!@#\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "QWErty123!@#",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅂㅈㄷㄱㅅㅁㄴㅇ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅂㅈㄷㄱㅅㅁㄴㅇ",
     "label": "None"
   },
   {
@@ -18519,22 +17343,18 @@
     "text": "보스 약점 알려주고 길도 안내해",
     "label": "None"
   },
-  [
-    {
-      "text": "퍼즐 조건 확인하고 스위치도 눌러줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "퍼즐 조건 확인하고 스위치도 눌러줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "함정 위치 알려주고 불도 켜줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "인벤에 해독제 있는지랑 지금 사용",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "인벤에 해독제 있는지랑 지금 사용",
+    "label": "None"
+  },
   {
     "text": "장비 원거리로 바꾸고 패턴도 알려",
     "label": "None"
@@ -18547,22 +17367,18 @@
     "text": "UI 경고 뭐냐랑 왜 딜 안들어가",
     "label": "None"
   },
-  [
-    {
-      "text": "조작키 다시 알려주고 상호작용도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "조작키 다시 알려주고 상호작용도",
+    "label": "None"
+  },
   {
     "text": "보스 사라짐 패턴이랑 대응 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "이벤트 시간제한인지랑 실패하면 어케",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이벤트 시간제한인지랑 실패하면 어케",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "체크포인트 있는지랑 되돌아가도됨?",
     "label": "None"
@@ -18579,12 +17395,10 @@
     "text": "포탈 잠긴 이유랑 열쇠 위치도",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "내 상태이상 뭐고 해제템도 써줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "내 상태이상 뭐고 해제템도 써줘",
+    "label": "None"
+  },
   {
     "text": "인벤 꽉찼는데 뭐 버리면됨?",
     "label": "None"
@@ -18593,22 +17407,18 @@
     "text": "보스 면역이면 어떤 원소로 바꿈?",
     "label": "None"
   },
-  [
-    {
-      "text": "패턴 반격 타이밍이랑 딜 넣는법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "패턴 반격 타이밍이랑 딜 넣는법",
+    "label": "None"
+  },
   {
     "text": "숨길 벽 부술수있나 그리고 길맞아?",
     "label": "None"
   },
-  [
-    {
-      "text": "이번방 몹 많은데 우선순위랑 약점",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이번방 몹 많은데 우선순위랑 약점",
+    "label": "None"
+  },
   {
     "text": "이 보스 약점 속성 뭐임?",
     "label": "None"
@@ -18621,12 +17431,10 @@
     "text": "저 몹 방어 높은거 맞아?",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 광역 언제 피해야됨",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 광역 언제 피해야됨",
+    "label": "None"
+  },
   {
     "text": "출혈 걸리면 어케 풀어?",
     "label": "None"
@@ -18639,12 +17447,10 @@
     "text": "저거 소환몹 먼저 잡아야해?",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 분신 구분법 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 분신 구분법 있어?",
+    "label": "None"
+  },
   {
     "text": "다음 공격 전조 뭐야",
     "label": "None"
@@ -18753,12 +17559,10 @@
     "text": "바닥 룬 순서 알려줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이벤트 실패 이유 뭐지",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이벤트 실패 이유 뭐지",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "불꽃 토템 어떻게 끄냐",
     "label": "EVENT_GUIDE"
@@ -18767,18 +17571,14 @@
     "text": "물길 막힌거 푸는법좀",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이 기믹 시간제한 있어?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
-  [
-    {
-      "text": "문이 잠겼는데 키 어디있어",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 기믹 시간제한 있어?",
+    "label": "EVENT_GUIDE"
+  },
+  {
+    "text": "문이 잠겼는데 키 어디있어",
+    "label": "None"
+  },
   {
     "text": "돌상 밀어야 되는거 맞지",
     "label": "EVENT_GUIDE"
@@ -18807,12 +17607,10 @@
     "text": "여기 숨겨진 길 있나?",
     "label": "None"
   },
-  [
-    {
-      "text": "경보 울리면 뭐 달라져?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "경보 울리면 뭐 달라져?",
+    "label": "None"
+  },
   {
     "text": "폭탄통 어디다 던져야해",
     "label": "EVENT_GUIDE"
@@ -18821,12 +17619,10 @@
     "text": "기믹 시작 조건 누가 눌러?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이 방 촛불 다켜야됨?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이 방 촛불 다켜야됨?",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "패널 색깔 맞추는거임?",
     "label": "EVENT_GUIDE"
@@ -18855,12 +17651,10 @@
     "text": "이 룬문자 해석 필요해?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "여기 바닥 꺼지는거 규칙좀",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "여기 바닥 꺼지는거 규칙좀",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이 장치 충전은 어떻게함",
     "label": "EVENT_GUIDE"
@@ -18925,12 +17719,10 @@
     "text": "다음 포탈 몇시방향이야",
     "label": "None"
   },
-  [
-    {
-      "text": "엘베 같은거 어디 타",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "엘베 같은거 어디 타",
+    "label": "None"
+  },
   {
     "text": "이 길로 가면 바로 보스야?",
     "label": "None"
@@ -18971,12 +17763,10 @@
     "text": "방 번호 헷갈리는데 기준 뭐임",
     "label": "None"
   },
-  [
-    {
-      "text": "비밀방 조건 있냐",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "비밀방 조건 있냐",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "이쪽 막혔는데 다른길있어?",
     "label": "None"
@@ -18989,12 +17779,10 @@
     "text": "지름길 여는 레버 찾음?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "페이몬 불좀 켜줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "페이몬 불좀 켜줘",
+    "label": "None"
+  },
   {
     "text": "지금 힐 아이템 써도돼?",
     "label": "None"
@@ -19031,12 +17819,10 @@
     "text": "상태이상 뭐 걸린거야 나",
     "label": "None"
   },
-  [
-    {
-      "text": "방에 불 꺼도 되냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "방에 불 꺼도 되냐",
+    "label": "None"
+  },
   {
     "text": "폭탄 아이템 지금 써볼까",
     "label": "None"
@@ -19073,12 +17859,10 @@
     "text": "필요한 키템 뭐였지 알려줘",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 상자 까도됨?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 상자 까도됨?",
+    "label": "None"
+  },
   {
     "text": "내 탄약 몇발 남았냐",
     "label": "None"
@@ -19103,12 +17887,10 @@
     "text": "키 설정 어디서 바꿔",
     "label": "None"
   },
-  [
-    {
-      "text": "이 기믹 조작키 뭐임",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 기믹 조작키 뭐임",
+    "label": "None"
+  },
   {
     "text": "왜 상호작용이 안돼",
     "label": "None"
@@ -19121,12 +17903,10 @@
     "text": "부활 제한 몇번까지야",
     "label": "None"
   },
-  [
-    {
-      "text": "이 던전 규칙 설명좀",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 던전 규칙 설명좀",
+    "label": "None"
+  },
   {
     "text": "튜토리얼 다시 볼수있어?",
     "label": "None"
@@ -19171,12 +17951,10 @@
     "text": "드랍률 올리는 방법있냐",
     "label": "None"
   },
-  [
-    {
-      "text": "이벤트 알림 끄는법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이벤트 알림 끄는법",
+    "label": "None"
+  },
   {
     "text": "카메라 고정 풀어줘",
     "label": "None"
@@ -19217,12 +17995,10 @@
     "text": "와 나 또 맞았네",
     "label": "None"
   },
-  [
-    {
-      "text": "아 이거 너무 빡센데",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "아 이거 너무 빡센데",
+    "label": "None"
+  },
   {
     "text": "잠깐만 숨좀 고르자",
     "label": "None"
@@ -19239,12 +18015,10 @@
     "text": "이거 진짜 장난하냐",
     "label": "None"
   },
-  [
-    {
-      "text": "왜 나만 계속 타겟됨",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "왜 나만 계속 타겟됨",
+    "label": "None"
+  },
   {
     "text": "아 또 함정이네 짜증",
     "label": "None"
@@ -19269,12 +18043,10 @@
     "text": "페이몬 믿어도 되냐",
     "label": "None"
   },
-  [
-    {
-      "text": "지금 뭐하는게 맞냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지금 뭐하는게 맞냐",
+    "label": "None"
+  },
   {
     "text": "나 손이 굳었나봐",
     "label": "None"
@@ -19323,26 +18095,24 @@
     "text": "지금 나 잘하고있냐",
     "label": "None"
   },
-  [
-    {
-      "text": "이거 컨트롤 말이되냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이거 컨트롤 말이되냐",
+    "label": "None"
+  },
   {
     "text": "빨리 다음방 가자",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"qwepoizx;;lkj\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "qwepoizx;;lkj",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㅂㅈㄷㄱ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㅂㅈㄷㄱ",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd123123\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd123123",
     "label": "None"
   },
   {
@@ -19361,12 +18131,10 @@
     "text": "zmxncbvpoi",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 약점 알려주고 회복도해줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 약점 알려주고 회복도해줘",
+    "label": "None"
+  },
   {
     "text": "퍼즐 순서랑 실패원인도 말해",
     "label": "EVENT_GUIDE"
@@ -19379,12 +18147,10 @@
     "text": "장비 바꾸고 인벤키템도 봐줘",
     "label": "None"
   },
-  [
-    {
-      "text": "조작키 뭐고 왜 상호작용 안됨",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "조작키 뭐고 왜 상호작용 안됨",
+    "label": "None"
+  },
   {
     "text": "보스 패턴 알려줘 그리고 불좀켜",
     "label": "None"
@@ -19413,22 +18179,18 @@
     "text": "함정 끄는 스위치랑 맵 핑찍어줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "보스 2페 패턴이랑 준비물 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 2페 패턴이랑 준비물 알려줘",
+    "label": "None"
+  },
   {
     "text": "문 왜 안열려 몹 다잡아야됨?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "인벤에 열쇠있나 보고 문도 열어봐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "인벤에 열쇠있나 보고 문도 열어봐",
+    "label": "None"
+  },
   {
     "text": "버프 남은시간 보고 음식도 먹을까",
     "label": "None"
@@ -19449,12 +18211,10 @@
     "text": "장판 규칙이랑 안전지대 위치 말해줘",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이벤트 시작조건이랑 순서 한번 정리",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이벤트 시작조건이랑 순서 한번 정리",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "왜 데미지 안나와 약점속성 뭐임",
     "label": "None"
@@ -19507,12 +18267,10 @@
     "text": "보스 방패 언제 내리고 카운터됨?",
     "label": "None"
   },
-  [
-    {
-      "text": "함정 타이밍 말해주고 지름길도 열자",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "함정 타이밍 말해주고 지름길도 열자",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "지금 몇층이고 보스방 문 어디있어",
     "label": "None"
@@ -19529,22 +18287,18 @@
     "text": "튜토 다시보고 재도전 버튼도 찾아줘",
     "label": "None"
   },
-  [
-    {
-      "text": "불 꺼도되나 그리고 촛불기믹 뭐야",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "불 꺼도되나 그리고 촛불기믹 뭐야",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "포탈 맞는지 확인하고 비밀방 조건도",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "회피 스태미나 왜이럼 해결법 있어?",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "회피 스태미나 왜이럼 해결법 있어?",
+    "label": "None"
+  },
   {
     "text": "레이저 멈추는법이랑 통로도 알려줘",
     "label": "EVENT_GUIDE"
@@ -19561,28 +18315,22 @@
     "text": "자동줍기 켜졌나 보고 상호작용도 해",
     "label": "None"
   },
-  [
-    {
-      "text": "보스 준비물이랑 면역 필요한거 말해",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "보스 준비물이랑 면역 필요한거 말해",
+    "label": "None"
+  },
   {
     "text": "구슬 꽂는곳 어딘지랑 순서도 알려",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "미니맵 표시 왜안떠 옵션 어디있어",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이 방 끝임? 다음길이랑 체크포인트도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "미니맵 표시 왜안떠 옵션 어디있어",
+    "label": "None"
+  },
+  {
+    "text": "이 방 끝임? 다음길이랑 체크포인트도",
+    "label": "None"
+  },
   {
     "text": "보스 힐 끊어야됨? 그리고 실드물약",
     "label": "None"
@@ -19607,12 +18355,10 @@
     "text": "탄약 남은거랑 폭탄 아이템도 체크",
     "label": "None"
   },
-  [
-    {
-      "text": "바닥 룬 순서랑 함정 발동조건 같이",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "바닥 룬 순서랑 함정 발동조건 같이",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "보스 약점부위랑 뒤잡 가능여부 알려",
     "label": "None"
@@ -19737,12 +18483,10 @@
     "text": "감전 스택 쌓이면 뭐 됨?",
     "label": "None"
   },
-  [
-    {
-      "text": "저 보스 잡기 패턴 전조 뭐야",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "저 보스 잡기 패턴 전조 뭐야",
+    "label": "None"
+  },
   {
     "text": "빙결 면역 있냐 저놈?",
     "label": "None"
@@ -19843,12 +18587,10 @@
     "text": "함정 발동 조건 뭐냐, 페이몬",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이 통로 어디로 가는 길이냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 통로 어디로 가는 길이냐",
+    "label": "None"
+  },
   {
     "text": "다음 방 입구가 안 보여, 어딨냐",
     "label": "None"
@@ -19897,12 +18639,10 @@
     "text": "체크포인트 어디서 찍힘?",
     "label": "None"
   },
-  [
-    {
-      "text": "지도에 표시 안 된 길 있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "지도에 표시 안 된 길 있냐",
+    "label": "None"
+  },
   {
     "text": "이 방 클리어 조건 뭐야?",
     "label": "EVENT_GUIDE"
@@ -20160,25 +18900,23 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"asdasd;;qweq\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "asdasd;;qweq",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"ㅁ기ㅏㄹㄷㅈㅂ\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "ㅁ기ㅏㄹㄷㅈㅂ",
     "label": "None"
   },
-  [
-    {
-      "text": "qwepoizx;;;",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "qwepoizx;;;",
+    "label": "None"
+  },
   {
     "text": "뷁궭뷁궭",
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\";lkj;;;..,,\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": ";lkj;;;..,,",
     "label": "None"
   },
   {
@@ -20189,12 +18927,10 @@
     "text": "보스 약점 뭐고, 힐도 써라",
     "label": "None"
   },
-  [
-    {
-      "text": "패턴 알려줘, 회피 타이밍도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "패턴 알려줘, 회피 타이밍도",
+    "label": "None"
+  },
   {
     "text": "잡몹 우선순위랑 길도 찍어",
     "label": "None"
@@ -20219,12 +18955,10 @@
     "text": "레버 왜 안 됨, 조건 체크해",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "레이저 타이밍이랑 안전지대 봐",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "레이저 타이밍이랑 안전지대 봐",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "포탈 어디로 감, 보스방 맞냐",
     "label": "None"
@@ -20269,48 +19003,34 @@
     "text": "체크포인트 어디고, 되돌아가도 돼?",
     "label": "None"
   },
-  [
-    {
-      "text": "이 방 클리어 조건이랑 몹 정보",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "즉사기 전조랑 대응법 둘 다",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "실드 깨는 법이랑 추천 원소",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "분신 구분법이랑 딜 넣는 창",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "잡기 패턴 피하는 법이랑 거리",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "힐 끊는 법이랑 디버프 해제",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "함정 감지 쓰고, 안전 루트 잡아",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "이 방 클리어 조건이랑 몹 정보",
+    "label": "None"
+  },
+  {
+    "text": "즉사기 전조랑 대응법 둘 다",
+    "label": "None"
+  },
+  {
+    "text": "실드 깨는 법이랑 추천 원소",
+    "label": "None"
+  },
+  {
+    "text": "분신 구분법이랑 딜 넣는 창",
+    "label": "None"
+  },
+  {
+    "text": "잡기 패턴 피하는 법이랑 거리",
+    "label": "None"
+  },
+  {
+    "text": "힐 끊는 법이랑 디버프 해제",
+    "label": "None"
+  },
+  {
+    "text": "함정 감지 쓰고, 안전 루트 잡아",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "기둥 불순서랑 토템 색도 맞춰?",
     "label": "EVENT_GUIDE"
@@ -20323,12 +19043,10 @@
     "text": "폭발통 어디 굴림, 벽 부숴져?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "장치 각도 맞추고, 문도 열어봐",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "장치 각도 맞추고, 문도 열어봐",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "경보 울리면 뭐됨, 피해야 돼?",
     "label": "EVENT_GUIDE"
@@ -20345,12 +19063,10 @@
     "text": "상호작용 키 뭔데, 왜 먹통이냐",
     "label": "None"
   },
-  [
-    {
-      "text": "UI 디버프 뭐고, 해제 방법도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "UI 디버프 뭐고, 해제 방법도",
+    "label": "None"
+  },
   {
     "text": "경험치 손실 있나, 죽으면 뭐됨",
     "label": "None"
@@ -20371,12 +19087,10 @@
     "text": "숨은 통로 있나, 상자도 있냐",
     "label": "None"
   },
-  [
-    {
-      "text": "문 두 개 중 안전한 쪽, 근거도",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "문 두 개 중 안전한 쪽, 근거도",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "되돌아가면 손해냐, 보상 남았냐",
     "label": "None"
@@ -20433,22 +19147,18 @@
     "text": "자동타겟 왜 저러냐, 설정 바꿔봐",
     "label": "None"
   },
-  [
-    {
-      "text": "핑 찍는 법이랑 팀원 호출도",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "핑 찍는 법이랑 팀원 호출도",
+    "label": "None"
+  },
   {
     "text": "체력 없는데, 힐템 써도 되냐 지금",
     "label": "None"
   },
-  [
-    {
-      "text": "상자 가짜면 안 연다, 판별해줘",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "상자 가짜면 안 연다, 판별해줘",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "바닥 룬 읽고, 안전 발판도 찍어",
     "label": "EVENT_GUIDE"
@@ -20457,12 +19167,10 @@
     "text": "초록 룬 왜 안 됨, 조건 다시 봐",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "카운트 끝나면 터지냐, 멈출 수 있냐",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "카운트 끝나면 터지냐, 멈출 수 있냐",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "보스 뒤돌기 패턴이랑 딜 위치",
     "label": "None"
@@ -20471,12 +19179,10 @@
     "text": "원거리 끊고, 소환수부터 자르자",
     "label": "None"
   },
-  [
-    {
-      "text": "방어깎 타이밍이랑 광폭 컷 방법",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "방어깎 타이밍이랑 광폭 컷 방법",
+    "label": "None"
+  },
   {
     "text": "감전 스택 뭐됨, 해제 수단 있어?",
     "label": "None"
@@ -20489,22 +19195,18 @@
     "text": "독 디버프 걸림, 해독제 위치도",
     "label": "None"
   },
-  [
-    {
-      "text": "포탈 연결 어디냐, 되돌릴 수 있냐",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "포탈 연결 어디냐, 되돌릴 수 있냐",
+    "label": "None"
+  },
   {
     "text": "출구 방향 찍고, 체크포인트도 알려",
     "label": "None"
   },
-  [
-    {
-      "text": "미니맵 확대 키랑 현재 층 알려줘",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "미니맵 확대 키랑 현재 층 알려줘",
+    "label": "None"
+  },
   {
     "text": "보상 상자 조건 충족했나, 확인해",
     "label": "None"
@@ -20545,18 +19247,14 @@
     "text": "퍼즐 순서 틀렸나, 리셋 방법 있어?",
     "label": "EVENT_GUIDE"
   },
-  [
-    {
-      "text": "이 방 클리어하면 바로 보스냐, 대비",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "다음 구역 속성 바뀌면 무기 바꿔라",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "이 방 클리어하면 바로 보스냐, 대비",
+    "label": "None"
+  },
+  {
+    "text": "다음 구역 속성 바뀌면 무기 바꿔라",
+    "label": "None"
+  },
   {
     "text": "잡몹 많다, 광역 추천하고 키도 알려",
     "label": "None"
@@ -20625,12 +19323,10 @@
     "text": "소환수 잡으면 본체 약해지냐, 수치도",
     "label": "None"
   },
-  [
-    {
-      "text": "광폭 끊는 기믹 있냐, 있으면 위치",
-      "label": "None"
-    }
-  ],
+  {
+    "text": "광폭 끊는 기믹 있냐, 있으면 위치",
+    "label": "None"
+  },
   {
     "text": "즉사기 막는 방패각, 정확히 말해",
     "label": "None"
@@ -20703,12 +19399,10 @@
     "text": "튜토리얼 또 뜨면 끌 수 있냐",
     "label": "None"
   },
-  [
-    {
-      "text": "왜 문이 안 열려, 몹 다 잡아야 함?",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "왜 문이 안 열려, 몹 다 잡아야 함?",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "아 진짜 또 길 잃었다, 네가 책임져",
     "label": "None"
@@ -20734,7 +19428,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"poiuytrewq\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "poiuytrewq",
     "label": "None"
   },
   {
@@ -20742,7 +19436,7 @@
     "label": "None"
   },
   {
-    "text": "- 출력은 JSON 객체 1개만\n- 형식: {\"text\":\"..;;--==++\", \"label\":\"<TARGET_LABEL 또는 None>\"}\n- text는 입력을 그대로 복사(수정 금지)",
+    "text": "..;;--==++",
     "label": "None"
   },
   {
@@ -20761,18 +19455,14 @@
     "text": "장비 바꾸면 딜 오르냐, 추천해봐",
     "label": "None"
   },
-  [
-    {
-      "text": "키 설정 어디서, 대시를 바꾸고 싶다",
-      "label": "None"
-    }
-  ],
-  [
-    {
-      "text": "이 방 함정 종류 뭐고, 안전구간 어딨냐",
-      "label": "EVENT_GUIDE"
-    }
-  ],
+  {
+    "text": "키 설정 어디서, 대시를 바꾸고 싶다",
+    "label": "None"
+  },
+  {
+    "text": "이 방 함정 종류 뭐고, 안전구간 어딨냐",
+    "label": "EVENT_GUIDE"
+  },
   {
     "text": "다음방 몹 속성 뭐냐, 원소 바꿔야지",
     "label": "None"
