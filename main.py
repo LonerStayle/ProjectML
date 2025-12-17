@@ -7,7 +7,9 @@ sys.path.insert(0, str(Path(__file__).parent / "src"))
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
+from fastapi import Request
 
+import logging, time
 from api.npc_router import router as npc_router
 from api.fairy_router import router as fairy_router
 from api.dungeon_router import router as dungeon_router
@@ -35,6 +37,40 @@ app.include_router(fairy_router)
 app.include_router(dungeon_router)
 
 
+logger = logging.getLogger("stt")
+logger.setLevel(logging.INFO)
+
+_fmt = logging.Formatter(
+    fmt="%(asctime)s | %(levelname)s | %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
+
+ch = logging.StreamHandler()
+ch.setFormatter(_fmt)
+logger.addHandler(ch)
+
+import uuid
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    request_id = uuid.uuid4().hex[:10]
+    request.state.request_id = request_id
+
+    start = time.perf_counter()
+    client = request.client.host if request.client else "unknown"
+    logger.info(f"[{request_id}] -> {client} {request.method} {request.url.path}")
+
+    try:
+        response = await call_next(request)
+        dur = time.perf_counter() - start
+        logger.info(f"[{request_id}] <- {response.status_code} ({dur:.3f}s)")
+        return response
+    except Exception:
+        dur = time.perf_counter() - start
+        logger.exception(f"[{request_id}] !! unhandled error ({dur:.3f}s)")
+        raise
+
+
+
 @app.get("/")
 async def root():
     """헬스 체크"""
@@ -53,11 +89,13 @@ async def health():
         }
     }
 
+# if __name__ == "__main__":
+#     uvicorn.run(
+#         "main:app",
+#         host="0.0.0.0",
+#         port=8090,
+#         reload=True
+#     )
 
-if __name__ == "__main__":
-    uvicorn.run(
-        "main:app",
-        host="0.0.0.0",
-        port=8090,
-        reload=True
-    )
+# uv run uvicorn main:app --host 0.0.0.0 --port 9999 --log-level info --access-log
+# nohup uv run uvicorn main:app --host 0.0.0.0 --port 9999 --log-level info --access-log   > uvicorn_9999.out 2>&1 &
