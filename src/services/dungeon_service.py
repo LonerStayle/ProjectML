@@ -379,6 +379,7 @@ class DungeonService:
 
                 summary_info_value = self._generate_raw_map_summary(normalized_raw_map)
                 # event/summary_info만 항상 업데이트, raw_map은 새 row(INSERT)일 때만 저장
+                
                 if row:
                     # 기존 row: raw_map은 건드리지 않음
                     conn.execute(
