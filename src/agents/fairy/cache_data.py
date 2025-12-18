@@ -164,6 +164,7 @@ MONSTER_INFOS = [
         "exp": 10,
         "weaknesses": None,
         "strengths": None,
+        "boss_pattern": None,
     },
     {
         "monsterId": 1,
@@ -178,6 +179,7 @@ MONSTER_INFOS = [
         "exp": 8,
         "weaknesses": "넉백, 빠른 이동속도, 강한 한방",
         "strengths": "타격",
+        "boss_pattern": None,
     },
     {
         "monsterId": 2,
@@ -192,6 +194,7 @@ MONSTER_INFOS = [
         "exp": 10,
         "weaknesses": "타격",
         "strengths": "넉백, 느린 이동속도",
+        "boss_pattern": None,
     },
     {
         "monsterId": 3,
@@ -206,6 +209,7 @@ MONSTER_INFOS = [
         "exp": 30,
         "weaknesses": "넉백",
         "strengths": "타격, 느린 공격속도",
+        "boss_pattern": None,
     },
     {
         "monsterId": 4,
@@ -220,6 +224,7 @@ MONSTER_INFOS = [
         "exp": 10,
         "weaknesses": None,
         "strengths": None,
+        "boss_pattern": None,
     },
     {
         "monsterId": 5,
@@ -234,6 +239,7 @@ MONSTER_INFOS = [
         "exp": 25,
         "weaknesses": "넉백, 타격, 빠른 공격속도",
         "strengths": "강한 한방, 느린 공격속도",
+        "boss_pattern": None,
     },
     {
         "monsterId": 1000,
@@ -248,6 +254,12 @@ MONSTER_INFOS = [
         "exp": 100,
         "weaknesses": None,
         "strengths": None,
+        "boss_pattern": """
+- 근접 공격 2가지 (최대 2타)
+- 플레이어가 일정 거리 이상 떨어지면 점프 공격
+- 2페이즈 진입 시 자신의 주변 광범위 공격 시전
+- 2페이즈 진입 후 플레이어가 일정 거리 이상 벌어지면 돌 던지기
+""",
     },
     {
         "monsterId": 1001,
@@ -262,6 +274,20 @@ MONSTER_INFOS = [
         "exp": 200,
         "weaknesses": None,
         "strengths": None,
+        "boss_pattern": """
+1페이즈
+- 최대 3타를 가진 기본 공격
+- 앞으로 돌진하며 공격
+- 플레이어 발 밑 마법진 생성 후, 폭발
+- 최대 2타가 있는 근접 스킬
+- 첫타 공격 후, 플레이어가 근접할 시 백스텝 하며 공격
+
+2페이즈 진입 시 추가되는 공격
+- 매우 넓은 광범위 공격 (진입 시에만)
+- 특정 동작 이후, 플레이어 앞으로 텔레포트하여 공격
+- 원형 투사체 생성 후, 랜덤한 시간 후에 발사
+- 가까우면 반복되는 사선 회전공격
+""",
     },
 ]
 

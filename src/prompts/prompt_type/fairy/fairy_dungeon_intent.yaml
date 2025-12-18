@@ -42,7 +42,8 @@ FAIRY_DUNGEON_INTENT:
         - Also applies when the user wants to check their own **status or inventory**:
           e.g., “What’s my HP?”, “What’s in my inventory?”, “How am I right now?”
         - Examples: "Use that equipment for me", "Turn on the room's lights", 
-                    "Check the next room, check my equipped item status."
+                    "Check the next room, check my equipped item status.",
+                    “What accessories are available?”
 
     USAGE_GUIDE
         - Selected when the user asks **how to operate something**, how to press certain keys,

@@ -2,6 +2,7 @@
 
 from core.game_dto.ItemData import ItemData
 from core.game_dto.WeaponData import WeaponData
+from core.game_dto.AccessoryItemData import AccessoryItemData
 
 cache_items = [
     ItemData(itemId=0, itemName="일반 한손검", itemType=1, rarity=0,
@@ -235,4 +236,74 @@ cache_items = [
             modifier={"strength": 0.85, "dexterity": 0.15, "intelligence": 0}
         )
     ), 
+    ItemData(
+        itemId=100, itemName="용표식 반지", itemType=1, rarity=None,
+        accessory=AccessoryItemData(
+            accessoryId=100, accessoryName="용표식 반지",
+            description="데미지 감소 -20%"
+        )
+    ),
+    ItemData(
+        itemId=101, itemName="투검의 반지", itemType=1, rarity=None,
+        accessory=AccessoryItemData(
+            accessoryId=101, accessoryName="투검의 반지",
+            description="체력 최대시 데미지 증가 +20%"
+        )
+    ),
+    ItemData(
+        itemId=102, itemName="회복의 반지", itemType=1, rarity=None,
+        accessory=AccessoryItemData(
+            accessoryId=102, accessoryName="회복의 반지",
+            description="5초마다 체력 +10"
+        )
+    ),
+    ItemData(
+        itemId=103, itemName="축복의 반지", itemType=1, rarity=None,
+        accessory=AccessoryItemData(
+            accessoryId=103, accessoryName="축복의 반지",
+            description="최대 체력 증가 50"
+        )
+    ),
+    ItemData(
+        itemId=104, itemName="증오의 반지", itemType=1, rarity=None,
+        accessory=AccessoryItemData(
+            accessoryId=104, accessoryName="증오의 반지",
+            description="받는 데미지 +20% 주는 데미지 +20%"
+        )
+    ),
+    ItemData(
+        itemId=105, itemName="라다곤의 반지", itemType=1, rarity=None,
+        accessory=AccessoryItemData(
+            accessoryId=105, accessoryName="라다곤의 반지",
+            description="힘,기량,지능 +8"
+        )
+    ),
+    ItemData(
+        itemId=106, itemName="윤여민의 스카락", itemType=1, rarity=None,
+        accessory=AccessoryItemData(
+            accessoryId=106, accessoryName="윤여민의 스카락",
+            description="상시 슈퍼아머, 주는 데미지 -50%"
+        )
+    ),
+    ItemData(
+        itemId=107, itemName="광전사의 반지", itemType=1, rarity=None,
+        accessory=AccessoryItemData(
+            accessoryId=107, accessoryName="광전사의 반지",
+            description="체력 30% 이하 일시 데미지 +20%"
+        )
+    ),
+    ItemData(
+        itemId=108, itemName="마누라니의 반지", itemType=1, rarity=None,
+        accessory=AccessoryItemData(
+            accessoryId=108, accessoryName="마누라니의 반지",
+            description="지능 +20"
+        )
+    ),
+    ItemData(
+        itemId=109, itemName="켈빈 클라인", itemType=1, rarity=None,
+        accessory=AccessoryItemData(
+            accessoryId=109, accessoryName="켈빈 클라인",
+            description="공격 속도 +30%"
+        )
+    ),
 ]
