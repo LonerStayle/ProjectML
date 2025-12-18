@@ -126,8 +126,6 @@ dungeon_spec_prompt = """
 # """
 
 
-
-
 # monster_spec_prompt = """
 # 아래는 던전에서 등장 가능한 몬스터의 기본 스펙 정보를 설명하는 데이터입니다.
 # 이 정보는 몬스터의 체력/이동/공격/사거리/그로기 수치, 경험치(exp),
@@ -330,19 +328,23 @@ attack range, stagger values, experience (exp), and weakness/strength descriptio
       - Indicates attack types the monster resists
         (Not the monster’s own attack strength)
       - Example: "Powerful single-hit attacks"
-
+      
+  ● boss_pattern (string | null)
+      Boss combat pattern description
+      - Only applicable when monsterType == 2 (Boss-type)
+      - Null for all non-boss monsters
+      - Describes the boss’s combat phases, attack patterns, triggers, and behavior changes
+      
 The JSON below contains actual monster spec data.
 
 {monster_infos_json}
 """
 
 
-
 from agents.fairy.fairy_state import FairyDungeonIntentType
 
 FAIRY_DUNGEON_FEW_SHOTS: dict[FairyDungeonIntentType, str] = {
-
-FairyDungeonIntentType.USAGE_GUIDE: """
+    FairyDungeonIntentType.USAGE_GUIDE: """
 [Example 1 – When the user asks a system-related question]
 
 - (Assumed Situation)
@@ -415,10 +417,8 @@ FairyDungeonIntentType.USAGE_GUIDE: """
   if the current context explicitly states that the heroine has already returned there.
 - If the player is currently accompanied by <Name>,
   explanations must reflect that <Name> is still with the player.
-"""
-,
-
-FairyDungeonIntentType.MONSTER_GUIDE: """
+""",
+    FairyDungeonIntentType.MONSTER_GUIDE: """
 [Example – Asking about a monster without specifying a stat]
 
 - (Assumed Situation)
@@ -489,8 +489,7 @@ FairyDungeonIntentType.MONSTER_GUIDE: """
   - Only provide full stats when the monster itself is being asked about.
   - Be as concise and clear as possible.
 """,
-
-FairyDungeonIntentType.SMALLTALK: """
+    FairyDungeonIntentType.SMALLTALK: """
 [Example – Using information from a previous MONSTER_GUIDE response]
 
 - (Assumed Situation)
@@ -514,8 +513,7 @@ FairyDungeonIntentType.SMALLTALK: """
   - Avoid vague encouragement; explain using numbers and context.
   - Keep the tone cute and light.
 """,
-
-FairyDungeonIntentType.DUNGEON_NAVIGATOR: """
+    FairyDungeonIntentType.DUNGEON_NAVIGATOR: """
 [Rules – Natural dungeon navigation (Never expose raw JSON)]
 
 - Route decisions must be based only on the room whose room_id matches currRoomId in <Current Situation>.
@@ -581,7 +579,7 @@ Paimon: This was a battle room! There are two paths—one leads back the way you
   do not say “Room 1” or “Room 4”;
   say things like “a safer-looking path” or “a path that feels like a boss is waiting.”
 - Keep explanations soft, cute, and very Paimon-like.
-"""
+""",
 }
 
 
@@ -768,11 +766,11 @@ Paimon: This was a battle room! There are two paths—one leads back the way you
 #    - 오직 이 방의 neighbors만 이동 경로를 결정한다.
 
 # 2) neighbors 개수에 따른 해석:
-#    • neighbors = []  
+#    • neighbors = []
 #        → 이동 가능한 길이 없음 (막다른 길).
-#    • neighbors = [A]  
+#    • neighbors = [A]
 #        → 이동 가능한 길이 하나뿐.
-#    • neighbors = [A, B, ...]  
+#    • neighbors = [A, B, ...]
 #        → 이동 가능한 길이 여러 개.
 
 # 3) 사용자가 “다음 방”을 물을 경우,
