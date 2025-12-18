@@ -1,6 +1,5 @@
-# uv run uvicorn main:app --host 0.0.0.0 --port 9999 --log-level info --access-log
-# nohup uv run uvicorn main:app --host 0.0.0.0 --port 9999 --log-level info --access-log   > uvicorn_9999.out 2>&1 &
-# tail -f uvicorn_9999.out
+# 포그라운드 실행
+```uv run uvicorn main:app --host 0.0.0.0 --port 9999 --log-level info --access-log```
 
-# 프로세스 확인
-# sudo netstat -ltnp | grep ':9999'
+# 서버 배포 
+```./delpoy.sh```
