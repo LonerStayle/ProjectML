@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from typing import  Optional
 from core.game_dto.WeaponData import WeaponData
-
+from core.game_dto.AccessoryItemData import AccessoryItemData
 
 class ItemData(BaseModel):
     # 아이템 명 
@@ -13,7 +13,10 @@ class ItemData(BaseModel):
     itemType: int = 0
 
     # 등급 0~3 (커먼, 언커먼, 레어, 레전드)
-    rarity: int
+    rarity: Optional[int] = None
 
     # 무기일 경우 무기 공격력 및 보정치
-    weapon: Optional[WeaponData]
+    weapon: Optional[WeaponData] = None
+
+    # 악세사리 일경우 
+    accessory: Optional[AccessoryItemData] = None
