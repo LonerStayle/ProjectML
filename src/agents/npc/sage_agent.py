@@ -360,7 +360,7 @@ class SageAgent(BaseNPCAgent):
         """
         user_message = state["messages"][-1].content
         player_id = state["player_id"]
-        npc_id = "sage"
+        npc_id = 0 # sage
 
         facts_parts = []
 
