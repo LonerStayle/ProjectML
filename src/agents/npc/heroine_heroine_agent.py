@@ -604,8 +604,8 @@ JSON 배열로 출력하세요:
             # 히로인: memoryProgress로 "가장 최근 해금 시나리오 1개" 무조건 주입
             # 사트라(0): scenarioLevel로 "가장 최근 해금 세계관 1개" 무조건 주입
             # sanity 값 가져오기 (NPC-NPC 대화에도 sanity 반영)
-            sanity_1 = int(state1.get("sanity", 100) or 100)
-            sanity_2 = int(state2.get("sanity", 100) or 100)
+            sanity_1 = int(state1.get("sanity", 100))
+            sanity_2 = int(state2.get("sanity", 100))
 
             t = time.time()
             if heroine1_id == 0:
