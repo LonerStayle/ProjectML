@@ -816,8 +816,8 @@ JSON 배열로 출력하세요:
         print(f"[TIMING] NPC-NPC(스트림) Redis 세션 로드: {time.time() - t:.3f}s")
 
         # sanity 값 가져오기 (NPC-NPC 대화에도 sanity 반영)
-        sanity_1 = int(state1.get("sanity", 100) or 100)
-        sanity_2 = int(state2.get("sanity", 100) or 100)
+        sanity_1 = int(state1.get("sanity", 100))
+        sanity_2 = int(state2.get("sanity", 100))
 
         t = time.time()
         if heroine1_id == 0:
