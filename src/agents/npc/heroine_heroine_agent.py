@@ -760,17 +760,13 @@ JSON 배열로 출력하세요:
             importance_score,
         )
 
-        # 대화 내용 텍스트
-        content_parts = []
-        for msg in conversation:
-            content_parts.append(f"{msg['speaker_name']}: {msg['text']}")
-        content_text = "\n".join(content_parts)
+
 
         return {
             "id": conv_id,
             "heroine1_id": heroine1_id,
             "heroine2_id": heroine2_id,
-            "content": content_text,
+            "situation": situation,
             "conversation": conversation,
             "importance_score": importance_score,
             "timestamp": datetime.now().isoformat(),
