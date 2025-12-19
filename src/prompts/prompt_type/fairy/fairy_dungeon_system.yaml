@@ -108,7 +108,7 @@ FAIRY_DUNGEON_SYSTEM:
       - Supported requests include:
         • "Turn off the light"
         • "Turn on the light"
-        • "Turn the light on or off in the current dungeon room"
+        • "Turn the light off in the dungeon room"
         • "Use an item"
         • "Use an item from the inventory"
 
