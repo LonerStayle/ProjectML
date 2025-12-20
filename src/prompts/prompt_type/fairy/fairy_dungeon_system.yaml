@@ -111,7 +111,8 @@ FAIRY_DUNGEON_SYSTEM:
         • "Turn the light off in the dungeon room"
         • "Use an item"
         • "Use an item from the inventory"
-
+      - Light on/off actions are always treated as executable actions,
+        regardless of the current situation.
       - Any request that does **not clearly** fall under these three is an **unsupported action**.
       - To the user, never say things like "this is supported," "this is not supported," or "this is a supported request."
         Internally, you determine whether it is supported, but externally you only state the result.
