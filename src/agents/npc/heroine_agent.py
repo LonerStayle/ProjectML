@@ -105,8 +105,13 @@ HEROINE_KEY_MAP = {1: "letia", 2: "lupames", 3: "roco"}  # 레티아  # 루파�
 
 # 요일 매핑 (시간 기반 기억 검색용)
 WEEKDAY_MAP = {
-    "월요일": 0, "화요일": 1, "수요일": 2, "목요일": 3,
-    "금요일": 4, "토요일": 5, "일요일": 6
+    "월요일": 0,
+    "화요일": 1,
+    "수요일": 2,
+    "목요일": 3,
+    "금요일": 4,
+    "토요일": 5,
+    "일요일": 6,
 }
 
 
@@ -154,7 +159,9 @@ class HeroineAgent(BaseNPCAgent):
         super().__init__(model_name)
         self.llm = init_chat_model(model=model_name, temperature=1, max_tokens=200)
         # 의도 분류용 LLM (temperature=0으로 일관된 분류)
-        self.intent_llm = init_chat_model(model=model_name, temperature=0, max_tokens=20)
+        self.intent_llm = init_chat_model(
+            model=model_name, temperature=0, max_tokens=20
+        )
 
         # LangGraph 빌드 (비스트리밍용)
         self.graph = self._build_graph()
@@ -427,18 +434,26 @@ class HeroineAgent(BaseNPCAgent):
                 player_id, npc_id, point_in_time, limit=5
             )
         # 지지난주 X요일
-        elif week_match := re.search(r"지지난주\s*(월|화|수|목|금|토|일)요일", user_message):
+        elif week_match := re.search(
+            r"지지난주\s*(월|화|수|목|금|토|일)요일", user_message
+        ):
             weekday = WEEKDAY_MAP[week_match.group(1) + "요일"]
             point_in_time = _get_last_weekday(weekday, weeks_ago=2)
-            print(f"[MEMORY_FUNC] get_memories_at_point_sync(지지난주 {week_match.group(1)}요일)")
+            print(
+                f"[MEMORY_FUNC] get_memories_at_point_sync(지지난주 {week_match.group(1)}요일)"
+            )
             user_memories = user_memory_manager.get_memories_at_point_sync(
                 player_id, npc_id, point_in_time, limit=5
             )
         # 지난주 X요일
-        elif week_match := re.search(r"지난주\s*(월|화|수|목|금|토|일)요일", user_message):
+        elif week_match := re.search(
+            r"지난주\s*(월|화|수|목|금|토|일)요일", user_message
+        ):
             weekday = WEEKDAY_MAP[week_match.group(1) + "요일"]
             point_in_time = _get_last_weekday(weekday, weeks_ago=1)
-            print(f"[MEMORY_FUNC] get_memories_at_point_sync(지난주 {week_match.group(1)}요일)")
+            print(
+                f"[MEMORY_FUNC] get_memories_at_point_sync(지난주 {week_match.group(1)}요일)"
+            )
             user_memories = user_memory_manager.get_memories_at_point_sync(
                 player_id, npc_id, point_in_time, limit=5
             )
@@ -807,7 +822,7 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
         # 변화량
         affection_delta = context.get("affection_delta", 0)
         sanity_delta = affection_delta
-        # if affection_delta > 0 else 0        
+        # if affection_delta > 0 else 0
 
         print(
             f"[DEBUG] _update_state: current affection={affection}, delta={affection_delta}"

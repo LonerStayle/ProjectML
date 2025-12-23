@@ -429,3 +429,34 @@ LANGUAGE SQL AS $$
     LIMIT p_limit;
 $$;
 
+-- ============================================
+-- 6. 충돌 후보 검색 (하이브리드 취향 변경 감지용)
+-- 임베딩 유사도 0.65 이상 + 같은 content_type + 현재 유효한 기억
+-- ============================================
+CREATE OR REPLACE FUNCTION find_conflict_candidates(
+    p_player_id TEXT,
+    p_heroine_id TEXT,
+    p_embedding vector(1536),
+    p_content_type TEXT,
+    p_threshold FLOAT DEFAULT 0.65
+) RETURNS TABLE (
+    id UUID,
+    content TEXT,
+    content_type TEXT,
+    similarity FLOAT
+)
+LANGUAGE SQL AS $$
+    SELECT 
+        m.id,
+        m.content,
+        m.content_type,
+        1 - (m.embedding <=> p_embedding) AS similarity
+    FROM user_memories m
+    WHERE m.player_id = p_player_id
+      AND m.heroine_id = p_heroine_id
+      AND m.content_type = p_content_type
+      AND m.invalid_at IS NULL
+      AND 1 - (m.embedding <=> p_embedding) >= p_threshold
+    ORDER BY similarity DESC;
+$$;
+
