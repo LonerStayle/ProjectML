@@ -617,9 +617,13 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
         # 1. 유저 메시지만으로 preference fact 추출
         conversation = f"플레이어: {user_message}"
         facts = await self.extract_facts(conversation, heroine_id)
+        print(
+            f"[DEBUG] 추출된 facts: {[(f.content, f.content_type.value) for f in facts]}"
+        )
 
         # preference 타입만 필터링
         preference_facts = [f for f in facts if f.content_type.value == "preference"]
+        print(f"[DEBUG] preference facts: {[f.content for f in preference_facts]}")
 
         if not preference_facts:
             return []
@@ -634,11 +638,17 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
             candidates = await self._find_conflict_candidates(
                 player_id, heroine_id, embedding, "preference"
             )
+            print(
+                f"[DEBUG] 충돌 후보 {len(candidates)}개: {[c['content'] for c in candidates]}"
+            )
 
             # LLM으로 충돌 판단
             for candidate in candidates:
                 is_conflict = await self._check_conflict_with_llm(
                     fact.content, candidate["content"]
+                )
+                print(
+                    f"[DEBUG] LLM 충돌 판단: {fact.content} vs {candidate['content']} -> {is_conflict}"
                 )
                 if is_conflict:
                     preference_changes.append(
