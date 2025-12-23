@@ -224,6 +224,24 @@ class HeroineAgent(BaseNPCAgent):
             return "mid"
         return "low"
 
+    def _format_preference_changes(self, preference_changes: list) -> str:
+        """취향 변화 정보를 프롬프트용 문자열로 포맷
+
+        Args:
+            preference_changes: 취향 변화 리스트 [{"old": ..., "new": ...}]
+
+        Returns:
+            포맷된 문자열 또는 빈 문자열
+        """
+        if not preference_changes:
+            return ""
+
+        lines = ["[취향 변화 감지됨 - 자연스럽게 언급해주세요]"]
+        for change in preference_changes:
+            lines.append(f"- 과거: {change['old']} -> 현재: {change['new']}")
+
+        return "\n".join(lines) + "\n"
+
     def _format_persona(
         self, persona: Dict[str, Any], affection: int, sanity: int
     ) -> str:
@@ -612,6 +630,7 @@ class HeroineAgent(BaseNPCAgent):
         # 4. 의도에 따른 검색
         retrieved_facts = "없음"
         unlocked_scenarios = "없음"
+        preference_changes = []
 
         if intent == "memory_recall":
             # 기억 회상 -> User Memory + NPC간 기억 검색
@@ -632,6 +651,22 @@ class HeroineAgent(BaseNPCAgent):
         else:
             print(f"[DEBUG] general 의도 - 검색 안 함")
 
+        # 5. 취향 변화 선제 감지 (모든 의도에서 수행)
+        from db.user_memory_models import NPC_ID_TO_HEROINE
+
+        t4 = time.time()
+        player_id = state["player_id"]
+        npc_id = state["npc_id"]
+        heroine_id = NPC_ID_TO_HEROINE.get(npc_id, "letia")
+
+        preference_changes = await user_memory_manager.detect_preference_change(
+            str(player_id), heroine_id, user_message
+        )
+        print(f"[TIMING] 취향 변화 감지: {time.time() - t4:.3f}s")
+
+        if preference_changes:
+            print(f"[DEBUG] 취향 변화 감지됨: {preference_changes}")
+
         print(f"[TIMING] 컨텍스트 준비 총합: {time.time() - total_start:.3f}s")
         return {
             "affection_delta": affection_delta,
@@ -639,6 +674,7 @@ class HeroineAgent(BaseNPCAgent):
             "intent": intent,
             "retrieved_facts": retrieved_facts,
             "unlocked_scenarios": unlocked_scenarios,
+            "preference_changes": preference_changes,
         }
 
     def _build_full_prompt(
@@ -764,6 +800,7 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
 [장기 기억 (검색 결과)]
 {context.get('retrieved_facts', '없음')}
 
+{self._format_preference_changes(context.get('preference_changes', []))}
 [해금된 시나리오]
 {context.get('unlocked_scenarios', '없음')}
 
@@ -1086,11 +1123,28 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
     async def _memory_retrieve_node(self, state: HeroineState) -> dict:
         """기억 검색 노드"""
         import time
+        from db.user_memory_models import NPC_ID_TO_HEROINE
 
         t = time.time()
         facts = await self._retrieve_memory(state)
         print(f"[TIMING] 기억 검색: {time.time() - t:.3f}s")
-        return {"retrieved_facts": facts}
+
+        # 취향 변화 선제 감지
+        t2 = time.time()
+        player_id = state["player_id"]
+        npc_id = state["npc_id"]
+        user_message = state["messages"][-1].content
+        heroine_id = NPC_ID_TO_HEROINE.get(npc_id, "letia")
+
+        preference_changes = await user_memory_manager.detect_preference_change(
+            str(player_id), heroine_id, user_message
+        )
+        print(f"[TIMING] 취향 변화 감지: {time.time() - t2:.3f}s")
+
+        if preference_changes:
+            print(f"[DEBUG] 취향 변화 감지됨: {preference_changes}")
+
+        return {"retrieved_facts": facts, "preference_changes": preference_changes}
 
     async def _scenario_retrieve_node(self, state: HeroineState) -> dict:
         """시나리오 DB 검색 노드"""
