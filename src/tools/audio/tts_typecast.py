@@ -33,8 +33,14 @@ def sanitize_text_for_tts(text: str) -> str:
 
     # 앞뒤 공백 제거
     text = text.strip()
-
+    
+    # 점(.)만 있는 경우 "흠"으로 대체
+    if re.fullmatch(r"[.\s]+", text):
+        text = "흠"
+    
     return text
+
+  
 
 
 class TypecastTTSService:
