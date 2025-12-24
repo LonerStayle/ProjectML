@@ -256,7 +256,7 @@ class SageAgent(BaseNPCAgent):
             "[말투 특징]",
             f"- 기본: {speech.get('tone', '기품 있는 하대')}",
             f"- 호칭: {speech.get('mentor_address', '멘토')}",
-            f"- 대화패턴: {speech.get('patterns', [])}",
+            f"- 대화패턴: {','.join(speech.get('patterns', []))}",
             "",
             f"[현재 레벨 {scenario_level} 태도]",
             f"스타일: {attitude_data.get('description', '')}",
