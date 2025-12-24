@@ -256,14 +256,14 @@ class SageAgent(BaseNPCAgent):
             "[말투 특징]",
             f"- 기본: {speech.get('tone', '기품 있는 하대')}",
             f"- 호칭: {speech.get('mentor_address', '멘토')}",
-            f"- 대화패턴: {speech.get('patterns', [])}",
+            f"- 대화패턴: {','.join(speech.get('patterns', []))}",
             "",
             f"[현재 레벨 {scenario_level} 태도]",
             f"스타일: {attitude_data.get('description', '')}",
             "예시 대사:",
         ]
 
-        for example in attitude_data.get("examples", [])[:3]:
+        for example in attitude_data.get("examples", []):
             lines.append(f"  - {example}")
 
         # 성격 특성
@@ -566,6 +566,7 @@ class SageAgent(BaseNPCAgent):
 
 [핵심 목표]
 - 최근 대화는 '맥락 파악'에만 사용합니다.
+- [페르소나]에 충실하게 답변하세요.
 - 같은 질문이 반복되어도 과거 답변 문장을 그대로 복사하지 않습니다.
 - 반드시 [현재 레벨 태도], [페르소나], [정보 공개 규칙], [장기 기억 (검색 결과)], [해금된 세계관 정보], [플레이어 메시지]를 근거로 새로 답합니다.
 
@@ -594,7 +595,7 @@ B) 세계관/정보 질문: "던전이 뭐야?", "히로인들은 누구야?, "�
 
 5) 출력/말투 규칙
 - 기품 있는 하대 어조를 유지합니다.
-- text는 반드시 30자 이내로 답합니다.
+- text는 반드시 50자 이내로 답합니다.
 - `멘토`는 현재 당신에게 말을 거는 플레이어입니다.
 
 [세계관 컨텍스트 - 당신이 알고 있는 기본 정보]
