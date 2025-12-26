@@ -4,6 +4,9 @@ from enum import StrEnum
 from langgraph.graph import MessagesState
 from core.game_dto.WeaponData import WeaponData
 from core.game_dto.StatData import StatData
+from core.game_dto.ItemData import ItemData
+from core.game_dto.SkillData import SkillData
+
 
 # ==== START 던전 =====
 class DungeonPlayerState(BaseModel):
@@ -12,9 +15,9 @@ class DungeonPlayerState(BaseModel):
     currRoomId: int
     difficulty: int 
     stats:StatData
-    skillIds:List[int]
+    skills:List[SkillData] = []
     weapon: Optional[WeaponData] = None
-    inventory: List[int] = []
+    inventory: List[ItemData] = []
 
 class FairyDungeonIntentType(StrEnum):
     MONSTER_GUIDE = "MONSTER_GUIDE"

@@ -154,7 +154,16 @@ def get_inventory_item(item_id: int, stat: StatData):
 
     return None
 
-
+from core.game_dto.SkillData import SkillData
+from core.game_dto.z_cache_data import cache_skills
+def get_skills(skills_ids:List[int]) -> List[SkillData]:
+    result: List[SkillData] = []
+    for skill in cache_skills:
+        if skill.skillId not in skills_ids:
+            continue
+        result.append(skill)
+    return result
+    
 
 
 # 아래는 주피터 노트북에서 src 경로를 고정시키기위한 코드 

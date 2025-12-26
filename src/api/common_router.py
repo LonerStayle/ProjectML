@@ -125,6 +125,7 @@ DOMAIN_REPLACE_MAP = {
     '고급 더프의 망치':'고급 드워프의 망치',
     '한 손 검':'한손검',
     '부어프':'드워프',
+    '궁극 두어프': '고급 드워프',
         
     # UI / 명령
     "물 좀 켜줄래?": "불좀 켜줄래?",
@@ -154,24 +155,14 @@ async def stt_wav(request: Request, file: UploadFile = File(...)):
 
     suffix = os.path.splitext(file.filename)[-1].lower() or ".wav"
     tmp_path = None
-    saved_path = None
+    with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
+        tmp.write(data)
+        tmp_path = tmp.name
 
     data = await file.read()
     size = len(data)
 
     logger.info(f"[{rid}] upload filename={file.filename} content_type={file.content_type} bytes={size}")
-
-    # 1) 원본 파일 저장 (원하면 영구 보관)
-    if SAVE_UPLOADS:
-        saved_path = _make_save_path("stt", file.filename, suffix)
-        with open(saved_path, "wb") as f:
-            f.write(data)
-        logger.info(f"[{rid}] saved upload -> {saved_path}")
-
-    # 2) whisper에 넣을 임시 파일 생성(업로드 확장자 유지)
-    with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
-        tmp.write(data)
-        tmp_path = tmp.name
 
     t0 = time.perf_counter()
     result = model.transcribe(tmp_path, language="ko")
@@ -187,12 +178,18 @@ async def stt_wav(request: Request, file: UploadFile = File(...)):
     transfer_text =  _domain_replace(final_text)
     logger.info(f"[{rid}] transcribe done in {dur:.3f}s text_len={len(final_text)}")
     is_valid = bool(transfer_text) and _is_valid_text(transfer_text)
-                                
+    saved_path = None
+    if is_valid == False:
+        if SAVE_UPLOADS:
+            saved_path = _make_save_path("stt", file.filename, suffix)
+            with open(saved_path, "wb") as f:
+                f.write(data)
+            logger.info(f"[{rid}] saved upload -> {saved_path}")
+
     return JSONResponse({
         "transferText": transfer_text,
         "isValid":is_valid
     })
-
     
 @router.post("/pcm")
 async def stt_pcm(request: Request, pcm: bytes = Body(...)):

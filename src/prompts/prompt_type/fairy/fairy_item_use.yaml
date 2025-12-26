@@ -20,8 +20,13 @@ FAIRY_ITEM_USE:
     - If the item does not exist in the inventory, it **cannot** be used.
     - If no valid item can be used, you must output **None**.
     - If the inventory is empty, output **None**.
+    - If the player attempts to use the currently equipped weapon, output **None**.
     - If a weapon swap is requested without specifying a particular item name (e.g., "swap my weapon"), select and equip one weapon from the inventory excluding the currently equipped weapon.
       - In this case, select and equip the weapon with the highest FinalDamage from the inventory.
+
+    - When an accessory item is requested to be used, output None.
+    - "the weakest weapon" means the weapon item with the lowest FinalDamage among all weapon items, excluding the currently equipped weapon.
+    - When the subject is ambiguous (e.g., "that", "this", "those", "among them", "between two", "among three"), refer to the previous dialogue to determine the appropriate itemId.
     </Strict Rules>
 
     <Inventory Items>
@@ -36,11 +41,12 @@ FAIRY_ITEM_USE:
     <Output Requirements>
     - Output **only the item ID to use**.
     - Do **not** write any additional text or explanation.
+    - The output MUST be exactly one of the following formats:
+      1) A single integer (e.g., 21)
+      2) The exact string "None"
+      Any other text, explanation, or sentence is strictly forbidden.
     </Output Requirements>
-
-    Question: {question}
 
   input_variables:
     - "inventory_items"
-    - "question"
     - "weapon"
