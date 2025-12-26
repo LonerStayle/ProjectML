@@ -69,12 +69,6 @@ class InteractionRequest(BaseModel):
         description="던전 플레이어의 실시간 상태",
         example=_create_dungeon_player_dto("1"),
     )
-    
-    inventory: List[int] = Field(
-        ...,
-        description="인벤토리 아이템 id 목록",
-        example=[21, 47],
-    )
 
     question: str = Field(..., description="사용자의 질문", example="현재 방 불좀 켜봐")
 
@@ -161,8 +155,8 @@ async def talk_dungeon(request: TalkDungeonRequest):
 def interaction(request: InteractionRequest):
     """정령 - 던전 인터렉션 요청"""
     question = request.question
-    inventory = request.inventory
     player = request.dungeonPlayer
+    inventory = player.inventory
     
     weapon = _weapon_id_to_data(player.weaponId, player.stats)
     response = fairy_interaction(player.stats, inventory, question, weapon)

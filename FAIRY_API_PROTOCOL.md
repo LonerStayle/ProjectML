@@ -40,47 +40,46 @@
 | │   ├── `strength`              | Integer        | Yes      | 근력                                |
 | │   ├── `dexterity`             | Integer        | Yes      | 기량                                |
 | │   ├── `intelligence`          | Integer | null | No       | 지능 (기본값: Null)                   | 
-| │   ├── `critChance`            | Float          | Yes      | 치명타 확률 20 ~ 100                  |
-| │   ├── `skillDamageMultiplier` | Float          | Yes      | 스킬 피해 증가(곱연산) 1 ~ 5            |
-| │   └── `autoAttackMultiplier`  | Float          | Yes      | 평타 피해 증가 (곱연산) 1 ~ 5           |
-| ├── `weaponId`                  | Integer        | Yes      | 장착 중인 무기 ID                      |
-| └── `inventory`                 | List[int]      | Yes      | 인벤토리에 포함된 아이템 ID 목록           |
-| `skillIds`                      | List[int]      | Yes      | 플레이어가 보유한 스킬 ID 목록             |
+| │   ├── `critChance`            | Float          | No      | 치명타 확률 20 ~ 100                  |
+| │   ├── `skillDamageMultiplier` | No          | Yes      | 스킬 피해 증가(곱연산) 1 ~ 5            |
+| │   └── `autoAttackMultiplier`  | No          | Yes      | 평타 피해 증가 (곱연산) 1 ~ 5           |
+| ├── `weaponId`                  | Integer        | No      | 장착 중인 무기 ID                      |
+| ├── `skillIds`                  | List[int]      | No      | 플레이어가 보유한 스킬 ID 목록             |
+| └── `inventory`                 | List[int]      | No      | 인벤토리에 포함된 아이템 ID 목록           |
 | `question`                      | String         | Yes      | 사용자의 질문 (예: `"현재 방의 불좀 켜줘"`)  |
 | `targetMonsterIds`              | List[int]      | No       | 타겟팅된 몬스터 ID 목록 (기본값: `[]`)      |
-| `nextRoomIds`                   | List[int]      | Yes      | 히로인이 이동 가능한 방 ID 목록 (기본값: `[]`) |
+| `nextRoomIds`                   | List[int]      | No      | 히로인이 이동 가능한 방 ID 목록 (기본값: `[]`) |
 
 
 ```json
 {
     "dungeonPlayer": {
-        "playerId": "76561198301668617",
+        "playerId": "TEST0",
         "heroineId": 1,
-        "currRoomId": 1,
+        "currRoomId": 3,
         "difficulty": 0,
         "stats":{
             "hp": 250,
             "moveSpeed": 1.0,
             "attackSpeed": 1.0,
             "cooldownReduction" : 1,
-            "strength": 1,
+            "strength": 8,
             "dexterity": 1,
             "intelligence": null,
             "critChance": 20.0,
             "skillDamageMultiplier" : 1.0,
             "autoAttackMultiplier": 1.0
-            
         },
-        "weaponId": 22,
+        "skillIds":[0,1],
+        "weaponId": 21,
         "inventory": [
             0,
-            21,
+            22,
             42
         ]
     },
-    "skillIds": [0,1],
-    "question": "좀 켜줘",
-    "targetMonsterIds": [1000],
+    "question": "이제 뭐해?",
+    "targetMonsterIds": [],
     "nextRoomIds": [0,1]
 }
 ```
@@ -106,14 +105,56 @@
 
 | Field | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `inventory`    | List[int] | Yes      | 인벤토리에 포함된 아이템 ID 목록                    |
-| `question` | String | Yes | 사용자의 질문 |
+| `question`                      | String         | Yes      | 사용자의 질문                         |
+| `dungeonPlayer`                 | Object         | Yes      | 던전 플레이어의 **실시간 상태 데이터**     |
+| ├── `playerId`                  | String         | Yes      | 플레이어 고유 ID                      |
+| ├── `heroineId`                 | Integer        | Yes      | 히로인의 고유 ID                      |
+| ├── `currRoomId`                | Integer        | Yes      | 현재 위치한 방 ID                     |
+| ├── `difficulty`                | Integer        | Yes      | 던전 난이도 (기본값: 0)                |
+| ├── `stats`                     | Object         | Yes      | 플레이어의 전투·이동·스킬 관련 **스탯 데이터** |
+| │   ├── `hp`                    | Integer        | Yes      | 현재 체력 (기본값: 250)                |
+| │   ├── `moveSpeed`             | Float          | Yes      | 이동 속도 배율 (기본값: 1.0)           |
+| │   ├── `attackSpeed`           | Float          | Yes      | 공격 속도 배율 (기본값: 1.0)           |
+| │   ├── `cooldownReduction`     | Float          | Yes      | 쿨타임 감소 배율                      |
+| │   ├── `strength`              | Integer        | Yes      | 근력                                |
+| │   ├── `dexterity`             | Integer        | Yes      | 기량                                |
+| │   ├── `intelligence`          | Integer | null | No       | 지능 (기본값: Null)                   | 
+| │   ├── `critChance`            | Float          | No      | 치명타 확률 20 ~ 100                  |
+| │   ├── `skillDamageMultiplier` | No          | Yes      | 스킬 피해 증가(곱연산) 1 ~ 5            |
+| │   └── `autoAttackMultiplier`  | No          | Yes      | 평타 피해 증가 (곱연산) 1 ~ 5           |
+| ├── `weaponId`                  | Integer        | No      | 장착 중인 무기 ID                      |
+| ├── `skillIds`                      | List[int]      | No      | 플레이어가 보유한 스킬 ID 목록             |
+| └── `inventory`                 | List[int]      | No      | 인벤토리에 포함된 아이템 ID 목록           |
 
 
 ```json
 {
-  "inventory": [0, 22, 42],
-  "question": "무기 교체해줘"
+  "question": "가장 좋은거 써줘",
+  "dungeonPlayer": {
+        "playerId": "76561198301668617",
+        "heroineId": 1,
+        "currRoomId": 1,
+        "difficulty": 0,
+        "stats":{
+            "hp": 250,
+            "moveSpeed": 1.0,
+            "attackSpeed": 1.0,
+            "cooldownReduction" : 1,
+            "strength": 8,
+            "dexterity": 1,
+            "intelligence": null,
+            "critChance": 20.0,
+            "skillDamageMultiplier" : 1.0,
+            "autoAttackMultiplier": 1.0
+        },
+        "skillIds":[0,1],
+        "weaponId": 21,
+        "inventory": [
+            0,
+            22,
+            42
+        ]
+  }
 }
 ```
 
