@@ -13,7 +13,7 @@ from core.game_dto.StatData import StatData
 from core.game_dto.ItemData import ItemData
 from core.game_dto.WeaponData import WeaponData
 import random
-from core.common import get_inventory_item,get_inventory_items, get_skills
+from core.common import get_inventory_item, get_inventory_items, get_skills
 
 
 router = APIRouter(prefix="/api/fairy", tags=["Fairy"])
@@ -63,6 +63,7 @@ class TalkDungeonRequest(BaseModel):
         ..., description="히로인이 이동 가능한 방 ID 목록", example=1
     )
 
+
 class InteractionRequest(BaseModel):
     dungeonPlayer: DungeonPlayerDto = Field(
         ...,
@@ -84,7 +85,6 @@ class InteractionResponse(BaseModel):
     )
 
 
-
 class TalkGuildRequest(BaseModel):
     playerId: str = Field(..., description="사용자 ID")
     heroine_id: int = Field(..., description="히로인 ID")
@@ -100,8 +100,9 @@ class TalkResponse(BaseModel):
     )
 
 
-
-def _weapon_id_to_data(weapon_id: Optional[int], stat:StatData) -> Optional[WeaponData]:
+def _weapon_id_to_data(
+    weapon_id: Optional[int], stat: StatData
+) -> Optional[WeaponData]:
     weapon = None
     weapon_id = weapon_id
     item: Optional[ItemData] = get_inventory_item(weapon_id, stat)
@@ -118,17 +119,17 @@ def dungeon_player_dto_to_state(player_dto: DungeonPlayerDto) -> DungeonPlayerSt
     stats = player_dto.stats
     skillIds = player_dto.skillIds
     inventory_ids = player_dto.inventory
-    
+
     skills = get_skills(skillIds)
-    inventory:List[ItemData] = get_inventory_items(inventory_ids, stats)
-    weapon = _weapon_id_to_data(player_dto.weaponId, stat = stats)
+    inventory: List[ItemData] = get_inventory_items(inventory_ids, stats)
+    weapon = _weapon_id_to_data(player_dto.weaponId, stat=stats)
 
     return DungeonPlayerState(
         playerId=playerId,
         heroineId=heroineId,
         currRoomId=currRoomId,
         difficulty=difficulty,
-        stats= stats,
+        stats=stats,
         skills=skills,
         inventory=inventory,
         weapon=weapon,
@@ -157,9 +158,11 @@ def interaction(request: InteractionRequest):
     question = request.question
     player = request.dungeonPlayer
     inventory = player.inventory
-    
+
     weapon = _weapon_id_to_data(player.weaponId, player.stats)
-    response = fairy_interaction(player.stats, inventory, question, weapon)
+    response = fairy_interaction(
+        player.playerId, player.heroineId, player.stats, inventory, question, weapon
+    )
 
     useItemId = response["useItemId"]
     roomLight = response["roomLight"]
@@ -175,7 +178,7 @@ async def talk_guild(request: TalkGuildRequest):
     """정령 - 길드 대화"""
     playerId = request.playerId
     question = request.question
-    
+
     heroine_id = request.heroine_id
     memory_progress = request.memory_progress
     sanity = request.sanity

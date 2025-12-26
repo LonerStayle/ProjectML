@@ -11,10 +11,10 @@ from agents.fairy.fairy_state import DungeonPlayerState
 
 from core.game_dto.WeaponData import WeaponData
 from core.game_dto.StatData import StatData
+from agents.fairy.memory_messages import get_fairy_messages_dungeon
 
-dungeon_memory = MemorySaver()
-dungeon_graph = dungeon_builder.compile(dungeon_memory)
-
+dungeon_graph = dungeon_builder.compile()
+guild_graph = guild_builder.compile()
 
 async def fairy_dungeon_talk(
     dungeon_player: DungeonPlayerState,
@@ -28,9 +28,12 @@ async def fairy_dungeon_talk(
             "thread_id": playerId,
         }
     }
+    memories = get_fairy_messages_dungeon(
+        player_id=playerId, heroine_id=dungeon_player.heroineId, limit=4
+    )
     response = await dungeon_graph.ainvoke(
         {
-            "messages": [add_human_message(content=question)],
+            "messages": memories + [add_human_message(content=question)],
             "dungenon_player": dungeon_player,
             "target_monster_ids": target_monster_ids,
             "player_id": playerId,
@@ -53,8 +56,8 @@ async def fairy_dungeon_talk(
         return result
 
 
-guild_memory = MemorySaver()
-guild_graph = guild_builder.compile(guild_memory)
+
+
 
 
 async def fairy_guild_talk(
@@ -92,17 +95,21 @@ interaction_graph = interaction_builder.compile()
 
 
 def fairy_interaction(
+    player_id:str,
+    heroine_id:int,
     stats:StatData,
     inventory: List[int],
     question: str,
     weapon: Optional[WeaponData],
 ) -> dict:
-
+    memories = get_fairy_messages_dungeon(
+            player_id=player_id, heroine_id=heroine_id, limit=4
+    )
     myInventory = inventory
     response = interaction_graph.invoke(
         {   
 
-            "messages": [add_human_message(question)],
+            "messages": memories + [add_human_message(question)],
             "inventory": myInventory,
             "weapon": weapon,
             "stats":stats
