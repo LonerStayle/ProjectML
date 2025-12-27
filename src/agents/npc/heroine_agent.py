@@ -35,6 +35,7 @@ from agents.npc.base_npc_agent import (
     BaseNPCAgent,
     calculate_memory_progress,
     calculate_affection_change,
+    detect_memory_unlock,
 )
 from agents.npc.emotion_mapper import heroine_emotion_to_int
 from db.redis_manager import redis_manager
@@ -241,6 +242,34 @@ class HeroineAgent(BaseNPCAgent):
             lines.append(f"- 과거: {change['old']} -> 현재: {change['new']}")
 
         return "\n".join(lines) + "\n"
+
+    def _format_newly_unlocked_scenario(self, scenario_content: Optional[str]) -> str:
+        """방금 해금된 시나리오를 프롬프트용 문자열로 포맷
+
+        호감도 변화로 memoryProgress 임계값을 넘어 기억이 해금되었을 때 사용합니다.
+
+        Args:
+            scenario_content: 해금된 시나리오 내용 또는 None
+
+        Returns:
+            포맷된 문자열 또는 빈 문자열
+        """
+        if not scenario_content:
+            return ""
+
+        lines = [
+            "<must_include>",
+            "<memory_content>",
+            scenario_content,
+            "</memory_content>",
+            "- 이 기억이 방금 떠올랐습니다.",
+            "- 페르소나에 맞는 말투로 '<memory_content>에 대한 기억이 돌아왔다' 라고 반드시 언급하세요.",
+            "</must_include>",
+        ]
+
+        return (
+            "\n".join(lines) + "\n"
+        )  # join은 문자와 문자 사이에 작용하므로 + "\n"은 마지막 문자 뒤에 줄바꿈 추가
 
     def _format_persona(
         self, persona: Dict[str, Any], affection: int, sanity: int
@@ -748,6 +777,37 @@ class HeroineAgent(BaseNPCAgent):
                 f"[DEBUG] 히로인 대화 검색 결과: {heroine_conversation[:200] if heroine_conversation else 'None'}..."
             )
 
+        # 5. 기억 해금 감지 (호감도 변화로 memoryProgress 임계값 넘는지 확인)
+        newly_unlocked_scenario = None
+        current_affection = state.get("affection", 0)
+        current_memory_progress = state.get("memoryProgress", 0)
+        npc_id = state["npc_id"]
+
+        # 예상 new_affection 계산
+        expected_new_affection = max(0, min(100, current_affection + affection_delta))
+
+        # 예상 new_memory_progress 계산
+        expected_new_progress = calculate_memory_progress(
+            expected_new_affection, current_memory_progress, affection_delta
+        )
+
+        # 새로 해금되는 임계값 감지
+        unlocked_threshold = detect_memory_unlock(
+            current_memory_progress, expected_new_progress
+        )
+
+        if unlocked_threshold is not None:
+            t4 = time.time()
+            scenario = heroine_scenario_service.get_scenario_by_exact_progress(
+                heroine_id=npc_id, memory_progress=unlocked_threshold
+            )
+            if scenario:
+                newly_unlocked_scenario = scenario.get("content", "")
+                print(
+                    f"[DEBUG] 기억 해금 감지! threshold={unlocked_threshold}, title={scenario.get('title', 'N/A')}"
+                )
+            print(f"[TIMING] 해금 시나리오 조회: {time.time() - t4:.3f}s")
+
         print(f"[TIMING] 컨텍스트 준비 총합: {time.time() - total_start:.3f}s")
         return {
             "affection_delta": affection_delta,
@@ -757,6 +817,7 @@ class HeroineAgent(BaseNPCAgent):
             "unlocked_scenarios": unlocked_scenarios,
             "heroine_conversation": heroine_conversation,
             "preference_changes": preference_changes,
+            "newly_unlocked_scenario": newly_unlocked_scenario,
         }
 
     def _build_full_prompt(
@@ -815,6 +876,7 @@ class HeroineAgent(BaseNPCAgent):
 - [페르소나]에 충실하게 답변하세요.
 - 같은 질문이 반복되어도 과거 답변 문장을 그대로 복사하지 않습니다.
 - 반드시 [현재 호감도 레벨], [페르소나], [호감도 변화 정보], [장기 기억 (검색 결과)], [해금된 시나리오], [플레이어 메세지]를 근거로 새로 답합니다.
+- <must_include>이 있으면 반드시 언급해야 합니다.
 
 [답변 결정 절차 - 반드시 준수]
 1) 질문 유형 판별 (두 가지로 구분)
@@ -842,6 +904,7 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
 5) 출력/말투 규칙
 - 캐릭터 말투와 성격을 일관되게 유지합니다.
 - text는 반드시 30자 이내로 답합니다.
+- 순수하게 페르소나에 입각해서 캐릭터의 대사만 출력하세요 
 - `멘토`는 현재 당신에게 말을 거는 플레이어입니다.
 
 [페르소나 규칙]
@@ -888,6 +951,8 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
 {self._format_preference_changes(context.get('preference_changes', []))}
 [해금된 시나리오]
 {context.get('unlocked_scenarios', '없음')}
+
+{self._format_newly_unlocked_scenario(context.get('newly_unlocked_scenario'))}
 
 [다른 히로인과의 최근 대화]
 {context.get('heroine_conversation', '없음')}
@@ -1174,7 +1239,41 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
         affection_delta, used_keyword = await self._analyze_keywords(state)
         print(f"[TIMING] 키워드 분석: {time.time() - t:.3f}s")
         print(f"[DEBUG] affection_delta={affection_delta}, used_keyword={used_keyword}")
-        return {"affection_delta": affection_delta, "used_liked_keyword": used_keyword}
+
+        # 기억 해금 감지
+        newly_unlocked_scenario = None
+        current_affection = state.get("affection", 0)
+        current_memory_progress = state.get("memoryProgress", 0)
+        npc_id = state["npc_id"]
+
+        # 예상 new_affection 및 new_memory_progress 계산
+        expected_new_affection = max(0, min(100, current_affection + affection_delta))
+        expected_new_progress = calculate_memory_progress(
+            expected_new_affection, current_memory_progress, affection_delta
+        )
+
+        # 새로 해금되는 임계값 감지
+        unlocked_threshold = detect_memory_unlock(
+            current_memory_progress, expected_new_progress
+        )
+
+        if unlocked_threshold is not None:
+            t2 = time.time()
+            scenario = heroine_scenario_service.get_scenario_by_exact_progress(
+                heroine_id=npc_id, memory_progress=unlocked_threshold
+            )
+            if scenario:
+                newly_unlocked_scenario = scenario.get("content", "")
+                print(
+                    f"[DEBUG] 기억 해금 감지! threshold={unlocked_threshold}, title={scenario.get('title', 'N/A')}"
+                )
+            print(f"[TIMING] 해금 시나리오 조회: {time.time() - t2:.3f}s")
+
+        return {
+            "affection_delta": affection_delta,
+            "used_liked_keyword": used_keyword,
+            "newly_unlocked_scenario": newly_unlocked_scenario,
+        }
 
     async def _router_node(self, state: HeroineState) -> dict:
         """의도 분류 노드"""
@@ -1259,10 +1358,13 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
             "unlocked_scenarios": state.get("unlocked_scenarios", "없음"),
             "heroine_conversation": state.get("heroine_conversation", "없음"),
             "preference_changes": state.get("preference_changes", []),
+            "newly_unlocked_scenario": state.get("newly_unlocked_scenario"),
         }
         print(
             f"[DEBUG] generate 노드 - unlocked_scenarios: {context['unlocked_scenarios'][:200] if context['unlocked_scenarios'] != '없음' else '없음'}..."
         )
+        if context["newly_unlocked_scenario"]:
+            print(f"[DEBUG] generate 노드 - newly_unlocked_scenario 존재 (기억 해금됨)")
 
         # 프롬프트 생성 및 LLM 호출
         t1 = time.time()

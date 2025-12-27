@@ -79,6 +79,7 @@ class HeroineState(NPCState):
 
     recent_used_keywords: List[str]  # 최근 5턴 내 사용된 좋아하는 키워드
     used_liked_keyword: Optional[str]  # 이번 턴에 사용된 좋아하는 키워드
+    newly_unlocked_scenario: Optional[str]  # 방금 해금된 시나리오 내용
 
 
 class SageState(NPCState):

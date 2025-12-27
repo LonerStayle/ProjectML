@@ -27,6 +27,7 @@ from db.session_checkpoint_manager import session_checkpoint_manager
 from agents.npc.npc_state import NPCState
 from enums.LLM import LLM
 
+
 class BaseNPCAgent(ABC):
     """NPC Agent 기본 클래스 (추상 클래스)
 
@@ -414,3 +415,33 @@ def calculate_sanity_change(
     new_sanity = max(0, min(100, new_sanity))
 
     return new_sanity - current_sanity
+
+
+# ============================================
+# 기억 해금 관련 상수 및 함수
+# ============================================
+
+# 기억 해금 임계값 목록 (DB 시나리오 memory_progress 값과 일치해야 함)
+MEMORY_THRESHOLDS = [10, 50, 60, 70, 80, 100]
+
+
+def detect_memory_unlock(old_progress: int, new_progress: int) -> Optional[int]:
+    """기억 해금 감지
+
+    old_progress와 new_progress 사이에 새로 넘어간 임계값이 있는지 확인합니다.
+    여러 임계값을 넘었을 경우 가장 높은 값만 반환합니다.
+
+    Args:
+        old_progress: 이전 기억 진척도
+        new_progress: 새로운 기억 진척도
+
+    Returns:
+        새로 해금된 임계값 (없으면 None)
+    """
+    unlocked_threshold = None
+
+    for threshold in MEMORY_THRESHOLDS:
+        if old_progress < threshold <= new_progress:
+            unlocked_threshold = threshold
+
+    return unlocked_threshold

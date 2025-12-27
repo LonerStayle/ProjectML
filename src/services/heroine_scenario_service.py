@@ -454,6 +454,41 @@ class HeroineScenarioService:
                 return dict(row._mapping)
             return None
 
+    def get_scenario_by_exact_progress(
+        self, heroine_id: int, memory_progress: int
+    ) -> Optional[dict]:
+        """정확한 임계값의 시나리오 조회
+
+        특정 memory_progress 임계값에 해당하는 시나리오를 반환합니다.
+        기억 해금 시 해당 시나리오를 프롬프트에 포함시킬 때 사용됩니다.
+
+        Args:
+            heroine_id: 히로인 ID
+            memory_progress: 정확한 기억 진척도 임계값 (10, 50, 60, 70, 80, 90)
+
+        Returns:
+            해당 임계값의 시나리오 또는 None
+        """
+        sql = text(
+            """
+            SELECT id, title, content, memory_progress
+            FROM heroine_scenarios
+            WHERE heroine_id = :heroine_id
+              AND memory_progress = :progress
+            LIMIT 1
+        """
+        )
+
+        with self.engine.connect() as conn:
+            result = conn.execute(
+                sql, {"heroine_id": heroine_id, "progress": memory_progress}
+            )
+            row = result.fetchone()
+
+            if row:
+                return dict(row._mapping)
+            return None
+
 
 # 싱글톤 인스턴스
 heroine_scenario_service = HeroineScenarioService()
