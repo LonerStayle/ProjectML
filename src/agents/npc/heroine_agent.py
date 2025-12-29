@@ -188,6 +188,7 @@ class HeroineAgent(BaseNPCAgent):
             "conversation_buffer": [],  # 최근 대화 목록 (최대 20개)
             "short_term_summary": "",  # 단기 요약
             "recent_used_keywords": [],  # 최근 5턴 내 사용된 좋아하는 키워드
+            "recently_unlocked_memory": None,  # 최근 해금된 기억 (TTL 기반)
             "state": {
                 "affection": 0,  # 호감도 (0-100)
                 "sanity": 100,  # 정신력 (0-100)
@@ -389,13 +390,59 @@ class HeroineAgent(BaseNPCAgent):
 
         return affection_delta, used_keyword
 
+    def _format_recent_turns(self, conversation_buffer: list) -> str:
+        """최근 대화를 포맷팅
+
+        Args:
+            conversation_buffer: 대화 버퍼 리스트
+
+        Returns:
+            포맷된 대화 문자열
+        """
+        if not conversation_buffer:
+            return "없음"
+
+        lines = []
+        for item in conversation_buffer:
+            role = "플레이어" if item.get("role") == "user" else "히로인"
+            content = item.get("content", "")
+            lines.append(f"{role}: {content}")
+
+        return "\n".join(lines)
+
+    def _format_recently_unlocked_memory(
+        self, recently_unlocked: Optional[dict]
+    ) -> str:
+        """최근 해금된 기억 정보를 포맷팅
+
+        Args:
+            recently_unlocked: 최근 해금된 기억 딕셔너리
+
+        Returns:
+            포맷된 문자열 또는 빈 문자열
+        """
+        if not recently_unlocked:
+            return ""
+
+        return f"""
+<recently_unlocked_memory>
+- memory_progress: {recently_unlocked.get('memory_progress', 0)}
+- 제목: {recently_unlocked.get('title', '')}
+- 키워드: {recently_unlocked.get('keywords', [])}
+- 남은 턴: {recently_unlocked.get('ttl_turns', 0)}턴
+</recently_unlocked_memory>
+"""
+
     async def _classify_intent(self, state: HeroineState) -> str:
-        """의도 분류
+        """의도 분류 (최근 3턴 맥락 포함)
 
         사용자 메시지의 의도를 분류합니다:
         - general: 일반 대화
         - memory_recall: 과거 대화/경험 질문 (User Memory 검색)
         - scenario_inquiry: 히로인 과거/비밀 질문 (시나리오 DB 검색)
+
+        최근 3턴 대화와 최근 해금된 기억 정보를 참조하여
+        "그때", "그거" 같은 지시어가 포함된 꼬리질문도 처리합니다.
 
         Args:
             state: 현재 상태
@@ -404,14 +451,24 @@ class HeroineAgent(BaseNPCAgent):
             의도 문자열
         """
         user_message = state["messages"][-1].content
-        conversation_context = state.get("short_term_summary", "")
 
-        prompt = f"""다음 플레이어 메시지의 의도를 분류하세요.
+        # 최근 3턴 대화 가져오기 (6개 메시지 = 3턴)
+        conversation_buffer = state.get("conversation_buffer", [])
+        recent_turns = conversation_buffer[-6:]
+        recent_dialogue = self._format_recent_turns(recent_turns)
 
-<recent_conversation_context>
-{conversation_context}
-</recent_conversation_context>
+        # 최근 해금된 기억 정보
+        recently_unlocked = state.get("recently_unlocked_memory")
+        unlocked_context = self._format_recently_unlocked_memory(recently_unlocked)
 
+        prompt = f"""
+        <GOAL>
+        다음 <player_message>의 의도를 분류하세요.
+        </GOAL>
+<recent_dialogue>
+{recent_dialogue}
+</recent_dialogue>
+{unlocked_context}
 <player_message>
 {user_message}
 </player_message>
@@ -420,6 +477,8 @@ class HeroineAgent(BaseNPCAgent):
 - general: 일상 대화, 감정 표현, 질문 없는 대화
 - memory_recall: 플레이어와 히로인이 함께 나눈 과거 대화/경험, 다른 히로인에 대한 의견/평가 질문 ("루파메스 어때?", "레티아를 어떻게 생각해?")
 - scenario_inquiry: 히로인 본인의 신상정보 (고향, 어린시절, 가족), 히로인의 과거, 기억 상실 전 이야기, 정체성. "최근에 돌아온 기억", "새로 기억난 거" 같은 질문도 포함
+  - "그때", "그거", "방금 말한 거" 같은 지시어가 최근 히로인 발화의 기억/과거 이야기를 가리키면 scenario_inquiry
+  - 최근 해금된 기억이 있고 그것과 관련된 질문이면 scenario_inquiry
 - heroine_recall: 다른 히로인과 나눈 대화 내용 질문 ("루파메스랑 뭐 얘기했어?", "레티아와 무슨 대화 했어?", "로코한테 뭐라고 했어?")
 </classification_rules>
 
@@ -427,6 +486,9 @@ class HeroineAgent(BaseNPCAgent):
 반드시 general, memory_recall, scenario_inquiry, heroine_recall 중 하나만 출력하세요.
 </output>
 """
+
+        # 의도 분류 프롬프트 로그 출력
+        print(f"[INTENT_PROMPT]\n{prompt}\n{'='*50}")
 
         response = await self.intent_llm.ainvoke(prompt)
         intent = response.content.strip().lower()
@@ -440,6 +502,7 @@ class HeroineAgent(BaseNPCAgent):
         ]:
             intent = "general"
 
+        print(f"[INTENT_RESULT] {intent}")
         return intent
 
     async def _retrieve_memory(self, state: HeroineState) -> str:
@@ -585,11 +648,42 @@ class HeroineAgent(BaseNPCAgent):
         ]
         return any(keyword in message for keyword in recent_memory_keywords)
 
+    def _is_follow_up_question(self, message: str) -> bool:
+        """꼬리질문(지시어 포함)인지 확인
+
+        "그때", "그거" 같은 지시어가 포함된 질문을 감지합니다.
+
+        Args:
+            message: 사용자 메시지
+
+        Returns:
+            꼬리질문 여부
+        """
+        follow_up_keywords = [
+            "그때",
+            "그거",
+            "그게",
+            "그건",
+            "방금",
+            "아까",
+            "그것",
+            "그 이야기",
+            "그 기억",
+            "더 알려줘",
+            "더 말해줘",
+            "자세히",
+        ]
+        return any(keyword in message for keyword in follow_up_keywords)
+
     async def _retrieve_scenario(self, state: HeroineState) -> str:
         """시나리오 DB 검색
 
         현재 기억진척도 이하로 해금된 시나리오를 검색합니다.
-        "최근에 돌아온 기억" 같은 질문이면 가장 최근 해금된 시나리오를 반환합니다.
+
+        우선순위:
+        1. recently_unlocked_memory가 있고 꼬리질문이면 -> 해당 시나리오 우선
+        2. "최근에 돌아온 기억" 질문이면 -> 가장 최근 해금된 시나리오
+        3. 일반 시나리오 질문 -> PGroonga + Vector 하이브리드 검색
 
         Args:
             state: 현재 상태
@@ -601,7 +695,21 @@ class HeroineAgent(BaseNPCAgent):
         npc_id = state["npc_id"]
         memory_progress = state.get("memoryProgress", 0)
 
-        # 최근 기억 질문이면 가장 최근 해금된 시나리오 반환
+        # 1. recently_unlocked_memory가 있고 꼬리질문이면 해당 시나리오 우선 검색
+        recently_unlocked = state.get("recently_unlocked_memory")
+        if recently_unlocked and self._is_follow_up_question(user_message):
+            unlocked_progress = recently_unlocked.get("memory_progress")
+            if unlocked_progress is not None:
+                scenario = heroine_scenario_service.get_scenario_by_exact_progress(
+                    heroine_id=npc_id, memory_progress=unlocked_progress
+                )
+                if scenario:
+                    print(
+                        f"[DEBUG] 꼬리질문 감지 - recently_unlocked_memory 시나리오 반환: {scenario.get('title', 'N/A')}"
+                    )
+                    return scenario["content"]
+
+        # 2. 최근 기억 질문이면 가장 최근 해금된 시나리오 반환
         if self._is_recent_memory_question(user_message):
             latest_scenario = heroine_scenario_service.get_latest_unlocked_scenario(
                 heroine_id=npc_id,
@@ -614,7 +722,7 @@ class HeroineAgent(BaseNPCAgent):
                 return latest_scenario["content"]
             return "해금된 시나리오 없음"
 
-        # 일반 시나리오 질문은 PGroonga + Vector 하이브리드 검색
+        # 3. 일반 시나리오 질문은 PGroonga + Vector 하이브리드 검색
         scenarios = heroine_scenario_service.search_scenarios_pgroonga(
             query=user_message,
             heroine_id=npc_id,
@@ -777,8 +885,9 @@ class HeroineAgent(BaseNPCAgent):
                 f"[DEBUG] 히로인 대화 검색 결과: {heroine_conversation[:200] if heroine_conversation else 'None'}..."
             )
 
-        # 5. 기억 해금 감지 (호감도 변화로 memoryProgress 임계값 넘는지 확인)
+        # 5. 기억 해금 감지 및 recently_unlocked_memory TTL 관리
         newly_unlocked_scenario = None
+        recently_unlocked_memory = None
         current_affection = state.get("affection", 0)
         current_memory_progress = state.get("memoryProgress", 0)
         npc_id = state["npc_id"]
@@ -797,16 +906,45 @@ class HeroineAgent(BaseNPCAgent):
         )
 
         if unlocked_threshold is not None:
+            # 새로 기억 해금됨
             t4 = time.time()
             scenario = heroine_scenario_service.get_scenario_by_exact_progress(
                 heroine_id=npc_id, memory_progress=unlocked_threshold
             )
             if scenario:
                 newly_unlocked_scenario = scenario.get("content", "")
+                # recently_unlocked_memory 생성 (TTL 5턴)
+                recently_unlocked_memory = {
+                    "memory_progress": unlocked_threshold,
+                    "title": scenario.get("title", ""),
+                    "keywords": scenario.get("metadata", {}).get("keywords", []),
+                    "unlocked_at": datetime.now().isoformat(),
+                    "ttl_turns": 5,
+                }
                 print(
                     f"[DEBUG] 기억 해금 감지! threshold={unlocked_threshold}, title={scenario.get('title', 'N/A')}"
                 )
+                print(
+                    f"[DEBUG] recently_unlocked_memory 생성: keywords={recently_unlocked_memory['keywords']}"
+                )
             print(f"[TIMING] 해금 시나리오 조회: {time.time() - t4:.3f}s")
+        else:
+            # 기존 recently_unlocked_memory TTL 관리
+            existing_memory = state.get("recently_unlocked_memory")
+            if existing_memory:
+                ttl = existing_memory.get("ttl_turns", 0) - 1
+                if ttl > 0:
+                    # TTL 감소해서 유지
+                    recently_unlocked_memory = {
+                        "memory_progress": existing_memory.get("memory_progress"),
+                        "title": existing_memory.get("title", ""),
+                        "keywords": existing_memory.get("keywords", []),
+                        "unlocked_at": existing_memory.get("unlocked_at", ""),
+                        "ttl_turns": ttl,
+                    }
+                    print(f"[DEBUG] recently_unlocked_memory TTL 감소: {ttl}턴 남음")
+                else:
+                    print("[DEBUG] recently_unlocked_memory TTL 만료, 삭제됨")
 
         print(f"[TIMING] 컨텍스트 준비 총합: {time.time() - total_start:.3f}s")
         return {
@@ -818,6 +956,7 @@ class HeroineAgent(BaseNPCAgent):
             "heroine_conversation": heroine_conversation,
             "preference_changes": preference_changes,
             "newly_unlocked_scenario": newly_unlocked_scenario,
+            "recently_unlocked_memory": recently_unlocked_memory,
         }
 
     def _build_full_prompt(
@@ -1054,6 +1193,19 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
                 recent_keywords.append(used_keyword)
             session["recent_used_keywords"] = recent_keywords[-5:]
 
+            # recently_unlocked_memory Redis 세션 동기화
+            recently_unlocked = context.get("recently_unlocked_memory")
+            if recently_unlocked:
+                session["recently_unlocked_memory"] = recently_unlocked
+                print(
+                    f"[DEBUG] Redis에 recently_unlocked_memory 저장: ttl={recently_unlocked.get('ttl_turns', 0)}"
+                )
+            else:
+                # TTL 만료시 삭제
+                if "recently_unlocked_memory" in session:
+                    del session["recently_unlocked_memory"]
+                    print("[DEBUG] Redis에서 recently_unlocked_memory 삭제 (TTL 만료)")
+
             # turn_count 업데이트
             turn_count = session.get("turn_count", 0) + 1
             session["turn_count"] = turn_count
@@ -1232,7 +1384,10 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
     # ============================================
 
     async def _keyword_analyze_node(self, state: HeroineState) -> dict:
-        """키워드 분석 노드"""
+        """키워드 분석 노드
+
+        기억 해금 및 recently_unlocked_memory TTL 관리를 수행합니다.
+        """
         import time
 
         t = time.time()
@@ -1242,6 +1397,7 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
 
         # 기억 해금 감지
         newly_unlocked_scenario = None
+        recently_unlocked_memory = None
         current_affection = state.get("affection", 0)
         current_memory_progress = state.get("memoryProgress", 0)
         npc_id = state["npc_id"]
@@ -1258,21 +1414,52 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
         )
 
         if unlocked_threshold is not None:
+            # 새로 기억 해금됨
             t2 = time.time()
             scenario = heroine_scenario_service.get_scenario_by_exact_progress(
                 heroine_id=npc_id, memory_progress=unlocked_threshold
             )
             if scenario:
                 newly_unlocked_scenario = scenario.get("content", "")
+                # recently_unlocked_memory 생성 (TTL 5턴)
+                recently_unlocked_memory = {
+                    "memory_progress": unlocked_threshold,
+                    "title": scenario.get("title", ""),
+                    "keywords": scenario.get("metadata", {}).get("keywords", []),
+                    "unlocked_at": datetime.now().isoformat(),
+                    "ttl_turns": 5,
+                }
                 print(
                     f"[DEBUG] 기억 해금 감지! threshold={unlocked_threshold}, title={scenario.get('title', 'N/A')}"
                 )
+                print(
+                    f"[DEBUG] recently_unlocked_memory 생성: keywords={recently_unlocked_memory['keywords']}"
+                )
             print(f"[TIMING] 해금 시나리오 조회: {time.time() - t2:.3f}s")
+        else:
+            # 기존 recently_unlocked_memory TTL 관리
+            existing_memory = state.get("recently_unlocked_memory")
+            if existing_memory:
+                ttl = existing_memory.get("ttl_turns", 0) - 1
+                if ttl > 0:
+                    # TTL 감소해서 유지
+                    recently_unlocked_memory = {
+                        "memory_progress": existing_memory.get("memory_progress"),
+                        "title": existing_memory.get("title", ""),
+                        "keywords": existing_memory.get("keywords", []),
+                        "unlocked_at": existing_memory.get("unlocked_at", ""),
+                        "ttl_turns": ttl,
+                    }
+                    print(f"[DEBUG] recently_unlocked_memory TTL 감소: {ttl}턴 남음")
+                else:
+                    # TTL 만료
+                    print("[DEBUG] recently_unlocked_memory TTL 만료, 삭제됨")
 
         return {
             "affection_delta": affection_delta,
             "used_liked_keyword": used_keyword,
             "newly_unlocked_scenario": newly_unlocked_scenario,
+            "recently_unlocked_memory": recently_unlocked_memory,
         }
 
     async def _router_node(self, state: HeroineState) -> dict:
@@ -1412,6 +1599,7 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
         context = {
             "affection_delta": state.get("affection_delta", 0),
             "used_liked_keyword": state.get("used_liked_keyword"),
+            "recently_unlocked_memory": state.get("recently_unlocked_memory"),
         }
         print(
             f"[DEBUG] post_process - affection_delta from state: {context['affection_delta']}"
