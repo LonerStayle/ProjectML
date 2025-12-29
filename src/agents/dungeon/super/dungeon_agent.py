@@ -108,7 +108,9 @@ def merge_results_node(state: SuperDungeonState) -> Dict[str, Any]:
     """
     print("\n[Merge Node] 결과 병합 시작...")
 
+
     # 1. 각 Agent 결과 가져오기
+    # Monster Agent의 결과(rooms[].monsters)를 무조건 덮어쓴다 (중복/합산 방지)
     filled_dungeon = state.get("filled_dungeon_data", {})
     event_result = state.get("event_result", {})
     difficulty_log = state.get("difficulty_log", {})
@@ -117,6 +119,8 @@ def merge_results_node(state: SuperDungeonState) -> Dict[str, Any]:
     sanitized_dungeon = copy.deepcopy(filled_dungeon)
     for room in sanitized_dungeon.get("rooms", []):
         room.pop("position", None)
+        # 몬스터 배치는 Monster Agent 결과만 반영 (event 등에서 추가된 몬스터가 있으면 무시)
+        # (이미 filled_dungeon이 Monster Agent 결과이므로 별도 합산/append 금지)
 
     # 2. 몬스터 통계 계산
     total_monsters = 0

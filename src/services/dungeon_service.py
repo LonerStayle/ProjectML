@@ -1161,12 +1161,48 @@ class DungeonService:
                     "error": f"다음 층({next_floor}층)의 raw_map 또는 balanced_map이 없습니다. 먼저 /nextfloor로 raw_map을 저장하세요.",
                 }
 
+            # Defensive normalization for the next-floor map and rooms
+            try:
+                normalized_next_floor_map = _normalize_room_keys(
+                    next_floor_raw_map if isinstance(next_floor_raw_map, dict) else {}
+                )
+            except Exception:
+                normalized_next_floor_map = next_floor_raw_map or {}
+
+            # Ensure player_count is available for agent nodes (fallbacks to 1)
+            try:
+                pids = player_ids_list if isinstance(player_ids_list, list) else normalized_next_floor_map.get(
+                    "player_ids", []
+                )
+                player_count = len(pids) if isinstance(pids, list) and len(pids) > 0 else 1
+            except Exception:
+                player_count = 1
+
+            # Ensure every room has a numeric 'size'. If missing, fill with the rooms' average size or 4.
+            import math
+
+            rooms_for_agent = normalized_next_floor_map.get("rooms", []) or []
+            sizes = [r.get("size") for r in rooms_for_agent if isinstance(r.get("size"), (int, float))]
+            if sizes:
+                avg_size = int(round(sum(sizes) / len(sizes)))
+            else:
+                avg_size = 4
+            for r in rooms_for_agent:
+                if not isinstance(r.get("size"), (int, float)):
+                    r["size"] = avg_size
+
+            # Attach player_count back into the normalized map for downstream nodes
+            normalized_next_floor_map["player_ids"] = pids if isinstance(pids, list) else []
+            normalized_next_floor_map["player_count"] = player_count
+
             agent_state = {
                 "dungeon_base_data": {
                     "dungeon_id": next_floor_id,
                     "floor_count": next_floor,
-                    "rooms": next_floor_raw_map.get("rooms", []),
+                    "rooms": rooms_for_agent,
+                    "player_count": player_count,
                 },
+                "player_count": player_count,
                 "heroine_data": heroine_data,
                 "heroine_stat": heroine_stat,
                 "heroine_memories": heroine_memories,
@@ -1177,11 +1213,9 @@ class DungeonService:
                 "filled_dungeon_data": {},
                 "difficulty_log": {},
                 "final_dungeon_json": {},
-                # 이벤트 노드 생략 플래그 (던전 밸런스 API에서는 True)
                 "skip_event_node": True,
             }
 
-            # Super Agent 실행 (연결 블록 외외에서 - DB 연결 점유 안함)
             print(
                 f"\n[Dungeon {next_floor_id}] Super Agent 실행 중 (Floor {next_floor})..."
             )
