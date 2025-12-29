@@ -9,7 +9,9 @@ class IntentType(StrEnum):
     GENERAL = "general"  # 일반 대화
     MEMORY_RECALL = "memory_recall"  # 과거 회상 (user_memories + npc_npc_memories 검색)
     SCENARIO_INQUIRY = "scenario_inquiry"  # 시나리오 질문 (heroine_scenarios 검색)
-    HEROINE_RECALL = "heroine_recall"  # 다른 히로인과 나눈 대화 내용 질문 (npc_npc_checkpoints)
+    HEROINE_RECALL = (
+        "heroine_recall"  # 다른 히로인과 나눈 대화 내용 질문 (npc_npc_checkpoints)
+    )
 
 
 class EmotionType(StrEnum):
@@ -32,6 +34,21 @@ class EmotionType(StrEnum):
     ANGRY = "angry"  # 4
     SURPRISE = "surprise"  # 5
     MYSTERIOUS = "mysterious"  # 6
+
+
+class RecentlyUnlockedMemory(TypedDict):
+    """최근 해금된 기억 정보 (꼬리질문 처리용)
+
+    기억이 해금된 후 5턴 동안 유지되어
+    "그때", "그거" 같은 지시어가 포함된 꼬리질문에서
+    해당 기억을 참조할 수 있게 합니다.
+    """
+
+    memory_progress: int  # 해금된 memory_progress 값
+    title: str  # 시나리오 제목 (간단 요약)
+    keywords: list  # 핵심 키워드 ["숲", "어린시절"]
+    unlocked_at: str  # ISO timestamp
+    ttl_turns: int  # 남은 턴 수 (5턴 후 만료)
 
 
 class NPCState(TypedDict, total=False):
@@ -80,6 +97,9 @@ class HeroineState(NPCState):
     recent_used_keywords: List[str]  # 최근 5턴 내 사용된 좋아하는 키워드
     used_liked_keyword: Optional[str]  # 이번 턴에 사용된 좋아하는 키워드
     newly_unlocked_scenario: Optional[str]  # 방금 해금된 시나리오 내용
+    recently_unlocked_memory: Optional[
+        RecentlyUnlockedMemory
+    ]  # 최근 해금된 기억 (TTL 기반)
 
 
 class SageState(NPCState):

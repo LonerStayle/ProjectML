@@ -22,7 +22,6 @@ SYNONYM_MAP = {
     "비밀": ["숨기고 있는", "감추고 있는", "말하지 못한"],
 }
 
-# 하이브리드 검색 가중치
 BM25_WEIGHT = 0.4
 VECTOR_WEIGHT = 0.6
 
@@ -471,7 +470,7 @@ class HeroineScenarioService:
         """
         sql = text(
             """
-            SELECT id, title, content, memory_progress
+            SELECT id, title, content, memory_progress, metadata
             FROM heroine_scenarios
             WHERE heroine_id = :heroine_id
               AND memory_progress = :progress
