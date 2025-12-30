@@ -966,6 +966,7 @@ class DungeonService:
         player_data_list: List[Dict[str, Any]],
         monster_db: Dict[str, Any],
         used_events: List[Any] = None,
+        player_count: int = None,
     ) -> Dict[str, Any]:
         """
         Args:
@@ -993,7 +994,11 @@ class DungeonService:
                 if not isinstance(h_data, dict):
                     continue
 
-                if h_data.get("playerId") == first_player_id:
+                # Accept playerId either inside heroineData or at the top-level of pd
+                if (
+                    h_data.get("playerId") == first_player_id
+                    or pd.get("playerId") == first_player_id
+                ):
                     host_data_wrapper = pd
                     break
 
@@ -1010,12 +1015,40 @@ class DungeonService:
                 else {}
             )
 
-            # heroine_data 정규화
+            # heroine_data 정규화 (host) - keep for backward compatibility
             heroine_data = _normalize_heroine_data(host_data)
 
-            heroine_stat = host_data.get("heroineStat", {})
+            # Build heroine_stat list and heroine_data list for all players
+            heroine_stat_list: List[Any] = []
+            heroine_data_list: List[Dict[str, Any]] = []
+            try:
+                for pd in player_data_list:
+                    if not isinstance(pd, dict):
+                        continue
+                    hd = pd.get("heroineData", {}) or {}
+                    if isinstance(hd, dict):
+                        # normalize individual heroineData
+                        normalized_hd = _normalize_heroine_data(hd)
+                        heroine_data_list.append(normalized_hd)
+                        # extract heroineStat (may be under 'heroineStat' or 'heroine_stat')
+                        hs = hd.get("heroineStat") or hd.get("heroine_stat") or {}
+                        heroine_stat_list.append(hs if isinstance(hs, dict) else hs)
+            except Exception:
+                heroine_stat_list = [host_data.get("heroineStat", {})]
+                heroine_data_list = [heroine_data]
+
+            heroine_stat = heroine_stat_list
             heroine_memories = host_data.get("heroineMemories", [])
             dungeon_player_data = host_data.get("dungeonPlayerData", {})
+
+            # If explicit player_count was not provided, derive from player_data_list
+            if not isinstance(player_count, int) or player_count <= 0:
+                try:
+                    player_count = len(
+                        [p for p in player_data_list if isinstance(p, dict)]
+                    )
+                except Exception:
+                    player_count = 1
 
             # 1. 현재 진행 중인 던전 찾기 (first_player_id로)
             unfinished = self.repo.get_unfinished_dungeons(player_ids=[first_player_id])
@@ -1171,10 +1204,14 @@ class DungeonService:
 
             # Ensure player_count is available for agent nodes (fallbacks to 1)
             try:
-                pids = player_ids_list if isinstance(player_ids_list, list) else normalized_next_floor_map.get(
-                    "player_ids", []
+                pids = (
+                    player_ids_list
+                    if isinstance(player_ids_list, list)
+                    else normalized_next_floor_map.get("player_ids", [])
                 )
-                player_count = len(pids) if isinstance(pids, list) and len(pids) > 0 else 1
+                player_count = (
+                    len(pids) if isinstance(pids, list) and len(pids) > 0 else 1
+                )
             except Exception:
                 player_count = 1
 
@@ -1182,7 +1219,11 @@ class DungeonService:
             import math
 
             rooms_for_agent = normalized_next_floor_map.get("rooms", []) or []
-            sizes = [r.get("size") for r in rooms_for_agent if isinstance(r.get("size"), (int, float))]
+            sizes = [
+                r.get("size")
+                for r in rooms_for_agent
+                if isinstance(r.get("size"), (int, float))
+            ]
             if sizes:
                 avg_size = int(round(sum(sizes) / len(sizes)))
             else:
@@ -1192,7 +1233,9 @@ class DungeonService:
                     r["size"] = avg_size
 
             # Attach player_count back into the normalized map for downstream nodes
-            normalized_next_floor_map["player_ids"] = pids if isinstance(pids, list) else []
+            normalized_next_floor_map["player_ids"] = (
+                pids if isinstance(pids, list) else []
+            )
             normalized_next_floor_map["player_count"] = player_count
 
             agent_state = {

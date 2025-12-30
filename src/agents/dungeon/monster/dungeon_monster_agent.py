@@ -3,34 +3,19 @@ from enums.LLM import LLM
 from agents.dungeon.dungeon_state import DungeonMonsterState, MonsterStrategyParser
 from agents.dungeon.monster.monster_database import MONSTER_DATABASE, MonsterData
 from core.game_dto.StatData import StatData
-from typing import Dict, List, Tuple, Any
-
-
+from typing import Dict, List, Any
+from prompts.promptmanager import PromptManager
+from prompts.prompt_type.dungeon.DungeonPromptType import DungeonPromptType
 import random
 import math
 from agents.dungeon.monster.monster_tags import KEYWORD_MAP, keywords_to_tags
 
 llm = init_chat_model(model=LLM.GPT5_MINI, temperature=0.7)
 
-from prompts.promptmanager import PromptManager
-from prompts.prompt_type.dungeon.DungeonPromptType import DungeonPromptType
+
 
 
 def calculate_combat_score_node(state: DungeonMonsterState) -> DungeonMonsterState:
-    """
-    전투력을 계산하는 노드 (단일/멀티 플레이어 자동 감지)
-
-    전투력 계산식:
-    - HP 가중치: 0.3
-    - 공격력(strength + dexterity) 가중치: 0.4
-    - 공격속도 가중치: 0.15
-    - 치명타 확률 가중치: 0.1
-    - 스킬 데미지 배율 가중치: 0.05
-
-    Returns:
-        - 단일 플레이어: 해당 플레이어의 전투력
-        - 멀티 플레이어: 파티 평균 전투력
-    """
     heroine_stat = state.get("heroine_stat")
 
     if not heroine_stat:
@@ -88,7 +73,6 @@ def _calculate_single_combat_score(stat: StatData) -> float:
         hp_score + attack_score + attack_speed_score + crit_score + skill_damage_score
     )
 
-    # 추가: 스킬/키워드 보정 (stat.keywords: List[str] 또는 stat.skill_keywords)
     bonus = 0.0
     hero_keywords = []
     if hasattr(stat, "keywords") and stat.keywords:
@@ -96,7 +80,6 @@ def _calculate_single_combat_score(stat: StatData) -> float:
     elif hasattr(stat, "skill_keywords") and stat.skill_keywords:
         hero_keywords = list(stat.skill_keywords)
 
-    # 간단한 규칙: 원거리/근거리/빠른공격 등 키워드에 따라 보정
     hero_keywords_lower = [k.lower() for k in hero_keywords]
     if any("fast" in k or "빠른" in k for k in hero_keywords_lower):
         bonus += attack_speed_score * 0.15
@@ -109,10 +92,6 @@ def _calculate_single_combat_score(stat: StatData) -> float:
 
 
 def _ensure_stat_dict(stat: dict) -> dict:
-    """
-    Ensure the provided heroine stat dict contains required keys for StatData.
-    Fill sensible defaults for any missing fields to avoid Pydantic validation errors.
-    """
     if stat is None:
         stat = {}
     s = dict(stat)
@@ -234,8 +213,6 @@ def select_monsters_node(state: DungeonMonsterState) -> DungeonMonsterState:
     combat_score = state["combat_score"]
     llm_strategy = state["llm_strategy"]
     monster_db = state.get("monster_db", MONSTER_DATABASE)
-    # Accept multiple possible keys for incoming dungeon data: some callers use
-    # 'dungeon_data', others provide 'dungeon_base_data' or 'filled_dungeon_data'.
     dungeon_data = (
         state.get("dungeon_data")
         or state.get("dungeon_base_data")
@@ -271,9 +248,7 @@ def select_monsters_node(state: DungeonMonsterState) -> DungeonMonsterState:
 
     if rooms:
         dungeon_data["rooms"] = rooms
-
-    # infer player count: prefer explicit `player_count` in state (service injects),
-    # then heroine_stat list (multi-heroine), then dungeon_data player_ids, else 1
+        
     player_count = 1
     try:
         pc = state.get("player_count")
@@ -401,12 +376,17 @@ def select_monsters_node(state: DungeonMonsterState) -> DungeonMonsterState:
             ):
                 remaining = room_threat - threat_sum
 
-                # 우선: remaining 이하인 후보 중 가장 큰 threat 선택하여 작은 몬스터 여러 마리 채움
+                # 우선: remaining 이하인 후보 중 작은 몬스터 위주로 가중 랜덤 선택
                 cands = [m for m in normal_pool if m.threat_level <= remaining]
                 if cands:
-                    candidate = max(cands, key=lambda m: m.threat_level)
+                    try:
+                        max_t = max(m.threat_level for m in cands)
+                        weights = [(max_t - m.threat_level) + 0.1 for m in cands]
+                        candidate = random.choices(cands, weights=weights, k=1)[0]
+                    except Exception:
+                        candidate = min(cands, key=lambda m: m.threat_level)
                 else:
-                    # 없으면 남은 범위에 가장 근접한 몬스터(작은 몬스터) 선택
+                    # 없으면 남은 범위에 가장 근접한 몬스터(위협도 차이가 가장 작은) 선택
                     candidate = min(
                         normal_pool, key=lambda m: abs(m.threat_level - remaining)
                     )
@@ -735,6 +715,8 @@ def _place_monsters_in_rooms(
 
     # filled_dungeon의 rooms에서 room_id로 매칭하여 직접 수정
     rooms_by_id = {room["room_id"]: room for room in filled_dungeon["rooms"]}
+
+    # (no local avg_size/player_count fallback — use values from surrounding scope or callers)
 
     # 보스방에 보스 몬스터 배치 (최우선)
     if boss_rooms:
