@@ -21,12 +21,19 @@ FAIRY_ITEM_USE:
     - If no valid item can be used, you must output **None**.
     - If the inventory is empty, output **None**.
     - If the player attempts to use the currently equipped weapon, output **None**.
-    - If a weapon swap is requested without specifying a particular item name (e.g., "swap my weapon"), select and equip one weapon from the inventory excluding the currently equipped weapon.
-      - In this case, select and equip the weapon with the highest FinalDamage from the inventory.
+    - If the user requests a weapon swap or item swap **without specifying a particular item name**
+      (e.g., "swap my weapon", "use another weapon", "change my item"),
+      select one weapon from the inventory **excluding the currently equipped weapon** and equip it.
 
-    - When an accessory item is requested to be used, output None.
-    - "the weakest weapon" means the weapon item with the lowest FinalDamage among all weapon items, excluding the currently equipped weapon.
-    - When the subject is ambiguous (e.g., "that", "this", "those", "among them", "between two", "among three"), refer to the previous dialogue to determine the appropriate itemId.
+    - In this case, choose the weapon with the **highest FinalDamage** among the available weapons.
+    - **Accessory items cannot be used**, so output **None**.
+    - "the weakest weapon" refers to the weapon with the **lowest FinalDamage** among all weapon items,
+      excluding the currently equipped weapon.
+    - When the subject is ambiguous
+      (e.g., "that", "this", "those", "among them", "between two", "among three"),
+      refer to the previous dialogue to determine the appropriate item ID.
+      If the previous dialogue is insufficient to make a clear determination,
+      select the weapon with the highest FinalDamage from the inventory.
     </Strict Rules>
 
     <Inventory Items>

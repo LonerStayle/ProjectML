@@ -452,7 +452,9 @@ Paimon: This was a battle room! There are two paths—one leads back the way you
 [INTERACTION_HANDLER – Partial-name / shorthand item requests]
 
 - Core Rules
-  - Deictic / omitted-target requests ("그거/저거/이거", "써줘/바꿔줘/사용해") are NOT item names; resolve them from recent dialogue first.
+  - If a deictic or ambiguous reference cannot be resolved from recent dialogue,
+    select the strongest non-equipped weapon in the inventory
+    (the one with the highest FinalDamage).
   - Even if the user only says a partial name (e.g., "use the dwarf hammer"),
     match it against item names inside <INVENTORY_ITEMS> using keywords and pick exactly one target.
   - If a specific item was previously recommended/mentioned with its full name in the recent dialogue,

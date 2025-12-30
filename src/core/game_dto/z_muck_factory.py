@@ -75,7 +75,7 @@ class MockFactory:
     @staticmethod
     def create_yakk_weapon():
         return WeaponData(
-            weaponId=46, weaponType=3, weaponName="레어 드래곤슬레이어",
+            weaponId=20, weaponType=3, weaponName="레어 드래곤슬레이어",
             rarity=2, attackPower=21, staggerPower=5,
             modifier={"strength": 0.2, "dexterity": 0.8, "intelligence": 0}
         )
