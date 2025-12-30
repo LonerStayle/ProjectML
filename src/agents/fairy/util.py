@@ -206,7 +206,7 @@ def describe_dungeon_row(
         "empty": "an empty room with nothing inside",
         "monster": "a room where combat occurs",
         "event": "an event room where something special happens",
-        "treasure": "a room containing treasure",
+        "treasure": "a room where combat occurs",
         "boss": "a room where a boss awaits",
     }
 
@@ -214,7 +214,7 @@ def describe_dungeon_row(
         "empty": "Empty Room",
         "monster": "Combat Room",
         "event": "Event Room",
-        "treasure": "Treasure Room",
+        "treasure": "Combat Room",
         "boss": "Boss Room",
     }
 
@@ -268,6 +268,8 @@ def describe_dungeon_row(
     dungeon_lines.append("[Current Room]")
     dungeon_lines.append(f"- Room type: {room_type_en}")
     dungeon_lines.append(f"- Room size: {curr.get('size')}")
+    curr_monsters = curr.get("monsters") or []
+    dungeon_lines.append(f"- Monsters in current room: {len(curr_monsters)}")
 
     dungeon_lines.append("")
     dungeon_lines.append("[Rooms Connected to the Current Room]")
