@@ -1336,6 +1336,8 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
             )
 
             session = redis_manager.load_session(player_id, npc_id)
+            summary_list = []
+
             if session:
                 summary_list = session.get("summary_list", [])
                 summary_list.append(summary_item)
@@ -1346,7 +1348,8 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
                 session["summary_list"] = summary_list
 
                 redis_manager.save_session(player_id, npc_id, session)
-
+            else:
+                summary_list = [summary_item]
             session_checkpoint_manager.save_summary(player_id, npc_id, summary_list)
 
         except Exception as e:

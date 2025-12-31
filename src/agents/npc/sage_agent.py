@@ -814,6 +814,8 @@ B) 세계관/정보 질문: "던전이 뭐야?", "히로인들은 누구야?, "�
             )
 
             session = redis_manager.load_session(player_id, npc_id)
+            summary_list = []
+
             if session:
                 summary_list = session.get("summary_list", [])
                 summary_list.append(summary_item)
@@ -824,6 +826,8 @@ B) 세계관/정보 질문: "던전이 뭐야?", "히로인들은 누구야?, "�
                 session["summary_list"] = summary_list
 
                 redis_manager.save_session(player_id, npc_id, session)
+            else:
+                summary_list = [summary_item]
 
             session_checkpoint_manager.save_summary(player_id, npc_id, summary_list)
 
