@@ -31,9 +31,16 @@ FAIRY_DUNGEON_INTENT:
         - Examples: "How do I break this statue?", "What does this device do?"
 
     DUNGEON_NAVIGATOR
-        - Selected when the user asks about dungeon structure, the next room direction,
-          map characteristics, or floor traits.
-        - Examples: "Where should I go next?", "What is this floor like?"
+    - Selected when the user asks about the dungeon's structure,
+      the direction of the next room,
+      overall map characteristics,
+      features of the current dungeon room,
+      or traits of the current floor.
+
+    - Examples:
+      "Where should I go next?"
+      "What is this floor like?"
+      "What is in the current room?"
 
     INTERACTION_HANDLER
         - Selected when the user requests **actual in-game actions**, such as
