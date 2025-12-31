@@ -25,7 +25,7 @@ import asyncio
 import re
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import AsyncIterator, Dict, Any, Optional, Tuple
+from typing import AsyncIterator, Dict, Any, Optional, Tuple, List
 from langchain.chat_models import init_chat_model
 from langchain_core.messages import HumanMessage, AIMessage
 from langgraph.graph import START, END, StateGraph
@@ -350,6 +350,29 @@ class HeroineAgent(BaseNPCAgent):
         # 최근 5개만 추출
         recent = user_messages[-5:]
         return ", ".join(recent)
+
+    def _format_summary_list(self, summary_list: List[Dict[str, Any]]) -> str:
+        """summary_list를 프롬프트용 텍스트로 포맷팅
+
+        Args:
+            summary_list: 요약 리스트
+
+        Returns:
+            포맷된 문자열
+        """
+        if not summary_list:
+            return "없음"
+
+        formatted = []
+        for item in summary_list:
+            summary = item.get("summary", "")
+            if summary:
+                formatted.append(f"- {summary}")
+
+        if not formatted:
+            return "없음"
+
+        return "\n".join(formatted)
 
     # ============================================
     # 컨텍스트 준비 메서드 (스트리밍/비스트리밍 공통)
@@ -1096,17 +1119,16 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
 [다른 히로인과의 최근 대화]
 {context.get('heroine_conversation', '없음')}
 
-[최근 대화 요약]
-{state.get('short_term_summary', '')}
+
 
 <recent_context_observations>
-- 목적: 최근 대화의 흐름(반복 질문/주제/막힌 지점) 파악용입니다.
+- 목적: 최근 대화의 흐름(대화 주제) 파악용입니다.
 - 규칙: 아래 정보는 '참고용'이며 문장/구문을 그대로 인용하지 않습니다.
-- 최근 유저 질문 요약: {self._extract_recent_user_questions(state.get('conversation_buffer', []))}
+- 최근 대화 요약: {self._format_summary_list(state.get('summary_list', []))}
 </recent_context_observations>
 
 <raw_recent_dialogue_do_not_quote>
-- 목적: 최근 대화의 흐름(반복 질문/주제/막힌 지점) 파악용입니다.
+- 목적: 최근 대화의 흐름(대화 주제) 파악용입니다.
 - 규칙: 아래 정보는 '참고용'이며 문장/구문을 그대로 인용하지 않습니다.
 - 최근 대화 내용:{self.format_conversation_history(state.get('conversation_buffer', []))}
 </raw_recent_dialogue_do_not_quote>
@@ -1325,7 +1347,7 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
 
                 redis_manager.save_session(player_id, npc_id, session)
 
-            session_checkpoint_manager.save_summary(player_id, npc_id, summary_item)
+            session_checkpoint_manager.save_summary(player_id, npc_id, summary_list)
 
         except Exception as e:
             print(f"[ERROR] _generate_and_save_summary 실패: {e}")
