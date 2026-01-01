@@ -25,6 +25,7 @@ CREATE TABLE user_memories (
     speaker TEXT NOT NULL,              -- 발화자: 'user' | 'letia' | 'lupames' | 'roco'
     subject TEXT NOT NULL,              -- 대상: 'user' | 'letia' | 'lupames' | 'roco' | 'world'
     content TEXT NOT NULL,              -- 추출된 사실 내용
+    keywords TEXT[],                    -- 검색용 키워드/상위 개념
     content_type TEXT DEFAULT 'fact',   -- 'preference' | 'trait' | 'event' | 'opinion' | 'personal'
     
     -- 검색용
@@ -54,6 +55,9 @@ WITH (m = 16, ef_construction = 64);
 
 -- 3. PGroonga 전문검색 인덱스 (한국어 키워드 검색)
 CREATE INDEX idx_user_memory_pgroonga ON user_memories USING pgroonga (content);
+CREATE INDEX IF NOT EXISTS ix_memories_content_keywords_pgroonga 
+ON user_memories 
+USING pgroonga (content, keywords);
 
 -- 4. speaker/subject 필터용
 CREATE INDEX idx_user_memory_speaker ON user_memories (speaker);
@@ -106,7 +110,7 @@ BEGIN
     WHERE m.player_id = p_player_id
       AND m.heroine_id = p_heroine_id
       AND m.invalid_at IS NULL
-      AND m.content &@~ p_query_text;
+      AND (m.content &@~ p_query_text OR m.keywords &@ p_query_text);
     
     -- 최대값이 없으면 1로 설정 (0 나누기 방지)
     IF max_keyword_score IS NULL OR max_keyword_score = 0 THEN

@@ -31,11 +31,17 @@
 ## USER-NPC 대화
 - **테이블:** `user_memories`
 	- 기억검색 테이블
-- **구조:** player_id, heroine_id, Speaker(화자), Subject(대상), Content(내용), Content_type(취향/사건/평가 등), importance(중요도), created_at(생성시간), valid_at(활성화된 시간), invalid_at(비활성화된 시간), updated_at(수정시간: 임베딩 재생성이나 중요도 재평가시)
+- **구조:** 
+player_id, heroine_id, Speaker(화자), Subject(대상), Content
+(내용), **keywords(TEXT[])**, Content_type(취향/사건/평가 등), importance(중요도), created_at
+(생성시간), valid_at(활성화된 시간), invalid_at(비활성화된 시간), 
+updated_at(수정시간: 임베딩 재생성이나 중요도 재평가시)
 - **특징:**
-    - 대화 원문을 그대로 저장하지 않고, LLM을 통해 중요한 사실(Fact)만 추출하여 저장: RAG 시 잡다한 정보로 인한 혼란 방지 목적.
-    - **취향 변화 감지:** 새로운 취향(예: "귤보다 사과가 좋아")이 입력되면 기존 데이터(`invalid_at`)를 무효화하여 최신성 유지.
-    - **중복 방지:** 임베딩 유사도 0.55 이상 시 LLM 판단으로 중복 처리/ 임베딩 유사도 0.9 이상시 무조건 중복 처리
+    - LLM이 content+keywords(JSON) 추출: 주어/목적어/관계/주제 + **상위 카테고리** 포함
+    - 임베딩 입력: `"content (Keywords: ...)"`로 결합 후 생성해 의미 확장
+    - keywords 배열을 그대로 저장, PGroonga 인덱스 `(content, keywords)`로 검색
+    - **취향 변화 감지:** 새로운 취향이 들어오면 기존 데이터(`invalid_at`) 무효화 최신성 유지지
+    - **중복 방지:** 임베딩 유사도 0.55 이상 시 LLM 판단, 0.9 이상 시 무조건 중복 처리
 
 ## NPC-NPC 대화
 - **테이블:** `npc_npc_checkpoints`
@@ -58,7 +64,7 @@ $$Score = (w_{recency} \times Recency) + (w_{importance} \times Importance) + (w
 - **Recency (최신성):** 지수 감쇠 함수 적용 (exp(-days/30)).
 - **Importance (중요도):** 1~10점 척도 정규화 (importance/10).
 - **Relevance (관련도):** `pgvector` (Cosine Similarity, 가중치 0.50).
-- **Keyword (키워드):** `PGroonga` (BM25, 한국어 형태소 검색 최적화, 가중치 0.20).
+- **Keyword (키워드):** `PGroonga` (content+keywords BM25, 한국어 형태소 검색 최적화, 가중치 0.20).
 
 **기본 가중치:**
 - Recency: 0.15

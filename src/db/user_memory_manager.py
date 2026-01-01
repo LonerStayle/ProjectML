@@ -96,51 +96,70 @@ class UserMemoryManager:
         Returns:
             추출된 ExtractedFact 리스트
         """
-        prompt = f"""다음 대화에서 장기 기억으로 저장할 중요한 사실을 추출하세요.
+        prompt = f"""You are an expert Memory Manager for an AI heroine.
+Your goal is to extract key facts from the conversation to be stored in the long-term memory database.
 
-[대화]
+[Conversation]
 {conversation}
 
-[히로인 ID]
+[Heroine ID]
 {heroine_id}
 
-[추출 기준]
-- 플레이어의 선호도 (좋아하는 것, 싫어하는 것)
-- 플레이어의 개인 정보 (이름, 직업, 취미 등)
-- 히로인이 플레이어에 대해 내린 평가
-- 함께한 이벤트나 경험
-- 세계관에 대한 새로운 정보
+[Extraction Rules]
+1. **Analyze**: Identify important facts based on the [Criteria] below.
+2. **Content Generation**: Convert the fact into a clear, standalone natural language sentence (Subject + Predicate + Object).
+3. **Keyword Extraction (CRITICAL)**:
+   - Extract **5 to 8** essential keywords for search optimization.
+   - **Broader Category**: You MUST infer the broader category for objects or concepts.
+     - Concrete: "Grape" -> Add "Fruit", "Food"
+     - Abstract: "Warm-hearted" -> Add "Personality", "Evaluation"
+   - **Optimization**: Exclude common stopwords (is, the) and vague words (thing, stuff). Focus on nouns and core adjectives.
 
-[speaker 값]
-- "user": 플레이어가 말한 내용
-- "{heroine_id}": 히로인이 말한 내용
+[Extraction Criteria & Content Types]
+- "preference": Likes/Dislikes (e.g., Food, Color, Hobbies).
+- "trait": Personality, Appearance, Habits.
+- "event": Shared experiences or specific actions taken.
+- "opinion": Evaluation of others/situations (e.g., "Thinks user is kind").
+- "personal": Biographical info (Name, Job, Age).
+- "world": New information about the world/lore.
 
-[subject 값]
-- "user": 플레이어에 대한 사실
-- "{heroine_id}": 히로인에 대한 사실
-- "world": 세계에 대한 사실
+[Importance Scale]
+- 1-3: Trivial details.
+- 4-6: General information.
+- 7-8: Meaningful/Important.
+- 9-10: Critical (Trauma, Secrets, Core relationship changes).
 
-[content_type 값]
-- "preference": 취향/선호도 (음식, 색상, 활동 등 좋아하거나 싫어하는 것)
-  예시: "고양이를 좋아함", "사과보다 배를 더 좋아함", "매운 음식을 싫어함"
-- "trait": 특성 (성격, 외모)
-- "event": 이벤트 (함께한 경험)
-- "opinion": 타인/상황에 대한 평가나 의견
-  예시: "멘토님이 친절하다고 생각함", "세상이 불공평하다고 느낌"
-- "personal": 개인정보 (이름, 직업)
+[Output Format - JSON Array]
+Return a JSON array of objects. If nothing is worth saving, return [].
 
-[중요도 기준]
-- 1-3: 사소한 정보
-- 4-6: 일반적인 정보
-- 7-8: 중요한 정보
-- 9-10: 매우 중요한 정보 (트라우마, 비밀 등)
-
-JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 반환하세요.
-예시:
+Example 1 (Concrete - Preference):
+Input: "I've been really into grapes lately."
+Output:
 [
-    {{"speaker": "user", "subject": "user", "content_type": "preference", "content": "고양이를 좋아함", "importance": 6}},
-    {{"speaker": "{heroine_id}", "subject": "user", "content_type": "opinion", "content": "따뜻한 사람이라고 생각함", "importance": 7}}
-]"""
+  {{
+    "speaker": "user",
+    "subject": "user",
+    "content_type": "preference",
+    "content": "사용자는 요즘 포도를 매우 좋아한다.",
+    "importance": 6,
+    "keywords": ["나", "사용자", "포도", "좋아함", "선호", "과일", "음식", "식성"]
+  }}
+]
+
+Example 2 (Abstract - Opinion):
+Input: (Heroine) "You have such a warm heart."
+Output:
+[
+  {{
+    "speaker": "{heroine_id}",
+    "subject": "user",
+    "content_type": "opinion",
+    "content": "히로인은 사용자가 따뜻한 마음을 가졌다고 생각한다.",
+    "importance": 7,
+    "keywords": ["히로인", "사용자", "따뜻함", "다정함", "성격", "평가", "인성"]
+  }}
+]
+"""
 
         response = await self.extract_llm.ainvoke(prompt)
 
@@ -159,12 +178,14 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
             # ExtractedFact 객체로 변환
             facts = []
             for item in facts_data:
+                keywords = item.get("keywords", []) or []
                 fact = ExtractedFact(
                     speaker=Speaker(item["speaker"]),
                     subject=Subject(item["subject"]),
                     content_type=ContentType(item["content_type"]),
                     content=item["content"],
                     importance=item.get("importance", 5),
+                    keywords=keywords,
                 )
                 facts.append(fact)
 
@@ -198,8 +219,9 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
                 "invalidated": 무효화된 기억 리스트 [{"content": ..., "created_at": ...}]
             }
         """
-        # 1. 임베딩 생성
-        embedding = self.embeddings.embed_query(fact.content)
+        # 1. 임베딩 생성 (content + keywords)
+        text_to_embed = self._combine_content_with_keywords(fact.content, fact.keywords)
+        embedding = self.embeddings.embed_query(text_to_embed)
 
         # 무효화된 기억 정보 수집
         invalidated = []
@@ -235,8 +257,8 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
         sql = text(
             """
             INSERT INTO user_memories 
-            (id, player_id, heroine_id, speaker, subject, content, content_type, embedding, importance)
-            VALUES (:id, :player_id, :heroine_id, :speaker, :subject, :content, :content_type, 
+            (id, player_id, heroine_id, speaker, subject, content, keywords, content_type, embedding, importance)
+            VALUES (:id, :player_id, :heroine_id, :speaker, :subject, :content, :keywords, :content_type, 
                     CAST(:embedding AS vector), :importance)
             RETURNING id
         """
@@ -252,6 +274,7 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
                     "speaker": fact.speaker.value,
                     "subject": fact.subject.value,
                     "content": fact.content,
+                    "keywords": fact.keywords,
                     "content_type": fact.content_type.value,
                     "embedding": str(embedding),
                     "importance": fact.importance,
@@ -467,6 +490,12 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
     # 내부 메서드
     # ============================================
 
+    def _combine_content_with_keywords(self, content: str, keywords: List[str]) -> str:
+        """임베딩 입력을 content와 키워드로 단순 결합"""
+        if keywords:
+            return f"{content} (Keywords: {', '.join(keywords)})"
+        return content
+
     async def _find_similar_memory(
         self, player_id: str, heroine_id: str, embedding: list
     ) -> Optional[dict]:
@@ -634,7 +663,10 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
 
         # 2. 각 fact에 대해 충돌 검사
         for fact in preference_facts:
-            embedding = self.embeddings.embed_query(fact.content)
+            text_to_embed = self._combine_content_with_keywords(
+                fact.content, fact.keywords
+            )
+            embedding = self.embeddings.embed_query(text_to_embed)
 
             # 충돌 후보 검색
             candidates = await self._find_conflict_candidates(
