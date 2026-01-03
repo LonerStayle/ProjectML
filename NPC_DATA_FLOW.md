@@ -171,7 +171,10 @@
 │                                                                          │
 │ 3. User Memory에 대화 저장 (LLM Fact 추출 후 저장):                      │
 │    - speaker, subject, content_type 메타데이터 포함                      │
-│    - 중복/충돌 검사 후 저장 (90% 유사도 이상이면 기존 기억 무효화)       │
+│    - content+keywords(JSON) 추출: 주어/목적어/관계 + 상위 카테고리 포함   │
+│    - 임베딩 입력: "content (Keywords: ...)"로 결합해 생성               │
+│    - keywords 배열을 함께 저장, 중복/충돌 검사 후 저장                   │
+│    - 중복/충돌 검사 후 저장 (90% 유사도 이상 혹은 55% 이상시 LLM 판단으로 기존 기억 무효화)       │
 └───────────────────────────────────┬─────────────────────────────────────┘
                                     │
                                     ▼
@@ -698,7 +701,7 @@ agent_memories 테이블 컬럼 의미
 
 | 저장소 | 테이블/컬럼 | 용도 |
 |--------|------------|------|
-| **user_memories** | speaker, subject, content_type | User-NPC 대화 (★ 4요소 하이브리드) |
+| **user_memories** | speaker, subject, content_type, keywords | User-NPC 대화 (★ 4요소 하이브리드, content+keywords 임베딩) |
 | **npc_npc_checkpoints** | player_id, heroine_id_1, heroine_id_2 | NPC-NPC 대화 전체 기록 |
 | **npc_npc_memories** | speaker_id, subject_id, content_type | NPC-NPC 장기기억 (★ 4요소 하이브리드) |
 
@@ -847,8 +850,9 @@ Score = (w_recency × Recency) + (w_importance × Importance) + (w_relevance × 
 │ | speaker      | TEXT          | 발화자 (user, letia, lupames, roco)    │
 │ | subject      | TEXT          | 대상 (user, letia, world 등)           │
 │ | content      | TEXT          | 추출된 사실 내용                       │
+│ | keywords     | TEXT[]        | 주어/목적어/관계/주제 + 상위 카테고리  │
 │ | content_type | TEXT          | preference, trait, event, opinion 등   │
-│ | embedding    | VECTOR(1536)  | 벡터 임베딩                            │
+│ | embedding    | VECTOR(1536)  | content + keywords 결합 후 임베딩      │
 │ | importance   | INT (1-10)    | 중요도                                 │
 │ | valid_at     | TIMESTAMPTZ   | 사실이 유효해진 시점                   │
 │ | invalid_at   | TIMESTAMPTZ   | 사실이 무효화된 시점 (NULL=현재 유효)  │

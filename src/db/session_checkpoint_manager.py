@@ -52,14 +52,37 @@ class SessionCheckpointManager:
         try:
             conversation = {"user": user_message, "npc": npc_response}
 
-            sql = text(
-                """
-                INSERT INTO session_checkpoints (player_id, npc_id, conversation, state, last_chat_at)
-                VALUES (:player_id, :npc_id, :conversation, :state, NOW())
-            """
-            )
-
             with self.engine.connect() as conn:
+                summary_list_sql = text(
+                    """
+                    SELECT summary_list
+                    FROM session_checkpoints
+                    WHERE player_id = :player_id AND npc_id = :npc_id
+                    ORDER BY created_at DESC
+                    LIMIT 1
+                """
+                )
+                result = conn.execute(
+                    summary_list_sql,
+                    {
+                        "player_id": str(player_id),
+                        "npc_id": npc_id,
+                    },
+                )
+                row = (
+                    result.fetchone()
+                )  # 데이터베이스 조회 결과에서 한 줄씩 가져오는 함수
+                # 결과가 있으면 → 그 한 줄을 반환
+                # 결과가 없으면 → None 반환
+                summary_list = row.summary_list if row and row.summary_list else []
+
+                sql = text(
+                    """
+                    INSERT INTO session_checkpoints (player_id, npc_id, conversation, state, last_chat_at, summary_list)
+                    VALUES (:player_id, :npc_id, :conversation, :state, NOW(), :summary_list)
+                """
+                )
+
                 conn.execute(
                     sql,
                     {
@@ -67,6 +90,7 @@ class SessionCheckpointManager:
                         "npc_id": npc_id,
                         "conversation": json.dumps(conversation, ensure_ascii=False),
                         "state": json.dumps(state, ensure_ascii=False),
+                        "summary_list": json.dumps(summary_list, ensure_ascii=False),
                     },
                 )
                 conn.commit()
@@ -133,20 +157,20 @@ class SessionCheckpointManager:
             }
 
     def save_summary(
-        self, player_id: str, npc_id: int, summary_item: Dict[str, Any]
+        self, player_id: str, npc_id: int, summary_list: List[Dict[str, Any]]
     ) -> None:
-        """요약을 summary_list에 추가
+        """요약 리스트를 저장
 
         Args:
             player_id: 플레이어 ID
             npc_id: NPC ID
-            summary_item: 요약 항목 (summary, importance, created_at)
+            summary_list: 가지치기된 전체 요약 리스트
         """
         try:
             sql = text(
                 """
                 UPDATE session_checkpoints
-                SET summary_list = summary_list || CAST(:summary_item AS jsonb)
+                SET summary_list = CAST(:summary_list AS jsonb)
                 WHERE player_id = :player_id AND npc_id = :npc_id
                 AND id = (
                     SELECT id FROM session_checkpoints
@@ -163,10 +187,10 @@ class SessionCheckpointManager:
                     {
                         "player_id": str(player_id),
                         "npc_id": npc_id,
-                        "summary_item": json.dumps([summary_item], ensure_ascii=False),
+                        "summary_list": json.dumps(summary_list, ensure_ascii=False),
                     },
-                )
-                conn.commit()
+                )  # execute: 데이터베이스 쿼리를 실행하는 함수
+                conn.commit()  # commit: 데이터베이스 변경 사항을 영구적으로 저장하는 함수
 
         except Exception as e:
             print(f"[ERROR] save_summary 실패: {e}")
@@ -179,7 +203,11 @@ class SessionCheckpointManager:
         규칙:
         1. 시간 기준: 현재 시간 - 요소 시간 > 3시간 -> 삭제 후보
         2. 개수 기준: 리스트 길이 > 5개 -> 삭제 후보
-        3. 중요도 기반: 가장 낮은 중요도 중 가장 오래된 것 삭제
+        3. 기본 로직: 가장 오래되고 중요도가 가장 낮은 항목 삭제
+        4. 특이 케이스: 가장 오래된 항목이 동시에 가장 높은 중요도를 가지는 경우
+           - 그 항목의 중요도를 1 감소시키고 유지
+           - 그 다음으로 가장 오래되고 중요도가 가장 낮은 항목 삭제
+        5. 최소 1개는 항상 유지
 
         Args:
             summary_list: 요약 목록
@@ -187,47 +215,108 @@ class SessionCheckpointManager:
         Returns:
             가지치기된 요약 목록
         """
-        # 요약 목록이 5개 이하면 가지치기 불필요, 그대로 반환
-        if len(summary_list) <= 5:
-            return summary_list
+        if not summary_list:
+            return []
 
-        # 현재 시간 저장 (시간 차이 계산용)
         now = datetime.now()
 
-        # 요약 목록을 중요도(importance) 내림차순, 생성시간(created_at)(최신순) 내림차순으로 정렬
-        # 중요도가 높고 최신인 것이 앞에 오도록 정렬
-        sorted_list = sorted(
-            summary_list,
-            key=lambda x: (x.get("importance", 3), x.get("created_at", "")),
-            reverse=True,
-        )
-
-        # 최종 결과를 담을 빈 리스트 생성
-        result = []
-        # 정렬된 리스트를 순회하며 필터링
-        for item in sorted_list:
-            # 요약 항목의 생성 시간 문자열 추출
+        filtered_list = []
+        for item in summary_list:
             created_at_str = item.get("created_at", "")
-            # 생성 시간이 존재하는 경우
             if created_at_str:
-                # ISO 형식 문자열을 datetime 객체로 변환
                 created_at = datetime.fromisoformat(created_at_str)
-                # 현재 시간과의 차이 계산
                 time_diff = now - created_at
-
-                # 3시간 이상 경과했고 중요도가 2 이하인 경우 스킵 (삭제)
                 if time_diff > timedelta(hours=3) and item.get("importance", 3) <= 2:
                     continue
+            filtered_list.append(item)
 
-            # 필터링을 통과한 항목을 결과 리스트에 추가
-            result.append(item)
+        if len(filtered_list) <= 1:
+            if len(filtered_list) == 0 and summary_list:
+                latest_item = max(summary_list, key=lambda x: x.get("created_at", ""))
+                return [latest_item]
+            return filtered_list
 
-            # 결과 리스트가 5개에 도달하면 반복 종료
-            if len(result) >= 5:
-                break
+        if len(filtered_list) <= 5:
+            return filtered_list
 
-        # 가지치기된 요약 목록 반환 (최대 5개, 중요도 높고 최신 순)
-        return result
+        oldest_item = None
+        oldest_time = None
+        max_importance = 0
+
+        for item in filtered_list:
+            created_at_str = item.get("created_at", "")
+            if created_at_str:
+                created_at = datetime.fromisoformat(created_at_str)
+                if (
+                    oldest_time is None or created_at < oldest_time
+                ):  # 현재 항목의 생성 시간이 지금까지 찾은 가장 오래된 시간보다 더 이전이면
+                    # → 이 항목을 새로운 "가장 오래된 항목"으로 업데이트
+                    oldest_time = created_at
+                    oldest_item = item
+
+            importance = item.get("importance", 3)
+            if importance > max_importance:
+                max_importance = importance
+
+        if oldest_item and oldest_item.get("importance", 3) == max_importance:
+            if oldest_item.get("importance", 3) > 1:
+                oldest_item["importance"] = oldest_item.get("importance", 3) - 1
+
+            remaining_items = [item for item in filtered_list if item != oldest_item]
+            # remaining_items: 가장 오래된 항목을 제외한 나머지 항목들
+            if not remaining_items:  # 나머지 항목이 없으면
+                # → 가장 오래된 항목만 반환
+                return [oldest_item]
+
+            oldest_low_importance_item = None
+            oldest_low_time = None  # 가장 오래된 낮은 중요도 항목의 생성 시간을 저장
+            min_importance = 5
+
+            for item in remaining_items:
+                importance = item.get("importance", 3)
+                if importance < min_importance:
+                    min_importance = importance
+
+            for item in remaining_items:
+                if item.get("importance", 3) == min_importance:
+                    created_at_str = item.get("created_at", "")
+                    if created_at_str:
+                        created_at = datetime.fromisoformat(created_at_str)
+                        if oldest_low_time is None or created_at < oldest_low_time:
+                            oldest_low_time = created_at
+                            oldest_low_importance_item = item
+
+            if oldest_low_importance_item:
+                remaining_items.remove(oldest_low_importance_item)
+
+            result = [oldest_item] + remaining_items
+            return result[:5]
+
+        oldest_low_importance_item = None
+        oldest_low_time = None
+        min_importance = 5
+
+        for item in filtered_list:
+            importance = item.get("importance", 3)
+            if importance < min_importance:
+                min_importance = importance
+
+        for item in filtered_list:
+            if item.get("importance", 3) == min_importance:
+                created_at_str = item.get("created_at", "")
+                if created_at_str:
+                    created_at = datetime.fromisoformat(created_at_str)
+                    if oldest_low_time is None or created_at < oldest_low_time:
+                        oldest_low_time = created_at
+                        oldest_low_importance_item = item
+
+        if oldest_low_importance_item:
+            result = [
+                item for item in filtered_list if item != oldest_low_importance_item
+            ]
+            return result[:5]
+
+        return filtered_list[:5]
 
     def calculate_time_diff(self, last_chat_at: Optional[str]) -> str:
         """마지막 대화와 현재 시간 차이 계산
@@ -294,7 +383,9 @@ class SessionCheckpointManager:
             )
 
             with self.engine.connect() as conn:
-                result = conn.execute(sql, {"player_id": str(player_id), "npc_id": npc_id})
+                result = conn.execute(
+                    sql, {"player_id": str(player_id), "npc_id": npc_id}
+                )
                 rows = result.fetchall()
 
             if not rows:
@@ -355,7 +446,9 @@ class SessionCheckpointManager:
             )
 
             with self.engine.connect() as conn:
-                result = conn.execute(sql, {"player_id": str(player_id), "npc_id": npc_id})
+                result = conn.execute(
+                    sql, {"player_id": str(player_id), "npc_id": npc_id}
+                )
                 row = result.fetchone()
 
             if row and row.last_chat_at:

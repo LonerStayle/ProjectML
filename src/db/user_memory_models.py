@@ -71,6 +71,7 @@ class ExtractedFact(BaseModel):
     content_type: ContentType  # 내용 타입
     content: str  # 추출된 사실 내용
     importance: int = Field(default=5, ge=1, le=10)  # 중요도 1~10
+    keywords: List[str] = Field(default_factory=list)  # 검색용 키워드/상위 개념
 
 
 class FactExtractionResult(BaseModel):

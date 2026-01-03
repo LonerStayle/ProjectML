@@ -94,6 +94,7 @@
 ### POST /api/npc/heroine/chat (스트리밍)
 
 히로인과 대화합니다. **SSE(Server-Sent Events) 스트리밍**으로 응답합니다.
+> 메모리 저장 시 LLM이 content+keywords(JSON)를 추출해 keywords 배열(상위 카테고리 포함)과 함께 DB에 기록하고, 임베딩은 "content (Keywords: ...)"로 생성합니다. 검색은 PGroonga로 content+keywords를 함께 봅니다.
 
 #### Request
 
