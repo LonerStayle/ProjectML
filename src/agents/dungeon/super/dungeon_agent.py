@@ -8,25 +8,19 @@ from datetime import datetime
 import copy
 from langgraph.graph import START, END, StateGraph
 from agents.dungeon.dungeon_state import SuperDungeonState
+from agents.dungeon.monster.dungeon_monster_agent import monster_graph
+from agents.dungeon.event.dungeon_event_agent import (
+        graph_builder as event_graph_builder
+    )
 
 
 # ===== Node 1: Event Processing =====
 def event_node(state: SuperDungeonState) -> Dict[str, Any]:
-    """
-    Event Agent를 실행하는 노드
-    - 히로인 정보와 던전 정보를 기반으로 이벤트 생성
-    """
     print("\n[Event Node] 이벤트 생성 시작...")
 
-    # 실제 Event Agent 호출
-    from agents.dungeon.event.dungeon_event_agent import (
-        graph_builder as event_graph_builder,
-    )
-
     event_graph = event_graph_builder.compile()
-
-    # player_id 추출 (player_ids가 있으면 첫 번째, 없으면 None)
     player_id = None
+    
     # 다양한 위치에서 player_id를 추출 시도
     if "player_id" in state:
         player_id = state["player_id"]
@@ -59,14 +53,7 @@ def event_node(state: SuperDungeonState) -> Dict[str, Any]:
 
 # ===== Node 2: Monster Balancing =====
 def monster_node(state: SuperDungeonState) -> Dict[str, Any]:
-    """
-    Monster Agent를 실행하는 노드
-    - 던전 맵에 몬스터를 배치하고 밸런싱
-    """
     print("\n[Monster Node] 몬스터 밸런싱 시작...")
-
-    # 실제 Monster Agent 호출
-    from agents.dungeon.monster.dungeon_monster_agent import monster_graph
 
     # Monster Agent 입력 state 구성
     monster_state = {
