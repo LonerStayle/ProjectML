@@ -31,7 +31,12 @@ from langchain_core.messages import HumanMessage, AIMessage
 from langgraph.graph import START, END, StateGraph
 
 from agents.npc.npc_state import SageState
-from agents.npc.base_npc_agent import BaseNPCAgent, WEEKDAY_MAP, get_last_weekday
+from agents.npc.base_npc_agent import (
+    BaseNPCAgent,
+    WEEKDAY_MAP,
+    get_last_weekday,
+    NO_DATA,
+)
 from agents.npc.emotion_mapper import sage_emotion_to_int
 from agents.npc.npc_utils import parse_llm_json_response, load_persona_yaml
 from db.redis_manager import redis_manager
@@ -405,8 +410,8 @@ class SageAgent(BaseNPCAgent):
 
         if user_memories:
             facts_parts.append("[플레이어와의 기억]")
-            for m in user_memories:
-                memory_text = m.get("memory", m.get("text", ""))
+            for memory in user_memories:
+                memory_text = memory.get("memory", memory.get("text", ""))
                 facts_parts.append(f"- {memory_text}")
 
         return "\n".join(facts_parts) if facts_parts else "관련 기억 없음"
@@ -456,8 +461,8 @@ class SageAgent(BaseNPCAgent):
         print(f"[TIMING] 의도 분류: {time.time() - t1:.3f}s")
 
         # 2. 의도에 따른 검색
-        unlocked_scenarios = "없음"
-        retrieved_facts = "없음"
+        unlocked_scenarios = NO_DATA
+        retrieved_facts = NO_DATA
 
         if intent == "memory_recall":
             t2 = time.time()
@@ -884,8 +889,8 @@ B) 세계관/정보 질문: "던전이 뭐야?", "히로인들은 누구야?, "�
 
         # 컨텍스트 구성
         context = {
-            "unlocked_scenarios": state.get("unlocked_scenarios", "없음"),
-            "retrieved_facts": state.get("retrieved_facts", "없음"),
+            "unlocked_scenarios": state.get("unlocked_scenarios", NO_DATA),
+            "retrieved_facts": state.get("retrieved_facts", NO_DATA),
         }
 
         # 프롬프트 생성 및 LLM 호출

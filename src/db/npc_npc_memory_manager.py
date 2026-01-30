@@ -23,10 +23,19 @@ from src.enums.LLM import LLM
 from utils.langfuse_tracker import tracker
 
 
-def _normalize_pair(a: int, b: int) -> Tuple[int, int]:
-    if a < b:
-        return a, b
-    return b, a
+def _normalize_pair(npc_id_1: int, npc_id_2: int) -> Tuple[int, int]:
+    """NPC ID 쌍을 정규화합니다 (작은 값, 큰 값 순서로 정렬).
+    
+    Args:
+        npc_id_1: 첫 번째 NPC ID
+        npc_id_2: 두 번째 NPC ID
+    
+    Returns:
+        정규화된 (min_id, max_id) 튜플
+    """
+    if npc_id_1 < npc_id_2:
+        return npc_id_1, npc_id_2
+    return npc_id_2, npc_id_1
 
 
 class NpcNpcMemoryManager:

@@ -37,6 +37,19 @@ AFFECTION_POSITIVE_ROMANCE_BONUS = 5  # 긍정적 연애 관련 보너스
 AFFECTION_NEGATIVE_ROMANCE_PENALTY = 5  # 부정적 연애 관련 페널티
 
 # ============================================
+# 대화 버퍼 및 세션 관리 상수
+# ============================================
+MAX_CONVERSATION_BUFFER_SIZE = 20  # 대화 버퍼 최대 크기 (20턴)
+MAX_RECENT_MESSAGES = 10  # 프롬프트에 포함할 최근 대화 개수
+MAX_RECENT_KEYWORDS = 5  # 최근 사용된 좋아하는 키워드 추적 개수
+MEMORY_UNLOCK_TTL_TURNS = 5  # 해금된 기억 TTL (턴 수)
+
+# ============================================
+# 공통 문자열 상수
+# ============================================
+NO_DATA = "없음"  # 데이터 없음을 나타내는 기본 문자열
+
+# ============================================
 # 시간 기반 기억 검색용 상수
 # ============================================
 WEEKDAY_MAP = {
@@ -203,9 +216,9 @@ class BaseNPCAgent(ABC):
         """
         session["conversation_buffer"].append({"role": role, "content": content})
 
-        # 20턴 초과시 오래된 것 제거
-        if len(session["conversation_buffer"]) > 20:
-            session["conversation_buffer"] = session["conversation_buffer"][-20:]
+        # 최대 크기 초과시 오래된 것 제거
+        if len(session["conversation_buffer"]) > MAX_CONVERSATION_BUFFER_SIZE:
+            session["conversation_buffer"] = session["conversation_buffer"][-MAX_CONVERSATION_BUFFER_SIZE:]
 
         return session
 
@@ -221,12 +234,12 @@ class BaseNPCAgent(ABC):
             포맷된 문자열
         """
         if not conversation_buffer:
-            return "없음"
+            return NO_DATA
 
         formatted = []
 
-        # 최근 10개만 사용 (프롬프트 길이 제한)
-        for msg in conversation_buffer[-10:]:
+        # 최근 N개만 사용 (프롬프트 길이 제한)
+        for msg in conversation_buffer[-MAX_RECENT_MESSAGES:]:
             role = "플레이어" if msg["role"] == "user" else "NPC"
             formatted.append(f"{role}: {msg['content']}")
 
@@ -242,7 +255,7 @@ class BaseNPCAgent(ABC):
             포맷된 문자열
         """
         if not summary_list:
-            return "없음"
+            return NO_DATA
 
         formatted = []
         for item in summary_list:
@@ -251,7 +264,7 @@ class BaseNPCAgent(ABC):
                 formatted.append(f"- {summary}")
 
         if not formatted:
-            return "없음"
+            return NO_DATA
 
         return "\n".join(formatted)
 
@@ -466,7 +479,16 @@ def calculate_sanity_change(
 # 기억 해금 관련 상수 및 함수
 # ============================================
 
-# 기억 해금 임계값 목록 (DB 시나리오 memory_progress 값과 일치해야 함)
+# 기억 해금 임계값 목록 (DB heroine_scenarios 테이블의 memory_progress 값과 일치해야 함)
+# 각 임계값은 히로인의 과거 기억 시나리오가 해금되는 지점입니다.
+# 
+# 임계값별 의미:
+# - 10: 첫 번째 기억 (초기 만남, 가벼운 과거)
+# - 50: 중요한 과거 이벤트 (전환점)
+# - 60: 깊은 감정 관련 기억
+# - 70: 트라우마 관련 기억
+# - 80: 핵심 비밀
+# - 100: 최종 기억 (진실)
 MEMORY_THRESHOLDS = [10, 50, 60, 70, 80, 100]
 
 

@@ -38,6 +38,10 @@ from agents.npc.base_npc_agent import (
     detect_memory_unlock,
     WEEKDAY_MAP,
     get_last_weekday,
+    MAX_CONVERSATION_BUFFER_SIZE,
+    MAX_RECENT_KEYWORDS,
+    MEMORY_UNLOCK_TTL_TURNS,
+    NO_DATA,
 )
 from agents.npc.emotion_mapper import heroine_emotion_to_int
 from agents.npc.npc_utils import parse_llm_json_response, load_persona_yaml
@@ -291,7 +295,7 @@ class HeroineAgent(BaseNPCAgent):
                     user_messages.append(content)
 
         if not user_messages:
-            return "없음"
+            return NO_DATA
 
         # 최근 5개만 추출
         recent = user_messages[-5:]
@@ -346,7 +350,7 @@ class HeroineAgent(BaseNPCAgent):
             포맷된 대화 문자열
         """
         if not conversation_buffer:
-            return "없음"
+            return NO_DATA
 
         lines = []
         for item in conversation_buffer:
@@ -459,6 +463,114 @@ class HeroineAgent(BaseNPCAgent):
         print(f"[INTENT_RESULT] {intent}")
         return intent
 
+    def _search_user_memories_by_time_keyword(
+        self, user_message: str, player_id: int, npc_id: int
+    ) -> list:
+        """시간 키워드 기반 User Memory 검색
+        
+        "어제", "N일 전", "최근", "N월 N일", "지난주 X요일" 등의 시간 표현을 분석하여
+        해당 시점의 기억을 검색합니다.
+        
+        Args:
+            user_message: 사용자 메시지
+            player_id: 플레이어 ID
+            npc_id: NPC ID
+        
+        Returns:
+            검색된 기억 리스트
+        """
+        days_ago_match = re.search(r"(\d+)\s*일\s*전", user_message)
+
+        if "어제" in user_message:
+            print("[MEMORY_FUNC] get_memories_days_ago_sync(1)")
+            return user_memory_manager.get_memories_days_ago_sync(
+                player_id, npc_id, 1, limit=5
+            )
+        elif "그제" in user_message or "그저께" in user_message:
+            print("[MEMORY_FUNC] get_memories_days_ago_sync(2)")
+            return user_memory_manager.get_memories_days_ago_sync(
+                player_id, npc_id, 2, limit=5
+            )
+        elif days_ago_match:
+            days = int(days_ago_match.group(1))
+            print(f"[MEMORY_FUNC] get_memories_days_ago_sync({days})")
+            return user_memory_manager.get_memories_days_ago_sync(
+                player_id, npc_id, days, limit=5
+            )
+        elif re.search(r"(최근|요즘|며칠)", user_message):
+            print("[MEMORY_FUNC] get_recent_memories_sync(7)")
+            return user_memory_manager.get_recent_memories_sync(
+                player_id, npc_id, 7, limit=5
+            )
+        elif re.search(r"(전부|다\s|모든|기억하는\s*거)", user_message):
+            print("[MEMORY_FUNC] get_valid_memories_sync")
+            return user_memory_manager.get_valid_memories_sync(
+                player_id, npc_id, limit=10
+            )
+        elif date_match := re.search(r"(\d{1,2})월\s*(\d{1,2})일", user_message):
+            month = int(date_match.group(1))
+            day = int(date_match.group(2))
+            year = datetime.now().year
+            point_in_time = datetime(year, month, day)
+            print(f"[MEMORY_FUNC] get_memories_at_point_sync({month}/{day})")
+            return user_memory_manager.get_memories_at_point_sync(
+                player_id, npc_id, point_in_time, limit=5
+            )
+        elif week_match := re.search(
+            r"지지난주\s*(월|화|수|목|금|토|일)요일", user_message
+        ):
+            weekday = WEEKDAY_MAP[week_match.group(1) + "요일"]
+            point_in_time = get_last_weekday(weekday, weeks_ago=2)
+            print(
+                f"[MEMORY_FUNC] get_memories_at_point_sync(지지난주 {week_match.group(1)}요일)"
+            )
+            return user_memory_manager.get_memories_at_point_sync(
+                player_id, npc_id, point_in_time, limit=5
+            )
+        elif week_match := re.search(
+            r"지난주\s*(월|화|수|목|금|토|일)요일", user_message
+        ):
+            weekday = WEEKDAY_MAP[week_match.group(1) + "요일"]
+            point_in_time = get_last_weekday(weekday, weeks_ago=1)
+            print(
+                f"[MEMORY_FUNC] get_memories_at_point_sync(지난주 {week_match.group(1)}요일)"
+            )
+            return user_memory_manager.get_memories_at_point_sync(
+                player_id, npc_id, point_in_time, limit=5
+            )
+        else:
+            # 기본: 4요소 하이브리드 검색
+            print("[MEMORY_FUNC] search_memory_sync (hybrid)")
+            return user_memory_manager.search_memory_sync(
+                player_id, npc_id, user_message, limit=3
+            )
+
+    def _search_npc_npc_memories(
+        self, user_message: str, player_id: int, npc_id: int
+    ) -> list:
+        """다른 히로인 이름 언급시 NPC-NPC 장기기억 검색
+        
+        Args:
+            user_message: 사용자 메시지
+            player_id: 플레이어 ID
+            npc_id: 현재 NPC ID
+        
+        Returns:
+            검색된 NPC-NPC 기억 리스트
+        """
+        other_id = self._detect_other_heroine_id(user_message, npc_id)
+        
+        if other_id is None:
+            return []
+        
+        return npc_npc_memory_manager.search_memories(
+            player_id=str(player_id),
+            npc1_id=int(npc_id),
+            npc2_id=int(other_id),
+            query=user_message,
+            limit=3,
+        )
+
     async def _retrieve_memory(self, state: HeroineState) -> str:
         """기억 검색
 
@@ -478,106 +590,24 @@ class HeroineAgent(BaseNPCAgent):
 
         facts_parts = []
 
-        # 1. 시간 키워드 분석 (정규식)
-        days_ago_match = re.search(r"(\d+)\s*일\s*전", user_message)
-
-        if "어제" in user_message:
-            print("[MEMORY_FUNC] get_memories_days_ago_sync(1)")
-            user_memories = user_memory_manager.get_memories_days_ago_sync(
-                player_id, npc_id, 1, limit=5
-            )
-        elif "그제" in user_message or "그저께" in user_message:
-            print("[MEMORY_FUNC] get_memories_days_ago_sync(2)")
-            user_memories = user_memory_manager.get_memories_days_ago_sync(
-                player_id, npc_id, 2, limit=5
-            )
-        elif days_ago_match:
-            days = int(days_ago_match.group(1))
-            print(f"[MEMORY_FUNC] get_memories_days_ago_sync({days})")
-            user_memories = user_memory_manager.get_memories_days_ago_sync(
-                player_id, npc_id, days, limit=5
-            )
-        elif re.search(r"(최근|요즘|며칠)", user_message):
-            print("[MEMORY_FUNC] get_recent_memories_sync(7)")
-            user_memories = user_memory_manager.get_recent_memories_sync(
-                player_id, npc_id, 7, limit=5
-            )
-        # 전체 기억 요청
-        elif re.search(r"(전부|다\s|모든|기억하는\s*거)", user_message):
-            print("[MEMORY_FUNC] get_valid_memories_sync")
-            user_memories = user_memory_manager.get_valid_memories_sync(
-                player_id, npc_id, limit=10
-            )
-        # 특정 날짜 (N월 N일)
-        elif date_match := re.search(r"(\d{1,2})월\s*(\d{1,2})일", user_message):
-            month = int(date_match.group(1))
-            day = int(date_match.group(2))
-            year = datetime.now().year
-            point_in_time = datetime(year, month, day)
-            print(f"[MEMORY_FUNC] get_memories_at_point_sync({month}/{day})")
-            user_memories = user_memory_manager.get_memories_at_point_sync(
-                player_id, npc_id, point_in_time, limit=5
-            )
-        # 지지난주 X요일
-        elif week_match := re.search(
-            r"지지난주\s*(월|화|수|목|금|토|일)요일", user_message
-        ):
-            weekday = WEEKDAY_MAP[week_match.group(1) + "요일"]
-            point_in_time = get_last_weekday(weekday, weeks_ago=2)
-            print(
-                f"[MEMORY_FUNC] get_memories_at_point_sync(지지난주 {week_match.group(1)}요일)"
-            )
-            user_memories = user_memory_manager.get_memories_at_point_sync(
-                player_id, npc_id, point_in_time, limit=5
-            )
-        # 지난주 X요일
-        elif week_match := re.search(
-            r"지난주\s*(월|화|수|목|금|토|일)요일", user_message
-        ):
-            weekday = WEEKDAY_MAP[week_match.group(1) + "요일"]
-            point_in_time = get_last_weekday(weekday, weeks_ago=1)
-            print(
-                f"[MEMORY_FUNC] get_memories_at_point_sync(지난주 {week_match.group(1)}요일)"
-            )
-            user_memories = user_memory_manager.get_memories_at_point_sync(
-                player_id, npc_id, point_in_time, limit=5
-            )
-        else:
-            # 기본: 4요소 하이브리드 검색
-            print("[MEMORY_FUNC] search_memory_sync (hybrid)")
-            user_memories = user_memory_manager.search_memory_sync(
-                player_id, npc_id, user_message, limit=3
-            )
+        # 1. 시간 키워드 기반 User Memory 검색
+        user_memories = self._search_user_memories_by_time_keyword(
+            user_message, player_id, npc_id
+        )
 
         if user_memories:
             facts_parts.append("[플레이어와의 기억]")
-            for m in user_memories:
-                memory_text = m.get("memory", m.get("text", ""))
+            for memory in user_memories:
+                memory_text = memory.get("memory", memory.get("text", ""))
                 facts_parts.append(f"- {memory_text}")
 
         # 2. 다른 히로인 이름 언급시 NPC-NPC 장기기억 검색
-        other_id = None
-        if "사트라" in user_message or "대현자" in user_message:
-            other_id = 0
-        elif "레티아" in user_message:
-            other_id = 1
-        elif "루파메스" in user_message:
-            other_id = 2
-        elif "로코" in user_message:
-            other_id = 3
-
-        if other_id is not None and int(other_id) != int(npc_id):
-            npc_memories = npc_npc_memory_manager.search_memories(
-                player_id=str(player_id),
-                npc1_id=int(npc_id),
-                npc2_id=int(other_id),
-                query=user_message,
-                limit=3,
-            )
-            if npc_memories:
-                facts_parts.append("\n[다른 히로인과의 대화 기억]")
-                for m in npc_memories:
-                    facts_parts.append(f"- {m.get('content', '')}")
+        npc_memories = self._search_npc_npc_memories(user_message, player_id, npc_id)
+        
+        if npc_memories:
+            facts_parts.append("\n[다른 히로인과의 대화 기억]")
+            for memory in npc_memories:
+                facts_parts.append(f"- {memory.get('content', '')}")
 
         return "\n".join(facts_parts) if facts_parts else "관련 기억 없음"
 
@@ -776,45 +806,45 @@ class HeroineAgent(BaseNPCAgent):
         total_start = time.time()
 
         # 1. 키워드 분석
-        t1 = time.time()
+        keyword_analysis_start = time.time()
         affection_delta, used_keyword = await self._analyze_keywords(state)
-        print(f"[TIMING] 키워드 분석: {time.time() - t1:.3f}s")
+        print(f"[TIMING] 키워드 분석: {time.time() - keyword_analysis_start:.3f}s")
 
         # 2. 의도 분류
-        t2 = time.time()
+        intent_classification_start = time.time()
         intent = await self._classify_intent(state)
-        print(f"[TIMING] 의도 분류: {time.time() - t2:.3f}s")
+        print(f"[TIMING] 의도 분류: {time.time() - intent_classification_start:.3f}s")
 
         user_message = state["messages"][-1].content
         print(f"[DEBUG] 의도 분류 결과: {intent}")
 
         # 3. 의도에 따른 검색
-        retrieved_facts = "없음"
-        unlocked_scenarios = "없음"
-        heroine_conversation = "없음"
+        retrieved_facts = NO_DATA
+        unlocked_scenarios = NO_DATA
+        heroine_conversation = NO_DATA
         preference_changes = []
 
         if intent == "memory_recall":
             # 기억 회상 -> User Memory + NPC간 기억 검색
-            t3 = time.time()
+            memory_search_start = time.time()
             retrieved_facts = await self._retrieve_memory(state)
-            print(f"[TIMING] 기억 검색: {time.time() - t3:.3f}s")
+            print(f"[TIMING] 기억 검색: {time.time() - memory_search_start:.3f}s")
             print(
                 f"[DEBUG] 기억 검색 결과: {retrieved_facts[:200] if retrieved_facts else 'None'}..."
             )
         elif intent == "scenario_inquiry":
             # 시나리오 질문 -> 시나리오 DB 검색
-            t3 = time.time()
+            scenario_search_start = time.time()
             unlocked_scenarios = await self._retrieve_scenario(state)
-            print(f"[TIMING] 시나리오 검색: {time.time() - t3:.3f}s")
+            print(f"[TIMING] 시나리오 검색: {time.time() - scenario_search_start:.3f}s")
             print(
                 f"[DEBUG] 시나리오 검색 결과: {unlocked_scenarios[:200] if unlocked_scenarios else 'None'}..."
             )
         elif intent == "heroine_recall":
             # 다른 히로인과의 대화 -> npc_npc_checkpoints에서 최신 대화
-            t3 = time.time()
+            heroine_conversation_search_start = time.time()
             heroine_conversation = await self._retrieve_heroine_conversation(state)
-            print(f"[TIMING] 히로인 대화 검색: {time.time() - t3:.3f}s")
+            print(f"[TIMING] 히로인 대화 검색: {time.time() - heroine_conversation_search_start:.3f}s")
             print(
                 f"[DEBUG] 히로인 대화 검색 결과: {heroine_conversation[:200] if heroine_conversation else 'None'}..."
             )
@@ -841,19 +871,19 @@ class HeroineAgent(BaseNPCAgent):
 
         if unlocked_threshold is not None:
             # 새로 기억 해금됨
-            t4 = time.time()
+            scenario_fetch_start = time.time()
             scenario = heroine_scenario_service.get_scenario_by_exact_progress(
                 heroine_id=npc_id, memory_progress=unlocked_threshold
             )
             if scenario:
                 newly_unlocked_scenario = scenario.get("content", "")
-                # recently_unlocked_memory 생성 (TTL 5턴)
+                # recently_unlocked_memory 생성
                 recently_unlocked_memory = {
                     "memory_progress": unlocked_threshold,
                     "title": scenario.get("title", ""),
                     "keywords": scenario.get("metadata", {}).get("keywords", []),
                     "unlocked_at": datetime.now().isoformat(),
-                    "ttl_turns": 5,
+                    "ttl_turns": MEMORY_UNLOCK_TTL_TURNS,
                 }
                 print(
                     f"[DEBUG] 기억 해금 감지! threshold={unlocked_threshold}, title={scenario.get('title', 'N/A')}"
@@ -861,7 +891,7 @@ class HeroineAgent(BaseNPCAgent):
                 print(
                     f"[DEBUG] recently_unlocked_memory 생성: keywords={recently_unlocked_memory['keywords']}"
                 )
-            print(f"[TIMING] 해금 시나리오 조회: {time.time() - t4:.3f}s")
+            print(f"[TIMING] 해금 시나리오 조회: {time.time() - scenario_fetch_start:.3f}s")
         else:
             # 기존 recently_unlocked_memory TTL 관리
             existing_memory = state.get("recently_unlocked_memory")
@@ -1132,12 +1162,12 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
                 {"role": "assistant", "content": response_text}
             )
 
-            # 최근 사용된 좋아하는 키워드 업데이트 (5개 유지)
+            # 최근 사용된 좋아하는 키워드 업데이트
             used_keyword = context.get("used_liked_keyword")
             recent_keywords = session.get("recent_used_keywords", [])
             if used_keyword:
                 recent_keywords.append(used_keyword)
-            session["recent_used_keywords"] = recent_keywords[-5:]
+            session["recent_used_keywords"] = recent_keywords[-MAX_RECENT_KEYWORDS:]
 
             # recently_unlocked_memory Redis 세션 동기화
             recently_unlocked = context.get("recently_unlocked_memory")
@@ -1383,13 +1413,13 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
             )
             if scenario:
                 newly_unlocked_scenario = scenario.get("content", "")
-                # recently_unlocked_memory 생성 (TTL 5턴)
+                # recently_unlocked_memory 생성
                 recently_unlocked_memory = {
                     "memory_progress": unlocked_threshold,
                     "title": scenario.get("title", ""),
                     "keywords": scenario.get("metadata", {}).get("keywords", []),
                     "unlocked_at": datetime.now().isoformat(),
-                    "ttl_turns": 5,
+                    "ttl_turns": MEMORY_UNLOCK_TTL_TURNS,
                 }
                 print(
                     f"[DEBUG] 기억 해금 감지! threshold={unlocked_threshold}, title={scenario.get('title', 'N/A')}"
@@ -1482,14 +1512,14 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
         # 컨텍스트 구성
         context = {
             "affection_delta": state.get("affection_delta", 0),
-            "retrieved_facts": state.get("retrieved_facts", "없음"),
-            "unlocked_scenarios": state.get("unlocked_scenarios", "없음"),
-            "heroine_conversation": state.get("heroine_conversation", "없음"),
+            "retrieved_facts": state.get("retrieved_facts", NO_DATA),
+            "unlocked_scenarios": state.get("unlocked_scenarios", NO_DATA),
+            "heroine_conversation": state.get("heroine_conversation", NO_DATA),
             "preference_changes": state.get("preference_changes", []),
             "newly_unlocked_scenario": state.get("newly_unlocked_scenario"),
         }
         print(
-            f"[DEBUG] generate 노드 - unlocked_scenarios: {context['unlocked_scenarios'][:200] if context['unlocked_scenarios'] != '없음' else '없음'}..."
+            f"[DEBUG] generate 노드 - unlocked_scenarios: {context['unlocked_scenarios'][:200] if context['unlocked_scenarios'] != NO_DATA else NO_DATA}..."
         )
         if context["newly_unlocked_scenario"]:
             print(f"[DEBUG] generate 노드 - newly_unlocked_scenario 존재 (기억 해금됨)")

@@ -19,6 +19,7 @@ from db.session_checkpoint_manager import session_checkpoint_manager
 from agents.npc.heroine_agent import heroine_agent
 from agents.npc.sage_agent import sage_agent
 from agents.npc.heroine_heroine_agent import heroine_heroine_agent
+from agents.npc.base_npc_agent import MAX_CONVERSATION_BUFFER_SIZE
 from tools.audio.tts_typecast import typecast_tts_service
 
 # ============================================
@@ -281,7 +282,7 @@ async def login(request: LoginRequest):
             "player_id": player_id,
             "npc_id": heroine.heroineId,
             "npc_type": "heroine",
-            "conversation_buffer": conversation_buffer[-20:],
+            "conversation_buffer": conversation_buffer[-MAX_CONVERSATION_BUFFER_SIZE:],
             "short_term_summary": "",
             "summary_list": checkpoint.get("summary_list", []),
             "turn_count": len(checkpoint.get("conversations", [])),
@@ -321,7 +322,7 @@ async def login(request: LoginRequest):
         "player_id": player_id,
         "npc_id": 0,
         "npc_type": "sage",
-        "conversation_buffer": sage_conversation_buffer[-20:],
+        "conversation_buffer": sage_conversation_buffer[-MAX_CONVERSATION_BUFFER_SIZE:],
         "short_term_summary": "",
         "summary_list": sage_checkpoint.get("summary_list", []),
         "turn_count": len(sage_checkpoint.get("conversations", [])),
