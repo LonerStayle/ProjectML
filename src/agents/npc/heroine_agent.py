@@ -152,7 +152,7 @@ class HeroineAgent(BaseNPCAgent):
             print(chunk, end="")
     """
 
-    def __init__(self, model_name: str = LLM.GROK_4_FAST_NON_REASONING):
+    def __init__(self, model_name: str = LLM.GROK_4_1_FAST_NON_REASONING):
         """초기화
 
         Args:
@@ -514,17 +514,15 @@ class HeroineAgent(BaseNPCAgent):
         # 의도 분류 프롬프트 로그 출력
         print(f"[INTENT_PROMPT]\n{prompt}\n{'='*50}")
 
-        # LangFuse 토큰 추적
-        handler = tracker.get_callback_handler(
-            trace_name="heroine_intent_classification",
+        # LangFuse 토큰 추적 (v3 API)
+        config = tracker.get_langfuse_config(
             tags=["npc", "heroine", "intent", state.get("heroine_name", "unknown")],
             session_id=state.get("session_id"),
             user_id=state.get("user_id"),
             metadata={"heroine_name": state.get("heroine_name")}
         )
-        config = {"callbacks": [handler]} if handler else {}
         
-        response = await self.intent_llm.ainvoke(prompt, config=config)
+        response = await self.intent_llm.ainvoke(prompt, **config)
         intent = response.content.strip().lower()
 
         # 유효하지 않으면 기본값
@@ -1624,9 +1622,8 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
 
         t2 = time.time()
         
-        # LangFuse 토큰 추적
-        handler = tracker.get_callback_handler(
-            trace_name="heroine_response_generation",
+        # LangFuse 토큰 추적 (v3 API)
+        config = tracker.get_langfuse_config(
             tags=["npc", "heroine", "response", state.get("heroine_name", "unknown")],
             session_id=state.get("session_id"),
             user_id=state.get("user_id"),
@@ -1636,9 +1633,8 @@ B) 자신의 과거/신상 질문: "고향이 어디야?", "어린시절 어땠�
                 "affection": state.get("affection", 0),
             }
         )
-        config = {"callbacks": [handler]} if handler else {}
         
-        response = await self.llm.ainvoke(prompt, config=config)
+        response = await self.llm.ainvoke(prompt, **config)
         
         # 로컬 디버깅용 토큰 로깅
         if hasattr(response, 'usage_metadata') and response.usage_metadata:

@@ -1,13 +1,18 @@
 """
-LangFuse 토큰 추적 유틸리티
+LangFuse 토큰 추적 유틸리티 (v3 API 호환)
 
-모든 LLM 호출 지점에서 사용할 수 있는 공통 콜백 핸들러 생성기
+모든 LLM 호출 지점에서 사용할 수 있는 공통 콜백 핸들러 및 메타데이터 관리
 
 이 모듈이 없을 경우 발생하는 문제:
 - 각 LLM 호출 지점에서 개별적으로 콜백을 설정해야 함
 - 일관된 태깅/세션 관리가 어려움
 - 코드 중복 발생
 - 토큰 사용량 및 비용 추적 불가
+
+LangFuse v3 API 변경사항:
+- CallbackHandler()는 인자를 받지 않음 (싱글톤 패턴)
+- session_id, user_id, tags는 metadata로 invoke 시점에 전달
+- metadata 키: langfuse_session_id, langfuse_user_id, langfuse_tags
 """
 
 import os
@@ -21,125 +26,142 @@ try:
     # 싱글톤 클라이언트 초기화
     # 환경 변수: LANGFUSE_SECRET_KEY, LANGFUSE_PUBLIC_KEY, LANGFUSE_HOST
     _langfuse_client = Langfuse()
+    _langfuse_handler = CallbackHandler()  # v3: 인자 없음
     LANGFUSE_ENABLED = True
-    print("[INFO] LangFuse 토큰 추적 활성화됨")
+    print("[INFO] LangFuse 토큰 추적 활성화됨 (v3 API)")
 except Exception as e:
     _langfuse_client = None
+    _langfuse_handler = None
     LANGFUSE_ENABLED = False
     print(f"[WARNING] LangFuse 비활성화: {e}")
 
 
 class TokenTracker:
     """
-    LangFuse 토큰 추적을 위한 유틸리티 클래스
+    LangFuse 토큰 추적을 위한 유틸리티 클래스 (v3 API 호환)
     
-    이 클래스가 없을 경우 발생하는 문제:
-    - 각 LLM 호출 지점에서 개별적으로 콜백을 설정해야 함
-    - 일관된 태깅/세션 관리가 어려움
-    - 코드 중복 발생
+    LangFuse v3 변경사항:
+    - CallbackHandler()는 싱글톤 (인자 없음)
+    - session_id, user_id, tags는 metadata로 전달
     
     사용 예시:
         from utils.langfuse_tracker import tracker
         
-        handler = tracker.get_callback_handler(
-            trace_name="npc_response",
+        config = tracker.get_langfuse_config(
             tags=["npc", "heroine"],
             session_id=session_id,
             user_id=user_id,
         )
         
-        config = {"callbacks": [handler]} if handler else {}
-        response = await llm.ainvoke(prompt, config=config)
+        response = await llm.ainvoke(prompt, **config)
     """
     
     @staticmethod
-    def get_callback_handler(
-        trace_name: str,
-        tags: Optional[List[str]] = None,
-        session_id: Optional[str] = None,
-        user_id: Optional[str] = None,
-        metadata: Optional[Dict[str, Any]] = None,
-    ) -> Optional[CallbackHandler]:
+    def get_callback_handler() -> Optional[CallbackHandler]:
         """
-        LangFuse 콜백 핸들러 생성
+        LangFuse 콜백 핸들러 반환 (v3: 싱글톤)
         
-        이 메서드가 없을 경우 발생하는 문제:
-        - LangFuse에서 토큰 사용량을 추적할 수 없음
-        - API 비용 분석 불가
-        - 디버깅 시 프롬프트 히스토리 확인 불가
-        - 세션별/유저별 필터링 불가
+        LangFuse v3에서는 CallbackHandler()가 인자를 받지 않습니다.
+        모든 속성(session_id, user_id, tags)은 invoke 시점에 
+        metadata로 전달해야 합니다.
         
-        Args:
-            trace_name: 트레이스 이름 (예: "fact_extraction", "npc_response")
-                       LangFuse 대시보드에서 이 이름으로 필터링 가능
-            tags: 태그 리스트 (예: ["npc", "heroine", "letia"])
-                 LangFuse 대시보드에서 태그로 필터링 가능
-            session_id: 세션 ID (게임 세션과 연결)
-                       동일 세션의 모든 LLM 호출을 그룹화
-            user_id: 사용자 ID
-                    유저별 토큰 사용량 분석에 사용
-            metadata: 추가 메타데이터
-                     동적인 컨텍스트 정보(예: 히로인 이름, 현재 의도, 호감도 등)를 기록하기 위한 것(예:누가,어떤 상태일때 토큰소모가 많았는지)
-            
         Returns:
             LangFuse CallbackHandler 또는 None (비활성화 시)
-            None이 반환되면 LLM 호출은 정상 작동하지만 추적하지 않음
         """
         if not LANGFUSE_ENABLED:
             return None
             
-        return CallbackHandler(
-            session_id=session_id,
-            user_id=user_id,
-            tags=tags or [],
-            metadata={
-                "trace_name": trace_name,
-                **(metadata or {})
-            }
-        )
+        return _langfuse_handler
+    
+    @staticmethod
+    def build_metadata(
+        tags: Optional[List[str]] = None,
+        session_id: Optional[str] = None,
+        user_id: Optional[str] = None,
+        custom_metadata: Optional[Dict[str, Any]] = None,
+    ) -> Dict[str, Any]:
+        """
+        LangFuse v3 metadata 딕셔너리 생성
+        
+        LangFuse v3에서는 session_id, user_id, tags를 
+        특정 키 이름으로 metadata에 넣어야 합니다.
+        
+        Args:
+            tags: 태그 리스트 (예: ["npc", "heroine", "letia"])
+            session_id: 세션 ID
+            user_id: 사용자 ID
+            custom_metadata: 추가 메타데이터 (예: {"heroine_name": "letia"})
+            
+        Returns:
+            LangFuse metadata 딕셔너리
+        """
+        metadata = {}
+        
+        if session_id:
+            metadata["langfuse_session_id"] = session_id
+        if user_id:
+            metadata["langfuse_user_id"] = user_id
+        if tags:
+            metadata["langfuse_tags"] = tags
+        
+        # 커스텀 메타데이터 병합
+        if custom_metadata:
+            metadata.update(custom_metadata)
+        
+        return metadata
     
     @staticmethod
     def get_langfuse_config(
-        trace_name: str,
         tags: Optional[List[str]] = None,
         session_id: Optional[str] = None,
         user_id: Optional[str] = None,
         metadata: Optional[Dict[str, Any]] = None,
     ) -> Dict[str, Any]:
         """
-        LangChain invoke용 config 딕셔너리 반환
+        LangChain invoke용 config 딕셔너리 반환 (v3 호환)
         
-        이 메서드는 ainvoke/invoke 호출을 더 간결하게 만듭니다.
+        이 메서드가 없을 경우 발생하는 문제:
+        - LangFuse에서 토큰 사용량을 추적할 수 없음
+        - API 비용 분석 불가
+        - 세션별/유저별 필터링 불가
         
         사용 예시:
-            # 방법 1: get_callback_handler 사용 (명시적)
-            handler = tracker.get_callback_handler("npc_chat")
-            config = {"callbacks": [handler]} if handler else {}
-            response = await llm.ainvoke(prompt, config=config)
-            
-            # 방법 2: get_langfuse_config 사용 (간결)
-            response = await llm.ainvoke(
-                prompt, 
-                **tracker.get_langfuse_config("npc_chat")
+            config = tracker.get_langfuse_config(
+                tags=["npc", "heroine", "letia"],
+                session_id=state.get("session_id"),
+                user_id=state.get("user_id"),
+                metadata={"heroine_name": "letia", "affection": 50}
             )
             
+            response = await llm.ainvoke(prompt, **config)
+            
         Args:
-            (get_callback_handler와 동일)
+            tags: 태그 리스트 (LangFuse 필터링용)
+            session_id: 세션 ID (동일 세션의 LLM 호출 그룹화)
+            user_id: 사용자 ID (유저별 비용 분석)
+            metadata: 추가 메타데이터 (커스텀 분석용)
             
         Returns:
-            {"config": {"callbacks": [handler]}} 또는 {} (비활성화 시)
+            {"config": {"callbacks": [handler], "metadata": {...}}} 
+            또는 {} (비활성화 시)
         """
-        handler = TokenTracker.get_callback_handler(
-            trace_name=trace_name,
+        if not LANGFUSE_ENABLED:
+            return {}
+        
+        # LangFuse metadata 생성
+        langfuse_metadata = TokenTracker.build_metadata(
             tags=tags,
             session_id=session_id,
             user_id=user_id,
-            metadata=metadata,
+            custom_metadata=metadata,
         )
         
-        if handler:
-            return {"config": {"callbacks": [handler]}}
-        return {}
+        return {
+            "config": {
+                "callbacks": [_langfuse_handler],
+                "metadata": langfuse_metadata
+            }
+        }
     
     @staticmethod
     def flush():

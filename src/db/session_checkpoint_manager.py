@@ -129,9 +129,8 @@ class SessionCheckpointManager:
 요약: (2-3문장 요약)
 중요도: (1-5 숫자만)"""
 
-            # LangFuse 토큰 추적
-            handler = tracker.get_callback_handler(
-                trace_name="session_conversation_summary",
+            # LangFuse 토큰 추적 (v3 API)
+            config = tracker.get_langfuse_config(
                 tags=["summary", "checkpoint", f"npc:{npc_id}"],
                 user_id=player_id,
                 metadata={
@@ -139,9 +138,8 @@ class SessionCheckpointManager:
                     "conversation_count": len(conversations),
                 }
             )
-            config = {"callbacks": [handler]} if handler else {}
             
-            response = await self.llm.ainvoke(prompt, config=config)
+            response = await self.llm.ainvoke(prompt, **config)
             content = response.content
 
             lines = content.strip().split("\n")

@@ -40,16 +40,14 @@ class GPT5MiniEvaluator(DeepEvalBaseLLM):
         super().__init__()
     
     def _get_callback_config(self, is_async: bool = False) -> dict:
-        """LangFuse 콜백 설정 반환"""
+        """LangFuse 콜백 설정 반환 (v3 API)"""
         if not tracker or not LANGFUSE_ENABLED:
             return {}
             
-        handler = tracker.get_callback_handler(
-            trace_name="deepeval_evaluation",
+        return tracker.get_langfuse_config(
             tags=["deepeval", "evaluation", "persona_test"],
             metadata={"async": is_async}
         )
-        return {"config": {"callbacks": [handler]}} if handler else {}
     
     def generate(self, prompt: str) -> str:
         """

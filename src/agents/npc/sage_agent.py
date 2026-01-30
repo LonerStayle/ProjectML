@@ -158,7 +158,7 @@ class SageAgent(BaseNPCAgent):
             print(chunk, end="")
     """
 
-    def __init__(self, model_name: str = LLM.GROK_4_FAST_NON_REASONING):
+    def __init__(self, model_name: str = LLM.GROK_4_1_FAST_NON_REASONING):
         """초기화
 
         Args:
@@ -375,17 +375,15 @@ class SageAgent(BaseNPCAgent):
 
 반드시 general, memory_recall, worldview_inquiry 중 하나만 출력하세요."""
 
-        # LangFuse 토큰 추적
-        handler = tracker.get_callback_handler(
-            trace_name="sage_intent_classification",
+        # LangFuse 토큰 추적 (v3 API)
+        config = tracker.get_langfuse_config(
             tags=["npc", "sage", "intent"],
             session_id=state.get("session_id"),
             user_id=state.get("user_id"),
             metadata={"npc_name": "sage_satra"}
         )
-        config = {"callbacks": [handler]} if handler else {}
         
-        response = await self.intent_llm.ainvoke(prompt, config=config)
+        response = await self.intent_llm.ainvoke(prompt, **config)
         intent = response.content.strip().lower()
 
         # 유효하지 않으면 기본값
@@ -975,9 +973,8 @@ B) 세계관/정보 질문: "던전이 뭐야?", "히로인들은 누구야?, "�
 
         t2 = time.time()
         
-        # LangFuse 토큰 추적
-        handler = tracker.get_callback_handler(
-            trace_name="sage_response_generation",
+        # LangFuse 토큰 추적 (v3 API)
+        config = tracker.get_langfuse_config(
             tags=["npc", "sage", "response"],
             session_id=state.get("session_id"),
             user_id=state.get("user_id"),
@@ -987,9 +984,8 @@ B) 세계관/정보 질문: "던전이 뭐야?", "히로인들은 누구야?, "�
                 "scenario_level": state.get("scenarioLevel", 0),
             }
         )
-        config = {"callbacks": [handler]} if handler else {}
         
-        response = await self.llm.ainvoke(prompt, config=config)
+        response = await self.llm.ainvoke(prompt, **config)
         
         # 로컬 디버깅용 토큰 로깅
         if hasattr(response, 'usage_metadata') and response.usage_metadata:

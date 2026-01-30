@@ -183,18 +183,16 @@ Output:
 ]
 """
 
-        # LangFuse 토큰 추적
-        handler = tracker.get_callback_handler(
-            trace_name="user_memory_fact_extraction",
+        # LangFuse 토큰 추적 (v3 API)
+        config = tracker.get_langfuse_config(
             tags=["memory", "fact_extraction", f"heroine:{heroine_id}"],
             metadata={
                 "heroine_id": heroine_id,
                 "conversation_length": len(conversation)
             }
         )
-        config = {"callbacks": [handler]} if handler else {}
         
-        response = await self.extract_llm.ainvoke(prompt, config=config)
+        response = await self.extract_llm.ainvoke(prompt, **config)
 
         # JSON 파싱
         try:
@@ -695,15 +693,13 @@ Output:
 
 충돌이면 "yes", 아니면 "no"만 응답하세요."""
 
-        # LangFuse 토큰 추적
-        handler = tracker.get_callback_handler(
-            trace_name="user_memory_conflict_check",
+        # LangFuse 토큰 추적 (v3 API)
+        config = tracker.get_langfuse_config(
             tags=["memory", "conflict_check"],
             metadata={"action": "conflict_detection"}
         )
-        config = {"callbacks": [handler]} if handler else {}
         
-        response = await self.extract_llm.ainvoke(prompt, config=config)
+        response = await self.extract_llm.ainvoke(prompt, **config)
         answer = response.content.strip().lower()
 
         return answer == "yes"

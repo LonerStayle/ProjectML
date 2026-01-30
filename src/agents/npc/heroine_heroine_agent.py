@@ -119,7 +119,7 @@ class HeroineHeroineAgent:
             print(chunk, end="")
     """
 
-    def __init__(self, model_name: str = LLM.GROK_4_FAST_NON_REASONING):
+    def __init__(self, model_name: str = LLM.GROK_4_1_FAST_NON_REASONING):
         """초기화
 
         Args:
@@ -219,15 +219,13 @@ class HeroineHeroineAgent:
 출력 형식:
 선택한 상황과 함께 2-3문장으로 구체적인 상황을 설명하세요."""
 
-        # LangFuse 토큰 추적
-        handler = tracker.get_callback_handler(
-            trace_name="heroine_heroine_situation_generation",
+        # LangFuse 토큰 추적 (v3 API)
+        config = tracker.get_langfuse_config(
             tags=["npc", "heroine_heroine", "situation"],
             metadata={"action": "situation_generation"}
         )
-        config = {"callbacks": [handler]} if handler else {}
         
-        response = await self.llm.ainvoke(prompt, config=config)
+        response = await self.llm.ainvoke(prompt, **config)
         return response.content
 
     # ============================================
@@ -610,9 +608,8 @@ JSON 배열로 출력하세요:
 
         t = time.time()
         
-        # LangFuse 토큰 추적
-        handler = tracker.get_callback_handler(
-            trace_name="heroine_heroine_conversation_generation",
+        # LangFuse 토큰 추적 (v3 API)
+        config = tracker.get_langfuse_config(
             tags=["npc", "heroine_heroine", "conversation"],
             metadata={
                 "heroine1_id": heroine1_id,
@@ -620,9 +617,8 @@ JSON 배열로 출력하세요:
                 "turn_count": turn_count,
             }
         )
-        config = {"callbacks": [handler]} if handler else {}
         
-        response = await self.llm.ainvoke(prompt, config=config)
+        response = await self.llm.ainvoke(prompt, **config)
         
         # 로컬 디버깅용 토큰 로깅
         if hasattr(response, 'usage_metadata') and response.usage_metadata:

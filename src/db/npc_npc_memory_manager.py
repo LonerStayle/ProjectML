@@ -265,9 +265,8 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
     {{"speaker_id": {npc2_id}, "subject_id": 0, "content_type": "event", "content": "과거 전쟁에 대해 이야기함", "importance": 6}}
 ]"""
 
-        # LangFuse 토큰 추적
-        handler = tracker.get_callback_handler(
-            trace_name="npc_npc_memory_fact_extraction",
+        # LangFuse 토큰 추적 (v3 API)
+        config = tracker.get_langfuse_config(
             tags=["memory", "npc_npc_fact_extraction"],
             metadata={
                 "npc1_id": npc1_id,
@@ -275,9 +274,8 @@ JSON 배열로 응답하세요. 저장할 사실이 없으면 빈 배열 []을 �
                 "conversation_length": len(conversation)
             }
         )
-        config = {"callbacks": [handler]} if handler else {}
         
-        resp = await self.extract_llm.ainvoke(prompt, config=config)
+        resp = await self.extract_llm.ainvoke(prompt, **config)
         content = resp.content
 
         try:
